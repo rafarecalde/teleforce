@@ -1,0 +1,12 @@
+---
+import { NAV_LINKS } from '../consts';
+---
+<nav>
+  <div class="bar">
+    <a href="/" class="logo"><span class="led"></span>TELEFORCE</a>
+    <div class="links">
+      {NAV_LINKS.map((l) => <a href={l.href} class="nl">{l.label}</a>)}
+      <a href="/#contact" class="btn btn-amber">Book a call</a>
+    </div>
+  </div>
+</nav>

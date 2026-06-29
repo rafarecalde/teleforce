@@ -1,0 +1,92 @@
+---
+import { SITE } from '../consts';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** JSON-LD object(s) to inject (Article, FAQPage, etc.) */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** Override OG type (default website) */
+  ogType?: string;
+}
+
+const {
+  title = SITE.title,
+  description = SITE.description,
+  jsonLd,
+  ogType = 'website',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, SITE.url).href.replace(/\/$/, '') || SITE.url;
+const ogImage = new URL('/og-default.svg', SITE.url).href;
+
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Teleforce',
+  url: SITE.url,
+  description: SITE.description,
+  slogan: 'Powered by WNRS',
+  sameAs: [] as string[],
+};
+
+const ldBlocks = [org, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [])];
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={ogType} />
+  <meta property="og:site_name" content="Teleforce" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <link rel="sitemap" href="/sitemap-index.xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  {ldBlocks.map((block) => (
+    <script type="application/ld+json" set:html={JSON.stringify(block)} />
+  ))}
+</head>
+<body>
+  <Nav />
+  <slot />
+  <Footer />
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+  </script>
+</body>
+</html>

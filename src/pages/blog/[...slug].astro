@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBox from '../../components/CtaBox.astro';
+import { getPublishedPosts } from '../../lib/posts';
+import { SITE } from '../../consts';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post, all: posts },
+  }));
+}
+
+const { post, all } = Astro.props;
+const { Content } = await post.render();
+const d = post.data;
+
+// Related: explicit frontmatter slugs, else 2 newest siblings in the same category.
+let related = (d.related ?? [])
+  .map((slug) => all.find((p) => p.slug === slug))
+  .filter((p): p is (typeof all)[number] => Boolean(p));
+if (related.length < 2) {
+  const fill = all.filter(
+    (p) => p.slug !== post.slug && p.data.category === d.category && !related.includes(p),
+  );
+  related = [...related, ...fill].slice(0, 2);
+}
+
+const updated = d.updatedDate ?? d.publishDate;
+const fmtMonth = updated.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: d.title,
+  description: d.description,
+  datePublished: d.publishDate.toISOString(),
+  dateModified: updated.toISOString(),
+  author: { '@type': 'Organization', name: 'Teleforce' },
+  publisher: { '@type': 'Organization', name: 'Teleforce' },
+  mainEntityOfPage: `${SITE.url}/blog/${post.slug}`,
+  articleSection: d.category,
+};
+
+const faqLd = d.faq && d.faq.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: d.faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    }
+  : null;
+
+const jsonLd = faqLd ? [articleLd, faqLd] : articleLd;
+const baseTitle = d.metaTitle ?? d.title;
+const metaTitle = baseTitle.includes('Teleforce') ? baseTitle : `${baseTitle} | Teleforce`;
+---
+<BaseLayout title={metaTitle} description={d.description} jsonLd={jsonLd} ogType="article">
+
+  <header class="ahead">
+    <div class="wrap">
+      <div class="crumb"><a href="/blog">Signal</a> / {d.category}</div>
+      <div class="cat">{d.category}</div>
+      <h1>{d.title}</h1>
+      <div class="ameta">
+        <span>{d.readMinutes} min read</span>
+        <span>Updated {fmtMonth}</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="post">
+    <Content />
+
+    {d.faq && d.faq.length > 0 && (
+      <section>
+        <div class="rule"></div>
+        <h2>Frequently asked questions</h2>
+        {d.faq.map((f) => (
+          <>
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </>
+        ))}
+      </section>
+    )}
+
+    <CtaBox
+      heading="Let's scope your bilingual team"
+      body="Teleforce runs dedicated English/Spanish support on U.S. hours, on a 30+ year Fortune 500 backbone. Tell us your channels and volumes — we'll come back with a staffing plan in two business days."
+      label="Book a call"
+    />
+
+    <div class="rule"></div>
+    <p style="font-size:15px;color:var(--on-paper-mut)">
+      Teleforce provides bilingual (English/Spanish) nearshore customer support for U.S.
+      companies — dedicated agents on U.S. hours, built on a 30+ year, Fortune 500 backbone.
+      <a href="/#contact" style="color:var(--ink);font-weight:600">Book a call →</a>
+    </p>
+  </article>
+
+  {related.length > 0 && (
+    <section class="related">
+      <div class="wrap">
+        <div class="lab">Keep reading</div>
+        <div class="rgrid">
+          {related.map((r) => (
+            <a href={`/blog/${r.slug}`} class="rcard">
+              <div class="tagcat">{r.data.category}</div>
+              <h3>{r.data.title}</h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>

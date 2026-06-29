@@ -1,0 +1,18 @@
+---
+// The signature amber equalizer. Used full in the hero (variant="hero"),
+// static accent in blog cards (variant="card"). Respects reduced-motion via CSS.
+interface Props { variant?: 'hero' | 'card' }
+const { variant = 'hero' } = Astro.props;
+
+const heroDelays = ['0s','.1s','.2s','.05s','.3s','.15s','.25s','.4s','.12s','.33s','.22s','.08s','.36s','.18s','.28s','.04s'];
+const cardHeights = ['30%','60%','40%','80%','55%','70%','35%','90%','50%','65%'];
+---
+{variant === 'hero' ? (
+  <div class="wave" aria-hidden="true">
+    {heroDelays.map((d) => <span style={`animation-delay:${d}`}></span>)}
+  </div>
+) : (
+  <div class="wv" aria-hidden="true">
+    {cardHeights.map((h) => <span style={`height:${h}`}></span>)}
+  </div>
+)}

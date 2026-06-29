@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Waveform from '../../components/Waveform.astro';
+import { getPublishedPosts, formatDate } from '../../lib/posts';
+import { CATEGORIES } from '../../consts';
+
+const posts = await getPublishedPosts();
+
+// Featured = the post flagged featured, else the newest.
+const featured = posts.find((p) => p.data.featured) ?? posts[0];
+const rest = posts.filter((p) => p.slug !== featured?.slug);
+
+const teaser = (p: (typeof posts)[number]) => p.data.excerpt ?? p.data.description;
+---
+<BaseLayout
+  title="Signal — The Teleforce Journal"
+  description="Practical writing on bilingual customer support, nearshore CX, and scaling support operations — from the team at Teleforce."
+>
+  <header class="masthead">
+    <div class="wrap">
+      <div class="eyebrow">Signal — the Teleforce journal</div>
+      <h1>Notes on support<br />that scales.</h1>
+      <p>Practical writing on bilingual customer support, nearshore operations, and the build-vs-buy decisions behind a great customer experience. No fluff, no hype.</p>
+    </div>
+  </header>
+
+  <div class="filter">
+    <div class="wrap row" id="filter">
+      <button class="pill on" data-cat="all">All</button>
+      {CATEGORIES.map((c) => <button class="pill" data-cat={c}>{c}</button>)}
+    </div>
+  </div>
+
+  {featured && (
+    <section class="block">
+      <div class="wrap">
+        <a href={`/blog/${featured.slug}`} style="display:block" data-card data-cat={featured.data.category}>
+          <article class="feat">
+            <div class="art">
+              <Waveform variant="card" />
+              <div class="tagcat" style="color:var(--amber)">Featured · {featured.data.category}</div>
+              <h2>{featured.data.title}</h2>
+            </div>
+            <div class="body">
+              <div class="meta">{featured.data.readMinutes} min read · {formatDate(featured.data.publishDate)}</div>
+              <h3>The decision in one read</h3>
+              <p>{teaser(featured)}</p>
+              <span class="readlink">Read the article <span class="ar">→</span></span>
+            </div>
+          </article>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <div class="gridhead">Latest</div>
+      <div class="grid" id="grid">
+        {rest.map((p) => (
+          <a href={`/blog/${p.slug}`} data-card data-cat={p.data.category}>
+            <article class="card">
+              <div class="tagcat">{p.data.category}</div>
+              <div class="cmeta">{p.data.readMinutes} min read · {formatDate(p.data.publishDate)}</div>
+              <h3>{p.data.title}</h3>
+              <p>{teaser(p)}</p>
+              <span class="readlink">Read <span class="ar">→</span></span>
+            </article>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="block subband">
+    <div class="wrap inner">
+      <div>
+        <h2>Get Signal in your inbox.</h2>
+        <p>One practical piece on support operations, twice a month. No spam, unsubscribe anytime.</p>
+      </div>
+      <form class="subform" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+        <input type="email" name="email" placeholder="you@company.com" required />
+        <button class="btn btn-amber" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // Working category filter — pure client-side, no reload.
+    const pills = document.querySelectorAll<HTMLButtonElement>('#filter .pill');
+    const cards = document.querySelectorAll<HTMLElement>('[data-card]');
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        pills.forEach((p) => p.classList.remove('on'));
+        pill.classList.add('on');
+        const cat = pill.dataset.cat;
+        cards.forEach((card) => {
+          const show = cat === 'all' || card.dataset.cat === cat;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</BaseLayout>

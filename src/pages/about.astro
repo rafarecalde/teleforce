@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { STATS, LOGOS } from '../consts';
+const marquee = [...LOGOS, ...LOGOS];
+---
+<BaseLayout
+  title="About Teleforce — Powered by WNRS | Teleforce"
+  description="Teleforce is bilingual nearshore customer support built on the WNRS network — a Fortune 500 support backbone, 30+ years deep. The story behind the infrastructure."
+>
+  <header class="ahead">
+    <div class="wrap">
+      <div class="cat">About</div>
+      <h1>An established backbone, pointed at U.S. companies.</h1>
+      <div class="ameta"><span>Powered by WNRS</span><span>30+ years operating</span></div>
+    </div>
+  </header>
+
+  <article class="post">
+    <p class="lead">Teleforce is bilingual, nearshore customer support for U.S. companies. What makes it different isn't a pitch deck — it's what sits underneath it: the WNRS network, a customer-support backbone that has served global enterprises for more than three decades.</p>
+
+    <p>Most nearshore support vendors are startups. They're building their recruiting pipeline, their QA process, their security posture, and their training program at the same time they're building your team. You feel that ramp — in the first ninety days especially, when the org is still learning how to run itself.</p>
+
+    <p>Teleforce skips that. The infrastructure already exists.</p>
+
+    <h2>What "Powered by WNRS" means</h2>
+    <p>WNRS is a Fortune 500 support network — 30+ years operating, more than 20 languages covered, with recruiting, training, quality assurance, information security, and uptime processes that already meet the standards of large global enterprises. Teleforce is the channel that brings that backbone to growing U.S. companies as dedicated, bilingual teams.</p>
+    <p>When you staff a Teleforce seat, you're not waiting for a young vendor to figure out operations. You inherit a system that's been refined across decades and across some of the most demanding accounts in the world.</p>
+
+    <div class="trust" style="border-radius:14px;margin:30px 0">
+      <div class="row">
+        {STATS.map((s) => (
+          <div class="stat"><span class="n">{s.n}</span><span class="k">{s.k}</span></div>
+        ))}
+      </div>
+    </div>
+
+    <h2>The honest version of the logos</h2>
+    <p>You'll see names like UPS, American Express, SAP, and Nike associated with the WNRS network. Here's the straight version: those logos prove the <em>infrastructure</em> — the network's reach and the standard it operates to. They are the enterprises the WNRS backbone has supported over 30+ years. Teleforce is powered by that same network; it's how a growing company gets enterprise-grade support without enterprise scale.</p>
+
+    <div class="logos" style="border-radius:14px;margin:24px 0;padding-top:24px">
+      <div class="lab">Powered by WNRS · Trusted by global enterprises for 30+ years</div>
+      <div class="marquee-mask">
+        <div class="marquee">
+          {marquee.map((name) => <span>{name}</span>)}
+        </div>
+      </div>
+    </div>
+
+    <h2>Why bilingual, why nearshore</h2>
+    <p>The U.S. market is bilingual, and serving it well means English and Spanish at the same standard, on the same hours, from the same team. Latin America is one of the few talent pools where native-level Spanish and strong English coexist at scale — on U.S. business hours. That's the model: dedicated agents who work as an extension of your brand, with same-day feedback loops instead of overnight handoffs.</p>
+
+    <h2>A rare layer: U.S. legal oversight</h2>
+    <p>Teleforce operates with U.S. legal and compliance oversight of data handling and consumer-contact practices — supervision that's uncommon in the nearshore category. For companies in regulated or contact-sensitive industries, that's not a nice-to-have; it's the difference between a vendor and a partner you can stand behind.</p>
+
+    <div class="cta-box">
+      <h4>Let's scope your team.</h4>
+      <p>Tell us your channels, languages, and rough monthly volume. We'll come back with a staffing plan and a go-live date — usually within two business days.</p>
+      <a href="/#contact" class="btn btn-amber">Book a call</a>
+    </div>
+  </article>
+</BaseLayout>

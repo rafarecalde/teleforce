@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Waveform from '../components/Waveform.astro';
+import { SITE, STATS, LOGOS } from '../consts';
+
+// Duplicate the logo list so the marquee scrolls seamlessly (-50% loop).
+const marquee = [...LOGOS, ...LOGOS];
+const formAction = `https://formspree.io/f/${SITE.formspreeId}`;
+---
+<BaseLayout title="Teleforce — Bilingual Customer Support" description={SITE.description}>
+
+  <header class="hero" id="top">
+    <Waveform variant="hero" />
+    <div class="inner">
+      <div class="kicker">Customer support, done for you</div>
+      <h1 class="disp">
+        Answered.<br />
+        <span class="l2">In both languages.</span><br />
+        <span class="l3">On your clock.</span>
+      </h1>
+      <p class="lede">Teleforce runs <b>bilingual customer support</b> for U.S. companies —
+        dedicated English/Spanish agents who work as an extension of your brand, on U.S. time.
+        Powered by <b>WNRS</b> — a Fortune 500 support network, 30+ years deep — so there's no startup ramp to wait through.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-amber">Book a call</a>
+        <a href="#pricing" class="btn btn-ghost">See pricing</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="trust">
+    <div class="row">
+      {STATS.map((s) => (
+        <div class="stat"><span class="n">{s.n}</span><span class="k">{s.k}</span></div>
+      ))}
+    </div>
+  </div>
+
+  <div class="logos">
+    <div class="lab">Powered by WNRS · Trusted by global enterprises for 30+ years</div>
+    <div class="marquee-mask">
+      <div class="marquee">
+        {marquee.map((name) => <span>{name}</span>)}
+      </div>
+    </div>
+  </div>
+
+  <section class="block" id="services">
+    <div class="wrap reveal">
+      <div class="eyebrow">What you get</div>
+      <h2 class="disp">A support team, not a call center.</h2>
+      <p class="sub">Named agents, trained on your product and your voice, who your customers won't be able to tell from in-house staff.</p>
+      <div class="offer">
+        <div class="cell"><div class="ic">EN / ES</div><h3>Truly bilingual</h3><p>Native English and Spanish from one seat — no separate teams, no language routing.</p></div>
+        <div class="cell"><div class="ic">UTC−5</div><h3>Nearshore, not offshore</h3><p>Real-time overlap with U.S. business hours. Same-day feedback loops, not overnight delays.</p></div>
+        <div class="cell"><div class="ic">VOICE · CHAT · EMAIL</div><h3>Every channel</h3><p>Inbound support across phone, live chat, and email — on your tools and your SLAs.</p></div>
+        <div class="cell"><div class="ic">DAY ONE</div><h3>Established backbone</h3><p>The WNRS network's recruiting, training, QA, security, and uptime already serve global enterprises. You inherit it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="howwrap">
+    <section class="block" id="how">
+      <div class="wrap reveal">
+        <div class="eyebrow">How it works</div>
+        <h2 class="disp">Live in about 30 days.</h2>
+        <div class="steps">
+          <div class="step"><div class="num">01</div><h4>Scope</h4><p>We map your volumes, channels, tools, and the voice your customers expect.</p></div>
+          <div class="step"><div class="num">02</div><h4>Staff &amp; train</h4><p>We select bilingual agents and train them on your product as brand staff.</p></div>
+          <div class="step"><div class="num">03</div><h4>Go live</h4><p>Your team starts taking contacts — with QA, reporting, and a named lead from day one.</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="block" id="why">
+    <div class="wrap reveal">
+      <div class="eyebrow">Why Teleforce</div>
+      <h2 class="disp">An established partner, from day one.</h2>
+      <div class="why">
+        <div class="item"><div class="b">›</div><div><h4>No ramp risk</h4><p>Most nearshore vendors build their org while they build your team. Ours is already decades deep.</p></div></div>
+        <div class="item"><div class="b">›</div><div><h4>One seat, two languages</h4><p>Bilingual native agents serve your English and Spanish customers without doubling headcount.</p></div></div>
+        <div class="item"><div class="b">›</div><div><h4>U.S. legal &amp; compliance oversight</h4><p>Data handling and consumer-contact compliance supervised by U.S. counsel — rare in this category.</p></div></div>
+        <div class="item"><div class="b">›</div><div><h4>A time zone that works</h4><p>Daytime in the U.S. is daytime for your team. No overnight handoffs, lower attrition than offshore.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pricewrap">
+    <section class="block" id="pricing">
+      <div class="wrap reveal">
+        <div class="eyebrow">Pricing</div>
+        <h2 class="disp">Three ways to buy.</h2>
+        <p class="sub">Start flexible, scale into dedicated seats, consolidate into a managed team. Move between them as you grow.</p>
+        <div class="tiers">
+          <div class="tier">
+            <div class="tag">Flex</div>
+            <div class="price">$16<sup>*</sup></div>
+            <div class="unit">per agent-hour</div>
+            <div class="desc">Pay for the hours you use. Best for seasonal spikes or testing the partnership before you commit.</div>
+          </div>
+          <div class="tier feature">
+            <div class="tag">Dedicated</div>
+            <div class="price">$2,800</div>
+            <div class="unit">per seat / month</div>
+            <div class="desc">A named, full-time bilingual agent who works only your account, as an extension of your team.</div>
+            <div class="best">★ Most popular</div>
+          </div>
+          <div class="tier">
+            <div class="tag">Team</div>
+            <div class="price">Custom</div>
+            <div class="unit">dedicated lead &amp; QA</div>
+            <div class="desc">A managed team with its own lead, QA, and reporting layer at a volume seat rate.</div>
+          </div>
+        </div>
+        <p class="pricenote">* Minimums apply. All plans include training, QA, reporting, and a named point of contact.</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="contact" id="contact">
+    <div class="wrap reveal">
+      <div class="grid">
+        <div>
+          <div class="eyebrow" style="color:var(--amber)">Book a call</div>
+          <h2 class="disp">Let's scope your team.</h2>
+          <p class="sub">Tell us your channels and volumes. We'll come back with a staffing plan and a go-live date — usually within two business days.</p>
+        </div>
+        <form method="POST" action={formAction}>
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required /></div>
+          <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" placeholder="you@company.com" required /></div>
+          <div class="field"><label for="need">What do you need?</label><textarea id="need" name="message" rows="3" placeholder="Channels, languages, rough monthly volume…"></textarea></div>
+          <button class="btn btn-amber" type="submit">Send &amp; book a call</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

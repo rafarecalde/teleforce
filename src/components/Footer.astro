@@ -1,0 +1,18 @@
+---
+import { SITE, FOOTER_LINKS } from '../consts';
+const year = 2026;
+---
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="brand">TELEFORCE</div>
+        <div class="tagline">{SITE.tagline}</div>
+      </div>
+      <div class="fnav">
+        {FOOTER_LINKS.map((l) => <a href={l.href}>{l.label}</a>)}
+      </div>
+    </div>
+    <div class="legal">© {year} Teleforce · tryteleforce.com · Privacy · Terms</div>
+  </div>
+</footer>

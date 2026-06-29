@@ -1,0 +1,342 @@
+# Teleforce "Signal" content queue
+# The content agent (see CLAUDE.md) takes the next item with status: done,
+# writes it to src/content/blog/<slug>.md with publishDate set to the value
+# below, then flips status: done. Future dates drip-publish on the schedule.
+
+posts:
+  - title: "Nearshore vs. Offshore Customer Support"
+    slug: nearshore-vs-offshore-customer-support
+    primaryKeyword: "nearshore vs offshore customer support"
+    intent: MoFu
+    pillar: "Nearshore"
+    publishDate: 2026-06-10
+    status: done
+
+  - title: "Why Bilingual Customer Support Is No Longer Optional"
+    slug: bilingual-customer-support-us-companies
+    primaryKeyword: "bilingual customer support"
+    intent: MoFu
+    pillar: "Bilingual CX"
+    publishDate: 2026-06-12
+    status: done
+
+  - title: "The Real Cost of In-House Customer Support"
+    slug: cost-of-in-house-customer-support
+    primaryKeyword: "cost of in-house customer support"
+    intent: BoFu
+    pillar: "Operations"
+    publishDate: 2026-06-16
+    status: done
+
+  - title: "Colombia, Mexico, or Ecuador? A Buyer's Guide to LatAm Support Hubs"
+    slug: nearshore-customer-support-latin-america
+    primaryKeyword: "nearshore customer support latin america"
+    intent: MoFu
+    pillar: "Nearshore"
+    publishDate: 2026-06-22
+    status: done
+
+  - title: "Mexico Customer Support Outsourcing: What to Know"
+    slug: mexico-customer-support-outsourcing
+    primaryKeyword: "mexico customer support outsourcing"
+    intent: BoFu
+    pillar: "Nearshore"
+    publishDate: 2026-06-26
+    status: done
+
+  - title: "Colombia Call Center Outsourcing: Talent, Cost, and Trade-offs"
+    slug: colombia-call-center-outsourcing
+    primaryKeyword: "colombia call center outsourcing"
+    intent: BoFu
+    pillar: "Nearshore"
+    publishDate: 2026-06-30
+    status: done
+
+  - title: "Nearshore vs. Domestic U.S. Support: The Real Cost Gap"
+    slug: nearshore-vs-domestic-customer-support
+    primaryKeyword: "nearshore vs domestic customer support"
+    intent: MoFu
+    pillar: "Nearshore"
+    publishDate: 2026-07-04
+    status: done
+
+  - title: "How to Vet a Nearshore Customer Support Provider"
+    slug: how-to-vet-nearshore-support-provider
+    primaryKeyword: "how to choose a nearshore support provider"
+    intent: BoFu
+    pillar: "Nearshore"
+    publishDate: 2026-07-08
+    status: done
+
+  - title: "Nearshore Customer Support for Ecommerce Brands"
+    slug: ecommerce-customer-support-outsourcing
+    primaryKeyword: "ecommerce customer support outsourcing"
+    intent: BoFu
+    pillar: "Nearshore"
+    publishDate: 2026-07-12
+    status: done
+
+  - title: "Nearshore Customer Support for SaaS Companies"
+    slug: saas-customer-support-outsourcing
+    primaryKeyword: "saas customer support outsourcing"
+    intent: BoFu
+    pillar: "Nearshore"
+    publishDate: 2026-07-16
+    status: done
+
+  - title: "The Nearshore Time-Zone Advantage, Quantified"
+    slug: nearshore-time-zone-advantage
+    primaryKeyword: "nearshore time zone advantage"
+    intent: ToFu
+    pillar: "Nearshore"
+    publishDate: 2026-07-20
+    status: done
+
+  - title: "Data Security and Compliance in Nearshore Support"
+    slug: nearshore-support-data-security
+    primaryKeyword: "nearshore support data security"
+    intent: MoFu
+    pillar: "Nearshore"
+    publishDate: 2026-07-24
+    status: done
+
+  - title: "What a Nearshore Call Center Actually Costs in 2026"
+    slug: nearshore-call-center-cost
+    primaryKeyword: "nearshore call center cost"
+    intent: MoFu
+    pillar: "Nearshore"
+    publishDate: 2026-07-28
+    status: done
+
+  - title: "Nearshore BPO vs. Boutique Support Teams"
+    slug: nearshore-bpo-vs-boutique
+    primaryKeyword: "nearshore bpo"
+    intent: MoFu
+    pillar: "Nearshore"
+    publishDate: 2026-08-01
+    status: done
+
+  - title: "Spanish Customer Service Outsourcing: A Practical Guide"
+    slug: spanish-customer-service-outsourcing
+    primaryKeyword: "spanish customer service outsourcing"
+    intent: BoFu
+    pillar: "Bilingual CX"
+    publishDate: 2026-08-05
+    status: done
+
+  - title: "Serving the U.S. Hispanic Market: A CX Playbook"
+    slug: hispanic-market-customer-experience
+    primaryKeyword: "hispanic market customer experience"
+    intent: ToFu
+    pillar: "Bilingual CX"
+    publishDate: 2026-08-09
+    status: done
+
+  - title: "How to Test an Agent's Spanish Fluency (Beyond “Conversational”)"
+    slug: test-agent-spanish-fluency
+    primaryKeyword: "test agent spanish fluency"
+    intent: MoFu
+    pillar: "Bilingual CX"
+    publishDate: 2026-08-13
+    status: done
+
+  - title: "Bilingual Live Chat Support: Setup and Pitfalls"
+    slug: bilingual-live-chat-support
+    primaryKeyword: "bilingual live chat support"
+    intent: BoFu
+    pillar: "Bilingual CX"
+    publishDate: 2026-08-17
+    status: done
+
+  - title: "Bilingual Customer Support for Healthcare Companies"
+    slug: bilingual-customer-support-healthcare
+    primaryKeyword: "bilingual customer support healthcare"
+    intent: BoFu
+    pillar: "Bilingual CX"
+    publishDate: 2026-08-21
+    status: done
+
+  - title: "Bilingual Support for Fintech and Financial Services"
+    slug: bilingual-support-financial-services
+    primaryKeyword: "bilingual support financial services"
+    intent: BoFu
+    pillar: "Bilingual CX"
+    publishDate: 2026-08-25
+    status: done
+
+  - title: "Training Agents to Sound Like Your Brand"
+    slug: training-agents-sound-like-your-brand
+    primaryKeyword: "customer support agent training"
+    intent: ToFu
+    pillar: "Bilingual CX"
+    publishDate: 2026-08-29
+    status: done
+
+  - title: "Spanglish and Code-Switching: Why It Matters in Support"
+    slug: code-switching-customer-support
+    primaryKeyword: "code switching customer support"
+    intent: ToFu
+    pillar: "Bilingual CX"
+    publishDate: 2026-09-02
+    status: done
+
+  - title: "Spanish-Language Social Media Support"
+    slug: spanish-social-media-support
+    primaryKeyword: "spanish social media customer support"
+    intent: MoFu
+    pillar: "Bilingual CX"
+    publishDate: 2026-09-06
+    status: done
+
+  - title: "Translation vs. Native Agents: The Quality Gap"
+    slug: translation-vs-bilingual-agents
+    primaryKeyword: "translation vs bilingual agents"
+    intent: MoFu
+    pillar: "Bilingual CX"
+    publishDate: 2026-09-10
+    status: done
+
+  - title: "When to Outsource Customer Support: 7 Signs"
+    slug: when-to-outsource-customer-support
+    primaryKeyword: "when to outsource customer support"
+    intent: BoFu
+    pillar: "Operations"
+    publishDate: 2026-09-14
+    status: done
+
+  - title: "Outsourced vs. In-House Support: A Build-vs-Buy Framework"
+    slug: outsourced-vs-in-house-support
+    primaryKeyword: "outsource customer support"
+    intent: MoFu
+    pillar: "Operations"
+    publishDate: 2026-09-18
+    status: done
+
+  - title: "How to Transition Support Without Dropping Customers"
+    slug: customer-support-transition-plan
+    primaryKeyword: "customer support transition plan"
+    intent: BoFu
+    pillar: "Operations"
+    publishDate: 2026-09-22
+    status: done
+
+  - title: "The Metrics That Actually Predict Customer Churn"
+    slug: customer-support-metrics-predict-churn
+    primaryKeyword: "customer support metrics"
+    intent: ToFu
+    pillar: "Operations"
+    publishDate: 2026-09-26
+    status: done
+
+  - title: "CSAT vs. NPS vs. CES: Which Support Metric to Trust"
+    slug: csat-vs-nps-vs-ces
+    primaryKeyword: "csat vs nps vs ces"
+    intent: ToFu
+    pillar: "Operations"
+    publishDate: 2026-09-30
+    status: done
+
+  - title: "How to Reduce Average Handle Time Without Hurting CX"
+    slug: reduce-average-handle-time
+    primaryKeyword: "reduce average handle time"
+    intent: ToFu
+    pillar: "Operations"
+    publishDate: 2026-10-04
+    status: done
+
+  - title: "Offering 24/7 Support Without Burning Out Your Team"
+    slug: offer-24-7-customer-support
+    primaryKeyword: "24/7 customer support"
+    intent: MoFu
+    pillar: "Operations"
+    publishDate: 2026-10-08
+    status: done
+
+  - title: "Staffing for Seasonal Support Spikes"
+    slug: seasonal-customer-support-staffing
+    primaryKeyword: "seasonal customer support staffing"
+    intent: BoFu
+    pillar: "Operations"
+    publishDate: 2026-10-12
+    status: done
+
+  - title: "How to Scale Customer Support at a Growing Startup"
+    slug: scale-customer-support-startup
+    primaryKeyword: "scale customer support startup"
+    intent: MoFu
+    pillar: "Operations"
+    publishDate: 2026-10-16
+    status: done
+
+  - title: "Customer Support SLAs, Explained"
+    slug: customer-support-sla-explained
+    primaryKeyword: "customer support sla"
+    intent: ToFu
+    pillar: "Operations"
+    publishDate: 2026-10-20
+    status: done
+
+  - title: "Outsourcing Customer Support for Small Business"
+    slug: outsource-support-small-business
+    primaryKeyword: "outsource customer support small business"
+    intent: BoFu
+    pillar: "Operations"
+    publishDate: 2026-10-24
+    status: done
+
+  - title: "Voice, Chat, or Email: Building the Right Channel Mix"
+    slug: customer-support-channel-mix
+    primaryKeyword: "customer support channel mix"
+    intent: ToFu
+    pillar: "Operations"
+    publishDate: 2026-10-28
+    status: done
+
+  - title: "Improving First Contact Resolution"
+    slug: improving-first-contact-resolution
+    primaryKeyword: "first contact resolution"
+    intent: ToFu
+    pillar: "Operations"
+    publishDate: 2026-11-01
+    status: done
+
+  - title: "Building a Customer Support QA Program"
+    slug: customer-support-qa-program
+    primaryKeyword: "customer support quality assurance"
+    intent: MoFu
+    pillar: "Operations"
+    publishDate: 2026-11-05
+    status: done
+
+  - title: "Practical Ways to Reduce Customer Support Costs"
+    slug: reduce-customer-support-costs
+    primaryKeyword: "reduce customer support costs"
+    intent: BoFu
+    pillar: "Operations"
+    publishDate: 2026-11-09
+    status: done
+
+  - title: "Knowledge Bases and Ticket Deflection That Actually Work"
+    slug: knowledge-base-ticket-deflection
+    primaryKeyword: "ticket deflection knowledge base"
+    intent: ToFu
+    pillar: "Operations"
+    publishDate: 2026-11-13
+    status: done
+
+  - title: "Ecommerce Support for Peak Season and Returns"
+    slug: ecommerce-support-peak-season
+    primaryKeyword: "ecommerce customer support peak season"
+    intent: MoFu
+    pillar: "Operations"
+    publishDate: 2026-11-17
+    status: done
+
+  - title: "Call Center Outsourcing: The Complete Primer"
+    slug: call-center-outsourcing-primer
+    primaryKeyword: "call center outsourcing"
+    intent: ToFu
+    pillar: "Operations"
+    publishDate: 2026-11-21
+    status: done
+
