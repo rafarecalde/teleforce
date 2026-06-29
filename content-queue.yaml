@@ -402,4 +402,163 @@ posts:
     pillar: "Collections"
     publishDate: 2026-12-15
     status: done
+  - title: "Outsourcing Tech Support: When Tier 1–2 Belongs Off Your Plate"
+    slug: outsourcing-tech-support
+    primaryKeyword: "outsourcing tech support"
+    intent: BoFu
+    pillar: "Tech Support"
+    publishDate: 2026-06-26
+    status: done
+
+  - title: "Bilingual Tech Support: Serving Spanish-Speaking Customers"
+    slug: bilingual-tech-support
+    primaryKeyword: "bilingual tech support"
+    intent: MoFu
+    pillar: "Tech Support"
+    publishDate: 2026-12-19
+    status: done
+
+  - title: "Tier 1 vs. Tier 2 Support: Where to Draw the Line"
+    slug: tier-1-vs-tier-2-support
+    primaryKeyword: "tier 1 vs tier 2 support"
+    intent: ToFu
+    pillar: "Tech Support"
+    publishDate: 2026-12-23
+    status: done
+
+  - title: "How to Reduce Support Escalations Without Hurting Resolution"
+    slug: reduce-support-escalations
+    primaryKeyword: "reduce support escalations"
+    intent: ToFu
+    pillar: "Tech Support"
+    publishDate: 2026-12-27
+    status: done
+
+  - title: "Nearshore Tech Support for SaaS Products"
+    slug: nearshore-tech-support
+    primaryKeyword: "nearshore tech support"
+    intent: BoFu
+    pillar: "Tech Support"
+    publishDate: 2026-12-31
+    status: done
+
+  - title: "Outsourcing Data Entry: A Practical Guide for Growing Teams"
+    slug: outsourcing-data-entry
+    primaryKeyword: "outsourcing data entry"
+    intent: BoFu
+    pillar: "Data Entry"
+    publishDate: 2026-06-27
+    status: done
+
+  - title: "Data Entry Accuracy: Hitting 99%+ With an Outsourced Team"
+    slug: data-entry-accuracy
+    primaryKeyword: "data entry accuracy"
+    intent: ToFu
+    pillar: "Data Entry"
+    publishDate: 2027-01-04
+    status: done
+
+  - title: "CRM Data Hygiene: Why Dirty Data Costs More Than You Think"
+    slug: crm-data-hygiene
+    primaryKeyword: "crm data hygiene"
+    intent: ToFu
+    pillar: "Data Entry"
+    publishDate: 2027-01-08
+    status: done
+
+  - title: "Nearshore Data Entry vs. Offshore: What Actually Differs"
+    slug: nearshore-data-entry
+    primaryKeyword: "nearshore data entry"
+    intent: MoFu
+    pillar: "Data Entry"
+    publishDate: 2027-01-12
+    status: done
+
+  - title: "Document Processing Outsourcing for High-Volume Operations"
+    slug: document-processing-outsourcing
+    primaryKeyword: "document processing outsourcing"
+    intent: BoFu
+    pillar: "Data Entry"
+    publishDate: 2027-01-16
+    status: done
+
+  - title: "Outsourced Appointment Setting: Fill the Calendar, Not the Headcount"
+    slug: outsourced-appointment-setting
+    primaryKeyword: "outsourced appointment setting"
+    intent: BoFu
+    pillar: "Appointment Setting"
+    publishDate: 2026-06-28
+    status: done
+
+  - title: "How to Reduce No-Shows With Confirmations and Reminders"
+    slug: reduce-appointment-no-shows
+    primaryKeyword: "reduce appointment no-shows"
+    intent: ToFu
+    pillar: "Appointment Setting"
+    publishDate: 2027-01-20
+    status: done
+
+  - title: "Bilingual Appointment Setting for the U.S. Hispanic Market"
+    slug: bilingual-appointment-setting
+    primaryKeyword: "bilingual appointment setting"
+    intent: MoFu
+    pillar: "Appointment Setting"
+    publishDate: 2027-01-24
+    status: done
+
+  - title: "Inbound vs. Outbound Appointment Setting: Which You Need"
+    slug: inbound-vs-outbound-appointment-setting
+    primaryKeyword: "inbound vs outbound appointment setting"
+    intent: ToFu
+    pillar: "Appointment Setting"
+    publishDate: 2027-01-28
+    status: done
+
+  - title: "Appointment Setting for Home Services and Healthcare"
+    slug: appointment-setting-home-services-healthcare
+    primaryKeyword: "appointment setting services"
+    intent: BoFu
+    pillar: "Appointment Setting"
+    publishDate: 2027-02-01
+    status: done
+
+  - title: "Outsourcing Lead Generation: When It Works (and When It Doesn't)"
+    slug: outsourcing-lead-generation
+    primaryKeyword: "outsourcing lead generation"
+    intent: BoFu
+    pillar: "Sales & Lead Gen"
+    publishDate: 2026-06-29
+    status: done
+
+  - title: "Outsourced SDR Teams: Build vs. Buy Your Pipeline"
+    slug: outsourced-sdr-teams
+    primaryKeyword: "outsourced sdr"
+    intent: MoFu
+    pillar: "Sales & Lead Gen"
+    publishDate: 2027-02-05
+    status: done
+
+  - title: "Lead Qualification Frameworks That Don't Waste Your Closers' Time"
+    slug: lead-qualification-frameworks
+    primaryKeyword: "lead qualification"
+    intent: ToFu
+    pillar: "Sales & Lead Gen"
+    publishDate: 2027-02-09
+    status: done
+
+  - title: "Bilingual Outbound: Reaching the Hispanic B2C and B2B Market"
+    slug: bilingual-lead-generation
+    primaryKeyword: "bilingual lead generation"
+    intent: MoFu
+    pillar: "Sales & Lead Gen"
+    publishDate: 2027-02-13
+    status: done
+
+  - title: "Nearshore Lead Generation: The Cost and Quality Case"
+    slug: nearshore-lead-generation
+    primaryKeyword: "nearshore lead generation"
+    intent: BoFu
+    pillar: "Sales & Lead Gen"
+    publishDate: 2027-02-17
+    status: done
 
