@@ -84,7 +84,7 @@ A qualified nearshore partner will have this documentation ready. One that stall
 
 ## What Teleforce Brings to Financial Services Support
 
-Teleforce provides bilingual (English/Spanish) nearshore customer support for U.S. companies, powered by WNRS — a Fortune 500-grade support network with 30+ years of enterprise operations across 20+ languages. That infrastructure means the compliance frameworks, quality systems, and workforce depth are already in place when you engage.
+Teleforce provides bilingual (English/Spanish) nearshore customer support for U.S. companies, powered by WNRS — a Fortune 500-grade support network with 30+ years of enterprise operations across 20+ industries. That infrastructure means the compliance frameworks, quality systems, and workforce depth are already in place when you engage.
 
 For fintech and financial services companies specifically, that matters because:
 
@@ -92,22 +92,18 @@ For fintech and financial services companies specifically, that matters because:
 - Agent training in financial product context happens faster on an experienced workforce
 - The security and compliance infrastructure is enterprise-proven, not being figured out as you grow
 
-Engagements start at $16/agent-hour on a Flex basis (minimums apply) and scale to Dedicated seats at $2,800/seat/month for teams that need consistent, brand-trained coverage.
+Engagements are available as Part-time at $1,400/seat/month or Full-time at $2,800/seat/month for teams that need consistent, brand-trained coverage.
 
 The right model depends on your volume, your product complexity, and how much brand voice training you need to embed. [See pricing or book a call →](/#pricing)
 
 ## The Honest Tradeoffs
 
-Nearshore bilingual support is not the right fit for every financial services company. If your product serves an entirely English-dominant customer base, the investment may not pencil out. If your support interactions are simple enough that AI-assisted resolution handles 80% of volume, a lean hybrid model may serve better than a dedicated bilingual team.
-
-And if your compliance requirements are unusually complex — think cryptocurrency custody, broker-dealer operations, or heavily regulated lending — you'll want to verify that any outsourced partner can operate within those specific constraints, not just standard banking requirements.
-
-The case for bilingual support financial services companies should be building is strongest when: a meaningful share of your customer base is Spanish-dominant or bilingual, your support interactions involve complexity or emotion (disputes, fraud, onboarding), and churn risk is high enough that each lost customer has real LTV implications.
-
-If those conditions apply, language support is not a feature. It's infrastructure.
+Nearshore bilingual support is most valuable when a meaningful share of your customer base is Spanish-dominant or bilingual, your support interactions involve complexity or emotion (disputes, fraud, onboarding), and churn risk is high enough that each lost customer has real LTV implications. If those conditions apply, language support is not a feature. It's infrastructure.
 
 For context on why this goes beyond financial services and applies across your customer base, see [why bilingual customer support is no longer optional for U.S. companies](/blog/bilingual-customer-support-us-companies).
 
+And if your book of business includes past-due Spanish-speaking accounts, note that Teleforce also runs [bilingual early-stage collections](/blog/bilingual-early-out-collections) — first-party outreach in the client's name, in native Spanish, at the 1–60 day window where recovery rates are highest and the relationship is still intact.
+
 ---
 
-The Spanish-speaking customer who can't get help in their language doesn't complain loudly. They leave quietly, file a chargeback through their bank, and find a competitor that made them feel understood. Fixing that starts with treating bilingual support as a core operational investment — not a line item you revisit when complaints spike.
+The Spanish-speaking customer who can't get help in their language doesn't complain loudly. They leave quietly, file a chargeback through their bank, and find a competitor that made them feel understood. Teleforce exists to close that gap — bilingual agents, enterprise infrastructure, and full U.S. Eastern overlap, ready to deploy in days. [Book a call →](/#contact)

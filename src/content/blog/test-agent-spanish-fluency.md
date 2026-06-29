@@ -122,3 +122,5 @@ This is one reason why the decision to build bilingual support in-house versus o
 ## The Takeaway
 
 If your current bilingual screen is a five-minute conversation in Spanish, you're hiring for the easy part. The hard part — sustaining vocabulary precision, de-escalating in a second language, producing clean written Spanish under time pressure — only shows up when you design your assessment to surface it. Set a CEFR floor, run a layered screen that includes written, audio, and live components, and build ongoing QA that treats the Spanish queue as a first-class measurement surface. That's how you build a bilingual team that actually holds up when a customer needs them to.
+
+If you'd rather skip the build-your-own-framework exercise, Teleforce handles all of it: C1+ hiring bars, native-speaker QA review, and ongoing Spanish-queue scoring — delivered from Ecuador with Fortune 500-tested infrastructure behind it. [Start a conversation →](/#contact)

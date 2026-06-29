@@ -91,7 +91,7 @@ Nearshore LatAm support teams have a structural edge for Spanish social that's w
 
 A nearshore team operating in overlapping U.S. time zones also solves the coverage gap problem more cleanly than trying to staff a domestic bilingual team for evening and weekend hours. The math on domestic bilingual staffing after 6 p.m. rarely works.
 
-Teleforce's bilingual social support teams are powered by WNRS, a network with 30+ years of enterprise support experience across 20+ languages. That infrastructure — training systems, QA frameworks, escalation protocols — translates directly into a Spanish social operation that doesn't degrade after 90 days. For channel-level mechanics across text-based channels, [Bilingual Live Chat Support](/blog/bilingual-live-chat-support) covers the relevant detail.
+Teleforce's bilingual social support teams are powered by WNRS, a network with 30+ years of enterprise support experience across 20+ industries. That infrastructure — training systems, QA frameworks, escalation protocols — translates directly into a Spanish social operation that doesn't degrade after 90 days. For channel-level mechanics across text-based channels, [Bilingual Live Chat Support](/blog/bilingual-live-chat-support) covers the relevant detail.
 
 ## When Social-Only Coverage Isn't Enough
 
@@ -105,4 +105,4 @@ For those interactions, social is the intake channel — not the resolution chan
 
 Spanish social media customer support is a channel operations problem, not a translation problem. The companies that get it right build platform-specific coverage, staff bilingual QA they can actually act on, and connect social intake to full-resolution paths when the conversation needs to go deeper. The ones that treat it as an English-social add-on — handled by whoever speaks some Spanish — end up frustrating the customers most likely to engage with them there.
 
-If you want to scope a bilingual social support model that fits your volume and platform mix, [see how Teleforce structures its engagements](/#pricing) or reach out directly.
+Teleforce's bilingual social teams — built on WNRS's Fortune 500 infrastructure and delivered from Ecuador with full U.S. Eastern overlap — are designed for exactly this kind of multi-platform, multi-register coverage. Part-time engagements start at $1,400/seat/month; full-time at $2,800/seat/month. [See how Teleforce structures its engagements](/#pricing) or [reach out directly](/#contact) to scope a model that fits your volume and platform mix.

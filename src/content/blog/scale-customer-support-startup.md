@@ -114,4 +114,6 @@ That's not a massive investment. It's an intentional design.
 
 ## The Takeaway
 
-Scaling customer support at a startup isn't about hiring faster — it's about building a system that can absorb volume without degrading quality or burning your team. Start with deflection, build process before headcount, and choose your staffing model based on where the unit economics actually break down. If you're approaching that wall, the time to plan is now — before the tickets are already piling up.
+Scaling customer support at a startup isn't about hiring faster — it's about building a system that can absorb volume without degrading quality or burning your team. Start with deflection, build process before headcount, and choose your staffing model based on where the unit economics actually break down.
+
+If you're approaching that wall, the time to plan is now — before the tickets are already piling up. Teleforce gives growing startups bilingual, nearshore support agents based in Ecuador, running on WNRS's Fortune 500 infrastructure, with full U.S. Eastern time zone overlap and the flexibility to scale seats without adding full-time fixed cost. Most clients are live within two weeks. [See how the model works →](/#contact)

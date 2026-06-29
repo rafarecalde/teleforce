@@ -50,7 +50,7 @@ The honest question here: *Do you currently have documentation, QA processes, an
 
 This is where the calculus shifts fast for U.S. companies serving diverse customers. Hiring bilingual agents in most American cities is difficult and expensive. Turnover in bilingual roles runs higher than average.
 
-Nearshore providers — particularly in Latin America — offer fluent English-Spanish coverage at a fraction of domestic cost, in overlapping time zones. If you're serving or growing into the U.S. Hispanic market, this isn't a nice-to-have; it's a structural advantage that's hard to replicate in-house. [Read more on when outsourcing makes strategic sense →](/blog/when-to-outsource-customer-support)
+Nearshore providers in Latin America — Ecuador in particular — offer accent-neutral Spanish, full U.S. Eastern time-zone overlap year-round, and agent retention rates that consistently outpace offshore alternatives. If you're serving or growing into the U.S. Hispanic market, this isn't a nice-to-have; it's a structural advantage that's hard to replicate in-house. [Read more on when outsourcing makes strategic sense →](/blog/when-to-outsource-customer-support)
 
 ### 4. Volume Predictability
 
@@ -110,6 +110,8 @@ The smartest operators use support data from their outsourced teams to surface t
 
 ## The Takeaway
 
-The outsource-vs.-in-house decision isn't binary, and it isn't permanent. Start where your constraints are tightest — speed, budget, language coverage, or scale — and let that anchor your model. Build in review triggers: "If volume exceeds X, if CSAT drops below Y, if we open a new market" — so the model evolves with the business rather than calcifying.
+The outsource-vs.-in-house decision isn't binary, and it isn't permanent. Start where your constraints are tightest — speed, language coverage, or scale — and let that anchor your model. Build in review triggers: "If volume exceeds X, if CSAT drops below Y, if we open a new market" — so the model evolves with the business rather than calcifying.
 
-What Deloitte's data tells us is that the companies making this decision well in 2025 aren't optimizing for the cheapest line item. They're optimizing for capability, flexibility, and the ability to serve customers the way those customers expect to be served. The right model is the one that gets you there fastest.
+What Deloitte's data tells us is that the companies making this decision well aren't optimizing for the cheapest line item. They're optimizing for capability, flexibility, and the ability to serve customers the way those customers expect to be served.
+
+If outsourcing is the right call — or if you're evaluating a hybrid — Teleforce gives U.S. companies a nearshore team based in Ecuador: accent-neutral English and Spanish, full Eastern time-zone alignment, and Fortune 500 infrastructure through the WNRS network. Part-time coverage starts at $1,400/seat/month; full-time at $2,800. And if your operations involve billing or AR, Teleforce also runs [first-party early-stage collections](/blog/bilingual-early-out-collections) — bilingual outreach that recovers revenue while protecting the customer relationship. [See how the numbers compare →](/blog/cost-of-in-house-customer-support)

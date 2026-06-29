@@ -70,7 +70,7 @@ Ecuador is underrepresented on most shortlists — which means brands that look 
 - **Accent-neutral Spanish** — Ecuadorian Spanish is consistently rated among the clearest, most broadly intelligible dialects in Latin America, a meaningful edge for U.S. brands serving diverse Hispanic communities
 - **Full U.S. Eastern overlap, year-round** — Ecuador sits at UTC-5 with no seasonal clock shifts, so your scheduling never breaks; the same real-time alignment that makes Colombia attractive, but without the daylight-saving disruption
 - **Higher agent retention** — lower attrition than offshore hubs means less ramp churn, more institutional knowledge on your accounts, and more consistent customer experience over time
-- **Enterprise infrastructure through the right partner** — the common objection is that Ecuador lacks large-scale BPO backbone; that's true of generic local vendors. Teleforce delivers from Ecuador but runs on the WNRS network — 30+ years of Fortune 500 infrastructure, 20+ languages — so clients get Ecuador's talent, accent, and time zone with enterprise-grade operations layered on top
+- **Enterprise infrastructure through the right partner** — the common objection is that Ecuador lacks large-scale BPO backbone; that's true of generic local vendors. Teleforce delivers from Ecuador but runs on the WNRS network — 30+ years of Fortune 500 infrastructure, 20+ industries — so clients get Ecuador's talent, accent, and time zone with enterprise-grade operations layered on top
 
 **Honest tradeoffs:**
 - The overall vendor ecosystem is smaller than Bogotá or Monterrey, so independent due diligence on any Ecuador-based provider is essential
@@ -96,7 +96,7 @@ Rates are approximate benchmarks across the market; your actual costs will depen
 
 ---
 
-> **Not sure which hub fits your support model?** Teleforce builds bilingual nearshore support teams backed by 30+ years of Fortune 500 infrastructure through WNRS — across 20+ languages. We can help you scope the right setup without overselling you on headcount you don't need. [Book a call →](/#contact)
+> **Not sure which hub fits your support model?** Teleforce builds bilingual nearshore support teams backed by 30+ years of Fortune 500 infrastructure through WNRS — across 20+ industries. We can help you scope the right setup without overselling you on headcount you don't need. [Book a call →](/#contact)
 
 ---
 

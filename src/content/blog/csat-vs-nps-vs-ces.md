@@ -133,3 +133,5 @@ All three are useful. None of them is complete on its own.
 If you only have bandwidth to instrument one right now, start with CES. The Gartner data is hard to argue with: the gap between high-effort and low-effort churn rates is enormous, and reducing friction is something your support team can actually control — unlike product satisfaction or pricing sentiment.
 
 Pick your metrics deliberately, align them to the decisions they should inform, and stop treating survey scores as the goal. The goal is customers who stay.
+
+The metric stack only works, though, if the people executing on it are good. Teleforce agents — bilingual, nearshore, operating on full U.S. Eastern hours — are coached against CSAT and CES at the interaction level so that the scores you pull are actually meaningful. If your current team is delivering numbers you can't trust, [talk to us about what a better baseline looks like](/#contact).

@@ -113,7 +113,7 @@ Also worth noting: if you're considering whether outsourcing is the right move a
 
 A support partner who has run transitions before will push back on your timeline if it's too short. They'll ask for sample tickets before training starts, not after. They'll propose a pilot structure rather than asking for full volume on Day 1.
 
-At Teleforce, transitions are structured around a knowledge transfer process built on 30+ years of enterprise support operations through our WNRS network — the same infrastructure that supports Fortune 500 brands across 20+ languages. That foundation means our onboarding playbook is tested, not improvised.
+At Teleforce, transitions are structured around a knowledge transfer process built on 30+ years of enterprise support operations through our WNRS network — the same infrastructure that supports Fortune 500 brands across 20+ industries. That foundation means our onboarding playbook is tested, not improvised.
 
 But the mechanics above apply regardless of partner. The phases exist because customers don't know or care about your internal launch date — they only know whether the support they got was good.
 
@@ -124,3 +124,5 @@ But the mechanics above apply regardless of partner. The phases exist because cu
 A customer support transition plan is not a checklist. It is a sequence designed to protect your customers from the gap between what your documentation says and what your new team actually knows. Phase your volume. Set go/no-go criteria. Run two-way shadowing. Measure early. Expand only when pilot metrics hold.
 
 The companies that transition cleanly are not the ones with the longest timelines — they're the ones who define success criteria before they go live and have the discipline to hold to them.
+
+If you're planning a transition and want a partner who has done this at scale, [talk to Teleforce](/#contact). Our onboarding is built on WNRS's 30+ years of Fortune 500 transition experience, delivered by bilingual agents in Ecuador with full U.S. Eastern time-zone coverage. We'll tell you if your timeline is realistic — and build the ramp that protects your customers if it isn't.

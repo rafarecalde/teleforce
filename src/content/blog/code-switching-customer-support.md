@@ -81,4 +81,6 @@ Bilingual customers do not speak in clean, separated channels. They move between
 
 Code switching is not an edge case in bilingual support — it is the default. Customers who grew up speaking both languages will use both, often in the same breath. Support teams that invest in agents who can match that rhythm naturally will close the gap between "we offer bilingual support" and "our customers actually feel served." That distinction is where retention lives.
 
-If you want to build that team without building it from scratch, [talk to us about pricing and coverage](/#pricing).
+Teleforce agents are recruited from Ecuador's bilingual workforce — accent-neutral Spanish, full U.S. Eastern time zone overlap, and the kind of code-switching fluency that only comes from growing up between two languages. Every seat runs on WNRS's Fortune 500 infrastructure, so you get boutique talent with enterprise reliability. Part-time coverage starts at $1,400/seat/mo; full-time at $2,800/seat/mo.
+
+[See how Teleforce handles bilingual CX →](/#contact)

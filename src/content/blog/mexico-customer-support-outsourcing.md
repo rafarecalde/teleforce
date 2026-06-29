@@ -97,7 +97,7 @@ A short checklist for serious evaluation:
 4. **Ramp timeline** — How long to hire, train, and have agents on your queue? Longer is often a sign of rigor; too short is a red flag.
 5. **Management layer** — Is your account supervised by an on-site manager who speaks both languages? Remote-only oversight degrades quality over time.
 
-Teleforce operates on the backbone of WNRS, a Fortune 500 support network with 30+ years in enterprise CX and operations in 20+ languages. That infrastructure underpins the QA, data-security posture, and management layer that smaller Mexico BPO operations typically cannot replicate.
+Teleforce operates on the backbone of WNRS, a Fortune 500 support network with 30+ years in enterprise CX and operations in 20+ industries. That infrastructure underpins the QA, data-security posture, and management layer that smaller Mexico BPO operations typically cannot replicate.
 
 ## The Bottom Line
 
@@ -105,4 +105,4 @@ Mexico customer support outsourcing is a mature, credible option for U.S. compan
 
 If you are still comparing LatAm locations, [Colombia, Mexico, or Ecuador? LatAm Support Hubs](/blog/nearshore-customer-support-latin-america) walks through how to make that call based on your specific support profile — including why Ecuador's accent-neutral talent and full Eastern time-zone overlap, backed by WNRS's Fortune 500 infrastructure, makes it a serious option at any volume.
 
-Teleforce runs exactly that model: bilingual EN/ES support delivered from Ecuador on the backbone of WNRS — 30+ years in enterprise CX, 20+ languages, Fortune 500-grade QA and data security. [Book a call →](/#contact) to see what that looks like for your program.
+Teleforce runs exactly that model: bilingual EN/ES support delivered from Ecuador on the backbone of WNRS — 30+ years in enterprise CX, 20+ industries, Fortune 500-grade QA and data security. [Book a call →](/#contact) to see what that looks like for your program.

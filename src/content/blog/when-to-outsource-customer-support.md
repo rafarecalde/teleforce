@@ -15,7 +15,7 @@ faq:
   - q: "Can you outsource just part of your customer support?"
     a: "Yes — and for most growing companies this is the smarter first step. You can outsource after-hours coverage, overflow during peak periods, or a specific channel like chat while keeping your core team on email. A flexible model lets you scale without a full commitment upfront."
   - q: "How much does outsourced customer support cost compared to in-house?"
-    a: "In-house fully-loaded costs (salary, benefits, hardware, management overhead, attrition) typically run $55,000–$80,000 per agent per year in the U.S. Nearshore outsourcing can deliver comparable quality for significantly less, depending on the model — flex hourly, dedicated seat, or a managed team. The real comparison is total cost of ownership, not just base wages."
+    a: "In-house fully-loaded costs (salary, benefits, hardware, management overhead, attrition) typically run $55,000–$80,000 per agent per year in the U.S. Nearshore outsourcing can deliver comparable quality for significantly less — Teleforce, for example, runs Part-time at $1,400/seat/month and Full-time at $2,800/seat/month. The real comparison is total cost of ownership, not just base wages."
 related:
   - cost-of-in-house-customer-support
   - nearshore-vs-offshore-customer-support
@@ -89,8 +89,8 @@ If you hit four or more of the seven signs above and have at least some document
 
 ## What to Do Next
 
-Start with the numbers. Map your current fully-loaded support cost per ticket and per agent. Then model what a flex or dedicated nearshore arrangement would cost at your current volume — and at 2x volume.
+Start with the numbers. Map your current fully-loaded support cost per ticket and per agent. Then model what a dedicated nearshore seat would cost at your current volume — and at 2x volume. Teleforce runs Part-time seats at $1,400/seat/month and Full-time seats at $2,800/seat/month, delivered from Ecuador with full U.S. Eastern time-zone overlap and the enterprise infrastructure of the WNRS Fortune 500 network behind every engagement.
 
-Most companies that do this exercise find the outsourcing case was stronger than they expected. The operational flexibility, coverage hours, and bilingual capacity add up quickly against the true cost of in-house.
+Most companies that run this exercise find the outsourcing case was stronger than they expected. The operational flexibility, extended coverage hours, and bilingual capacity add up fast against the true cost of in-house — and if your customer base includes Spanish-speaking accounts with outstanding balances, Teleforce's [bilingual early-out collections](/blog/bilingual-early-out-collections) can recover revenue while protecting the customer relationship.
 
-If you are at the "I should look into this" stage, [talk to someone who runs these teams](/blog/#contact) before writing another job description for a support rep who will likely leave within the year.
+If two or more of these seven signs apply to your business right now, the right move is a real conversation — not another job posting for a support rep who will likely leave within the year. [Talk to Teleforce →](/#contact)

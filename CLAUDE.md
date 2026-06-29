@@ -55,6 +55,9 @@ powered by WNRS. Audience: U.S. ops / CX / support leaders evaluating outsourcin
   recovered revenue, not just cost savings; native-Spanish outreach reaches Hispanic
   accounts; first-party (in the client's name) protects the relationship. Weave the
   collections angle into billing/AR/financial-services/operations posts where natural.
+- COLLECTIONS PRICING IS NOT PUBLISHED. Never quote the $1,400/$2,800 seat rates (or any
+  number) for collections — say "contact us for pricing" / "scoped per program." The seat
+  prices apply to SUPPORT only. (Keeps Teleforce from cannibalizing WNRS on collections.)
 - Collections compliance: be accurate. First-party collections (in the creditor's name)
   generally fall outside the FDCPA, but TCPA still governs calls/texts. Never overstate
   legal claims; keep it directional, not legal advice.

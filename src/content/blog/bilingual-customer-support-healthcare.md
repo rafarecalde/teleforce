@@ -61,9 +61,7 @@ For healthcare companies evaluating outsourced bilingual support, this is the ti
 
 ### A Note on HIPAA and Nearshore Partnerships
 
-Nearshore bilingual support — Ecuador, Colombia, Mexico — is a viable and cost-effective model for healthcare support operations. Ecuador's agents, for instance, bring accent-neutral Spanish, full U.S. Eastern time-zone overlap year-round, and unusually high retention rates. But the geography doesn't change the compliance obligation: any nearshore model requires executed Business Associate Agreements, PHI-handling training, secure communication channels, and regular audits.
-
-The geography doesn't change the obligation. A credible nearshore partner should initiate the BAA conversation before you do, not wait to be asked.
+Nearshore bilingual support — Ecuador, Colombia, Mexico — is a viable and cost-effective model for healthcare support operations. Ecuador's agents, for instance, bring accent-neutral Spanish, full U.S. Eastern time-zone overlap year-round, and unusually high retention rates. But the geography doesn't change the compliance obligation: any nearshore model requires executed Business Associate Agreements, PHI-handling training, secure communication channels, and regular audits. A credible nearshore partner should initiate the BAA conversation before you do, not wait to be asked.
 
 Teleforce is built on the infrastructure of WNRS, a Fortune 500 support network with 30+ years of enterprise-grade operations. That heritage matters in healthcare, where compliance and consistency aren't optional.
 
@@ -98,4 +96,6 @@ The principle: outsource the repetitive, protocol-driven interactions so your in
 
 **Bilingual customer support in healthcare** is where patient experience, patient safety, and operational performance all converge. Language barriers aren't an edge case — they're a daily reality for millions of Spanish-preferring patients navigating a system not built with them in mind. The organizations that close this gap don't just see better CSAT numbers; they see better outcomes in revenue cycle, compliance, and patient retention.
 
-If you're evaluating bilingual support capacity — whether to build, buy, or outsource — the right partner is one that brings both the linguistic capability and the compliance infrastructure. That combination is rarer than vendors make it sound.
+And when billing friction does escalate, bilingual support can extend into pre-delinquent outreach — reaching Spanish-preferring accounts early, in their language, before a balance becomes a collection problem. See [Bilingual Early-Out Collections](/blog/bilingual-early-out-collections) for how that piece fits into a bilingual revenue-cycle strategy.
+
+Teleforce delivers bilingual support from Ecuador — accent-neutral Spanish, full Eastern time-zone coverage, and WNRS's Fortune 500 enterprise infrastructure underneath every agent seat. If you're ready to close the language gap for your Spanish-speaking patients, [let's talk](/#contact).

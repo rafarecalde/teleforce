@@ -108,6 +108,12 @@ The customer support metrics that predict churn aren't exotic or complicated. Re
 
 Fix that connection, and your support data stops being a reporting function and starts being a revenue protection tool.
 
+One more lever worth knowing: when churn risk traces back to billing friction — a disputed charge, a missed payment, an account in early arrears — proactive outreach before a customer goes delinquent can recover that relationship entirely. Teleforce's [bilingual early-out collections](/blog/bilingual-early-out-collections) service works hand-in-hand with support operations to reach at-risk accounts in their preferred language, in the client's name, before a third-party agency ever needs to get involved.
+
+That's the full picture: identify the signal, act on it fast, and have the bilingual capacity to close the loop — on support and on revenue.
+
 ---
 
-*Teleforce provides bilingual nearshore customer support for U.S. companies, powered by WNRS — a Fortune 500 support network with 30+ years of experience and operations across 20+ languages. We build support operations that surface the right data, not just the easy data.*
+**Ready to build a support operation that catches churn before it happens?** Teleforce delivers bilingual nearshore customer support, powered by WNRS — a Fortune 500 network with 30+ years of experience and 20+ industries. Ecuador-based teams with full U.S. Eastern time-zone coverage and enterprise-grade infrastructure, starting at $1,400/seat/month part-time or $2,800/seat/month full-time.
+
+[Talk to us about your support metrics →](/#contact)

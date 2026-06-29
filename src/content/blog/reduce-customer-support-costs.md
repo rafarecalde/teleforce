@@ -140,4 +140,6 @@ If you are serious about reducing customer support costs this year, start with t
 
 Answering those questions honestly usually surfaces two or three changes that produce meaningful savings without touching service quality. Structural cost reduction — the kind that holds — comes from better workflows, smarter staffing, and channel strategy that matches cost to issue complexity. [When to outsource](/blog/when-to-outsource-customer-support) is a related question worth working through once you have your cost baseline in hand.
 
-Start there. The savings follow.
+One angle that often goes unnoticed: if your support team handles billing inquiries, payment issues, or past-due accounts, that same infrastructure can recover revenue — not just reduce costs. Bilingual agents who can [reach Spanish-speaking accounts early in the delinquency cycle](/blog/bilingual-early-out-collections) convert pre-delinquent situations at meaningfully higher rates than generic outreach, turning the support investment into a two-sided P&L lever.
+
+Teleforce builds nearshore support teams out of Ecuador — accent-neutral bilingual agents, full U.S. Eastern time-zone coverage year-round, and Fortune 500-grade infrastructure through the WNRS network — at a fraction of what in-house teams cost. If your cost baseline is telling you something needs to change, [let's talk about what that looks like for your team](/#contact).

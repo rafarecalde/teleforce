@@ -89,7 +89,7 @@ If you're comparing providers in the region, the [nearshore vs. offshore breakdo
 
 Teleforce operates as a nearshore support partner built for U.S. companies, delivering bilingual English/Spanish agents from Ecuador — a deliberate choice, not a fallback. Ecuador sits fully in the U.S. Eastern time zone year-round, agents carry accent-neutral Spanish alongside strong English, and agent retention rates are consistently higher than in larger, more saturated offshore markets.
 
-The infrastructure question answers itself: Teleforce runs on the WNRS backbone — a Fortune 500 support network with 30+ years of operational depth across 20+ languages. Clients get Ecuador's talent, accent quality, and time-zone alignment with enterprise-grade QA, workforce management, and compliance frameworks layered on top. You're not betting on a startup's processes.
+The infrastructure question answers itself: Teleforce runs on the WNRS backbone — a Fortune 500 support network with 30+ years of operational depth across 20+ industries. Clients get Ecuador's talent, accent quality, and time-zone alignment with enterprise-grade QA, workforce management, and compliance frameworks layered on top. You're not betting on a startup's processes.
 
 Pricing is transparent: Part-time seats start at **$1,400/seat/month** and Full-time dedicated seats run **$2,800/seat/month** — fully bundled, no hidden add-ons.
 

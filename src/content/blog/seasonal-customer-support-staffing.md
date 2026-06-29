@@ -15,7 +15,7 @@ faq:
   - q: "How do I avoid losing quality during a holiday staffing surge?"
     a: "Reserve your core, tenured agents for complex tickets — disputes, returns with edge cases, escalations. Route high-volume, well-documented request types (order status, shipping delays, simple exchanges) to surge capacity. A tight playbook and real-time QA monitoring matter more during a surge than at any other time of year."
   - q: "What does outsourced seasonal support typically cost?"
-    a: "Pricing varies by model. Flex or on-demand staffing runs around $16/agent-hour for most BPO providers (minimums apply). Dedicated seats at a nearshore partner average $2,800/seat/month. For a short seasonal window, a flex model usually delivers the best cost-to-coverage ratio — but run the math against your expected volume before committing."
+    a: "Pricing varies by model and provider. Many BPO providers price flex or on-demand staffing at $12–18/agent-hour, while dedicated nearshore seats typically run $2,800/seat/month. At Teleforce, dedicated full-time seats are $2,800/seat/month and part-time seats are $1,400/seat/month — no hourly rate surprises. For a short seasonal window, run the math against your projected contact volume before committing to either model."
 related:
   - when-to-outsource-customer-support
   - cost-of-in-house-customer-support
@@ -128,7 +128,9 @@ One underappreciated option: nearshore partners in Latin America are a natural f
 
 Time zone alignment means your U.S.-based core team and your LatAm flex agents are working the same hours — no handoff gaps at shift transitions. Bilingual capacity matters increasingly during peak season, when a growing share of high-value U.S. customers prefer Spanish-language support.
 
-Teleforce, powered by WNRS — a Fortune 500 support network with 30+ years of operational depth and coverage across 20+ languages — builds exactly this kind of surge-ready infrastructure. The flex model runs at $16/agent-hour (minimums apply), which means you're not committing to a full dedicated seat for a six-week seasonal window.
+Teleforce delivers exactly this kind of surge-ready infrastructure from its Ecuador hub — accent-neutral Spanish, full U.S. Eastern time zone overlap year-round, and higher agent retention than most offshore alternatives. Behind the scenes, Teleforce is powered by WNRS, a Fortune 500 support network with 30+ years of operational depth and coverage across 20+ industries. That means clients get Ecuador's talent, time zone, and retention profile with enterprise-grade infrastructure already baked in — not bolted on later.
+
+Dedicated seats are $2,800/seat/month (full-time) or $1,400/seat/month (part-time), so you can right-size the engagement to a six-week seasonal window without carrying fixed headcount the rest of the year.
 
 ---
 
@@ -148,6 +150,6 @@ In those cases, an earlier permanent hire or a strong internal seasonal hiring p
 
 Seasonal customer support staffing is not a December problem. It's a September decision. The companies that emerge from the holiday surge with their CSAT intact and their agents still standing planned the staffing model, built the playbook, and engaged partners before the first promotional email dropped.
 
-Whether you staff in-house, outsource, or run a hybrid, the architecture is the same: protect your core team, arm your flex agents with a tight playbook, and monitor the queue like it's a live production system — because during peak season, it is.
+The architecture is consistent regardless of model: protect your core team, arm your flex agents with a tight playbook, and monitor the queue like a live production system — because during peak season, it is. What changes is execution speed. A nearshore partner that already has enterprise infrastructure, bilingual capacity, and full U.S. Eastern time zone coverage can compress a ramp that would otherwise take months into weeks.
 
-If you're evaluating whether a nearshore flex model fits your volume and timeline, [reach out to Teleforce](/#contact) before the calendar gets away from you.
+That's exactly what Teleforce was built for. If your holiday season is closer than it feels, [reach out now](/#contact) and let's map a staffing plan before the volume does it for you.

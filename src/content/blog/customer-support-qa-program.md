@@ -126,4 +126,6 @@ As you scale, you add coverage tools, automate sampling triggers, and potentiall
 
 Customer support quality assurance is not a compliance exercise. It is how a support operation learns what it's actually doing — and systematically gets better at it. Teams that build this infrastructure early have something teams without it don't: a clear line between where quality is today and where it needs to go.
 
-If your support team is growing and you're not yet reviewing interactions consistently, the cost of skipping QA shows up in churn, repeat contacts, and agents who plateau rather than develop. The program doesn't need to be perfect on day one. It needs to start.
+If your support team is growing and you're not yet reviewing interactions consistently, the cost of skipping QA shows up in churn, repeat contacts, and agents who plateau rather than develop. The program doesn't need to be perfect on day one. It needs to start — and it's significantly easier to build when agents stay long enough to develop expertise.
+
+That is exactly why Teleforce builds QA, calibration, and structured coaching into every dedicated team from the outset. Our Ecuador-based agents operate in the same U.S. Eastern time zone year-round, deliver accent-neutral bilingual support, and stay — attrition in our hub runs well below the 38% industry average cited above. The result is a team that compounds quality over time rather than resetting every few months. If you're ready to run support at a higher standard, [talk to Teleforce](/#contact).

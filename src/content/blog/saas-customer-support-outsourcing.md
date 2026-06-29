@@ -83,7 +83,7 @@ Before you sign anything, work through a structured vetting process. Our guide o
 
 ## What Teleforce Brings to the Table
 
-Teleforce provides bilingual English/Spanish nearshore customer support, powered by WNRS — a 30-year-old support infrastructure network that has delivered CX for Fortune 500 companies across 20+ languages. That foundation means enterprise-grade QA processes, compliance awareness, and the operational depth to handle volume spikes without degrading service.
+Teleforce provides bilingual English/Spanish nearshore customer support, powered by WNRS — a 30-year-old support infrastructure network that has delivered CX for Fortune 500 companies across 20+ industries. That foundation means enterprise-grade QA processes, compliance awareness, and the operational depth to handle volume spikes without degrading service.
 
 For SaaS companies specifically, we offer:
 

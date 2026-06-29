@@ -91,7 +91,7 @@ The detailed hub comparison — including honest tradeoffs on cost, talent depth
 
 What matters for this decision: **don't choose a country before you've chosen a model.** A shared-pool vendor in Mexico and a dedicated team in Colombia are solving different problems. Country selection is downstream of what kind of operation you're actually building.
 
-> **Ready to scope a bilingual support team?** Teleforce builds dedicated English/Spanish support operations backed by 30+ years of enterprise infrastructure through WNRS — 20+ languages, Fortune 500 backbone. [Book a call →](/#contact)
+> **Ready to scope a bilingual support team?** Teleforce builds dedicated English/Spanish support operations backed by 30+ years of enterprise infrastructure through WNRS — 20+ industries, Fortune 500 backbone. [Book a call →](/#contact)
 
 ---
 
