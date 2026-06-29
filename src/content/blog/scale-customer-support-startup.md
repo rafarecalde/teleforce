@@ -6,7 +6,7 @@ excerpt: "Ticket volume doubles. Your two-person support team can't keep up. Her
 primaryKeyword: "scale customer support startup"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-10-16
+publishDate: 2026-08-13
 related:
   - when-to-outsource-customer-support
   - cost-of-in-house-customer-support

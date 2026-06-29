@@ -6,7 +6,7 @@ excerpt: "A knowledge base that deflects tickets sounds simple. In practice, mos
 primaryKeyword: "ticket deflection knowledge base"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-11-13
+publishDate: 2026-07-02
 related:
   - reduce-average-handle-time
   - customer-support-metrics-predict-churn

@@ -6,7 +6,7 @@ excerpt: "The sticker price of a domestic agent is just the beginning. Here's wh
 primaryKeyword: "nearshore vs domestic customer support"
 category: Nearshore
 readMinutes: 6
-publishDate: 2026-07-04
+publishDate: 2026-08-05
 related:
   - cost-of-in-house-customer-support
   - nearshore-vs-offshore-customer-support

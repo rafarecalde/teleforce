@@ -6,7 +6,7 @@ excerpt: "Mexico's BPO market is growing fast and nearly 70% of it serves U.S. c
 primaryKeyword: "mexico customer support outsourcing"
 category: Nearshore
 readMinutes: 6
-publishDate: 2026-06-26
+publishDate: 2026-05-11
 faq:
   - q: "How much does customer support outsourcing in Mexico cost?"
     a: "Hourly rates for Mexico-based agents typically range from $12 to $22 per hour depending on complexity, language requirements, and whether you use a shared or dedicated model. That's higher than the Philippines but meaningfully lower than U.S. domestic agents, and you gain same-time-zone overlap with U.S. business hours."

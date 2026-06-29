@@ -6,7 +6,7 @@ excerpt: "Nearshore lead generation delivers real cost savings without the coord
 primaryKeyword: "nearshore lead generation"
 category: Sales & Lead Gen
 readMinutes: 6
-publishDate: 2027-02-17
+publishDate: 2026-05-19
 faq:
   - q: "What is nearshore lead generation?"
     a: "Nearshore lead generation means outsourcing your prospecting and pipeline-building to a BPO team in a geographically close country — typically Latin America for U.S. companies. The key advantage is real-time U.S. time-zone overlap, which keeps SDRs synchronized with your sales team and your prospects. It differs from offshore (Asia, Eastern Europe) in collaboration speed and cultural alignment."

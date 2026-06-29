@@ -6,7 +6,7 @@ excerpt: "Colombia's BPO market hit nearly $3B in revenue, making it LatAm's thi
 primaryKeyword: "colombia call center outsourcing"
 category: Nearshore
 readMinutes: 6
-publishDate: 2026-06-30
+publishDate: 2026-06-12
 faq:
   - q: "How much does it cost to outsource a call center to Colombia?"
     a: "Fully-loaded agent costs in Colombia typically run $12–18 per hour, compared to $25–35+ for a comparable U.S. domestic agent. Dedicated-seat models generally start around $2,800/seat/month through nearshore providers. Your actual cost depends on channel mix, hours of coverage, and whether you need bilingual (English/Spanish) agents."

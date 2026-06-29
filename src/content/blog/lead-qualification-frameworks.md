@@ -6,7 +6,7 @@ excerpt: "67% of sales are lost to poor lead qualification. Learn which framewor
 primaryKeyword: "lead qualification"
 category: Sales & Lead Gen
 readMinutes: 6
-publishDate: 2027-02-09
+publishDate: 2026-06-02
 related:
   - outsourced-sdr-teams
   - outsourcing-lead-generation

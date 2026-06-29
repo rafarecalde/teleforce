@@ -379,29 +379,6 @@ posts:
     publishDate: 2026-12-03
     status: done
 
-  - title: "Reducing DSO with Outsourced Accounts-Receivable Support"
-    slug: reduce-days-sales-outstanding
-    primaryKeyword: "reduce days sales outstanding"
-    intent: ToFu
-    pillar: "Collections"
-    publishDate: 2026-12-07
-    status: done
-
-  - title: "The Early-Stage Delinquency Playbook (1–30 / 31–60 Days)"
-    slug: early-stage-delinquency-playbook
-    primaryKeyword: "early stage delinquency"
-    intent: ToFu
-    pillar: "Collections"
-    publishDate: 2026-12-11
-    status: done
-
-  - title: "How to Outsource Collections Without Damaging Customer Relationships"
-    slug: outsource-collections
-    primaryKeyword: "outsource collections"
-    intent: BoFu
-    pillar: "Collections"
-    publishDate: 2026-12-15
-    status: done
   - title: "Outsourcing Tech Support: When Tier 1–2 Belongs Off Your Plate"
     slug: outsourcing-tech-support
     primaryKeyword: "outsourcing tech support"

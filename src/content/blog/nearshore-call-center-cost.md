@@ -6,7 +6,7 @@ excerpt: "The quoted rate is rarely the whole story. Here's what nearshore call 
 primaryKeyword: "nearshore call center cost"
 category: Nearshore
 readMinutes: 6
-publishDate: 2026-07-28
+publishDate: 2026-05-03
 related:
   - nearshore-vs-domestic-customer-support
   - cost-of-in-house-customer-support

@@ -6,7 +6,7 @@ excerpt: "Support tickets don't scale linearly with ARR — but your churn does.
 primaryKeyword: "saas customer support outsourcing"
 category: Nearshore
 readMinutes: 6
-publishDate: 2026-07-16
+publishDate: 2026-08-09
 faq:
   - q: "Is saas customer support outsourcing a good fit for early-stage startups?"
     a: "It depends on ticket volume. If your team is fielding fewer than 50 tickets a day, keeping support in-house makes sense — you need the direct feedback loop. Once volume climbs past that threshold or you're losing engineers to Tier-1 questions, outsourcing to a nearshore partner becomes a strong move. Part-time seat arrangements let you start lean without committing to a full-time dedicated agent right away."

@@ -6,7 +6,7 @@ excerpt: "Language friction stalls Hispanic account recovery. Here's why native-
 primaryKeyword: "bilingual debt collection"
 category: Billing & Collections
 readMinutes: 6
-publishDate: 2026-12-03
+publishDate: 2026-06-24
 related:
   - bilingual-early-out-collections
   - first-party-vs-third-party-collections

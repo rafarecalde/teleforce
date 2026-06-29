@@ -6,7 +6,7 @@ excerpt: "Scaling ecommerce support without sacrificing speed or bilingual quali
 primaryKeyword: "ecommerce customer support outsourcing"
 category: Nearshore
 readMinutes: 6
-publishDate: 2026-07-12
+publishDate: 2026-05-29
 faq:
   - q: "What is ecommerce customer support outsourcing?"
     a: "Ecommerce customer support outsourcing means contracting a third-party team to handle customer contacts — order status, returns, disputes, pre-purchase questions — on behalf of your brand. The right provider matches your time zones, brand voice, and language mix, so customers never notice the handoff."

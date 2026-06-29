@@ -6,7 +6,7 @@ excerpt: "Bilingual agents, U.S. hours, and first-party relationship protection 
 primaryKeyword: "nearshore collections outsourcing"
 category: Billing & Collections
 readMinutes: 6
-publishDate: 2026-11-29
+publishDate: 2026-07-06
 faq:
   - q: "What is nearshore collections outsourcing?"
     a: "Nearshore collections outsourcing means placing your early-stage or pre-delinquent collections work with a contact center in a nearby country — for U.S. companies, typically Latin America — that shares your time zone, speaks native English and Spanish, and operates under your brand as a first-party partner. You get the staffing flexibility of outsourcing without the time-lag and language gaps of offshore."
@@ -18,7 +18,6 @@ faq:
     a: "An in-house collections seat in the U.S. typically costs $55,000–$75,000+ per year in salary alone, before benefits, HR overhead, attrition backfill, and compliance training. Nearshore outsourcing with Teleforce replaces that fixed overhead with a scoped engagement priced to your portfolio — infrastructure, management, and bilingual capability already built in. Contact us for pricing."
 related:
   - bilingual-debt-collection
-  - reduce-days-sales-outstanding
 ---
 
 Your accounts receivable team dials the same past-due account four times. No answer. No callback. The account ages into the 30-day bucket, then 60. Eventually it lands with a third-party agency that sends threatening letters, collects a fraction of face value, and leaves the customer relationship in pieces.

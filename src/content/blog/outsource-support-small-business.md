@@ -6,7 +6,7 @@ excerpt: "Outsourcing customer support isn't just for enterprise. Here's what sm
 primaryKeyword: "outsource customer support small business"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-10-24
+publishDate: 2026-07-30
 faq:
   - q: "How much does it cost to outsource customer support for a small business?"
     a: "Costs vary by model and provider. Market-rate flex (shared agent) arrangements typically run $14–$20/hour depending on geography and language requirements. Dedicated nearshore seats generally land in the $2,500–$3,200/month range — Teleforce, for example, offers part-time dedicated seats at $1,400/seat/month and full-time at $2,800/seat/month. Most small businesses start with one to two seats and scale from there."

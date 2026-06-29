@@ -6,7 +6,7 @@ excerpt: "Outsourcing lead generation can unlock scale overnight—or drain budg
 primaryKeyword: "outsourcing lead generation"
 category: Sales & Lead Gen
 readMinutes: 6
-publishDate: 2026-06-29
+publishDate: 2026-07-28
 faq:
   - q: "How quickly can an outsourced lead generation team start producing results?"
     a: "Most teams need two to four weeks for onboarding, ICP alignment, and script development before going live. Expect a ramp period of another four to six weeks before pipeline velocity stabilizes. Partners who rush this step tend to produce volume without quality."

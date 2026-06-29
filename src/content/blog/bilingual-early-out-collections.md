@@ -6,7 +6,7 @@ excerpt: "The first 60 days after a missed payment are your best window to recov
 primaryKeyword: "early-out collections"
 category: Billing & Collections
 readMinutes: 6
-publishDate: 2026-06-24
+publishDate: 2026-06-10
 faq:
   - q: "What is early-out collections and how is it different from third-party collections?"
     a: "Early-out collections refers to outreach in the first 1–60 days of delinquency, conducted in the client's name (first-party). Because the debt hasn't been charged off or sold, the relationship with the customer is still intact. Third-party agencies take over later-stage, charged-off accounts and collect in their own name; the WNRS network runs a dedicated third-party arm for that stage, so the full lifecycle is covered."
@@ -17,7 +17,6 @@ faq:
   - q: "How quickly can Teleforce stand up an early-out collections program?"
     a: "Teleforce runs bilingual collections from its Ecuador delivery hub on the WNRS Fortune 500 infrastructure, so onboarding timelines are compressed versus building in-house. Most clients are live with trained, compliant agents within a few weeks. Contact us to discuss your account volume and delinquency buckets."
 related:
-  - early-stage-delinquency-playbook
   - bilingual-debt-collection
 ---
 
@@ -43,7 +42,7 @@ If a meaningful slice of your delinquent book is Spanish-dominant and your outre
 
 Consumer debt data from the New York Fed and the Federal Reserve consistently show that the majority of accounts in early delinquency are still financially capable of resolving—they often just need a prompt, a payment arrangement, or clarity on what they owe. The accounts that roll to severe delinquency (90+ days) or charge-off frequently got there because no one reached them effectively in the early window.
 
-This is why [early-stage delinquency strategy](/blog/early-stage-delinquency-playbook) starts with contact quality, not just contact volume. A high call count against a population that can't fully engage with your English-language script produces noise, not recovery. Bilingual early-out collections changes the signal-to-noise ratio.
+This is why [early-stage delinquency strategy](/blog/pre-delinquent-collections) starts with contact quality, not just contact volume. A high call count against a population that can't fully engage with your English-language script produces noise, not recovery. Bilingual early-out collections changes the signal-to-noise ratio.
 
 Early also means first-party, which has real implications for how the conversation goes. Your agents are calling as your company, not as a collections agency. That framing matters psychologically. The customer still sees a path to remaining in good standing with a brand they chose. That softens the conversation, raises the chance of a commitment, and—critically—leaves the door open to a continued relationship after the account is resolved.
 

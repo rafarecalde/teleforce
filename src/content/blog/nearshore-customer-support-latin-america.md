@@ -6,7 +6,7 @@ excerpt: "Colombia, Mexico, and Ecuador each make a compelling case for your sup
 primaryKeyword: "nearshore customer support latin america"
 category: Nearshore
 readMinutes: 6
-publishDate: 2026-06-22
+publishDate: 2026-07-04
 related:
   - colombia-call-center-outsourcing
   - mexico-customer-support-outsourcing

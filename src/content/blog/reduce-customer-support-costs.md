@@ -6,7 +6,7 @@ excerpt: "Cutting support costs doesn't mean cutting corners. Here's how to find
 primaryKeyword: "reduce customer support costs"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-11-09
+publishDate: 2026-08-11
 faq:
   - q: "What is the fastest way to reduce customer support costs?"
     a: "Deflecting repetitive tickets through a well-built knowledge base and self-service portal typically produces the quickest ROI. Pair that with smarter routing so skilled agents spend time on issues that actually need them, not password resets."

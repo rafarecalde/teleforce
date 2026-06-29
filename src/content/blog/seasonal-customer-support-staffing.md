@@ -6,7 +6,7 @@ excerpt: "Holiday volume can triple your ticket queue overnight. Here's how to s
 primaryKeyword: "seasonal customer support staffing"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-10-12
+publishDate: 2026-08-15
 faq:
   - q: "How far in advance should I plan for seasonal customer support staffing?"
     a: "Most CX leaders recommend starting 60–90 days before your peak. That gives you time to forecast volume, recruit and onboard temporary agents, update your knowledge base, and run training. If you're outsourcing, a good nearshore partner can compress that timeline — but the earlier you engage, the smoother the ramp."

@@ -6,7 +6,7 @@ excerpt: "Stop carrying the full cost of an in-house SDR team. Outsourced appoin
 primaryKeyword: "outsourced appointment setting"
 category: Appointment Setting
 readMinutes: 6
-publishDate: 2026-06-28
+publishDate: 2026-07-12
 faq:
   - q: "How quickly can an outsourced appointment setting team start booking meetings?"
     a: "Most outsourced teams are operational within two to four weeks — far faster than the three-to-four month ramp a new in-house SDR requires. At Teleforce, onboarding includes script development, ICP alignment, and CRM integration so agents hit the phones ready from day one."

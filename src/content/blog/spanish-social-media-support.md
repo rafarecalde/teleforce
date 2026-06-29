@@ -6,7 +6,7 @@ excerpt: "Your Spanish-speaking customers are already DMing you. The question is
 primaryKeyword: "spanish social media customer support"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-09-06
+publishDate: 2026-08-19
 related:
   - bilingual-live-chat-support
   - hispanic-market-customer-experience

@@ -6,7 +6,7 @@ excerpt: "Escalations cost 3–5x more than tier-1 resolutions. Here's how to cu
 primaryKeyword: "reduce support escalations"
 category: Tech Support
 readMinutes: 6
-publishDate: 2026-12-27
+publishDate: 2026-07-08
 related:
   - tier-1-vs-tier-2-support
   - outsourcing-tech-support

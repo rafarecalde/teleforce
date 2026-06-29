@@ -6,7 +6,7 @@ excerpt: "Real-time translation sounds like a shortcut to bilingual support — 
 primaryKeyword: "translation vs bilingual agents"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-09-10
+publishDate: 2026-08-25
 related:
   - test-agent-spanish-fluency
   - bilingual-customer-support-us-companies

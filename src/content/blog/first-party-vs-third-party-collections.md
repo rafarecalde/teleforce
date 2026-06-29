@@ -6,10 +6,9 @@ excerpt: "One model keeps your brand on the call. The other hands the account to
 primaryKeyword: "first-party vs third-party collections"
 category: Billing & Collections
 readMinutes: 6
-publishDate: 2026-06-28
+publishDate: 2026-05-27
 related:
   - pre-delinquent-collections
-  - reduce-days-sales-outstanding
 ---
 
 When an account goes past due, you face a decision that shapes both your cash flow and your customer relationships: handle it yourself or hand it off. The choice between first-party and third-party collections is not just an operational question — it's a brand question. Get it wrong, and you recover the invoice while losing the customer. Get it right, and you recover both.
@@ -98,7 +97,7 @@ Early-stage, bilingual, first-party outreach is one of the highest-leverage tool
 
 Every day an account sits in the delinquency queue is a day it drags on your Days Sales Outstanding (DSO). A company that relies on third-party collections as its primary recovery mechanism typically has a structurally elevated DSO — because third-party assignment happens late, and third-party recovery takes time.
 
-First-party early-stage intervention is one of the most direct levers for compressing DSO. When you resolve a 30-day account in week five instead of handing it to an agency in month four, you recover cash three months faster. At scale, that difference is material to working capital. We go deeper on this in our piece on [reducing DSO with outsourced AR](/blog/reduce-days-sales-outstanding).
+First-party early-stage intervention is one of the most direct levers for compressing DSO. When you resolve a 30-day account in week five instead of handing it to an agency in month four, you recover cash three months faster. At scale, that difference is material to working capital. We go deeper on this in our piece on [reducing DSO with outsourced AR](/blog/bilingual-early-out-collections).
 
 ---
 

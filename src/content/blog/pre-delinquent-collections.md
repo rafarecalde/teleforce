@@ -6,10 +6,7 @@ excerpt: "The cheapest collection call is the one that stops an account from goi
 primaryKeyword: "pre-delinquent collections"
 category: Billing & Collections
 readMinutes: 6
-publishDate: 2026-11-25
-related:
-  - early-stage-delinquency-playbook
-  - reduce-days-sales-outstanding
+publishDate: 2026-07-20
 ---
 
 Most companies treat collections as a recovery problem. By the time an agent dials, the invoice is already 30, 60, or 90 days old — and the odds of a smooth resolution drop with every passing week.
@@ -101,7 +98,7 @@ Teleforce deploys bilingual (EN/ES) first-party collections agents from Ecuador,
 
 Early-stage collections is scoped to your portfolio and account volume rather than sold as a flat seat rate — [contact us for pricing](/#contact). The math is usually straightforward: one recovered large invoice or prevented 60-day delinquency can pay for a month of outreach.
 
-To see how pre-delinquent outreach fits into a broader AR workflow, the [Early-Stage Delinquency Playbook](/blog/early-stage-delinquency-playbook) maps the full 1–60 day sequence that follows when pre-delinquent contacts do not convert.
+To see how pre-delinquent outreach fits into a broader AR workflow, the [Early-Stage Delinquency Playbook](/blog/pre-delinquent-collections) maps the full 1–60 day sequence that follows when pre-delinquent contacts do not convert.
 
 ---
 

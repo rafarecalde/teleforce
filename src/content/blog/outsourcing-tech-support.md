@@ -6,7 +6,7 @@ excerpt: "Your engineers shouldn't be resetting passwords. Here's how to know wh
 primaryKeyword: "outsourcing tech support"
 category: Tech Support
 readMinutes: 6
-publishDate: 2026-06-26
+publishDate: 2026-05-25
 faq:
   - q: "What types of issues fall under Tier 1 and Tier 2 tech support?"
     a: "Tier 1 handles first-contact resolution: password resets, account unlocks, basic connectivity troubleshooting, and guided setup. Tier 2 escalates to deeper diagnostics—software configuration, integration issues, and bugs that require product knowledge but not engineering access. Both tiers are prime candidates for outsourcing because the playbooks are well-defined and volume is predictable."

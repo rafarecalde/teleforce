@@ -6,7 +6,7 @@ excerpt: "Language barriers in healthcare cause real harm. Here's what healthcar
 primaryKeyword: "bilingual customer support healthcare"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-08-21
+publishDate: 2026-06-28
 faq:
   - q: "What does bilingual customer support in healthcare actually cover?"
     a: "It covers every patient-facing touchpoint outside the clinical encounter: appointment scheduling, insurance verification, billing inquiries, prescription refill lines, telehealth intake, and post-visit follow-up. These interactions are high-stakes — a miscommunication about a copay or a missed appointment reminder has downstream consequences on care."

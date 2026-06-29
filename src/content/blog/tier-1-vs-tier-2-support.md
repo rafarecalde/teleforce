@@ -6,7 +6,7 @@ excerpt: "Tier 1 handles the quick wins. Tier 2 owns the hard stuff. But where e
 primaryKeyword: "tier 1 vs tier 2 support"
 category: Tech Support
 readMinutes: 6
-publishDate: 2026-12-23
+publishDate: 2026-07-22
 related:
   - reduce-support-escalations
   - outsourcing-tech-support

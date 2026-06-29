@@ -5,8 +5,8 @@ excerpt: "Salary is the smallest line. Tools, management, attrition, and idle ca
 primaryKeyword: cost of in-house customer support
 category: Customer Service
 readMinutes: 9
-publishDate: 2026-06-16
-updatedDate: 2026-06-16
+publishDate: 2026-05-05
+updatedDate: 2026-05-05
 related:
   - nearshore-vs-offshore-customer-support
   - bilingual-customer-support-us-companies
