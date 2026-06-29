@@ -6,7 +6,7 @@ excerpt: "The U.S. Hispanic market is closing in on $3 trillion in buying power.
 primaryKeyword: "bilingual appointment setting"
 category: Appointment Setting
 readMinutes: 6
-publishDate: 2026-06-04
+publishDate: 2026-06-16
 related:
   - outsourced-appointment-setting
   - bilingual-customer-support-us-companies

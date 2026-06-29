@@ -6,7 +6,7 @@ excerpt: "The build-vs-buy decision for customer support is rarely about cost al
 primaryKeyword: "outsource customer support"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-08-03
+publishDate: 2026-05-03
 related:
   - cost-of-in-house-customer-support
   - when-to-outsource-customer-support

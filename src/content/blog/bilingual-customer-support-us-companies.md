@@ -5,8 +5,8 @@ excerpt: "The U.S. Hispanic market is larger than most national economies. Here'
 primaryKeyword: bilingual customer support
 category: Customer Service
 readMinutes: 7
-publishDate: 2026-06-14
-updatedDate: 2026-06-14
+publishDate: 2026-06-21
+updatedDate: 2026-06-21
 related:
   - nearshore-vs-offshore-customer-support
   - cost-of-in-house-customer-support

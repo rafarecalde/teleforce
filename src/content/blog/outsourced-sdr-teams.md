@@ -6,7 +6,7 @@ excerpt: "In-house SDRs cost more than most leaders budget for. Here's an honest
 primaryKeyword: "outsourced sdr"
 category: Sales & Lead Gen
 readMinutes: 6
-publishDate: 2026-07-14
+publishDate: 2026-06-01
 related:
   - outsourcing-lead-generation
   - lead-qualification-frameworks

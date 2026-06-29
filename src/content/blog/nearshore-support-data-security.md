@@ -6,7 +6,7 @@ excerpt: "Handing customer data to a nearshore partner is a risk management deci
 primaryKeyword: "nearshore support data security"
 category: Nearshore
 readMinutes: 6
-publishDate: 2026-07-18
+publishDate: 2026-05-17
 related:
   - how-to-vet-nearshore-support-provider
   - nearshore-vs-offshore-customer-support

@@ -6,7 +6,7 @@ excerpt: "Cutting AHT sounds simple—until CSAT starts slipping. Here's how to 
 primaryKeyword: "reduce average handle time"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-08-07
+publishDate: 2026-05-02
 related:
   - when-to-outsource-customer-support
   - outsourced-vs-in-house-support

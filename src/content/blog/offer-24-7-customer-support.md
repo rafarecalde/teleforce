@@ -6,7 +6,7 @@ excerpt: "Customers expect around-the-clock help — but running your own team i
 primaryKeyword: "24/7 customer support"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-07-16
+publishDate: 2026-05-05
 related:
   - cost-of-in-house-customer-support
   - when-to-outsource-customer-support

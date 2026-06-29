@@ -6,7 +6,7 @@ excerpt: "No-shows aren't random — they're preventable. Here's the confirmatio
 primaryKeyword: "reduce appointment no-shows"
 category: Appointment Setting
 readMinutes: 6
-publishDate: 2026-07-26
+publishDate: 2026-05-26
 related:
   - outsourced-appointment-setting
   - appointment-setting-home-services-healthcare

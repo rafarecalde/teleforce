@@ -6,7 +6,7 @@ excerpt: "Voice, chat, and email each solve a different job. Build the wrong mix
 primaryKeyword: "customer support channel mix"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-04-29
+publishDate: 2026-05-18
 related:
   - outsourced-vs-in-house-support
   - offer-24-7-customer-support

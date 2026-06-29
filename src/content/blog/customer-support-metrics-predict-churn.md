@@ -6,7 +6,7 @@ excerpt: "CSAT scores look great right up until customers cancel. These are the 
 primaryKeyword: "customer support metrics"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-04-27
+publishDate: 2026-05-16
 related:
   - csat-vs-nps-vs-ces
   - when-to-outsource-customer-support

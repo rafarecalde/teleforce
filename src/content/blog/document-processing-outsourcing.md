@@ -6,7 +6,7 @@ excerpt: "High document volumes expose every weak link in manual workflows. Here
 primaryKeyword: "document processing outsourcing"
 category: Data Entry
 readMinutes: 6
-publishDate: 2026-05-23
+publishDate: 2026-06-10
 faq:
   - q: "What types of documents can a BPO team process?"
     a: "Nearshore BPO teams handle a wide range: invoices, purchase orders, contracts, insurance claims, medical records, onboarding forms, compliance filings, and more. If your team currently touches a document manually—reviewing, indexing, keying, or routing it—that work is a candidate for outsourcing. Teleforce agents are trained on client-specific document types and quality standards before going live."

@@ -6,7 +6,7 @@ excerpt: "Peak season can triple your ticket queue in days. Here's how ecommerce
 primaryKeyword: "ecommerce customer support peak season"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-04-19
+publishDate: 2026-05-09
 related:
   - when-to-outsource-customer-support
   - offer-24-7-customer-support

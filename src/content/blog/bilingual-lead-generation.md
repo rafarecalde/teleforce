@@ -6,7 +6,7 @@ excerpt: "The U.S. Hispanic market is approaching $3 trillion in buying power. H
 primaryKeyword: "bilingual lead generation"
 category: Sales & Lead Gen
 readMinutes: 6
-publishDate: 2026-06-16
+publishDate: 2026-06-22
 related:
   - outsourcing-lead-generation
   - lead-qualification-frameworks

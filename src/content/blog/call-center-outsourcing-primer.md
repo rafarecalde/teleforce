@@ -6,7 +6,7 @@ excerpt: "Thinking about outsourcing your customer support? This primer covers e
 primaryKeyword: "call center outsourcing"
 category: Customer Service
 readMinutes: 7
-publishDate: 2026-05-13
+publishDate: 2026-05-31
 related:
   - when-to-outsource-customer-support
   - outsourced-vs-in-house-support

@@ -6,7 +6,7 @@ excerpt: "Millions of U.S. Spanish speakers hit a wall when tech support can't m
 primaryKeyword: "bilingual tech support"
 category: Tech Support
 readMinutes: 6
-publishDate: 2026-06-22
+publishDate: 2026-06-25
 related:
   - outsourcing-tech-support
   - reduce-support-escalations

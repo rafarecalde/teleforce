@@ -6,7 +6,7 @@ excerpt: "Outsourcing Spanish customer service isn't just a cost play — it's a
 primaryKeyword: "spanish customer service outsourcing"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-08-17
+publishDate: 2026-04-28
 faq:
   - q: "What is spanish customer service outsourcing?"
     a: "Spanish customer service outsourcing means contracting a third-party provider to handle customer interactions in Spanish on your company's behalf. Agents are typically based in Latin America (nearshore) or the Philippines (offshore) and serve U.S. Spanish-speaking customers via phone, chat, or email. The best setups use fully bilingual agents who can handle both English and Spanish from the same seat."

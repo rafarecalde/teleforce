@@ -6,7 +6,7 @@ excerpt: "Bad data costs the average company millions. Here's how outsourced dat
 primaryKeyword: "data entry accuracy"
 category: Data Entry
 readMinutes: 6
-publishDate: 2026-06-06
+publishDate: 2026-06-17
 related:
   - outsourcing-data-entry
   - crm-data-hygiene

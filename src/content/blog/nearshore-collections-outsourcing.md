@@ -6,7 +6,7 @@ excerpt: "Bilingual agents, U.S. hours, and first-party relationship protection 
 primaryKeyword: "nearshore collections outsourcing"
 category: Billing & Collections
 readMinutes: 6
-publishDate: 2026-07-06
+publishDate: 2026-06-05
 faq:
   - q: "What is nearshore collections outsourcing?"
     a: "Nearshore collections outsourcing means placing your early-stage or pre-delinquent collections work with a contact center in a nearby country — for U.S. companies, typically Latin America — that shares your time zone, speaks native English and Spanish, and operates under your brand as a first-party partner. You get the staffing flexibility of outsourcing without the time-lag and language gaps of offshore."

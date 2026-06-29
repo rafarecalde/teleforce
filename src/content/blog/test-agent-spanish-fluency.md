@@ -6,7 +6,7 @@ excerpt: "Hiring a 'bilingual' agent is easy. Knowing whether they can actually 
 primaryKeyword: "test agent spanish fluency"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-08-21
+publishDate: 2026-04-26
 related:
   - bilingual-customer-support-us-companies
   - nearshore-customer-support-latin-america

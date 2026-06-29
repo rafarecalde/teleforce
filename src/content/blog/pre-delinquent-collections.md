@@ -6,7 +6,7 @@ excerpt: "The cheapest collection call is the one that stops an account from goi
 primaryKeyword: "pre-delinquent collections"
 category: Billing & Collections
 readMinutes: 6
-publishDate: 2026-07-20
+publishDate: 2026-05-29
 ---
 
 Most companies treat collections as a recovery problem. By the time an agent dials, the invoice is already 30, 60, or 90 days old — and the odds of a smooth resolution drop with every passing week.

@@ -6,7 +6,7 @@ excerpt: "Bilingual customers don't switch off their Spanglish at checkout. Here
 primaryKeyword: "code switching customer support"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-05-09
+publishDate: 2026-05-24
 related:
   - bilingual-customer-support-us-companies
   - test-agent-spanish-fluency

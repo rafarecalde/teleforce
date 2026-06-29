@@ -6,7 +6,7 @@ excerpt: "Big nearshore BPO or focused boutique team? The right answer depends o
 primaryKeyword: "nearshore bpo"
 category: Nearshore
 readMinutes: 6
-publishDate: 2026-05-07
+publishDate: 2026-05-23
 related:
   - nearshore-vs-offshore-customer-support
   - how-to-vet-nearshore-support-provider

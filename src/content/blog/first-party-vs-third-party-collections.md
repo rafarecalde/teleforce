@@ -6,7 +6,7 @@ excerpt: "One model keeps your brand on the call. The other hands the account to
 primaryKeyword: "first-party vs third-party collections"
 category: Billing & Collections
 readMinutes: 6
-publishDate: 2026-05-27
+publishDate: 2026-06-12
 related:
   - pre-delinquent-collections
 ---

@@ -6,7 +6,7 @@ excerpt: "Inbound and outbound appointment setting are not rivals — but knowin
 primaryKeyword: "inbound vs outbound appointment setting"
 category: Appointment Setting
 readMinutes: 6
-publishDate: 2026-05-21
+publishDate: 2026-06-09
 related:
   - outsourced-appointment-setting
   - reduce-appointment-no-shows

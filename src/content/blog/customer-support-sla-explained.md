@@ -6,7 +6,7 @@ excerpt: "SLAs turn vague support promises into measurable commitments. Here's h
 primaryKeyword: "customer support sla"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-04-23
+publishDate: 2026-05-12
 related:
   - customer-support-metrics-predict-churn
   - offer-24-7-customer-support

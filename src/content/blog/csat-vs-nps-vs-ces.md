@@ -6,7 +6,7 @@ excerpt: "Three metrics, three different questions. Knowing which one to trust â
 primaryKeyword: "csat vs nps vs ces"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-05-01
+publishDate: 2026-05-20
 related:
   - customer-support-metrics-predict-churn
   - when-to-outsource-customer-support

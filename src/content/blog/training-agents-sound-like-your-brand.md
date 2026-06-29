@@ -6,7 +6,7 @@ excerpt: "Your agents answer thousands of calls a month. If they don't sound lik
 primaryKeyword: "customer support agent training"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-08-23
+publishDate: 2026-04-25
 related:
   - test-agent-spanish-fluency
   - spanish-customer-service-outsourcing

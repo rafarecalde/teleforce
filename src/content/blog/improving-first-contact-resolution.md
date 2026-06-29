@@ -6,7 +6,7 @@ excerpt: "Most contact centers leave FCR gains on the table. Here's a concrete p
 primaryKeyword: "first contact resolution"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-04-15
+publishDate: 2026-05-07
 related:
   - reduce-average-handle-time
   - customer-support-metrics-predict-churn

@@ -6,7 +6,7 @@ excerpt: "The first 60 days after a missed payment are your best window to recov
 primaryKeyword: "early-out collections"
 category: Billing & Collections
 readMinutes: 6
-publishDate: 2026-06-10
+publishDate: 2026-06-19
 faq:
   - q: "What is early-out collections and how is it different from third-party collections?"
     a: "Early-out collections refers to outreach in the first 1–60 days of delinquency, conducted in the client's name (first-party). Because the debt hasn't been charged off or sold, the relationship with the customer is still intact. Third-party agencies take over later-stage, charged-off accounts and collect in their own name; the WNRS network runs a dedicated third-party arm for that stage, so the full lifecycle is covered."

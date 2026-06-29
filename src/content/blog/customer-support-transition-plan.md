@@ -6,7 +6,7 @@ excerpt: "Switching support providers is one of the riskiest operational moves y
 primaryKeyword: "customer support transition plan"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-04-21
+publishDate: 2026-05-10
 faq:
   - q: "How long does a customer support transition plan typically take?"
     a: "Industry benchmarks put training timelines at two to six weeks depending on complexity — two weeks for simple, standardized interactions and six weeks for complex products or regulated sectors. Add two to four weeks for knowledge transfer and a pilot phase before full cutover. Budget eight to twelve weeks end-to-end for a safe transition."

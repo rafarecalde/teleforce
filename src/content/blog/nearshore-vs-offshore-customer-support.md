@@ -5,8 +5,8 @@ excerpt: "Cost isn't the only number that matters. A clear, honest framework for
 primaryKeyword: nearshore vs offshore customer support
 category: Nearshore
 readMinutes: 8
-publishDate: 2026-06-26
-updatedDate: 2026-06-26
+publishDate: 2026-06-27
+updatedDate: 2026-06-27
 featured: true
 related:
   - bilingual-customer-support-us-companies

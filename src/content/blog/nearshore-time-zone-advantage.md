@@ -6,7 +6,7 @@ excerpt: "Every hour of time zone separation costs you more than you think. Here
 primaryKeyword: "nearshore time zone advantage"
 category: Nearshore
 readMinutes: 6
-publishDate: 2026-08-01
+publishDate: 2026-05-15
 related:
   - nearshore-vs-offshore-customer-support
   - nearshore-vs-domestic-customer-support

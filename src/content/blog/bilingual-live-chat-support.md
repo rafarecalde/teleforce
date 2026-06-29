@@ -6,7 +6,7 @@ excerpt: "Bilingual live chat looks simple to launch — until the first Spanish
 primaryKeyword: "bilingual live chat support"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-05-31
+publishDate: 2026-06-14
 faq:
   - q: "How do I route Spanish-speaking customers to bilingual agents in live chat?"
     a: "Most chat platforms let you create a language-specific queue triggered by a pre-chat survey question or browser locale. The cleanest setup asks customers to choose a language at the start of the chat. If no bilingual agent is available, the queue should show an honest wait time rather than silently routing to a monolingual agent."

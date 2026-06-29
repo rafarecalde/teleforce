@@ -6,7 +6,7 @@ excerpt: "Most support teams review less than 5% of interactions. A structured Q
 primaryKeyword: "customer support quality assurance"
 category: Customer Service
 readMinutes: 6
-publishDate: 2026-04-25
+publishDate: 2026-05-14
 related:
   - customer-support-metrics-predict-churn
   - csat-vs-nps-vs-ces

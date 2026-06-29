@@ -6,7 +6,7 @@ excerpt: "Missed appointments bleed revenue in home services and healthcare. See
 primaryKeyword: "appointment setting services"
 category: Appointment Setting
 readMinutes: 6
-publishDate: 2026-06-18
+publishDate: 2026-06-23
 faq:
   - q: "How are appointment setting services different from a basic answering service?"
     a: "An answering service takes a message and routes the call. Appointment setting services go further — agents qualify the caller, confirm eligibility or service-area fit, schedule the visit in your system, and send confirmation reminders. The result is a booked, confirmed slot rather than a callback that may never happen."

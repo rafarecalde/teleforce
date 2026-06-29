@@ -6,7 +6,7 @@ excerpt: "Same task, different continents — but the differences between nearsh
 primaryKeyword: "nearshore data entry"
 category: Data Entry
 readMinutes: 6
-publishDate: 2026-07-10
+publishDate: 2026-06-03
 related:
   - outsourcing-data-entry
   - data-entry-accuracy
