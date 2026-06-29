@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { SERVICES } from '../../consts';
+import { SERVICES, WNRS_THIRD_PARTY } from '../../consts';
 import { getPublishedPosts } from '../../lib/posts';
 
 export async function getStaticPaths() {
@@ -95,6 +95,12 @@ const jsonLd = {
             <span class="more">Learn more <span class="ar">→</span></span>
           </a>
         ))}
+        <a href={WNRS_THIRD_PARTY.href} target="_blank" rel="noopener" class="cell link wnrs">
+          <div class="ic">{WNRS_THIRD_PARTY.ic}</div>
+          <h3>{WNRS_THIRD_PARTY.name}</h3>
+          <p>{WNRS_THIRD_PARTY.short}</p>
+          <span class="more">Visit wnrs.com <span class="ar">→</span></span>
+        </a>
       </div>
     </div>
   </section>

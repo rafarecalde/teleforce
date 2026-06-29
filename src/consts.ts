@@ -195,3 +195,13 @@ export const SERVICES: Service[] = [
     seatPriced: true,
   },
 ];
+
+// Late-stage / third-party / delinquent collections is delivered by the WNRS
+// network, not Teleforce directly. Surfaced in the service grids as an
+// external card so the full delinquency lifecycle is represented.
+export const WNRS_THIRD_PARTY = {
+  name: 'Third-Party Collections',
+  ic: '90+ DAYS · VIA WNRS',
+  short: 'Late-stage and delinquent recovery, handled by the WNRS network.',
+  href: 'https://wnrs.com',
+} as const;
