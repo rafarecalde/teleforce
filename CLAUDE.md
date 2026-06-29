@@ -17,7 +17,7 @@ powered by WNRS. Audience: U.S. ops / CX / support leaders evaluating outsourcin
 ## Frontmatter (matches src/content/config.ts)
 - `title` (H1, can be long), `metaTitle` (optional `<title>`, ≤60 chars incl. "| Teleforce";
   set this when the H1 is long), `description` (140–155 chars), `excerpt` (card teaser),
-  `primaryKeyword`, `category` (Nearshore | Bilingual CX | Operations),
+  `primaryKeyword`, `category` (Nearshore | Bilingual CX | Operations | Collections),
   `readMinutes`, `publishDate` (from queue), `related` (2 sibling slugs),
   optional `faq` (BoFu posts: 3–4 `{q, a}` entries).
 
@@ -49,6 +49,14 @@ powered by WNRS. Audience: U.S. ops / CX / support leaders evaluating outsourcin
   cheap / low-volume / "smaller ecosystem" option.
 - These posts are SALES ASSETS. Every post concludes by pointing the reader toward
   Teleforce. Acknowledge tradeoffs only briefly, then land firmly on us.
+- Teleforce sells TWO flagship lines: (1) bilingual customer support, and (2) first-party
+  pre-delinquent & early-stage collections (cobranza). Collections is a differentiator —
+  recovered revenue, not just cost savings; native-Spanish outreach reaches Hispanic
+  accounts; first-party (in the client's name) protects the relationship. Weave the
+  collections angle into billing/AR/financial-services/operations posts where natural.
+- Collections compliance: be accurate. First-party collections (in the creditor's name)
+  generally fall outside the FDCPA, but TCPA still governs calls/texts. Never overstate
+  legal claims; keep it directional, not legal advice.
 
 ## Anti-spam (Google scaled-content-abuse policy)
 - Quality cadence over firehose. Each post targets a DISTINCT real query.

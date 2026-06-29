@@ -9,7 +9,7 @@ const blog = defineCollection({
     description: z.string(), // meta description, 140–155 chars
     excerpt: z.string().optional(), // card teaser; falls back to description
     primaryKeyword: z.string(),
-    category: z.enum(['Nearshore', 'Bilingual CX', 'Operations']),
+    category: z.enum(['Nearshore', 'Bilingual CX', 'Operations', 'Collections']),
     readMinutes: z.number(),
     publishDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),

@@ -7,8 +7,8 @@ export const SITE = {
   url: 'https://tryteleforce.com',
   title: 'Teleforce — Bilingual Customer Support',
   description:
-    'Bilingual customer support for U.S. companies — dedicated English/Spanish agents, on U.S. time, powered by the WNRS network.',
-  tagline: 'Bilingual customer support · Nearshore · Powered by WNRS',
+    'Bilingual customer support and early-stage collections for U.S. companies — dedicated English/Spanish agents, on U.S. time, powered by the WNRS network.',
+  tagline: 'Bilingual support & collections · Nearshore · Powered by WNRS',
   poweredBy: 'Powered by WNRS',
   // Forms post to FormSubmit.co (no account; confirm once via email on first send).
   // After activation you can swap this for the FormSubmit alias to hide the address.
@@ -34,20 +34,21 @@ export const LOGOS = [
 ] as const;
 
 export const NAV_LINKS = [
-  { href: '/#services', label: 'Services' },
-  { href: '/#how', label: 'How it works' },
+  { href: '/#services', label: 'Support' },
+  { href: '/#collections', label: 'Collections' },
   { href: '/#pricing', label: 'Pricing' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Signal' },
 ] as const;
 
 export const FOOTER_LINKS = [
-  { href: '/#services', label: 'Services' },
+  { href: '/#services', label: 'Support' },
+  { href: '/#collections', label: 'Collections' },
   { href: '/#how', label: 'How it works' },
   { href: '/#pricing', label: 'Pricing' },
   { href: '/blog', label: 'Signal' },
   { href: '/#contact', label: 'Contact' },
 ] as const;
 
-export const CATEGORIES = ['Nearshore', 'Bilingual CX', 'Operations'] as const;
+export const CATEGORIES = ['Nearshore', 'Bilingual CX', 'Operations', 'Collections'] as const;
 export type Category = (typeof CATEGORIES)[number];
