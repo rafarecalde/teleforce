@@ -10,13 +10,13 @@ export const SITE = {
     'Bilingual customer support and early-stage collections for U.S. companies — dedicated English/Spanish agents, on U.S. time, powered by the WNRS network.',
   tagline: 'Bilingual support & collections · Nearshore · Powered by WNRS',
   poweredBy: 'Powered by WNRS',
-  // Forms post to FormSubmit.co (no account; confirm once via email on first send).
-  // After activation you can swap this for the FormSubmit alias to hide the address.
-  contactEmail: 'rrlegal82@gmail.com',
+  // Forms post to FormSubmit.co. Activated; using the FormSubmit alias so the
+  // real inbox (rrlegal82@gmail.com) is never exposed in the page HTML.
+  formAlias: 'e32285ee2449a6d080938e3900354954',
 } as const;
 
 // FormSubmit endpoint for the lead/subscribe forms.
-export const FORM_ACTION = `https://formsubmit.co/${SITE.contactEmail}`;
+export const FORM_ACTION = `https://formsubmit.co/${SITE.formAlias}`;
 
 // Proof stats — exact. Never add an agent headcount. (Hubs intentionally omitted.)
 export const STATS = [
