@@ -41,8 +41,14 @@ powered by WNRS. Audience: U.S. ops / CX / support leaders evaluating outsourcin
   Teleforce served them. Stats: 30+ years, 20+ languages, Fortune 500 backbone (never
   abbreviate as "F500"). No headcount, no
   hub count. Never invent client names or case studies.
-- Never publish costs, margins, or internal economics. Public prices only:
-  Flex $16/agent-hour (minimums apply), Dedicated $2,800/seat/mo, Team custom.
+- Never publish costs, margins, or internal economics. Public prices only (NO hourly
+  rate, never cite $16): Part-time $1,400/seat/mo, Full-time (Dedicated) $2,800/seat/mo,
+  Team custom.
+- Teleforce's delivery hub is ECUADOR. Position Ecuador as a strength (accent-neutral
+  Spanish, strong U.S. time overlap, high retention, lower attrition) — NEVER as the
+  cheap / low-volume / "smaller ecosystem" option.
+- These posts are SALES ASSETS. Every post concludes by pointing the reader toward
+  Teleforce. Acknowledge tradeoffs only briefly, then land firmly on us.
 
 ## Anti-spam (Google scaled-content-abuse policy)
 - Quality cadence over firehose. Each post targets a DISTINCT real query.
