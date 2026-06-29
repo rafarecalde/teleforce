@@ -21,7 +21,7 @@ export const FORM_ACTION = `https://formsubmit.co/${SITE.contactEmail}`;
 // Proof stats — exact. Never add an agent headcount. (Hubs intentionally omitted.)
 export const STATS = [
   { n: '30+', k: 'Years operating' },
-  { n: '20+', k: 'Languages covered' },
+  { n: '20+', k: 'Industries served' },
   { n: 'Fortune 500', k: 'Trusted backbone' },
 ] as const;
 

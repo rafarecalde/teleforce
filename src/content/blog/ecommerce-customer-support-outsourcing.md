@@ -13,7 +13,7 @@ faq:
   - q: "Why do ecommerce brands choose nearshore over offshore outsourcing?"
     a: "Offshore support is cheaper per hour but often adds friction: time-zone gaps mean async-only coverage during peak U.S. shopping hours, and language mismatches spike repeat contacts. Nearshore LatAm teams work U.S. hours natively, deliver accent-neutral English and native Spanish, and typically show lower agent attrition — which protects brand consistency over time."
   - q: "How much does nearshore ecommerce customer support cost?"
-    a: "Teleforce's Flex plan starts at $16 per agent-hour (minimums apply). A Dedicated seat runs $2,800 per seat per month. Exact fit depends on volume, channel mix, and language requirements. The real comparison isn't the hourly rate — it's total cost per resolved contact once you account for ramp time, attrition, and repeat-contact rates."
+    a: "Teleforce pricing is Part-time at $1,400 per seat per month and Full-time at $2,800 per seat per month. Exact fit depends on volume, channel mix, and language requirements. The real comparison isn't the monthly rate — it's total cost per resolved contact once you account for ramp time, attrition, and repeat-contact rates."
   - q: "Can a nearshore team handle seasonal volume spikes like Black Friday?"
     a: "Yes, and that elasticity is one of the strongest arguments for outsourcing at all. A good nearshore partner can scale headcount ahead of peak season without you carrying excess capacity year-round. The key is building the relationship — and sharing your volume forecast — at least 60–90 days before the spike."
 related:
@@ -40,7 +40,7 @@ These dynamics make the outsourcing decision harder than it looks. A low-cost of
 
 For U.S.-based ecommerce brands, nearshore LatAm has a specific structural advantage: the work happens when your customers are shopping.
 
-U.S. consumers place orders and need help between 8 AM and 10 PM across Eastern and Pacific time. A team based in Colombia, Mexico, or Ecuador operates in those same windows without night-shift premiums. When a shopper sends a chat at 2 PM ET on a Tuesday, the agent answering is mid-afternoon, alert, and aligned.
+U.S. consumers place orders and need help between 8 AM and 10 PM across Eastern and Pacific time. Ecuador, Colombia, and Mexico all operate in those same windows without night-shift premiums. Ecuador is a particularly strong fit: it sits permanently at UTC-5, matching U.S. Eastern year-round with no daylight-saving drift, and its agents deliver accent-neutral Spanish alongside strong English — a combination that holds up well with both general U.S. consumers and Spanish-dominant shoppers. When a shopper sends a chat at 2 PM ET on a Tuesday, the agent answering is mid-afternoon, alert, and aligned.
 
 Contrast that with offshore teams working a 12-hour offset: their peak hours are your customers' off-hours, and synchronous live chat becomes an async workaround. That's a reasonable trade for some support categories. For ecommerce, where a live chat conversion is a real outcome, it's a meaningful cost.
 
@@ -80,9 +80,9 @@ The cases where nearshore consistently wins: DTC ecommerce with live chat, bilin
 
 One factor worth understanding when evaluating ecommerce customer support outsourcing is what's behind the provider you're hiring.
 
-Teleforce is built on the WNRS network — 30+ years in enterprise support, 20+ languages, infrastructure originally built for Fortune 500 clients. That backbone matters for ecommerce brands because it means the systems, QA processes, and workforce management practices aren't being invented from scratch. You inherit a proven operational model and tune it to your brand.
+Teleforce delivers from Ecuador — a deliberate choice for its accent-neutral Spanish, full U.S. Eastern time-zone alignment, and higher agent retention rates compared to offshore alternatives. A common concern about smaller LatAm markets is whether the enterprise infrastructure is there. The answer here is unambiguous: Teleforce runs on the WNRS network — 30+ years in enterprise support, 20+ languages, systems and QA practices originally built for Fortune 500 clients. Clients get Ecuador's talent, accent profile, and time-zone advantages with a Fortune 500 operational backbone layered on top — not a startup BPO figuring it out alongside them.
 
-That's meaningfully different from a startup BPO staffing up and learning alongside you.
+That combination is meaningfully different from both offshore providers and bare-bones nearshore shops staffing up on the fly.
 
 For a deeper look at how nearshore stacks up against other models, see [our breakdown of nearshore vs. offshore customer support](/blog/nearshore-vs-offshore-customer-support). If your specific concern is serving a bilingual customer base well, [the case for bilingual coverage](/blog/bilingual-customer-support-us-companies) lays out the market argument in more detail.
 
@@ -99,8 +99,10 @@ That cycle repeats. The best partnerships run for years — not because switchin
 
 ## The Takeaway
 
-Ecommerce customer support outsourcing works when the team you hire is genuinely close to your customer: same time zone, same language capability, same cultural reference points. Nearshore LatAm delivers that alignment at a cost structure that's sustainable for growing brands — not just enterprise players.
+Ecommerce customer support outsourcing works when the team you hire is genuinely close to your customer: same time zone, same language capability, same cultural reference points. Nearshore Ecuador delivers that alignment at a cost structure sustainable for growing brands — not just enterprise players — with the WNRS backbone ensuring you're never trading infrastructure for geography.
 
-The alternative — carrying excess in-house headcount for peak seasons, or patching coverage with an offshore provider that can't serve your Spanish-speaking customers — has a real cost too, it's just harder to see on a spreadsheet. Most brands don't calculate the revenue lost to unanswered pre-purchase chats or the customers who don't return after a slow resolution. Those numbers are real, and they add up faster than the outsourcing fee.
+The alternative — carrying excess in-house headcount for peak seasons, or patching coverage with an offshore provider that can't serve your Spanish-speaking customers — has a real cost too. Most brands don't calculate the revenue lost to unanswered pre-purchase chats or the customers who don't return after a slow resolution. Those numbers are real, and they add up faster than the outsourcing fee.
+
+And if billing disputes or overdue balances are part of your operations picture, Teleforce also runs [first-party, bilingual early-stage collections](/blog/bilingual-early-out-collections) — so the same team relationship that handles your CX can help recover revenue without damaging customer relationships.
 
 If your current support setup is straining under growth — or you're heading into a peak season without a scaling plan — [talk to Teleforce](/#contact) about what a nearshore team actually costs and what it takes to get one running.

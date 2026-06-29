@@ -15,7 +15,7 @@ faq:
   - q: "What contract terms protect me when outsourcing customer support nearshore?"
     a: "Key clauses to negotiate: SLA penalties tied to CSAT and first-contact resolution, data-processing agreements that satisfy CCPA/GDPR, a ramp timeline with milestone exit points, and a clear offboarding protocol that returns your data and call recordings within a defined window."
   - q: "When is nearshore the wrong choice?"
-    a: "Nearshore is a poor fit when volume is so low that per-seat minimums are prohibitive, when support is purely asynchronous email-only (where offshore time-zone gaps matter less), or when the budget ceiling is so tight that even a modest premium over offshore rates is a deal-breaker. In those cases, offshore or a domestic gig-based model may serve you better — and any honest partner will tell you so."
+    a: "Nearshore delivers its full value when you need real-time bilingual coverage, cultural alignment, and genuine brand-voice consistency — which describes most U.S. companies serving English- and Spanish-speaking customers. If your support is purely asynchronous and low-volume, a shared-agent or offshore model might suffice. But if you're losing customers to hold times, language gaps, or agent turnover, nearshore pays for itself quickly. The honest question isn't 'can I afford nearshore' — it's 'what is poor support costing me today.'"
 related:
   - nearshore-vs-offshore-customer-support
   - cost-of-in-house-customer-support
@@ -117,10 +117,14 @@ The providers who push back hardest on offboarding terms are often the ones with
 | References | Same industry, 12+ months live | Logo list without contact info |
 | Offboarding | Clear written clause | Resistance or vague language |
 
-## Nearshore isn't always the right answer — and good partners know it
+## What good nearshore actually looks like
 
-If your support volume is low enough that dedicated-seat minimums don't make financial sense, a flex or shared-agent model may suit you better. If your support is entirely asynchronous email-only, the time-zone advantage of nearshore matters less, and offshore costs may be justified. Any provider who tells you nearshore is universally the right answer for every company is selling you, not advising you.
+The companies that get nearshore right aren't the ones who found the best pitch deck. They're the ones who ran a real vetting process — and then chose a partner built for the long term, not just the lowest opening bid.
 
-The companies that get nearshore right — [especially compared to domestic alternatives](/blog/nearshore-vs-offshore-customer-support) — aren't the ones who found the best pitch deck. They're the ones who ran a real vetting process and then built a governance rhythm to sustain performance after launch.
+That means choosing a hub where the talent advantages are real: accent-neutral Spanish, a time zone that locks to U.S. Eastern year-round, and agent retention rates that keep institutional knowledge on your account instead of cycling out every eight months. Ecuador delivers all three — and when that delivery is backed by enterprise BPO infrastructure (SOC 2, PCI DSS, redundant connectivity, Fortune 500-tested operations), the "is it big enough?" question answers itself.
 
-That second part — the ongoing management — is where most outsourcing relationships succeed or fail. Build your checklist for both.
+Teleforce runs exactly that model — [Ecuador-based, bilingual, and powered by WNRS's 30-year Fortune 500 backbone](/blog/nearshore-vs-offshore-customer-support) — at Part-time $1,400/seat/month or Full-time $2,800/seat/month. No hourly rate games, no hidden surcharges, no ambiguity.
+
+The due-diligence framework above will surface which providers can back up their claims. When you run those six checks against a partner who passes all of them, the decision gets a lot easier.
+
+[Talk to Teleforce about your support needs →](/#contact)

@@ -61,7 +61,7 @@ For healthcare companies evaluating outsourced bilingual support, this is the ti
 
 ### A Note on HIPAA and Nearshore Partnerships
 
-Nearshore bilingual support — agents in Mexico, Colombia, Ecuador — is a viable and cost-effective model for healthcare support operations. But it requires the same compliance framework as domestic outsourcing: executed Business Associate Agreements, PHI-handling training, secure communication channels, and regular audits.
+Nearshore bilingual support — Ecuador, Colombia, Mexico — is a viable and cost-effective model for healthcare support operations. Ecuador's agents, for instance, bring accent-neutral Spanish, full U.S. Eastern time-zone overlap year-round, and unusually high retention rates. But the geography doesn't change the compliance obligation: any nearshore model requires executed Business Associate Agreements, PHI-handling training, secure communication channels, and regular audits.
 
 The geography doesn't change the obligation. A credible nearshore partner should initiate the BAA conversation before you do, not wait to be asked.
 
@@ -75,7 +75,7 @@ The business case has two sides.
 
 **The cost of inaction**: LEP patients with unresolved billing questions are more likely to go to collections, less likely to schedule follow-up care, and more likely to file complaints. The revenue and satisfaction impact of poor language access is real and measurable.
 
-**The cost of the fix**: Outsourced bilingual support — particularly nearshore — runs significantly below domestic staffing costs. Teleforce's Flex model starts at $16/agent-hour; a Dedicated seat runs $2,800/month. For high-volume scheduling lines or billing support teams, that math closes quickly against the cost of staffing bilingual agents domestically.
+**The cost of the fix**: Outsourced bilingual support — particularly nearshore — runs significantly below domestic staffing costs. Teleforce's Part-time model is $1,400/seat/month; a Full-time dedicated seat runs $2,800/month. For high-volume scheduling lines or billing support teams, that math closes quickly against the cost of staffing bilingual agents domestically.
 
 For a deeper look at the full cost comparison, see [The Real Cost of In-House Customer Support](/blog/cost-of-in-house-customer-support) and the broader case for [serving the U.S. Hispanic market](/blog/hispanic-market-customer-experience).
 

@@ -58,7 +58,7 @@ Getting hispanic market customer experience right is less about scripts and more
 
 The best bilingual agents aren't defined by a Spanish certification. They're people who grew up navigating both languages and cultures — who understand that urgency sounds different in different dialects, and that a customer from Guadalajara may frame a complaint very differently than one from Miami.
 
-Nearshore support hubs in Latin America naturally index toward this. An agent in Bogotá or Mexico City has spent their life in Spanish-dominant culture while developing professional English skills. That profile is significantly harder to replicate by hiring domestically and adding a language requirement.
+Nearshore support hubs in Latin America naturally index toward this. Ecuador, in particular, has become a preferred delivery hub for bilingual CX — agents grow up in a Spanish-dominant culture with accent-neutral Spanish, develop strong professional English, and operate on U.S. Eastern time year-round with no daylight-saving shift. The result is full overlap with U.S. business hours and communication that registers as clear and unaccented to customers across every regional background. Colombia and Mexico are also credible options, but Ecuador's time-zone alignment and retention profile make it a deliberate choice, not a fallback. That profile is significantly harder to replicate by hiring domestically and adding a language requirement.
 
 ### Staff Spanish as a primary, not a specialty
 
@@ -80,10 +80,12 @@ Not every company needs to build full bilingual infrastructure from day one. If 
 
 If Spanish volume is 20% or more of your contact volume, dedicated bilingual coverage almost always makes operational sense. The quality gap between a purpose-built Spanish support team and a shared-resource model is significant enough to show up in retention data.
 
+One often-overlooked extension of this is billing and collections: when a Hispanic customer falls behind on a payment, outreach in their preferred language — delivered in the brand's name, not a third-party agency's — dramatically improves response rates and relationship preservation. See how that works in our guide to [bilingual early-out collections](/blog/bilingual-early-out-collections).
+
 For a broader look at how bilingual support compares against English-only domestic alternatives, [Why Bilingual Customer Support Is No Longer Optional](/blog/bilingual-customer-support-us-companies) is a good companion read.
 
 ## The Takeaway
 
 The U.S. Hispanic market is large, loyal, and underserved by most CX operations. The companies capturing outsized retention and lifetime value in this segment are not doing anything exotic — they're staffing natively bilingual agents, treating Spanish as a primary channel, and measuring quality with the same rigor they apply everywhere else. If your current support operation treats Spanish as an add-on, that's not a CX problem. It's a business model problem worth fixing before a competitor does it for you.
 
-Ready to build a support operation your bilingual customers will actually stick around for? [Talk to our team](/#contact).
+Teleforce delivers nearshore bilingual CX from Ecuador — accent-neutral Spanish, full U.S. Eastern coverage, and enterprise-grade infrastructure through the WNRS Fortune 500 network. If you're ready to serve your Hispanic customers the way they actually expect to be served, [talk to our team](/#contact) and we'll scope a solution around your volume.

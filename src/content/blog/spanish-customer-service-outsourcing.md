@@ -85,7 +85,7 @@ Colombia, Mexico, and Ecuador are the three hubs that come up most in buyer conv
 
 - **Mexico** — geographic proximity, strong cultural familiarity with Mexican-American customer bases, large talent pool
 - **Colombia** — deep bilingual BPO infrastructure, consistent English proficiency, established enterprise track record
-- **Ecuador** — competitive rates, accent-neutral Spanish, aligned time zone; smaller ecosystem
+- **Ecuador** — accent-neutral Spanish, full U.S. Eastern time-zone alignment year-round, and measurably higher agent retention than larger offshore hubs. Teleforce delivers from Ecuador, layering WNRS's Fortune 500 BPO backbone on top — so clients get the talent and time-zone advantages without the enterprise-infrastructure tradeoff that used to be the knock on the market
 
 The detailed hub comparison — including honest tradeoffs on cost, talent depth, and infrastructure — is in our [LatAm support hub guide](/blog/nearshore-customer-support-latin-america).
 
@@ -99,7 +99,7 @@ What matters for this decision: **don't choose a country before you've chosen a 
 
 The most expensive mistake in spanish customer service outsourcing isn't choosing the wrong country. It's accepting "bilingual" agents who aren't.
 
-"Conversational Spanish" on a vendor's spec sheet is not the same as an agent who can de-escalate an angry customer, explain a complex billing adjustment, or handle a healthcare pre-auth question — all in fluid, native-register Spanish. The gap between these two skill levels shows up as longer handle times, lower CSAT, and Spanish-speaking customers who switch to English out of frustration (which defeats the purpose).
+"Conversational Spanish" on a vendor's spec sheet is not the same as an agent who can de-escalate an angry customer, explain a complex billing adjustment, or handle a healthcare pre-auth question — all in fluid, native-register Spanish. The gap between these two skill levels shows up as longer handle times, lower CSAT, and Spanish-speaking customers who switch to English out of frustration (which defeats the purpose). For companies where billing interactions tip into early-stage collections territory, the same native-Spanish fluency that improves CX also drives recovery — a capability covered in our guide to [bilingual early-out collections](/blog/bilingual-early-out-collections).
 
 How to catch it in evaluation:
 
@@ -140,4 +140,6 @@ Before signing with a spanish customer service outsourcing vendor, work through 
 
 Spanish customer service outsourcing is a mature enough category that you shouldn't have to guess at what good looks like. The vendors worth working with will give you formal proficiency assessments, reference clients, and a clear answer on how they train agents to sound like your brand — not just speak your language.
 
-The companies that do this well tend to share one characteristic: they treat their Spanish-speaking customers as the same customer, not a separate queue. That means one team, one training program, and one quality standard — delivered in both languages. When you find a vendor who can actually execute that, the ROI case for outsourcing becomes straightforward.
+The companies that get this right share one characteristic: they treat their Spanish-speaking customers as the same customer, not a separate queue — one team, one training program, one quality standard, delivered in both languages.
+
+Teleforce builds exactly that: dedicated bilingual (EN/ES) support teams based in Ecuador, backed by WNRS's 30+ years of Fortune 500 BPO infrastructure, scoped at Part-time ($1,400/seat/month) or Full-time ($2,800/seat/month). If your Spanish-speaking customer base deserves the same experience as everyone else — and it does — [let's talk about what that looks like for your operation](/#contact).

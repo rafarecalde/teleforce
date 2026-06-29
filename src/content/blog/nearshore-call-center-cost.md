@@ -52,7 +52,7 @@ LatAm pricing varies meaningfully by market. Language capability, agent educatio
 | Mexico | $14–$22/hr | Largest talent pool, strong border-city English fluency |
 | Colombia | $12–$18/hr | Bogotá and Medellín are mature BPO markets |
 | Costa Rica | $14–$20/hr | Higher cost, very strong English accent neutrality |
-| Ecuador | $11–$17/hr | Growing hub, lower cost base, solid bilingual supply |
+| Ecuador | $11–$17/hr | Accent-neutral Spanish, full U.S. Eastern overlap year-round, high agent retention |
 | Dominican Republic | $10–$14/hr | Caribbean nearshore, smaller talent pool |
 
 These are fully loaded rates — meaning agent wages, benefits, supervision, facilities, and provider margin are baked in. They do not include one-time setup fees, which typically run $1,500–$5,000 depending on program complexity.
@@ -109,8 +109,8 @@ Getting these answered in writing, before a contract, removes roughly 80% of the
 
 **Nearshore call center cost** in 2026 runs $12–$22/hour for shared or hourly models and $2,200–$3,400/seat/month for dedicated programs — with real savings of 30–45% against fully loaded domestic costs, not against domestic wages alone. Those numbers are honest starting points, not guarantees.
 
-The programs that get the most out of nearshore outsourcing share one trait: they treat the vendor relationship as a real partnership. That means sharing product context, investing in onboarding, and negotiating contracts that align incentives rather than just capping costs.
+The programs that get the most out of nearshore outsourcing share one trait: they treat the vendor relationship as a real partnership. That means sharing product context, investing in onboarding, and negotiating contracts that align incentives rather than just capping costs. If your operation includes billing or AR, nearshore can also recover revenue, not just reduce cost — [bilingual early-stage collections](/blog/bilingual-early-out-collections) run through the same team and often close the loop on accounts that English-only outreach misses.
 
 If you're comparing models, the [real cost of in-house customer support](/blog/cost-of-in-house-customer-support) and the [nearshore vs. domestic cost gap](/blog/nearshore-vs-domestic-customer-support) are worth reading side by side — they give you the baseline numbers you need before a vendor quote means anything.
 
-Teleforce runs bilingual (English/Spanish) nearshore support for U.S. companies, backed by WNRS — a Fortune 500 support network with 30+ years of infrastructure across 20+ languages. If you want to see how the pricing maps to your actual support volume, [let's talk](/#contact).
+Teleforce runs bilingual (English/Spanish) nearshore support and first-party collections for U.S. companies, delivered from Ecuador and backed by WNRS — a Fortune 500 support network with 30+ years of infrastructure across 20+ languages. Ecuador's accent-neutral Spanish, full U.S. Eastern time-zone overlap, and WNRS's enterprise backbone mean you don't have to choose between talent quality and operational depth. Teleforce pricing starts at $1,400/seat/month (part-time) and $2,800/seat/month (full-time). [Let's map it to your volume](/#contact).

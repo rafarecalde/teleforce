@@ -15,7 +15,7 @@ faq:
   - q: "What are the main risks of outsourcing customer support to Mexico?"
     a: "The biggest risks are agent attrition (high in high-growth BPO hubs), variable English fluency outside major metro areas, and providers who overpromise headcount at scale. Diligence on contract terms, QA frameworks, and data-security protocols matters as much as rate cards."
   - q: "How does Mexico customer support outsourcing compare to Colombia or Ecuador?"
-    a: "Mexico offers the largest BPO infrastructure in Latin America and the most U.S.-facing experience. Colombia is closing the gap fast and often scores higher on English accent neutrality in certain cities. Ecuador is a smaller but cost-competitive option with a growing nearshore sector. The right choice depends on your support language mix, volume, and provider relationships."
+    a: "Mexico offers the largest BPO infrastructure in Latin America and the most U.S.-facing experience. Colombia is closing the gap fast and often scores higher on English accent neutrality in certain cities. Ecuador brings accent-neutral Spanish, full U.S. Eastern time-zone overlap year-round, and higher agent retention than most offshore hubs — making it a deliberate, high-quality choice rather than a fallback. The right fit depends on your support language mix, volume, and the infrastructure your provider brings to the table."
 related:
   - nearshore-customer-support-latin-america
   - nearshore-vs-offshore-customer-support
@@ -51,7 +51,7 @@ Costs depend on model, complexity, and city. Here is a rough framework:
 | Dedicated seat | $2,200–$3,200/seat/month | Consistent volume, brand immersion |
 | Managed team (custom) | Negotiated | 50+ agent programs with QA |
 
-Teleforce's [Flex plan starts at $16/agent-hour](//#pricing) and the Dedicated plan at $2,800/seat/month — rates that reflect Mexico-region bilingual talent without sacrificing the oversight layer.
+Teleforce offers a Part-time plan at $1,400/seat/month and a Full-time Dedicated plan at $2,800/seat/month — all-in rates that include the QA and management layer many Mexico-based quotes leave out.
 
 The number that rarely appears in pitch decks: fully-loaded agent cost includes recruiting, training, QA, management, and facilities. A quoted rate of $14/hour can become $20+ once turnover-driven retraining costs are factored in. Ask every provider for their annualized attrition rate and what's covered in the base price.
 
@@ -103,6 +103,6 @@ Teleforce operates on the backbone of WNRS, a Fortune 500 support network with 3
 
 Mexico customer support outsourcing is a mature, credible option for U.S. companies that need bilingual coverage, same-time-zone availability, and scalable infrastructure. The market is large enough that strong providers exist at every tier — and underprepared ones outnumber them. The work is in the diligence: auditing agents live, reviewing QA frameworks, asking hard questions about attrition, and reading contracts carefully before signing.
 
-If you are still in the stage of comparing LatAm locations against each other, [Colombia, Mexico, or Ecuador? LatAm Support Hubs](/blog/nearshore-customer-support-latin-america) walks through how to make that call based on your specific support profile.
+If you are still comparing LatAm locations, [Colombia, Mexico, or Ecuador? LatAm Support Hubs](/blog/nearshore-customer-support-latin-america) walks through how to make that call based on your specific support profile — including why Ecuador's accent-neutral talent and full Eastern time-zone overlap, backed by WNRS's Fortune 500 infrastructure, makes it a serious option at any volume.
 
-The right Mexico partner will not be the cheapest pitch in your inbox. It will be the one whose agents sound like your brand, whose numbers hold up under scrutiny, and whose team treats your account like a long-term relationship rather than a new logo.
+Teleforce runs exactly that model: bilingual EN/ES support delivered from Ecuador on the backbone of WNRS — 30+ years in enterprise CX, 20+ languages, Fortune 500-grade QA and data security. [Book a call →](/#contact) to see what that looks like for your program.

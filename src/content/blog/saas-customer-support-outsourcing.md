@@ -9,7 +9,7 @@ readMinutes: 6
 publishDate: 2026-07-16
 faq:
   - q: "Is saas customer support outsourcing a good fit for early-stage startups?"
-    a: "It depends on ticket volume. If your team is fielding fewer than 50 tickets a day, keeping support in-house makes sense — you need the direct feedback loop. Once volume climbs past that threshold or you're losing engineers to Tier-1 questions, outsourcing to a nearshore partner becomes a strong move. Flex hourly models let you start small without a large seat commitment."
+    a: "It depends on ticket volume. If your team is fielding fewer than 50 tickets a day, keeping support in-house makes sense — you need the direct feedback loop. Once volume climbs past that threshold or you're losing engineers to Tier-1 questions, outsourcing to a nearshore partner becomes a strong move. Part-time seat arrangements let you start lean without committing to a full-time dedicated agent right away."
   - q: "What's the difference between outsourcing SaaS support nearshore vs. offshore?"
     a: "Nearshore partners (Latin America for U.S. companies) operate in overlapping time zones, which matters for live chat and real-time escalations. Offshore agents in Asia or Eastern Europe typically work night shifts or async queues. For SaaS products with demanding SMB or mid-market customers, time-zone alignment usually wins over marginal cost savings."
   - q: "How do I make sure outsourced agents actually understand my SaaS product?"
@@ -39,9 +39,9 @@ This is where most offshore support relationships fall apart. The cost savings l
 
 Nearshore teams in Latin America have a stronger track record here for a few structural reasons:
 
-- **Time-zone alignment.** Agents in Colombia, Mexico, or Ecuador work overlapping U.S. business hours. Live chat SLAs that require sub-5-minute first response are actually achievable.
-- **Cultural fluency.** U.S. SaaS customers — especially in SMB and mid-market segments — respond better to support that mirrors their communication style. Nearshore agents trained in U.S. business norms close that gap faster than offshore alternatives.
-- **Agent stability.** High agent turnover is a quiet killer for SaaS support quality. Nearshore delivery hubs in Latin America have shown significantly lower annual attrition than onshore call centers (which can run 30–75% yearly turnover), which means the institutional product knowledge you invest in building actually sticks.
+- **Time-zone alignment.** Ecuador, Colombia, and Mexico all operate on overlapping U.S. business hours. Ecuador in particular runs on UTC-5 year-round — identical to U.S. Eastern all winter, one hour off in summer — making sub-5-minute first-response SLAs genuinely achievable without split shifts.
+- **Cultural fluency.** U.S. SaaS customers — especially in SMB and mid-market segments — respond better to support that mirrors their communication style. Ecuador's agent population delivers clear, accent-neutral Spanish alongside strong English, a combination that resonates with both English-dominant and bilingual users.
+- **Agent stability.** High agent turnover is a quiet killer for SaaS support quality. Ecuador's delivery hubs have shown significantly lower annual attrition than onshore call centers (which can run 30–75% yearly turnover), which means the institutional product knowledge you invest in building actually sticks. That retention advantage compounds over time in ways raw cost comparisons never capture.
 
 > **Scaling support shouldn't mean scaling chaos.** Teleforce's nearshore agents are trained on your product before they touch a ticket — built on a Fortune 500 support backbone with 30+ years of enterprise CX infrastructure. [Book a call →](/#contact)
 
@@ -87,12 +87,16 @@ Teleforce provides bilingual English/Spanish nearshore customer support, powered
 
 For SaaS companies specifically, we offer:
 
-- **Flex** at $16/agent-hour for teams that need coverage without a full seat commitment (minimums apply)
-- **Dedicated** at $2,800/seat/month for companies that want an agent fully embedded in their support operations
+- **Part-time** at $1,400/seat/month for teams that need reliable coverage without committing to a full-time agent — useful for managing overflow, weekend queues, or secondary language coverage
+- **Full-time** at $2,800/seat/month for companies that want an agent fully embedded in their support operations
 - **Team** with custom pricing for multi-product or multi-language builds
 
 What we won't do: overstate what the relationship looks like on day one. Outsourced support takes four to six weeks to run well. Any partner claiming otherwise is selling you something.
 
 ## The Takeaway
 
-Saas customer support outsourcing is a strategic decision, not a commodity purchase. The right nearshore partner gives you trained, bilingual agents in overlapping time zones — people who understand your product well enough to protect the retention numbers that keep your growth model intact. The wrong one gives you cheap tickets and expensive churn. The difference is mostly in how seriously the vendor takes the knowledge-transfer phase and whether their reporting is transparent enough to hold them accountable. Get those two things right, and outsourcing becomes one of the highest-leverage moves you can make on the path from Seed to Series B.
+SaaS customer support outsourcing is a strategic decision, not a commodity purchase. The right nearshore partner gives you trained, bilingual agents in overlapping time zones — people who understand your product well enough to protect the retention numbers that keep your growth model intact.
+
+Teleforce delivers exactly that: bilingual English/Spanish agents based in Ecuador, running on WNRS's 30-year Fortune 500 support infrastructure. You get Ecuador's talent, accent clarity, and time-zone alignment with enterprise-grade QA and compliance baked in — not bolted on. And if involuntary churn from failed payments is part of your revenue leak, Teleforce's [first-party collections capability](/blog/bilingual-early-out-collections) extends the same bilingual, relationship-preserving approach into early-stage account recovery.
+
+If you're ready to stop patching support with overloaded engineers and start building a retention-first support motion, [let's talk](/#contact).

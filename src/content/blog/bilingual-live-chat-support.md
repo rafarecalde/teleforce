@@ -15,7 +15,7 @@ faq:
   - q: "What after-hours coverage should I plan for bilingual live chat?"
     a: "Only 28% of U.S. businesses offer Spanish-language support after hours (per multilingual business communication research from 2026). If your Spanish-speaking customers skew toward evening and weekend contacts, gaps in after-hours bilingual coverage will show up directly in your CSAT data. Nearshore teams in overlapping time zones are the most practical fix."
   - q: "How much does bilingual live chat support cost compared to English-only?"
-    a: "With a nearshore outsourcing model, bilingual agent hours typically run at a modest premium over English-only rates — far less than staffing a domestic bilingual team. Teleforce's Flex model starts at $16/agent-hour (minimums apply), with Dedicated seats at $2,800/seat/month, both covering English and Spanish fluency."
+    a: "With a nearshore outsourcing model, bilingual agent hours typically run at a modest premium over English-only rates — far less than staffing a domestic bilingual team. Teleforce offers Part-time seats at $1,400/seat/month and Full-time seats at $2,800/seat/month, both covering English and Spanish fluency with no hourly rate to track."
 related:
   - bilingual-customer-support-us-companies
   - code-switching-customer-support

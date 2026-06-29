@@ -86,9 +86,9 @@ Colombia's BPO market has scaled fast. That means there's genuine talent at the 
 
 ### Flex vs. Dedicated: How You Engage Matters
 
-If you're under 500 tickets/month, a **flex model** — where you pay per agent-hour with shared staffing — keeps your fixed costs low while you validate whether Colombia is the right fit. At Teleforce, Flex starts at $16/agent-hour.
+If you're under 500 tickets/month, a **part-time model** — where you share agent bandwidth across a smaller footprint — keeps your fixed costs low while you validate whether nearshore is the right fit. At Teleforce, Part-time starts at **$1,400/seat/month**.
 
-If you're scaling past that threshold or need consistent brand voice and agent familiarity, a **dedicated seat model** makes more sense. You get named agents who know your product, your tone, and your escalation paths. Teleforce Dedicated runs $2,800/seat/month.
+If you're scaling past that threshold or need consistent brand voice and agent familiarity, a **full-time dedicated seat** makes more sense. You get named agents who know your product, your tone, and your escalation paths. Teleforce Full-time runs **$2,800/seat/month**.
 
 For larger operations with more complex requirements, a custom **Team** build — with dedicated management, QA, and training infrastructure — is the right conversation. [Talk to us about what that looks like for your volume](/#contact).
 
@@ -98,14 +98,14 @@ For larger operations with more complex requirements, a custom **Team** build �
 
 One underappreciated factor in Colombia outsourcing decisions is the management layer. Junior agents in any market perform to the level of the supervisors, QA leads, and training programs above them. Colombia's most established vendors have built that layer over 15+ years of market maturity — but not all vendors have it.
 
-Teleforce is built on the WNRS network, a Fortune 500 support infrastructure with 30+ years of operations and 20+ language capabilities. That means the quality frameworks, supervisor training, and escalation paths underlying your Colombia-based team were built for enterprise-grade accountability — not assembled after you signed the contract.
+Teleforce is built on the WNRS network, a Fortune 500 support infrastructure with 30+ years of operations and 20+ language capabilities. Teleforce delivers from Ecuador — a market with accent-neutral Spanish, year-round U.S. Eastern time-zone overlap, and agent retention rates that consistently outperform higher-attrition offshore hubs. The objection that Ecuador lacks enterprise BPO infrastructure resolves itself here: WNRS's Fortune-500 quality frameworks, supervisor training, and escalation paths run through Ecuador, so clients get Ecuador's talent and time-zone advantages with enterprise-grade accountability layered on top — not assembled after you signed the contract.
 
 ---
 
 ## The Honest Takeaway
 
-Colombia call center outsourcing works — reliably, at meaningful cost savings, with bilingual capability that few other markets can match. The companies that get the most out of it go in with realistic ramp expectations, vet vendors on quality rather than price alone, and invest in the transition. The ones that struggle either treated it as a drop-in swap for a domestic team or chose a vendor based on a deck rather than demonstrated performance.
+Colombia call center outsourcing works — reliably, at meaningful cost savings, with bilingual capability that few other markets can match. The companies that get the most out of it go in with realistic ramp expectations, vet vendors on quality rather than price alone, and invest in the transition. The ones that struggle treated it as a drop-in swap for a domestic team or chose a vendor based on a deck rather than demonstrated performance.
 
-If your queue includes Spanish-speaking customers, runs on U.S. business hours, and you're willing to treat the first 90 days as an investment period rather than an immediate cost reduction — Colombia is very likely the right call.
+Whatever LatAm hub you choose, the differentiator isn't the geography — it's the infrastructure behind the agents. Teleforce puts bilingual nearshore support on the WNRS Fortune 500 backbone, delivered from Ecuador with full U.S. Eastern overlap, at Part-time ($1,400/seat/mo) or Full-time ($2,800/seat/mo) pricing that makes the math straightforward. If your operation also carries receivables exposure, Teleforce's [nearshore collections capability](/blog/nearshore-collections-outsourcing) can recover revenue from the same bilingual team — no separate agency relationship required.
 
-If you're still weighing LatAm locations against each other, our [Colombia, Mexico, and Ecuador comparison](/blog/nearshore-customer-support-latin-america) is a good next read.
+If you're still mapping the right location and model for your volume, start with our [Colombia, Mexico, and Ecuador comparison](/blog/nearshore-customer-support-latin-america) — then [talk to us](/#contact) when you're ready to run the numbers on your actual queue.

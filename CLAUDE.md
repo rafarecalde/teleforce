@@ -38,9 +38,10 @@ powered by WNRS. Audience: U.S. ops / CX / support leaders evaluating outsourcin
 
 ## Brand rules
 - "Powered by WNRS." Logos = WNRS's clients, proving infrastructure — never claim
-  Teleforce served them. Stats: 30+ years, 20+ languages, Fortune 500 backbone (never
-  abbreviate as "F500"). No headcount, no
-  hub count. Never invent client names or case studies.
+  Teleforce served them. Stats: 30+ years, 20+ industries served, Fortune 500 backbone
+  (never abbreviate as "F500"). Teleforce itself is fully English/Spanish bilingual —
+  do NOT claim "20+ languages" (that diluted, inflated framing is retired). No headcount,
+  no hub count. Never invent client names or case studies.
 - Never publish costs, margins, or internal economics. Public prices only (NO hourly
   rate, never cite $16): Part-time $1,400/seat/mo, Full-time (Dedicated) $2,800/seat/mo,
   Team custom.
