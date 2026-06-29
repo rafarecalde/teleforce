@@ -85,7 +85,7 @@ Pre-delinquent outreach is inherently a first-party activity — the contact is 
 
 That matters legally and relationally. Third-party collection agencies are governed by the FDCPA, which restricts when and how they can contact debtors. First-party pre-delinquent outreach — contacting a current customer before any delinquency exists — operates outside that framework. The interaction is framed as a customer service touchpoint, not a collection demand, and TCPA rules still apply to call/text consent, but the tone and compliance constraints are fundamentally different.
 
-Relationally, handing a pre-delinquent account to a third party signals to the customer that they are already in collections — even if they are technically current. That damages the relationship and often triggers disputes that would not otherwise exist. Keeping pre-delinquent contacts in-house (or with a first-party outsourced partner) protects the customer relationship while still driving payment.
+Relationally, pre-delinquent outreach belongs with the company itself, in its own voice. The customer is still current, so the contact should read as a helpful reminder rather than a collections step. Keeping pre-delinquent contact first-party — in-house or with a first-party partner — preserves that tone while still driving payment.
 
 For a deeper look at how first-party and third-party models compare across the delinquency curve, see [First-Party vs. Third-Party Collections](/blog/first-party-vs-third-party-collections).
 

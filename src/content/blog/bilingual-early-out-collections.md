@@ -65,7 +65,7 @@ The mechanics are straightforward. The execution is where it gets nuanced.
 
 The comparison between first-party early-out and third-party placement deserves a direct look. [First-party versus third-party collections](/blog/bilingual-debt-collection) involves tradeoffs beyond recovery rate alone.
 
-Third-party agencies work later-stage, charged-off accounts and typically return cents on the dollar. The math on that can work for certain portfolios. But the customer experience is almost always degraded—agency calls feel different, and customers know it. Reactivation, retention, or any future relationship is far less likely after a third-party engagement.
+Third-party agencies work later-stage, charged-off accounts, and that model has a clear place once an account is genuinely uncollectible in-house. Early-out is simply a different stage with a different goal: reaching customers while the relationship is still intact, so reactivation and retention stay on the table. The two are complementary tools for different points in the lifecycle.
 
 First-party early-out keeps the conversation within your brand. The cost per account is higher than a contingency agency arrangement, but the recoveries come in at face value and you retain the customer relationship. For businesses where lifetime value matters—subscriptions, lending, utilities, healthcare receivables—the calculus generally favors first-party in the early window.
 

@@ -35,7 +35,7 @@ Get all three right and you can outsource collections without damaging a single 
 
 The single biggest determinant of whether outsourced collections hurt your customer relationships is when you bring in outside help.
 
-Accounts that hit a traditional third-party agency at 90+ days delinquent are already in a different category. The customer has been ignored (or avoided) for months, and now a stranger is calling on behalf of a company that stopped talking to them. That's a recipe for resentment, disputes, and lost lifetime value.
+Accounts that hit a traditional third-party agency at 90+ days delinquent are already in a different category. The customer has been ignored (or avoided) for months, and now an outside agency is calling about an account the company hasn't engaged on in months. By that stage, disputes and lost lifetime value are more likely — which is exactly why early, first-party outreach matters.
 
 Early-out collections—reaching accounts at 1 to 30 days past due, sometimes even pre-delinquent—changes the dynamic entirely. The customer hasn't mentally written off the relationship. A well-timed, empathetic call at day 7 or 14 often resolves a late payment that had nothing to do with intent to default. Life happened. A card expired. Payroll was delayed. An agent who treats the customer like a person rather than a file closes that gap before it widens.
 
@@ -45,7 +45,7 @@ The further an account rolls into delinquency, the harder (and more expensive) r
 
 ## Model: First-Party vs. Third-Party and Why It Matters for Relationships
 
-When companies hear "outsource collections," they often default to the third-party image: a collection agency buying distressed debt at cents on the dollar and pursuing it aggressively. That model has its place for late-stage, charged-off accounts. It is not the right model for protecting customer relationships.
+When companies hear "outsource collections," they often default to the third-party image: a collection agency working distressed, charged-off debt. That model has its place for late-stage accounts — it is simply built for a different stage than the early, relationship-preserving outreach we focus on.
 
 [First-party collections](/blog/first-party-vs-third-party-collections) is the alternative. In a first-party program, the outsourced team contacts your customers *in your name*—using your brand, your approved scripts, and your tone of voice. From the customer's perspective, they're hearing from you. The outsourced agent is invisible infrastructure.
 

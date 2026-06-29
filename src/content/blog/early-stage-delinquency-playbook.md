@@ -62,9 +62,9 @@ By day 31, the playbook changes in three ways.
 
 One of the most common mistakes in early-out management is routing 31–60 day accounts to a third-party collections agency before giving first-party outreach a genuine run.
 
-Third-party agencies operate under the FDCPA, carry their own compliance overhead, and — more importantly — your customer now perceives they are dealing with a collector, not a company they chose to do business with. That shift in perception makes future resolution, and any future customer relationship, harder.
+Third-party agencies operate under the FDCPA, carry their own compliance overhead, and are built for later-stage, more seriously delinquent accounts. In the early buckets, keeping outreach first-party — in the company the customer chose to do business with — keeps the conversation closer to a customer-service touchpoint, which tends to make resolution easier.
 
-[First-party collections](/blog/first-party-vs-third-party-collections) conducted in the client's name preserves the brand relationship. It signals to the customer that the creditor is managing this directly, is willing to work with them, and has not yet escalated to adversarial collections. In the 1–60 day window, that distinction directly affects whether a customer picks up the phone.
+[First-party collections](/blog/first-party-vs-third-party-collections) conducted in the client's name preserves the brand relationship. It signals to the customer that the creditor is managing this directly, is willing to work with them, and has not yet moved to later-stage collections. In the 1–60 day window, that distinction directly affects whether a customer picks up the phone.
 
 For a deeper look at how to structure outreach before accounts ever reach the 1-day past-due mark, [the pre-delinquent outreach framework](/blog/pre-delinquent-collections) addresses the upstream layer — the proactive contact cadence that keeps accounts from entering delinquency at all.
 

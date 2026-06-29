@@ -63,7 +63,7 @@ Returns interactions are also more complex than standard order inquiries. They i
 - Refund vs. exchange negotiations
 - Carrier coordination for return labels
 
-These are not macro-answerable tickets. They require judgment, brand voice, and the ability to de-escalate a frustrated post-holiday customer. Staffing them with undertrained agents or purely automated responses is a churn accelerator. And for brands that see a spike in past-due balances or unpaid invoices alongside the returns wave, first-party [bilingual early-out collections](/blog/bilingual-early-out-collections) can recover revenue from the same customers — without the relationship damage of a third-party agency.
+These are not macro-answerable tickets. They require judgment, brand voice, and the ability to de-escalate a frustrated post-holiday customer. Staffing them with undertrained agents or purely automated responses is a churn accelerator. And for brands that see a spike in past-due balances or unpaid invoices alongside the returns wave, first-party [bilingual early-out collections](/blog/bilingual-early-out-collections) can recover revenue from the same customers — in your own brand voice.
 
 ---
 

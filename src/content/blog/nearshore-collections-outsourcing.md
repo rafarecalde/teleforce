@@ -63,7 +63,7 @@ Nearshore collections outsourcing contributes to DSO reduction in two ways. Firs
 
 ## First-party vs. third-party: why the sequence matters
 
-When a past-due account goes to a third-party debt collector, two things happen simultaneously. The collector takes a commission — typically 20–50% of recovered amounts. And the customer relationship changes character: the contact is now from an outside agency, the tone is adversarial by design, and the original creditor has signaled that the relationship isn't worth trying to preserve.
+When a past-due account goes to a third-party debt collector, two things happen simultaneously. Third-party agencies typically work on a commission of recovered amounts and are built for later-stage accounts where the priority is liquidation. The contact comes from an outside agency rather than the original creditor — a different relationship, and a later stage than early-out outreach.
 
 For most consumer and SMB receivables, this sequence is too early and too expensive. Third-party collections make sense for aged, charged-off debt where the customer relationship is already gone. They're poor strategy for 30- or 60-day accounts where a professional, empathetic contact in the customer's preferred language would have resolved the balance.
 
@@ -93,7 +93,7 @@ Teleforce runs bilingual early-stage collections from Ecuador — a delivery hub
 
 That talent sits on top of WNRS's Fortune 500 enterprise infrastructure — 30+ years of BPO operations, 20+ industries, and a client roster that includes some of the largest U.S. companies in their respective industries. So you're not choosing between Ecuador's talent and enterprise-grade infrastructure. You get both.
 
-Pricing is scoped to your account volume and portfolio rather than a flat seat rate — [contact us for pricing](/#contact). No per-recovery fees and no third-party commission structure taking a cut of what you recover.
+Pricing is scoped to your account volume and portfolio rather than a flat seat rate — [contact us for pricing](/#contact).
 
 ## The case for starting earlier
 

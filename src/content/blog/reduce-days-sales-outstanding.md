@@ -16,7 +16,7 @@ related:
 
 Every day an invoice goes unpaid, your business is extending an interest-free loan. Days Sales Outstanding (DSO) is the metric that tells you exactly how expensive that generosity is. When you reduce days sales outstanding, you don't just improve a number on a dashboard — you unlock working capital that was already yours to spend.
 
-The challenge is that most AR departments are stretched thin. Follow-up calls fall behind. Aging buckets creep from 30 days to 60 days to 90+ before anyone applies real pressure. By the time a balance lands with a third-party agency, you've already paid a steep price in relationship damage, commission fees, and write-off risk.
+The challenge is that most AR departments are stretched thin. Follow-up calls fall behind. Aging buckets creep from 30 days to 60 days to 90+ before anyone applies real pressure. By the time a balance reaches late-stage collections, you've already lost time — and recovery odds fall with every aging bucket.
 
 Outsourced AR support addresses the problem earlier, more consistently, and at a fraction of the cost of letting balances age.
 

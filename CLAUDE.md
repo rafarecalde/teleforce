@@ -58,6 +58,11 @@ powered by WNRS. Audience: U.S. ops / CX / support leaders evaluating outsourcin
 - COLLECTIONS PRICING IS NOT PUBLISHED. Never quote the $1,400/$2,800 seat rates (or any
   number) for collections — say "contact us for pricing" / "scoped per program." The seat
   prices apply to SUPPORT only. (Keeps Teleforce from cannibalizing WNRS on collections.)
+- DO NOT disparage third-party collections agencies — WNRS operates in that space. Frame
+  first-party vs third-party as a STAGE difference (first-party = early/relationship-
+  preserving; third-party = a legitimate tool for late-stage/charged-off accounts). Banned
+  framing: "stranger," "adversarial," "dread," "cents on the dollar," "taking a cut,"
+  "relationship damage of a third-party agency," or implying agencies are predatory.
 - Collections compliance: be accurate. First-party collections (in the creditor's name)
   generally fall outside the FDCPA, but TCPA still governs calls/texts. Never overstate
   legal claims; keep it directional, not legal advice.

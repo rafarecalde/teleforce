@@ -48,7 +48,7 @@ That level of fluency doesn't come from a translation script. It comes from agen
 
 Bilingual debt collection works best when it's first-party — meaning agents reach out in your company's name, not as a third-party collection agency. That distinction matters for several reasons.
 
-**Trust signals.** Consumers are more likely to engage and more willing to be flexible on payment terms when the contact feels like it comes from the brand they already have a relationship with, not a stranger calling about a debt.
+**Trust signals.** Consumers are more likely to engage and more willing to be flexible on payment terms when the contact feels like it comes from the brand they already have a relationship with, rather than an unfamiliar number.
 
 **Relationship preservation.** Customers who are 30 days late are not lost customers. If they have a good resolution experience — helped in their preferred language, offered a workable arrangement — many will continue as customers. Third-party collections, by contrast, often signal the end of the customer relationship.
 
