@@ -45,7 +45,7 @@ The further an account rolls into delinquency, the harder (and more expensive) r
 
 ## Model: First-Party vs. Third-Party and Why It Matters for Relationships
 
-When companies hear "outsource collections," they often default to the third-party image: a collection agency working distressed, charged-off debt. That model has its place for late-stage accounts — it is simply built for a different stage than the early, relationship-preserving outreach we focus on.
+When companies hear "outsource collections," they often default to the third-party image: a collection agency working distressed, charged-off debt. That model has its place for late-stage accounts — it is simply built for a different stage than the early, relationship-preserving outreach we focus on. For that late-stage work, the WNRS network runs a dedicated third-party collections arm ([wnrs.com](https://wnrs.com)); Teleforce focuses on the early, first-party stage that keeps accounts from getting there in the first place.
 
 [First-party collections](/blog/first-party-vs-third-party-collections) is the alternative. In a first-party program, the outsourced team contacts your customers *in your name*—using your brand, your approved scripts, and your tone of voice. From the customer's perspective, they're hearing from you. The outsourced agent is invisible infrastructure.
 

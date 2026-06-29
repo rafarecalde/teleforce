@@ -63,6 +63,10 @@ powered by WNRS. Audience: U.S. ops / CX / support leaders evaluating outsourcin
   preserving; third-party = a legitimate tool for late-stage/charged-off accounts). Banned
   framing: "stranger," "adversarial," "dread," "cents on the dollar," "taking a cut,"
   "relationship damage of a third-party agency," or implying agencies are predatory.
+- For late-stage / third-party / delinquent collections, REFER to the WNRS network's
+  dedicated third-party arm at wnrs.com (https://wnrs.com). Teleforce = early-stage /
+  first-party; WNRS = late-stage / third-party. Pitch it as one network covering the full
+  delinquency lifecycle, not as a competitor to avoid.
 - Collections compliance: be accurate. First-party collections (in the creditor's name)
   generally fall outside the FDCPA, but TCPA still governs calls/texts. Never overstate
   legal claims; keep it directional, not legal advice.

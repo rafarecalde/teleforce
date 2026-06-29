@@ -65,7 +65,7 @@ Nearshore collections outsourcing contributes to DSO reduction in two ways. Firs
 
 When a past-due account goes to a third-party debt collector, two things happen simultaneously. Third-party agencies typically work on a commission of recovered amounts and are built for later-stage accounts where the priority is liquidation. The contact comes from an outside agency rather than the original creditor — a different relationship, and a later stage than early-out outreach.
 
-For most consumer and SMB receivables, this sequence is too early and too expensive. Third-party collections make sense for aged, charged-off debt where the customer relationship is already gone. They're poor strategy for 30- or 60-day accounts where a professional, empathetic contact in the customer's preferred language would have resolved the balance.
+For most consumer and SMB receivables, this sequence is too early and too expensive. Third-party collections make sense for aged, charged-off debt where the customer relationship is already gone. They're poor strategy for 30- or 60-day accounts where a professional, empathetic contact in the customer's preferred language would have resolved the balance. (When an account genuinely does reach late-stage, the WNRS network has a dedicated third-party arm for it — [wnrs.com](https://wnrs.com).)
 
 First-party nearshore collections — working under your brand, managed by your AR team, with real-time reporting you control — keeps accounts in-house through the window where they're still recoverable. The [difference between first-party and third-party collections](/blog/first-party-vs-third-party-collections) isn't just structural; it's the gap between recovering a customer and losing them.
 

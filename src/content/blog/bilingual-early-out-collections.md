@@ -9,7 +9,7 @@ readMinutes: 6
 publishDate: 2026-06-24
 faq:
   - q: "What is early-out collections and how is it different from third-party collections?"
-    a: "Early-out collections refers to outreach in the first 1–60 days of delinquency, conducted in the client's name (first-party). Because the debt hasn't been charged off or sold, the relationship with the customer is still intact. Third-party agencies take over later-stage, charged-off accounts and collect in their own name—often at a fraction of face value and at the cost of the customer relationship."
+    a: "Early-out collections refers to outreach in the first 1–60 days of delinquency, conducted in the client's name (first-party). Because the debt hasn't been charged off or sold, the relationship with the customer is still intact. Third-party agencies take over later-stage, charged-off accounts and collect in their own name; the WNRS network runs a dedicated third-party arm for that stage, so the full lifecycle is covered."
   - q: "Why does bilingual outreach matter for early-out collections?"
     a: "More than 40 million U.S. consumers speak Spanish, and roughly 16 million are Limited English Proficient. When collection outreach arrives in a language a consumer doesn't fully understand, contact rates drop and resolution stalls. Native-Spanish agents in the early window—before frustration sets in—raise the probability of a productive conversation and a payment arrangement."
   - q: "Does first-party early-out collections fall under the FDCPA?"
@@ -65,7 +65,7 @@ The mechanics are straightforward. The execution is where it gets nuanced.
 
 The comparison between first-party early-out and third-party placement deserves a direct look. [First-party versus third-party collections](/blog/bilingual-debt-collection) involves tradeoffs beyond recovery rate alone.
 
-Third-party agencies work later-stage, charged-off accounts, and that model has a clear place once an account is genuinely uncollectible in-house. Early-out is simply a different stage with a different goal: reaching customers while the relationship is still intact, so reactivation and retention stay on the table. The two are complementary tools for different points in the lifecycle.
+Third-party agencies work later-stage, charged-off accounts, and that model has a clear place once an account is genuinely uncollectible in-house. Early-out is simply a different stage with a different goal: reaching customers while the relationship is still intact, so reactivation and retention stay on the table. The two are complementary tools for different points in the lifecycle. Teleforce runs the early-out, first-party stage; for late-stage, third-party recovery, the WNRS network has a dedicated arm ([wnrs.com](https://wnrs.com)) — so the full lifecycle is covered.
 
 First-party early-out keeps the conversation within your brand. The cost per account is higher than a contingency agency arrangement, but the recoveries come in at face value and you retain the customer relationship. For businesses where lifetime value matters—subscriptions, lending, utilities, healthcare receivables—the calculus generally favors first-party in the early window.
 
