@@ -4,7 +4,7 @@ metaTitle: "Seasonal Customer Support Staffing Guide | Teleforce"
 description: "Seasonal customer support staffing doesn't have to mean panic hiring. Learn how to scale your team for holiday spikes without burning budget or burning out agents."
 excerpt: "Holiday volume can triple your ticket queue overnight. Here's how to staff for seasonal spikes without the chaos — or the permanent overhead."
 primaryKeyword: "seasonal customer support staffing"
-category: Operations
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-10-12
 faq:

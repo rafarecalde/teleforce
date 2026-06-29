@@ -4,7 +4,7 @@ metaTitle: "Outsource Collections Without Losing Customers | Teleforce"
 description: "Learn how to outsource collections and protect customer relationships with first-party, early-stage outreach—bilingual, nearshore, and brand-safe."
 excerpt: "Outsourcing collections doesn't have to cost you customers. Here's how to recover revenue while keeping relationships intact."
 primaryKeyword: "outsource collections"
-category: Collections
+category: Billing & Collections
 readMinutes: 6
 publishDate: 2026-12-15
 faq:

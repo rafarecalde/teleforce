@@ -4,7 +4,7 @@ metaTitle: "Code-Switching Customer Support | Teleforce"
 description: "Code switching customer support isn't just a language skill — it's a trust signal. Here's why Spanglish-fluent agents outperform translation and what to look for."
 excerpt: "Bilingual customers don't switch off their Spanglish at checkout. Here's why code-switching fluency separates great bilingual agents from good ones."
 primaryKeyword: "code switching customer support"
-category: Bilingual CX
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-09-02
 related:

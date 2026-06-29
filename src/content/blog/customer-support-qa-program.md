@@ -4,7 +4,7 @@ metaTitle: "Customer Support Quality Assurance Program | Teleforce"
 description: "Learn how to build a customer support quality assurance program that improves agent performance, reduces churn, and scales with your team."
 excerpt: "Most support teams review less than 5% of interactions. A structured QA program changes that — and the results show up in retention, CSAT, and revenue."
 primaryKeyword: "customer support quality assurance"
-category: Operations
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-11-05
 related:

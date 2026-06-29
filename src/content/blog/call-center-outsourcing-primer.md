@@ -4,7 +4,7 @@ metaTitle: "Call Center Outsourcing: The Complete Primer | Teleforce"
 description: "Learn how call center outsourcing works, what it costs, and when it makes sense — a clear, honest guide to the models, tradeoffs, and how to choose."
 excerpt: "Thinking about outsourcing your customer support? This primer covers every model, real cost drivers, and the honest tradeoffs before you sign anything."
 primaryKeyword: "call center outsourcing"
-category: Operations
+category: Customer Service
 readMinutes: 7
 publishDate: 2026-11-21
 related:

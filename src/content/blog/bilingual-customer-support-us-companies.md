@@ -3,7 +3,7 @@ title: "Why Bilingual Customer Support Is No Longer Optional for U.S. Companies"
 description: "The U.S. Hispanic market drives trillions in spending. Here's what happens to retention when you can't support customers in Spanish — and how to fix it."
 excerpt: "The U.S. Hispanic market is larger than most national economies. Here's what happens to retention when you can't answer in Spanish — and the math on fixing it."
 primaryKeyword: bilingual customer support
-category: Bilingual CX
+category: Customer Service
 readMinutes: 7
 publishDate: 2026-06-12
 updatedDate: 2026-06-12

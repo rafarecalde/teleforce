@@ -4,7 +4,7 @@ metaTitle: "Customer Support Metrics That Predict Churn | Teleforce"
 description: "Not all customer support metrics are created equal. Discover which CX data points actually predict churn before it happens—and how to act on them fast."
 excerpt: "CSAT scores look great right up until customers cancel. These are the support metrics that actually signal churn risk weeks in advance."
 primaryKeyword: "customer support metrics"
-category: Operations
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-09-26
 related:

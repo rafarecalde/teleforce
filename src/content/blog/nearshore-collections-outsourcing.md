@@ -4,7 +4,7 @@ metaTitle: "Nearshore Collections Outsourcing | Teleforce"
 description: "Nearshore collections outsourcing delivers bilingual recovery, U.S. time-zone alignment, and first-party relationship protection. Here's why it outperforms offshore and in-house."
 excerpt: "Bilingual agents, U.S. hours, and first-party relationship protection — why nearshore collections outsourcing outperforms offshore and in-house AR teams."
 primaryKeyword: "nearshore collections outsourcing"
-category: Collections
+category: Billing & Collections
 readMinutes: 6
 publishDate: 2026-11-29
 faq:

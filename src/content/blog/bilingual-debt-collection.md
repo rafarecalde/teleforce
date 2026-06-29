@@ -4,7 +4,7 @@ metaTitle: "Bilingual Debt Collection for Hispanic Accounts | Teleforce"
 description: "Bilingual debt collection in native Spanish closes the language gap that stalls Hispanic account recovery. Learn how first-party outreach lifts contact and payment rates."
 excerpt: "Language friction stalls Hispanic account recovery. Here's why native-Spanish, first-party bilingual debt collection changes the math."
 primaryKeyword: "bilingual debt collection"
-category: Collections
+category: Billing & Collections
 readMinutes: 6
 publishDate: 2026-12-03
 related:

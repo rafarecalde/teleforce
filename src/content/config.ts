@@ -9,7 +9,15 @@ const blog = defineCollection({
     description: z.string(), // meta description, 140–155 chars
     excerpt: z.string().optional(), // card teaser; falls back to description
     primaryKeyword: z.string(),
-    category: z.enum(['Nearshore', 'Bilingual CX', 'Operations', 'Collections']),
+    category: z.enum([
+      'Customer Service',
+      'Tech Support',
+      'Data Entry',
+      'Appointment Setting',
+      'Billing & Collections',
+      'Sales & Lead Gen',
+      'Nearshore',
+    ]),
     readMinutes: z.number(),
     publishDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),

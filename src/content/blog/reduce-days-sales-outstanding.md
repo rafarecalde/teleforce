@@ -4,7 +4,7 @@ metaTitle: "Reduce Days Sales Outstanding | Teleforce"
 description: "Learn how outsourced AR support helps U.S. companies reduce days sales outstanding, recover cash faster, and protect customer relationships."
 excerpt: "High DSO drains cash and signals collection gaps. Here's how outsourced AR support closes those gaps without damaging customer ties."
 primaryKeyword: "reduce days sales outstanding"
-category: Collections
+category: Billing & Collections
 readMinutes: 6
 publishDate: 2026-12-07
 related:

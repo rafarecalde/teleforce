@@ -4,7 +4,7 @@ metaTitle: "Test Agent Spanish Fluency the Right Way | Teleforce"
 description: "Learn how to test agent Spanish fluency with frameworks that go beyond conversational chitchat — CEFR benchmarks, QA rubrics, and real CX scenarios that matter."
 excerpt: "Hiring a 'bilingual' agent is easy. Knowing whether they can actually handle a frustrated Spanish-speaking customer is something else entirely."
 primaryKeyword: "test agent spanish fluency"
-category: Bilingual CX
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-08-13
 related:

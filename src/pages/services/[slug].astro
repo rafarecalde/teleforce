@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBox from '../../components/CtaBox.astro';
+import { SERVICES } from '../../consts';
+import { getPublishedPosts } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  return SERVICES.map((svc) => ({ params: { slug: svc.slug }, props: { svc } }));
+}
+
+const { svc } = Astro.props;
+const posts = await getPublishedPosts();
+const related = posts.filter((p) => p.data.category === svc.category).slice(0, 4);
+
+const otherServices = SERVICES.filter((s) => s.slug !== svc.slug);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `${svc.name} — Teleforce`,
+  serviceType: svc.name,
+  description: svc.intro,
+  provider: { '@type': 'Organization', name: 'Teleforce' },
+  areaServed: 'US',
+};
+---
+<BaseLayout
+  title={`${svc.name} Outsourcing | Teleforce`}
+  description={svc.intro.slice(0, 155)}
+  jsonLd={jsonLd}
+>
+  <header class="ahead">
+    <div class="wrap">
+      <div class="crumb"><a href="/services">Services</a> / {svc.name}</div>
+      <div class="cat">{svc.navLabel}</div>
+      <h1>{svc.tagline}</h1>
+      <div class="ameta"><span>Bilingual EN / ES</span><span>Nearshore · U.S. hours</span><span>Powered by WNRS</span></div>
+    </div>
+  </header>
+
+  <article class="post">
+    <p class="lead">{svc.intro}</p>
+
+    <h2>What's included</h2>
+    <ul class="svc-list">
+      {svc.included.map((item) => <li>{item}</li>)}
+    </ul>
+
+    <h2>Why run it with Teleforce</h2>
+    <p>Teleforce delivers from Ecuador — clear, accent-neutral Spanish, full U.S. Eastern overlap year-round, and higher agent retention than offshore alternatives. You get bilingual English/Spanish coverage from one team, on your hours, working as an extension of your brand. And because Teleforce is powered by the WNRS network — a Fortune 500 support backbone with 30+ years across 20+ industries — the recruiting, training, QA, and security are already in place. There's no startup ramp to wait through.</p>
+
+    {svc.slug === 'billing-collections' && (
+      <p>This is <strong>first-party</strong> work — we contact your customers in your name, in the early delinquency buckets, to keep accounts current without straining the relationship. When an account genuinely reaches late-stage, the WNRS network runs a dedicated third-party collections arm (<a href="https://wnrs.com">wnrs.com</a>), so the full delinquency lifecycle is covered under one network.</p>
+    )}
+
+    <h2>Pricing</h2>
+    {svc.seatPriced ? (
+      <p>Staffed per seat: <strong>$1,400/seat per month</strong> part-time or <strong>$2,800/seat per month</strong> full-time, including training, QA, reporting, and a named point of contact. <a href="/#pricing">See pricing →</a></p>
+    ) : (
+      <p>Billing &amp; collections engagements are scoped to your portfolio and account volume and priced per program. <a href="/#contact">Contact us for pricing →</a></p>
+    )}
+
+    <CtaBox
+      heading={`Let's scope your ${svc.name.toLowerCase()} team`}
+      body="Tell us your channels, languages, and rough monthly volume. We'll come back with a staffing plan and a go-live date — usually within two business days."
+      label="Book a call"
+    />
+  </article>
+
+  {related.length > 0 && (
+    <section class="related">
+      <div class="wrap">
+        <div class="lab">From Signal · {svc.navLabel}</div>
+        <div class="rgrid">
+          {related.map((r) => (
+            <a href={`/blog/${r.slug}`} class="rcard">
+              <div class="tagcat">{r.data.category}</div>
+              <h3>{r.data.title}</h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="block">
+    <div class="wrap">
+      <div class="gridhead">More services</div>
+      <div class="offer svcs">
+        {otherServices.map((s) => (
+          <a href={`/services/${s.slug}`} class="cell link">
+            <div class="ic">{s.ic}</div>
+            <h3>{s.name}</h3>
+            <p>{s.short}</p>
+            <span class="more">Learn more <span class="ar">→</span></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

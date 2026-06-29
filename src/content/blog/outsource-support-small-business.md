@@ -4,7 +4,7 @@ metaTitle: "Outsource Customer Support Small Business | Teleforce"
 description: "Ready to outsource customer support for your small business? Learn what it actually costs, what to watch out for, and how to find a partner that fits your scale."
 excerpt: "Outsourcing customer support isn't just for enterprise. Here's what small businesses need to know before signing a contract—costs, tradeoffs, and where to start."
 primaryKeyword: "outsource customer support small business"
-category: Operations
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-10-24
 faq:

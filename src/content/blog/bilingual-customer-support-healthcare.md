@@ -4,7 +4,7 @@ metaTitle: "Bilingual Customer Support Healthcare | Teleforce"
 description: "Bilingual customer support in healthcare isn't just good CX — language gaps cause adverse events. Here's how healthcare companies close the gap without breaking budgets."
 excerpt: "Language barriers in healthcare cause real harm. Here's what healthcare companies need to know before building bilingual support capacity."
 primaryKeyword: "bilingual customer support healthcare"
-category: Bilingual CX
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-08-21
 faq:

@@ -4,7 +4,7 @@ metaTitle: "24/7 Customer Support Without Burning Out Your Team | Teleforce"
 description: "Learn how to offer 24/7 customer support without destroying your team. Real strategies, honest tradeoffs, and a model that actually scales."
 excerpt: "Customers expect around-the-clock help — but running your own team in shifts is expensive, exhausting, and hard to sustain. Here's how to close that gap."
 primaryKeyword: "24/7 customer support"
-category: Operations
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-10-08
 related:

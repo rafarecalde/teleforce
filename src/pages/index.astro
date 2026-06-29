@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Waveform from '../components/Waveform.astro';
-import { SITE, STATS, LOGOS, FORM_ACTION } from '../consts';
+import { SITE, STATS, LOGOS, SERVICES, FORM_ACTION } from '../consts';
 
 // Duplicate the logo list so the marquee scrolls seamlessly (-50% loop).
 const marquee = [...LOGOS, ...LOGOS];
@@ -17,7 +17,7 @@ const marquee = [...LOGOS, ...LOGOS];
         <span class="l2">In both languages.</span><br />
         <span class="l3">On your clock.</span>
       </h1>
-      <p class="lede">Teleforce runs <b>bilingual customer support</b> — and <b>early-stage collections</b> — for U.S. companies.
+      <p class="lede">Teleforce is a <b>bilingual nearshore BPO</b> for U.S. companies — customer service, tech support, collections, and the back-office work behind them.
         Dedicated English/Spanish agents who work as an extension of your brand, on U.S. time.
         Powered by <b>WNRS</b> — a Fortune 500 network, 30+ years deep — so there's no startup ramp to wait through.</p>
       <div class="hero-cta">
@@ -46,31 +46,19 @@ const marquee = [...LOGOS, ...LOGOS];
 
   <section class="block" id="services">
     <div class="wrap reveal">
-      <div class="eyebrow">What you get</div>
-      <h2 class="disp">A support team, not a call center.</h2>
-      <p class="sub">Named agents, trained on your product and your voice, who your customers won't be able to tell from in-house staff.</p>
-      <div class="offer">
-        <div class="cell"><div class="ic">EN / ES</div><h3>Truly bilingual</h3><p>Native English and Spanish from one seat — no separate teams, no language routing.</p></div>
-        <div class="cell"><div class="ic">UTC−5</div><h3>Nearshore, not offshore</h3><p>Real-time overlap with U.S. business hours. Same-day feedback loops, not overnight delays.</p></div>
-        <div class="cell"><div class="ic">VOICE · CHAT · EMAIL</div><h3>Every channel</h3><p>Inbound support across phone, live chat, and email — on your tools and your SLAs.</p></div>
-        <div class="cell"><div class="ic">DAY ONE</div><h3>Established backbone</h3><p>The WNRS network's recruiting, training, QA, security, and uptime already serve global enterprises. You inherit it.</p></div>
+      <div class="eyebrow">What we do</div>
+      <h2 class="disp">One bilingual team, six ways to deploy it.</h2>
+      <p class="sub">Teleforce is a bilingual nearshore BPO. Customer service is where most clients start — then they add the back-office and revenue functions behind it, from the same trained team, on U.S. hours.</p>
+      <div class="offer svcs">
+        {SERVICES.map((s) => (
+          <a href={`/services/${s.slug}`} class="cell link">
+            <div class="ic">{s.ic}</div>
+            <h3>{s.name}</h3>
+            <p>{s.short}</p>
+            <span class="more">Learn more <span class="ar">→</span></span>
+          </a>
+        ))}
       </div>
-    </div>
-  </section>
-
-  <section class="block" id="collections">
-    <div class="wrap reveal">
-      <div class="eyebrow">Also: collections</div>
-      <h2 class="disp">Recover revenue without losing the customer.</h2>
-      <p class="sub">Bilingual pre-delinquent and early-stage AR, run as a first-party extension of your brand — keeping early collections in your own brand voice.</p>
-      <div class="offer">
-        <div class="cell"><div class="ic">PRE-DELINQUENT</div><h3>Catch it early</h3><p>Friendly bilingual reminders before an account ages past due — keeping customers current without souring the relationship.</p></div>
-        <div class="cell"><div class="ic">1–60 DAYS</div><h3>Early-stage recovery</h3><p>We work the early delinquency buckets, where recovery rates are highest and tone matters most.</p></div>
-        <div class="cell"><div class="ic">FIRST-PARTY</div><h3>In your name</h3><p>We collect in your name, as an extension of your brand — keeping the relationship you paid to build front and center.</p></div>
-        <div class="cell"><div class="ic">EN / ES</div><h3>Reach every account</h3><p>Native Spanish outreach connects with customers an English-only team can't — lifting recovery, not risk.</p></div>
-      </div>
-      <p class="pricenote">Need late-stage, third-party recovery too? The WNRS network runs a dedicated collections arm — <a href="https://wnrs.com" style="color:var(--amber)">wnrs.com</a>.</p>
-      <p class="pricenote">Collections engagements are scoped to your portfolio and priced per program — <a href="#contact" style="color:var(--amber)">contact us for pricing</a>.</p>
     </div>
   </section>
 
@@ -104,9 +92,9 @@ const marquee = [...LOGOS, ...LOGOS];
   <div class="pricewrap">
     <section class="block" id="pricing">
       <div class="wrap reveal">
-        <div class="eyebrow">Customer support pricing</div>
+        <div class="eyebrow">Pricing</div>
         <h2 class="disp">Three ways to buy.</h2>
-        <p class="sub">Per-seat pricing below is for bilingual <b>customer support</b> — start part-time, scale into a dedicated full-time agent, consolidate into a managed team. Move between them as you grow.</p>
+        <p class="sub">Per-seat pricing below covers our <b>staffed services</b> — customer service, tech support, data entry, appointment setting, and lead gen. Start part-time, scale into a dedicated full-time agent, consolidate into a managed team.</p>
         <div class="tiers">
           <div class="tier">
             <div class="tag">Part-time</div>
@@ -128,7 +116,7 @@ const marquee = [...LOGOS, ...LOGOS];
             <div class="desc">A managed team with its own lead, QA, and reporting layer at a volume seat rate.</div>
           </div>
         </div>
-        <p class="pricenote">All support plans include training, QA, reporting, and a named point of contact. Collections and high-volume programs are scoped and priced per program — <a href="#contact" style="color:var(--amber)">contact us for pricing</a>.</p>
+        <p class="pricenote">All staffed-service plans include training, QA, reporting, and a named point of contact. Billing &amp; collections and high-volume programs are scoped and priced per program — <a href="#contact" style="color:var(--amber)">contact us for pricing</a>.</p>
       </div>
     </section>
   </div>

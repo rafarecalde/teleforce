@@ -4,7 +4,7 @@ metaTitle: "Bilingual Early-Out Collections | Teleforce"
 description: "Discover how bilingual early-out collections in the first 60 days dramatically improves recovery rates while protecting the customer relationship."
 excerpt: "The first 60 days after a missed payment are your best window to recover—and your best chance to keep the customer. Here's how bilingual outreach changes the math."
 primaryKeyword: "early-out collections"
-category: Collections
+category: Billing & Collections
 readMinutes: 6
 publishDate: 2026-06-24
 faq:

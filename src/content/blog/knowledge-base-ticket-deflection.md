@@ -4,7 +4,7 @@ metaTitle: "Ticket Deflection Knowledge Base That Works | Teleforce"
 description: "Learn how a well-built ticket deflection knowledge base cuts support volume without hurting CSAT — and where human agents still make the difference."
 excerpt: "A knowledge base that deflects tickets sounds simple. In practice, most of them fail quietly. Here's what separates the ones that actually work."
 primaryKeyword: "ticket deflection knowledge base"
-category: Operations
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-11-13
 related:

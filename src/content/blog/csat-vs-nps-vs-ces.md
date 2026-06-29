@@ -4,7 +4,7 @@ metaTitle: "CSAT vs NPS vs CES: Which Metric to Trust | Teleforce"
 description: "Confused by csat vs nps vs ces? Learn what each metric actually measures, where each one breaks down, and which to act on for support decisions."
 excerpt: "Three metrics, three different questions. Knowing which one to trust — and when — is the difference between fixing support and just measuring it."
 primaryKeyword: "csat vs nps vs ces"
-category: Operations
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-09-30
 related:

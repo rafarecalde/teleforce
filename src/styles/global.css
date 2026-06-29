@@ -101,6 +101,22 @@ h2.disp{font-weight:800;font-size:clamp(28px,5.5vw,44px);margin-bottom:10px}
 .offer .cell p{font-size:14px;color:var(--on-paper-mut)}
 @media (max-width:560px){.offer{grid-template-columns:1fr}}
 
+/* services overview grid (homepage + hub) */
+.offer.svcs{grid-template-columns:repeat(3,1fr)}
+.offer .cell.link{display:block;transition:background .2s}
+.offer .cell.link:hover{background:var(--paper-2)}
+.offer .cell .more{display:inline-flex;gap:6px;margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.04em;color:var(--ink);font-weight:600}
+.offer .cell .more .ar{color:var(--amber);transition:transform .2s}
+.offer .cell.link:hover .more .ar{transform:translateX(4px)}
+@media (max-width:760px){.offer.svcs{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.offer.svcs{grid-template-columns:1fr}}
+
+/* service detail: what's-included checklist */
+.svc-list{display:grid;grid-template-columns:1fr 1fr;gap:12px 30px;margin:8px 0 0;list-style:none}
+.svc-list li{position:relative;padding-left:26px;font-size:15.5px;color:var(--on-paper)}
+.svc-list li::before{content:"›";position:absolute;left:5px;color:var(--amber);font-family:'IBM Plex Mono',monospace;font-weight:600}
+@media (max-width:620px){.svc-list{grid-template-columns:1fr}}
+
 .howwrap{background:var(--paper-2)}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}
 .step{border-top:2px solid var(--ink);padding-top:14px}

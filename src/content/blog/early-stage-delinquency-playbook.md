@@ -4,7 +4,7 @@ metaTitle: "Early-Stage Delinquency Playbook | Teleforce"
 description: "A concrete playbook for managing early stage delinquency in the 1–30 and 31–60 day buckets—before balances harden and recovery costs spike."
 excerpt: "The accounts you recover in days 1–60 cost a fraction of what a charge-off does. Here's how to work each bucket."
 primaryKeyword: "early stage delinquency"
-category: Collections
+category: Billing & Collections
 readMinutes: 6
 publishDate: 2026-12-11
 related:

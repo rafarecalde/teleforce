@@ -4,7 +4,7 @@ metaTitle: "Customer Support Transition Plan That Works | Teleforce"
 description: "A practical customer support transition plan that protects CSAT scores while you move from in-house to outsourced — phased steps, timelines, and honest tradeoffs."
 excerpt: "Switching support providers is one of the riskiest operational moves you can make. Here's how to do it without your customers noticing."
 primaryKeyword: "customer support transition plan"
-category: Operations
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-09-22
 faq:

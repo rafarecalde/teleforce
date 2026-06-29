@@ -4,7 +4,7 @@ metaTitle: "Customer Support SLA: What It Is & How to Set One | Teleforce"
 description: "A customer support SLA defines exactly how fast and how well your team must respond. Learn what to measure, how to set realistic targets, and when to revisit them."
 excerpt: "SLAs turn vague support promises into measurable commitments. Here's how to build one that's actually useful — not just a doc that collects dust."
 primaryKeyword: "customer support sla"
-category: Operations
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-10-20
 related:

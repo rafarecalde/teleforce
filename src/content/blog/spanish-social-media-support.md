@@ -4,7 +4,7 @@ metaTitle: "Spanish Social Media Customer Support Guide | Teleforce"
 description: "Spanish social media customer support isn't just about translation — it's about which platforms matter and how fast you respond. Here's how to build it right."
 excerpt: "Your Spanish-speaking customers are already DMing you. The question is whether anyone is responding in their language — and on the right platform."
 primaryKeyword: "spanish social media customer support"
-category: Bilingual CX
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-09-06
 related:

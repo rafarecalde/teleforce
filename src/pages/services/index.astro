@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SERVICES } from '../../consts';
+---
+<BaseLayout
+  title="Services — Bilingual Nearshore BPO | Teleforce"
+  description="Teleforce services: bilingual customer service, tech support, data entry, appointment setting, first-party billing & collections, and sales lead generation — nearshore, on U.S. hours."
+>
+  <header class="ahead">
+    <div class="wrap">
+      <div class="cat">Services</div>
+      <h1>One bilingual team. Six ways to deploy it.</h1>
+      <div class="ameta"><span>Nearshore · U.S. hours</span><span>English / Spanish</span><span>Powered by WNRS</span></div>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="wrap">
+      <p class="sub" style="margin-bottom:8px">Teleforce is a bilingual nearshore BPO. Start with the function you need most and add others as you grow — same trained team, same standard, same U.S. hours.</p>
+      <div class="offer svcs" style="margin-top:28px">
+        {SERVICES.map((s) => (
+          <a href={`/services/${s.slug}`} class="cell link">
+            <div class="ic">{s.ic}</div>
+            <h3>{s.name}</h3>
+            <p>{s.short}</p>
+            <span class="more">Learn more <span class="ar">→</span></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--amber)">Book a call</div>
+      <h2 class="disp" style="color:#fff">Not sure where to start?</h2>
+      <p class="sub" style="color:var(--on-dark-mut);max-width:60ch">Tell us your volumes and the functions you're trying to cover. We'll come back with a staffing plan and a go-live date — usually within two business days.</p>
+      <div style="margin-top:22px"><a href="/#contact" class="btn btn-amber">Book a call</a></div>
+    </div>
+  </section>
+</BaseLayout>

@@ -4,7 +4,7 @@ metaTitle: "Customer Support Agent Training for Brand Voice | Teleforce"
 description: "Effective customer support agent training goes beyond scripts. Learn how to get outsourced agents speaking your brand's language — in English and Spanish."
 excerpt: "Your agents answer thousands of calls a month. If they don't sound like your brand, that's thousands of chances to confuse or lose a customer."
 primaryKeyword: "customer support agent training"
-category: Bilingual CX
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-08-29
 related:

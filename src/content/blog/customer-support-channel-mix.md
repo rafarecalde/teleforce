@@ -4,7 +4,7 @@ metaTitle: "Customer Support Channel Mix Guide | Teleforce"
 description: "Choosing the right customer support channel mix — voice, chat, or email — shapes your CSAT scores and your costs. Here's how to decide what your team actually needs."
 excerpt: "Voice, chat, and email each solve a different job. Build the wrong mix and you pay for coverage customers don't use — or miss the moments that matter most."
 primaryKeyword: "customer support channel mix"
-category: Operations
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-10-28
 related:

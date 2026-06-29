@@ -4,7 +4,7 @@ metaTitle: "Bilingual Live Chat Support: Setup & Pitfalls | Teleforce"
 description: "Setting up bilingual live chat support? Learn which routing models work, the hidden pitfalls that kill CSAT, and what to check before you go live."
 excerpt: "Bilingual live chat looks simple to launch — until the first Spanish-speaking customer gets routed to a monolingual agent at 9 p.m. Here's how to do it right."
 primaryKeyword: "bilingual live chat support"
-category: Bilingual CX
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-08-17
 faq:

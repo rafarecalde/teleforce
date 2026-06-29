@@ -4,7 +4,7 @@ metaTitle: "Spanish Customer Service Outsourcing Guide | Teleforce"
 description: "A practical guide to spanish customer service outsourcing: what to evaluate, where to look, honest tradeoffs, and how to avoid the most common mistakes buyers make."
 excerpt: "Outsourcing Spanish customer service isn't just a cost play — it's a retention play. Here's what to evaluate before you commit to a vendor or a model."
 primaryKeyword: "spanish customer service outsourcing"
-category: Bilingual CX
+category: Customer Service
 readMinutes: 6
 publishDate: 2026-08-05
 faq:

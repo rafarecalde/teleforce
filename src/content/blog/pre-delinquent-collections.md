@@ -4,7 +4,7 @@ metaTitle: "Pre-Delinquent Collections | Teleforce"
 description: "Pre-delinquent collections outreach contacts customers before day 1 of delinquency — protecting cash flow, DSO, and the customer relationship all at once."
 excerpt: "The cheapest collection call is the one that stops an account from going past due. Here's how pre-delinquent outreach works and why it belongs in your AR stack."
 primaryKeyword: "pre-delinquent collections"
-category: Collections
+category: Billing & Collections
 readMinutes: 6
 publishDate: 2026-11-25
 related:

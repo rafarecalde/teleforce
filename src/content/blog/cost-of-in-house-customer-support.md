@@ -3,7 +3,7 @@ title: "The Real Cost of In-House Customer Support — and When to Outsource"
 description: "Salary is the smallest line. Here's the full loaded cost of in-house support — tools, management, attrition, idle capacity — and when outsourcing wins."
 excerpt: "Salary is the smallest line. Tools, management, attrition, and idle capacity are where in-house support quietly drains margin. A full build-vs-buy breakdown."
 primaryKeyword: cost of in-house customer support
-category: Operations
+category: Customer Service
 readMinutes: 9
 publishDate: 2026-06-16
 updatedDate: 2026-06-16
