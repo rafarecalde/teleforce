@@ -1,11 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Waveform from '../components/Waveform.astro';
-import { SITE, STATS, LOGOS } from '../consts';
+import { SITE, STATS, LOGOS, FORM_ACTION } from '../consts';
 
 // Duplicate the logo list so the marquee scrolls seamlessly (-50% loop).
 const marquee = [...LOGOS, ...LOGOS];
-const formAction = `https://formspree.io/f/${SITE.formspreeId}`;
 ---
 <BaseLayout title="Teleforce — Bilingual Customer Support" description={SITE.description}>
 
@@ -126,7 +125,12 @@ const formAction = `https://formspree.io/f/${SITE.formspreeId}`;
           <h2 class="disp">Let's scope your team.</h2>
           <p class="sub">Tell us your channels and volumes. We'll come back with a staffing plan and a go-live date — usually within two business days.</p>
         </div>
-        <form method="POST" action={formAction}>
+        <form method="POST" action={FORM_ACTION}>
+          <input type="hidden" name="_subject" value="New Teleforce inquiry — book a call" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value={`${SITE.url}/thanks`} />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required /></div>
           <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" placeholder="you@company.com" required /></div>
           <div class="field"><label for="need">What do you need?</label><textarea id="need" name="message" rows="3" placeholder="Channels, languages, rough monthly volume…"></textarea></div>

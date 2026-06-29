@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Waveform from '../../components/Waveform.astro';
 import { getPublishedPosts, formatDate } from '../../lib/posts';
-import { CATEGORIES } from '../../consts';
+import { CATEGORIES, SITE, FORM_ACTION } from '../../consts';
 
 const posts = await getPublishedPosts();
 
@@ -78,7 +78,11 @@ const teaser = (p: (typeof posts)[number]) => p.data.excerpt ?? p.data.descripti
         <h2>Get Signal in your inbox.</h2>
         <p>One practical piece on support operations, twice a month. No spam, unsubscribe anytime.</p>
       </div>
-      <form class="subform" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+      <form class="subform" method="POST" action={FORM_ACTION}>
+        <input type="hidden" name="_subject" value="New Signal subscriber" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value={`${SITE.url}/thanks`} />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <input type="email" name="email" placeholder="you@company.com" required />
         <button class="btn btn-amber" type="submit">Subscribe</button>
       </form>

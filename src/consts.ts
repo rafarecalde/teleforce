@@ -10,9 +10,13 @@ export const SITE = {
     'Bilingual customer support for U.S. companies — dedicated English/Spanish agents, on U.S. time, powered by the WNRS network.',
   tagline: 'Bilingual customer support · Nearshore · Powered by WNRS',
   poweredBy: 'Powered by WNRS',
-  // Contact form: paste your Formspree form ID here (https://formspree.io).
-  formspreeId: 'YOUR_FORM_ID',
+  // Forms post to FormSubmit.co (no account; confirm once via email on first send).
+  // After activation you can swap this for the FormSubmit alias to hide the address.
+  contactEmail: 'rrlegal82@gmail.com',
 } as const;
+
+// FormSubmit endpoint for the lead/subscribe forms.
+export const FORM_ACTION = `https://formsubmit.co/${SITE.contactEmail}`;
 
 // Proof stats — exact. Never add an agent headcount. (Hubs intentionally omitted.)
 export const STATS = [
