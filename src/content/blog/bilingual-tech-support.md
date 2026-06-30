@@ -53,7 +53,7 @@ Hiring bilingual tech support agents domestically is expensive and highly compet
 
 Nearshore BPO offers a different model. [Outsourcing tech support](/blog/outsourcing-tech-support) to a nearshore partner in Latin America gives you access to a much larger bilingual talent pool, at seat rates that are substantially lower than domestic equivalents, without the time-zone friction of offshore delivery.
 
-Ecuador, in particular, produces agents with accent-neutral Spanish that is highly intelligible across all major U.S. Hispanic markets — Mexican-American, Puerto Rican, Cuban-American, Dominican, and others. Ecuadorian contact center agents also operate on Eastern Time (UTC-5) year-round, meaning your nearshore team works the same hours your customers call in.
+Nearshore Latin America, in particular, produces agents with accent-neutral Spanish that is highly intelligible across all major U.S. Hispanic markets — Mexican-American, Puerto Rican, Cuban-American, Dominican, and others. Many LATAM contact center hubs operate on or close to Eastern Time, meaning your nearshore team works the same hours your customers call in.
 
 > **Your Spanish-speaking customers deserve real help, not a language barrier.** A bilingual tech support team that actually understands the problem is the fastest path from frustrated user to resolved ticket. [Book a call →](/#contact)
 
@@ -94,7 +94,7 @@ Standard tech support metrics apply to bilingual queues, but you should track th
 
 ## What a Staffed Bilingual Seat Costs
 
-Domestic bilingual tech support agents cost $18–$25/hour fully loaded in most U.S. markets, and that's before factoring in benefits, HR overhead, and turnover. Nearshore staffing through a provider like Teleforce runs at fixed seat rates — part-time seats at $1,400/seat/month and full-time seats at $2,800/seat/month — with no per-hour billing and no surprise surcharges.
+Domestic bilingual tech support agents cost $18–$25/hour fully loaded in most U.S. markets, and that's before factoring in benefits, HR overhead, and turnover. Nearshore staffing through a provider like Teleforce is significantly more cost-efficient — pricing is quote-based depending on program scope, seat count, and channel mix. [Contact us for a quote](/#contact).
 
 The math matters, but the more important calculation is what it costs *not* to offer bilingual tech support: the churned accounts, the repeat contacts, the escalations that tie up tier-2 engineers on issues that should have resolved at tier 1.
 
@@ -102,7 +102,7 @@ The math matters, but the more important calculation is what it costs *not* to o
 
 ## Teleforce's Bilingual Tech Support Model
 
-Teleforce is a nearshore BPO that delivers bilingual (English/Spanish) tech support from Ecuador, backed by the infrastructure of WNRS — a Fortune 500 partner network with 30+ years of experience across 20+ industries. That means enterprise-grade systems, security controls, and QA processes running from an Ecuadorian delivery team with strong bilingual talent and low attrition.
+Teleforce is a nearshore BPO that delivers bilingual (English/Spanish) tech support across Latin America, built on a Fortune 500-grade support backbone with 30+ years of enterprise support infrastructure across 20+ industries. That means enterprise-grade systems, security controls, and QA processes running from a LATAM delivery team with strong bilingual talent and low attrition.
 
 Our tech support agents are trained on your product, your escalation matrix, and your brand voice — in both languages. We handle tier-1 troubleshooting, account support, and technical onboarding for U.S. SaaS companies, consumer tech brands, and B2B software providers that need to serve a growing Spanish-speaking customer base without hiring two separate support teams.
 

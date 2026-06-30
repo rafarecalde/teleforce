@@ -62,6 +62,12 @@ const marquee = [...LOGOS, ...LOGOS];
     </div>
   </section>
 
+  <section class="block" style="padding-top:0">
+    <div class="wrap">
+      <img class="band-img" src="/brand/image1.jpg" alt="The Teleforce team on the floor" loading="lazy" />
+    </div>
+  </section>
+
   <div class="howwrap">
     <section class="block" id="how">
       <div class="wrap reveal">
@@ -97,7 +103,7 @@ const marquee = [...LOGOS, ...LOGOS];
         {TESTIMONIALS.map((t) => (
           <blockquote class="quote">
             <p>“{t.quote}”</p>
-            <div class="by"><b>{t.name}</b> · {t.company}</div>
+            <div class="by"><img class="avatar" src="/brand/image10.jpg" alt={t.name} loading="lazy" /><span><b>{t.name}</b> · {t.company}</span></div>
           </blockquote>
         ))}
       </div>

@@ -66,9 +66,9 @@ The pragmatic answer for most growth-stage B2B companies: **start outsourced, ru
 
 Most outsourced SDR comparisons pit domestic agencies against offshore providers in Eastern Europe or Southeast Asia. There is a third category that often gets overlooked: nearshore teams operating in full U.S. time-zone alignment.
 
-Teleforce delivers SDR programs from Ecuador — a market with accent-neutral English and Spanish speakers, high agent retention, and full overlap with U.S. Eastern time. That time-zone alignment matters more than most buyers realize. A SDR in UTC+5 working 9-to-5 local time is calling your prospects at 2 AM Eastern. That is not a pipeline motion; that is voicemail farming.
+Teleforce delivers SDR programs from nearshore Latin America — markets with accent-neutral English and Spanish speakers, high agent retention, and full overlap with U.S. Eastern time. That time-zone alignment matters more than most buyers realize. A SDR in UTC+5 working 9-to-5 local time is calling your prospects at 2 AM Eastern. That is not a pipeline motion; that is voicemail farming.
 
-Ecuador-based reps working U.S. hours reach prospects in real time, handle objections live, and pass warm handoffs directly to your closers without the scheduling gymnastics offshore time zones require. And because Teleforce operates within the WNRS network — a Fortune 500 partnership spanning 30+ years and 20+ industries — the infrastructure behind the team is enterprise-grade, not startup-fragile.
+LATAM-based reps working U.S. hours reach prospects in real time, handle objections live, and pass warm handoffs directly to your closers without the scheduling gymnastics offshore time zones require. And because Teleforce is backed by 30+ years of enterprise support infrastructure spanning 20+ industries, the backbone behind every team is Fortune 500-grade, not startup-fragile.
 
 ---
 

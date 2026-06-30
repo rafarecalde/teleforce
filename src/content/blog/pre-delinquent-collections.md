@@ -94,9 +94,9 @@ Running pre-delinquent outreach in-house sounds right in principle. In practice,
 
 Nearshore outsourcing solves that capacity problem without sacrificing quality. Agents operating in your time zone — with full Eastern Time overlap, not a 9-hour lag — can work live AR queues in real time, escalate disputes immediately, and represent your brand in both English and Spanish.
 
-Teleforce deploys bilingual (EN/ES) first-party collections agents from Ecuador, powered by WNRS's Fortune 500 infrastructure. Ecuador's agent talent brings accent-neutral Spanish, strong English fluency, and full U.S. Eastern alignment year-round (UTC-5, no seasonal shift). Clients get enterprise-grade compliance, call recording, and reporting — not a cost-cutting workaround.
+Teleforce deploys bilingual (EN/ES) first-party collections agents across Latin America, backed by 30+ years of enterprise support infrastructure serving Fortune 500-grade clients across 20+ industries. LATAM agents bring accent-neutral Spanish, strong English fluency, and full U.S. Eastern alignment year-round. Clients get enterprise-grade compliance, call recording, and reporting — not a cost-cutting workaround.
 
-Early-stage collections is scoped to your portfolio and account volume rather than sold as a flat seat rate — [contact us for pricing](/#contact). The math is usually straightforward: one recovered large invoice or prevented 60-day delinquency can pay for a month of outreach.
+Pricing is quote-based and scoped to your portfolio and account volume — [contact us for a quote](/#contact). The math is usually straightforward: one recovered large invoice or prevented 60-day delinquency can pay for a month of outreach.
 
 To see how pre-delinquent outreach fits into a broader AR workflow, the [Early-Stage Delinquency Playbook](/blog/pre-delinquent-collections) maps the full 1–60 day sequence that follows when pre-delinquent contacts do not convert.
 
@@ -116,4 +116,4 @@ The lowest-cost collection call is the one that prevents a delinquency from happ
 
 If your current AR process starts at day 1 past due, you are already behind. The accounts that slipped into delinquency last quarter were catchable — they just needed a call, in the right language, at the right time.
 
-Teleforce runs bilingual first-party pre-delinquent outreach for U.S. companies at nearshore efficiency and Fortune 500 infrastructure standards. [Talk to the team](/#collections) about adding pre-delinquent coverage to your AR workflow.
+Teleforce runs bilingual first-party pre-delinquent outreach for U.S. companies at nearshore efficiency and Fortune 500-grade infrastructure standards. [Talk to the team](/#collections) about adding pre-delinquent coverage to your AR workflow.

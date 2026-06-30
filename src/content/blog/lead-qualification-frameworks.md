@@ -110,7 +110,7 @@ Build that checklist into your CRM as a required field before a lead status can 
 
 If any portion of your ICP is Spanish-speaking — whether in the U.S. Hispanic market, Latin America, or bilingual enterprise accounts — qualification done in a prospect's preferred language changes outcomes. Rapport forms faster. Prospects disclose pain more openly. Objections surface earlier, which is exactly what you want: a "no" in minute five is infinitely cheaper than a "no" after three demos.
 
-Teleforce's SDR teams are fully bilingual, English and Spanish, operating on U.S. Eastern time from Ecuador. Accent-neutral Spanish, full timezone overlap with the continental U.S., and agent retention rates that hold team quality steady over time — that is the infrastructure behind consistent qualification at scale. Backed by WNRS (a Fortune 500 network with 30+ years and 20+ industries), the operation is built for enterprise-grade reliability regardless of where the work is delivered.
+Teleforce's SDR teams are fully bilingual, English and Spanish, operating on U.S. Eastern time from across Latin America. Accent-neutral Spanish, full timezone overlap with the continental U.S., and agent retention rates that hold team quality steady over time — that is the infrastructure behind consistent qualification at scale. Built on a Fortune 500-grade support backbone with 30+ years of enterprise support infrastructure spanning 20+ industries, the operation delivers enterprise-grade reliability regardless of where the work is delivered.
 
 Learn more about how this model works across our [outsourced SDR teams](/blog/outsourced-sdr-teams) and broader [outsourcing lead generation](/blog/outsourcing-lead-generation) capabilities.
 

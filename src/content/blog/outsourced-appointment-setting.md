@@ -77,18 +77,15 @@ Appointment setting is a voice-first, relationship-dependent function. The quali
 
 Offshore teams in distant time zones often struggle with two things: scheduling overlap with U.S. buyers and the accent clarity that builds immediate rapport on a cold call. These are not trivial friction points. They show up in conversion rates.
 
-Nearshore teams based in Latin America eliminate both problems. Ecuador, where Teleforce operates, sits on U.S. Eastern Time year-round — full business-hours overlap without the strain of early-morning or late-night shifts. Ecuadorian agents are recognized for accent-neutral Spanish and strong English proficiency, which means conversations feel natural whether the buyer is anglophone or Spanish-speaking.
+Nearshore teams across Latin America eliminate both problems. LATAM hubs aligned to U.S. Eastern Time deliver full business-hours overlap without the strain of early-morning or late-night shifts. Agents in these markets are recognized for accent-neutral Spanish and strong English proficiency, which means conversations feel natural whether the buyer is anglophone or Spanish-speaking.
 
 That operational stability translates to agent retention rates that outperform offshore alternatives, which means your outsourced team builds real familiarity with your product, your buyers, and your sales process over time — rather than churning through new hires every few months.
 
 ## What to Expect from Teleforce
 
-Teleforce is a bilingual nearshore BPO powered by WNRS — a Fortune 500 delivery network with more than thirty years of experience across twenty-plus industries. That infrastructure means enterprise-grade quality assurance, data security, and operational depth, delivered from Ecuador at a cost structure that makes sense for growth-stage companies.
+Teleforce is a bilingual nearshore BPO built on 30+ years of enterprise support infrastructure spanning 20-plus industries — a Fortune 500-grade delivery backbone that brings enterprise-level quality assurance, data security, and operational depth to growth-stage companies at a nearshore cost structure.
 
-The [appointment setting service](/services/appointment-setting) is seat-priced and built for consistency:
-
-- **Part-time:** $1,400 per seat per month
-- **Full-time:** $2,800 per seat per month
+The [appointment setting service](/services/appointment-setting) is built for consistency and scales by hire, by seat, or per program. Pricing is quote-based — [contact us for a quote](/#contact).
 
 No hidden fees, no pay-per-meeting pricing that incentivizes volume over quality. You get a dedicated agent aligned to your ICP, your CRM, and your sales playbook — managed by a team that has been doing this across industries for decades.
 

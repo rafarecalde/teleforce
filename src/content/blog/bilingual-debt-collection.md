@@ -40,7 +40,7 @@ Not all bilingual collections programs are equal. There's a difference between:
 
 The third option is what moves accounts. Cultural fluency means knowing that some Spanish-speaking consumers are more deferential to authority figures and respond well to a respectful, explanatory tone. It means understanding that a consumer who says "lo voy a pensar" (I'll think about it) may just need a specific callback time, not a hard close. It means being able to pivot from formal Castilian Spanish to more colloquial Mexican or Caribbean phrasing when the conversation calls for it.
 
-That level of fluency doesn't come from a translation script. It comes from agents for whom Spanish is a first language — which is exactly what a nearshore Ecuador-based operation delivers.
+That level of fluency doesn't come from a translation script. It comes from agents for whom Spanish is a first language — which is exactly what a nearshore Latin America operation delivers.
 
 ---
 
@@ -68,21 +68,21 @@ This is why integrating bilingual capacity at the earliest stage of delinquency 
 
 ---
 
-> **Ready to stop leaving Hispanic account recoveries on the table?** Teleforce runs native-Spanish, first-party early-stage collections from Ecuador — with Fortune 500 infrastructure behind every agent. [Book a call →](/#contact)
+> **Ready to stop leaving Hispanic account recoveries on the table?** Teleforce runs native-Spanish, first-party early-stage collections across Latin America — with Fortune 500-grade infrastructure behind every agent. [Book a call →](/#contact)
 
 ---
 
-## Why Ecuador-Based Agents Deliver on This Promise
+## Why Nearshore Latin America Agents Deliver on This Promise
 
-Teleforce's collections and support operations run from Ecuador, a hub that offers a specific set of advantages for bilingual debt collection work.
+Teleforce's collections and support operations run across nearshore Latin America, a region that offers a specific set of advantages for bilingual debt collection work.
 
-**Accent-neutral Spanish.** Ecuadorian Spanish is consistently rated among the clearest, most neutrally accented in Latin America. Consumers across Mexican, Caribbean, Central American, and South American communities understand it easily — no regional friction.
+**Accent-neutral Spanish.** Nearshore LATAM hubs — particularly those with neutral-accent Spanish talent — are consistently rated among the clearest communicators in Latin America. Consumers across Mexican, Caribbean, Central American, and South American communities understand them easily — no regional friction.
 
-**Full U.S. Eastern time overlap.** Ecuador runs UTC-5 year-round, with no daylight saving shifts. That means your collections team is live and dialing during the full Eastern business day — no gap-hour scheduling around time zone mismatches.
+**Full U.S. Eastern time overlap.** Key LATAM hubs run UTC-5 year-round, with no daylight saving shifts. That means your collections team is live and dialing during the full Eastern business day — no gap-hour scheduling around time zone mismatches.
 
-**Agent stability.** Ecuador's BPO talent market has lower attrition than many offshore alternatives. In collections, agent continuity matters: experienced agents handle difficult conversations better, resolve disputes faster, and stay compliant under pressure.
+**Agent stability.** LATAM BPO talent markets deliver lower attrition than many offshore alternatives. In collections, agent continuity matters: experienced agents handle difficult conversations better, resolve disputes faster, and stay compliant under pressure.
 
-**Enterprise infrastructure.** Teleforce operates under the WNRS network — 30+ years, 20+ industries, Fortune 500 client history. That backbone means Teleforce clients get Ecuador's talent and time zone advantages with enterprise-grade systems, quality assurance, and compliance controls layered on top. It's not a trade-off; it's both.
+**Enterprise infrastructure.** Teleforce is built on 30+ years of enterprise support infrastructure spanning 20+ industries with a Fortune 500-grade client history. That backbone means Teleforce clients get LATAM's talent and time zone advantages with enterprise-grade systems, quality assurance, and compliance controls layered on top. It's not a trade-off; it's both.
 
 ---
 
@@ -108,4 +108,4 @@ Hispanic consumers are motivated to resolve their debts — the intent data is c
 
 Bilingual debt collection, done as first-party outreach by native-Spanish agents with cultural fluency, closes that gap. It turns contact-rate failures into conversations, and conversations into payment arrangements — before the relationship erodes and the recovery math gets ugly.
 
-Teleforce runs exactly that program, from Ecuador, under Fortune 500 infrastructure, at a price point that pencils out clearly against your AR book. If you're carrying Hispanic accounts in delinquency and not reaching them, that's a fixable problem. [Start the conversation. ](/#collections)
+Teleforce runs exactly that program, across nearshore Latin America, with Fortune 500-grade infrastructure behind every engagement, at a price point that pencils out clearly against your AR book. If you're carrying Hispanic accounts in delinquency and not reaching them, that's a fixable problem. [Start the conversation.](/#collections)

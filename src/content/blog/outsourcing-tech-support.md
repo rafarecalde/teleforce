@@ -11,11 +11,11 @@ faq:
   - q: "What types of issues fall under Tier 1 and Tier 2 tech support?"
     a: "Tier 1 handles first-contact resolution: password resets, account unlocks, basic connectivity troubleshooting, and guided setup. Tier 2 escalates to deeper diagnostics—software configuration, integration issues, and bugs that require product knowledge but not engineering access. Both tiers are prime candidates for outsourcing because the playbooks are well-defined and volume is predictable."
   - q: "How much can I actually save by outsourcing tech support?"
-    a: "Savings depend on your current cost structure, but market data consistently shows 30–50% total cost reduction for rightshored delivery models. The gain comes from lower seat costs, eliminated recruiting overhead, and not paying senior engineers to handle routine tickets. Teleforce seat pricing starts at $1,400/month part-time and $2,800/month full-time—transparent, no per-hour billing surprises."
+    a: "Savings depend on your current cost structure, but market data consistently shows 30–50% total cost reduction for rightshored delivery models. The gain comes from lower seat costs, eliminated recruiting overhead, and not paying senior engineers to handle routine tickets. Teleforce pricing is quote-based—contact us for a quote tailored to your volume and coverage needs."
   - q: "Will outsourced agents understand our product well enough to help customers?"
     a: "They will if onboarding is done right. Effective knowledge transfer—documented runbooks, a product knowledge base, recorded walkthroughs, and shadow-period QA—is what separates a smooth handoff from a rough one. Teleforce agents go through structured product training before they take live contacts, and QA cadences keep accuracy high over time."
   - q: "Is nearshore outsourcing better than offshore for tech support?"
-    a: "For U.S. companies, nearshore typically wins on time-zone overlap and accent neutrality. An Ecuador-based team, for example, runs on full U.S. Eastern hours year-round, meaning real-time collaboration with your internal team and no overnight lag for escalations. Offshore can be cost-effective but often sacrifices those operational advantages."
+    a: "For U.S. companies, nearshore typically wins on time-zone overlap and accent neutrality. A nearshore Latin America team, for example, can run on full U.S. Eastern hours year-round, meaning real-time collaboration with your internal team and no overnight lag for escalations. Offshore can be cost-effective but often sacrifices those operational advantages."
 related:
   - tier-1-vs-tier-2-support
   - reduce-support-escalations
@@ -79,13 +79,13 @@ For U.S. tech companies specifically, nearshore outsourcing tends to outperform 
 
 **Accent neutrality.** Tech support often involves walking users through nuanced troubleshooting steps. Clarity matters. Accent-neutral English—consistent with what U.S. customers expect—reduces friction in those conversations, especially when customers are already frustrated.
 
-**Agent retention.** Offshore markets with very low cost structures often come with high agent turnover. Turnover is expensive in tech support because product knowledge takes time to build. Nearshore markets like Ecuador offer meaningfully lower turnover, which means the agents who know your product actually stay.
+**Agent retention.** Offshore markets with very low cost structures often come with high agent turnover. Turnover is expensive in tech support because product knowledge takes time to build. Nearshore Latin America markets offer meaningfully lower turnover, which means the agents who know your product actually stay.
 
 ## What Teleforce Delivers
 
-Teleforce's [tech support service](/services/tech-support) is built for U.S. companies that need bilingual (English/Spanish) Tier 1–2 support delivered from Ecuador. Agents operate on full U.S. Eastern hours year-round, with enterprise-grade infrastructure backed by WNRS—a 30-year, Fortune 500 support network operating across 20+ industries.
+Teleforce's [tech support service](/services/tech-support) is built for U.S. companies that need bilingual (English/Spanish) Tier 1–2 support delivered from nearshore Latin America. Agents operate on full U.S. Eastern hours year-round, backed by 30+ years of enterprise support infrastructure serving Fortune 500-grade clients across 20+ industries.
 
-Pricing is seat-based: $1,400/month per part-time seat, $2,800/month per full-time seat. No hourly billing, no ambiguous per-contact pricing. You know your cost before the month starts.
+Pricing is quote-based—structured by hire, by seat, or per program depending on your volume and coverage needs. Contact us for a quote. No hourly billing surprises.
 
 The handoff model follows the same structured onboarding described above: documented runbooks, shadow periods, and ongoing QA. If you need Spanish-language tech support alongside English—whether for a bilingual customer base or a product marketed to U.S. Hispanic users—that's not a separate line item. It's included.
 

@@ -75,11 +75,11 @@ No partner is breach-proof. What separates a recoverable incident from a catastr
 
 Nearshore Latin America is not automatically more secure than offshore alternatives. But it carries structural advantages that, when leveraged properly, reduce certain categories of risk.
 
-**Time-zone alignment** means your security and compliance teams can respond in real time if something goes wrong. Ecuador, for example, runs on UTC-5 year-round — no daylight-saving shifts — giving you full overlap with U.S. Eastern business hours. A breach flagged at 11 p.m. in Quito is 11 p.m. in New York, not 3 a.m. in Manila. That overlap matters when minutes count.
+**Time-zone alignment** means your security and compliance teams can respond in real time if something goes wrong. Key nearshore LATAM hubs run on U.S. Eastern or Central time year-round — no daylight-saving shifts — giving you full overlap with U.S. business hours. A breach flagged at 11 p.m. in your support hub is 11 p.m. in New York, not 3 a.m. in Manila. That overlap matters when minutes count.
 
 **Regulatory proximity** is also real. Several LatAm countries have data protection laws modeled closely on GDPR — Colombia's Law 1581 and Ecuador's Ley Orgánica de Protección de Datos, for example — which means local partners are often already operating inside familiar compliance frameworks rather than starting from scratch.
 
-**Agent retention** is an underappreciated security factor. High attrition means constant credential cycling, onboarding gaps, and more moments of elevated risk. Ecuador consistently produces lower agent-attrition rates than typical offshore hubs, which translates directly into a more stable, more auditable team over time.
+**Agent retention** is an underappreciated security factor. High attrition means constant credential cycling, onboarding gaps, and more moments of elevated risk. Established nearshore LATAM operations consistently produce lower agent-attrition rates than typical offshore hubs, which translates directly into a more stable, more auditable team over time.
 
 **Audit accessibility** matters more than most buyers anticipate. Flying a compliance team or outside auditor to a nearshore site for an on-site review is materially easier and cheaper than coordinating the same visit in Southeast Asia. If you anticipate SOC 2 assessments or customer audits that include vendor review, geography affects logistics.
 
@@ -112,6 +112,6 @@ For a broader view of how to evaluate a nearshore provider across all dimensions
 
 Nearshore support data security is manageable — but only if you treat it as a procurement requirement rather than an afterthought. The right partner will have certifications, documented controls, and contract language ready to share before you ask. The wrong partner will describe security in general terms and redirect the conversation to pricing.
 
-Teleforce is built on the infrastructure of WNRS — a Fortune 500 support network with 30+ years of enterprise-grade operations across 20+ industries. Delivery runs from Ecuador: accent-neutral Spanish, full U.S. Eastern time-zone overlap year-round, and the kind of agent retention that keeps your credentialed team stable and auditable. That Fortune 500 backbone means security governance frameworks, audited controls, and data protection agreements are part of how the operation runs from day one — not an add-on negotiated at the end.
+Teleforce is built on a Fortune 500-grade enterprise support backbone with 30+ years of operations across 20+ industries. Delivery runs across nearshore Latin America: accent-neutral Spanish, full U.S. Eastern time-zone overlap year-round, and the kind of agent retention that keeps your credentialed team stable and auditable. That established enterprise support infrastructure means security governance frameworks, audited controls, and data protection agreements are part of how the operation runs from day one — not an add-on negotiated at the end.
 
 If nearshore support data security is a real requirement for your business, [reach out →](/#contact) and let's walk through how Teleforce structures it before you sign anything.

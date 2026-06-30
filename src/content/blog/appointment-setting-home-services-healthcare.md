@@ -15,7 +15,7 @@ faq:
   - q: "What no-show rates should home services and healthcare businesses expect?"
     a: "Industry benchmarks vary widely — healthcare sees average no-show rates between 5% and 23% depending on specialty, while service businesses commonly report 10–25% cancellation or ghost rates. Proactive confirmation calls and SMS reminders from a dedicated team routinely cut those rates in half."
   - q: "How quickly can Teleforce onboard appointment setters for my business?"
-    a: "Most clients are live within two to three weeks. Onboarding covers your scheduling platform, call scripts, qualification criteria, and escalation paths. Part-time seats start at $1,400/seat/month; full-time at $2,800/seat/month."
+    a: "Most clients are live within two to three weeks. Onboarding covers your scheduling platform, call scripts, qualification criteria, and escalation paths. Pricing is quote-based — contact us for a quote tailored to your coverage needs."
 related:
   - outsourced-appointment-setting
   - reduce-appointment-no-shows
@@ -65,7 +65,7 @@ Appointment setters are not the last line of defense — they are the first. Whe
 
 Home services and healthcare both serve densely Spanish-speaking populations in markets from Miami to Houston to Los Angeles. A monolingual front desk creates a two-tiered patient or customer experience — English speakers get booked; Spanish speakers get transferred, put on hold, or lost.
 
-Teleforce operates from Ecuador, which means our agents are genuinely bilingual in accent-neutral Spanish and English, on U.S. Eastern Time year-round with no daylight-saving offset. They do not toggle between languages as an afterthought — they handle the full scheduling conversation fluidly in whichever language the caller chooses.
+Teleforce operates across Latin America, which means our agents are genuinely bilingual in accent-neutral Spanish and English, on U.S. Eastern Time year-round with no daylight-saving offset. They do not toggle between languages as an afterthought — they handle the full scheduling conversation fluidly in whichever language the caller chooses.
 
 This matters operationally. A Spanish-speaking homeowner who reaches a confident bilingual setter and gets booked on the first call is far less likely to call a competitor. A Spanish-speaking patient who can ask insurance questions in their primary language is far more likely to keep the appointment.
 
@@ -79,7 +79,7 @@ Not every business needs the same coverage model. Here is how to think about it.
 
 **Blended inbound/outbound** is the highest-leverage model. Setters handle inbound during peak hours and shift to outbound reactivation during slower windows, maximizing productive time per seat.
 
-Teleforce seats are priced simply: **$1,400/seat/month part-time, $2,800/seat/month full-time** — no hourly rates, no per-call fees, no variable surprises. You know exactly what you are paying and what you are getting.
+Teleforce seats are available by hire, by seat, or per program — pricing is quote-based, so you know exactly what you are paying and what you are getting. [Contact us for a quote](/#contact).
 
 ## What to Look for in an Appointment Setting Partner
 
@@ -89,7 +89,7 @@ Before you evaluate any [outsourced appointment setting](/blog/outsourced-appoin
 - **Bilingual capacity:** Is bilingual service a genuine capability or an upsell? In home services and healthcare, it should be standard.
 - **Quality monitoring:** Are calls recorded and reviewed? How is quality scored and corrected?
 - **Transparency on metrics:** Can you see booking rates, call answer times, and no-show rates on demand?
-- **Infrastructure backing:** Consumer-grade setups fail during volume spikes. Teleforce is Powered by WNRS — a Fortune 500 network with 30+ years and 20+ industries of operational depth, delivered from Ecuador.
+- **Infrastructure backing:** Consumer-grade setups fail during volume spikes. Teleforce is backed by a Fortune 500-grade support backbone with 30+ years and 20+ industries of operational depth — enterprise infrastructure, nearshore delivery.
 
 ## The Compounding Return
 

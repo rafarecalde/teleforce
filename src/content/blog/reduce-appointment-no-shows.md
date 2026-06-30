@@ -103,9 +103,9 @@ The post-no-show follow-up is worth building into your sequence explicitly. A wa
 
 Confirmation and reminder sequences work best when they're owned by a team built around appointment quality — not bolted onto a sales team that's already handling demos, discovery calls, and follow-up.
 
-Teleforce runs [bilingual appointment setting](/services/appointment-setting) from Ecuador, covering the full U.S. Eastern timezone with accent-neutral English and Spanish agents. Our teams handle inbound and outbound confirmation calls, manage reschedule flows, and maintain the kind of professional, warm tone that turns a reminder into a relationship touch — not an obligation.
+Teleforce runs [bilingual appointment setting](/services/appointment-setting) from nearshore Latin America, covering the full U.S. Eastern timezone with accent-neutral English and Spanish agents. Our teams handle inbound and outbound confirmation calls, manage reschedule flows, and maintain the kind of professional, warm tone that turns a reminder into a relationship touch — not an obligation.
 
-Backed by WNRS's Fortune 500 infrastructure, Teleforce brings enterprise-grade appointment operations to companies that don't want to build that capability in-house. Dedicated agents start at $2,800/seat/month full-time — a fraction of the cost of the no-shows they prevent.
+Built on a Fortune 500-grade support backbone with 30+ years of enterprise support infrastructure, Teleforce brings enterprise-grade appointment operations to companies that don't want to build that capability in-house. Pricing is quote-based — contact us for a quote tailored to your appointment volume and team size.
 
 If your [appointment setting process](/services/appointment-setting) is leaking pipeline because confirmation and reminder work isn't prioritized, that's a fixable problem. [Contact us](/#contact) to see what a dedicated nearshore appointment team looks like for your business.
 

@@ -84,7 +84,7 @@ A qualified nearshore partner will have this documentation ready. One that stall
 
 ## What Teleforce Brings to Financial Services Support
 
-Teleforce provides bilingual (English/Spanish) nearshore customer support for U.S. companies, powered by WNRS — a Fortune 500-grade support network with 30+ years of enterprise operations across 20+ industries. That infrastructure means the compliance frameworks, quality systems, and workforce depth are already in place when you engage.
+Teleforce provides bilingual (English/Spanish) nearshore customer support for U.S. companies, backed by 30+ years of enterprise support infrastructure spanning 20+ industries — a Fortune 500-grade backbone that means the compliance frameworks, quality systems, and workforce depth are already in place when you engage.
 
 For fintech and financial services companies specifically, that matters because:
 
@@ -92,9 +92,7 @@ For fintech and financial services companies specifically, that matters because:
 - Agent training in financial product context happens faster on an experienced workforce
 - The security and compliance infrastructure is enterprise-proven, not being figured out as you grow
 
-Engagements are available as Part-time at $1,400/seat/month or Full-time at $2,800/seat/month for teams that need consistent, brand-trained coverage.
-
-The right model depends on your volume, your product complexity, and how much brand voice training you need to embed. [See pricing or book a call →](/#pricing)
+Engagements are available by hire, by seat, or per program — pricing is quote-based and scoped to your volume, product complexity, and brand voice training needs. [Contact us for a quote →](/#contact)
 
 ## The Honest Tradeoffs
 

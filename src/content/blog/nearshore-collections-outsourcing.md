@@ -64,7 +64,7 @@ Nearshore collections outsourcing contributes to DSO reduction in two ways. Firs
 
 When a past-due account goes to a third-party debt collector, two things happen simultaneously. Third-party agencies typically work on a commission of recovered amounts and are built for later-stage accounts where the priority is liquidation. The contact comes from an outside agency rather than the original creditor — a different relationship, and a later stage than early-out outreach.
 
-For most consumer and SMB receivables, this sequence is too early and too expensive. Third-party collections make sense for aged, charged-off debt where the customer relationship is already gone. They're poor strategy for 30- or 60-day accounts where a professional, empathetic contact in the customer's preferred language would have resolved the balance. (When an account genuinely does reach late-stage, the WNRS network has a dedicated third-party arm for it — [wnrs.com](https://wnrs.com).)
+For most consumer and SMB receivables, this sequence is too early and too expensive. Third-party collections make sense for aged, charged-off debt where the customer relationship is already gone. They're poor strategy for 30- or 60-day accounts where a professional, empathetic contact in the customer's preferred language would have resolved the balance.
 
 First-party nearshore collections — working under your brand, managed by your AR team, with real-time reporting you control — keeps accounts in-house through the window where they're still recoverable. The [difference between first-party and third-party collections](/blog/first-party-vs-third-party-collections) isn't just structural; it's the gap between recovering a customer and losing them.
 
@@ -86,13 +86,13 @@ When evaluating partners, look for:
 - **TCPA and compliance infrastructure** — consent management, call logging, opt-out handling built in
 - **Supervisor availability during your hours** — meaningful oversight requires time-zone alignment
 
-### The Ecuador advantage Teleforce brings to this
+### The nearshore advantage Teleforce brings to this
 
-Teleforce runs bilingual early-stage collections from Ecuador — a delivery hub with accent-neutral Spanish, full U.S. Eastern time overlap year-round, and one of the lowest agent attrition rates in the region. Ecuador-based agents aren't a compromise; they're a deliberate choice. The accent is clear and neutral, the English fluency is high, and the cultural proximity to U.S. consumer expectations is strong.
+Teleforce runs bilingual early-stage collections across Latin America — from delivery hubs with accent-neutral Spanish, full U.S. Eastern time overlap year-round, and some of the lowest agent attrition rates in the region. LATAM-based agents aren't a compromise; they're a deliberate choice. The accent is clear and neutral, the English fluency is high, and the cultural proximity to U.S. consumer expectations is strong.
 
-That talent sits on top of WNRS's Fortune 500 enterprise infrastructure — 30+ years of BPO operations, 20+ industries, and a client roster that includes some of the largest U.S. companies in their respective industries. So you're not choosing between Ecuador's talent and enterprise-grade infrastructure. You get both.
+That talent sits on top of a Fortune 500-grade support backbone — 30+ years of BPO operations, 20+ industries, and an established enterprise support network that includes some of the largest U.S. companies in their respective sectors. So you're not choosing between nearshore talent and enterprise-grade infrastructure. You get both.
 
-Pricing is scoped to your account volume and portfolio rather than a flat seat rate — [contact us for pricing](/#contact).
+Pricing is quote-based — [contact us for a quote](/#contact).
 
 ## The case for starting earlier
 

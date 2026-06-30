@@ -33,7 +33,7 @@ Third-party collections happens when you assign or sell a delinquent account to 
 
 Third-party agencies are FDCPA-regulated entities. They must identify themselves, honor cease-and-desist requests, and operate within defined limits. That compliance infrastructure exists for a reason: by the time an account reaches a third-party agency, the relationship has usually already deteriorated.
 
-Third-party collection makes sense for late-stage, seriously delinquent, or charged-off accounts where the primary goal is maximum liquidation on paper that would otherwise be a total write-off. When an account reaches that stage, the WNRS network runs a dedicated third-party collections arm built for exactly that work ([wnrs.com](https://wnrs.com)) — so Teleforce clients keep early-stage outreach first-party and hand off later-stage recovery without leaving the network.
+Third-party collection makes sense for late-stage, seriously delinquent, or charged-off accounts where the primary goal is maximum liquidation on paper that would otherwise be a total write-off. At that point, a specialized third-party agency with its own FDCPA compliance infrastructure is the appropriate tool.
 
 ---
 
@@ -67,7 +67,7 @@ First-party collections that stay within TCPA requirements carry a lighter compl
 
 ### Cost Structure
 
-First-party collections, when outsourced to a nearshore partner, run as a fixed seat cost. You know your expense line. Third-party agencies typically work on contingency — a percentage of what they collect. That fee can range from 20% to 50% depending on account age and placement terms. For early-stage accounts where recovery rates are high, contingency fees on first-party-eligible accounts represent real money left behind.
+First-party collections, when outsourced to a nearshore partner, run at a predictable cost — typically priced by hire, by seat, or per program (contact us for a quote). You know your expense line. Third-party agencies typically work on contingency — a percentage of what they collect. That fee can range from 20% to 50% depending on account age and placement terms. For early-stage accounts where recovery rates are high, contingency fees on first-party-eligible accounts represent real money left behind.
 
 ---
 
@@ -103,9 +103,9 @@ First-party early-stage intervention is one of the most direct levers for compre
 
 ## How Teleforce Fits Into This
 
-Teleforce runs first-party, early-stage collections for U.S. companies — operating in your name, in English and Spanish, from Ecuador. Our agents work on the same Eastern time schedule as your team, with accent-neutral bilingual fluency and the enterprise-grade infrastructure of the WNRS network (30+ years, Fortune 500 clients, 20+ industries).
+Teleforce runs first-party, early-stage collections for U.S. companies — operating in your name, in English and Spanish, from nearshore Latin America. Our agents work on the same Eastern time schedule as your team, with accent-neutral bilingual fluency and 30+ years of enterprise support infrastructure behind them — Fortune 500-grade capability across 20+ industries.
 
-Teleforce handles the early, first-party stage — an extension of your brand, trained on your voice, reaching customers before they become a charge-off problem. And when an account does need formal third-party collection, the WNRS network has a dedicated arm for that ([wnrs.com](https://wnrs.com)) — so you have the full delinquency lifecycle covered under one network.
+Teleforce handles the early, first-party stage — an extension of your brand, trained on your voice, reaching customers before they become a charge-off problem. Pricing is quote-based; contact us to scope your program.
 
 For companies with meaningful Spanish-speaking receivables portfolios, or for any business that wants to protect customer relationships while recovering revenue, first-party outsourced collections through Teleforce closes the timing gap that third-party handoffs create.
 

@@ -125,12 +125,18 @@ h2.disp{font-weight:800;font-size:clamp(28px,5.5vw,44px);margin-bottom:10px}
 .tier.feature .svc-list li{color:var(--on-dark)}
 @media (max-width:680px){.tiers[style]{grid-template-columns:1fr !important}}
 
+/* swappable photo slots (placeholders in /public/brand) */
+.feature-img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;border:1px solid var(--line-paper)}
+.band-img{display:block;width:100%;aspect-ratio:1600/520;object-fit:cover;border-radius:16px;border:1px solid var(--line-paper)}
+.about-img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:14px;border:1px solid var(--line-paper);margin:8px 0 24px}
+
 /* testimonials */
 .quotes{display:grid;gap:18px;margin-top:32px}
 .quote{background:var(--paper);border:1px solid var(--line-paper);border-left:3px solid var(--amber);border-radius:0 14px 14px 0;padding:26px 30px}
 .quote p{font-family:'Archivo',sans-serif;font-weight:500;font-size:19px;line-height:1.4;letter-spacing:-0.01em;color:var(--on-paper)}
-.quote .by{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.04em;color:var(--sage-deep);text-transform:uppercase}
+.quote .by{margin-top:16px;display:flex;align-items:center;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.04em;color:var(--sage-deep);text-transform:uppercase}
 .quote .by b{color:var(--ink);font-weight:600}
+.quote .avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;border:1px solid var(--line-paper)}
 
 .howwrap{background:var(--paper-2)}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}

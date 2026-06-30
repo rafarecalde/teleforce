@@ -51,7 +51,7 @@ Costs depend on model, complexity, and city. Here is a rough framework:
 | Dedicated seat | $2,200–$3,200/seat/month | Consistent volume, brand immersion |
 | Managed team (custom) | Negotiated | 50+ agent programs with QA |
 
-Teleforce offers a Part-time plan at $1,400/seat/month and a Full-time Dedicated plan at $2,800/seat/month — all-in rates that include the QA and management layer many Mexico-based quotes leave out.
+Teleforce pricing is quote-based — contact us for a quote — with options by hire, by seat, or per program, all-in rates that include the QA and management layer many Mexico-based quotes leave out.
 
 The number that rarely appears in pitch decks: fully-loaded agent cost includes recruiting, training, QA, management, and facilities. A quoted rate of $14/hour can become $20+ once turnover-driven retraining costs are factored in. Ask every provider for their annualized attrition rate and what's covered in the base price.
 
@@ -97,12 +97,12 @@ A short checklist for serious evaluation:
 4. **Ramp timeline** — How long to hire, train, and have agents on your queue? Longer is often a sign of rigor; too short is a red flag.
 5. **Management layer** — Is your account supervised by an on-site manager who speaks both languages? Remote-only oversight degrades quality over time.
 
-Teleforce operates on the backbone of WNRS, a Fortune 500 support network with 30+ years in enterprise CX and operations in 20+ industries. That infrastructure underpins the QA, data-security posture, and management layer that smaller Mexico BPO operations typically cannot replicate.
+Teleforce operates on a Fortune 500-grade support backbone — 30+ years of enterprise CX infrastructure across 20+ industries. That established enterprise support network underpins the QA, data-security posture, and management layer that smaller Mexico BPO operations typically cannot replicate.
 
 ## The Bottom Line
 
 Mexico customer support outsourcing is a mature, credible option for U.S. companies that need bilingual coverage, same-time-zone availability, and scalable infrastructure. The market is large enough that strong providers exist at every tier — and underprepared ones outnumber them. The work is in the diligence: auditing agents live, reviewing QA frameworks, asking hard questions about attrition, and reading contracts carefully before signing.
 
-If you are still comparing LatAm locations, [Colombia, Mexico, or Ecuador? LatAm Support Hubs](/blog/nearshore-customer-support-latin-america) walks through how to make that call based on your specific support profile — including why Ecuador's accent-neutral talent and full Eastern time-zone overlap, backed by WNRS's Fortune 500 infrastructure, makes it a serious option at any volume.
+If you are still comparing LatAm locations, [Colombia, Mexico, or Ecuador? LatAm Support Hubs](/blog/nearshore-customer-support-latin-america) walks through how to make that call based on your specific support profile — including why accent-neutral talent and full Eastern time-zone overlap across nearshore Latin America makes it a serious option at any volume.
 
-Teleforce runs exactly that model: bilingual EN/ES support delivered from Ecuador on the backbone of WNRS — 30+ years in enterprise CX, 20+ industries, Fortune 500-grade QA and data security. [Book a call →](/#contact) to see what that looks like for your program.
+Teleforce runs exactly that model: bilingual EN/ES support delivered across Latin America on 30+ years of enterprise CX infrastructure — 20+ industries, Fortune 500-grade QA and data security. [Book a call →](/#contact) to see what that looks like for your program.

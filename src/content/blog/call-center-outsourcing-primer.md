@@ -36,7 +36,7 @@ Offshore makes the most sense for high-volume, lower-complexity tickets where co
 
 Agents are based in countries geographically and culturally closer to the U.S. — Ecuador, Colombia, Mexico, Costa Rica, and similar markets. According to data from market research aggregated by GigaBPO in 2025, nearshore programs average 6.2 CSAT points higher than equivalent offshore programs, with attrition rates running roughly 17% lower.
 
-Ecuador in particular has become a standout nearshore hub for U.S. companies: agents speak accent-neutral Spanish, the country sits on U.S. Eastern time (UTC-5) year-round with no seasonal clock shifts, and agent retention runs higher than most offshore alternatives. Colombia and Mexico offer deep talent pools and are legitimate options — especially for high-volume programs — but Ecuador's time-zone lock and linguistic profile make it the strongest fit for teams where voice quality and real-time collaboration matter.
+Several LATAM markets have become standout nearshore hubs for U.S. companies: agents speak accent-neutral Spanish, many hubs sit on or near U.S. Eastern time year-round with no seasonal clock shifts, and agent retention runs higher than most offshore alternatives. Colombia and Mexico offer deep talent pools and are legitimate options — especially for high-volume programs — while other markets in the region combine strong time-zone alignment and linguistic profiles that make them the strongest fit for teams where voice quality and real-time collaboration matter.
 
 The tradeoff versus offshore: per-agent labor costs are higher. The tradeoff versus domestic: still meaningfully cheaper, typically 30–45% savings, with same or adjacent time zones and strong bilingual (English/Spanish) talent pools.
 
@@ -91,7 +91,7 @@ It also struggles when leadership expects zero transition friction. Every outsou
 
 Some outsourcing providers are boutiques with a handful of agents and a Zendesk login. Others sit inside or alongside larger networks with real operational depth — redundant facilities, established workforce management, compliance frameworks already built.
 
-Teleforce is nearshore-first and bilingual by design, but it operates on the infrastructure of WNRS, a Fortune 500 support network with 30+ years of history and 20+ language capability. That means enterprise-grade backbone without the enterprise minimum headcount requirement.
+Teleforce is nearshore-first and bilingual by design, and it operates on an established enterprise support network with 30+ years of history and 20+ language capability. That means a Fortune 500-grade backbone without the enterprise minimum headcount requirement.
 
 The practical difference: your program gets workforce management, QA infrastructure, and business continuity protocols that most early-stage outsourcing vendors have to build from scratch — or skip entirely.
 
@@ -113,4 +113,4 @@ Call center outsourcing is a real lever for cost, coverage, and scale — but it
 
 The companies that struggle usually picked on price alone, underinvested in transition planning, or moved volume before their internal processes were documented well enough to hand off.
 
-If you're ready to do it right, the model that consistently outperforms is bilingual nearshore — English and Spanish, real-time U.S. hours, agents who don't need to be coached around accent or cultural distance. That's exactly what Teleforce is built for: Ecuador-based bilingual support, powered by WNRS's Fortune 500 infrastructure, available at Part-time $1,400/seat/mo or Full-time $2,800/seat/mo — no enterprise headcount minimums required. [Talk to us about your program →](/#contact)
+If you're ready to do it right, the model that consistently outperforms is bilingual nearshore — English and Spanish, real-time U.S. hours, agents who don't need to be coached around accent or cultural distance. That's exactly what Teleforce is built for: bilingual nearshore support across Latin America, backed by 30+ years of enterprise support infrastructure — no enterprise headcount minimums required. Pricing is quote-based; [talk to us about your program →](/#contact) and we'll scope it by hire, by seat, or per program.

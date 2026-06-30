@@ -11,7 +11,7 @@ faq:
   - q: "What types of documents can a BPO team process?"
     a: "Nearshore BPO teams handle a wide range: invoices, purchase orders, contracts, insurance claims, medical records, onboarding forms, compliance filings, and more. If your team currently touches a document manually—reviewing, indexing, keying, or routing it—that work is a candidate for outsourcing. Teleforce agents are trained on client-specific document types and quality standards before going live."
   - q: "How do I know my documents are secure with an outsourced team?"
-    a: "Reputable nearshore providers operate under formal data security agreements, role-based access controls, and compliance frameworks aligned with HIPAA, SOC 2, and GDPR requirements as applicable. Teleforce's operations are backed by the WNRS Fortune-500 network, which brings enterprise-grade security infrastructure to every engagement—not a light-touch vendor arrangement."
+    a: "Reputable nearshore providers operate under formal data security agreements, role-based access controls, and compliance frameworks aligned with HIPAA, SOC 2, and GDPR requirements as applicable. Teleforce is backed by a Fortune 500-grade enterprise support infrastructure that brings enterprise-grade security to every engagement—not a light-touch vendor arrangement."
   - q: "What volume threshold makes document processing outsourcing worthwhile?"
     a: "There is no hard minimum, but the ROI case sharpens once your team is spending meaningful staff-hours per week on document work that isn't core to your business. Operations processing more than a few hundred documents per day almost always find outsourcing faster, more accurate, and cheaper than maintaining in-house capacity for it."
   - q: "How quickly can a nearshore document processing team be up and running?"
@@ -55,9 +55,9 @@ Shared resource pools give vendors flexibility. They give you unpredictability. 
 
 ### Nearshore vs. Offshore
 
-Time-zone overlap changes how exceptions get resolved. If a document has an anomaly that needs your input, an offshore team may sit on it for 12 hours waiting for your business day to start. A nearshore team in the U.S. Eastern time zone—like Teleforce's Ecuador-based operations—can flag it, reach you, and clear it within the same working day.
+Time-zone overlap changes how exceptions get resolved. If a document has an anomaly that needs your input, an offshore team may sit on it for 12 hours waiting for your business day to start. A nearshore Latin American team aligned to the U.S. Eastern time zone—like Teleforce—can flag it, reach you, and clear it within the same working day.
 
-Ecuador also brings accent-neutral bilingual capability (English and Spanish), which matters for any operation processing documents from U.S. Hispanic populations or cross-border counterparties.
+Nearshore LATAM operations also bring accent-neutral bilingual capability (English and Spanish), which matters for any operation processing documents from U.S. Hispanic populations or cross-border counterparties.
 
 ### Infrastructure Behind the Team
 
@@ -79,11 +79,11 @@ For a deeper look at how structured QA drives data accuracy at scale, see our po
 
 ## How Teleforce Approaches Document Processing
 
-Teleforce provides dedicated nearshore data entry and document processing teams for U.S. companies, operating from Ecuador with full U.S. Eastern time-zone coverage year-round. Our agents are trained on client-specific document types, validation rules, and exception protocols before going live—and supported by the operational infrastructure of WNRS, a Fortune-500 BPO network with 30 years and 20+ industries of experience.
+Teleforce provides dedicated nearshore data entry and document processing teams for U.S. companies, with full U.S. Eastern time-zone coverage year-round across Latin America. Our agents are trained on client-specific document types, validation rules, and exception protocols before going live—and supported by an established enterprise support network with 30+ years and 20+ industries of experience.
 
-That infrastructure matters in practice: enterprise-grade data security, structured quality management, workforce redundancy, and the process discipline that high-volume document work demands.
+That infrastructure matters in practice: Fortune 500-grade data security, structured quality management, workforce redundancy, and the process discipline that high-volume document work demands.
 
-Teams are seat-priced—part-time at $1,400/seat/month, full-time at $2,800/seat/month—giving you predictable costs without per-page billing complexity.
+Pricing is quote-based — contact us for a quote structured by hire, by seat, or per program — giving you predictable costs without per-page billing complexity.
 
 If you're evaluating whether to move document processing in-house or out, or if you're already outsourcing and not getting the accuracy and turnaround you need, our [data entry services page](/services/data-entry) outlines what a Teleforce engagement looks like in practice.
 

@@ -76,7 +76,7 @@ For U.S. companies selling into markets with significant Spanish-speaking buyer 
 
 Spanish-speaking prospects who call in or respond to a campaign expect to speak with someone who can meet them in their language. Outbound efforts targeting Spanish-dominant markets fail when agents cannot conduct a natural conversation. Bilingual appointment setting is not a nice-to-have in these segments — it is a qualification requirement for pipeline quality.
 
-Teleforce's [appointment setting](/services/appointment-setting) teams are fully bilingual in English and Spanish, operating from Ecuador with clear, accent-neutral communication and full overlap with U.S. Eastern Time. That means your inbound leads get a same-hour response from someone who can qualify them properly, and your outbound campaigns can target the full market — not just the English-speaking subset of it.
+Teleforce's [appointment setting](/services/appointment-setting) teams are fully bilingual in English and Spanish, operating across Latin America with clear, accent-neutral communication and full overlap with U.S. Eastern Time. That means your inbound leads get a same-hour response from someone who can qualify them properly, and your outbound campaigns can target the full market — not just the English-speaking subset of it.
 
 ## Building a Coordinated Model
 
@@ -96,6 +96,6 @@ Inbound vs outbound appointment setting is not a question of which one is better
 
 Inbound converts at higher rates per lead because intent is already there. Outbound scales into markets where intent does not exist yet. Most serious growth-stage companies need both, sequenced well and staffed with agents who can actually close the conversation.
 
-Teleforce operates both models for U.S. companies, with bilingual teams based in Ecuador and backed by WNRS's Fortune-500-grade infrastructure. Whether you need to stop losing warm leads or start building pipeline from a cold list, we staff the seat and run the playbook.
+Teleforce operates both models for U.S. companies, with bilingual nearshore teams backed by 30+ years of enterprise support infrastructure spanning 20+ industries. Whether you need to stop losing warm leads or start building pipeline from a cold list, we staff the seat and run the playbook.
 
 [See how the appointment setting service works →](/services/appointment-setting)

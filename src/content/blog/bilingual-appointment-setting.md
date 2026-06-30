@@ -70,15 +70,15 @@ Not every industry has equal upside in the Hispanic market. The segments where b
 
 Hiring bilingual appointment setters in-house sounds straightforward until you work through the math. A full-time bilingual SDR in a major U.S. metro commands $50,000–$70,000 in base salary before benefits, management overhead, or technology stack. Attrition in appointment-setting roles runs high, so you're also pricing in recurring recruiting and onboarding costs.
 
-[Outsourced appointment setting](/blog/outsourced-appointment-setting) through a nearshore BPO changes that calculus. Nearshore agents—particularly those based in Ecuador—deliver:
+[Outsourced appointment setting](/blog/outsourced-appointment-setting) through a nearshore BPO changes that calculus. Nearshore agents across Latin America deliver:
 
 - **Accent-neutral Spanish** that resonates across U.S. Hispanic subgroups without the marked regional accents that can create friction
 - **Full U.S. Eastern time zone overlap** year-round, so outreach windows align with prospect availability regardless of your internal team's location
 - **Higher agent retention** than offshore alternatives, which means your scripts, product knowledge, and call quality improve over time rather than resetting with every cohort
 
-Teleforce's bilingual appointment setting seats are staffed from Ecuador, delivered on the WNRS infrastructure—a Fortune 500 operations network with 30+ years and 20+ industries of call center experience. You get enterprise-grade QA, CRM integration, and reporting without building the function from scratch.
+Teleforce's bilingual appointment setting program runs on a Fortune 500-grade support backbone—30+ years and 20+ industries of enterprise call center infrastructure. You get enterprise-grade QA, CRM integration, and reporting without building the function from scratch.
 
-Seat pricing runs $1,400/month for part-time coverage and $2,800/month for full-time. Compare that to a fully-loaded in-house hire and the unit economics become straightforward.
+Pricing is quote-based — contact us for a quote tailored to your call volume and coverage needs. Compare the total cost to a fully-loaded in-house hire and the unit economics become straightforward.
 
 > **Your pipeline shouldn't have a language barrier.** Teleforce bilingual appointment setters are live, fluent, and calendaring meetings in both English and Spanish. [Book a call →](/#contact)
 

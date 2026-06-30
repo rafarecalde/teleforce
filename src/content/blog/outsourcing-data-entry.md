@@ -15,7 +15,7 @@ faq:
   - q: "How do I maintain data accuracy when outsourcing?"
     a: "Accuracy starts with clear SOPs, structured validation steps, and a defined quality-review cycle. A well-run BPO will operate dual-entry or automated-check workflows and report error rates on a regular cadence. Ask any prospective partner for their documented accuracy benchmarks before signing."
   - q: "Is nearshore data entry more reliable than offshore?"
-    a: "Nearshore partners in the same time zone as your U.S. team—like Teleforce, operating from Ecuador on U.S. Eastern hours—allow real-time communication, faster turnaround on corrections, and tighter feedback loops. That time-zone alignment reduces the lag that often widens offshore error cycles."
+    a: "Nearshore partners in the same time zone as your U.S. team—like Teleforce, operating across Latin America on U.S. Eastern hours—allow real-time communication, faster turnaround on corrections, and tighter feedback loops. That time-zone alignment reduces the lag that often widens offshore error cycles."
 related:
   - nearshore-data-entry
   - document-processing-outsourcing
@@ -56,7 +56,7 @@ The common thread: high-volume, rule-based tasks where accuracy matters and spee
 
 Internal data entry costs more than most teams account for. A dedicated in-house data entry employee carries salary, payroll taxes, benefits, workspace, equipment, and software—often totaling $5,800–$6,700 per month in the U.S., according to BPO industry analyses of fully-loaded employee costs.
 
-A nearshore BPO seat, by contrast, is seat-priced and transparent. At Teleforce, [data entry services](/services/data-entry) are available at $1,400/seat/month part-time or $2,800/seat/month full-time—with no hidden overhead, no recruiting lag, and no turnover cost baked in.
+A nearshore BPO seat, by contrast, is seat-priced and transparent. At Teleforce, [data entry services](/services/data-entry) are priced by hire, by seat, or per program—contact us for a quote—with no hidden overhead, no recruiting lag, and no turnover cost baked in.
 
 That math is compelling. But the more important shift is what you do with the hours you free up.
 
@@ -74,7 +74,7 @@ For a deeper look at what accuracy standards should look like in practice, see o
 
 ### Time zone alignment
 
-Offshore partners in Asia or Eastern Europe can be 10–12 hours removed from your U.S. team. A correction that takes 10 minutes to communicate in real time can turn into a 24-hour delay when it crosses two time zones. Nearshore providers operating on U.S. hours—like Teleforce, running on U.S. Eastern time year-round from Ecuador—eliminate that lag.
+Offshore partners in Asia or Eastern Europe can be 10–12 hours removed from your U.S. team. A correction that takes 10 minutes to communicate in real time can turn into a 24-hour delay when it crosses two time zones. Nearshore providers operating on U.S. hours—like Teleforce, running on U.S. Eastern time year-round across Latin America—eliminate that lag.
 
 ### Data security and compliance
 
@@ -106,7 +106,7 @@ The data entry outsourcing market spans dozens of geographies and price points. 
 - **Cultural alignment** that reduces miscommunication on edge cases
 - **Higher agent retention** than offshore markets, which lowers the cost of rework caused by turnover
 
-Teleforce operates from Ecuador with agents who are accent-neutral, English-proficient, and working on U.S. Eastern time year-round. The operation runs on the infrastructure of WNRS—a Fortune 500 BPO network with 30-plus years across 20-plus industries—delivered from a nearshore footprint built for U.S. client requirements.
+Teleforce operates across nearshore Latin America with agents who are accent-neutral, English-proficient, and working on U.S. Eastern time year-round. The operation runs on a Fortune 500-grade support backbone with 30-plus years of enterprise support infrastructure spanning 20-plus industries—delivered from a nearshore footprint built for U.S. client requirements.
 
 That's not a boutique workaround. It's enterprise infrastructure in a nearshore location.
 

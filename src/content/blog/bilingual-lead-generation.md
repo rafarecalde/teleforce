@@ -44,7 +44,7 @@ Not all bilingual outreach is equal. Hiring a rep who "speaks some Spanish" is n
 
 **1. Accent-Neutral, Register-Appropriate Spanish**
 
-Spanish varies significantly across regions. A rep using Caribbean slang on a call with a Mexican-American prospect, or vice versa, can feel off-putting rather than welcoming. The best bilingual programs hire agents with accent-neutral Spanish — clear, standard pronunciation that reads as professional across the full Latin American and U.S. Hispanic spectrum. This is one of the concrete advantages Ecuador-based agents bring: Ecuadorian Spanish is consistently rated among the clearest and most neutral in the Americas, making it highly effective for pan-Hispanic outreach.
+Spanish varies significantly across regions. A rep using Caribbean slang on a call with a Mexican-American prospect, or vice versa, can feel off-putting rather than welcoming. The best bilingual programs hire agents with accent-neutral Spanish — clear, standard pronunciation that reads as professional across the full Latin American and U.S. Hispanic spectrum. This is one of the concrete advantages of nearshore Latin American agents: many LATAM regions are consistently rated among the clearest and most neutral Spanish accents in the Americas, making them highly effective for pan-Hispanic outreach.
 
 **2. True Code-Switching Ability**
 
@@ -84,11 +84,11 @@ Effective tactics include:
 
 Running a bilingual outbound function in-house is possible, but the talent market is competitive. Truly bilingual sales reps in U.S. metro markets command significant salary premiums, turnover is high in outbound roles generally, and building a Spanish-language quality assurance process requires additional infrastructure.
 
-Nearshore outsourcing solves the staffing constraint cleanly. Ecuador, in particular, produces a deep pool of bilingual professionals with U.S. Eastern time zone alignment year-round — no seasonal offsets, no scheduling friction across regions. Agent retention in Ecuador's BPO sector runs higher than offshore alternatives, which matters in outbound roles where ramp time and institutional knowledge directly affect conversion rates.
+Nearshore outsourcing solves the staffing constraint cleanly. Nearshore Latin America produces a deep pool of bilingual professionals with U.S. Eastern time zone alignment year-round — no seasonal offsets, no scheduling friction across regions. Agent retention in LATAM BPO operations runs higher than offshore alternatives, which matters in outbound roles where ramp time and institutional knowledge directly affect conversion rates.
 
-Teleforce delivers [bilingual sales lead generation](/services/sales-lead-generation) from Ecuador, powered by WNRS — a Fortune 500 BPO network with 30-plus years and 20-plus industries of operating history. The infrastructure is enterprise-grade; the team is on your time zone and ready to run your playbook.
+Teleforce delivers [bilingual sales lead generation](/services/sales-lead-generation) across Latin America, backed by a Fortune 500-grade support backbone with 30-plus years and 20-plus industries of operating history. The infrastructure is enterprise-grade; the team is on your time zone and ready to run your playbook.
 
-Seat pricing is transparent: part-time at $1,400/seat/month, full-time at $2,800/seat/month. No hourly billing, no hidden minimums.
+Pricing is quote-based — contact us for a quote tailored to your seat count and program scope.
 
 For a broader look at how outsourced lead generation compares to in-house build-outs on cost and ramp time, see our guide to [outsourcing lead generation](/blog/outsourcing-lead-generation). And if you want to sharpen how leads get scored before they hit your AEs, our [lead qualification frameworks](/blog/lead-qualification-frameworks) post walks through the most effective models by segment.
 
@@ -97,7 +97,7 @@ For a broader look at how outsourced lead generation compares to in-house build-
 ## Common Objections — and Honest Answers
 
 **"Our product is too technical for a nearshore team to represent."**
-Technical complexity is handled through onboarding and documentation, not geography. Teleforce agents run detailed product training before their first call. WNRS's operational history spans healthcare, financial services, SaaS, and industrial distribution — all industries with high technical bars.
+Technical complexity is handled through onboarding and documentation, not geography. Teleforce agents run detailed product training before their first call. Teleforce's enterprise support network spans healthcare, financial services, SaaS, and industrial distribution — all industries with high technical bars.
 
 **"We only need a few bilingual reps — not a whole program."**
 Part-time seats are designed exactly for this. You can staff a single bilingual SDR seat to handle your Hispanic-segment accounts without a full team build-out.

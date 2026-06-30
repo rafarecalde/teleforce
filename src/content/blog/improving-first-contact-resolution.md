@@ -98,12 +98,12 @@ The industry average is 69%. World-class is 80% or above. The gap between where 
 
 ## What This Looks Like With the Right Partner
 
-The structural fixes above—routing logic, knowledge access, bilingual queues, real-time supervision—are exactly the levers Teleforce is built around. Our agents operate from Ecuador with full U.S. Eastern time-zone overlap year-round, which means live QA, daily coaching, and supervisor availability happen in real time, not on a delayed overnight schedule. Bilingual FCR tracking (English and Spanish separately) is standard, not an add-on.
+The structural fixes above—routing logic, knowledge access, bilingual queues, real-time supervision—are exactly the levers Teleforce is built around. Our nearshore Latin America teams operate with full U.S. Eastern time-zone overlap year-round, which means live QA, daily coaching, and supervisor availability happen in real time, not on a delayed overnight schedule. Bilingual FCR tracking (English and Spanish separately) is standard, not an add-on.
 
-That operational infrastructure runs on WNRS's Fortune 500 support backbone—30+ years, 20+ industries—so you get enterprise-grade systems and compliance without having to build or license them yourself.
+That operational infrastructure is backed by a Fortune 500-grade support backbone—30+ years of enterprise support experience across 20+ industries—so you get enterprise-grade systems and compliance without having to build or license them yourself.
 
-If your FCR is leaking and you want to know where, [start with a conversation](/# contact). We can walk through your current contact mix and identify which lever is likely worth addressing first.
+If your FCR is leaking and you want to know where, [start with a conversation](/#contact). We can walk through your current contact mix and identify which lever is likely worth addressing first.
 
 ---
 
-*Teleforce provides bilingual English/Spanish nearshore customer support for U.S. companies, powered by WNRS—a Fortune 500 support network with 30+ years of operational experience across 20+ industries.*
+*Teleforce provides bilingual English/Spanish nearshore customer support for U.S. companies, backed by an established enterprise support network with 30+ years of operational experience across 20+ industries.*

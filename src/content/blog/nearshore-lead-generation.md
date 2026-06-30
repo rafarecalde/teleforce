@@ -13,9 +13,9 @@ faq:
   - q: "How much can I save with a nearshore lead generation team?"
     a: "Industry benchmarks show nearshore BPO typically delivers 30–50% labor savings compared to equivalent U.S. in-house headcount. Unlike offshore, those savings come without sacrificing response speed or same-day coordination. Total cost of ownership — factoring in management overhead, ramp time, and rework — often closes the gap between nearshore and offshore further."
   - q: "What should I look for in a nearshore lead generation partner?"
-    a: "Look for genuine bilingual (English/Spanish) fluency, confirmed U.S. time-zone coverage, transparent seat-based pricing with no hidden hourly charges, and a proven enterprise-grade infrastructure backing the operation. Ask specifically about agent retention rates — high turnover destroys SDR ramp investment fast. A partner connected to a Fortune 500 services network signals scale and process maturity."
+    a: "Look for genuine bilingual (English/Spanish) fluency, confirmed U.S. time-zone coverage, transparent pricing with no hidden hourly charges, and a proven enterprise-grade infrastructure backing the operation. Ask specifically about agent retention rates — high turnover destroys SDR ramp investment fast. A partner backed by Fortune 500-grade support infrastructure signals scale and process maturity."
   - q: "How does Teleforce price its lead generation service?"
-    a: "Teleforce prices on a per-seat model: part-time at $1,400/seat/month and full-time at $2,800/seat/month. There are no hourly rates or variable billing surprises. You get a dedicated nearshore SDR or lead gen specialist operating on U.S. Eastern time, fully integrated with your CRM workflow."
+    a: "Teleforce pricing is quote-based — contact us for a quote. Engagements are structured by hire, by seat, or per program, depending on your team's scope and goals. You get a dedicated nearshore SDR or lead gen specialist operating on U.S. Eastern time, fully integrated with your CRM workflow."
 related:
   - outsourcing-lead-generation
   - lead-qualification-frameworks
@@ -31,7 +31,7 @@ Nearshore means your outsourced sales development team operates from a country i
 
 That sounds obvious. But it separates nearshore from offshore in ways that compound over a sales cycle. An SDR who can't flag a hot inbound lead until your afternoon because of a 12-hour gap isn't really a sales asset — they're a delayed message queue.
 
-[Nearshore lead generation](/services/sales-lead-generation) flips that. Your team in Ecuador or Colombia hits phones and inboxes during U.S. business hours, escalates warm leads in real time, and closes the feedback loop with your closers the same day.
+[Nearshore lead generation](/services/sales-lead-generation) flips that. Your team across Latin America hits phones and inboxes during U.S. business hours, escalates warm leads in real time, and closes the feedback loop with your closers the same day.
 
 ## The Cost Picture: What the Data Shows
 
@@ -51,19 +51,19 @@ Cost is the entry point. Quality is what sustains it. Three variables separate n
 
 ### 1. Language and Cultural Calibration
 
-U.S. B2B outreach requires more than grammatically correct English — it requires familiarity with American business norms, objection patterns, and the cadences of U.S. sales culture. Ecuador, for example, produces agents with accent-neutral English and strong exposure to U.S. market dynamics. That's not a minor detail; it's what determines whether a cold call gets to a second sentence.
+U.S. B2B outreach requires more than grammatically correct English — it requires familiarity with American business norms, objection patterns, and the cadences of U.S. sales culture. Nearshore Latin America produces agents with accent-neutral English and strong exposure to U.S. market dynamics. That's not a minor detail; it's what determines whether a cold call gets to a second sentence.
 
 For companies with bilingual prospect lists or Hispanic market segments, the advantage extends further. A nearshore team that can pivot fluently between English and Spanish in the same call isn't just convenient — it's a pipeline edge most in-house teams can't replicate.
 
 ### 2. Time-Zone Discipline
 
-Full U.S. Eastern time-zone overlap year-round is a structural advantage that Ecuador specifically holds. Unlike some nearshore markets that drift seasonally, Ecuador runs UTC-5 consistently. That means no daylight saving confusion, no call windows cut short, no handoff delays.
+Full U.S. Eastern time-zone overlap year-round is a structural advantage that several nearshore LATAM markets hold. Unlike offshore alternatives that drift in and out of usable overlap, certain LATAM hubs run UTC-5 consistently. That means no daylight saving confusion, no call windows cut short, no handoff delays.
 
 When your SDR team operates in real time with your AEs, the lead-to-meeting conversion window shrinks. Speed-to-follow-up is one of the highest-leverage variables in outbound. Studies consistently show response time in the first few minutes after a prospect signal dramatically outperforms callbacks hours later.
 
 ### 3. Agent Retention
 
-SDR ramp is expensive — typically two to four months before a rep is operating at target. High turnover destroys that investment and resets your pipeline clock. Nearshore markets in Latin America, particularly Ecuador, show meaningfully higher agent retention than offshore alternatives in South Asia or Southeast Asia. When your outsourced SDR stays for 18 months instead of six, the economics compound in your favor.
+SDR ramp is expensive — typically two to four months before a rep is operating at target. High turnover destroys that investment and resets your pipeline clock. Nearshore markets across Latin America show meaningfully higher agent retention than offshore alternatives in South Asia or Southeast Asia. When your outsourced SDR stays for 18 months instead of six, the economics compound in your favor.
 
 > **Your pipeline should not depend on a 12-hour time difference.** If your current lead generation model has SDRs who can't sync with your closers in real time, you're leaving deals on the table. [Book a call →](/#contact)
 
@@ -71,7 +71,7 @@ SDR ramp is expensive — typically two to four months before a rep is operating
 
 A common hesitation about smaller nearshore markets is infrastructure — the concern that you're trading enterprise capability for geography. It's a fair question that has a concrete answer.
 
-Teleforce is powered by WNRS, a Fortune 500 BPO network with 30-plus years of experience across 20-plus industries. That backbone — compliance frameworks, quality assurance systems, CRM integrations, and security protocols — is delivered from Ecuador. You get enterprise-grade operations without the enterprise-market price tag, and without the coordination costs of a distant time zone.
+Teleforce is built on a Fortune 500-grade support backbone with 30-plus years of experience across 20-plus industries. That infrastructure — compliance frameworks, quality assurance systems, CRM integrations, and security protocols — is delivered across Latin America. You get enterprise-grade operations without the enterprise-market price tag, and without the coordination costs of a distant time zone.
 
 It's also why Teleforce's [sales lead generation service](/services/sales-lead-generation) can slot into existing tech stacks quickly. Your SDR team runs on your CRM, follows your qualification criteria, and delivers to your pipeline — not a black-box process that generates contacts you then have to sort.
 
@@ -102,4 +102,4 @@ Nearshore lead generation works because it solves the three problems that kill o
 
 For U.S. companies building or rebuilding their outbound motion, the cost and quality case for nearshore is no longer theoretical. The market data, the operational model, and the retention numbers all point the same direction.
 
-Teleforce runs bilingual, nearshore SDR and lead generation teams from Ecuador — on U.S. Eastern time, backed by WNRS's Fortune 500 infrastructure, priced at $1,400 or $2,800 per seat per month. If your pipeline needs consistent fuel, [let's talk about what that looks like for your team](/#contact).
+Teleforce runs bilingual, nearshore SDR and lead generation teams across Latin America — on U.S. Eastern time, backed by an established enterprise support network with 30-plus years of Fortune 500-grade infrastructure. Pricing is quote-based; contact us for a quote structured by hire, by seat, or per program. If your pipeline needs consistent fuel, [let's talk about what that looks like for your team](/#contact).

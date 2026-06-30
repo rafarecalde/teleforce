@@ -50,7 +50,7 @@ The honest question here: *Do you currently have documentation, QA processes, an
 
 This is where the calculus shifts fast for U.S. companies serving diverse customers. Hiring bilingual agents in most American cities is difficult and expensive. Turnover in bilingual roles runs higher than average.
 
-Nearshore providers in Latin America — Ecuador in particular — offer accent-neutral Spanish, full U.S. Eastern time-zone overlap year-round, and agent retention rates that consistently outpace offshore alternatives. If you're serving or growing into the U.S. Hispanic market, this isn't a nice-to-have; it's a structural advantage that's hard to replicate in-house. [Read more on when outsourcing makes strategic sense →](/blog/when-to-outsource-customer-support)
+Nearshore providers across Latin America offer accent-neutral Spanish, full U.S. Eastern time-zone overlap year-round, and agent retention rates that consistently outpace offshore alternatives. If you're serving or growing into the U.S. Hispanic market, this isn't a nice-to-have; it's a structural advantage that's hard to replicate in-house. [Read more on when outsourcing makes strategic sense →](/blog/when-to-outsource-customer-support)
 
 ### 4. Volume Predictability
 
@@ -114,4 +114,4 @@ The outsource-vs.-in-house decision isn't binary, and it isn't permanent. Start 
 
 What Deloitte's data tells us is that the companies making this decision well aren't optimizing for the cheapest line item. They're optimizing for capability, flexibility, and the ability to serve customers the way those customers expect to be served.
 
-If outsourcing is the right call — or if you're evaluating a hybrid — Teleforce gives U.S. companies a nearshore team based in Ecuador: accent-neutral English and Spanish, full Eastern time-zone alignment, and Fortune 500 infrastructure through the WNRS network. Part-time coverage starts at $1,400/seat/month; full-time at $2,800. And if your operations involve billing or AR, Teleforce also runs [first-party early-stage collections](/blog/bilingual-early-out-collections) — bilingual outreach that recovers revenue while protecting the customer relationship. [See how the numbers compare →](/blog/cost-of-in-house-customer-support)
+If outsourcing is the right call — or if you're evaluating a hybrid — Teleforce gives U.S. companies a nearshore LATAM team: accent-neutral English and Spanish, full Eastern time-zone alignment, and a Fortune 500-grade support backbone built on 30+ years of enterprise support infrastructure spanning 20+ industries. Pricing is quote-based — contact us for a quote tailored to your volume and coverage needs. And if your operations involve billing or AR, Teleforce also runs [first-party early-stage collections](/blog/bilingual-early-out-collections) — bilingual outreach that recovers revenue while protecting the customer relationship. [See how the numbers compare →](/blog/cost-of-in-house-customer-support)

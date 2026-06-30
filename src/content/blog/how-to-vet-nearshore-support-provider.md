@@ -121,9 +121,9 @@ The providers who push back hardest on offboarding terms are often the ones with
 
 The companies that get nearshore right aren't the ones who found the best pitch deck. They're the ones who ran a real vetting process — and then chose a partner built for the long term, not just the lowest opening bid.
 
-That means choosing a hub where the talent advantages are real: accent-neutral Spanish, a time zone that locks to U.S. Eastern year-round, and agent retention rates that keep institutional knowledge on your account instead of cycling out every eight months. Ecuador delivers all three — and when that delivery is backed by enterprise BPO infrastructure (SOC 2, PCI DSS, redundant connectivity, Fortune 500-tested operations), the "is it big enough?" question answers itself.
+That means choosing a hub where the talent advantages are real: accent-neutral Spanish, a time zone that locks to U.S. Eastern year-round, and agent retention rates that keep institutional knowledge on your account instead of cycling out every eight months. The best nearshore Latin America providers deliver all three — and when that delivery is backed by a Fortune 500-grade support backbone (SOC 2, PCI DSS, redundant connectivity, 30+ years of enterprise support infrastructure across 20+ industries), the "is it big enough?" question answers itself.
 
-Teleforce runs exactly that model — [Ecuador-based, bilingual, and powered by WNRS's 30-year Fortune 500 backbone](/blog/nearshore-vs-offshore-customer-support) — at Part-time $1,400/seat/month or Full-time $2,800/seat/month. No hourly rate games, no hidden surcharges, no ambiguity.
+Teleforce runs exactly that model — [bilingual, nearshore Latin America, built on an established enterprise support network](/blog/nearshore-vs-offshore-customer-support) — with pricing by hire, by seat, or per program. Contact us for a quote; no hidden surcharges, no ambiguity.
 
 The due-diligence framework above will surface which providers can back up their claims. When you run those six checks against a partner who passes all of them, the decision gets a lot easier.
 

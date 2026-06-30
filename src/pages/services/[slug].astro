@@ -9,6 +9,9 @@ export async function getStaticPaths() {
 }
 
 const { svc } = Astro.props;
+// Swappable photo slot: image2..image7 by service order (image1 = homepage band).
+const imgIndex = SERVICES.findIndex((s) => s.slug === svc.slug) + 2;
+const featureImg = `/brand/image${imgIndex}.jpg`;
 const posts = await getPublishedPosts();
 const related = posts.filter((p) => p.data.category === svc.category).slice(0, 4);
 
@@ -35,6 +38,10 @@ const jsonLd = {
       <div class="ameta"><span>Bilingual EN / ES</span><span>LATAM · U.S. hours</span><span>Fortune 500-grade backbone</span></div>
     </div>
   </header>
+
+  <div class="wrap" style="margin-top:24px">
+    <img class="feature-img" src={featureImg} alt={`Teleforce ${svc.name}`} loading="lazy" />
+  </div>
 
   <article class="post">
     <p class="lead">{svc.intro}</p>

@@ -114,6 +114,6 @@ That's the full picture: identify the signal, act on it fast, and have the bilin
 
 ---
 
-**Ready to build a support operation that catches churn before it happens?** Teleforce delivers bilingual nearshore customer support, powered by WNRS — a Fortune 500 network with 30+ years of experience and 20+ industries. Ecuador-based teams with full U.S. Eastern time-zone coverage and enterprise-grade infrastructure, starting at $1,400/seat/month part-time or $2,800/seat/month full-time.
+**Ready to build a support operation that catches churn before it happens?** Teleforce delivers bilingual nearshore customer support backed by a Fortune 500-grade support backbone — 30+ years of enterprise support infrastructure across 20+ industries. Nearshore Latin America teams with full U.S. Eastern time-zone coverage and enterprise-grade infrastructure. Pricing is quote-based — [contact us for a quote](/#contact).
 
 [Talk to us about your support metrics →](/#contact)

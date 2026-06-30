@@ -84,19 +84,19 @@ That said, outsourcing only works if the provider actually runs disciplined qual
 
 Location matters in ways that go beyond cost. For data entry work touching U.S. business data, nearshore teams offer three specific advantages over offshore alternatives:
 
-**Time-zone alignment.** Nearshore teams in Ecuador operate on U.S. Eastern Time year-round. Supervisors and QA managers are available during your business hours, not during a handoff window at the end of the day. Questions get answered in real time. Corrections happen fast.
+**Time-zone alignment.** Nearshore teams across Latin America operate on U.S. Eastern Time year-round. Supervisors and QA managers are available during your business hours, not during a handoff window at the end of the day. Questions get answered in real time. Corrections happen fast.
 
 **Language and cultural context.** Many U.S. datasets mix English and Spanish content—customer names, addresses, notes, product descriptions. Bilingual agents catch errors that a monolingual team doesn't even recognize as errors.
 
-**Retention and institutional knowledge.** Higher agent retention—a consistent pattern in Ecuador's BPO sector—means teams develop familiarity with your specific documents, your validation edge cases, and your business logic. That institutional knowledge shows up in accuracy scores over time.
+**Retention and institutional knowledge.** Higher agent retention—a consistent pattern in nearshore LATAM BPO operations—means teams develop familiarity with your specific documents, your validation edge cases, and your business logic. That institutional knowledge shows up in accuracy scores over time.
 
 ---
 
 ## What a Teleforce Data Entry Engagement Looks Like
 
-Teleforce delivers [data entry services](/services/data-entry) through a nearshore seat model staffed from Ecuador, backed by WNRS—a Fortune 500 partner network with 30+ years across 20+ industries. That infrastructure means enterprise-grade quality management without the enterprise overhead.
+Teleforce delivers [data entry services](/services/data-entry) through a nearshore seat model backed by 30+ years of enterprise support infrastructure spanning 20+ industries. That Fortune 500-grade support backbone means enterprise-caliber quality management without the enterprise overhead.
 
-Engagements are seat-based: part-time seats at $1,400/month, full-time at $2,800/month. You know the cost before you start. There are no per-record pricing surprises when volume spikes.
+Engagements are structured by hire, by seat, or per program — pricing is quote-based. [Contact us for a quote.](/#contact) There are no per-record pricing surprises when volume spikes.
 
 The typical engagement begins with a pilot—a defined document type, a target accuracy threshold (usually 99% or better), and a short ramp to dial in the QA cadence. Most clients hit their accuracy target within the first few weeks. The ones who don't usually surface a process gap on the client side that's easier to fix once you can see it clearly.
 

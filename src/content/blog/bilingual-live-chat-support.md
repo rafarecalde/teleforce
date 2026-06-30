@@ -15,7 +15,7 @@ faq:
   - q: "What after-hours coverage should I plan for bilingual live chat?"
     a: "Only 28% of U.S. businesses offer Spanish-language support after hours (per multilingual business communication research from 2026). If your Spanish-speaking customers skew toward evening and weekend contacts, gaps in after-hours bilingual coverage will show up directly in your CSAT data. Nearshore teams in overlapping time zones are the most practical fix."
   - q: "How much does bilingual live chat support cost compared to English-only?"
-    a: "With a nearshore outsourcing model, bilingual agent hours typically run at a modest premium over English-only rates — far less than staffing a domestic bilingual team. Teleforce offers Part-time seats at $1,400/seat/month and Full-time seats at $2,800/seat/month, both covering English and Spanish fluency with no hourly rate to track."
+    a: "With a nearshore outsourcing model, bilingual agent hours typically run at a modest premium over English-only rates — far less than staffing a domestic bilingual team. Teleforce pricing is quote-based — contact us for a quote — and can be structured by hire, by seat, or per program, covering English and Spanish fluency with no hourly rate to track."
 related:
   - bilingual-customer-support-us-companies
   - code-switching-customer-support
@@ -93,13 +93,13 @@ This isn't exhaustive — but covering these seven points prevents the most comm
 
 Building an in-house bilingual chat team is achievable. It's also expensive and slow. You're recruiting for a skill set (bilingual fluency at a professional register, not conversational fluency) that commands a premium in tight U.S. labor markets. Training, QA infrastructure, and after-hours scheduling multiply the cost further.
 
-Nearshore outsourcing exists precisely for this problem. Teleforce delivers from Ecuador — a deliberate choice, not a fallback. Ecuador agents speak accent-neutral Spanish, run on U.S. Eastern time year-round, and turn in some of the highest retention rates in the region, which means continuity on your account rather than constant retraining. And because Teleforce is powered by WNRS — a 30+ year enterprise support network serving Fortune 500 clients across 20+ industries — clients get Ecuador's talent and time-zone advantages with Fortune 500-grade infrastructure already layered on top. Nothing gets built from scratch; it's already there.
+Nearshore outsourcing exists precisely for this problem. Teleforce deploys teams across Latin America — a deliberate choice, not a fallback. LATAM agents speak accent-neutral Spanish, run on U.S. Eastern time year-round, and turn in some of the highest retention rates in the region, which means continuity on your account rather than constant retraining. And because Teleforce is backed by 30+ years of enterprise support infrastructure serving Fortune 500 clients across 20+ industries, clients get LATAM's talent and time-zone advantages with Fortune 500-grade infrastructure already layered on top. Nothing gets built from scratch; it's already there.
 
 For a deeper look at how Ecuador compares to Colombia and Mexico as a support hub, see [Colombia, Mexico, or Ecuador? LatAm Support Hubs](/blog/nearshore-customer-support-latin-america).
 
 ## The Honest Tradeoff
 
-One honest caveat: if your Spanish-language contact volume is genuinely low (fewer than 20–30 chats per week), a hybrid model — bilingual macros plus async email in Spanish, with human chat available on-demand — may bridge the gap while volume grows. That's not a reason to delay; it's a reason to start with the right scope. Teleforce's Part-time seat model ($1,400/seat/month) is designed exactly for that ramp stage, so you get real bilingual agents without overcommitting before volume justifies a full-time queue.
+One honest caveat: if your Spanish-language contact volume is genuinely low (fewer than 20–30 chats per week), a hybrid model — bilingual macros plus async email in Spanish, with human chat available on-demand — may bridge the gap while volume grows. That's not a reason to delay; it's a reason to start with the right scope. Teleforce's part-time engagement model is designed exactly for that ramp stage, so you get real bilingual agents without overcommitting before volume justifies a full-time queue. Pricing is quote-based — contact us for a quote.
 
 The goal is not to have a bilingual chat widget. The goal is to serve Spanish-speaking customers well — and that becomes a lot more straightforward with agents who live in that language every day.
 
@@ -107,4 +107,4 @@ The goal is not to have a bilingual chat widget. The goal is to serve Spanish-sp
 
 Bilingual live chat support done right means routing logic with honest overflow rules, macros and QA that actually work in Spanish, escalation paths that don't drop the language, and after-hours coverage that matches when your Spanish-speaking customers actually reach out. Get those foundations right and you're not just adding a language — you're opening your business to a customer segment that will reward you with loyalty if you meet them where they are.
 
-Teleforce's nearshore bilingual teams, delivered from Ecuador and powered by WNRS enterprise infrastructure, are built to cover every one of those layers — routing, QA, escalation, and extended hours included. [See pricing and engagement models](/#pricing) or [reach out directly](/#contact) to talk through your volume and vertical.
+Teleforce's nearshore bilingual teams, drawn from across Latin America and backed by an established enterprise support network, are built to cover every one of those layers — routing, QA, escalation, and extended hours included. [See engagement models](/#pricing) or [reach out directly](/#contact) to talk through your volume and vertical.

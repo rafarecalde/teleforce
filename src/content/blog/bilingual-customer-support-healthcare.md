@@ -61,9 +61,9 @@ For healthcare companies evaluating outsourced bilingual support, this is the ti
 
 ### A Note on HIPAA and Nearshore Partnerships
 
-Nearshore bilingual support — Ecuador, Colombia, Mexico — is a viable and cost-effective model for healthcare support operations. Ecuador's agents, for instance, bring accent-neutral Spanish, full U.S. Eastern time-zone overlap year-round, and unusually high retention rates. But the geography doesn't change the compliance obligation: any nearshore model requires executed Business Associate Agreements, PHI-handling training, secure communication channels, and regular audits. A credible nearshore partner should initiate the BAA conversation before you do, not wait to be asked.
+Nearshore bilingual support — Colombia, Mexico, Ecuador — is a viable and cost-effective model for healthcare support operations. Latin American agents generally bring accent-neutral Spanish, full U.S. Eastern time-zone overlap year-round, and strong retention rates relative to domestic alternatives. But the geography doesn't change the compliance obligation: any nearshore model requires executed Business Associate Agreements, PHI-handling training, secure communication channels, and regular audits. A credible nearshore partner should initiate the BAA conversation before you do, not wait to be asked.
 
-Teleforce is built on the infrastructure of WNRS, a Fortune 500 support network with 30+ years of enterprise-grade operations. That heritage matters in healthcare, where compliance and consistency aren't optional.
+Teleforce operates on a Fortune 500-grade support backbone with 30+ years of enterprise-grade operations across 20+ industries. That heritage matters in healthcare, where compliance and consistency aren't optional.
 
 ## Building the Business Case Internally
 
@@ -73,7 +73,7 @@ The business case has two sides.
 
 **The cost of inaction**: LEP patients with unresolved billing questions are more likely to go to collections, less likely to schedule follow-up care, and more likely to file complaints. The revenue and satisfaction impact of poor language access is real and measurable.
 
-**The cost of the fix**: Outsourced bilingual support — particularly nearshore — runs significantly below domestic staffing costs. Teleforce's Part-time model is $1,400/seat/month; a Full-time dedicated seat runs $2,800/month. For high-volume scheduling lines or billing support teams, that math closes quickly against the cost of staffing bilingual agents domestically.
+**The cost of the fix**: Outsourced bilingual support — particularly nearshore — runs significantly below domestic staffing costs. Teleforce pricing is quote-based (contact us for a quote), with flexible structures by hire, by seat, or per program. For high-volume scheduling lines or billing support teams, that math closes quickly against the cost of staffing bilingual agents domestically.
 
 For a deeper look at the full cost comparison, see [The Real Cost of In-House Customer Support](/blog/cost-of-in-house-customer-support) and the broader case for [serving the U.S. Hispanic market](/blog/hispanic-market-customer-experience).
 
@@ -98,4 +98,4 @@ The principle: outsource the repetitive, protocol-driven interactions so your in
 
 And when billing friction does escalate, bilingual support can extend into pre-delinquent outreach — reaching Spanish-preferring accounts early, in their language, before a balance becomes a collection problem. See [Bilingual Early-Out Collections](/blog/bilingual-early-out-collections) for how that piece fits into a bilingual revenue-cycle strategy.
 
-Teleforce delivers bilingual support from Ecuador — accent-neutral Spanish, full Eastern time-zone coverage, and WNRS's Fortune 500 enterprise infrastructure underneath every agent seat. If you're ready to close the language gap for your Spanish-speaking patients, [let's talk](/#contact).
+Teleforce delivers bilingual support across Latin America — accent-neutral Spanish, full Eastern time-zone coverage, and an established enterprise support network underneath every agent seat. If you're ready to close the language gap for your Spanish-speaking patients, [let's talk](/#contact).

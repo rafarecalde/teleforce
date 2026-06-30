@@ -94,7 +94,7 @@ If a vendor can't produce those metrics clearly, that's a red flag regardless of
 
 ## How Teleforce Delivers Outsourced Lead Generation
 
-Teleforce is a nearshore BPO based in Ecuador, powered by WNRS—a Fortune 500 outsourcing network with 30 years of experience across 20+ industries. That infrastructure means enterprise-grade quality controls, compliance frameworks, and management depth, delivered from a country with clear accent-neutral Spanish, high agent retention, and full U.S. Eastern time zone overlap year-round.
+Teleforce is a nearshore BPO operating across Latin America, backed by 30+ years of enterprise support infrastructure spanning 20+ industries—a Fortune 500-grade support backbone that brings enterprise-level quality controls, compliance frameworks, and management depth. That foundation is paired with accent-neutral Spanish, high agent retention, and full U.S. Eastern time zone overlap year-round.
 
 Our [Sales Lead Generation service](/services/sales-lead-generation) is built for U.S. companies that want a bilingual SDR function without the overhead of building one in-house. We work in English and Spanish, follow a structured qualification process aligned to your ICP, and hand off only leads that meet your criteria—not volume dressed up as pipeline.
 

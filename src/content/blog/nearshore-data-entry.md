@@ -46,7 +46,7 @@ Offshore teams handle this with escalation queues and documented exception rules
 
 Data entry is not a silent task. Agents need to interpret handwritten forms, decode poorly formatted spreadsheets, reconcile conflicting field labels, and sometimes call a customer to confirm a detail. English proficiency — both written and spoken — directly affects accuracy.
 
-Latin America's major BPO hubs, including Ecuador, produce agents with accent-neutral English and strong written comprehension, the result of proximity to U.S. media, curriculum standards, and decades of cross-border commercial relationships. The English quality is comparable to the best offshore markets, with the added benefit of native Spanish fluency for bilingual workflows.
+Latin America's major BPO hubs produce agents with accent-neutral English and strong written comprehension, the result of proximity to U.S. media, curriculum standards, and decades of cross-border commercial relationships. The English quality is comparable to the best offshore markets, with the added benefit of native Spanish fluency for bilingual workflows.
 
 ### 3. Data Compliance and Regulatory Exposure
 
@@ -58,7 +58,7 @@ This is not a blanket critique of offshore markets. Mature providers in the Phil
 
 High offshore turnover is a documented problem — some markets see annual agent attrition above 40%, which means the person who learned your exception rules in January may be gone by March. Every turnover event costs accuracy: the incoming agent brings generic training, not your workflow.
 
-Nearshore markets in Latin America — Ecuador in particular — show meaningfully better retention. Lower cost of living relative to wages, stable employment culture, and the premium status of BPO work in those markets keeps teams intact longer. For data entry specifically, where institutional knowledge of your data schema is a genuine asset, retention translates directly to quality.
+Nearshore markets across Latin America show meaningfully better retention. Lower cost of living relative to wages, stable employment culture, and the premium status of BPO work in those markets keeps teams intact longer. For data entry specifically, where institutional knowledge of your data schema is a genuine asset, retention translates directly to quality.
 
 > **Your data entry backlog isn't just a volume problem — it's an accuracy problem.** Teams that know your formats, your exceptions, and your escalation rules catch errors offshore agents never see. [Book a call →](/#contact) to see how Teleforce structures data entry for long-term accuracy.
 
@@ -99,9 +99,9 @@ For most U.S. companies running data entry that sits inside a broader CRM, ERP, 
 
 ## How Teleforce Delivers Nearshore Data Entry
 
-Teleforce runs nearshore data entry from Ecuador, powered by WNRS — a Fortune 500 BPO network with 30+ years of operational history across 20+ industries. That means you get the cost advantage of nearshore with enterprise-grade infrastructure behind it: documented SLAs, ISO-aligned quality controls, bilingual agents, and full U.S. Eastern time-zone coverage year-round.
+Teleforce delivers nearshore data entry across Latin America, backed by a Fortune 500-grade support backbone with 30+ years of operational history across 20+ industries. That means you get the cost advantage of nearshore with enterprise-grade infrastructure behind it: documented SLAs, ISO-aligned quality controls, bilingual agents, and full U.S. Eastern time-zone coverage year-round.
 
-Our data entry seats are staffed at flat monthly rates — part-time or full-time — with no hourly variable that inflates during peak periods. That pricing structure makes budgeting predictable and aligns our incentives with your throughput, not your clock.
+Pricing is quote-based — contact us for a quote — structured by hire, by seat, or per program, with no hourly variable that inflates during peak periods. That structure makes budgeting predictable and aligns our incentives with your throughput, not your clock.
 
 The agents who run your workflow are English-Spanish bilingual, trained on your specific data schema, and supported by QA processes designed to catch errors before they reach your systems — not after.
 
