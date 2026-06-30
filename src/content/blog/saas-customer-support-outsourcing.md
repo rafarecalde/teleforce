@@ -83,13 +83,9 @@ Before you sign anything, work through a structured vetting process. Our guide o
 
 ## What Teleforce Brings to the Table
 
-Teleforce provides bilingual English/Spanish nearshore customer support, powered by WNRS — a 30-year-old support infrastructure network that has delivered CX for Fortune 500 companies across 20+ industries. That foundation means enterprise-grade QA processes, compliance awareness, and the operational depth to handle volume spikes without degrading service.
+Teleforce provides bilingual English/Spanish nearshore customer support, backed by 30+ years of enterprise support infrastructure that has delivered CX for Fortune 500 companies across 20+ industries. That foundation means enterprise-grade QA processes, compliance awareness, and the operational depth to handle volume spikes without degrading service.
 
-For SaaS companies specifically, we offer:
-
-- **Part-time** at $1,400/seat/month for teams that need reliable coverage without committing to a full-time agent — useful for managing overflow, weekend queues, or secondary language coverage
-- **Full-time** at $2,800/seat/month for companies that want an agent fully embedded in their support operations
-- **Team** with custom pricing for multi-product or multi-language builds
+For SaaS companies specifically, we offer flexible engagement models — by hire, by seat, or per program. Pricing is quote-based; [contact us](/#contact) for a quote tailored to your ticket volume and coverage needs.
 
 What we won't do: overstate what the relationship looks like on day one. Outsourced support takes four to six weeks to run well. Any partner claiming otherwise is selling you something.
 
@@ -97,6 +93,6 @@ What we won't do: overstate what the relationship looks like on day one. Outsour
 
 SaaS customer support outsourcing is a strategic decision, not a commodity purchase. The right nearshore partner gives you trained, bilingual agents in overlapping time zones — people who understand your product well enough to protect the retention numbers that keep your growth model intact.
 
-Teleforce delivers exactly that: bilingual English/Spanish agents based in Ecuador, running on WNRS's 30-year Fortune 500 support infrastructure. You get Ecuador's talent, accent clarity, and time-zone alignment with enterprise-grade QA and compliance baked in — not bolted on. And if involuntary churn from failed payments is part of your revenue leak, Teleforce's [first-party collections capability](/blog/bilingual-early-out-collections) extends the same bilingual, relationship-preserving approach into early-stage account recovery.
+Teleforce delivers exactly that: bilingual English/Spanish agents across nearshore Latin America, built on an established enterprise support network with 30+ years of Fortune 500 CX infrastructure. You get LATAM's talent, accent clarity, and time-zone alignment with enterprise-grade QA and compliance baked in — not bolted on. And if involuntary churn from failed payments is part of your revenue leak, Teleforce's [first-party collections capability](/blog/bilingual-early-out-collections) extends the same bilingual, relationship-preserving approach into early-stage account recovery.
 
 If you're ready to stop patching support with overloaded engineers and start building a retention-first support motion, [let's talk](/#contact).

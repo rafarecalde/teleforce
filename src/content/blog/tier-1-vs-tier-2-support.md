@@ -98,9 +98,9 @@ Offshore support teams — particularly those operating across large time-zone g
 
 Nearshore teams operating in full U.S. Eastern overlap do not have that problem. Real-time collaboration between tiers means faster warm handoffs, cleaner escalation documentation, and tier 2 intervention that actually happens within the same customer interaction when possible.
 
-At Teleforce, our [tech support teams](/services/tech-support) operate out of Ecuador with full U.S. Eastern coverage year-round — same time zone, no lag. Agents are trained on escalation matrices specific to each client, and bilingual (EN/ES) coverage means tier 1 resolution rates stay high across both your English and Spanish-speaking customers without routing them to separate queues.
+At Teleforce, our [tech support teams](/services/tech-support) operate across nearshore Latin America with full U.S. Eastern coverage year-round — same time zone, no lag. Agents are trained on escalation matrices specific to each client, and bilingual (EN/ES) coverage means tier 1 resolution rates stay high across both your English and Spanish-speaking customers without routing them to separate queues.
 
-The infrastructure behind Teleforce comes from WNRS, a Fortune 500-networked partner with 30+ years and 20+ industries of operational depth. That backbone means clients get enterprise-grade escalation workflows — documented, tested, and monitored — not improvised handoffs.
+The infrastructure behind Teleforce is built on a Fortune 500-grade support backbone with 30+ years and 20+ industries of operational depth. That foundation means clients get enterprise-grade escalation workflows — documented, tested, and monitored — not improvised handoffs.
 
 ---
 

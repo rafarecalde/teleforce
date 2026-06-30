@@ -11,7 +11,7 @@ faq:
   - q: "What is spanish customer service outsourcing?"
     a: "Spanish customer service outsourcing means contracting a third-party provider to handle customer interactions in Spanish on your company's behalf. Agents are typically based in Latin America (nearshore) or the Philippines (offshore) and serve U.S. Spanish-speaking customers via phone, chat, or email. The best setups use fully bilingual agents who can handle both English and Spanish from the same seat."
   - q: "How much does it cost to outsource Spanish customer service?"
-    a: "Costs vary by model. Nearshore Latin America typically runs $12–$20 per agent-hour all-in, depending on location and channel mix. Dedicated seat models are often priced per month per agent (Teleforce's Dedicated model starts at $2,800/seat/month). Offshore options can be cheaper on paper but often carry quality and time-zone tradeoffs that erode savings in the 12-month view."
+    a: "Costs vary by model. Nearshore Latin America typically runs $12–$20 per agent-hour all-in, depending on location and channel mix. Dedicated seat models are often priced per month per agent — contact Teleforce for a quote based on your volume and channel mix. Offshore options can be cheaper on paper but often carry quality and time-zone tradeoffs that erode savings in the 12-month view."
   - q: "Is nearshore Latin America better than offshore for Spanish support?"
     a: "For U.S.-facing Spanish support, nearshore LatAm generally outperforms offshore. The reasons are time-zone alignment with U.S. business hours, cultural familiarity with U.S. Hispanic customers, and access to native-level Spanish that resonates with your actual customer base. Offshore destinations like the Philippines offer English fluency but Spanish is typically a learned second or third language, which affects tone and trust."
   - q: "What should I ask a spanish customer service outsourcing vendor before signing?"
@@ -59,7 +59,7 @@ Agents are trained exclusively on your product and brand, based in Latin America
 
 **Works well when:** Spanish contacts are more than 15–20% of volume, or your product requires product-specific knowledge that a shared pool can't retain.
 
-**Real cost:** Higher monthly commitment (Teleforce's Dedicated model starts at $2,800/seat/month), but handle times, CSAT, and first-contact resolution typically outperform shared-pool arrangements — especially for complex products.
+**Real cost:** Higher monthly commitment than shared-pool — pricing is quote-based based on volume and channel mix — but handle times, CSAT, and first-contact resolution typically outperform shared-pool arrangements — especially for complex products.
 
 ### 3. Domestic Bilingual Hire
 
@@ -72,7 +72,7 @@ U.S.-based bilingual agents, either in-house or through a domestic outsourcer.
 | Model | Typical Cost | Best For | Tradeoff |
 |---|---|---|---|
 | Shared pool | $16–$22/hr | Low volume, overflow | Weaker brand voice |
-| Dedicated nearshore | $2,800+/seat/month | 15%+ Spanish volume | Higher minimum commitment |
+| Dedicated nearshore | Quote-based | 15%+ Spanish volume | Higher minimum commitment |
 | Domestic bilingual | $35–$55/hr | Regulated industries | Highest cost |
 
 ---
@@ -85,13 +85,13 @@ Colombia, Mexico, and Ecuador are the three hubs that come up most in buyer conv
 
 - **Mexico** — geographic proximity, strong cultural familiarity with Mexican-American customer bases, large talent pool
 - **Colombia** — deep bilingual BPO infrastructure, consistent English proficiency, established enterprise track record
-- **Ecuador** — accent-neutral Spanish, full U.S. Eastern time-zone alignment year-round, and measurably higher agent retention than larger offshore hubs. Teleforce delivers from Ecuador, layering WNRS's Fortune 500 BPO backbone on top — so clients get the talent and time-zone advantages without the enterprise-infrastructure tradeoff that used to be the knock on the market
+- **Ecuador** — accent-neutral Spanish, full U.S. Eastern time-zone alignment year-round, and measurably higher agent retention than larger offshore hubs
 
 The detailed hub comparison — including honest tradeoffs on cost, talent depth, and infrastructure — is in our [LatAm support hub guide](/blog/nearshore-customer-support-latin-america).
 
 What matters for this decision: **don't choose a country before you've chosen a model.** A shared-pool vendor in Mexico and a dedicated team in Colombia are solving different problems. Country selection is downstream of what kind of operation you're actually building.
 
-> **Ready to scope a bilingual support team?** Teleforce builds dedicated English/Spanish support operations backed by 30+ years of enterprise infrastructure through WNRS — 20+ industries, Fortune 500 backbone. [Book a call →](/#contact)
+> **Ready to scope a bilingual support team?** Teleforce builds dedicated English/Spanish support operations backed by 30+ years of enterprise infrastructure across Latin America — 20+ industries, Fortune 500-grade backbone. [Book a call →](/#contact)
 
 ---
 
@@ -142,4 +142,4 @@ Spanish customer service outsourcing is a mature enough category that you should
 
 The companies that get this right share one characteristic: they treat their Spanish-speaking customers as the same customer, not a separate queue — one team, one training program, one quality standard, delivered in both languages.
 
-Teleforce builds exactly that: dedicated bilingual (EN/ES) support teams based in Ecuador, backed by WNRS's 30+ years of Fortune 500 BPO infrastructure, scoped at Part-time ($1,400/seat/month) or Full-time ($2,800/seat/month). If your Spanish-speaking customer base deserves the same experience as everyone else — and it does — [let's talk about what that looks like for your operation](/#contact).
+Teleforce builds exactly that: dedicated bilingual (EN/ES) support teams across nearshore Latin America, backed by 30+ years of Fortune 500-grade BPO infrastructure across 20+ industries — pricing by hire, by seat, or per program. If your Spanish-speaking customer base deserves the same experience as everyone else — and it does — [let's talk about what that looks like for your operation](/#contact).

@@ -15,7 +15,7 @@ faq:
   - q: "How do I avoid losing quality during a holiday staffing surge?"
     a: "Reserve your core, tenured agents for complex tickets — disputes, returns with edge cases, escalations. Route high-volume, well-documented request types (order status, shipping delays, simple exchanges) to surge capacity. A tight playbook and real-time QA monitoring matter more during a surge than at any other time of year."
   - q: "What does outsourced seasonal support typically cost?"
-    a: "Pricing varies by model and provider. Many BPO providers price flex or on-demand staffing at $12–18/agent-hour, while dedicated nearshore seats typically run $2,800/seat/month. At Teleforce, dedicated full-time seats are $2,800/seat/month and part-time seats are $1,400/seat/month — no hourly rate surprises. For a short seasonal window, run the math against your projected contact volume before committing to either model."
+    a: "Pricing varies by model and provider. Many BPO providers price flex or on-demand staffing at $12–18/agent-hour, while dedicated nearshore seats typically run $2,500–$3,200/seat/month depending on scope and language requirements. Teleforce pricing is quote-based — contact us for a quote tailored to your volume, season length, and channel mix. For a short seasonal window, run the math against your projected contact volume before committing to either model."
 related:
   - when-to-outsource-customer-support
   - cost-of-in-house-customer-support
@@ -128,9 +128,9 @@ One underappreciated option: nearshore partners in Latin America are a natural f
 
 Time zone alignment means your U.S.-based core team and your LatAm flex agents are working the same hours — no handoff gaps at shift transitions. Bilingual capacity matters increasingly during peak season, when a growing share of high-value U.S. customers prefer Spanish-language support.
 
-Teleforce delivers exactly this kind of surge-ready infrastructure from its Ecuador hub — accent-neutral Spanish, full U.S. Eastern time zone overlap year-round, and higher agent retention than most offshore alternatives. Behind the scenes, Teleforce is powered by WNRS, a Fortune 500 support network with 30+ years of operational depth and coverage across 20+ industries. That means clients get Ecuador's talent, time zone, and retention profile with enterprise-grade infrastructure already baked in — not bolted on later.
+Teleforce delivers exactly this kind of surge-ready infrastructure across Latin America — accent-neutral Spanish, full U.S. Eastern time zone overlap year-round, and higher agent retention than most offshore alternatives. The platform is backed by a Fortune 500-grade support backbone with 30+ years of enterprise support infrastructure and coverage across 20+ industries. Clients get nearshore LATAM talent, time zone alignment, and that retention profile with enterprise-grade infrastructure already baked in — not bolted on later.
 
-Dedicated seats are $2,800/seat/month (full-time) or $1,400/seat/month (part-time), so you can right-size the engagement to a six-week seasonal window without carrying fixed headcount the rest of the year.
+Pricing is quote-based — contact us for a quote sized to your seasonal window, so you can right-size the engagement to six weeks without carrying fixed headcount the rest of the year.
 
 ---
 
