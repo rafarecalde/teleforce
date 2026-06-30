@@ -30,4 +30,12 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+// Rich per-service landing-page content (body markdown) + FAQ schema.
+const services = defineCollection({
+  type: 'content',
+  schema: z.object({
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
+  }),
+});
+
+export const collections = { blog, services };

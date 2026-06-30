@@ -123,7 +123,7 @@ h2.disp{font-weight:800;font-size:clamp(28px,5.5vw,44px);margin-bottom:10px}
 @media (max-width:680px){.tiers[style]{grid-template-columns:1fr !important}}
 
 /* swappable photo slots (placeholders in /public/brand) */
-.feature-img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;border:1px solid var(--line-paper)}
+.feature-img{display:block;width:100%;height:clamp(200px,30vw,340px);object-fit:cover;border-radius:16px;border:1px solid var(--line-paper)}
 .band-img{display:block;width:100%;aspect-ratio:1600/520;object-fit:cover;border-radius:16px;border:1px solid var(--line-paper)}
 .about-img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:14px;border:1px solid var(--line-paper);margin:8px 0 24px}
 
