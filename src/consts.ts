@@ -7,9 +7,9 @@ export const SITE = {
   url: 'https://tryteleforce.com',
   title: 'Teleforce — Bilingual Customer Support',
   description:
-    'Bilingual nearshore BPO for U.S. companies — customer service, tech support, data entry, appointment setting, first-party collections, and lead gen. English/Spanish, on U.S. time, powered by the WNRS network.',
-  tagline: 'Bilingual nearshore BPO · English/Spanish · Powered by WNRS',
-  poweredBy: 'Powered by WNRS',
+    'Bilingual LATAM BPO for U.S. companies — customer service, tech support, data entry, appointment setting, first-party collections, and lead gen. English/Spanish, on U.S. time, on a Fortune 500-grade support backbone.',
+  tagline: 'Bilingual LATAM BPO · English/Spanish · Support, collections & more',
+  backbone: 'a Fortune 500-grade support backbone',
   // Forms post to FormSubmit.co. Activated; using the FormSubmit alias so the
   // real inbox (rrlegal82@gmail.com) is never exposed in the page HTML.
   formAlias: 'e32285ee2449a6d080938e3900354954',
@@ -25,8 +25,7 @@ export const STATS = [
   { n: 'Fortune 500', k: 'Trusted backbone' },
 ] as const;
 
-// WNRS's clients. Render as the "Powered by WNRS / trusted by" wall —
-// the logos prove WNRS's infrastructure, never that Teleforce served them.
+// Enterprise clients served across the network. Rendered as the "trusted by" wall.
 export const LOGOS = [
   'UPS', 'American Express', 'SAP', 'Procter & Gamble',
   'Nike', 'Maersk', 'Carnival', 'Avis',
@@ -170,7 +169,7 @@ export const SERVICES: Service[] = [
       'Early-stage (1–60 day) recovery in your brand’s name',
       'Native-Spanish outreach that reaches Hispanic accounts',
       'First-party — you keep the customer relationship',
-      'Late-stage / third-party recovery handed to the WNRS arm (wnrs.com)',
+      'Flexible pricing: by hire, by seat, or per program',
     ],
     category: 'Billing & Collections',
     seatPriced: false,
@@ -196,12 +195,42 @@ export const SERVICES: Service[] = [
   },
 ];
 
-// Late-stage / third-party / delinquent collections is delivered by the WNRS
-// network, not Teleforce directly. Surfaced in the service grids as an
-// external card so the full delinquency lifecycle is represented.
-export const WNRS_THIRD_PARTY = {
-  name: 'Third-Party Collections',
-  ic: '90+ DAYS · VIA WNRS',
-  short: 'Late-stage and delinquent recovery, handled by the WNRS network.',
-  href: 'https://wnrs.com',
-} as const;
+// Two engagement models (pricing is quote-based — no public numbers).
+export interface Model {
+  tag: string;
+  name: string;
+  blurb: string;
+  includes: string[];
+  note: string;
+  feature?: boolean;
+}
+
+export const MODELS: Model[] = [
+  {
+    tag: 'Recruitment',
+    name: 'Flat-fee placement',
+    blurb:
+      'We source, screen, and interview qualified LATAM agents. You interview, you hire, and you manage and pay them directly.',
+    includes: [
+      'Sourcing, screening, and interviews',
+      'Basic background checks',
+      'A shortlist of qualified candidates',
+      '60–90 day free replacement guarantee',
+    ],
+    note: 'Flat fee per hire, or a low early-stage contingency.',
+  },
+  {
+    tag: 'Managed BPO',
+    name: 'Full-time equivalent (FTE) seat',
+    blurb:
+      'We run the whole operation. Dedicated agents work as your team; we handle everything behind them.',
+    includes: [
+      'Salary, payroll, and HR',
+      'Recruiting and replacement',
+      'Facilities and IT',
+      'QA, reporting, and a named lead',
+    ],
+    note: 'All-inclusive monthly seat, priced by role and skill.',
+    feature: true,
+  },
+];

@@ -1,8 +1,10 @@
 # CLAUDE.md — Signal content agent
 
 ## Mission
-Write SEO blog posts for Teleforce, a bilingual nearshore customer support company
-powered by WNRS. Audience: U.S. ops / CX / support leaders evaluating outsourcing.
+Write SEO blog posts for Teleforce, a bilingual LATAM BPO (customer service, tech support,
+data entry, appointment setting, first-party collections, lead gen) built on a Fortune
+500-grade support backbone. Never name "WNRS" or the delivery country. Audience: U.S. ops /
+CX / support / finance leaders evaluating outsourcing or nearshore staffing.
 
 ## Workflow per run
 1. Read `content-queue.yaml`. Take the next item with `status: todo`.
@@ -17,7 +19,8 @@ powered by WNRS. Audience: U.S. ops / CX / support leaders evaluating outsourcin
 ## Frontmatter (matches src/content/config.ts)
 - `title` (H1, can be long), `metaTitle` (optional `<title>`, ≤60 chars incl. "| Teleforce";
   set this when the H1 is long), `description` (140–155 chars), `excerpt` (card teaser),
-  `primaryKeyword`, `category` (Nearshore | Bilingual CX | Operations | Collections),
+  `primaryKeyword`, `category` (Customer Service | Tech Support | Data Entry |
+  Appointment Setting | Billing & Collections | Sales & Lead Gen | Nearshore),
   `readMinutes`, `publishDate` (from queue), `related` (2 sibling slugs),
   optional `faq` (BoFu posts: 3–4 `{q, a}` entries).
 
@@ -37,36 +40,32 @@ powered by WNRS. Audience: U.S. ops / CX / support leaders evaluating outsourcin
 - BoFu posts: add 3–4 FAQ entries in frontmatter for FAQ schema.
 
 ## Brand rules
-- "Powered by WNRS." Logos = WNRS's clients, proving infrastructure — never claim
-  Teleforce served them. Stats: 30+ years, 20+ industries served, Fortune 500 backbone
-  (never abbreviate as "F500"). Teleforce itself is fully English/Spanish bilingual —
-  do NOT claim "20+ languages" (that diluted, inflated framing is retired). No headcount,
-  no hub count. Never invent client names or case studies.
-- Never publish costs, margins, or internal economics. Public prices only (NO hourly
-  rate, never cite $16): Part-time $1,400/seat/mo, Full-time (Dedicated) $2,800/seat/mo,
-  Team custom.
-- Teleforce's delivery hub is ECUADOR. Position Ecuador as a strength (accent-neutral
-  Spanish, strong U.S. time overlap, high retention, lower attrition) — NEVER as the
-  cheap / low-volume / "smaller ecosystem" option.
-- These posts are SALES ASSETS. Every post concludes by pointing the reader toward
-  Teleforce. Acknowledge tradeoffs only briefly, then land firmly on us.
-- Teleforce sells TWO flagship lines: (1) bilingual customer support, and (2) first-party
-  pre-delinquent & early-stage collections (cobranza). Collections is a differentiator —
-  recovered revenue, not just cost savings; native-Spanish outreach reaches Hispanic
-  accounts; first-party (in the client's name) protects the relationship. Weave the
-  collections angle into billing/AR/financial-services/operations posts where natural.
-- COLLECTIONS PRICING IS NOT PUBLISHED. Never quote the $1,400/$2,800 seat rates (or any
-  number) for collections — say "contact us for pricing" / "scoped per program." The seat
-  prices apply to SUPPORT only. (Keeps Teleforce from cannibalizing WNRS on collections.)
-- DO NOT disparage third-party collections agencies — WNRS operates in that space. Frame
-  first-party vs third-party as a STAGE difference (first-party = early/relationship-
-  preserving; third-party = a legitimate tool for late-stage/charged-off accounts). Banned
-  framing: "stranger," "adversarial," "dread," "cents on the dollar," "taking a cut,"
-  "relationship damage of a third-party agency," or implying agencies are predatory.
-- For late-stage / third-party / delinquent collections, REFER to the WNRS network's
-  dedicated third-party arm at wnrs.com (https://wnrs.com). Teleforce = early-stage /
-  first-party; WNRS = late-stage / third-party. Pitch it as one network covering the full
-  delinquency lifecycle, not as a competitor to avoid.
+- DO NOT mention "WNRS" or link wnrs.com — anywhere. The brand is DE-LINKED from WNRS for
+  SEO. Refer to the infrastructure generically: "a Fortune 500-grade support backbone,"
+  "an established enterprise support network." Keep the muscle, drop the name.
+- DO NOT name the delivery country (no "Ecuador"). Say "LATAM" / "Latin America." Frame it
+  as a strength: accent-neutral Spanish, full U.S. business-hours overlap, higher retention
+  than offshore. (Country names are fine only as third-party industry analysis in hub-
+  comparison posts, never as "Teleforce delivers from <country>.")
+- Stats: 30+ years, 20+ industries served, Fortune 500-grade backbone (never "F500").
+  Teleforce is fully English/Spanish bilingual — do NOT claim "20+ languages." No headcount,
+  no hub count. The enterprise logos (UPS, Amex, etc.) = "trusted by global enterprises" —
+  never claim Teleforce itself served them.
+- Teleforce is a bilingual LATAM BPO with SIX service lines: customer service, tech support,
+  data entry, appointment setting, first-party billing & collections, sales lead generation.
+- TWO engagement models: (1) Recruitment / flat-fee placement (we source+vet, client hires &
+  pays agents directly; 60–90 day replacement guarantee; flat fee or low early-stage
+  contingency); (2) Managed BPO / FTE seat (all-inclusive: salary, payroll, HR, recruiting,
+  facilities, IT). First-party collections supports flexible pricing (by hire, by seat, or
+  per program).
+- PRICING IS QUOTE-BASED — do NOT publish numbers. Say "contact us for a quote," priced by
+  role, skill, and volume. (No $1,400/$2,800, no hourly, no $16.)
+- These posts are SALES ASSETS. Acknowledge tradeoffs briefly, then land firmly on Teleforce.
+- Collections is first-party / early-stage (pre-delinquent, 1–60 day) in the client's name —
+  a differentiator (recovered revenue, native-Spanish reach, relationship preserved). Do NOT
+  disparage third-party agencies; frame first-vs-third as a STAGE difference. Banned framing:
+  "stranger," "adversarial," "dread," "cents on the dollar," "taking a cut." Do NOT refer
+  late-stage work to WNRS/wnrs.com anymore — just say first-party is our focus.
 - Collections compliance: be accurate. First-party collections (in the creditor's name)
   generally fall outside the FDCPA, but TCPA still governs calls/texts. Never overstate
   legal claims; keep it directional, not legal advice.

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { SERVICES, WNRS_THIRD_PARTY } from '../../consts';
+import { SERVICES } from '../../consts';
 import { getPublishedPosts } from '../../lib/posts';
 
 export async function getStaticPaths() {
@@ -11,8 +11,6 @@ export async function getStaticPaths() {
 const { svc } = Astro.props;
 const posts = await getPublishedPosts();
 const related = posts.filter((p) => p.data.category === svc.category).slice(0, 4);
-
-const otherServices = SERVICES.filter((s) => s.slug !== svc.slug);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -34,7 +32,7 @@ const jsonLd = {
       <div class="crumb"><a href="/services">Services</a> / {svc.name}</div>
       <div class="cat">{svc.navLabel}</div>
       <h1>{svc.tagline}</h1>
-      <div class="ameta"><span>Bilingual EN / ES</span><span>Nearshore · U.S. hours</span><span>Powered by WNRS</span></div>
+      <div class="ameta"><span>Bilingual EN / ES</span><span>LATAM · U.S. hours</span><span>Fortune 500-grade backbone</span></div>
     </div>
   </header>
 
@@ -47,18 +45,14 @@ const jsonLd = {
     </ul>
 
     <h2>Why run it with Teleforce</h2>
-    <p>Teleforce delivers from Ecuador — clear, accent-neutral Spanish, full U.S. Eastern overlap year-round, and higher agent retention than offshore alternatives. You get bilingual English/Spanish coverage from one team, on your hours, working as an extension of your brand. And because Teleforce is powered by the WNRS network — a Fortune 500 support backbone with 30+ years across 20+ industries — the recruiting, training, QA, and security are already in place. There's no startup ramp to wait through.</p>
+    <p>Teleforce delivers from across Latin America — clear, accent-neutral Spanish, full U.S. business-hours overlap, and higher agent retention than offshore alternatives. You get bilingual English/Spanish coverage from one team, on your hours, working as an extension of your brand. And because Teleforce runs on a Fortune 500-grade support backbone — 30+ years across 20+ industries — the recruiting, training, QA, and security are already in place. There's no startup ramp to wait through.</p>
 
     {svc.slug === 'billing-collections' && (
-      <p>This is <strong>first-party</strong> work — we contact your customers in your name, in the early delinquency buckets, to keep accounts current without straining the relationship. When an account genuinely reaches late-stage, the WNRS network runs a dedicated third-party collections arm (<a href="https://wnrs.com">wnrs.com</a>), so the full delinquency lifecycle is covered under one network.</p>
+      <p>This is <strong>first-party</strong> work — we contact your customers in your name, in the early delinquency buckets, to keep accounts current without straining the relationship. Pricing is flexible — by hire, by seat, or per program — so it fits the size and stage of your AR.</p>
     )}
 
-    <h2>Pricing</h2>
-    {svc.seatPriced ? (
-      <p>Staffed per seat: <strong>$1,400/seat per month</strong> part-time or <strong>$2,800/seat per month</strong> full-time, including training, QA, reporting, and a named point of contact. <a href="/#pricing">See pricing →</a></p>
-    ) : (
-      <p>Billing &amp; collections engagements are scoped to your portfolio and account volume and priced per program. <a href="/#contact">Contact us for pricing →</a></p>
-    )}
+    <h2>How to engage</h2>
+    <p>Two ways to work with us: <strong>flat-fee recruitment</strong> — we source and vet the agents, you interview, hire, and manage them (with a 60–90 day replacement guarantee) — or a <strong>managed FTE seat</strong>, where we run the whole operation. Pricing is quote-based and depends on role, skill, and volume. <a href="/#pricing">See how it works →</a> or <a href="/#contact">contact us for a quote →</a></p>
 
     <CtaBox
       heading={`Let's scope your ${svc.name.toLowerCase()} team`}
@@ -85,9 +79,9 @@ const jsonLd = {
 
   <section class="block">
     <div class="wrap">
-      <div class="gridhead">More services</div>
+      <div class="gridhead">All services</div>
       <div class="offer svcs">
-        {otherServices.map((s) => (
+        {SERVICES.map((s) => (
           <a href={`/services/${s.slug}`} class="cell link">
             <div class="ic">{s.ic}</div>
             <h3>{s.name}</h3>
@@ -95,12 +89,6 @@ const jsonLd = {
             <span class="more">Learn more <span class="ar">→</span></span>
           </a>
         ))}
-        <a href={WNRS_THIRD_PARTY.href} target="_blank" rel="noopener" class="cell link wnrs">
-          <div class="ic">{WNRS_THIRD_PARTY.ic}</div>
-          <h3>{WNRS_THIRD_PARTY.name}</h3>
-          <p>{WNRS_THIRD_PARTY.short}</p>
-          <span class="more">Visit wnrs.com <span class="ar">→</span></span>
-        </a>
       </div>
     </div>
   </section>

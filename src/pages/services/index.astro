@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { SERVICES, WNRS_THIRD_PARTY } from '../../consts';
+import { SERVICES } from '../../consts';
 ---
 <BaseLayout
   title="Services — Bilingual Nearshore BPO | Teleforce"
@@ -10,13 +10,13 @@ import { SERVICES, WNRS_THIRD_PARTY } from '../../consts';
     <div class="wrap">
       <div class="cat">Services</div>
       <h1>One bilingual team. Six ways to deploy it.</h1>
-      <div class="ameta"><span>Nearshore · U.S. hours</span><span>English / Spanish</span><span>Powered by WNRS</span></div>
+      <div class="ameta"><span>LATAM · U.S. hours</span><span>English / Spanish</span><span>Fortune 500-grade backbone</span></div>
     </div>
   </header>
 
   <section class="block">
     <div class="wrap">
-      <p class="sub" style="margin-bottom:8px">Teleforce is a bilingual nearshore BPO. Start with the function you need most and add others as you grow — same trained team, same standard, same U.S. hours.</p>
+      <p class="sub" style="margin-bottom:8px">Teleforce is a bilingual LATAM BPO. Start with the function you need most and add others as you grow — same trained team, same standard, same U.S. hours.</p>
       <div class="offer svcs" style="margin-top:28px">
         {SERVICES.map((s) => (
           <a href={`/services/${s.slug}`} class="cell link">
@@ -26,12 +26,6 @@ import { SERVICES, WNRS_THIRD_PARTY } from '../../consts';
             <span class="more">Learn more <span class="ar">→</span></span>
           </a>
         ))}
-        <a href={WNRS_THIRD_PARTY.href} target="_blank" rel="noopener" class="cell link wide wnrs">
-          <div class="ic">{WNRS_THIRD_PARTY.ic}</div>
-          <h3>{WNRS_THIRD_PARTY.name}</h3>
-          <p>{WNRS_THIRD_PARTY.short}</p>
-          <span class="more">Visit wnrs.com <span class="ar">→</span></span>
-        </a>
       </div>
     </div>
   </section>

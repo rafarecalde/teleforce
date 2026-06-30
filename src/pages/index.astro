@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Waveform from '../components/Waveform.astro';
-import { SITE, STATS, LOGOS, SERVICES, WNRS_THIRD_PARTY, FORM_ACTION } from '../consts';
+import { SITE, STATS, LOGOS, SERVICES, MODELS, FORM_ACTION } from '../consts';
 
 // Duplicate the logo list so the marquee scrolls seamlessly (-50% loop).
 const marquee = [...LOGOS, ...LOGOS];
@@ -17,9 +17,9 @@ const marquee = [...LOGOS, ...LOGOS];
         <span class="l2">In both languages.</span><br />
         <span class="l3">On your clock.</span>
       </h1>
-      <p class="lede">Teleforce is a <b>bilingual nearshore BPO</b> for U.S. companies — customer service, tech support, collections, and the back-office work behind them.
+      <p class="lede">Teleforce is a <b>bilingual LATAM BPO</b> for U.S. companies — customer service, tech support, collections, and the back-office work behind them.
         Dedicated English/Spanish agents who work as an extension of your brand, on U.S. time.
-        Powered by <b>WNRS</b> — a Fortune 500 network, 30+ years deep — so there's no startup ramp to wait through.</p>
+        Built on <b>a Fortune 500-grade support backbone</b>, 30+ years deep — so there's no startup ramp to wait through.</p>
       <div class="hero-cta">
         <a href="#contact" class="btn btn-amber">Book a call</a>
         <a href="#pricing" class="btn btn-ghost">See pricing</a>
@@ -36,7 +36,7 @@ const marquee = [...LOGOS, ...LOGOS];
   </div>
 
   <div class="logos">
-    <div class="lab">Powered by WNRS · Trusted by global enterprises for 30+ years</div>
+    <div class="lab">Trusted by global enterprises for 30+ years</div>
     <div class="marquee-mask">
       <div class="marquee">
         {marquee.map((name) => <span>{name}</span>)}
@@ -58,12 +58,6 @@ const marquee = [...LOGOS, ...LOGOS];
             <span class="more">Learn more <span class="ar">→</span></span>
           </a>
         ))}
-        <a href={WNRS_THIRD_PARTY.href} target="_blank" rel="noopener" class="cell link wide wnrs">
-          <div class="ic">{WNRS_THIRD_PARTY.ic}</div>
-          <h3>{WNRS_THIRD_PARTY.name}</h3>
-          <p>{WNRS_THIRD_PARTY.short}</p>
-          <span class="more">Visit wnrs.com <span class="ar">→</span></span>
-        </a>
       </div>
     </div>
   </section>
@@ -98,31 +92,24 @@ const marquee = [...LOGOS, ...LOGOS];
   <div class="pricewrap">
     <section class="block" id="pricing">
       <div class="wrap reveal">
-        <div class="eyebrow">Pricing</div>
-        <h2 class="disp">Three ways to buy.</h2>
-        <p class="sub">Per-seat pricing below covers our <b>staffed services</b> — customer service, tech support, data entry, appointment setting, and lead gen. Start part-time, scale into a dedicated full-time agent, consolidate into a managed team.</p>
-        <div class="tiers">
-          <div class="tier">
-            <div class="tag">Part-time</div>
-            <div class="price">$1,400</div>
-            <div class="unit">per seat / month</div>
-            <div class="desc">A bilingual agent on your account part-time — ideal for lighter volume or a first step into the partnership.</div>
-          </div>
-          <div class="tier feature">
-            <div class="tag">Full-time</div>
-            <div class="price">$2,800</div>
-            <div class="unit">per seat / month</div>
-            <div class="desc">A named, full-time bilingual agent who works only your account, as an extension of your team.</div>
-            <div class="best">★ Most popular</div>
-          </div>
-          <div class="tier">
-            <div class="tag">Team</div>
-            <div class="price">Custom</div>
-            <div class="unit">dedicated lead &amp; QA</div>
-            <div class="desc">A managed team with its own lead, QA, and reporting layer at a volume seat rate.</div>
-          </div>
+        <div class="eyebrow">How to engage</div>
+        <h2 class="disp">Two ways to work with us.</h2>
+        <p class="sub">Hire the talent and run it yourself, or hand us the whole operation. Either way you get vetted, bilingual LATAM agents on U.S. hours.</p>
+        <div class="tiers" style="grid-template-columns:repeat(2,1fr)">
+          {MODELS.map((m) => (
+            <div class={`tier${m.feature ? ' feature' : ''}`}>
+              <div class="tag">{m.tag}</div>
+              <div class="price" style="font-size:26px">{m.name}</div>
+              <p style="font-size:13.5px;margin:10px 0 14px;opacity:0.9">{m.blurb}</p>
+              <ul class="svc-list" style="grid-template-columns:1fr;gap:7px">
+                {m.includes.map((i) => <li style="font-size:13.5px">{i}</li>)}
+              </ul>
+              <div class="desc">{m.note}</div>
+              {m.feature && <div class="best">★ Most popular</div>}
+            </div>
+          ))}
         </div>
-        <p class="pricenote">All staffed-service plans include training, QA, reporting, and a named point of contact. Billing &amp; collections and high-volume programs are scoped and priced per program — <a href="#contact" style="color:var(--amber)">contact us for pricing</a>.</p>
+        <p class="pricenote">Pricing is quote-based and depends on role, skill, and volume — <a href="#contact" style="color:var(--amber)">contact us for a quote</a>. First-party billing &amp; collections supports flexible pricing (by hire, by seat, or per program).</p>
       </div>
     </section>
   </div>
