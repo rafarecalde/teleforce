@@ -234,3 +234,17 @@ export const MODELS: Model[] = [
     feature: true,
   },
 ];
+
+// Real contact + social proof pulled from the live Teleforce brand page.
+export const PHONE = '1-866-252-3961';
+export const PHONE_HREF = 'tel:+18662523961';
+
+export interface Testimonial { quote: string; name: string; company: string }
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    quote:
+      'Our customer service inquiries were growing out of hand and our internal staff was getting expensive. We hired Teleforce for 50 full-time customer service agents and our customer satisfaction has gone through the roof.',
+    name: 'Emilio Strauch',
+    company: 'Microtech, Inc.',
+  },
+];

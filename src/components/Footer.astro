@@ -1,5 +1,5 @@
 ---
-import { SITE, FOOTER_LINKS } from '../consts';
+import { SITE, FOOTER_LINKS, PHONE, PHONE_HREF } from '../consts';
 const year = 2026;
 ---
 <footer>
@@ -8,6 +8,7 @@ const year = 2026;
       <div>
         <div class="brand">TELEFORCE</div>
         <div class="tagline">{SITE.tagline}</div>
+        <div class="tagline" style="margin-top:8px"><a href={PHONE_HREF}>{PHONE}</a></div>
       </div>
       <div class="fnav">
         {FOOTER_LINKS.map((l) => <a href={l.href}>{l.label}</a>)}

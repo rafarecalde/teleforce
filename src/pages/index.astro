@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Waveform from '../components/Waveform.astro';
-import { SITE, STATS, LOGOS, SERVICES, MODELS, FORM_ACTION } from '../consts';
+import { SITE, STATS, LOGOS, SERVICES, MODELS, TESTIMONIALS, PHONE, PHONE_HREF, FORM_ACTION } from '../consts';
 
 // Duplicate the logo list so the marquee scrolls seamlessly (-50% loop).
 const marquee = [...LOGOS, ...LOGOS];
@@ -89,6 +89,21 @@ const marquee = [...LOGOS, ...LOGOS];
     </div>
   </section>
 
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="eyebrow">In their words</div>
+      <h2 class="disp">Results clients talk about.</h2>
+      <div class="quotes">
+        {TESTIMONIALS.map((t) => (
+          <blockquote class="quote">
+            <p>“{t.quote}”</p>
+            <div class="by"><b>{t.name}</b> · {t.company}</div>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <div class="pricewrap">
     <section class="block" id="pricing">
       <div class="wrap reveal">
@@ -121,6 +136,7 @@ const marquee = [...LOGOS, ...LOGOS];
           <div class="eyebrow" style="color:var(--amber)">Book a call</div>
           <h2 class="disp">Let's scope your team.</h2>
           <p class="sub">Tell us your channels and volumes. We'll come back with a staffing plan and a go-live date — usually within two business days.</p>
+          <p class="sub" style="margin-top:18px">Prefer to talk? Call <a href={PHONE_HREF} style="color:var(--amber);font-weight:600">{PHONE}</a>.</p>
         </div>
         <form method="POST" action={FORM_ACTION}>
           <input type="hidden" name="_subject" value="New Teleforce inquiry — book a call" />
