@@ -110,7 +110,7 @@ h2.disp{font-weight:800;font-size:clamp(28px,5.5vw,44px);margin-bottom:10px}
 .offer .cell.link:hover .more .ar{transform:translateX(4px)}
 @media (max-width:760px){.offer.svcs{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.offer.svcs{grid-template-columns:1fr}}
-/* full-width card (the WNRS third-party collections referral) */
+/* full-width service card */
 .offer .cell.wide{grid-column:1 / -1}
 
 /* service detail: what's-included checklist */
