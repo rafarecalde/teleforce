@@ -30,7 +30,7 @@ Colombia has been quietly building the deepest bilingual BPO talent pool in Sout
 
 **What works well:**
 - Year-round alignment with U.S. Eastern and Central time zones — no seasonal clock shifts breaking your scheduling
-- All-in agent rates of roughly $12–$18/hour, confirmed by multiple operator benchmarks
+- All-in agent rates well below onshore equivalents, confirmed by multiple operator benchmarks
 - Strong English proficiency, driven by intentional public investment rather than proximity alone
 - Bogotá and Medellín have modern infrastructure, stable power, and growing talent pipelines from major universities
 
@@ -87,12 +87,12 @@ For brands that want clear Spanish, real-time Eastern alignment, and lower attri
 | Bilingual talent depth | Very high | High (city-dependent) | High (with right partner) |
 | English proficiency | Strong and consistent | Strong in north, variable elsewhere | Strong (vendor-dependent) |
 | Time zone (U.S. EST) | Same or +1 | Same to +1 | Same, year-round |
-| Typical all-in rate | $12–$18/hr | $13–$20/hr | $10–$15/hr |
+| Relative cost vs. onshore | Lower | Lower–Mid | Lower |
 | Enterprise BPO maturity | High | High | High via established enterprise backbone |
 | Accent-neutral Spanish | Good | Regional variation | Excellent |
 | Proximity to U.S. | South America (5–6 hr flight) | Bordering (2–4 hr flight) | South America (5–6 hr flight) |
 
-Rates are approximate benchmarks across the market; your actual costs will depend on channel mix, volume, and provider type.
+Actual costs vary by channel mix, volume, and provider type — contact us for a quote tailored to your setup.
 
 ---
 
@@ -106,7 +106,7 @@ Picking a hub is really three decisions wrapped in one: talent quality, operatio
 
 If your customers are primarily English-dominant with a growing Spanish-speaking segment, Colombia's bilingual depth is hard to beat. If in-person proximity and same-border logistics matter, Mexico wins. If you want accent-neutral Spanish, full Eastern-time overlap year-round, and lower attrition — backed by enterprise infrastructure — nearshore Latin America with the right partner is a deliberate, high-quality choice, not a compromise.
 
-One mistake worth avoiding: letting cost per agent-hour be the only filter. A team that costs $2/hour less but requires an extra month of ramp time, more QA overhead, or has weaker English coverage on escalations will cost you more in the 12-month view. The math almost always favors investing in bilingual quality upfront.
+One mistake worth avoiding: letting cost per agent-hour be the only filter. A team priced slightly lower but requiring an extra month of ramp time, more QA overhead, or weaker English coverage on escalations will cost you more in the 12-month view. The math almost always favors investing in bilingual quality upfront.
 
 ## What to Ask Your Shortlisted Provider
 

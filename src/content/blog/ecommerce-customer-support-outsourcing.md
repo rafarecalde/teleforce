@@ -68,7 +68,7 @@ The goal isn't to outsource everything — it's to outsource the repeatable, sca
 
 Nearshore isn't automatically the right answer for every ecommerce operation.
 
-If your support is almost entirely asynchronous — email tickets with 24-hour SLAs, no live chat — the time-zone advantage shrinks. Offshore might deliver acceptable quality at a lower rate, especially if your customers are English-only.
+If your support is almost entirely asynchronous — email tickets with 24-hour SLAs, no live chat — the time-zone advantage shrinks. Offshore might deliver acceptable quality more affordably, especially if your customers are English-only.
 
 If you're pre-revenue or under $500K/year in sales, outsourcing at all may not pencil out. Your support volume probably doesn't justify even a part-time dedicated seat, and the ramp cost to train an external team may exceed the savings.
 

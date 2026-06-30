@@ -40,7 +40,7 @@ What you are buying is primarily three things:
 
 **1. Speed to pipeline.** A credible outsourced team can run your first sequences within four to six weeks of kickoff — no hiring cycle, no 90-day ramp, no severance exposure.
 
-**2. Predictable unit economics.** Outsourced SDR retainers typically run $3,000–$8,000 per month per dedicated rep equivalent, depending on scope and provider geography. That translates to roughly $36,000–$96,000 annually — a meaningful discount against the $125,000–$150,000 fully loaded in-house figure, even at the high end of the outsourced range.
+**2. Predictable unit economics.** Outsourced SDR retainers run at a predictable monthly rate that comes in well below the fully loaded in-house figure — often a fraction of what a domestic hire costs once salary, benefits, tools, and ramp time are stacked together.
 
 **3. Structural flexibility.** You can right-size the engagement. Need one SDR for a new product launch? Done. Need to scale to three for a seasonal push? No headcount approvals required.
 
@@ -95,7 +95,7 @@ Pair strong SDR outreach with a disciplined [lead qualification framework](/blog
 | Factor | Build In-House | Outsourced SDR |
 |---|---|---|
 | Time to first meeting | 4–6 months | 4–6 weeks |
-| Annual cost per rep | $125K–$150K | $36K–$96K |
+| Annual cost per rep | Highest (fully loaded) | Lower (quote-based) |
 | Turnover risk | High (39% annual) | Managed by provider |
 | Institutional knowledge | Accumulates over time | Requires documentation |
 | Bilingual coverage | Separate hire required | Often included |

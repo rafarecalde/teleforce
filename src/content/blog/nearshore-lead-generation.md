@@ -39,9 +39,9 @@ In 2026, industry research pegs median B2B cost per lead at anywhere from $91 to
 
 That context matters when you compare sourcing options:
 
-- **U.S. in-house SDR:** loaded cost including salary, benefits, tools, and management overhead typically runs $6,000–$10,000+ per month per rep. And that's before accounting for average 12–18 month ramp to full productivity.
+- **U.S. in-house SDR:** loaded cost including salary, benefits, tools, and management overhead adds up quickly — often far more than most teams expect. And that's before accounting for the average 12–18 month ramp to full productivity.
 - **Nearshore BPO:** industry benchmarks place nearshore Latin America labor savings at 30–50% compared to equivalent U.S. headcount, with coordination overhead that's far lower than offshore.
-- **Offshore BPO:** headline rates look cheaper at 60–70% savings, but total cost of ownership narrows that gap once you factor in communication lag, cultural mismatch on U.S. prospect outreach, and the management cost of asynchronous teams.
+- **Offshore BPO:** headline savings look attractive, but total cost of ownership narrows that gap once you factor in communication lag, cultural mismatch on U.S. prospect outreach, and the management cost of asynchronous teams.
 
 The honest version: nearshore won't deliver the cheapest line-item rate on the planet. It delivers the best cost-per-pipeline-dollar for U.S. companies that need real-time collaboration and English-fluent outreach to American buyers.
 
@@ -79,7 +79,7 @@ It's also why Teleforce's [sales lead generation service](/services/sales-lead-g
 
 | Factor | In-House U.S. | Nearshore LatAm | Offshore |
 |---|---|---|---|
-| Cost (monthly/seat) | $6,000–$10,000+ | 30–50% savings vs. in-house | 60–70% savings vs. in-house |
+| Cost (monthly/seat) | Highest | Lower — meaningful savings vs. in-house | Lowest headline rate; narrower TCO advantage |
 | Time-zone overlap | Full | Full (U.S. Eastern) | Partial or none |
 | English fluency | Native | Accent-neutral, high fluency | Variable |
 | Agent retention | Moderate | Higher than offshore | Lower |

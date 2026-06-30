@@ -15,7 +15,7 @@ faq:
   - q: "How do I avoid losing quality during a holiday staffing surge?"
     a: "Reserve your core, tenured agents for complex tickets — disputes, returns with edge cases, escalations. Route high-volume, well-documented request types (order status, shipping delays, simple exchanges) to surge capacity. A tight playbook and real-time QA monitoring matter more during a surge than at any other time of year."
   - q: "What does outsourced seasonal support typically cost?"
-    a: "Pricing varies by model and provider. Many BPO providers price flex or on-demand staffing at $12–18/agent-hour, while dedicated nearshore seats typically run $2,500–$3,200/seat/month depending on scope and language requirements. Teleforce pricing is quote-based — contact us for a quote tailored to your volume, season length, and channel mix. For a short seasonal window, run the math against your projected contact volume before committing to either model."
+    a: "Pricing varies by model and provider. Flex or on-demand BPO capacity is generally a fraction of domestic in-house cost, while dedicated nearshore seats offer a predictable monthly rate that compares favorably to carrying permanent headcount. Teleforce pricing is quote-based — contact us for a quote tailored to your volume, season length, and channel mix. For a short seasonal window, run the math against your projected contact volume before committing to either model."
 related:
   - when-to-outsource-customer-support
   - cost-of-in-house-customer-support

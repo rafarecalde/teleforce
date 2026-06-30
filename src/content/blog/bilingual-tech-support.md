@@ -94,7 +94,7 @@ Standard tech support metrics apply to bilingual queues, but you should track th
 
 ## What a Staffed Bilingual Seat Costs
 
-Domestic bilingual tech support agents cost $18–$25/hour fully loaded in most U.S. markets, and that's before factoring in benefits, HR overhead, and turnover. Nearshore staffing through a provider like Teleforce is significantly more cost-efficient — pricing is quote-based depending on program scope, seat count, and channel mix. [Contact us for a quote](/#contact).
+Domestic bilingual tech support agents carry a loaded cost well above base salary once you factor in benefits, HR overhead, and turnover replacement — and that's before accounting for the premium the market charges for bilingual technical aptitude. Nearshore staffing through a provider like Teleforce is significantly more cost-efficient, at a fraction of domestic rates — pricing is quote-based depending on program scope, seat count, and channel mix. [Contact us for a quote](/#contact).
 
 The math matters, but the more important calculation is what it costs *not* to offer bilingual tech support: the churned accounts, the repeat contacts, the escalations that tie up tier-2 engineers on issues that should have resolved at tier 1.
 

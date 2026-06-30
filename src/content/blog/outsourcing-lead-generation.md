@@ -13,7 +13,7 @@ faq:
   - q: "What should I have in place before outsourcing lead generation?"
     a: "At minimum: a defined ideal customer profile (ICP), a working CRM, and a clear handoff process for qualified leads. Without these, even the best outsourced SDR team will spin without traction. Your internal team also needs bandwidth to run discovery calls with the leads that come in."
   - q: "Is outsourcing lead generation cost-effective compared to hiring in-house SDRs?"
-    a: "For most mid-market companies, yes. A full-time in-house SDR costs $60,000–$80,000 in salary alone, plus benefits, tools, and management overhead. Nearshore outsourcing can deliver comparable output at a fraction of that cost while giving you the flexibility to scale seats up or down."
+    a: "For most mid-market companies, yes. A full-time in-house SDR carries a loaded cost well above base salary once you factor in benefits, tools, recruiting, and management overhead. Nearshore outsourcing can deliver comparable output at a fraction of that cost while giving you the flexibility to scale seats up or down."
   - q: "How does Teleforce approach lead qualification?"
     a: "Teleforce SDRs use a structured qualification framework aligned to your ICP and sales criteria before any lead is handed off. We operate in English and Spanish, so we can qualify prospects across both U.S. and Latin American markets. Leads that don't meet your criteria are filtered out—not padded into your pipeline to inflate numbers."
 related:

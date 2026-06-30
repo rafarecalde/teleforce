@@ -11,7 +11,7 @@ faq:
   - q: "What is spanish customer service outsourcing?"
     a: "Spanish customer service outsourcing means contracting a third-party provider to handle customer interactions in Spanish on your company's behalf. Agents are typically based in Latin America (nearshore) or the Philippines (offshore) and serve U.S. Spanish-speaking customers via phone, chat, or email. The best setups use fully bilingual agents who can handle both English and Spanish from the same seat."
   - q: "How much does it cost to outsource Spanish customer service?"
-    a: "Costs vary by model. Nearshore Latin America typically runs $12–$20 per agent-hour all-in, depending on location and channel mix. Dedicated seat models are often priced per month per agent — contact Teleforce for a quote based on your volume and channel mix. Offshore options can be cheaper on paper but often carry quality and time-zone tradeoffs that erode savings in the 12-month view."
+    a: "Costs vary by model. Nearshore Latin America runs well below domestic rates, with pricing that depends on location, channel mix, and whether you need a shared-pool or dedicated seat model — contact Teleforce for a quote based on your volume and requirements. Offshore options can be cheaper on paper but often carry quality and time-zone tradeoffs that erode savings in the 12-month view."
   - q: "Is nearshore Latin America better than offshore for Spanish support?"
     a: "For U.S.-facing Spanish support, nearshore LatAm generally outperforms offshore. The reasons are time-zone alignment with U.S. business hours, cultural familiarity with U.S. Hispanic customers, and access to native-level Spanish that resonates with your actual customer base. Offshore destinations like the Philippines offer English fluency but Spanish is typically a learned second or third language, which affects tone and trust."
   - q: "What should I ask a spanish customer service outsourcing vendor before signing?"
@@ -59,7 +59,7 @@ Agents are trained exclusively on your product and brand, based in Latin America
 
 **Works well when:** Spanish contacts are more than 15–20% of volume, or your product requires product-specific knowledge that a shared pool can't retain.
 
-**Real cost:** Higher monthly commitment than shared-pool — pricing is quote-based based on volume and channel mix — but handle times, CSAT, and first-contact resolution typically outperform shared-pool arrangements — especially for complex products.
+**Real cost:** Higher monthly commitment than shared-pool — pricing is quote-based on volume and channel mix — but handle times, CSAT, and first-contact resolution typically outperform shared-pool arrangements — especially for complex products.
 
 ### 3. Domestic Bilingual Hire
 
@@ -67,13 +67,13 @@ U.S.-based bilingual agents, either in-house or through a domestic outsourcer.
 
 **Works well when:** Your regulatory environment requires U.S. data residency, or your product is in a heavily regulated category where offshore/nearshore adds compliance risk.
 
-**Real cost:** Significantly higher — U.S. fully-loaded bilingual agents typically cost $35–$55/hour all-in. This is sometimes the right call; it's rarely the cost-effective one for volume support.
+**Real cost:** Significantly higher — U.S. fully-loaded bilingual agents carry the highest all-in cost of any model. This is sometimes the right call; it's rarely the cost-effective one for volume support.
 
-| Model | Typical Cost | Best For | Tradeoff |
+| Model | Cost Range | Best For | Tradeoff |
 |---|---|---|---|
-| Shared pool | $16–$22/hr | Low volume, overflow | Weaker brand voice |
-| Dedicated nearshore | Quote-based | 15%+ Spanish volume | Higher minimum commitment |
-| Domestic bilingual | $35–$55/hr | Regulated industries | Highest cost |
+| Shared pool | Lower | Low volume, overflow | Weaker brand voice |
+| Dedicated nearshore | Mid (quote-based) | 15%+ Spanish volume | Higher minimum commitment |
+| Domestic bilingual | Highest | Regulated industries | Highest all-in cost |
 
 ---
 
@@ -117,7 +117,7 @@ No outsourcing model eliminates tradeoffs. The ones worth flagging:
 
 **Brand voice takes training.** Nearshore agents don't automatically match your tone. If you're a healthcare brand that communicates with clinical warmth, or a fintech that values directness without jargon, that has to be built into the training program. Vendors who don't ask about your brand voice in the first conversation are a flag.
 
-**Cost savings compress under scrutiny.** The all-in hourly rate looks attractive, but factor in management overhead, QA resources, and ramp time before declaring an ROI. The savings are real — they're just smaller than the top-line rate comparison suggests.
+**Cost savings compress under scrutiny.** The headline rate looks attractive, but factor in management overhead, QA resources, and ramp time before declaring an ROI. The savings are real — they're just smaller than the top-line comparison suggests.
 
 **Offshore is cheaper, but different.** Philippines-based Spanish support exists. For a customer base that's U.S. Hispanic, the cultural gap and accent register are usually noticeable. If your Spanish-speaking customers are primarily first-generation or Spanish-dominant, this matters more than it does for bilingual-dominant segments.
 

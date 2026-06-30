@@ -47,7 +47,7 @@ The division of labor between these tiers is the subject of its own analysis —
 
 ## The Cost Math for SaaS Companies
 
-The build-versus-buy comparison for SaaS tech support is not particularly close. A fully-loaded U.S. support hire — salary, payroll taxes, benefits, equipment, recruiting fees, and management overhead — routinely lands between $65,000 and $85,000 per year for a mid-market role. That's before accounting for attrition, which in U.S. contact center roles runs between 30% and 45% annually, triggering recruiting and retraining costs repeatedly.
+The build-versus-buy comparison for SaaS tech support is not particularly close. A fully-loaded U.S. support hire — salary, payroll taxes, benefits, equipment, recruiting fees, and management overhead — runs well above base salary for a mid-market role, typically 1.5–2x the headline number once you factor in the full cost of employment. That's before accounting for attrition, which in U.S. contact center roles runs between 30% and 45% annually, triggering recruiting and retraining costs repeatedly.
 
 Nearshore seat pricing through a provider like Teleforce is structured differently — by hire, by seat, or per program — and is available on a quote basis. A two-seat full-time team typically lands well below the cost of a single U.S. hire, while delivering twice the coverage with built-in redundancy and no recruiting overhead.
 

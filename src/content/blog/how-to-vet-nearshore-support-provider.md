@@ -81,7 +81,7 @@ Common hidden costs in nearshore BPO contracts:
 
 [Understanding your real support cost baseline](/blog/cost-of-in-house-customer-support) before you negotiate gives you an honest comparison point — not just a vendor's favorable math.
 
-> **Don't compare sticker prices. Compare total cost per resolved contact.** A provider priced $2/hour higher who resolves issues on the first contact beats a cheaper one who drives repeat volume. [Book a call →](/#contact)
+> **Don't compare sticker prices. Compare total cost per resolved contact.** A provider priced a few dollars an hour higher who resolves issues on the first contact beats a cheaper one who drives repeat volume. [Book a call →](/#contact)
 
 ### 5. References — specific, not generic
 

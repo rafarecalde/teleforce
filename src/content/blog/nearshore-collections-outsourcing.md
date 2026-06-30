@@ -15,7 +15,7 @@ faq:
   - q: "Is first-party nearshore collections subject to the FDCPA?"
     a: "First-party collections — where agents work in your company's name to recover your own receivables — generally fall outside the FDCPA, which governs third-party debt collectors. However, TCPA rules on calls and texts still apply regardless of whether the collection is first- or third-party. This post is directional context, not legal advice; consult counsel for your specific program."
   - q: "How does nearshore collections pricing compare to building an in-house team?"
-    a: "An in-house collections seat in the U.S. typically costs $55,000–$75,000+ per year in salary alone, before benefits, HR overhead, attrition backfill, and compliance training. Nearshore outsourcing with Teleforce replaces that fixed overhead with a scoped engagement priced to your portfolio — infrastructure, management, and bilingual capability already built in. Contact us for pricing."
+    a: "An in-house collections seat in the U.S. carries a loaded cost well above base salary once you factor in benefits, HR overhead, attrition backfill, and compliance training. Nearshore outsourcing with Teleforce replaces that fixed overhead with a scoped engagement priced to your portfolio — infrastructure, management, and bilingual capability already built in. Contact us for a quote."
 related:
   - bilingual-debt-collection
 ---

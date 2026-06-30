@@ -9,7 +9,7 @@ readMinutes: 6
 publishDate: 2026-06-20
 faq:
   - q: "How much does it cost to outsource a call center to Colombia?"
-    a: "Fully-loaded agent costs in Colombia typically run $12–18 per hour, compared to $25–35+ for a comparable U.S. domestic agent. Nearshore providers typically price by hire, by seat, or per program — contact providers directly for a quote based on your channel mix, hours of coverage, and whether you need bilingual (English/Spanish) agents."
+    a: "Colombia nearshore rates run well below onshore U.S. costs — buyers typically see 40–60% reductions in fully-loaded agent expense. Nearshore providers price by hire, by seat, or per program; contact providers directly for a quote based on your channel mix, hours of coverage, and whether you need bilingual (English/Spanish) agents."
   - q: "Are Colombian call center agents truly bilingual in English and Spanish?"
     a: "The best talent hubs — Bogotá, Medellín, and Barranquilla — have large pools of neutral-accent, bilingual agents. Quality varies significantly by vendor, so evaluating language samples and testing agents before go-live is non-negotiable. Barranquilla in particular is known for strong English proficiency."
   - q: "What are the main risks of Colombia call center outsourcing?"
@@ -47,7 +47,7 @@ Bogotá and Medellín have the deepest bilingual talent pools. Barranquilla, a c
 
 ### Cost Structure
 
-A fully-loaded bilingual agent in Colombia typically runs $12–18/hour, depending on channel complexity, shifts, and vendor overhead. Compare that to $25–35+ for a comparable domestic U.S. hire (salary, benefits, real estate, management), and you're looking at 40–60% in hard-cost reduction.
+A fully-loaded bilingual agent in Colombia costs a fraction of comparable domestic U.S. staffing — once you account for salary, benefits, real estate, and management overhead, buyers typically see 40–60% in hard-cost reduction.
 
 That's not magic — it reflects a real difference in labor market costs. The savings are real. What varies is how much of them you actually capture after transition costs, management overhead, and quality investment.
 

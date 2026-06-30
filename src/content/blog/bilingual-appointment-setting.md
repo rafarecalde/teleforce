@@ -68,7 +68,7 @@ Not every industry has equal upside in the Hispanic market. The segments where b
 
 ## The Build-vs.-Buy Decision
 
-Hiring bilingual appointment setters in-house sounds straightforward until you work through the math. A full-time bilingual SDR in a major U.S. metro commands $50,000–$70,000 in base salary before benefits, management overhead, or technology stack. Attrition in appointment-setting roles runs high, so you're also pricing in recurring recruiting and onboarding costs.
+Hiring bilingual appointment setters in-house sounds straightforward until you work through the math. A full-time bilingual SDR in a major U.S. metro carries a loaded cost well above base salary once you add benefits, management overhead, and technology stack. Attrition in appointment-setting roles runs high, so you're also pricing in recurring recruiting and onboarding costs.
 
 [Outsourced appointment setting](/blog/outsourced-appointment-setting) through a nearshore BPO changes that calculus. Nearshore agents across Latin America deliver:
 

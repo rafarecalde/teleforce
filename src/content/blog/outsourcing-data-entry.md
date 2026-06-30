@@ -54,7 +54,7 @@ The common thread: high-volume, rule-based tasks where accuracy matters and spee
 
 ## The Real Cost Comparison
 
-Internal data entry costs more than most teams account for. A dedicated in-house data entry employee carries salary, payroll taxes, benefits, workspace, equipment, and software—often totaling $5,800–$6,700 per month in the U.S., according to BPO industry analyses of fully-loaded employee costs.
+Internal data entry costs more than most teams account for. A dedicated in-house data entry employee carries salary, payroll taxes, benefits, workspace, equipment, and software—fully-loaded costs routinely run 1.5–2× the base salary when U.S. overhead is totaled, according to BPO industry analyses.
 
 A nearshore BPO seat, by contrast, is seat-priced and transparent. At Teleforce, [data entry services](/services/data-entry) are priced by hire, by seat, or per program—contact us for a quote—with no hidden overhead, no recruiting lag, and no turnover cost baked in.
 

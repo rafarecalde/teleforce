@@ -9,11 +9,11 @@ readMinutes: 6
 publishDate: 2026-05-04
 faq:
   - q: "How much does it cost to outsource customer support for a small business?"
-    a: "Costs vary by model and provider. Market-rate flex (shared agent) arrangements typically run $14–$20/hour depending on geography and language requirements. Dedicated nearshore seats generally land in the $2,500–$3,200/month range. Teleforce pricing is quote-based — contact us for a quote tailored to your volume and channel mix. Most small businesses start with one to two seats and scale from there."
+    a: "Costs vary by model and provider. Flex (shared agent) arrangements run at lower per-hour rates and suit variable or low volume. Dedicated nearshore seats carry a predictable monthly rate that sits well below domestic U.S. options. Teleforce pricing is quote-based — contact us for a quote tailored to your volume and channel mix. Most small businesses start with one to two seats and scale from there."
   - q: "What are the biggest risks of outsourcing customer support as a small business?"
     a: "The top risks are brand-voice drift, data security gaps, and poor onboarding. You can mitigate all three: require a detailed brand brief during onboarding, confirm SOC 2 or equivalent compliance before signing, and start with a limited scope (one channel or one shift) before expanding."
   - q: "Is nearshore customer support better than offshore for small businesses?"
-    a: "For U.S. small businesses, nearshore (Latin America) is usually the better fit. Time zones overlap, English fluency is strong, and the cultural gap is narrower than far-offshore destinations. Rates sit above India/Philippines but well below domestic U.S. — a practical middle ground."
+    a: "For U.S. small businesses, nearshore (Latin America) is usually the better fit. Time zones overlap, English fluency is strong, and the cultural gap is narrower than far-offshore destinations. Rates sit above far-offshore destinations but well below domestic U.S. — a practical middle ground."
   - q: "When should a small business NOT outsource customer support?"
     a: "If your product is still in early development and every support ticket is also a product-research signal, keep support in-house. Similarly, if your service requires deep institutional knowledge that changes weekly, the ramp time for an outside team may not be worth it yet."
 related:
@@ -58,15 +58,15 @@ Outsourcing turns a fixed headcount cost into a variable service cost — which 
 
 ## The Honest Cost Picture
 
-Pricing for outsourced customer support varies by model, geography, and provider, but here's a realistic range for small businesses:
+Pricing for outsourced customer support varies by model, geography, and provider. Here's how the main options compare for small businesses:
 
-| Model | Typical range | Best for |
+| Model | Cost tier | Best for |
 |---|---|---|
-| Flex / shared agents | $14–$20/hour | Low or variable volume; testing outsourcing |
-| Dedicated seat (nearshore) | $2,500–$3,200/month | Consistent volume; brand-sensitive products |
-| Domestic U.S. dedicated | $4,500–$6,000+/month | Highly regulated industries or niche expertise |
+| Flex / shared agents | Lower | Low or variable volume; testing outsourcing |
+| Dedicated seat (nearshore) | Mid | Consistent volume; brand-sensitive products |
+| Domestic U.S. dedicated | Highest | Highly regulated industries or niche expertise |
 
-Nearshore Latin America sits in the middle tier — time-zone aligned with the U.S., strong English fluency, and meaningfully more affordable than domestic options. Nearshore Latin America hubs have emerged as a deliberate choice rather than a budget fallback: agents deliver accent-neutral Spanish, operate in U.S.-aligned time zones year-round (no seasonal clock shifts), and have significantly lower attrition than far-offshore alternatives. For small businesses that need bilingual coverage, it's often the clearest fit.
+Nearshore Latin America occupies the middle ground — time-zone aligned with the U.S., strong English fluency, and meaningfully more affordable than domestic options. Nearshore Latin America hubs have emerged as a deliberate choice rather than a budget fallback: agents deliver accent-neutral Spanish, operate in U.S.-aligned time zones year-round (no seasonal clock shifts), and have significantly lower attrition than far-offshore alternatives. For small businesses that need bilingual coverage, it's often the clearest fit.
 
 > **Not sure which model fits your stage?** A 20-minute call usually answers it. [Book a call →](/#contact)
 
@@ -74,7 +74,7 @@ Nearshore Latin America sits in the middle tier — time-zone aligned with the U
 
 ## Nearshore vs. Offshore: A Small Business Perspective
 
-The cheapest per-hour rates tend to come from far-offshore destinations (Philippines, India, Eastern Europe). That math is real. But small businesses often pay for the price difference in other ways:
+The lowest rates tend to come from far-offshore destinations (Philippines, India, Eastern Europe). That math is real. But small businesses often pay for the savings in other ways:
 
 - **Time zone friction.** A 12-hour gap means async communication by default — that slows onboarding, calibration, and escalation.
 - **Accent and cultural familiarity.** For U.S. customer bases, Latin American agents consistently deliver accent-neutral Spanish and culturally familiar English interactions, which translates to stronger CSAT scores on voice and chat.

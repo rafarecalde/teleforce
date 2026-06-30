@@ -1,8 +1,8 @@
 ---
 title: "Call Center Outsourcing: The Complete Primer"
 metaTitle: "Call Center Outsourcing: The Complete Primer | Teleforce"
-description: "Learn how call center outsourcing works, what it costs, and when it makes sense — a clear, honest guide to the models, tradeoffs, and how to choose."
-excerpt: "Thinking about outsourcing your customer support? This primer covers every model, real cost drivers, and the honest tradeoffs before you sign anything."
+description: "Learn how call center outsourcing works, what drives real costs, and when it makes sense — a clear, honest guide to the models, tradeoffs, and how to choose."
+excerpt: "Thinking about outsourcing your customer support? This primer covers every model, the real cost drivers, and the honest tradeoffs before you sign anything."
 primaryKeyword: "call center outsourcing"
 category: Customer Service
 readMinutes: 7
@@ -50,10 +50,10 @@ The honest version: domestic outsourcing is often close to the cost of in-house,
 
 ## Cost Drivers That Actually Move the Number
 
-Quoted per-agent-hour rates are the beginning of the conversation, not the end. The real cost of a call center outsourcing program is shaped by:
+The rate a provider quotes is the beginning of the conversation, not the end. The real cost of a call center outsourcing program is shaped by:
 
 - **Channel mix.** Voice is more expensive than chat or email because it's real-time and one-to-one. If you can shift volume to async channels, unit economics improve.
-- **AHT (Average Handle Time).** A provider quoting $18/hour with 12-minute average handle time is more expensive per resolved ticket than one at $22/hour with 7-minute AHT. Benchmark both.
+- **AHT (Average Handle Time).** A provider with a lower quoted rate but long average handle time can cost more per resolved ticket than a higher-rate provider with fast AHT. Benchmark both.
 - **Minimums and seat commitments.** Many providers require a minimum agent count or contracted hours. Flex or on-demand arrangements typically carry a rate premium but lower commitment.
 - **Ramp and training costs.** Who builds the training program? Who pays for ramp time? These line items are often buried in the fine print.
 - **Quality and oversight.** If you don't budget for a dedicated QA process, you'll spend it on rework, escalations, and churn recovery later.

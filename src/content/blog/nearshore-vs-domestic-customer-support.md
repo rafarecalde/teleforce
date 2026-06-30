@@ -12,11 +12,11 @@ related:
   - nearshore-vs-offshore-customer-support
 ---
 
-A U.S.-based customer support rep earning $19/hour sounds straightforward. But by the time you add employer taxes, benefits, PTO, training, software licenses, management overhead, and office or equipment costs, that number quietly doubles. That's the gap most cost comparisons miss — and it's exactly what makes the **nearshore vs domestic customer support** conversation worth having with hard numbers rather than gut feel.
+A U.S.-based customer support rep earning a median wage sounds straightforward. But by the time you add employer taxes, benefits, PTO, training, software licenses, management overhead, and office or equipment costs, that number quietly doubles. That's the gap most cost comparisons miss — and it's exactly what makes the **nearshore vs domestic customer support** conversation worth having with hard numbers rather than gut feel.
 
 ## What "Fully Loaded" Really Means
 
-The U.S. Bureau of Labor Statistics puts the median hourly wage for customer service reps at roughly $19–$20 in 2025. Nearshore LatAm agents, by contrast, typically bill at $12–$18 per hour all-in through a BPO. But comparing those two numbers directly is like comparing a car's sticker price to its total cost of ownership.
+The U.S. Bureau of Labor Statistics puts the median hourly wage for customer service reps at roughly $19–$20 in 2025. Nearshore LatAm agents, by contrast, come in well below that all-in through a BPO — but comparing those two numbers directly is like comparing a car's sticker price to its total cost of ownership.
 
 A domestic support agent's true hourly cost, once you layer in:
 
@@ -27,15 +27,15 @@ A domestic support agent's true hourly cost, once you layer in:
 - **Software and tooling** (help desk, QA, WFM platforms)
 - **Supervisory overhead** (typically 1 TL per 8–12 agents)
 
-…lands most teams in the **$28–$35/hour fully loaded** range, according to the 2026 benchmarks published by SkycomCallCenter citing industry survey data. Some markets — San Francisco, New York, Austin — push well past $40.
+…lands most teams well above the base wage, according to the 2026 benchmarks published by SkycomCallCenter citing industry survey data. High-cost metros like San Francisco, New York, and Austin push the fully-loaded figure even higher.
 
-A nearshore seat through a structured BPO typically runs **$16–$22/hour** (or roughly $2,800–$3,200/seat/month in dedicated models), with training, QA, management, and software bundled in.
+A nearshore seat through a structured BPO bundles training, QA, management, and software into a predictable monthly rate — at a fraction of that domestic fully-loaded cost.
 
 That's a gap of roughly **35–50%** — not the 60–70% you'd see offshore, but far more sustainable in practice.
 
 ## Why Nearshore Closes the Quality Gap That Offshore Can't
 
-Offshore outsourcing to the Philippines or India does offer lower rates — often $8–$14/hour. But cost per hour isn't the same as cost per resolution. Three factors tend to erode offshore savings:
+Offshore outsourcing to the Philippines or India does offer lower rates, but cost per hour isn't the same as cost per resolution. Three factors tend to erode offshore savings:
 
 **1. Longer handle time.** When agents aren't fully fluent in North American colloquialisms, or when time zone gaps make real-time escalation hard, average handle time climbs. A 20% longer AHT on 10,000 monthly contacts adds up fast.
 
@@ -51,13 +51,13 @@ Nearshore LatAm largely eliminates these friction points. Central and South Amer
 
 Here's how three models stack up for a team of 5 dedicated agents handling ~2,500 contacts/month:
 
-| Model | Avg. Fully Loaded Cost/Hr | Monthly Cost (5 agents, 160 hrs) | Est. Annual |
-|---|---|---|---|
-| U.S. Domestic (in-house) | $30–$35 | $24,000–$28,000 | $288K–$336K |
-| Nearshore LatAm (BPO) | $16–$22 | $12,800–$17,600 | $153K–$211K |
-| Offshore Asia (BPO) | $8–$14 | $6,400–$11,200 | $76K–$134K |
+| Model | Fully Loaded Cost | Relative Cost |
+|---|---|---|
+| U.S. Domestic (in-house) | Highest | Baseline |
+| Nearshore LatAm (BPO) | Mid — well below domestic | ~35–50% lower |
+| Offshore Asia (BPO) | Lowest | ~60–70% lower |
 
-The nearshore-vs-domestic gap in this scenario: **$75,000–$135,000 per year** for a five-person team. For a 20-person team, you're talking about a difference that funds another engineer or a serious marketing push.
+The nearshore-vs-domestic gap for a five-person team is substantial — often enough to fund another engineer or a serious marketing push. Scale that to a 20-person team and the reinvestment opportunity becomes hard to ignore.
 
 For a deeper look at how in-house costs compound beyond salaries, see our breakdown of the [real cost of in-house customer support](/blog/cost-of-in-house-customer-support).
 

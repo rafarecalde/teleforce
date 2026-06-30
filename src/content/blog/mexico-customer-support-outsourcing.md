@@ -9,7 +9,7 @@ readMinutes: 6
 publishDate: 2026-05-30
 faq:
   - q: "How much does customer support outsourcing in Mexico cost?"
-    a: "Hourly rates for Mexico-based agents typically range from $12 to $22 per hour depending on complexity, language requirements, and whether you use a shared or dedicated model. That's higher than the Philippines but meaningfully lower than U.S. domestic agents, and you gain same-time-zone overlap with U.S. business hours."
+    a: "Mexico-based agent rates fall well below U.S. domestic costs and sit at the higher end of nearshore Latin America — reflecting the larger, more established BPO infrastructure there. Whether you run a shared or dedicated model, you also gain same-time-zone overlap with U.S. business hours, which adds value beyond the rate alone. Contact a provider for a quote specific to your volume and complexity."
   - q: "Is Mexico a good location for bilingual English-Spanish support?"
     a: "Yes, for many use cases. Mexico has a large bilingual professional workforce, and cultural proximity to the U.S. produces a natural accent and communication style that U.S. customers recognize. Quality varies significantly by provider and city, so always conduct live auditions before committing."
   - q: "What are the main risks of outsourcing customer support to Mexico?"
@@ -45,15 +45,15 @@ See [How to Vet a Nearshore Support Provider](/blog/how-to-vet-nearshore-support
 
 Costs depend on model, complexity, and city. Here is a rough framework:
 
-| Model | Typical Range | Best For |
+| Model | Cost Level | Best For |
 |---|---|---|
-| Shared / pay-per-hour | $12–$18/agent-hour | Variable volume, ramp-up phase |
-| Dedicated seat | $2,200–$3,200/seat/month | Consistent volume, brand immersion |
-| Managed team (custom) | Negotiated | 50+ agent programs with QA |
+| Shared / pay-per-hour | Mid-range nearshore | Variable volume, ramp-up phase |
+| Dedicated seat | Mid-to-higher nearshore | Consistent volume, brand immersion |
+| Managed team (custom) | Quote-based | 50+ agent programs with QA |
 
 Teleforce pricing is quote-based — contact us for a quote — with options by hire, by seat, or per program, all-in rates that include the QA and management layer many Mexico-based quotes leave out.
 
-The number that rarely appears in pitch decks: fully-loaded agent cost includes recruiting, training, QA, management, and facilities. A quoted rate of $14/hour can become $20+ once turnover-driven retraining costs are factored in. Ask every provider for their annualized attrition rate and what's covered in the base price.
+The number that rarely appears in pitch decks: fully-loaded agent cost includes recruiting, training, QA, management, and facilities. A quoted base rate can climb significantly once turnover-driven retraining costs are factored in. Ask every provider for their annualized attrition rate and what's covered in the base price.
 
 ## The Bilingual Question
 
