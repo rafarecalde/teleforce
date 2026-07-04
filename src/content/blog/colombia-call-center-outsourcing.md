@@ -98,7 +98,7 @@ For larger operations with more complex requirements, a custom **Team** build �
 
 One underappreciated factor in Colombia outsourcing decisions is the management layer. Junior agents in any market perform to the level of the supervisors, QA leads, and training programs above them. Colombia's most established vendors have built that layer over 15+ years of market maturity — but not all vendors have it.
 
-Teleforce is built on a Fortune 500-grade support backbone with 30+ years of operations and 20+ language capabilities across Latin America. Clients get accent-neutral Spanish, year-round U.S. Eastern time-zone overlap, and agent retention rates that consistently outperform higher-attrition offshore hubs — with enterprise-grade quality frameworks, supervisor training, and escalation paths already in place, not assembled after you signed the contract.
+Teleforce is a 30-year operator with 20+ language capabilities across Latin America, built on decades of Fortune 500 operating history. Clients get accent-neutral Spanish, year-round U.S. Eastern time-zone overlap, and agent retention rates that consistently outperform higher-attrition offshore hubs — with enterprise-grade quality frameworks, supervisor training, and escalation paths already in place, not assembled after you signed the contract.
 
 ---
 
@@ -106,6 +106,6 @@ Teleforce is built on a Fortune 500-grade support backbone with 30+ years of ope
 
 Colombia call center outsourcing works — reliably, at meaningful cost savings, with bilingual capability that few other markets can match. The companies that get the most out of it go in with realistic ramp expectations, vet vendors on quality rather than price alone, and invest in the transition. The ones that struggle treated it as a drop-in swap for a domestic team or chose a vendor based on a deck rather than demonstrated performance.
 
-Whatever LatAm hub you choose, the differentiator isn't the geography — it's the infrastructure behind the agents. Teleforce puts bilingual nearshore support on a 30+ year, Fortune 500-grade enterprise support network, operating across Latin America with full U.S. Eastern overlap and pricing by hire, by seat, or per program. If your operation also carries receivables exposure, Teleforce's [nearshore collections capability](/blog/nearshore-collections-outsourcing) can recover early-stage revenue from the same bilingual team — keeping first-party relationships intact.
+Whatever LatAm hub you choose, the differentiator isn't the geography — it's the infrastructure behind the agents. Teleforce brings 30+ years of Fortune 500 operating history to bilingual nearshore support, operating across Latin America with full U.S. Eastern overlap and pricing by hire, by seat, or per program. If your operation also needs early-stage account servicing — billing questions, payment reminders, and friendly outreach that keeps accounts current — Teleforce can staff that from the same bilingual team, under your name, without touching late-stage recovery work.
 
 If you're still mapping the right location and model for your volume, start with our [Colombia, Mexico, and Ecuador comparison](/blog/nearshore-customer-support-latin-america) — then [talk to us](/#contact) when you're ready to run the numbers on your actual queue.

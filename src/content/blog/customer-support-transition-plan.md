@@ -113,7 +113,7 @@ Also worth noting: if you're considering whether outsourcing is the right move a
 
 A support partner who has run transitions before will push back on your timeline if it's too short. They'll ask for sample tickets before training starts, not after. They'll propose a pilot structure rather than asking for full volume on Day 1.
 
-At Teleforce, transitions are structured around a knowledge transfer process built on 30+ years of enterprise support infrastructure — the same backbone that supports Fortune 500 brands across 20+ industries. That foundation means our onboarding playbook is tested, not improvised.
+Teleforce is a 30-year operator: we've run programs for Fortune 500 brands across 20+ industries for three decades, and our transitions are structured around that same knowledge transfer process. That history means our onboarding playbook is tested, not improvised.
 
 But the mechanics above apply regardless of partner. The phases exist because customers don't know or care about your internal launch date — they only know whether the support they got was good.
 

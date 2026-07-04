@@ -85,7 +85,7 @@ The key is choosing a partner with real accountability and verifiable process st
 
 ## How Teleforce Approaches CRM Data Hygiene
 
-Teleforce is a bilingual (English/Spanish) nearshore BPO delivering data entry and operations support across Latin America, built on a Fortune 500-grade support backbone with 30+ years of enterprise support infrastructure spanning 20+ industries. Our data entry agents work U.S. Eastern hours, use client-defined field standards, and go through structured QA on every batch.
+Teleforce is a bilingual (English/Spanish) nearshore BPO delivering data entry and operations support across Latin America. We're a 30-year operator — we've run programs for Fortune 500 companies across 20+ industries for three decades, and we bring that same operating discipline to CRM data entry. Our data entry agents work U.S. Eastern hours, use client-defined field standards, and go through structured QA on every batch.
 
 For U.S. companies running bilingual CRM environments — particularly those with Spanish-speaking customer segments — we also bring native fluency to data entry that offshore alternatives simply can't match. Records entered correctly, in both languages, from the start.
 

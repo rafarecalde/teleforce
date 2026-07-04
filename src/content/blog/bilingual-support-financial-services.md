@@ -11,7 +11,7 @@ faq:
   - q: "Why does bilingual support matter specifically for financial services companies?"
     a: "Financial conversations — disputes, loan applications, fraud alerts — carry high stakes. When a customer cannot fully understand or be understood, they disengage and often switch providers. Spanish-speaking customers who receive support in their native language report higher satisfaction and are more likely to remain loyal, making bilingual capability a direct driver of retention and lifetime value."
   - q: "What types of financial interactions benefit most from bilingual agents?"
-    a: "High-stakes, high-emotion touchpoints benefit most: account opening and KYC verification, dispute and chargeback resolution, collections, mortgage or loan application support, and fraud alerts. These are moments where miscommunication is costly — both for the customer and the institution."
+    a: "High-stakes, high-emotion touchpoints benefit most: account opening and KYC verification, dispute and chargeback resolution, early-stage account servicing and payment reminders, mortgage or loan application support, and fraud alerts. These are moments where miscommunication is costly — both for the customer and the institution."
   - q: "Is nearshore bilingual support compliant with financial regulations like PCI-DSS?"
     a: "It can be, but compliance is the provider's responsibility to prove, not assume. A qualified nearshore partner should hold or operate under PCI-DSS standards, SOC 2 Type II controls, and GLBA-aligned data handling practices. Before signing, demand documentation — not just assurances."
   - q: "How quickly can a fintech company stand up bilingual support through Teleforce?"
@@ -39,7 +39,7 @@ Translation is table stakes. What bilingual support financial services customers
 
 - **Code-switching fluency.** Many U.S. Hispanic customers move between English and Spanish mid-conversation — especially when explaining technical or emotional topics like fraud or account closures. An agent who can follow that shift without losing context is dramatically more effective than one who insists on one language.
 - **Cultural register, not just vocabulary.** Financial concepts like credit scores, APR, or FDIC insurance don't always translate cleanly. Bilingual agents who understand how these concepts land differently across cultural contexts explain them more clearly — and earn more trust doing it.
-- **Verified fluency, not assumed fluency.** Hiring agents who list Spanish on a resume is not the same as deploying agents who can handle a collections call in Spanglish without breaking cadence. Fluency in financial services support needs to be tested and measured.
+- **Verified fluency, not assumed fluency.** Hiring agents who list Spanish on a resume is not the same as deploying agents who can handle a payment-reminder call in Spanglish without breaking cadence. Fluency in financial services support needs to be tested and measured.
 
 > **Language is a trust signal, not a courtesy.** Spanish-speaking customers who reach a bilingual agent on their first try are more likely to resolve their issue, stay on the platform, and refer others. [Book a call →](/#contact)
 
@@ -51,7 +51,7 @@ Not all support touchpoints are equal. In financial services, language breakdown
 |---|---|
 | Dispute and chargeback resolution | Customers must explain a sequence of events clearly; misunderstanding escalates to formal disputes |
 | KYC / account verification | Identity documentation questions confuse non-native speakers, increasing abandonment rates |
-| Collections and payment plans | Tone and precision matter enormously; language friction breeds hostility |
+| Early-stage account servicing and payment plans | Tone and precision matter enormously; language friction breeds hostility |
 | Fraud alerts | Urgency is lost in translation; delayed action increases liability |
 | Loan or credit application support | Customers who don't understand terms are more likely to churn or default |
 
@@ -84,13 +84,13 @@ A qualified nearshore partner will have this documentation ready. One that stall
 
 ## What Teleforce Brings to Financial Services Support
 
-Teleforce provides bilingual (English/Spanish) nearshore customer support for U.S. companies, backed by 30+ years of enterprise support infrastructure spanning 20+ industries — a Fortune 500-grade backbone that means the compliance frameworks, quality systems, and workforce depth are already in place when you engage.
+Teleforce provides bilingual (English/Spanish) nearshore customer support for U.S. companies. We're a 30-year operator — we've run programs for Fortune 500 companies across 20+ industries for three decades, which means the compliance frameworks, quality systems, and workforce depth are already in place when you engage.
 
 For fintech and financial services companies specifically, that matters because:
 
 - You're not building a bilingual bench from scratch in a tight labor market
 - Agent training in financial product context happens faster on an experienced workforce
-- The security and compliance infrastructure is enterprise-proven, not being figured out as you grow
+- The security and compliance infrastructure reflects 30 years of Fortune 500 operating history, not something being figured out as you grow
 
 Engagements are available by hire, by seat, or per program — pricing is quote-based and scoped to your volume, product complexity, and brand voice training needs. [Contact us for a quote →](/#contact)
 
@@ -100,7 +100,7 @@ Nearshore bilingual support is most valuable when a meaningful share of your cus
 
 For context on why this goes beyond financial services and applies across your customer base, see [why bilingual customer support is no longer optional for U.S. companies](/blog/bilingual-customer-support-us-companies).
 
-And if your book of business includes past-due Spanish-speaking accounts, note that Teleforce also runs [bilingual early-stage collections](/blog/bilingual-early-out-collections) — first-party outreach in the client's name, in native Spanish, at the 1–60 day window where recovery rates are highest and the relationship is still intact.
+And if your book of business includes Spanish-speaking accounts that are just starting to slip, note that Teleforce also runs [bilingual early-stage account servicing](/blog/bilingual-early-out-collections) — first-party outreach in the client's name, in native Spanish, at the 1–60 day window where accounts are easiest to bring current and the relationship is still intact.
 
 ---
 

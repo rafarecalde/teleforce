@@ -38,11 +38,11 @@ The question for healthcare CX leaders isn't whether to invest in bilingual supp
 Clinical encounters get the most attention when it comes to language access. But the non-clinical support layer is where most Spanish-speaking patients hit friction:
 
 - **Insurance and benefits verification** — Navigating coverage, deductibles, and prior authorizations in a second language is genuinely hard. When agents can't explain plan terms in Spanish, patients disengage or make costly decisions.
-- **Billing and collections** — Medical billing is already confusing for native English speakers. For Spanish-preferring patients, unclear EOBs and confusing collection calls drive avoidance rather than resolution — damaging both patient outcomes and revenue cycle performance.
+- **Billing and account servicing** — Medical billing is already confusing for native English speakers. For Spanish-preferring patients, unclear EOBs and confusing billing calls drive avoidance rather than resolution — damaging both patient outcomes and revenue cycle performance.
 - **Appointment scheduling and reminders** — No-show rates are measurably higher when scheduling agents can't communicate clearly with patients. Language-concordant scheduling calls reduce this gap.
 - **Telehealth intake** — Digital health companies have been fastest to adopt telehealth, but many still route Spanish-speaking patients through English-only intake flows, creating drop-off before the clinical visit even begins.
 
-> **Language-concordant support is a revenue cycle issue, not just a CX issue.** Unresolved billing confusion drives collections failures; missed appointments drive empty slots. [Book a call →](/#contact)
+> **Language-concordant support is a revenue cycle issue, not just a CX issue.** Unresolved billing confusion drives payment delays; missed appointments drive empty slots. [Book a call →](/#contact)
 
 ## What "Bilingual" Actually Means in a Healthcare Context
 
@@ -63,7 +63,7 @@ For healthcare companies evaluating outsourced bilingual support, this is the ti
 
 Nearshore bilingual support — Colombia, Mexico, Ecuador — is a viable and cost-effective model for healthcare support operations. Latin American agents generally bring accent-neutral Spanish, full U.S. Eastern time-zone overlap year-round, and strong retention rates relative to domestic alternatives. But the geography doesn't change the compliance obligation: any nearshore model requires executed Business Associate Agreements, PHI-handling training, secure communication channels, and regular audits. A credible nearshore partner should initiate the BAA conversation before you do, not wait to be asked.
 
-Teleforce operates on a Fortune 500-grade support backbone with 30+ years of enterprise-grade operations across 20+ industries. That heritage matters in healthcare, where compliance and consistency aren't optional.
+Teleforce is a 30-year operator — we've run support programs for Fortune 500 companies across 20+ industries for three decades. That heritage matters in healthcare, where compliance and consistency aren't optional.
 
 ## Building the Business Case Internally
 
@@ -71,7 +71,7 @@ Healthcare organizations often face internal resistance to outsourcing support, 
 
 The business case has two sides.
 
-**The cost of inaction**: LEP patients with unresolved billing questions are more likely to go to collections, less likely to schedule follow-up care, and more likely to file complaints. The revenue and satisfaction impact of poor language access is real and measurable.
+**The cost of inaction**: LEP patients with unresolved billing questions are more likely to fall behind on payment, less likely to schedule follow-up care, and more likely to file complaints. The revenue and satisfaction impact of poor language access is real and measurable.
 
 **The cost of the fix**: Outsourced bilingual support — particularly nearshore — runs significantly below domestic staffing costs. Teleforce pricing is quote-based (contact us for a quote), with flexible structures by hire, by seat, or per program. For high-volume scheduling lines or billing support teams, that math closes quickly against the cost of staffing bilingual agents domestically.
 
@@ -96,6 +96,6 @@ The principle: outsource the repetitive, protocol-driven interactions so your in
 
 **Bilingual customer support in healthcare** is where patient experience, patient safety, and operational performance all converge. Language barriers aren't an edge case — they're a daily reality for millions of Spanish-preferring patients navigating a system not built with them in mind. The organizations that close this gap don't just see better CSAT numbers; they see better outcomes in revenue cycle, compliance, and patient retention.
 
-And when billing friction does escalate, bilingual support can extend into pre-delinquent outreach — reaching Spanish-preferring accounts early, in their language, before a balance becomes a collection problem. See [Bilingual Early-Out Collections](/blog/bilingual-early-out-collections) for how that piece fits into a bilingual revenue-cycle strategy.
+And when billing friction starts to build, bilingual support can extend into early-stage account servicing — reaching Spanish-preferring accounts in the first days of a past-due balance, in their language, with friendly reminders that keep the account current. See [Bilingual Early-Stage Account Servicing](/blog/bilingual-early-out-collections) for how that piece fits into a bilingual revenue-cycle strategy.
 
-Teleforce delivers bilingual support across Latin America — accent-neutral Spanish, full Eastern time-zone coverage, and an established enterprise support network underneath every agent seat. If you're ready to close the language gap for your Spanish-speaking patients, [let's talk](/#contact).
+Teleforce delivers bilingual support across Latin America — accent-neutral Spanish, full Eastern time-zone coverage, and 30 years of Fortune 500 operating history behind every agent seat. If you're ready to close the language gap for your Spanish-speaking patients, [let's talk](/#contact).

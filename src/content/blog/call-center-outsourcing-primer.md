@@ -58,7 +58,7 @@ The rate a provider quotes is the beginning of the conversation, not the end. Th
 - **Ramp and training costs.** Who builds the training program? Who pays for ramp time? These line items are often buried in the fine print.
 - **Quality and oversight.** If you don't budget for a dedicated QA process, you'll spend it on rework, escalations, and churn recovery later.
 
-> **Ready to pressure-test your support cost structure?** Teleforce builds bilingual nearshore support programs backed by 30+ years of enterprise infrastructure — without the enterprise minimums. [Book a call →](/#contact)
+> **Ready to pressure-test your support cost structure?** Teleforce is a 30-year operator that builds bilingual nearshore support programs — without the enterprise minimums. [Book a call →](/#contact)
 
 ## Onshore vs. Nearshore vs. Offshore at a Glance
 
@@ -87,11 +87,11 @@ Outsourcing works badly when the product is too new to have stable support playb
 
 It also struggles when leadership expects zero transition friction. Every outsourcing arrangement has a ramp period. Customers notice during that window. If your brand can't absorb three to six weeks of slightly rougher interactions while a new team gets up to speed, you need to delay or invest heavily in transition planning.
 
-## What "Powered by Enterprise Infrastructure" Actually Means
+## What "Enterprise-Grade Operating History" Actually Means
 
-Some outsourcing providers are boutiques with a handful of agents and a Zendesk login. Others sit inside or alongside larger networks with real operational depth — redundant facilities, established workforce management, compliance frameworks already built.
+Some outsourcing providers are boutiques with a handful of agents and a Zendesk login. Others bring real operational depth — redundant facilities, established workforce management, compliance frameworks already built.
 
-Teleforce is nearshore-first and bilingual by design, and it operates on an established enterprise support network with 30+ years of history and 20+ language capability. That means a Fortune 500-grade backbone without the enterprise minimum headcount requirement.
+Teleforce is nearshore-first and bilingual by design. We're a 30-year operator: our team has run support programs for Fortune 500 companies across 20+ industries and 20+ languages for three decades. That operating history comes standard, without the enterprise minimum headcount requirement.
 
 The practical difference: your program gets workforce management, QA infrastructure, and business continuity protocols that most early-stage outsourcing vendors have to build from scratch — or skip entirely.
 
@@ -113,4 +113,4 @@ Call center outsourcing is a real lever for cost, coverage, and scale — but it
 
 The companies that struggle usually picked on price alone, underinvested in transition planning, or moved volume before their internal processes were documented well enough to hand off.
 
-If you're ready to do it right, the model that consistently outperforms is bilingual nearshore — English and Spanish, real-time U.S. hours, agents who don't need to be coached around accent or cultural distance. That's exactly what Teleforce is built for: bilingual nearshore support across Latin America, backed by 30+ years of enterprise support infrastructure — no enterprise headcount minimums required. Pricing is quote-based; [talk to us about your program →](/#contact) and we'll scope it by hire, by seat, or per program.
+If you're ready to do it right, the model that consistently outperforms is bilingual nearshore — English and Spanish, real-time U.S. hours, agents who don't need to be coached around accent or cultural distance. That's exactly what Teleforce is built for: bilingual nearshore support across Latin America, backed by 30 years of Fortune 500 operating history — no enterprise headcount minimums required. Pricing is quote-based; [talk to us about your program →](/#contact) and we'll scope it by hire, by seat, or per program.

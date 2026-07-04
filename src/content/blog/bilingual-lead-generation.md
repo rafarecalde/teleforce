@@ -86,7 +86,7 @@ Running a bilingual outbound function in-house is possible, but the talent marke
 
 Nearshore outsourcing solves the staffing constraint cleanly. Nearshore Latin America produces a deep pool of bilingual professionals with U.S. Eastern time zone alignment year-round — no seasonal offsets, no scheduling friction across regions. Agent retention in LATAM BPO operations runs higher than offshore alternatives, which matters in outbound roles where ramp time and institutional knowledge directly affect conversion rates.
 
-Teleforce delivers [bilingual sales lead generation](/services/sales-lead-generation) across Latin America, backed by a Fortune 500-grade support backbone with 30-plus years and 20-plus industries of operating history. The infrastructure is enterprise-grade; the team is on your time zone and ready to run your playbook.
+Teleforce delivers [bilingual sales lead generation](/services/sales-lead-generation) across Latin America. We're a 30-year operator with Fortune 500 operating history across 20-plus industries, so the infrastructure and quality bar are enterprise-grade — the team is on your time zone and ready to run your playbook.
 
 Pricing is quote-based — contact us for a quote tailored to your seat count and program scope.
 
@@ -97,7 +97,7 @@ For a broader look at how outsourced lead generation compares to in-house build-
 ## Common Objections — and Honest Answers
 
 **"Our product is too technical for a nearshore team to represent."**
-Technical complexity is handled through onboarding and documentation, not geography. Teleforce agents run detailed product training before their first call. Teleforce's enterprise support network spans healthcare, financial services, SaaS, and industrial distribution — all industries with high technical bars.
+Technical complexity is handled through onboarding and documentation, not geography. Teleforce agents run detailed product training before their first call. In 30 years of operating history, Teleforce has run programs across healthcare, financial services, SaaS, and industrial distribution — all industries with high technical bars.
 
 **"We only need a few bilingual reps — not a whole program."**
 Part-time seats are designed exactly for this. You can staff a single bilingual SDR seat to handle your Hispanic-segment accounts without a full team build-out.
@@ -111,4 +111,4 @@ List sourcing is a separate step, but it's not a barrier to starting. Many U.S. 
 
 The U.S. Hispanic market is growing faster than the general population, and bilingual outreach is still an underutilized lever for most U.S. sales teams. The brands and firms that build bilingual outbound capacity now will compound an advantage that gets harder to replicate as competition increases.
 
-Teleforce is built for exactly this motion — bilingual, nearshore, enterprise-backed, and ready to scale with your pipeline targets. [Reach out today](/#contact) to discuss what a bilingual lead generation program looks like for your specific market and segment.
+Teleforce is built for exactly this motion — bilingual, nearshore, backed by 30 years of enterprise operating history, and ready to scale with your pipeline targets. [Reach out today](/#contact) to discuss what a bilingual lead generation program looks like for your specific market and segment.

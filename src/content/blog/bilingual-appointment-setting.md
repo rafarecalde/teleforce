@@ -76,7 +76,7 @@ Hiring bilingual appointment setters in-house sounds straightforward until you w
 - **Full U.S. Eastern time zone overlap** year-round, so outreach windows align with prospect availability regardless of your internal team's location
 - **Higher agent retention** than offshore alternatives, which means your scripts, product knowledge, and call quality improve over time rather than resetting with every cohort
 
-Teleforce's bilingual appointment setting program runs on a Fortune 500-grade support backbone—30+ years and 20+ industries of enterprise call center infrastructure. You get enterprise-grade QA, CRM integration, and reporting without building the function from scratch.
+Teleforce is a 30-year operator—we've run programs for Fortune 500 companies across 20+ industries, and our bilingual appointment setting teams draw on that same enterprise call center experience. You get enterprise-grade QA, CRM integration, and reporting without building the function from scratch.
 
 Pricing is quote-based — contact us for a quote tailored to your call volume and coverage needs. Compare the total cost to a fully-loaded in-house hire and the unit economics become straightforward.
 

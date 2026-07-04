@@ -108,12 +108,12 @@ The customer support metrics that predict churn aren't exotic or complicated. Re
 
 Fix that connection, and your support data stops being a reporting function and starts being a revenue protection tool.
 
-One more lever worth knowing: when churn risk traces back to billing friction — a disputed charge, a missed payment, an account in early arrears — proactive outreach before a customer goes delinquent can recover that relationship entirely. Teleforce's [bilingual early-out collections](/blog/bilingual-early-out-collections) service works hand-in-hand with support operations to reach at-risk accounts in their preferred language, in the client's name, before a third-party agency ever needs to get involved.
+One more lever worth knowing: when churn risk traces back to billing friction — a disputed charge, a missed payment, an account slipping toward past-due — proactive outreach before an account falls behind can recover that relationship entirely. Teleforce's [bilingual early-stage account servicing](/blog/bilingual-early-out-collections) works hand-in-hand with support operations to reach at-risk accounts in their preferred language, in the client's name, with friendly payment reminders that keep the account current before it ever becomes a bigger problem.
 
 That's the full picture: identify the signal, act on it fast, and have the bilingual capacity to close the loop — on support and on revenue.
 
 ---
 
-**Ready to build a support operation that catches churn before it happens?** Teleforce delivers bilingual nearshore customer support backed by a Fortune 500-grade support backbone — 30+ years of enterprise support infrastructure across 20+ industries. Nearshore Latin America teams with full U.S. Eastern time-zone coverage and enterprise-grade infrastructure. Pricing is quote-based — [contact us for a quote](/#contact).
+**Ready to build a support operation that catches churn before it happens?** Teleforce is a 30-year operator of bilingual nearshore customer support — we've run programs for Fortune 500 companies across 20+ industries for three decades. Nearshore Latin America teams with full U.S. Eastern time-zone coverage and enterprise-grade infrastructure. Pricing is quote-based — [contact us for a quote](/#contact).
 
 [Talk to us about your support metrics →](/#contact)

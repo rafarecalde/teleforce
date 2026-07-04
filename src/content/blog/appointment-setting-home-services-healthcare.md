@@ -89,7 +89,7 @@ Before you evaluate any [outsourced appointment setting](/blog/outsourced-appoin
 - **Bilingual capacity:** Is bilingual service a genuine capability or an upsell? In home services and healthcare, it should be standard.
 - **Quality monitoring:** Are calls recorded and reviewed? How is quality scored and corrected?
 - **Transparency on metrics:** Can you see booking rates, call answer times, and no-show rates on demand?
-- **Infrastructure backing:** Consumer-grade setups fail during volume spikes. Teleforce is backed by a Fortune 500-grade support backbone with 30+ years and 20+ industries of operational depth — enterprise infrastructure, nearshore delivery.
+- **Infrastructure backing:** Consumer-grade setups fail during volume spikes. Teleforce is a 30-year operator with 30+ years running programs for Fortune 500 companies across 20+ industries — enterprise infrastructure, nearshore delivery.
 
 ## The Compounding Return
 

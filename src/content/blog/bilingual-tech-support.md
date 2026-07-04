@@ -102,7 +102,7 @@ The math matters, but the more important calculation is what it costs *not* to o
 
 ## Teleforce's Bilingual Tech Support Model
 
-Teleforce is a nearshore BPO that delivers bilingual (English/Spanish) tech support across Latin America, built on a Fortune 500-grade support backbone with 30+ years of enterprise support infrastructure across 20+ industries. That means enterprise-grade systems, security controls, and QA processes running from a LATAM delivery team with strong bilingual talent and low attrition.
+Teleforce is a 30-year operator delivering bilingual (English/Spanish) tech support across Latin America — we've run programs for Fortune 500 companies across 20+ industries for 30 years. That means enterprise-grade systems, security controls, and QA processes running from a LATAM delivery team with strong bilingual talent and low attrition.
 
 Our tech support agents are trained on your product, your escalation matrix, and your brand voice — in both languages. We handle tier-1 troubleshooting, account support, and technical onboarding for U.S. SaaS companies, consumer tech brands, and B2B software providers that need to serve a growing Spanish-speaking customer base without hiring two separate support teams.
 
