@@ -108,7 +108,7 @@ The customer support metrics that predict churn aren't exotic or complicated. Re
 
 Fix that connection, and your support data stops being a reporting function and starts being a revenue protection tool.
 
-One more lever worth knowing: when churn risk traces back to billing friction — a disputed charge, a missed payment, an account slipping toward past-due — proactive outreach before an account falls behind can recover that relationship entirely. Teleforce's [bilingual early-stage account servicing](/blog/bilingual-early-out-collections) works hand-in-hand with support operations to reach at-risk accounts in their preferred language, in the client's name, with friendly payment reminders that keep the account current before it ever becomes a bigger problem.
+One more lever worth knowing: when churn risk traces back to billing friction — a disputed charge, a missed payment, an account slipping toward past-due — proactive outreach before an account falls behind can recover that relationship entirely. Teleforce's [bilingual early-stage account servicing](/blog/bilingual-early-stage-account-servicing) works hand-in-hand with support operations to reach at-risk accounts in their preferred language, in the client's name, with friendly payment reminders that keep the account current before it ever becomes a bigger problem.
 
 That's the full picture: identify the signal, act on it fast, and have the bilingual capacity to close the loop — on support and on revenue.
 

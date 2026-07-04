@@ -80,7 +80,7 @@ Not every company needs to build full bilingual infrastructure from day one. If 
 
 If Spanish volume is 20% or more of your contact volume, dedicated bilingual coverage almost always makes operational sense. The quality gap between a purpose-built Spanish support team and a shared-resource model is significant enough to show up in retention data.
 
-One often-overlooked extension of this is early-stage account servicing: when a Hispanic customer misses a payment or has a billing question, outreach in their preferred language — delivered first-party, in the brand's own name, during the earliest days of the account — dramatically improves response rates and keeps accounts current. See how that works in our guide to [bilingual early-stage account servicing](/blog/bilingual-early-out-collections).
+One often-overlooked extension of this is early-stage account servicing: when a Hispanic customer misses a payment or has a billing question, outreach in their preferred language — delivered first-party, in the brand's own name, during the earliest days of the account — dramatically improves response rates and keeps accounts current. See how that works in our guide to [bilingual early-stage account servicing](/blog/bilingual-early-stage-account-servicing).
 
 For a broader look at how bilingual support compares against English-only domestic alternatives, [Why Bilingual Customer Support Is No Longer Optional](/blog/bilingual-customer-support-us-companies) is a good companion read.
 

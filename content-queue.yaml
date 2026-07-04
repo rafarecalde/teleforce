@@ -340,7 +340,7 @@ posts:
     publishDate: 2026-11-21
     status: done
   - title: "Bilingual Early-Out Collections: Recover More, Keep the Customer"
-    slug: bilingual-early-out-collections
+    slug: bilingual-early-stage-account-servicing
     primaryKeyword: "early-out collections"
     intent: BoFu
     pillar: "Collections"
@@ -348,7 +348,7 @@ posts:
     status: done
 
   - title: "First-Party vs. Third-Party Collections: Which Protects the Relationship"
-    slug: first-party-vs-third-party-collections
+    slug: first-party-vs-third-party-account-servicing
     primaryKeyword: "first-party vs third-party collections"
     intent: MoFu
     pillar: "Collections"
@@ -356,7 +356,7 @@ posts:
     status: done
 
   - title: "Pre-Delinquent Outreach: Catch Accounts Before They Go Past Due"
-    slug: pre-delinquent-collections
+    slug: pre-delinquent-account-servicing
     primaryKeyword: "pre-delinquent collections"
     intent: ToFu
     pillar: "Collections"
@@ -364,7 +364,7 @@ posts:
     status: done
 
   - title: "Nearshore Collections Outsourcing: The Bilingual Advantage"
-    slug: nearshore-collections-outsourcing
+    slug: nearshore-account-servicing-outsourcing
     primaryKeyword: "nearshore collections outsourcing"
     intent: BoFu
     pillar: "Collections"
@@ -372,7 +372,7 @@ posts:
     status: done
 
   - title: "How Bilingual Collections Lifts Recovery on Hispanic Accounts"
-    slug: bilingual-debt-collection
+    slug: bilingual-hispanic-account-servicing
     primaryKeyword: "bilingual debt collection"
     intent: MoFu
     pillar: "Collections"

@@ -84,7 +84,7 @@ That matters legally and relationally. Late-stage, third-party recovery work is 
 
 Relationally, pre-delinquent outreach belongs with the company itself, in its own voice. The customer is still current, so the contact should read as a helpful reminder rather than a formal step. Keeping pre-delinquent contact first-party — in-house or with a first-party partner — preserves that tone while still keeping the account on track.
 
-For a deeper look at how first-party account servicing and later-stage, third-party models compare across the delinquency curve, see [First-Party vs. Third-Party Account Servicing](/blog/first-party-vs-third-party-collections).
+For a deeper look at how first-party account servicing and later-stage, third-party models compare across the delinquency curve, see [First-Party vs. Third-Party Account Servicing](/blog/first-party-vs-third-party-account-servicing).
 
 ---
 
@@ -98,7 +98,7 @@ Teleforce deploys bilingual (EN/ES) first-party account servicing agents across 
 
 Pricing is quote-based and scoped to your portfolio and account volume — [contact us for a quote](/#contact). The math is usually straightforward: one prevented 60-day delinquency can pay for a month of outreach.
 
-To see how pre-delinquent outreach fits into a broader AR workflow, the [Early-Stage Account Servicing Playbook](/blog/pre-delinquent-collections) maps the full 1–60 day sequence that follows when pre-delinquent contacts do not convert.
+To see how pre-delinquent outreach fits into a broader AR workflow, the [Early-Stage Account Servicing Playbook](/blog/pre-delinquent-account-servicing) maps the full 1–60 day sequence that follows when pre-delinquent contacts do not convert.
 
 ---
 

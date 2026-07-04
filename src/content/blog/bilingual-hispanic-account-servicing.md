@@ -8,8 +8,8 @@ category: Account Servicing
 readMinutes: 6
 publishDate: 2026-06-26
 related:
-  - bilingual-early-out-collections
-  - first-party-vs-third-party-collections
+  - bilingual-early-stage-account-servicing
+  - first-party-vs-third-party-account-servicing
 ---
 
 # How Bilingual Support Lifts Recovery on Hispanic Accounts
@@ -54,7 +54,7 @@ Bilingual account servicing works best when it's first-party — meaning agents 
 
 **Compliance posture.** First-party outreach conducted by agents acting as your company's representatives generally falls outside the FDCPA's scope. Note that TCPA rules on calls and texts still apply regardless of who makes the contact — any outreach program should be run with proper compliance controls in place. But the FDCPA exposure profile is meaningfully different from third-party agency work, which is worth knowing as you weigh options. (This is directional context, not legal advice — consult your counsel on your specific program.)
 
-See [First-Party vs. Third-Party Account Servicing](/blog/first-party-vs-third-party-collections) for a deeper breakdown of where each model fits.
+See [First-Party vs. Third-Party Account Servicing](/blog/first-party-vs-third-party-account-servicing) for a deeper breakdown of where each model fits.
 
 ---
 
@@ -64,7 +64,7 @@ Resolution probability drops steeply as accounts age. An account that's 15 days 
 
 The lever bilingual account servicing pulls hardest is **contact rate in the 1–30 day bucket**. If you can reach the consumer, explain the situation in their preferred language, and put a manageable arrangement on the table before the balance feels overwhelming or adversarial, resolution rates follow. The alternative — letting accounts drift because contact attempts aren't landing — compounds the problem and pushes accounts toward the stage where they require separate, more costly handling.
 
-This is why integrating bilingual capacity at the earliest stage of account servicing is the highest-leverage move. For a fuller picture of how to structure that early outreach, see [Bilingual Early-Out Account Servicing](/blog/bilingual-early-out-collections).
+This is why integrating bilingual capacity at the earliest stage of account servicing is the highest-leverage move. For a fuller picture of how to structure that early outreach, see [Bilingual Early-Out Account Servicing](/blog/bilingual-early-stage-account-servicing).
 
 ---
 

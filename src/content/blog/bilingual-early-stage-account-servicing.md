@@ -17,7 +17,7 @@ faq:
   - q: "How quickly can Teleforce stand up an early-stage account servicing program?"
     a: "Teleforce is a 30-year operator running bilingual account servicing from its nearshore Latin America delivery hub, with 30 years of Fortune 500 operating history behind its processes, so onboarding timelines are compressed versus building in-house. Most clients are live with trained, compliant agents within a few weeks. Contact us to discuss your account volume and outreach buckets."
 related:
-  - bilingual-debt-collection
+  - bilingual-hispanic-account-servicing
 ---
 
 ## The Clock Starts at Day One
@@ -42,7 +42,7 @@ If a meaningful slice of your past-due book is Spanish-dominant and your outreac
 
 Consumer debt data from the New York Fed and the Federal Reserve consistently show that the majority of accounts in early past-due status are still financially capable of resolving—they often just need a prompt, a payment arrangement, or clarity on what they owe. The accounts that roll to severe delinquency (90+ days) frequently got there because no one reached them effectively in the early window.
 
-This is why [early-stage delinquency strategy](/blog/pre-delinquent-collections) starts with contact quality, not just contact volume. A high call count against a population that can't fully engage with your English-language script produces noise, not resolution. Bilingual early-stage account servicing changes the signal-to-noise ratio.
+This is why [early-stage delinquency strategy](/blog/pre-delinquent-account-servicing) starts with contact quality, not just contact volume. A high call count against a population that can't fully engage with your English-language script produces noise, not resolution. Bilingual early-stage account servicing changes the signal-to-noise ratio.
 
 Early also means first-party, which has real implications for how the conversation goes. Your agents are calling as your company, not as an outside firm. That framing matters psychologically. The customer still sees a path to remaining in good standing with a brand they chose. That softens the conversation, raises the chance of a commitment, and—critically—leaves the door open to a continued relationship after the account is current again.
 
@@ -62,7 +62,7 @@ The mechanics are straightforward. The execution is where it gets nuanced.
 
 ## First-Party vs. Third-Party: A Practical Comparison
 
-The comparison between first-party early-stage servicing and third-party placement deserves a direct look. [First-party versus third-party account servicing](/blog/bilingual-debt-collection) involves tradeoffs beyond resolution rate alone.
+The comparison between first-party early-stage servicing and third-party placement deserves a direct look. [First-party versus third-party account servicing](/blog/bilingual-hispanic-account-servicing) involves tradeoffs beyond resolution rate alone.
 
 Late-stage, charged-off accounts are typically handled separately, under a different model with a different goal, once an account is genuinely unresolved in-house. Early-stage servicing is simply a different stage with a different goal: reaching customers while the relationship is still intact, so retention stays on the table. Teleforce focuses on the early-stage, first-party window — where resolution rates are highest and the customer relationship is still salvageable.
 

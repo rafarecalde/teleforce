@@ -1,5 +1,5 @@
 ---
-import { SITE } from '../consts';
+import { SITE, PHONE, PHONE_HREF } from '../consts';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
@@ -11,6 +11,8 @@ interface Props {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   /** Override OG type (default website) */
   ogType?: string;
+  /** Bare mode for PPC landing pages: minimal header/footer, no competing nav. */
+  bare?: boolean;
 }
 
 const {
@@ -18,6 +20,7 @@ const {
   description = SITE.description,
   jsonLd,
   ogType = 'website',
+  bare = false,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, SITE.url).href.replace(/\/$/, '') || SITE.url;
@@ -73,9 +76,29 @@ const ldBlocks = [org, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) 
   ))}
 </head>
 <body>
-  <Nav />
+  {bare ? (
+    <nav>
+      <div class="bar">
+        <span class="logo"><span class="led"></span>TELEFORCE</span>
+        <div class="links">
+          <a href={PHONE_HREF} class="nl">{PHONE}</a>
+          <a href="#proposal" class="btn btn-amber">Request a proposal</a>
+        </div>
+      </div>
+    </nav>
+  ) : (
+    <Nav />
+  )}
   <slot />
-  <Footer />
+  {bare ? (
+    <footer>
+      <div class="wrap">
+        <div class="legal">© 2026 Teleforce · tryteleforce.com · Privacy · Terms</div>
+      </div>
+    </footer>
+  ) : (
+    <Footer />
+  )}
 
   <script>
     const obs = new IntersectionObserver((entries) => {

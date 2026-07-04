@@ -100,7 +100,7 @@ Nearshore bilingual support is most valuable when a meaningful share of your cus
 
 For context on why this goes beyond financial services and applies across your customer base, see [why bilingual customer support is no longer optional for U.S. companies](/blog/bilingual-customer-support-us-companies).
 
-And if your book of business includes Spanish-speaking accounts that are just starting to slip, note that Teleforce also runs [bilingual early-stage account servicing](/blog/bilingual-early-out-collections) — first-party outreach in the client's name, in native Spanish, at the 1–60 day window where accounts are easiest to bring current and the relationship is still intact.
+And if your book of business includes Spanish-speaking accounts that are just starting to slip, note that Teleforce also runs [bilingual early-stage account servicing](/blog/bilingual-early-stage-account-servicing) — first-party outreach in the client's name, in native Spanish, at the 1–60 day window where accounts are easiest to bring current and the relationship is still intact.
 
 ---
 

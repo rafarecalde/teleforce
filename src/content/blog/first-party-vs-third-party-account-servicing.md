@@ -8,7 +8,7 @@ category: Account Servicing
 readMinutes: 6
 publishDate: 2026-06-12
 related:
-  - pre-delinquent-collections
+  - pre-delinquent-account-servicing
 ---
 
 When an account goes past due, you face a decision that shapes both your cash flow and your customer relationships: handle it yourself or hand it off. The choice between first-party and third-party account servicing is not just an operational question — it's a brand question. Get it wrong, and you resolve the invoice while losing the customer. Get it right, and you keep both.
@@ -89,7 +89,7 @@ For seriously aged, non-responsive accounts, third-party handling — even at a 
 
 For companies serving U.S. markets with significant Hispanic customer segments, the first-party vs third-party question has an additional dimension. A Spanish-speaking customer who gets a call in English from an unfamiliar outside firm is far less likely to engage than one who hears a fluent, native-Spanish speaker calling on behalf of the company they actually do business with.
 
-Early-stage, bilingual, first-party outreach is one of the highest-leverage tools available for keeping Hispanic customer accounts current before they age into a more serious bucket. You can read more about this dynamic in our post on [bilingual early-out account servicing strategy](/blog/bilingual-early-out-collections) — and how language and timing work together to close the gap.
+Early-stage, bilingual, first-party outreach is one of the highest-leverage tools available for keeping Hispanic customer accounts current before they age into a more serious bucket. You can read more about this dynamic in our post on [bilingual early-out account servicing strategy](/blog/bilingual-early-stage-account-servicing) — and how language and timing work together to close the gap.
 
 ---
 
@@ -97,7 +97,7 @@ Early-stage, bilingual, first-party outreach is one of the highest-leverage tool
 
 Every day an account sits in the past-due queue is a day it drags on your Days Sales Outstanding (DSO). A company that relies on third-party handling as its primary mechanism typically has a structurally elevated DSO — because third-party assignment happens late, and third-party recovery takes time.
 
-First-party early-stage intervention is one of the most direct levers for compressing DSO. When you resolve a 30-day account in week five instead of handing it off in month four, you recover cash three months faster. At scale, that difference is material to working capital. We go deeper on this in our piece on [reducing DSO with outsourced AR](/blog/bilingual-early-out-collections).
+First-party early-stage intervention is one of the most direct levers for compressing DSO. When you resolve a 30-day account in week five instead of handing it off in month four, you recover cash three months faster. At scale, that difference is material to working capital. We go deeper on this in our piece on [reducing DSO with outsourced AR](/blog/bilingual-early-stage-account-servicing).
 
 ---
 
@@ -111,4 +111,4 @@ For companies with meaningful Spanish-speaking customer portfolios, or for any b
 
 The decision is not which model sounds better in theory. It is which model reaches your customer first, in their language, under your name — and that is the one that wins.
 
-[Talk to us about your early-stage account servicing →](/#collections)
+[Talk to us about your early-stage account servicing →](/#contact)

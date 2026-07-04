@@ -103,6 +103,6 @@ Ecommerce customer support outsourcing works when the team you hire is genuinely
 
 The alternative — carrying excess in-house headcount for peak seasons, or patching coverage with an offshore provider that can't serve your Spanish-speaking customers — has a real cost too. Most brands don't calculate the revenue lost to unanswered pre-purchase chats or the customers who don't return after a slow resolution. Those numbers are real, and they add up faster than the outsourcing fee.
 
-And if billing questions or payment reminders are part of your operations picture, Teleforce also runs [first-party, bilingual early-stage account servicing](/blog/bilingual-early-out-collections) — so the same team relationship that handles your CX can keep accounts current, in your name, without damaging customer relationships.
+And if billing questions or payment reminders are part of your operations picture, Teleforce also runs [first-party, bilingual early-stage account servicing](/blog/bilingual-early-stage-account-servicing) — so the same team relationship that handles your CX can keep accounts current, in your name, without damaging customer relationships.
 
 If your current support setup is straining under growth — or you're heading into a peak season without a scaling plan — [talk to Teleforce](/#contact) about what a nearshore team actually costs and what it takes to get one running.

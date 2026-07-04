@@ -17,7 +17,7 @@ faq:
   - q: "How does nearshore account servicing pricing compare to building an in-house team?"
     a: "An in-house billing support seat in the U.S. carries a loaded cost well above base salary once you factor in benefits, HR overhead, attrition backfill, and compliance training. Nearshore outsourcing with Teleforce replaces that fixed overhead with a scoped engagement priced to your portfolio — infrastructure, management, and bilingual capability already built in. Contact us for a quote."
 related:
-  - bilingual-debt-collection
+  - bilingual-hispanic-account-servicing
 ---
 
 Your accounts receivable team dials the same account that's a few days past due. No answer. No callback. The account ages into the 30-day bucket, then 60. Eventually it's flagged for a heavier-handed process that feels transactional, recovers a fraction of face value, and leaves the customer relationship in pieces.
@@ -66,7 +66,7 @@ When an account drifts past due and nobody reaches out in a language and tone th
 
 For most consumer and SMB receivables, letting an account drift that far is both too slow and too costly. That heavier process makes sense only for aged, charged-off debt where the customer relationship is already gone. It's poor strategy for accounts in the first 1–60 days, where a professional, empathetic reminder in the customer's preferred language would have kept the balance current in the first place.
 
-First-party nearshore account servicing — working under your brand, managed by your AR team, with real-time reporting you control — keeps accounts in-house through the window where a simple reminder is all that's needed. The [difference between first-party, early-stage outreach and later-stage recovery](/blog/first-party-vs-third-party-collections) isn't just structural; it's the gap between keeping a customer and losing them.
+First-party nearshore account servicing — working under your brand, managed by your AR team, with real-time reporting you control — keeps accounts in-house through the window where a simple reminder is all that's needed. The [difference between first-party, early-stage outreach and later-stage recovery](/blog/first-party-vs-third-party-account-servicing) isn't just structural; it's the gap between keeping a customer and losing them.
 
 ## What the compliance picture looks like
 
@@ -98,7 +98,7 @@ Pricing is quote-based — [contact us for a quote](/#contact).
 
 The single biggest account servicing mistake U.S. companies make is waiting. Accounts that could have been kept current at day 5 with a single bilingual call become 60-day problems because the AR team was understaffed, English-only, or stretched across other priorities.
 
-[Pre-delinquent and early-stage outreach](/blog/bilingual-debt-collection) — reaching customers before they've missed a payment or in the first two weeks after a due date — produces better on-time payment rates, lower cost per dollar serviced, and stronger customer retention than anything that happens at 90+ days.
+[Pre-delinquent and early-stage outreach](/blog/bilingual-hispanic-account-servicing) — reaching customers before they've missed a payment or in the first two weeks after a due date — produces better on-time payment rates, lower cost per dollar serviced, and stronger customer retention than anything that happens at 90+ days.
 
 Nearshore account servicing outsourcing makes that earlier engagement operationally possible. The seats are there, the bilingual capability is built in, and the cost structure lets you run a proactive AR function without the overhead of a domestic team.
 

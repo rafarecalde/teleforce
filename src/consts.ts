@@ -22,7 +22,7 @@ export const FORM_ACTION = `https://formsubmit.co/${SITE.formAlias}`;
 export const STATS = [
   { n: '30+', k: 'Years operating' },
   { n: '20+', k: 'Industries served' },
-  { n: 'Fortune 500', k: 'Trusted backbone' },
+  { n: 'Fortune 500', k: 'Operating history' },
 ] as const;
 
 // Enterprise clients served across the network. Rendered as the "trusted by" wall.
@@ -63,7 +63,7 @@ export type Category = (typeof CATEGORIES)[number];
 // ============================================================
 // Service menu — single source for the /services pages, the homepage grid,
 // and per-service blog clusters. `category` ties a service to its blog tag.
-// `seatPriced: false` means "contact us for pricing" (collections).
+// `seatPriced: false` means "contact us for pricing" (per-program).
 // ============================================================
 export interface Service {
   slug: string;
@@ -156,7 +156,7 @@ export const SERVICES: Service[] = [
     seatPriced: true,
   },
   {
-    slug: 'billing-collections',
+    slug: 'billing-account-servicing',
     name: 'Billing & Account Servicing',
     navLabel: 'Account Servicing',
     ic: 'FIRST-PARTY · 1–60 DAYS',

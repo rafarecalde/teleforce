@@ -115,7 +115,7 @@ If you're running under a few hundred tickets per month and aren't sure outsourc
 
 The pilot approach reduces your risk significantly and gives you real data to decide whether to expand.
 
-One often-overlooked extension of outsourced support: if your business deals with billing questions or payment follow-ups, a nearshore team can also handle [early-stage account servicing](/blog/bilingual-early-out-collections) — friendly payment reminders and billing support in the client's name, in both English and Spanish, that help keep accounts current before they fall behind.
+One often-overlooked extension of outsourced support: if your business deals with billing questions or payment follow-ups, a nearshore team can also handle [early-stage account servicing](/blog/bilingual-early-stage-account-servicing) — friendly payment reminders and billing support in the client's name, in both English and Spanish, that help keep accounts current before they fall behind.
 
 ---
 
