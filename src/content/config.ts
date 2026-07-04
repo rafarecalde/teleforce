@@ -14,7 +14,7 @@ const blog = defineCollection({
       'Tech Support',
       'Data Entry',
       'Appointment Setting',
-      'Billing & Collections',
+      'Account Servicing',
       'Sales & Lead Gen',
       'Nearshore',
     ]),

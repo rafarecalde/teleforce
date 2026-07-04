@@ -21,7 +21,7 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, SITE.url).href.replace(/\/$/, '') || SITE.url;
-const ogImage = new URL('/og-default.svg', SITE.url).href;
+const ogImage = new URL('/og-default.png', SITE.url).href;
 
 const org = {
   '@context': 'https://schema.org',

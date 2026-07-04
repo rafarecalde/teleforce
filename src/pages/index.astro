@@ -17,12 +17,12 @@ const marquee = [...LOGOS, ...LOGOS];
         <span class="l2">In both languages.</span><br />
         <span class="l3">On your clock.</span>
       </h1>
-      <p class="lede">Teleforce is a <b>bilingual LATAM BPO</b> for U.S. companies — customer service, tech support, collections, and the back-office work behind them.
+      <p class="lede">Teleforce is a <b>bilingual LATAM BPO</b> for U.S. companies — customer service, tech support, account servicing, and the back-office work behind them.
         Dedicated English/Spanish agents who work as an extension of your brand, on U.S. time.
-        Built on <b>a Fortune 500-grade support backbone</b>, 30+ years deep — so there's no startup ramp to wait through.</p>
+        A <b>30-year operator</b> with Fortune 500 experience — so there's no startup ramp to wait through.</p>
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-amber">Book a call</a>
-        <a href="#pricing" class="btn btn-ghost">See pricing</a>
+        <a href="#contact" class="btn btn-amber">Request a proposal</a>
+        <a href="#contact" class="btn btn-ghost">Book a scoping call</a>
       </div>
     </div>
   </header>
@@ -95,6 +95,35 @@ const marquee = [...LOGOS, ...LOGOS];
     </div>
   </section>
 
+  <div class="howwrap">
+    <section class="block" id="security">
+      <div class="wrap reveal">
+        <div class="eyebrow">Data security</div>
+        <h2 class="disp">Your customers' data, handled to U.S. standards.</h2>
+        <p class="sub">A support vendor is a data-security decision as much as a service one — especially in regulated industries. Teleforce operates under direct U.S. oversight, with controls built for sensitive customer and financial data: secure PII handling, access controls, monitored environments, and audit-ready reporting. It's the difference between a vendor you have to police and a partner who lowers your risk.</p>
+        <div class="offer svcs" style="margin-top:32px">
+          <div class="cell">
+            <div class="ic">GOVERNANCE</div>
+            <h3>U.S.-based oversight &amp; governance</h3>
+            <p>Programs run under direct U.S. supervision — not left to an offshore vendor's discretion.</p>
+          </div>
+          <div class="cell">
+            <div class="ic">PII &amp; DATA</div>
+            <h3>Secure PII &amp; financial-data handling</h3>
+            <p>Access controls, monitored environments, and documented data practices.</p>
+            {/* TODO: verify SOC 2 / PCI status before publishing, then name it here */}
+          </div>
+          <div class="cell">
+            <div class="ic">AUDIT-READY</div>
+            <h3>Audit-ready QA &amp; call monitoring</h3>
+            <p>Recorded, reviewed, and reportable — so your risk and compliance teams get what they ask for.</p>
+          </div>
+        </div>
+        <p class="pricenote">Any outbound reminder or servicing calls are set up consent-aware as part of program onboarding.</p>
+      </div>
+    </section>
+  </div>
+
   <section class="block">
     <div class="wrap reveal">
       <div class="eyebrow">In their words</div>
@@ -130,7 +159,7 @@ const marquee = [...LOGOS, ...LOGOS];
             </div>
           ))}
         </div>
-        <p class="pricenote">Pricing is quote-based and depends on role, skill, and volume — <a href="#contact" style="color:var(--amber)">contact us for a quote</a>. First-party billing &amp; collections supports flexible pricing (by hire, by seat, or per program).</p>
+        <p class="pricenote">Pricing is quote-based and depends on role, skill, and volume — <a href="#contact" style="color:var(--amber)">request a proposal</a>. Billing &amp; account servicing is scoped and priced per program.</p>
       </div>
     </section>
   </div>
@@ -139,21 +168,23 @@ const marquee = [...LOGOS, ...LOGOS];
     <div class="wrap reveal">
       <div class="grid">
         <div>
-          <div class="eyebrow" style="color:var(--amber)">Book a call</div>
-          <h2 class="disp">Let's scope your team.</h2>
-          <p class="sub">Tell us your channels and volumes. We'll come back with a staffing plan and a go-live date — usually within two business days.</p>
+          <div class="eyebrow" style="color:var(--amber)">Request a proposal</div>
+          <h2 class="disp">Get a proposal built for your book.</h2>
+          <p class="sub">Tell us your volumes and what you need. We'll come back with a staffing plan and a go-live date — usually within two business days. A human reviews every request; no bots, no self-serve.</p>
           <p class="sub" style="margin-top:18px">Prefer to talk? Call <a href={PHONE_HREF} style="color:var(--amber);font-weight:600">{PHONE}</a>.</p>
         </div>
         <form method="POST" action={FORM_ACTION}>
-          <input type="hidden" name="_subject" value="New Teleforce inquiry — book a call" />
+          <input type="hidden" name="_subject" value="New Teleforce proposal request" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_next" value={`${SITE.url}/thanks`} />
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required /></div>
           <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" placeholder="you@company.com" required /></div>
-          <div class="field"><label for="need">What do you need?</label><textarea id="need" name="message" rows="3" placeholder="Channels, languages, rough monthly volume…"></textarea></div>
-          <button class="btn btn-amber" type="submit">Send &amp; book a call</button>
+          <div class="field"><label for="company">Company</label><input id="company" name="company" type="text" placeholder="Company name" required /></div>
+          <div class="field"><label for="volume">Monthly volume or seat count</label><input id="volume" name="volume" type="text" placeholder="e.g. 25 seats, or ~8,000 contacts/mo" /></div>
+          <div class="field"><label for="need">What do you need?</label><textarea id="need" name="message" rows="3" placeholder="Channels, languages, and what you're trying to cover…"></textarea></div>
+          <button class="btn btn-amber" type="submit">Request a proposal</button>
         </form>
       </div>
     </div>

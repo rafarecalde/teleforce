@@ -7,9 +7,9 @@ export const SITE = {
   url: 'https://tryteleforce.com',
   title: 'Teleforce — Bilingual Customer Support',
   description:
-    'Bilingual LATAM BPO for U.S. companies — customer service, tech support, data entry, appointment setting, first-party collections, and lead gen. English/Spanish, on U.S. time, on a Fortune 500-grade support backbone.',
-  tagline: 'Bilingual LATAM BPO · English/Spanish · Support, collections & more',
-  backbone: 'a Fortune 500-grade support backbone',
+    'Bilingual LATAM BPO for U.S. companies — customer service, tech support, data entry, appointment setting, account servicing, and lead gen. Native English/Spanish, on U.S. time, from a 30-year Fortune 500 operator.',
+  tagline: 'Bilingual LATAM BPO · English/Spanish · Support, servicing & more',
+  backbone: '30 years of Fortune 500 operating history',
   // Forms post to FormSubmit.co. Activated; using the FormSubmit alias so the
   // real inbox (rrlegal82@gmail.com) is never exposed in the page HTML.
   formAlias: 'e32285ee2449a6d080938e3900354954',
@@ -54,7 +54,7 @@ export const CATEGORIES = [
   'Tech Support',
   'Data Entry',
   'Appointment Setting',
-  'Billing & Collections',
+  'Account Servicing',
   'Sales & Lead Gen',
   'Nearshore',
 ] as const;
@@ -157,21 +157,21 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'billing-collections',
-    name: 'First-Party Billing & Collections',
-    navLabel: 'Billing & Collections',
-    ic: 'PRE-DELINQUENT · 1–60 DAYS',
-    short: 'Recover revenue without losing the customer.',
-    tagline: 'Recover revenue without losing the customer.',
+    name: 'Billing & Account Servicing',
+    navLabel: 'Account Servicing',
+    ic: 'FIRST-PARTY · 1–60 DAYS',
+    short: 'Keep accounts current — in your brand’s voice.',
+    tagline: 'Keep accounts current, without souring the relationship.',
     intro:
-      'First-party, pre-delinquent and early-stage accounts-receivable outreach, conducted in your name. Friendly bilingual contact in the early delinquency buckets where recovery rates are highest — and where tone protects the relationship you paid to build.',
+      'First-party, pre-delinquency and early-stage account servicing, conducted in your name — billing questions, payment reminders, and friendly early outreach that keep accounts current before they age. Native-Spanish reach to Hispanic customers, relationship-preserving by design.',
     included: [
-      'Pre-delinquent reminders before an account ages past due',
-      'Early-stage (1–60 day) recovery in your brand’s name',
-      'Native-Spanish outreach that reaches Hispanic accounts',
-      'First-party — you keep the customer relationship',
-      'Flexible pricing: by hire, by seat, or per program',
+      'Billing and payment-question support',
+      'Pre-delinquency payment reminders — first-party, in your name',
+      'Early-stage (1–60 day) account servicing',
+      'Native-Spanish outreach to Hispanic accounts',
+      'Consent-aware outbound, set up at onboarding',
     ],
-    category: 'Billing & Collections',
+    category: 'Account Servicing',
     seatPriced: false,
   },
   {

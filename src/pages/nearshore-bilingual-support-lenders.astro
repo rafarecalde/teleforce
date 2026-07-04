@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, PHONE, PHONE_HREF, FORM_ACTION } from '../consts';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Nearshore bilingual customer support for U.S. lenders — Teleforce',
+  serviceType: 'Bilingual nearshore customer support and account servicing for consumer-finance companies',
+  provider: { '@type': 'Organization', name: 'Teleforce' },
+  areaServed: ['US', 'CA'],
+  audience: { '@type': 'BusinessAudience', audienceType: 'Auto lenders, fintech/BNPL lenders, credit unions, consumer loan servicers' },
+};
+---
+<BaseLayout
+  title="Nearshore Bilingual Support for Lenders | Teleforce"
+  description="Native Spanish & English, U.S.-hours coverage, and U.S.-grade data security for consumer-finance companies — from a 30-year operator. Request a proposal."
+  jsonLd={jsonLd}
+>
+  <header class="ahead">
+    <div class="wrap">
+      <div class="cat">For U.S. lenders &amp; finance companies</div>
+      <h1>Nearshore bilingual customer support for U.S. lenders.</h1>
+      <p class="sub" style="color:var(--on-dark-mut);max-width:60ch;margin-top:18px">Native Spanish and English, full U.S.-hours coverage, and U.S.-grade data security — from a 30-year operator with Fortune 500 experience.</p>
+      <div class="hero-cta" style="margin-top:26px">
+        <a href="#proposal" class="btn btn-amber">Request a proposal</a>
+        <a href={PHONE_HREF} class="btn btn-ghost">Call {PHONE}</a>
+      </div>
+    </div>
+  </header>
+
+  <article class="post">
+    <h2>The problem</h2>
+    <p>A large share of your customers prefer Spanish — and when a billing question or payment issue can only be handled in their second language, resolution slows and satisfaction drops. Offshore is cheap, but it drags CSAT and raises the data-handling questions your risk team won't love. In-house doesn't scale with the book, and every portfolio surge means another hiring scramble.</p>
+
+    <h2>The Teleforce answer</h2>
+    <ul class="svc-list" style="grid-template-columns:1fr;max-width:640px">
+      <li><strong>Native bilingual agents</strong> — genuine Spanish and English, not accented offshore.</li>
+      <li><strong>Nearshore LATAM</strong> — full overlap with U.S. business hours, every time zone.</li>
+      <li><strong>U.S. oversight &amp; secure PII handling</strong> — the data-security layer offshore can't credibly match.</li>
+      <li><strong>A 30-year operating backbone</strong> — the operation already exists; there's no startup ramp.</li>
+      <li><strong>First-party, early-stage account servicing</strong> — billing questions and payment reminders in your name, relationship-preserving by design.</li>
+    </ul>
+
+    <h2>Nearshore vs. offshore, for a lender</h2>
+    <table>
+      <thead><tr><th></th><th>Teleforce (Nearshore LATAM)</th><th>Typical offshore</th></tr></thead>
+      <tbody>
+        <tr><td>Spanish</td><td>Native</td><td>Rare / accented</td></tr>
+        <tr><td>Time zone</td><td>Full U.S.-hours overlap</td><td>10–12 hr gap</td></tr>
+        <tr><td>U.S. oversight &amp; data security</td><td>Built in</td><td>Your burden</td></tr>
+        <tr><td>Cultural affinity with U.S. Hispanic customers</td><td>High</td><td>Low</td></tr>
+        <tr><td>Ramp risk</td><td>None — established operator</td><td>High</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Data security your risk team can sign off on</h2>
+    <p>For a lender, choosing a support vendor is a data-security decision as much as a service one. Teleforce operates under direct U.S. oversight, with controls built for regulated financial data:</p>
+    <ul class="svc-list" style="grid-template-columns:1fr;max-width:640px">
+      <li><strong>U.S.-based oversight &amp; governance</strong> — programs run under direct U.S. supervision, not an offshore vendor's discretion.</li>
+      <li><strong>Secure PII &amp; financial-data handling</strong> — access controls, monitored environments, and documented data practices.{/* TODO: verify SOC 2 / PCI status before publishing, then name it here */}</li>
+      <li><strong>Audit-ready QA &amp; call monitoring</strong> — recorded, reviewed, and reportable for your risk and compliance teams.</li>
+    </ul>
+    <p style="font-size:15px;color:var(--on-paper-mut)">Any outbound reminder or servicing calls are set up consent-aware as part of program onboarding.</p>
+
+    <h2>How engagement works</h2>
+    <ol>
+      <li><strong>Scoping call.</strong> We map your volumes, channels, languages, and compliance requirements.</li>
+      <li><strong>Pilot seats.</strong> A small, dedicated bilingual team goes live on your tools, trained on your product and voice.</li>
+      <li><strong>Scale.</strong> You add seats as the book grows — same team, same standard, no re-ramp.</li>
+    </ol>
+
+    <h2>Proof</h2>
+    {/* PLACEHOLDER — replace with a real, permissioned case study + numbers before promoting. */}
+    <blockquote>
+      <p><strong>Case study coming.</strong> A real, numeric result — bilingual seats run, CSAT lift, first-contact resolution, under U.S.-grade data controls — will live here. Ask us for references on your scoping call.</p>
+    </blockquote>
+    <div class="trust" style="border-radius:14px;margin:24px 0">
+      <div class="row">
+        <div class="stat"><span class="n">30+</span><span class="k">Years operating</span></div>
+        <div class="stat"><span class="n">20+</span><span class="k">Industries served</span></div>
+        <div class="stat"><span class="n">Fortune 500</span><span class="k">Operating history</span></div>
+      </div>
+    </div>
+  </article>
+
+  <section class="contact" id="proposal">
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <div class="eyebrow" style="color:var(--amber)">Request a proposal</div>
+          <h2 class="disp" style="color:#fff">Get a proposal built for your book.</h2>
+          <p class="sub" style="color:var(--on-dark-mut)">Tell us your seat count or monthly volume and what you need. A human comes back — usually within two business days.</p>
+          <p class="sub" style="color:var(--on-dark-mut);margin-top:18px">Prefer to talk? Call <a href={PHONE_HREF} style="color:var(--amber);font-weight:600">{PHONE}</a>.</p>
+        </div>
+        <form method="POST" action={FORM_ACTION}>
+          <input type="hidden" name="_subject" value="New lender proposal request — Teleforce" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value={`${SITE.url}/thanks`} />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="field"><label for="lname">Name</label><input id="lname" name="name" type="text" placeholder="Your name" required /></div>
+          <div class="field"><label for="lemail">Work email</label><input id="lemail" name="email" type="email" placeholder="you@company.com" required /></div>
+          <div class="field"><label for="lcompany">Company</label><input id="lcompany" name="company" type="text" placeholder="Company name" required /></div>
+          <div class="field"><label for="lvolume">Monthly volume or seat count</label><input id="lvolume" name="volume" type="text" placeholder="e.g. 40 seats, or ~15,000 contacts/mo" /></div>
+          <div class="field"><label for="lneed">What do you need?</label><textarea id="lneed" name="message" rows="3" placeholder="Languages, channels, and what you're trying to cover…"></textarea></div>
+          <button class="btn btn-amber" type="submit">Request a proposal</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
