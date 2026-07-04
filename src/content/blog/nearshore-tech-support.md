@@ -15,7 +15,7 @@ faq:
   - q: "Can nearshore agents handle technically complex SaaS tickets?"
     a: "Yes. Effective nearshore tech support is built on structured tiering: Tier 1 agents handle resets, onboarding questions, and known bugs, while Tier 2 escalations go to specialists with product training. The key is the onboarding process — agents trained on your knowledge base and escalation paths perform comparably to in-house reps within four to six weeks."
   - q: "What should I look for when vetting a nearshore tech support provider for my SaaS?"
-    a: "Prioritize: (1) real time-zone overlap with your users, (2) demonstrated bilingual capacity if you serve Spanish-speaking markets, (3) infrastructure backing from an established enterprise network rather than a startup-stage BPO, and (4) quote-based or seat-based pricing with no hidden hourly rates. Ask for a sample QA scorecard and escalation SLA before you sign."
+    a: "Prioritize: (1) real time-zone overlap with your users, (2) demonstrated bilingual capacity if you serve Spanish-speaking markets, (3) a genuine multi-year operating track record rather than a startup-stage BPO, and (4) quote-based or seat-based pricing with no hidden hourly rates. Ask for a sample QA scorecard and escalation SLA before you sign."
 related:
   - outsourcing-tech-support
   - tier-1-vs-tier-2-support
@@ -65,11 +65,11 @@ For [outsourcing tech support](/blog/outsourcing-tech-support) to generate a cle
 
 ## What to Evaluate Before You Commit
 
-Not all nearshore BPOs are built the same. The variation in infrastructure quality between a startup-stage nearshore shop and an established network-backed provider is significant — and that gap shows up in QA consistency, data security protocols, and the ability to scale a seat without degrading service.
+Not all nearshore BPOs are built the same. The variation in infrastructure quality between a startup-stage nearshore shop and an operator with real institutional history is significant — and that gap shows up in QA consistency, data security protocols, and the ability to scale a seat without degrading service.
 
 When you're vetting options, the questions that matter most:
 
-**Who is backing the infrastructure?** A provider operating on an established Fortune 500 enterprise network brings compliance frameworks, redundant connectivity, and QA methodology that a standalone shop typically cannot match. Teleforce delivers its nearshore Latin America teams through a Fortune 500-grade support backbone — 30+ years of BPO operations across 20+ industries, with that enterprise infrastructure applied to nearshore-scale engagements.
+**What is the provider's actual operating history?** A provider with genuine longevity brings compliance frameworks, redundant connectivity, and QA methodology that a standalone shop typically cannot match. Teleforce is a 30-year operator — three decades of Fortune 500 operating history across 20+ industries, with that institutional experience applied directly to nearshore-scale engagements.
 
 **How is the agent trained on your product?** The onboarding period — typically four to six weeks for a SaaS product with reasonable documentation — is where most nearshore engagements succeed or fail. Providers who ask for your knowledge base upfront and build structured escalation paths before go-live outperform those who rely on shadowing alone.
 
@@ -87,6 +87,6 @@ There is also a ceiling on complexity. For SaaS products with highly specialized
 
 Teleforce operates across Latin America in U.S. Eastern time, year-round. Agents are bilingual in English and Spanish, trained on your product documentation before go-live, and scored weekly against quality rubrics calibrated to your escalation SLAs.
 
-The engagement model is flexible — by hire, by seat, or per program — so you know your cost structure before the first agent logs in. There are no hourly surprise invoices, no shared agent pools, and no offshore-to-nearshore bait-and-switch. Infrastructure is backed by a Fortune 500-grade enterprise support network, which means enterprise-grade connectivity, data security protocols, and compliance frameworks from day one.
+The engagement model is flexible — by hire, by seat, or per program — so you know your cost structure before the first agent logs in. There are no hourly surprise invoices, no shared agent pools, and no offshore-to-nearshore bait-and-switch. Teleforce brings 30 years of Fortune 500 operating history to every engagement, which means enterprise-grade connectivity, data security protocols, and compliance frameworks from day one.
 
 If your SaaS product is growing and your support queue is competing with your engineering team's attention, nearshore tech support is the structural fix. The [Tech Support](/services/tech-support) page covers how Teleforce builds and manages these engagements, or reach out directly at [/#contact](/#contact) to scope your team.

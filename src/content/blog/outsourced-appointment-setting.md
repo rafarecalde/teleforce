@@ -83,7 +83,7 @@ That operational stability translates to agent retention rates that outperform o
 
 ## What to Expect from Teleforce
 
-Teleforce is a bilingual nearshore BPO built on 30+ years of enterprise support infrastructure spanning 20-plus industries — a Fortune 500-grade delivery backbone that brings enterprise-level quality assurance, data security, and operational depth to growth-stage companies at a nearshore cost structure.
+Teleforce is a bilingual nearshore BPO with 30 years of Fortune 500 operating history spanning 20-plus industries — bringing enterprise-level quality assurance, data security, and operational depth to growth-stage companies at a nearshore cost structure.
 
 The [appointment setting service](/services/appointment-setting) is built for consistency and scales by hire, by seat, or per program. Pricing is quote-based — [contact us for a quote](/#contact).
 

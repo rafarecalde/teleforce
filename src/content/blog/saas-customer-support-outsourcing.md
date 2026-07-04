@@ -43,7 +43,7 @@ Nearshore teams in Latin America have a stronger track record here for a few str
 - **Cultural fluency.** U.S. SaaS customers — especially in SMB and mid-market segments — respond better to support that mirrors their communication style. Ecuador's agent population delivers clear, accent-neutral Spanish alongside strong English, a combination that resonates with both English-dominant and bilingual users.
 - **Agent stability.** High agent turnover is a quiet killer for SaaS support quality. Ecuador's delivery hubs have shown significantly lower annual attrition than onshore call centers (which can run 30–75% yearly turnover), which means the institutional product knowledge you invest in building actually sticks. That retention advantage compounds over time in ways raw cost comparisons never capture.
 
-> **Scaling support shouldn't mean scaling chaos.** Teleforce's nearshore agents are trained on your product before they touch a ticket — built on a Fortune 500 support backbone with 30+ years of enterprise CX infrastructure. [Book a call →](/#contact)
+> **Scaling support shouldn't mean scaling chaos.** Teleforce's nearshore agents are trained on your product before they touch a ticket — backed by 30 years of Fortune 500 operating history across 20+ industries. [Book a call →](/#contact)
 
 ## The Three Inflection Points Where SaaS Companies Typically Outsource
 
@@ -83,7 +83,7 @@ Before you sign anything, work through a structured vetting process. Our guide o
 
 ## What Teleforce Brings to the Table
 
-Teleforce provides bilingual English/Spanish nearshore customer support, backed by 30+ years of enterprise support infrastructure that has delivered CX for Fortune 500 companies across 20+ industries. That foundation means enterprise-grade QA processes, compliance awareness, and the operational depth to handle volume spikes without degrading service.
+Teleforce provides bilingual English/Spanish nearshore customer support. We're a 30-year operator that has run CX programs for Fortune 500 companies across 20+ industries. That history means enterprise-grade QA processes, compliance awareness, and the operational depth to handle volume spikes without degrading service.
 
 For SaaS companies specifically, we offer flexible engagement models — by hire, by seat, or per program. Pricing is quote-based; [contact us](/#contact) for a quote tailored to your ticket volume and coverage needs.
 
@@ -93,6 +93,6 @@ What we won't do: overstate what the relationship looks like on day one. Outsour
 
 SaaS customer support outsourcing is a strategic decision, not a commodity purchase. The right nearshore partner gives you trained, bilingual agents in overlapping time zones — people who understand your product well enough to protect the retention numbers that keep your growth model intact.
 
-Teleforce delivers exactly that: bilingual English/Spanish agents across nearshore Latin America, built on an established enterprise support network with 30+ years of Fortune 500 CX infrastructure. You get LATAM's talent, accent clarity, and time-zone alignment with enterprise-grade QA and compliance baked in — not bolted on. And if involuntary churn from failed payments is part of your revenue leak, Teleforce's [first-party collections capability](/blog/bilingual-early-out-collections) extends the same bilingual, relationship-preserving approach into early-stage account recovery.
+Teleforce delivers exactly that: bilingual English/Spanish agents across nearshore Latin America, with 30 years of Fortune 500 operating history behind every program we run. You get LATAM's talent, accent clarity, and time-zone alignment with enterprise-grade QA and compliance baked in — not bolted on. And if failed-payment friction is part of your revenue leak, Teleforce's [early-stage account servicing capability](/blog/bilingual-early-out-collections) extends the same bilingual, relationship-preserving approach into friendly billing outreach that keeps accounts current — in your name.
 
 If you're ready to stop patching support with overloaded engineers and start building a retention-first support motion, [let's talk](/#contact).

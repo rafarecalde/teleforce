@@ -91,7 +91,7 @@ Nearshore LatAm support teams have a structural edge for Spanish social that's w
 
 A nearshore team operating in overlapping U.S. time zones also solves the coverage gap problem more cleanly than trying to staff a domestic bilingual team for evening and weekend hours. The math on domestic bilingual staffing after 6 p.m. rarely works.
 
-Teleforce's bilingual social support teams are built on 30+ years of enterprise support infrastructure spanning 20+ industries — the kind of Fortune 500-grade backbone that brings proven training systems, QA frameworks, and escalation protocols to a Spanish social operation so it doesn't degrade after 90 days. For channel-level mechanics across text-based channels, [Bilingual Live Chat Support](/blog/bilingual-live-chat-support) covers the relevant detail.
+Teleforce is a 30-year operator that has run bilingual support programs for Fortune 500 companies across 20+ industries, and that operating history is what brings proven training systems, QA frameworks, and escalation protocols to a Spanish social operation so it doesn't degrade after 90 days. For channel-level mechanics across text-based channels, [Bilingual Live Chat Support](/blog/bilingual-live-chat-support) covers the relevant detail.
 
 ## When Social-Only Coverage Isn't Enough
 
@@ -105,4 +105,4 @@ For those interactions, social is the intake channel — not the resolution chan
 
 Spanish social media customer support is a channel operations problem, not a translation problem. The companies that get it right build platform-specific coverage, staff bilingual QA they can actually act on, and connect social intake to full-resolution paths when the conversation needs to go deeper. The ones that treat it as an English-social add-on — handled by whoever speaks some Spanish — end up frustrating the customers most likely to engage with them there.
 
-Teleforce's bilingual social teams — built on an established enterprise support network and operating across Latin America with full U.S. Eastern overlap — are designed for exactly this kind of multi-platform, multi-register coverage. Pricing is quote-based — [reach out directly](/#contact) to scope a model that fits your volume and platform mix.
+Teleforce's bilingual social teams — backed by 30 years of Fortune 500 operating history and operating across Latin America with full U.S. Eastern overlap — are designed for exactly this kind of multi-platform, multi-register coverage. Pricing is quote-based — [reach out directly](/#contact) to scope a model that fits your volume and platform mix.

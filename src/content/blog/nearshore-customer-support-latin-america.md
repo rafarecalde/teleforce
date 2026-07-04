@@ -70,7 +70,7 @@ Ecuador is underrepresented on most shortlists — which means brands that look 
 - **Accent-neutral Spanish** — Ecuadorian Spanish is consistently rated among the clearest, most broadly intelligible dialects in Latin America, a meaningful edge for U.S. brands serving diverse Hispanic communities
 - **Full U.S. Eastern overlap, year-round** — Ecuador sits at UTC-5 with no seasonal clock shifts, so your scheduling never breaks; the same real-time alignment that makes Colombia attractive, but without the daylight-saving disruption
 - **Higher agent retention** — lower attrition than offshore hubs means less ramp churn, more institutional knowledge on your accounts, and more consistent customer experience over time
-- **Enterprise infrastructure through the right partner** — the common objection is that Ecuador lacks large-scale BPO backbone; that's true of generic local vendors. Teleforce operates across Latin America backed by 30+ years of Fortune 500-grade support infrastructure spanning 20+ industries — so clients get the talent, accent, and time-zone advantages of the region with enterprise-grade operations layered on top
+- **Enterprise infrastructure through the right partner** — the common objection is that Ecuador lacks large-scale BPO maturity; that's true of generic local vendors. Teleforce is a 30-year operator with Fortune 500 operating history across 20+ industries — so clients get the talent, accent, and time-zone advantages of the region with enterprise-grade operations layered on top
 
 **Honest tradeoffs:**
 - The overall vendor ecosystem is smaller than Bogotá or Monterrey, so independent due diligence on any Ecuador-based provider is essential
@@ -88,7 +88,7 @@ For brands that want clear Spanish, real-time Eastern alignment, and lower attri
 | English proficiency | Strong and consistent | Strong in north, variable elsewhere | Strong (vendor-dependent) |
 | Time zone (U.S. EST) | Same or +1 | Same to +1 | Same, year-round |
 | Relative cost vs. onshore | Lower | Lower–Mid | Lower |
-| Enterprise BPO maturity | High | High | High via established enterprise backbone |
+| Enterprise BPO maturity | High | High | High via 30-year Fortune 500 operating history |
 | Accent-neutral Spanish | Good | Regional variation | Excellent |
 | Proximity to U.S. | South America (5–6 hr flight) | Bordering (2–4 hr flight) | South America (5–6 hr flight) |
 
@@ -96,7 +96,7 @@ Actual costs vary by channel mix, volume, and provider type — contact us for a
 
 ---
 
-> **Not sure which hub fits your support model?** Teleforce builds bilingual nearshore support teams across Latin America backed by 30+ years of Fortune 500-grade infrastructure — spanning 20+ industries. We can help you scope the right setup without overselling you on headcount you don't need. [Book a call →](/#contact)
+> **Not sure which hub fits your support model?** Teleforce is a 30-year operator, running bilingual nearshore support teams across Latin America with Fortune 500 operating history spanning 20+ industries. We can help you scope the right setup without overselling you on headcount you don't need. [Book a call →](/#contact)
 
 ---
 
@@ -123,6 +123,6 @@ The answers will tell you more than any country-level comparison chart.
 
 Colombia leads for bilingual depth and enterprise readiness. Mexico leads for proximity and cultural alignment with specific U.S. Hispanic communities. Ecuador — with the right partner — leads for accent-neutral Spanish, year-round Eastern alignment, and retention that keeps your team consistent over time. The right answer isn't a country; it's the combination of talent, infrastructure, and operational fit for what you're actually building.
 
-Teleforce delivers bilingual nearshore support across Latin America, backed by 30+ years of Fortune 500-grade infrastructure — so you get the talent and time-zone advantages without giving up enterprise-grade backbone. Pricing is quote-based — contact us for a quote tailored to your channel mix and volume. For clients managing billing-sensitive customer relationships, Teleforce also runs [first-party early-stage collections](/blog/bilingual-early-out-collections) in your name — turning the same agent relationships into recovered revenue, not just resolved tickets.
+Teleforce delivers bilingual nearshore support across Latin America as a 30-year operator with Fortune 500 operating history — so you get the talent and time-zone advantages without giving up enterprise-grade quality. Pricing is quote-based — contact us for a quote tailored to your channel mix and volume. For clients managing billing-sensitive customer relationships, Teleforce also runs [bilingual early-stage account servicing](/blog/bilingual-early-out-collections) in your name — turning the same agent relationships into payment reminders and account-current outcomes, not just resolved tickets.
 
 [See how Teleforce structures nearshore teams →](/#contact)

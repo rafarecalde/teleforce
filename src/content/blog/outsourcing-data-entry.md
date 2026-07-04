@@ -106,9 +106,9 @@ The data entry outsourcing market spans dozens of geographies and price points. 
 - **Cultural alignment** that reduces miscommunication on edge cases
 - **Higher agent retention** than offshore markets, which lowers the cost of rework caused by turnover
 
-Teleforce operates across nearshore Latin America with agents who are accent-neutral, English-proficient, and working on U.S. Eastern time year-round. The operation runs on a Fortune 500-grade support backbone with 30-plus years of enterprise support infrastructure spanning 20-plus industries—delivered from a nearshore footprint built for U.S. client requirements.
+Teleforce operates across nearshore Latin America with agents who are accent-neutral, English-proficient, and working on U.S. Eastern time year-round. We're a 30-year operator—we've run programs for Fortune 500 companies across 20-plus industries for three decades, and we bring that same operating discipline to every nearshore data entry team we build.
 
-That's not a boutique workaround. It's enterprise infrastructure in a nearshore location.
+That's not a boutique workaround. It's 30 years of enterprise operating experience in a nearshore location.
 
 ## Getting Started
 

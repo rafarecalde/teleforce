@@ -63,7 +63,7 @@ Returns interactions are also more complex than standard order inquiries. They i
 - Refund vs. exchange negotiations
 - Carrier coordination for return labels
 
-These are not macro-answerable tickets. They require judgment, brand voice, and the ability to de-escalate a frustrated post-holiday customer. Staffing them with undertrained agents or purely automated responses is a churn accelerator. And for brands that see a spike in past-due balances or unpaid invoices alongside the returns wave, first-party [bilingual early-out collections](/blog/bilingual-early-out-collections) can recover revenue from the same customers — in your own brand voice.
+These are not macro-answerable tickets. They require judgment, brand voice, and the ability to de-escalate a frustrated post-holiday customer. Staffing them with undertrained agents or purely automated responses is a churn accelerator. And for brands that see a spike in past-due balances alongside the returns wave, first-party [bilingual payment reminder outreach](/blog/bilingual-early-out-collections) can keep those accounts current — in your own brand voice, while the balance is still fresh rather than after it has gone stale.
 
 ---
 
@@ -125,4 +125,4 @@ The cost of under-staffing peak season is not just a bad December. It is the cus
 
 Peak season is predictable. Its timing, its shape, and most of its ticket categories are knowable in advance. The teams that treat it as a planning problem rather than a crisis to survive are the ones that come out of January with stronger retention numbers and a replicable playbook for next year.
 
-Teleforce helps ecommerce brands handle exactly this surge — bilingual (EN/ES) nearshore agents across Latin America, full U.S. Eastern time zone overlap, and a Fortune 500-grade support backbone built on 30+ years of enterprise support infrastructure across 20+ industries. Pricing is quote-based — contact us for a quote structured by hire, by seat, or per program — so you scale capacity without open-ended headcount commitments. If you want a team that is already ramped when the wall hits, [start the conversation now](/#contact).
+Teleforce helps ecommerce brands handle exactly this surge — bilingual (EN/ES) nearshore agents across Latin America, full U.S. Eastern time zone overlap, and 30 years of Fortune 500 operating history running support programs across 20+ industries. Pricing is quote-based — contact us for a quote structured by hire, by seat, or per program — so you scale capacity without open-ended headcount commitments. If you want a team that is already ramped when the wall hits, [start the conversation now](/#contact).

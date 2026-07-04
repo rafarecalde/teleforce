@@ -100,10 +100,10 @@ The industry average is 69%. World-class is 80% or above. The gap between where 
 
 The structural fixes above—routing logic, knowledge access, bilingual queues, real-time supervision—are exactly the levers Teleforce is built around. Our nearshore Latin America teams operate with full U.S. Eastern time-zone overlap year-round, which means live QA, daily coaching, and supervisor availability happen in real time, not on a delayed overnight schedule. Bilingual FCR tracking (English and Spanish separately) is standard, not an add-on.
 
-That operational infrastructure is backed by a Fortune 500-grade support backbone—30+ years of enterprise support experience across 20+ industries—so you get enterprise-grade systems and compliance without having to build or license them yourself.
+That operational infrastructure comes from Teleforce's own history: we've run programs for Fortune 500 companies across 20+ industries for 30 years, so you get enterprise-grade systems and compliance without having to build or license them yourself.
 
 If your FCR is leaking and you want to know where, [start with a conversation](/#contact). We can walk through your current contact mix and identify which lever is likely worth addressing first.
 
 ---
 
-*Teleforce provides bilingual English/Spanish nearshore customer support for U.S. companies, backed by an established enterprise support network with 30+ years of operational experience across 20+ industries.*
+*Teleforce provides bilingual English/Spanish nearshore customer support for U.S. companies. We're a 30-year operator with Fortune 500 operating history across 20+ industries.*

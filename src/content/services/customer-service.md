@@ -36,7 +36,7 @@ The customer experience BPO market has grown sharply for a reason: in-house supp
 
 **3. Knowledge base and training.** We build a structured knowledge base from your documentation, FAQs, past tickets, and a discovery session with your team. Training runs against realistic contact scenarios, not just policy reads. Agents do live shadowing before handling contacts independently. You review and approve the knowledge base before go-live.
 
-**4. Tooling and integration.** Agents work inside your existing helpdesk — Zendesk, Freshdesk, Intercom, HubSpot, or your platform of choice. No proprietary middleware required. We support SSO, role-based access, and whatever CRM integrations your team already uses. Phone lines can be routed through your existing telephony or through our Fortune 500-grade support backbone, which spans 20+ industries and 30+ years of infrastructure.
+**4. Tooling and integration.** Agents work inside your existing helpdesk — Zendesk, Freshdesk, Intercom, HubSpot, or your platform of choice. No proprietary middleware required. We support SSO, role-based access, and whatever CRM integrations your team already uses. Phone lines can be routed through your existing telephony or through Teleforce's own infrastructure — we've run programs for Fortune 500 companies across 20+ industries for 30 years, and that operating history is what your engagement draws on.
 
 **5. Go-live and ramp.** We go live in a controlled ramp — lower volume thresholds, tighter QA, and daily check-ins with your point of contact for the first two weeks. This catches edge cases in the knowledge base before they become patterns.
 

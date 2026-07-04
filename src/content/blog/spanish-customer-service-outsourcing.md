@@ -91,7 +91,7 @@ The detailed hub comparison — including honest tradeoffs on cost, talent depth
 
 What matters for this decision: **don't choose a country before you've chosen a model.** A shared-pool vendor in Mexico and a dedicated team in Colombia are solving different problems. Country selection is downstream of what kind of operation you're actually building.
 
-> **Ready to scope a bilingual support team?** Teleforce builds dedicated English/Spanish support operations backed by 30+ years of enterprise infrastructure across Latin America — 20+ industries, Fortune 500-grade backbone. [Book a call →](/#contact)
+> **Ready to scope a bilingual support team?** Teleforce is a 30-year operator that builds dedicated English/Spanish support teams across Latin America — we've run programs for Fortune 500 companies across 20+ industries. [Book a call →](/#contact)
 
 ---
 
@@ -99,7 +99,7 @@ What matters for this decision: **don't choose a country before you've chosen a 
 
 The most expensive mistake in spanish customer service outsourcing isn't choosing the wrong country. It's accepting "bilingual" agents who aren't.
 
-"Conversational Spanish" on a vendor's spec sheet is not the same as an agent who can de-escalate an angry customer, explain a complex billing adjustment, or handle a healthcare pre-auth question — all in fluid, native-register Spanish. The gap between these two skill levels shows up as longer handle times, lower CSAT, and Spanish-speaking customers who switch to English out of frustration (which defeats the purpose). For companies where billing interactions tip into early-stage collections territory, the same native-Spanish fluency that improves CX also drives recovery — a capability covered in our guide to [bilingual early-out collections](/blog/bilingual-early-out-collections).
+"Conversational Spanish" on a vendor's spec sheet is not the same as an agent who can de-escalate an angry customer, explain a complex billing adjustment, or handle a healthcare pre-auth question — all in fluid, native-register Spanish. The gap between these two skill levels shows up as longer handle times, lower CSAT, and Spanish-speaking customers who switch to English out of frustration (which defeats the purpose). For companies whose billing interactions include early-stage account servicing — payment reminders, past-due notices, keeping accounts current before they lapse — the same native-Spanish fluency that improves CX also keeps those conversations from souring, a topic we cover in our guide to [bilingual early-stage account servicing](/blog/bilingual-early-out-collections).
 
 How to catch it in evaluation:
 
@@ -142,4 +142,4 @@ Spanish customer service outsourcing is a mature enough category that you should
 
 The companies that get this right share one characteristic: they treat their Spanish-speaking customers as the same customer, not a separate queue — one team, one training program, one quality standard, delivered in both languages.
 
-Teleforce builds exactly that: dedicated bilingual (EN/ES) support teams across nearshore Latin America, backed by 30+ years of Fortune 500-grade BPO infrastructure across 20+ industries — pricing by hire, by seat, or per program. If your Spanish-speaking customer base deserves the same experience as everyone else — and it does — [let's talk about what that looks like for your operation](/#contact).
+Teleforce builds exactly that: dedicated bilingual (EN/ES) support teams across nearshore Latin America, drawing on 30 years of Fortune 500 operating history across 20+ industries — pricing by hire, by seat, or per program. If your Spanish-speaking customer base deserves the same experience as everyone else — and it does — [let's talk about what that looks like for your operation](/#contact).

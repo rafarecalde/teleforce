@@ -100,7 +100,7 @@ Nearshore teams operating in full U.S. Eastern overlap do not have that problem.
 
 At Teleforce, our [tech support teams](/services/tech-support) operate across nearshore Latin America with full U.S. Eastern coverage year-round — same time zone, no lag. Agents are trained on escalation matrices specific to each client, and bilingual (EN/ES) coverage means tier 1 resolution rates stay high across both your English and Spanish-speaking customers without routing them to separate queues.
 
-The infrastructure behind Teleforce is built on a Fortune 500-grade support backbone with 30+ years and 20+ industries of operational depth. That foundation means clients get enterprise-grade escalation workflows — documented, tested, and monitored — not improvised handoffs.
+Teleforce is a 30-year operator: we've run programs for Fortune 500 companies across 20+ industries for three decades. That operating history means clients get enterprise-grade escalation workflows — documented, tested, and monitored — not improvised handoffs.
 
 ---
 

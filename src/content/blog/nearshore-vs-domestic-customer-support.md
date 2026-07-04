@@ -89,7 +89,7 @@ If you're comparing providers in the region, the [nearshore vs. offshore breakdo
 
 Teleforce operates as a nearshore support partner built for U.S. companies, delivering bilingual English/Spanish agents across Latin America — markets that sit in U.S. Eastern and Central time zones year-round, where agents carry accent-neutral Spanish alongside strong English, and where agent retention rates are consistently higher than in larger, more saturated offshore hubs.
 
-The infrastructure question answers itself: Teleforce is backed by a Fortune 500-grade support backbone — 30+ years of operational depth across 20+ industries. Clients get LATAM talent, accent quality, and time-zone alignment with enterprise-grade QA, workforce management, and compliance frameworks layered on top. You're not betting on a startup's processes.
+The infrastructure question answers itself: Teleforce is a 30-year operator, with 30 years of Fortune 500 operating history running programs across 20+ industries. Clients get LATAM talent, accent quality, and time-zone alignment with enterprise-grade QA, workforce management, and compliance frameworks layered on top. You're not betting on a startup's processes.
 
 Pricing is quote-based — contact us for a quote tailored to your volume and coverage needs.
 
@@ -97,6 +97,6 @@ Pricing is quote-based — contact us for a quote tailored to your volume and co
 
 The nearshore vs domestic customer support decision ultimately comes down to a fully-loaded math problem, not a sticker-price comparison. When you account for every cost that a domestic agent actually carries — taxes, benefits, management, tooling, recruiting — the gap between domestic and nearshore is 35–50%, not the modest line-item difference it might first appear to be.
 
-For most U.S. companies growing past 2–3 support agents, that gap funds meaningful reinvestment elsewhere. The quality doesn't have to suffer to capture it — the right nearshore partner delivers real-time collaboration, bilingual coverage, and professional infrastructure that domestic delivery rarely provides at the same price point. And if recovering revenue is part of the equation, Teleforce's bilingual [nearshore collections](/blog/nearshore-collections-outsourcing) capability turns the same agent infrastructure into an AR recovery channel — not just a cost line.
+For most U.S. companies growing past 2–3 support agents, that gap funds meaningful reinvestment elsewhere. The quality doesn't have to suffer to capture it — the right nearshore partner delivers real-time collaboration, bilingual coverage, and professional infrastructure that domestic delivery rarely provides at the same price point. And if keeping accounts current is part of the equation, Teleforce's bilingual [early-stage account servicing](/blog/nearshore-collections-outsourcing) capability turns the same agent infrastructure into a billing and payment-reminder channel — not just a cost line.
 
 Teleforce is built to close exactly this gap: enterprise infrastructure, nearshore LATAM agents in your time zone, and quote-based pricing that scales to your team. The question isn't whether nearshore is cheaper. It's whether you're leaving 35–50% on the table. [See how the numbers work for your team. →](/#contact)

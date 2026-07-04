@@ -128,7 +128,7 @@ One underappreciated option: nearshore partners in Latin America are a natural f
 
 Time zone alignment means your U.S.-based core team and your LatAm flex agents are working the same hours — no handoff gaps at shift transitions. Bilingual capacity matters increasingly during peak season, when a growing share of high-value U.S. customers prefer Spanish-language support.
 
-Teleforce delivers exactly this kind of surge-ready infrastructure across Latin America — accent-neutral Spanish, full U.S. Eastern time zone overlap year-round, and higher agent retention than most offshore alternatives. The platform is backed by a Fortune 500-grade support backbone with 30+ years of enterprise support infrastructure and coverage across 20+ industries. Clients get nearshore LATAM talent, time zone alignment, and that retention profile with enterprise-grade infrastructure already baked in — not bolted on later.
+Teleforce delivers exactly this kind of surge-ready infrastructure across Latin America — accent-neutral Spanish, full U.S. Eastern time zone overlap year-round, and higher agent retention than most offshore alternatives. Teleforce is a 30-year operator, with 30 years of Fortune 500 operating history running programs across 20+ industries. Clients get nearshore LATAM talent, time zone alignment, and that retention profile with enterprise-grade infrastructure already baked in — not bolted on later.
 
 Pricing is quote-based — contact us for a quote sized to your seasonal window, so you can right-size the engagement to six weeks without carrying fixed headcount the rest of the year.
 

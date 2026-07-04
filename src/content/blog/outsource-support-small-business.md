@@ -115,7 +115,7 @@ If you're running under a few hundred tickets per month and aren't sure outsourc
 
 The pilot approach reduces your risk significantly and gives you real data to decide whether to expand.
 
-One often-overlooked extension of outsourced support: if your business deals with past-due accounts or payment follow-ups, a nearshore team can also handle [early-stage collections outreach](/blog/bilingual-early-out-collections) — recovering revenue in the client's name, in both English and Spanish, before accounts go delinquent.
+One often-overlooked extension of outsourced support: if your business deals with billing questions or payment follow-ups, a nearshore team can also handle [early-stage account servicing](/blog/bilingual-early-out-collections) — friendly payment reminders and billing support in the client's name, in both English and Spanish, that help keep accounts current before they fall behind.
 
 ---
 
@@ -125,4 +125,4 @@ Outsourcing customer support works when you choose the right partner and invest 
 
 The best outcomes happen when you treat the outsourced team as an extension of your brand, not a black box you hand tickets to. Put in the work upfront — document your voice, build your playbooks, set clear metrics — and the return is real.
 
-If you're ready to explore what a dedicated nearshore team would cost and look like for your business, [Teleforce](/#contact) offers part-time and full-time dedicated seats backed by a Fortune 500-grade support backbone built across 30+ years of enterprise support infrastructure — with full U.S.-aligned time-zone coverage and pricing that's quote-based by hire, by seat, or per program. Most clients are live in two to four weeks.
+If you're ready to explore what a dedicated nearshore team would cost and look like for your business, [Teleforce](/#contact) offers part-time and full-time dedicated seats. We're a 30-year operator — we've run programs for Fortune 500 companies across 20+ industries for 30 years — with full U.S.-aligned time-zone coverage and pricing that's quote-based by hire, by seat, or per program. Most clients are live in two to four weeks.

@@ -46,7 +46,7 @@ Offshore agents are often fluent, but neutral-accent English and especially nati
 
 Offshore wins on sticker price. But the relevant figure is cost per *resolved, satisfied* contact, not cost per hour. If lower fluency or time-zone lag means more repeat contacts, more escalations, and lower retention, the cheaper hour can quietly cost more. Nearshore typically lands in the middle on rate and competes hard on total cost.
 
-> **See where nearshore lands for your volumes.** Teleforce runs bilingual, U.S.-hours support on a Fortune 500 backbone. Tell us your channels and we'll come back with a staffing plan in two business days. [Book a call →](/#contact)
+> **See where nearshore lands for your volumes.** Teleforce is a 30-year operator running bilingual, U.S.-hours support — with 30 years of Fortune 500 operating history behind every program. Tell us your channels and we'll come back with a staffing plan in two business days. [Book a call →](/#contact)
 
 ### 4. Agent attrition
 

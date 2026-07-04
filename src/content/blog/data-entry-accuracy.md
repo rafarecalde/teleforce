@@ -94,7 +94,7 @@ Location matters in ways that go beyond cost. For data entry work touching U.S. 
 
 ## What a Teleforce Data Entry Engagement Looks Like
 
-Teleforce delivers [data entry services](/services/data-entry) through a nearshore seat model backed by 30+ years of enterprise support infrastructure spanning 20+ industries. That Fortune 500-grade support backbone means enterprise-caliber quality management without the enterprise overhead.
+Teleforce delivers [data entry services](/services/data-entry) through a nearshore seat model. We're a 30-year operator with Fortune 500 operating history spanning 20+ industries, which means enterprise-caliber quality management without the enterprise overhead.
 
 Engagements are structured by hire, by seat, or per program — pricing is quote-based. [Contact us for a quote.](/#contact) There are no per-record pricing surprises when volume spikes.
 

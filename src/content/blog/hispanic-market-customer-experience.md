@@ -80,7 +80,7 @@ Not every company needs to build full bilingual infrastructure from day one. If 
 
 If Spanish volume is 20% or more of your contact volume, dedicated bilingual coverage almost always makes operational sense. The quality gap between a purpose-built Spanish support team and a shared-resource model is significant enough to show up in retention data.
 
-One often-overlooked extension of this is billing and collections: when a Hispanic customer falls behind on a payment, outreach in their preferred language — delivered first-party, in the brand's own name — dramatically improves response rates and relationship preservation. See how that works in our guide to [bilingual early-out collections](/blog/bilingual-early-out-collections).
+One often-overlooked extension of this is early-stage account servicing: when a Hispanic customer misses a payment or has a billing question, outreach in their preferred language — delivered first-party, in the brand's own name, during the earliest days of the account — dramatically improves response rates and keeps accounts current. See how that works in our guide to [bilingual early-stage account servicing](/blog/bilingual-early-out-collections).
 
 For a broader look at how bilingual support compares against English-only domestic alternatives, [Why Bilingual Customer Support Is No Longer Optional](/blog/bilingual-customer-support-us-companies) is a good companion read.
 
@@ -88,4 +88,4 @@ For a broader look at how bilingual support compares against English-only domest
 
 The U.S. Hispanic market is large, loyal, and underserved by most CX operations. The companies capturing outsized retention and lifetime value in this segment are not doing anything exotic — they're staffing natively bilingual agents, treating Spanish as a primary channel, and measuring quality with the same rigor they apply everywhere else. If your current support operation treats Spanish as an add-on, that's not a CX problem. It's a business model problem worth fixing before a competitor does it for you.
 
-Teleforce delivers nearshore bilingual CX across Latin America — accent-neutral Spanish, full U.S. Eastern coverage, and a Fortune 500-grade support backbone built on 30+ years of enterprise support infrastructure spanning 20+ industries. If you're ready to serve your Hispanic customers the way they actually expect to be served, [talk to our team](/#contact) and we'll scope a solution around your volume.
+Teleforce delivers nearshore bilingual CX across Latin America — accent-neutral Spanish, full U.S. Eastern coverage, and 30 years of Fortune 500 operating history spanning 20+ industries. If you're ready to serve your Hispanic customers the way they actually expect to be served, [talk to our team](/#contact) and we'll scope a solution around your volume.

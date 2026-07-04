@@ -105,7 +105,7 @@ Confirmation and reminder sequences work best when they're owned by a team built
 
 Teleforce runs [bilingual appointment setting](/services/appointment-setting) from nearshore Latin America, covering the full U.S. Eastern timezone with accent-neutral English and Spanish agents. Our teams handle inbound and outbound confirmation calls, manage reschedule flows, and maintain the kind of professional, warm tone that turns a reminder into a relationship touch — not an obligation.
 
-Built on a Fortune 500-grade support backbone with 30+ years of enterprise support infrastructure, Teleforce brings enterprise-grade appointment operations to companies that don't want to build that capability in-house. Pricing is quote-based — contact us for a quote tailored to your appointment volume and team size.
+Teleforce is a 30-year operator — we've run programs for Fortune 500 companies across 20+ industries, and we bring that same enterprise-grade discipline to appointment operations for companies that don't want to build that capability in-house. Pricing is quote-based — contact us for a quote tailored to your appointment volume and team size.
 
 If your [appointment setting process](/services/appointment-setting) is leaking pipeline because confirmation and reminder work isn't prioritized, that's a fixable problem. [Contact us](/#contact) to see what a dedicated nearshore appointment team looks like for your business.
 

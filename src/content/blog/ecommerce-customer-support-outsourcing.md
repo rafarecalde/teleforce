@@ -46,7 +46,7 @@ Contrast that with offshore teams working a 12-hour offset: their peak hours are
 
 Nearshore LatAm also delivers the bilingual coverage that ecommerce brands increasingly can't do without. The same agent who handles English tickets in the morning can serve Spanish-speaking customers through the afternoon — without routing delays, separate queues, or "please hold for a Spanish-speaking representative."
 
-> **Your ecommerce brand shouldn't choose between speed and bilingual quality.** Teleforce's nearshore teams cover both, in U.S. time zones, backed by a Fortune 500 support infrastructure built over 30+ years. [Book a call →](/#contact)
+> **Your ecommerce brand shouldn't choose between speed and bilingual quality.** Teleforce's nearshore teams cover both, in U.S. time zones — we've run programs for Fortune 500 companies across 20+ industries for 30 years. [Book a call →](/#contact)
 
 ## What to Actually Outsource (and What to Keep)
 
@@ -80,7 +80,7 @@ The cases where nearshore consistently wins: DTC ecommerce with live chat, bilin
 
 One factor worth understanding when evaluating ecommerce customer support outsourcing is what's behind the provider you're hiring.
 
-Teleforce delivers across Latin America — a deliberate choice for accent-neutral Spanish, full U.S. time-zone alignment, and higher agent retention rates compared to offshore alternatives. A common concern about nearshore LatAm markets is whether the enterprise infrastructure is there. The answer here is unambiguous: Teleforce operates on an established enterprise support network with 30+ years in enterprise support, 20+ industries, and systems and QA practices originally built for Fortune 500 clients. Clients get LATAM's talent, accent profile, and time-zone advantages with a Fortune 500-grade operational backbone layered on top — not a startup BPO figuring it out alongside them.
+Teleforce delivers across Latin America — a deliberate choice for accent-neutral Spanish, full U.S. time-zone alignment, and higher agent retention rates compared to offshore alternatives. A common concern about nearshore LatAm markets is whether the enterprise infrastructure is there. The answer here is unambiguous: Teleforce is a 30-year operator, with systems and QA practices built and refined across 20+ industries for Fortune 500 clients. Clients get LATAM's talent, accent profile, and time-zone advantages with 30 years of Fortune 500 operating history behind the program — not a startup BPO figuring it out alongside them.
 
 That combination is meaningfully different from both offshore providers and bare-bones nearshore shops staffing up on the fly.
 
@@ -99,10 +99,10 @@ That cycle repeats. The best partnerships run for years — not because switchin
 
 ## The Takeaway
 
-Ecommerce customer support outsourcing works when the team you hire is genuinely close to your customer: same time zone, same language capability, same cultural reference points. Nearshore Latin America delivers that alignment at a cost structure sustainable for growing brands — not just enterprise players — with 30+ years of enterprise support infrastructure ensuring you're never trading operational quality for geography.
+Ecommerce customer support outsourcing works when the team you hire is genuinely close to your customer: same time zone, same language capability, same cultural reference points. Nearshore Latin America delivers that alignment at a cost structure sustainable for growing brands — not just enterprise players — with 30 years of Fortune 500 operating history ensuring you're never trading operational quality for geography.
 
 The alternative — carrying excess in-house headcount for peak seasons, or patching coverage with an offshore provider that can't serve your Spanish-speaking customers — has a real cost too. Most brands don't calculate the revenue lost to unanswered pre-purchase chats or the customers who don't return after a slow resolution. Those numbers are real, and they add up faster than the outsourcing fee.
 
-And if billing disputes or overdue balances are part of your operations picture, Teleforce also runs [first-party, bilingual early-stage collections](/blog/bilingual-early-out-collections) — so the same team relationship that handles your CX can help recover revenue without damaging customer relationships.
+And if billing questions or payment reminders are part of your operations picture, Teleforce also runs [first-party, bilingual early-stage account servicing](/blog/bilingual-early-out-collections) — so the same team relationship that handles your CX can keep accounts current, in your name, without damaging customer relationships.
 
 If your current support setup is straining under growth — or you're heading into a peak season without a scaling plan — [talk to Teleforce](/#contact) about what a nearshore team actually costs and what it takes to get one running.

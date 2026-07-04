@@ -83,7 +83,7 @@ For U.S. tech companies specifically, nearshore outsourcing tends to outperform 
 
 ## What Teleforce Delivers
 
-Teleforce's [tech support service](/services/tech-support) is built for U.S. companies that need bilingual (English/Spanish) Tier 1–2 support delivered from nearshore Latin America. Agents operate on full U.S. Eastern hours year-round, backed by 30+ years of enterprise support infrastructure serving Fortune 500-grade clients across 20+ industries.
+Teleforce's [tech support service](/services/tech-support) is built for U.S. companies that need bilingual (English/Spanish) Tier 1–2 support delivered from nearshore Latin America. Agents operate on full U.S. Eastern hours year-round, backed by Teleforce's 30 years running support programs for Fortune 500 companies across 20+ industries.
 
 Pricing is quote-based—structured by hire, by seat, or per program depending on your volume and coverage needs. Contact us for a quote. No hourly billing surprises.
 

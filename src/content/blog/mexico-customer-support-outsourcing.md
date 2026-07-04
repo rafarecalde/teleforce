@@ -97,7 +97,7 @@ A short checklist for serious evaluation:
 4. **Ramp timeline** — How long to hire, train, and have agents on your queue? Longer is often a sign of rigor; too short is a red flag.
 5. **Management layer** — Is your account supervised by an on-site manager who speaks both languages? Remote-only oversight degrades quality over time.
 
-Teleforce operates on a Fortune 500-grade support backbone — 30+ years of enterprise CX infrastructure across 20+ industries. That established enterprise support network underpins the QA, data-security posture, and management layer that smaller Mexico BPO operations typically cannot replicate.
+Teleforce is a 30-year operator: we've run programs for Fortune 500 companies across 20+ industries for three decades. That operating history is what underpins the QA, data-security posture, and management layer that smaller Mexico BPO operations typically cannot replicate.
 
 ## The Bottom Line
 
@@ -105,4 +105,4 @@ Mexico customer support outsourcing is a mature, credible option for U.S. compan
 
 If you are still comparing LatAm locations, [Colombia, Mexico, or Ecuador? LatAm Support Hubs](/blog/nearshore-customer-support-latin-america) walks through how to make that call based on your specific support profile — including why accent-neutral talent and full Eastern time-zone overlap across nearshore Latin America makes it a serious option at any volume.
 
-Teleforce runs exactly that model: bilingual EN/ES support delivered across Latin America on 30+ years of enterprise CX infrastructure — 20+ industries, Fortune 500-grade QA and data security. [Book a call →](/#contact) to see what that looks like for your program.
+Teleforce runs exactly that model: bilingual EN/ES support delivered across Latin America, backed by 30 years of Fortune 500 operating history — 20+ industries, rigorous QA and data security. [Book a call →](/#contact) to see what that looks like for your program.

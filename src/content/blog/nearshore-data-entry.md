@@ -99,7 +99,7 @@ For most U.S. companies running data entry that sits inside a broader CRM, ERP, 
 
 ## How Teleforce Delivers Nearshore Data Entry
 
-Teleforce delivers nearshore data entry across Latin America, backed by a Fortune 500-grade support backbone with 30+ years of operational history across 20+ industries. That means you get the cost advantage of nearshore with enterprise-grade infrastructure behind it: documented SLAs, ISO-aligned quality controls, bilingual agents, and full U.S. Eastern time-zone coverage year-round.
+Teleforce delivers nearshore data entry across Latin America as a 30-year operator with Fortune 500 operating history across 20+ industries. That means you get the cost advantage of nearshore with enterprise-grade infrastructure behind it: documented SLAs, ISO-aligned quality controls, bilingual agents, and full U.S. Eastern time-zone coverage year-round.
 
 Pricing is quote-based — contact us for a quote — structured by hire, by seat, or per program, with no hourly variable that inflates during peak periods. That structure makes budgeting predictable and aligns our incentives with your throughput, not your clock.
 

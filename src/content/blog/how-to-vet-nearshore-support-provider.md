@@ -121,9 +121,9 @@ The providers who push back hardest on offboarding terms are often the ones with
 
 The companies that get nearshore right aren't the ones who found the best pitch deck. They're the ones who ran a real vetting process — and then chose a partner built for the long term, not just the lowest opening bid.
 
-That means choosing a hub where the talent advantages are real: accent-neutral Spanish, a time zone that locks to U.S. Eastern year-round, and agent retention rates that keep institutional knowledge on your account instead of cycling out every eight months. The best nearshore Latin America providers deliver all three — and when that delivery is backed by a Fortune 500-grade support backbone (SOC 2, PCI DSS, redundant connectivity, 30+ years of enterprise support infrastructure across 20+ industries), the "is it big enough?" question answers itself.
+That means choosing a hub where the talent advantages are real: accent-neutral Spanish, a time zone that locks to U.S. Eastern year-round, and agent retention rates that keep institutional knowledge on your account instead of cycling out every eight months. The best nearshore Latin America providers deliver all three — and when that delivery comes from a team with 30 years of Fortune 500 operating history (SOC 2, PCI DSS, redundant connectivity, programs run across 20+ industries), the "is it big enough?" question answers itself.
 
-Teleforce runs exactly that model — [bilingual, nearshore Latin America, built on an established enterprise support network](/blog/nearshore-vs-offshore-customer-support) — with pricing by hire, by seat, or per program. Contact us for a quote; no hidden surcharges, no ambiguity.
+Teleforce runs exactly that model — [bilingual, nearshore Latin America, 30 years of Fortune 500 operating experience](/blog/nearshore-vs-offshore-customer-support) — with pricing by hire, by seat, or per program. Contact us for a quote; no hidden surcharges, no ambiguity.
 
 The due-diligence framework above will surface which providers can back up their claims. When you run those six checks against a partner who passes all of them, the decision gets a lot easier.
 

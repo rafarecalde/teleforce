@@ -13,7 +13,7 @@ faq:
   - q: "How much can I save with a nearshore lead generation team?"
     a: "Industry benchmarks show nearshore BPO typically delivers 30–50% labor savings compared to equivalent U.S. in-house headcount. Unlike offshore, those savings come without sacrificing response speed or same-day coordination. Total cost of ownership — factoring in management overhead, ramp time, and rework — often closes the gap between nearshore and offshore further."
   - q: "What should I look for in a nearshore lead generation partner?"
-    a: "Look for genuine bilingual (English/Spanish) fluency, confirmed U.S. time-zone coverage, transparent pricing with no hidden hourly charges, and a proven enterprise-grade infrastructure backing the operation. Ask specifically about agent retention rates — high turnover destroys SDR ramp investment fast. A partner backed by Fortune 500-grade support infrastructure signals scale and process maturity."
+    a: "Look for genuine bilingual (English/Spanish) fluency, confirmed U.S. time-zone coverage, transparent pricing with no hidden hourly charges, and a proven enterprise-grade infrastructure backing the operation. Ask specifically about agent retention rates — high turnover destroys SDR ramp investment fast. A partner with a long track record of running Fortune 500 programs signals scale and process maturity."
   - q: "How does Teleforce price its lead generation service?"
     a: "Teleforce pricing is quote-based — contact us for a quote. Engagements are structured by hire, by seat, or per program, depending on your team's scope and goals. You get a dedicated nearshore SDR or lead gen specialist operating on U.S. Eastern time, fully integrated with your CRM workflow."
 related:
@@ -71,7 +71,7 @@ SDR ramp is expensive — typically two to four months before a rep is operating
 
 A common hesitation about smaller nearshore markets is infrastructure — the concern that you're trading enterprise capability for geography. It's a fair question that has a concrete answer.
 
-Teleforce is built on a Fortune 500-grade support backbone with 30-plus years of experience across 20-plus industries. That infrastructure — compliance frameworks, quality assurance systems, CRM integrations, and security protocols — is delivered across Latin America. You get enterprise-grade operations without the enterprise-market price tag, and without the coordination costs of a distant time zone.
+Teleforce is a 30-year operator — we've run programs for Fortune 500 companies across 20-plus industries, and that operating history is what shows up in the details: compliance frameworks, quality assurance systems, CRM integrations, and security protocols, all delivered across Latin America. You get enterprise-grade operations without the enterprise-market price tag, and without the coordination costs of a distant time zone.
 
 It's also why Teleforce's [sales lead generation service](/services/sales-lead-generation) can slot into existing tech stacks quickly. Your SDR team runs on your CRM, follows your qualification criteria, and delivers to your pipeline — not a black-box process that generates contacts you then have to sort.
 
@@ -102,4 +102,4 @@ Nearshore lead generation works because it solves the three problems that kill o
 
 For U.S. companies building or rebuilding their outbound motion, the cost and quality case for nearshore is no longer theoretical. The market data, the operational model, and the retention numbers all point the same direction.
 
-Teleforce runs bilingual, nearshore SDR and lead generation teams across Latin America — on U.S. Eastern time, backed by an established enterprise support network with 30-plus years of Fortune 500-grade infrastructure. Pricing is quote-based; contact us for a quote structured by hire, by seat, or per program. If your pipeline needs consistent fuel, [let's talk about what that looks like for your team](/#contact).
+Teleforce runs bilingual, nearshore SDR and lead generation teams across Latin America — on U.S. Eastern time, backed by 30 years of Fortune 500 operating history across 20-plus industries. Pricing is quote-based; contact us for a quote structured by hire, by seat, or per program. If your pipeline needs consistent fuel, [let's talk about what that looks like for your team](/#contact).

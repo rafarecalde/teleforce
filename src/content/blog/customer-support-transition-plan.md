@@ -125,4 +125,4 @@ A customer support transition plan is not a checklist. It is a sequence designed
 
 The companies that transition cleanly are not the ones with the longest timelines — they're the ones who define success criteria before they go live and have the discipline to hold to them.
 
-If you're planning a transition and want a partner who has done this at scale, [talk to Teleforce](/#contact). Our onboarding is built on 30+ years of Fortune 500 transition experience, delivered by bilingual nearshore agents across Latin America with full U.S. Eastern time-zone coverage. We'll tell you if your timeline is realistic — and build the ramp that protects your customers if it isn't.
+If you're planning a transition and want a partner who has done this at scale, [talk to Teleforce](/#contact). We bring 30 years of Fortune 500 transition experience, delivered by bilingual nearshore agents across Latin America with full U.S. Eastern time-zone coverage. We'll tell you if your timeline is realistic — and build the ramp that protects your customers if it isn't.

@@ -91,7 +91,7 @@ That means reducing escalations isn't just a cost play. It's a retention play.
 
 Teleforce's [tech support services](/services/tech-support) are built around the escalation problem from the ground up. Our nearshore Latin America agents operate on a full U.S. Eastern time zone schedule, with clear authority guidelines built into onboarding, QA-linked training refresh cycles, and escalation analytics reviewed with clients monthly.
 
-Teleforce brings a Fortune 500-grade support backbone to the table — 30+ years of enterprise support infrastructure spanning 20+ industries — giving clients enterprise-grade process discipline without the overhead of building it in-house. Clients don't need to build a QA program, a knowledge management workflow, or a training loop. Those come standard.
+Teleforce is a 30-year operator — we've run support programs for Fortune 500 companies across 20+ industries for three decades, and that operating history is what shapes our process discipline today. Clients don't need to build a QA program, a knowledge management workflow, or a training loop. Those come standard.
 
 For U.S. companies looking to cut escalation rates without sacrificing resolution quality — or without adding headcount — nearshore tech support is a durable path forward. Pricing is quote-based — [contact us for a quote](/#contact).
 
