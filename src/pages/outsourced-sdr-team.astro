@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBox from '../components/CtaBox.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Outsourced SDR Team — Teleforce',
+  serviceType: 'Nearshore outsourced sales development (SDR) team',
+  provider: { '@type': 'Organization', name: 'Teleforce' },
+  areaServed: ['US', 'CA'],
+  description:
+    'Build a nearshore outsourced SDR team — bilingual outbound prospecting and lead qualification at less than half the cost of U.S. SDRs, with faster ramp.',
+};
+---
+<BaseLayout
+  title="Outsourced SDR Team | Nearshore Sales Dev | Teleforce"
+  description="Build an outsourced SDR team — nearshore bilingual sales development at less than half the cost of U.S. SDRs, faster ramp, English + Spanish outbound. Request a proposal."
+  jsonLd={jsonLd}
+>
+  <header class="ahead">
+    <div class="wrap">
+      <div class="cat">Sales development</div>
+      <h1>Build an Outsourced SDR Team — Nearshore Sales Development</h1>
+      <div class="ameta"><span>Native EN / ES</span><span>LATAM · U.S. hours</span><span>30-year operator</span></div>
+    </div>
+  </header>
+
+  <div class="wrap" style="margin-top:24px">
+    <img class="feature-img" src="/brand/image7.jpg" alt="Nearshore outsourced SDR team running bilingual outbound" loading="lazy" />
+  </div>
+
+  <article class="post">
+    <p class="lead">An <strong>outsourced SDR team</strong> gives you a nearshore, bilingual pipeline engine at less than half the cost of U.S. sales development reps — with a faster ramp, because the recruiting, training, and management already exist. Your closers get a steady stream of qualified, meeting-ready leads instead of chasing their own top-of-funnel.</p>
+
+    <p>Hiring SDRs in-house is slow and expensive: months to recruit and ramp, high turnover, and a manager's time spent coaching instead of closing. A nearshore outsourced SDR team removes that drag while keeping full U.S.-hours overlap and native English — plus native Spanish to reach markets your English-only team can't.</p>
+
+    <h2>What an outsourced SDR team does</h2>
+    <ul class="svc-list" style="grid-template-columns:1fr;max-width:680px">
+      <li><strong>Outbound prospecting</strong> — cold outreach by phone, email, and social.</li>
+      <li><strong>Lead qualification</strong> — scoring and vetting against your ICP before handoff.</li>
+      <li><strong>List building &amp; CRM enrichment</strong> — clean, current data in your CRM.</li>
+      <li><strong>Meeting booking</strong> — warm handoff or booked appointments for your closers.</li>
+      <li><strong>Bilingual outreach</strong> — English and Spanish, reaching the full U.S. market.</li>
+    </ul>
+
+    <h2>Ramp time and cost vs. U.S. SDRs</h2>
+    <p>A U.S. SDR takes weeks to hire and months to become productive, at a fully-loaded cost well above base salary. A nearshore outsourced SDR team ramps faster and typically lands at <strong>less than half</strong> that loaded cost.</p>
+    <table>
+      <thead><tr><th></th><th>U.S. in-house SDR</th><th>Teleforce nearshore SDR</th></tr></thead>
+      <tbody>
+        <tr><td>Fully-loaded cost</td><td>Baseline (highest)</td><td>Less than half</td></tr>
+        <tr><td>Ramp time</td><td>Weeks to hire, months to ramp</td><td>Established — faster ramp</td></tr>
+        <tr><td>Spanish outbound</td><td>Rare</td><td>Native</td></tr>
+        <tr><td>Time-zone overlap</td><td>Full</td><td>Full</td></tr>
+        <tr><td>Scale up / down</td><td>Slow, fixed cost</td><td>Fast, variable</td></tr>
+      </tbody>
+    </table>
+
+    <CtaBox
+      heading="Scope an SDR team for your pipeline"
+      body="Tell us your target market, motion, and seat count. We'll come back with a staffing plan and a go-live date — usually within two business days."
+      label="Request a proposal"
+    />
+
+    <h2>How it works</h2>
+    <ol>
+      <li><strong>Scope.</strong> We map your ICP, outbound motion, tools, and target markets.</li>
+      <li><strong>Recruit &amp; vet.</strong> We source bilingual SDR talent against your bar.</li>
+      <li><strong>Onboard.</strong> Reps train on your product, scripts, and CRM to your standard.</li>
+      <li><strong>Scale.</strong> Add reps as pipeline targets grow — same team, no re-ramp.</li>
+    </ol>
+
+    <h2>Related</h2>
+    <p>An outsourced SDR team pairs naturally with <a href="/outsourced-saas-support">outsourced SaaS support</a> — the same nearshore bench that answers your users can also feed your pipeline. See the full service on our <a href="/services/sales-lead-generation">sales lead generation</a> page, or read the deeper breakdown on <a href="/blog/outsourced-sdr-teams">outsourced SDR teams: build vs. buy</a>.</p>
+  </article>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--amber)">Request a proposal</div>
+      <h2 class="disp" style="color:#fff">Get an SDR team built for your pipeline.</h2>
+      <p class="sub" style="color:var(--on-dark-mut);max-width:60ch">Tell us your target market and motion. A human comes back with a staffing plan and a go-live date — usually within two business days.</p>
+      <div style="margin-top:22px"><a href="/#contact" class="btn btn-amber">Request a proposal</a></div>
+    </div>
+  </section>
+</BaseLayout>

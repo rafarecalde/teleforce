@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBox from '../components/CtaBox.astro';
+
+const faq = [
+  {
+    q: 'What is outsourced SaaS support?',
+    a: 'Outsourced SaaS support means a specialized partner runs your customer support — Tier 1 and Tier 2, live chat, email/ticketing, onboarding, and technical troubleshooting — as an extension of your product team. With a nearshore partner like Teleforce, those agents are native English/Spanish, sit in U.S. time zones, and are trained on your product and your voice.',
+  },
+  {
+    q: 'How much does outsourced SaaS support cost vs. hiring in-house?',
+    a: 'A nearshore SaaS support team typically runs at less than half the fully-loaded cost of a U.S. in-house hire once you account for benefits, management, tools, recruiting, attrition, and idle capacity. Teleforce prices per engagement (by role, skill, and volume) rather than publishing a rate — request a proposal for your numbers.',
+  },
+  {
+    q: 'Why choose nearshore over offshore for SaaS support?',
+    a: 'SaaS support is real-time and technical, so time-zone overlap and language fluency matter more than the lowest hourly rate. Nearshore Latin America gives you full U.S.-business-hours overlap, native-level English and Spanish, cultural alignment with U.S. customers, and lower agent attrition than far-offshore markets — which protects the product knowledge that makes support good.',
+  },
+  {
+    q: 'What SaaS support roles can you staff?',
+    a: 'Support agents (Tier 1/2), live-chat and email/ticketing specialists, technical support, onboarding specialists, and customer success managers (CSMs). You can start with a couple of seats and scale as your ticket volume and book grow.',
+  },
+  {
+    q: 'How fast can an outsourced SaaS support team go live?',
+    a: 'Because Teleforce is a 30-year operator, the recruiting, training, and QA infrastructure already exists — there is no startup ramp. A typical program scopes, staffs, and trains a pilot team in weeks, then scales from there.',
+  },
+  {
+    q: 'Is the team bilingual?',
+    a: 'Yes. Teleforce staffs native English/Spanish agents from a single seat, so your English- and Spanish-speaking customers get the same trained, on-brand support — no separate overflow team, no quality drop on half your users.',
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Outsourced SaaS Support — Teleforce',
+    serviceType: 'Outsourced nearshore SaaS customer support',
+    provider: { '@type': 'Organization', name: 'Teleforce' },
+    areaServed: ['US', 'CA'],
+    description:
+      'Nearshore outsourced SaaS support — native English/Spanish Tier 1/2, live chat, email, onboarding, and customer success at less than half the cost of a U.S. in-house team.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+];
+---
+<BaseLayout
+  title="Outsourced SaaS Support | Nearshore Teams | Teleforce"
+  description="Outsourced SaaS support from nearshore teams at less than half the cost of U.S. in-house — native English/Spanish, U.S. time zones, Tier 1/2 to customer success. Request a proposal."
+  jsonLd={jsonLd}
+>
+  <header class="ahead">
+    <div class="wrap">
+      <div class="cat">For SaaS companies</div>
+      <h1>Outsourced SaaS Support — Nearshore Teams at Less Than Half the Cost</h1>
+      <div class="ameta"><span>Native EN / ES</span><span>LATAM · U.S. hours</span><span>30-year operator</span></div>
+    </div>
+  </header>
+
+  <div class="wrap" style="margin-top:24px">
+    <img class="feature-img" src="/brand/image3.jpg" alt="Nearshore outsourced SaaS support agents on live chat and calls" loading="lazy" />
+  </div>
+
+  <article class="post">
+    <p class="lead"><strong>Outsourced SaaS support</strong> gives you qualified, nearshore support talent at less than half the cost of hiring in-house — native English and Spanish, in your time zones, trained on your product. Instead of scrambling to hire and ramp as tickets spike, you get an established team that plugs into your stack and scales with your book.</p>
+
+    <p>For a SaaS company, support is part of the product experience. A slow or off-brand answer churns the user you paid to acquire. But building support in-house is expensive and slow, and far-offshore vendors trade cost for a time-zone gap and an accent your customers notice. Nearshore outsourced SaaS support is the middle path: enterprise-grade quality, U.S.-hours coverage, at a fraction of the loaded cost.</p>
+
+    <h2>What outsourced SaaS support covers</h2>
+    <ul class="svc-list" style="grid-template-columns:1fr;max-width:680px">
+      <li><strong>Tier 1 &amp; Tier 2 support</strong> — front-line resolution plus deeper technical troubleshooting, not just deflection.</li>
+      <li><strong>Live chat</strong> — real-time, on-brand help inside your product.</li>
+      <li><strong>Email &amp; ticketing</strong> — in your helpdesk (Zendesk, Intercom, Freshdesk, HubSpot), on your SLAs.</li>
+      <li><strong>Onboarding &amp; activation</strong> — getting new users to value faster.</li>
+      <li><strong>Customer success</strong> — CSMs who drive retention and expansion, not just answer tickets.</li>
+      <li><strong>Technical troubleshooting</strong> — agents who understand your product, integrations, and edge cases.</li>
+    </ul>
+
+    <h2>Why nearshore beats offshore for SaaS</h2>
+    <p>SaaS support is real-time and technical, which changes the math. The lowest hourly rate stops mattering when a 10–12 hour time gap means escalations wait overnight and a customer churns before anyone replies. Nearshore Latin America wins on the factors that actually move SaaS retention:</p>
+    <ul class="svc-list" style="grid-template-columns:1fr;max-width:680px">
+      <li><strong>Time-zone overlap</strong> — full U.S. business-hours coverage, so live chat and escalations happen in real time.</li>
+      <li><strong>Cultural alignment</strong> — agents share reference points and product expectations with your U.S. users.</li>
+      <li><strong>English fluency</strong> — native-level, neutral-accent English, plus native Spanish from the same seat.</li>
+      <li><strong>Lower attrition</strong> — daytime schedules retain agents longer, so the product knowledge you invest in actually sticks.</li>
+    </ul>
+
+    <h2>How much you save</h2>
+    <p>Compare loaded cost to loaded cost — not a U.S. salary against an offshore invoice. Once you add benefits, management, tools, recruiting, attrition, and idle capacity to an in-house hire, a nearshore SaaS support seat typically lands at <strong>less than half the total cost</strong>.</p>
+    <table>
+      <thead><tr><th></th><th>U.S. in-house</th><th>Teleforce nearshore</th></tr></thead>
+      <tbody>
+        <tr><td>Fully-loaded cost</td><td>Baseline (highest)</td><td>Less than half</td></tr>
+        <tr><td>Time-zone overlap</td><td>Full</td><td>Full</td></tr>
+        <tr><td>English + Spanish</td><td>Rare from one hire</td><td>Native, one seat</td></tr>
+        <tr><td>Hiring &amp; ramp</td><td>Weeks–months, on you</td><td>Established — no ramp</td></tr>
+        <tr><td>Scale up / down</td><td>Slow, fixed cost</td><td>Fast, variable</td></tr>
+      </tbody>
+    </table>
+
+    <CtaBox
+      heading="See where nearshore SaaS support lands for your volumes"
+      body="Tell us your ticket volume, channels, and the roles you need. We'll come back with a staffing plan and a go-live date — usually within two business days."
+      label="Request a proposal"
+    />
+
+    <h2>How it works</h2>
+    <ol>
+      <li><strong>Scope.</strong> We map your channels, tools, ticket volume, languages, and the product knowledge agents need.</li>
+      <li><strong>Recruit &amp; vet.</strong> We source and screen bilingual support and technical talent against your bar — no revolving door.</li>
+      <li><strong>Onboard.</strong> Agents train on your product and voice, inside your helpdesk, to your QA standard.</li>
+      <li><strong>Scale.</strong> You add seats as tickets grow — same team, same standard, no re-ramp.</li>
+    </ol>
+
+    <h2>Roles we staff</h2>
+    <p>Start with the function you need most and add others as you grow. Related Teleforce services:</p>
+    <ul class="svc-list" style="grid-template-columns:1fr 1fr">
+      <li><a href="/services/customer-service">Bilingual customer service</a> — voice, chat, and email.</li>
+      <li><a href="/services/tech-support">Tech support</a> — Tier 1/2 troubleshooting.</li>
+      <li><a href="/outsourced-sdr-team">Outsourced SDR team</a> — nearshore sales development.</li>
+      <li><a href="/nearshore-customer-service-mexico-colombia">Nearshore in Mexico &amp; Colombia</a> — the talent pools behind it.</li>
+    </ul>
+    <p>Want the deeper dive on the model? Read <a href="/blog/saas-customer-support-outsourcing">nearshore customer support for SaaS companies</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    {faq.map((f) => (
+      <>
+        <h3>{f.q}</h3>
+        <p>{f.a}</p>
+      </>
+    ))}
+  </article>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="eyebrow" style="color:var(--amber)">Request a proposal</div>
+      <h2 class="disp" style="color:#fff">Get a SaaS support proposal built for your book.</h2>
+      <p class="sub" style="color:var(--on-dark-mut);max-width:60ch">Tell us your ticket volume, channels, and roles. A human comes back with a staffing plan and a go-live date — usually within two business days.</p>
+      <div style="margin-top:22px"><a href="/#contact" class="btn btn-amber">Request a proposal</a></div>
+    </div>
+  </section>
+</BaseLayout>

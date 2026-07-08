@@ -34,6 +34,7 @@ export const LOGOS = [
 
 export const NAV_LINKS = [
   { href: '/services', label: 'Services' },
+  { href: '/outsourced-saas-support', label: 'SaaS Support' },
   { href: '/#pricing', label: 'Pricing' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Signal' },
@@ -41,7 +42,9 @@ export const NAV_LINKS = [
 
 export const FOOTER_LINKS = [
   { href: '/services', label: 'Services' },
-  { href: '/#how', label: 'How it works' },
+  { href: '/outsourced-saas-support', label: 'SaaS support' },
+  { href: '/nearshore-customer-service-mexico-colombia', label: 'Nearshore MX & CO' },
+  { href: '/outsourced-sdr-team', label: 'SDR team' },
   { href: '/#pricing', label: 'Pricing' },
   { href: '/blog', label: 'Signal' },
   { href: '/#contact', label: 'Contact' },
