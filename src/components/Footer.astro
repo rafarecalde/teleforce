@@ -1,19 +1,63 @@
 ---
-import { SITE, FOOTER_LINKS, PHONE, PHONE_HREF } from '../consts';
+import { SITE, PHONE, PHONE_HREF } from '../consts';
 const year = 2026;
+
+const SERVICES_COL = [
+  { href: '/services/customer-service', label: 'Customer Service' },
+  { href: '/services/tech-support', label: 'Tech Support' },
+  { href: '/services/billing-account-servicing', label: 'Account Servicing' },
+  { href: '/services/data-entry', label: 'Back-Office Ops' },
+  { href: '/outsourced-saas-support', label: 'SaaS Support' },
+];
+const COMPANY_COL = [
+  { href: '/services', label: 'Services' },
+  { href: '/#why', label: 'Why Teleforce' },
+  { href: '/about', label: 'About Us' },
+  { href: '/blog', label: 'Signal' },
+];
 ---
 <footer>
   <div class="wrap">
-    <div class="top">
-      <div>
-        <div class="brand">TELEFORCE</div>
-        <div class="tagline">{SITE.tagline}</div>
-        <div class="tagline" style="margin-top:8px"><a href={PHONE_HREF}>{PHONE}</a></div>
+    <div class="fcols">
+      <div class="fbrand">
+        <div class="brand"><span class="led"></span>TELEFORCE</div>
+        <div class="tagline">Bilingual LATAM BPO for U.S. companies.</div>
       </div>
-      <div class="fnav">
-        {FOOTER_LINKS.map((l) => <a href={l.href}>{l.label}</a>)}
+      <div class="fcol">
+        <div class="fh">Services</div>
+        {SERVICES_COL.map((l) => <a href={l.href}>{l.label}</a>)}
+      </div>
+      <div class="fcol">
+        <div class="fh">Company</div>
+        {COMPANY_COL.map((l) => <a href={l.href}>{l.label}</a>)}
+      </div>
+      <div class="fcol">
+        <div class="fh">Let's talk</div>
+        <a href={PHONE_HREF} class="fcontact"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>{PHONE}</a>
+        <a href="/#contact" class="fcontact"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg></span>Request a proposal</a>
       </div>
     </div>
     <div class="legal">© {year} Teleforce · tryteleforce.com · Privacy · Terms</div>
   </div>
 </footer>
+
+<style>
+  .fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:30px;
+    padding-bottom:30px;border-bottom:1px solid var(--line-dark)}
+  .fbrand .brand{font-family:'Archivo',sans-serif;font-weight:900;letter-spacing:-0.02em;font-size:22px;
+    color:#fff;margin-bottom:10px;display:flex;align-items:center;gap:9px}
+  .fbrand .led{width:8px;height:8px;border-radius:50%;background:var(--amber)}
+  .fbrand .tagline{font-family:'Inter',sans-serif;font-size:13.5px;color:var(--on-dark-mut);max-width:26ch;line-height:1.5}
+  .fcol{display:flex;flex-direction:column;gap:11px}
+  .fh{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--sage-deep);margin-bottom:3px}
+  .fcol a{font-size:13.5px;color:var(--on-dark-mut);transition:color .2s}
+  .fcol a:hover{color:var(--amber)}
+  .fcontact{display:flex;align-items:center;gap:10px}
+  .fic{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:6px;
+    background:rgba(236,230,214,0.06);color:var(--amber);flex-shrink:0}
+  .fic svg{width:15px;height:15px}
+  .legal{padding-top:22px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:rgba(157,176,171,0.7)}
+  @media (max-width:720px){.fcols{grid-template-columns:1fr 1fr;gap:26px}.fbrand{grid-column:1 / -1}}
+  @media (max-width:440px){.fcols{grid-template-columns:1fr}}
+</style>
