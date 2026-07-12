@@ -1,0 +1,43 @@
+---
+// On-page proposal capture form for landing pages. Anchor id="proposal".
+import { SITE, PHONE, PHONE_HREF, FORM_ACTION } from '../consts';
+
+interface Props {
+  heading?: string;
+  sub?: string;
+  subject?: string;
+  /** Prefix for input ids so multiple forms never collide. */
+  idPrefix?: string;
+}
+const {
+  heading = 'Get a proposal built for your book.',
+  sub = "Tell us your volumes and what you need. A human comes back with a staffing plan and a go-live date — usually within two business days.",
+  subject = 'New Teleforce proposal request',
+  idPrefix = 'p',
+} = Astro.props;
+---
+<section class="contact" id="proposal">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="eyebrow" style="color:var(--amber)">Request a proposal</div>
+        <h2 class="disp" style="color:#fff">{heading}</h2>
+        <p class="sub" style="color:var(--on-dark-mut)">{sub}</p>
+        <p class="sub" style="color:var(--on-dark-mut);margin-top:18px">Prefer to talk? Call <a href={PHONE_HREF} style="color:var(--amber);font-weight:600">{PHONE}</a>.</p>
+      </div>
+      <form method="POST" action={FORM_ACTION}>
+        <input type="hidden" name="_subject" value={subject} />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value={`${SITE.url}/thanks`} />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="field"><label for={`${idPrefix}-name`}>Name</label><input id={`${idPrefix}-name`} name="name" type="text" placeholder="Your name" required /></div>
+        <div class="field"><label for={`${idPrefix}-email`}>Work email</label><input id={`${idPrefix}-email`} name="email" type="email" placeholder="you@company.com" required /></div>
+        <div class="field"><label for={`${idPrefix}-company`}>Company</label><input id={`${idPrefix}-company`} name="company" type="text" placeholder="Company name" required /></div>
+        <div class="field"><label for={`${idPrefix}-volume`}>Monthly volume or seat count</label><input id={`${idPrefix}-volume`} name="volume" type="text" placeholder="e.g. 25 seats, or ~8,000 contacts/mo" /></div>
+        <div class="field"><label for={`${idPrefix}-need`}>What do you need?</label><textarea id={`${idPrefix}-need`} name="message" rows="3" placeholder="Channels, languages, and what you're trying to cover…"></textarea></div>
+        <button class="btn btn-amber" type="submit">Request a proposal</button>
+      </form>
+    </div>
+  </div>
+</section>

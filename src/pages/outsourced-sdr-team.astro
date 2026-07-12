@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBox from '../components/CtaBox.astro';
+import ProposalForm from '../components/ProposalForm.astro';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -17,6 +18,7 @@ const jsonLd = {
   title="Outsourced SDR Team | Nearshore Sales Dev | Teleforce"
   description="Build an outsourced SDR team — nearshore bilingual sales development at less than half the cost of U.S. SDRs, faster ramp, English + Spanish outbound. Request a proposal."
   jsonLd={jsonLd}
+  bare
 >
   <header class="ahead">
     <div class="wrap">
@@ -61,6 +63,7 @@ const jsonLd = {
       heading="Scope an SDR team for your pipeline"
       body="Tell us your target market, motion, and seat count. We'll come back with a staffing plan and a go-live date — usually within two business days."
       label="Request a proposal"
+      href="#proposal"
     />
 
     <h2>How it works</h2>
@@ -75,12 +78,10 @@ const jsonLd = {
     <p>An outsourced SDR team pairs naturally with <a href="/outsourced-saas-support">outsourced SaaS support</a> — the same nearshore bench that answers your users can also feed your pipeline. See the full service on our <a href="/services/sales-lead-generation">sales lead generation</a> page, or read the deeper breakdown on <a href="/blog/outsourced-sdr-teams">outsourced SDR teams: build vs. buy</a>.</p>
   </article>
 
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <div class="eyebrow" style="color:var(--amber)">Request a proposal</div>
-      <h2 class="disp" style="color:#fff">Get an SDR team built for your pipeline.</h2>
-      <p class="sub" style="color:var(--on-dark-mut);max-width:60ch">Tell us your target market and motion. A human comes back with a staffing plan and a go-live date — usually within two business days.</p>
-      <div style="margin-top:22px"><a href="/#contact" class="btn btn-amber">Request a proposal</a></div>
-    </div>
-  </section>
+  <ProposalForm
+    heading="Get an SDR team built for your pipeline."
+    sub="Tell us your target market, motion, and seat count. A human comes back with a staffing plan and a go-live date — usually within two business days."
+    subject="New Teleforce proposal request — SDR team"
+    idPrefix="sdr"
+  />
 </BaseLayout>

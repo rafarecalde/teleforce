@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBox from '../components/CtaBox.astro';
+import ProposalForm from '../components/ProposalForm.astro';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -17,6 +18,7 @@ const jsonLd = {
   title="Nearshore Customer Service in Mexico & Colombia | Teleforce"
   description="Nearshore customer service in Mexico & Colombia — bilingual, Hispanic-market talent at U.S.-hours overlap and less than half the in-house cost. Request a proposal."
   jsonLd={jsonLd}
+  bare
 >
   <header class="ahead">
     <div class="wrap">
@@ -60,6 +62,7 @@ const jsonLd = {
       heading="Scope a nearshore team for your book"
       body="Tell us your volumes and languages. We'll come back with a staffing plan and a go-live date — usually within two business days."
       label="Request a proposal"
+      href="#proposal"
     />
 
     <h2>Deeper dives</h2>
@@ -80,12 +83,10 @@ const jsonLd = {
     <p>Typically more than half, on a fully-loaded basis, once benefits, management, tools, recruiting, and attrition are counted. Teleforce prices per engagement — request a proposal for your numbers.</p>
   </article>
 
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <div class="eyebrow" style="color:var(--amber)">Request a proposal</div>
-      <h2 class="disp" style="color:#fff">Build a nearshore team in Mexico or Colombia.</h2>
-      <p class="sub" style="color:var(--on-dark-mut);max-width:60ch">Tell us your volumes and languages. A human comes back with a staffing plan and a go-live date — usually within two business days.</p>
-      <div style="margin-top:22px"><a href="/#contact" class="btn btn-amber">Request a proposal</a></div>
-    </div>
-  </section>
+  <ProposalForm
+    heading="Build a nearshore team in Mexico or Colombia."
+    sub="Tell us your volumes and languages. A human comes back with a staffing plan and a go-live date — usually within two business days."
+    subject="New Teleforce proposal request — Mexico/Colombia"
+    idPrefix="geo"
+  />
 </BaseLayout>

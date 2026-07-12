@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBox from '../components/CtaBox.astro';
+import ProposalForm from '../components/ProposalForm.astro';
 
 const faq = [
   {
@@ -51,6 +52,7 @@ const jsonLd = [
   title="Outsourced SaaS Support | Nearshore Teams | Teleforce"
   description="Outsourced SaaS support from nearshore teams at less than half the cost of U.S. in-house — native English/Spanish, U.S. time zones, Tier 1/2 to customer success. Request a proposal."
   jsonLd={jsonLd}
+  bare
 >
   <header class="ahead">
     <div class="wrap">
@@ -105,6 +107,7 @@ const jsonLd = [
       heading="See where nearshore SaaS support lands for your volumes"
       body="Tell us your ticket volume, channels, and the roles you need. We'll come back with a staffing plan and a go-live date — usually within two business days."
       label="Request a proposal"
+      href="#proposal"
     />
 
     <h2>How it works</h2>
@@ -134,12 +137,10 @@ const jsonLd = [
     ))}
   </article>
 
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <div class="eyebrow" style="color:var(--amber)">Request a proposal</div>
-      <h2 class="disp" style="color:#fff">Get a SaaS support proposal built for your book.</h2>
-      <p class="sub" style="color:var(--on-dark-mut);max-width:60ch">Tell us your ticket volume, channels, and roles. A human comes back with a staffing plan and a go-live date — usually within two business days.</p>
-      <div style="margin-top:22px"><a href="/#contact" class="btn btn-amber">Request a proposal</a></div>
-    </div>
-  </section>
+  <ProposalForm
+    heading="Get a SaaS support proposal built for your book."
+    sub="Tell us your ticket volume, channels, and the roles you need. A human comes back with a staffing plan and a go-live date — usually within two business days."
+    subject="New Teleforce proposal request — SaaS support"
+    idPrefix="saas"
+  />
 </BaseLayout>
