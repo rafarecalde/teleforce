@@ -43,6 +43,16 @@ const ldBlocks = [org, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google tag (gtag.js) — Google Ads AW-1020943370 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1020943370"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-1020943370');
+  </script>
+
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
