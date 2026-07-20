@@ -5,6 +5,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="Thanks — we'll be in touch | Teleforce"
   description="Your message reached the Teleforce team. We'll come back with a staffing plan within two business days."
 >
+  <!-- Event snippet for Submit lead form (1) conversion page -->
+  <script slot="head" is:inline>
+    gtag('event', 'conversion', {'send_to': 'AW-18332056932/JvJ9COL479McEOT6s6VE'});
+  </script>
   <header class="ahead">
     <div class="wrap">
       <div class="cat">Message sent</div>

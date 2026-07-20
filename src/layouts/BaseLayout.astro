@@ -52,6 +52,8 @@ const ldBlocks = [org, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) 
     gtag('js', new Date());
     gtag('config', 'AW-18332056932');
   </script>
+  <!-- Page-specific head injection (e.g. Google Ads conversion event), placed right after the Google tag -->
+  <slot name="head" />
 
   <title>{title}</title>
   <meta name="description" content={description} />
