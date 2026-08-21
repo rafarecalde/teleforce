@@ -2,14 +2,30 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBox from './CtaBox.astro';
 import ProposalForm from './ProposalForm.astro';
-import { ALL_SERVICES } from '../consts';
+import { ALL_SERVICES, LOGOS, TESTIMONIALS, PHONE, PHONE_HREF, CALENDLY_URL } from '../consts';
+import { getCollection } from 'astro:content';
 import type { Landing } from '../lib/landings';
 
 interface Props { data: Landing }
 const { data } = Astro.props;
 const svc = ALL_SERVICES.find((s) => s.slug === data.slug)!;
 
-const jsonLd = {
+const services = await getCollection('services');
+const faqEntry = services.find((c) => c.id === `${svc.slug}.md` || c.slug === svc.slug);
+const faq = faqEntry?.data.faq ?? [];
+
+const marquee = [...LOGOS, ...LOGOS];
+const t = TESTIMONIALS[0];
+
+const compare = [
+  ['Fully-loaded cost', 'Highest', 'Lowest, with tradeoffs', 'Less than half U.S.'],
+  ['U.S. time-zone overlap', 'Full', '10–12 hour gap', 'Full'],
+  ['English + Spanish', 'Rare from one hire', 'Variable', 'Native, one seat'],
+  ['Ramp & hiring', 'Weeks–months, on you', "On the vendor", 'Established — no ramp'],
+  ['Scale up / down', 'Slow, fixed cost', 'Variable', 'Fast, variable'],
+];
+
+const serviceLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: `${svc.name} — Teleforce`,
@@ -18,54 +34,261 @@ const jsonLd = {
   areaServed: ['US', 'CA'],
   description: data.sub,
 };
+const faqLd = faq.length
+  ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
+  : null;
+const jsonLd = faqLd ? [serviceLd, faqLd] : serviceLd;
 ---
 <BaseLayout title={data.metaTitle} description={data.metaDesc} jsonLd={jsonLd} bare>
-  <header class="ahead">
-    <div class="wrap">
-      <div class="cat">{data.cat}</div>
-      <h1>{data.h1}</h1>
-      <div class="ameta"><span>Native EN / ES</span><span>LATAM · U.S. hours</span><span>30-year operator</span></div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="lp-hero">
+      <div class="lp-copy">
+        <div class="kicker">{data.cat}</div>
+        <h1 class="disp">{data.h1}</h1>
+        <p class="lede">{data.sub}</p>
+        <div class="hero-cta">
+          <a href="#proposal" class="btn btn-amber">Book a call</a>
+          <a href="#how" class="btn btn-ghost">See how it works</a>
+        </div>
+        <div class="lp-chips">
+          <span>Native EN / ES</span><span>U.S. hours</span><span>30-year operator</span>
+        </div>
+      </div>
+      <div class="lp-media"><div class="lp-photo"><img src={data.img} alt={`Teleforce ${data.cat}`} fetchpriority="high" /></div></div>
     </div>
   </header>
 
-  <div class="wrap" style="margin-top:24px">
-    <img class="feature-img" src={data.img} alt={`Teleforce ${data.cat}`} loading="lazy" />
+  <!-- TRUST -->
+  <div class="logos">
+    <div class="lab">Trusted by U.S. companies across industries</div>
+    <div class="marquee-mask"><div class="marquee">{marquee.map((n) => <span>{n}</span>)}</div></div>
   </div>
 
-  <article class="post">
-    <p class="lead">{data.sub}</p>
-
-    <div class="lp-benefits">
-      {data.bullets.map((b) => (
-        <div class="lp-benefit">
-          <h3>{b.h}</h3>
-          <p>{b.p}</p>
-        </div>
-      ))}
+  <!-- PROBLEM -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="eyebrow">The problem</div>
+      <h2 class="disp">{data.problem.h}</h2>
+      <p class="sub" style="max-width:64ch">{data.problem.p}</p>
+      <ul class="lp-pains">
+        {data.problem.points.map((p) => <li>{p}</li>)}
+      </ul>
     </div>
+  </section>
 
-    <h2>What you get</h2>
-    <ul class="svc-list">
-      {svc.included.map((item) => <li>{item}</li>)}
-    </ul>
+  <!-- SOLUTION + BENEFITS -->
+  <div class="howwrap">
+    <section class="block reveal">
+      <div class="wrap">
+        <div class="eyebrow">The Teleforce answer</div>
+        <h2 class="disp">{data.solution.h}</h2>
+        <p class="sub" style="max-width:64ch">{data.solution.p}</p>
+        <div class="lp-benefits">
+          {data.bullets.map((b) => (<div class="lp-benefit"><h3>{b.h}</h3><p>{b.p}</p></div>))}
+        </div>
+      </div>
+    </section>
+  </div>
 
-    <CtaBox
-      heading={`Scope your ${svc.name.toLowerCase()} team`}
-      body="Tell us your volumes, channels, and languages. A human comes back with a staffing plan and a go-live date — usually within two business days."
-      label="Request a proposal"
-      href="#proposal"
-    />
+  <!-- WHAT'S INCLUDED + OUTCOMES -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="lp-incl">
+        <div>
+          <div class="eyebrow">What’s included</div>
+          <h2 class="disp">Everything the program covers.</h2>
+          <ul class="svc-list" style="grid-template-columns:1fr">{svc.included.map((i) => <li>{i}</li>)}</ul>
+        </div>
+        <div class="lp-outcomes">
+          <div class="lo-head">The result</div>
+          <ul>{data.outcomes.map((o) => <li>{o}</li>)}</ul>
+          <a href="#proposal" class="btn btn-amber" style="margin-top:20px">Book a call</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <p>Want the full breakdown, pricing model, and FAQ? Read more on <a href={`/services/${svc.slug}`}>{svc.name}</a>.</p>
-  </article>
+  <!-- HOW IT WORKS -->
+  <div class="howwrap">
+    <section class="block" id="how">
+      <div class="wrap reveal">
+        <div class="eyebrow">How it works</div>
+        <h2 class="disp">Live in about 30 days.</h2>
+        <div class="steps">
+          <div class="step"><div class="num">01</div><h4>Scope</h4><p>We map your volumes, channels, tools, and the voice your customers expect.</p></div>
+          <div class="step"><div class="num">02</div><h4>Staff &amp; train</h4><p>We recruit bilingual talent and train them on your product as brand staff.</p></div>
+          <div class="step"><div class="num">03</div><h4>Go live</h4><p>Your team starts producing — with QA, reporting, and a named lead from day one.</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
 
-  <ProposalForm heading={data.formHeading} subject={data.subject} idPrefix={svc.slug} />
+  <!-- COMPARISON -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="eyebrow">Nearshore, weighed honestly</div>
+      <h2 class="disp">In-house vs. offshore vs. Teleforce.</h2>
+      <p class="sub" style="max-width:60ch">The lowest hourly rate stops mattering when a 10–12 hour gap means work waits overnight. Compare on what actually moves the needle.</p>
+      <div class="lp-compare-wrap">
+        <table class="lp-compare">
+          <thead><tr><th></th><th>U.S. in-house</th><th>Far offshore</th><th class="win">Teleforce nearshore</th></tr></thead>
+          <tbody>
+            {compare.map((row) => (
+              <tr><td>{row[0]}</td><td>{row[1]}</td><td>{row[2]}</td><td class="win">{row[3]}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY TELEFORCE -->
+  <div class="howwrap">
+    <section class="block reveal">
+      <div class="wrap">
+        <div class="lp-why">
+          <div>
+            <div class="eyebrow">Why Teleforce</div>
+            <h2 class="disp">30 years of doing it right.</h2>
+            <p class="sub">We’re not a startup building the org while we build your team. Three decades of running bilingual programs for global brands means the recruiting, training, and QA already exist.</p>
+            <ul class="lp-checks">
+              <li>Native English/Spanish agents — two languages, one seat</li>
+              <li>Full U.S.-business-hours overlap, not an overnight lag</li>
+              <li>Employed and managed by Teleforce — you just delegate</li>
+              <li>Decades-deep infrastructure — no startup ramp to wait through</li>
+            </ul>
+          </div>
+          <div class="lp-map">
+            <img src="/brand/latam-map.svg" width="240" height="342" alt="Latin America, where Teleforce operates" loading="lazy" />
+            <div class="lp-map-h">LATAM based.<br />U.S. focused.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TESTIMONIAL -->
+  <section class="block">
+    <div class="wrap reveal">
+      <blockquote class="quote">
+        <p>“{t.quote}”</p>
+        <div class="by"><span><b>{t.name}</b> · {t.company}</span></div>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  {faq.length > 0 && (
+    <section class="block">
+      <div class="wrap reveal">
+        <div class="eyebrow">Questions</div>
+        <h2 class="disp">Frequently asked.</h2>
+        <div class="lp-faq">
+          {faq.map((f) => (
+            <details class="lp-q"><summary>{f.q}<span class="pl">+</span></summary><p>{f.a}</p></details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FINAL CTA -->
+  <section class="block" style="padding-bottom:0">
+    <div class="wrap reveal">
+      <CtaBox
+        heading={`Ready to scope your ${svc.name.toLowerCase()} team?`}
+        body="Tell us your volumes, channels, and languages. A human comes back with a staffing plan and a go-live date — usually within two business days."
+        label="Book a call"
+        href="#proposal"
+      />
+    </div>
+  </section>
+
+  <!-- BOOKING / LEAD -->
+  {CALENDLY_URL ? (
+    <section class="contact" id="proposal">
+      <div class="wrap">
+        <div class="eyebrow" style="color:var(--amber)">Book a call</div>
+        <h2 class="disp" style="color:#fff">Grab a time that works.</h2>
+        <p class="sub" style="color:var(--on-dark-mut);max-width:60ch">Pick a slot and we’ll come prepared with a staffing plan for your {data.cat.toLowerCase()}. Prefer to talk now? Call <a href={PHONE_HREF} style="color:var(--amber);font-weight:600">{PHONE}</a>.</p>
+        <div class="calendly-inline-widget" data-url={CALENDLY_URL} style="min-width:320px;height:700px;margin-top:24px"></div>
+      </div>
+      <script is:inline async src="https://assets.calendly.com/assets/external/widget.js"></script>
+    </section>
+  ) : (
+    <ProposalForm heading={data.formHeading} subject={data.subject} idPrefix={svc.slug} />
+  )}
+
 </BaseLayout>
 
 <style>
-  .lp-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0 8px}
-  .lp-benefit{background:var(--paper);border:1px solid var(--line-paper);border-left:3px solid var(--amber);border-radius:0 14px 14px 0;padding:22px 24px}
-  .lp-benefit h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:16.5px;letter-spacing:-0.01em;margin:0 0 8px}
-  .lp-benefit p{font-size:14px;color:var(--on-paper-mut);line-height:1.55;margin:0}
+  /* hero */
+  .lp-hero{position:relative;z-index:2;max-width:1040px;margin:0 auto;padding:0 22px;
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center}
+  .hero .kicker{color:var(--amber)}
+  .hero h1.disp{font-size:clamp(34px,6vw,58px);text-transform:none;line-height:1.03}
+  .lp-chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+  .lp-chips span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;
+    color:var(--on-dark);border:1px solid var(--line-dark);border-radius:999px;padding:7px 14px;background:rgba(236,230,214,0.04)}
+  .lp-photo{border-radius:200px 200px 20px 20px;overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line-dark);
+    box-shadow:0 30px 60px -30px rgba(0,0,0,0.55)}
+  .lp-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;display:block}
+  @media (max-width:820px){.lp-hero{grid-template-columns:1fr;gap:36px}.lp-media{max-width:380px;margin:0 auto;width:100%}}
+
+  /* pains */
+  .lp-pains{list-style:none;margin:26px 0 0;display:grid;gap:12px;max-width:680px}
+  .lp-pains li{position:relative;padding-left:32px;font-size:15.5px;color:var(--on-paper);line-height:1.5}
+  .lp-pains li::before{content:"✕";position:absolute;left:6px;top:0;color:#c0553f;font-weight:700;font-size:14px}
+
+  /* benefits */
+  .lp-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+  .lp-benefit{background:var(--paper);border:1px solid var(--line-paper);border-left:3px solid var(--amber);border-radius:0 14px 14px 0;padding:24px 26px}
+  .lp-benefit h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:17px;letter-spacing:-0.01em;margin:0 0 9px}
+  .lp-benefit p{font-size:14px;color:var(--on-paper-mut);line-height:1.6;margin:0}
   @media (max-width:760px){.lp-benefits{grid-template-columns:1fr}}
+
+  /* included + outcomes */
+  .lp-incl{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start}
+  .lp-outcomes{background:var(--ink);color:var(--on-dark);border-radius:18px;padding:30px 30px}
+  .lp-outcomes .lo-head{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:18px}
+  .lp-outcomes ul{list-style:none;display:grid;gap:14px}
+  .lp-outcomes li{position:relative;padding-left:30px;font-size:15px;line-height:1.45}
+  .lp-outcomes li::before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--amber);
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/14px no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/14px no-repeat}
+  @media (max-width:760px){.lp-incl{grid-template-columns:1fr;gap:28px}}
+
+  /* comparison */
+  .lp-compare-wrap{margin-top:30px;overflow-x:auto;border:1px solid var(--line-paper);border-radius:16px}
+  .lp-compare{width:100%;border-collapse:collapse;font-size:14.5px;min-width:640px}
+  .lp-compare th,.lp-compare td{text-align:left;padding:15px 18px;border-bottom:1px solid var(--line-paper)}
+  .lp-compare thead th{background:var(--ink);color:var(--on-dark);font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase;font-weight:500}
+  .lp-compare thead th.win{background:var(--sage-deep);color:#fff}
+  .lp-compare tbody td:first-child{font-weight:600;color:var(--on-paper);background:var(--paper-2)}
+  .lp-compare td.win{color:var(--ink);font-weight:600;background:rgba(138,168,155,0.14)}
+  .lp-compare tbody tr:last-child td{border-bottom:none}
+
+  /* why */
+  .lp-why{display:grid;grid-template-columns:1.2fr 0.8fr;gap:48px;align-items:center}
+  .lp-checks{list-style:none;margin:24px 0 0;display:grid;gap:13px}
+  .lp-checks li{position:relative;padding-left:32px;font-size:15px;color:var(--on-paper);line-height:1.45}
+  .lp-checks li::before{content:"";position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;background:var(--sage-deep);
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/14px no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/14px no-repeat}
+  .lp-map{text-align:center}
+  .lp-map img{width:100%;max-width:230px;height:auto}
+  .lp-map-h{font-family:'Archivo',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.02em;color:var(--ink);line-height:1.05;margin-top:6px}
+  @media (max-width:760px){.lp-why{grid-template-columns:1fr;gap:32px}}
+
+  /* faq */
+  .lp-faq{margin-top:26px;display:flex;flex-direction:column;gap:12px;max-width:780px}
+  .lp-q{background:var(--paper);border:1px solid var(--line-paper);border-radius:14px;padding:20px 24px}
+  .lp-q summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:16.5px;letter-spacing:-0.01em}
+  .lp-q summary::-webkit-details-marker{display:none}
+  .lp-q .pl{color:var(--amber);font-size:24px;line-height:1;transition:transform .2s}
+  .lp-q[open] .pl{transform:rotate(45deg)}
+  .lp-q p{font-size:15px;color:var(--on-paper-mut);margin-top:14px;line-height:1.6}
 </style>
