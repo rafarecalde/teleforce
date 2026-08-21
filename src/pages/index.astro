@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Waveform from '../components/Waveform.astro';
 import { SITE, STATS, LOGOS, SERVICES, TESTIMONIALS } from '../consts';
 import BookingSection from '../components/BookingSection.astro';
-import ProposalForm from '../components/ProposalForm.astro';
 
 // Duplicate the logo list so the marquee scrolls seamlessly (-50% loop).
 const marquee = [...LOGOS, ...LOGOS];
@@ -52,8 +51,8 @@ const EA_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stro
           Dedicated English/Spanish agents who work as an extension of your brand, on U.S. time.
           A <b>30-year operator</b> with Fortune 500 experience — so there's no startup ramp to wait through.</p>
         <div class="hero-cta">
-          <a href="#contact" class="btn btn-amber">Request a proposal</a>
-          <a href="#book" class="btn btn-ghost">Book a call</a>
+          <a href="#contact" class="btn btn-amber">Book a call</a>
+          <a href="#services" class="btn btn-ghost">See our services</a>
         </div>
       </div>
       <div class="hero-media">
@@ -222,19 +221,11 @@ const EA_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stro
     </div>
   </section>
 
-  <ProposalForm
-    id="contact"
-    heading="Get a proposal built for your book."
-    sub="Tell us your volumes and what you need. A human comes back with a staffing plan and a go-live date — usually within two business days. Prefer to just grab a time? Book a call below."
-    subject="New Teleforce proposal request"
-    idPrefix="home"
-  />
-
   <BookingSection
-    id="book"
-    heading="Or book a call right now."
+    id="contact"
+    heading="Book a call — let’s scope your team."
     sub="Pick a time that works and we’ll come prepared with a staffing plan and a go-live date."
-    idPrefix="home-book"
+    idPrefix="home"
   />
 
 </BaseLayout>
