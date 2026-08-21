@@ -8,15 +8,18 @@ interface Props {
   subject?: string;
   /** Prefix for input ids so multiple forms never collide. */
   idPrefix?: string;
+  /** Anchor id for the section (default 'proposal'). */
+  id?: string;
 }
 const {
   heading = 'Get a proposal built for your book.',
   sub = "Tell us your volumes and what you need. A human comes back with a staffing plan and a go-live date — usually within two business days.",
   subject = 'New Teleforce proposal request',
   idPrefix = 'p',
+  id = 'proposal',
 } = Astro.props;
 ---
-<section class="contact" id="proposal">
+<section class="contact" id={id}>
   <div class="wrap">
     <div class="grid">
       <div>

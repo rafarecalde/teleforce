@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBox from './CtaBox.astro';
-import ProposalForm from './ProposalForm.astro';
-import { ALL_SERVICES, LOGOS, TESTIMONIALS, PHONE, PHONE_HREF, CALENDLY_URL } from '../consts';
+import BookingSection from './BookingSection.astro';
+import { ALL_SERVICES, LOGOS, TESTIMONIALS } from '../consts';
 import { getCollection } from 'astro:content';
 import type { Landing } from '../lib/landings';
 
@@ -207,29 +207,13 @@ const jsonLd = faqLd ? [serviceLd, faqLd] : serviceLd;
   </section>
 
   <!-- BOOKING / LEAD -->
-  {CALENDLY_URL ? (
-    <section class="contact" id="proposal">
-      <div class="wrap">
-        <div class="eyebrow" style="color:var(--amber)">Book a call</div>
-        <h2 class="disp" style="color:#fff">Grab a time that works.</h2>
-        <p class="sub" style="color:var(--on-dark-mut);max-width:60ch">Pick a slot and we’ll come prepared with a staffing plan for your {data.cat.toLowerCase()}. Prefer to talk now? Call <a href={PHONE_HREF} style="color:var(--amber);font-weight:600">{PHONE}</a>.</p>
-        <div class="calendly-inline-widget" data-url={CALENDLY_URL} style="min-width:320px;height:700px;margin-top:24px"></div>
-      </div>
-      <script is:inline async src="https://assets.calendly.com/assets/external/widget.js"></script>
-      <!-- Fire the Google Ads conversion when a booking completes (no /thanks redirect on Calendly). -->
-      <script is:inline>
-        window.addEventListener('message', function (e) {
-          if (e.origin === 'https://calendly.com' && e.data && e.data.event === 'calendly.event_scheduled') {
-            if (typeof window.gtag === 'function') {
-              window.gtag('event', 'conversion', { send_to: 'AW-18332056932/JvJ9COL479McEOT6s6VE' });
-            }
-          }
-        });
-      </script>
-    </section>
-  ) : (
-    <ProposalForm heading={data.formHeading} subject={data.subject} idPrefix={svc.slug} />
-  )}
+  <BookingSection
+    id="proposal"
+    heading={data.formHeading}
+    sub={`Pick a slot and we’ll come prepared with a staffing plan for your ${data.cat.toLowerCase()}.`}
+    subject={data.subject}
+    idPrefix={svc.slug}
+  />
 
 </BaseLayout>
 

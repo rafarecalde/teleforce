@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { EA, SITE, PHONE, PHONE_HREF, FORM_ACTION } from '../consts';
+import { EA } from '../consts';
+import BookingSection from '../components/BookingSection.astro';
 
 const price = EA.priceMonthly.toLocaleString('en-US');
 
@@ -166,30 +167,13 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="contact" id="match">
-    <div class="wrap reveal">
-      <div class="grid">
-        <div>
-          <div class="eyebrow" style="color:var(--amber)">Get matched</div>
-          <h2 class="disp">Meet your assistant.</h2>
-          <p class="sub">Tell us what you’d hand off first and how you like to work. A human reviews every request and comes back with next steps — usually within two business days.</p>
-          <p class="sub" style="margin-top:18px">Prefer to talk? Call <a href={PHONE_HREF} style="color:var(--amber);font-weight:600">{PHONE}</a>.</p>
-        </div>
-        <form method="POST" action={FORM_ACTION}>
-          <input type="hidden" name="_subject" value="New Teleforce EA match request" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value={`${SITE.url}/thanks`} />
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <div class="field"><label for="ea-name">Name</label><input id="ea-name" name="name" type="text" placeholder="Your name" required /></div>
-          <div class="field"><label for="ea-email">Work email</label><input id="ea-email" name="email" type="email" placeholder="you@company.com" required /></div>
-          <div class="field"><label for="ea-role">Company &amp; role</label><input id="ea-role" name="company" type="text" placeholder="Company · your title" /></div>
-          <div class="field"><label for="ea-need">What would you hand off first?</label><textarea id="ea-need" name="message" rows="3" placeholder="Inbox &amp; calendar, travel, research, personal errands…"></textarea></div>
-          <button class="btn btn-amber" type="submit">Get matched</button>
-        </form>
-      </div>
-    </div>
-  </section>
+  <BookingSection
+    id="match"
+    heading="Meet your assistant."
+    sub="Grab a time and we’ll come prepared to match you with the right EA."
+    subject="New Teleforce EA match request"
+    idPrefix="ea"
+  />
 </BaseLayout>
 
 <style>
