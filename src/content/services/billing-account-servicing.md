@@ -9,7 +9,7 @@ faq:
   - q: "Do I retain full control over payment arrangements and account decisions?"
     a: "Yes. Teleforce agents operate within guardrails you define — approved payment plans, discretionary authority (if any), escalation triggers, and script boundaries. No arrangement is finalized without fitting inside those parameters. Your team retains final authority; we execute at scale."
   - q: "What does pricing look like, and what engagement model fits my situation?"
-    a: "Teleforce offers two models. Under the Recruitment model, we source and vet bilingual agents who join your payroll directly — you hire, you pay, you manage, and we back the placement with a 60–90 day replacement guarantee. Under the Managed BPO model, you purchase fully loaded FTE seats and Teleforce handles hiring, training, supervision, and infrastructure. All pricing is quote-based depending on volume, scope, and model."
+    a: "One managed model: Teleforce recruits, employs, trains, and supervises bilingual agents who work as your team — hiring, training, supervision, and infrastructure all handled by us, in a single fully loaded FTE seat. Pricing is quote-based depending on volume and scope; you pay one monthly rate through us."
 ---
 
 ## Overview

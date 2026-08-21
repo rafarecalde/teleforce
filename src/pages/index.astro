@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Waveform from '../components/Waveform.astro';
-import { SITE, STATS, LOGOS, SERVICES, MODELS, TESTIMONIALS, PHONE, PHONE_HREF, FORM_ACTION } from '../consts';
+import { SITE, STATS, LOGOS, SERVICES, TESTIMONIALS, PHONE, PHONE_HREF, FORM_ACTION } from '../consts';
 
 // Duplicate the logo list so the marquee scrolls seamlessly (-50% loop).
 const marquee = [...LOGOS, ...LOGOS];
@@ -20,6 +20,8 @@ const ICONS: Record<string, string> = {
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>',
   'sales-lead-generation':
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',
+  'sdr-bdr':
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.6"/><circle cx="12" cy="12" r="0.7" fill="currentColor"/></svg>',
 };
 
 // Short supporting line under each proof stat (descriptive, not a new metric).
@@ -41,7 +43,7 @@ const STAT_SUB: Record<string, string> = {
           <span class="l2">In both languages.</span><br />
           <span class="l3">On your clock.</span>
         </h1>
-        <p class="lede">Teleforce is a <b>bilingual LATAM BPO</b> for U.S. companies — customer service, tech support, account servicing, and the back-office work behind them.
+        <p class="lede">Teleforce is a <b>bilingual LATAM BPO</b> for U.S. companies — customer service, data entry, appointment setting, sales lead gen, and dedicated SDR/BDR teams.
           Dedicated English/Spanish agents who work as an extension of your brand, on U.S. time.
           A <b>30-year operator</b> with Fortune 500 experience — so there's no startup ramp to wait through.</p>
         <div class="hero-cta">
@@ -79,7 +81,7 @@ const STAT_SUB: Record<string, string> = {
   <section class="block" id="services">
     <div class="wrap reveal">
       <div class="eyebrow" style="justify-content:center">What we do</div>
-      <h2 class="disp" style="text-align:center">One bilingual team, six ways to deploy it.</h2>
+      <h2 class="disp" style="text-align:center">One bilingual team, five ways to deploy it.</h2>
       <p class="sub" style="text-align:center;margin:0 auto">Customer service is where most clients start — then they add the back-office and revenue functions behind it, from the same trained team, on U.S. hours.</p>
       <div class="svc-cards">
         {SERVICES.map((s) => (
@@ -91,7 +93,7 @@ const STAT_SUB: Record<string, string> = {
           </a>
         ))}
       </div>
-      <p class="pricenote" style="text-align:center;margin-top:24px">Building a SaaS product? See our dedicated <a href="/outsourced-saas-support" style="color:var(--amber)">outsourced SaaS support</a> teams, or <a href="/outsourced-sdr-team" style="color:var(--amber)">build an outsourced SDR team</a>.</p>
+      <p class="pricenote" style="text-align:center;margin-top:24px">Need to delegate your own calendar and inbox instead? Meet our <a href="/ea" style="color:var(--amber)">Executive Assistants →</a></p>
     </div>
   </section>
 
@@ -150,32 +152,6 @@ const STAT_SUB: Record<string, string> = {
     </section>
   </div>
 
-  <section class="block" id="security">
-    <div class="wrap reveal">
-      <div class="eyebrow">Data security</div>
-      <h2 class="disp">Your customers' data, handled to U.S. standards.</h2>
-      <p class="sub">A support vendor is a data-security decision as much as a service one — especially in regulated industries. Teleforce operates under direct U.S. oversight, with controls built for sensitive customer and financial data: secure PII handling, access controls, monitored environments, and audit-ready reporting.</p>
-      <div class="svc-cards sec-cards" style="margin-top:32px">
-        <div class="svc-card static">
-          <div class="ic-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>U.S.-based oversight &amp; governance</h3>
-          <p>Programs run under direct U.S. supervision — not left to an offshore vendor's discretion.</p>
-        </div>
-        <div class="svc-card static">
-          <div class="ic-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-          <h3>Secure PII &amp; financial-data handling</h3>
-          <p>Access controls, monitored environments, and documented data practices.</p>
-        </div>
-        <div class="svc-card static">
-          <div class="ic-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg></div>
-          <h3>Audit-ready QA &amp; call monitoring</h3>
-          <p>Recorded, reviewed, and reportable — so your risk and compliance teams get what they ask for.</p>
-        </div>
-      </div>
-      <p class="pricenote">Any outbound reminder or servicing calls are set up consent-aware as part of program onboarding.</p>
-    </div>
-  </section>
-
   <section class="block">
     <div class="wrap reveal">
       <div class="eyebrow">In their words</div>
@@ -192,26 +168,33 @@ const STAT_SUB: Record<string, string> = {
   </section>
 
   <div class="pricewrap">
-    <section class="block" id="pricing">
+    <section class="block" id="engage">
       <div class="wrap reveal">
-        <div class="eyebrow">How to engage</div>
-        <h2 class="disp">Two ways to work with us.</h2>
-        <p class="sub">Hire the talent and run it yourself, or hand us the whole operation. Either way you get vetted, bilingual LATAM agents on U.S. hours.</p>
-        <div class="tiers" style="grid-template-columns:repeat(2,1fr)">
-          {MODELS.map((m) => (
-            <div class={`tier${m.feature ? ' feature' : ''}`}>
-              <div class="tag">{m.tag}</div>
-              <div class="price" style="font-size:26px">{m.name}</div>
-              <p style="font-size:13.5px;margin:10px 0 14px;opacity:0.9">{m.blurb}</p>
-              <ul class="svc-list" style="grid-template-columns:1fr;gap:7px">
-                {m.includes.map((i) => <li style="font-size:13.5px">{i}</li>)}
-              </ul>
-              <div class="desc">{m.note}</div>
-              {m.feature && <div class="best">★ Most popular</div>}
-            </div>
-          ))}
+        <div class="eyebrow">How we work</div>
+        <h2 class="disp">We're the employer. You get the team.</h2>
+        <p class="sub">No foreign entity to stand up, no local labor law to navigate, no separate payroll to run. Teleforce recruits, employs, and manages dedicated bilingual agents who work as your team — you pay one simple monthly seat through us.</p>
+        <div class="tiers" style="grid-template-columns:1fr 1fr">
+          <div class="tier">
+            <div class="tag">We handle everything behind them</div>
+            <ul class="svc-list" style="grid-template-columns:1fr;gap:9px;margin-top:8px">
+              <li style="font-size:14px">Recruiting, vetting, and replacement</li>
+              <li style="font-size:14px">Salary, payroll, benefits, and HR</li>
+              <li style="font-size:14px">Facilities, equipment, and IT</li>
+              <li style="font-size:14px">QA, reporting, and a named team lead</li>
+            </ul>
+          </div>
+          <div class="tier feature">
+            <div class="tag">You get</div>
+            <ul class="svc-list" style="grid-template-columns:1fr;gap:9px;margin-top:8px">
+              <li style="font-size:14px">Dedicated, named bilingual agents on U.S. hours</li>
+              <li style="font-size:14px">A team trained on your product and your voice</li>
+              <li style="font-size:14px">One simple monthly seat — you pay through us</li>
+              <li style="font-size:14px">Scale up or down as your volume changes</li>
+            </ul>
+            <div class="best">★ One model — simple by design</div>
+          </div>
         </div>
-        <p class="pricenote">Pricing is quote-based and depends on role, skill, and volume — <a href="#contact" style="color:var(--amber)">request a proposal</a>. Billing &amp; account servicing is scoped and priced per program.</p>
+        <p class="pricenote">Pricing is quote-based and depends on role, skill, and volume — <a href="#contact" style="color:var(--amber)">request a proposal</a>.</p>
       </div>
     </section>
   </div>

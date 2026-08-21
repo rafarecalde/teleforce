@@ -4,12 +4,12 @@ faq:
     a: "We use a double-keying QA protocol: a second agent independently re-enters a defined sample of every batch, and results are compared field by field. Error rates and resolution notes feed into weekly reporting. For structured forms we also build template-level validation rules that flag impossible values before records reach your system."
   - q: "Can your agents work directly inside our CRM or ERP?"
     a: "Yes. Agents are trained on your specific platform — Salesforce, HubSpot, NetSuite, SAP, or a proprietary system — during onboarding. We do not require data exports to a third-party tool; work happens inside your environment under your access controls, with credentials issued and revoked by you."
-  - q: "What's the difference between the Recruitment and Managed BPO engagement models for data entry?"
-    a: "Under Recruitment, Teleforce sources and vets bilingual data entry specialists and places them with you on a flat-fee basis — you hire and pay the agents directly and carry the seat on your own payroll, with a 60–90 day replacement guarantee. Under Managed BPO, Teleforce owns the seat end-to-end: payroll, benefits, supervision, QA, and reporting are all included in a single FTE rate. Most clients choose Managed BPO for ongoing, volume-variable workloads."
+  - q: "How does the data-entry engagement work?"
+    a: "One managed model: Teleforce sources, employs, and supervises bilingual data-entry specialists who work as your team. Payroll, benefits, QA, double-key verification, and reporting are all included in a single FTE seat, priced by volume — you pay one monthly rate through us, with the flexibility to scale up for peaks and down for lulls."
   - q: "How long does it take to get a data entry team up and running?"
     a: "Typical time-to-production is two to three weeks. The first week covers scoping, SOP review, and system-access setup. Week two is supervised training on your forms, fields, and edge-case rules. By week three, agents are working live batches under QA monitoring. Larger or more complex setups may run an extra week."
   - q: "How do you handle spikes in volume — end-of-quarter surges, seasonal peaks, or one-time migrations?"
-    a: "Managed BPO clients can request surge capacity with as little as five business days' notice. We maintain a trained bench across our LATAM delivery centers specifically for flex coverage. You pay only for confirmed hours worked during the surge period — there is no penalty for returning to baseline."
+    a: "Clients can request surge capacity with as little as five business days' notice. We maintain a trained bench across our LATAM delivery centers specifically for flex coverage. You pay only for confirmed hours worked during the surge period — there is no penalty for returning to baseline."
 ---
 
 ## Overview

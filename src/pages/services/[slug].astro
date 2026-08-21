@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { SERVICES } from '../../consts';
+import { SERVICES, ALL_SERVICES } from '../../consts';
 import { getPublishedPosts } from '../../lib/posts';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const content = await getCollection('services');
-  return SERVICES.map((svc) => ({
+  return ALL_SERVICES.map((svc) => ({
     params: { slug: svc.slug },
     props: { svc, entry: content.find((c) => c.id === `${svc.slug}.md` || c.slug === svc.slug) },
   }));
@@ -18,7 +18,7 @@ const Content = entry ? (await entry.render()).Content : null;
 const faq = entry?.data.faq ?? [];
 
 // Swappable photo slot: image2..image7 by service order (image1 = homepage band).
-const imgIndex = SERVICES.findIndex((s) => s.slug === svc.slug) + 2;
+const imgIndex = ALL_SERVICES.findIndex((s) => s.slug === svc.slug) + 2;
 const featureImg = `/brand/image${imgIndex}.jpg`;
 const posts = await getPublishedPosts();
 const related = posts.filter((p) => p.data.category === svc.category).slice(0, 4);
@@ -90,7 +90,7 @@ const jsonLd = faqLd ? [serviceLd, faqLd] : serviceLd;
     )}
 
     <h2>How to engage</h2>
-    <p>Two ways to work with us: <strong>flat-fee recruitment</strong> — we source and vet the agents, you interview, hire, and manage them (with a 60–90 day replacement guarantee) — or a <strong>managed FTE seat</strong>, where we run the whole operation. Pricing is quote-based and depends on role, skill, and volume. <a href="/#pricing">See how it works →</a> or <a href="/#contact">contact us for a quote →</a></p>
+    <p>One simple model: dedicated bilingual agents who work as your team, <strong>employed and managed by Teleforce</strong>. We recruit, train, run payroll and HR, and handle QA and reporting — you get the people and the output, and pay one monthly seat through us. Pricing is quote-based and depends on role, skill, and volume. <a href="/#engage">See how it works →</a> or <a href="/#contact">contact us for a quote →</a></p>
 
     <CtaBox
       heading={`Let's scope your ${svc.name.toLowerCase()} team`}

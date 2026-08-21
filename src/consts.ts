@@ -7,16 +7,16 @@ export const SITE = {
   url: 'https://tryteleforce.com',
   title: 'Teleforce — Bilingual Customer Support',
   description:
-    'Bilingual LATAM BPO for U.S. companies — customer service, tech support, data entry, appointment setting, account servicing, and lead gen. Native English/Spanish, on U.S. time, from a 30-year Fortune 500 operator.',
-  tagline: 'Bilingual LATAM BPO · English/Spanish · Support, servicing & more',
+    'Bilingual LATAM BPO for U.S. companies — customer service, data entry, appointment setting, sales lead gen, and SDR/BDR teams. Native English/Spanish, on U.S. time, from a 30-year Fortune 500 operator.',
+  tagline: 'Bilingual LATAM BPO · English/Spanish · Dedicated teams on U.S. hours',
   backbone: '30 years of Fortune 500 operating history',
-  // Forms post to FormSubmit.co. Activated; using the FormSubmit alias so the
-  // real inbox (rrlegal82@gmail.com) is never exposed in the page HTML.
-  formAlias: 'e32285ee2449a6d080938e3900354954',
 } as const;
 
-// FormSubmit endpoint for the lead/subscribe forms.
-export const FORM_ACTION = `https://formsubmit.co/${SITE.formAlias}`;
+// Where lead/subscribe forms deliver. FormSubmit.co requires a ONE-TIME activation:
+// the first submission triggers a confirmation email to this address — click the
+// link once and every submission after that is delivered.
+export const FORM_EMAIL = 'sales@tryteleforce.com';
+export const FORM_ACTION = `https://formsubmit.co/${FORM_EMAIL}`;
 
 // Proof stats — exact. Never add an agent headcount. (Hubs intentionally omitted.)
 export const STATS = [
@@ -34,24 +34,21 @@ export const LOGOS = [
 
 export const NAV_LINKS = [
   { href: '/services', label: 'Services' },
-  { href: '/outsourced-saas-support', label: 'SaaS Support' },
-  { href: '/#pricing', label: 'Pricing' },
+  { href: '/ea', label: 'Executive Assistants' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Signal' },
 ] as const;
 
 export const FOOTER_LINKS = [
   { href: '/services', label: 'Services' },
-  { href: '/outsourced-saas-support', label: 'SaaS support' },
-  { href: '/nearshore-customer-service-mexico-colombia', label: 'Nearshore MX & CO' },
-  { href: '/outsourced-sdr-team', label: 'SDR team' },
-  { href: '/#pricing', label: 'Pricing' },
+  { href: '/ea', label: 'Executive Assistants' },
+  { href: '/about', label: 'About' },
   { href: '/blog', label: 'Signal' },
   { href: '/#contact', label: 'Contact' },
 ] as const;
 
-// Blog categories — the six services are the pillars, plus Nearshore as a
-// cross-cutting pillar for delivery-model / hub-comparison posts.
+// Blog categories — kept broad so the full SEO cluster (incl. legacy Tech Support
+// and Account Servicing posts) stays valid even though those aren't featured services.
 export const CATEGORIES = [
   'Customer Service',
   'Tech Support',
@@ -81,6 +78,8 @@ export interface Service {
   ic: string; // mono accent label on the card
 }
 
+// The five featured services. This is the offering shown on the homepage,
+// the services index, and the nav/footer.
 export const SERVICES: Service[] = [
   {
     slug: 'customer-service',
@@ -99,25 +98,6 @@ export const SERVICES: Service[] = [
       'U.S.-hours coverage with same-day feedback loops',
     ],
     category: 'Customer Service',
-    seatPriced: true,
-  },
-  {
-    slug: 'tech-support',
-    name: 'Tech Support',
-    navLabel: 'Tech Support',
-    ic: 'TIER 1 · TIER 2',
-    short: 'Tier 1–2 technical support that resolves, not just deflects.',
-    tagline: 'Technical support that actually resolves — in two languages.',
-    intro:
-      'Bilingual Tier 1 and Tier 2 technical support for software and hardware products — troubleshooting, onboarding, and product help from agents who can resolve the issue, not just route the ticket.',
-    included: [
-      'Tier 1–2 troubleshooting across phone, chat, and email',
-      'Ticketing, triage, and clean escalation paths',
-      'Product onboarding and how-to guidance',
-      'Knowledge-base authoring and upkeep',
-      'Bilingual coverage on U.S. hours',
-    ],
-    category: 'Tech Support',
     seatPriced: true,
   },
   {
@@ -159,6 +139,69 @@ export const SERVICES: Service[] = [
     seatPriced: true,
   },
   {
+    slug: 'sales-lead-generation',
+    name: 'Sales Lead Generation',
+    navLabel: 'Sales & Lead Gen',
+    ic: 'LISTS · LEADS',
+    short: 'A bilingual top-of-funnel engine — lists, outreach, qualified leads.',
+    tagline: 'A bilingual pipeline engine for your sales team.',
+    intro:
+      'Outbound prospecting, list building, and lead qualification that feeds your closers a steady stream of qualified, bilingual-ready leads — including the Hispanic market an English-only team can’t reach.',
+    included: [
+      'Outbound prospecting and cold outreach',
+      'Lead qualification and scoring before handoff',
+      'List building and CRM enrichment',
+      'Warm handoff or appointment booking for your closers',
+      'Bilingual outreach into English- and Spanish-speaking markets',
+    ],
+    category: 'Sales & Lead Gen',
+    seatPriced: true,
+  },
+  {
+    slug: 'sdr-bdr',
+    name: 'SDR / BDR Teams',
+    navLabel: 'SDR / BDR',
+    ic: 'OUTBOUND · MEETINGS',
+    short: 'Dedicated outbound reps who book qualified meetings.',
+    tagline: 'Dedicated SDRs and BDRs who fill your pipeline with qualified meetings.',
+    intro:
+      'Dedicated, bilingual nearshore SDRs and BDRs who own your outbound — prospecting, sequencing, calling, and qualifying — and hand your closers booked, sales-ready meetings. Reps trained on your ICP and your pitch, on U.S. hours, at a fraction of a U.S. in-house rep.',
+    included: [
+      'Dedicated outbound reps, ramped on your ICP and pitch',
+      'Multi-touch sequences across call, email, and LinkedIn',
+      'Lead qualification against your criteria before handoff',
+      'Booked, confirmed meetings on your closers’ calendars',
+      'Bilingual outreach into English- and Spanish-speaking markets',
+      'CRM logging, reporting, and a named team lead',
+    ],
+    category: 'Sales & Lead Gen',
+    seatPriced: true,
+  },
+];
+
+// Legacy services — no longer part of the featured offering, but kept live so the
+// blog's internal links and existing SEO don't 404. Not shown in nav/grids.
+export const SERVICES_LEGACY: Service[] = [
+  {
+    slug: 'tech-support',
+    name: 'Tech Support',
+    navLabel: 'Tech Support',
+    ic: 'TIER 1 · TIER 2',
+    short: 'Tier 1–2 technical support that resolves, not just deflects.',
+    tagline: 'Technical support that actually resolves — in two languages.',
+    intro:
+      'Bilingual Tier 1 and Tier 2 technical support for software and hardware products — troubleshooting, onboarding, and product help from agents who can resolve the issue, not just route the ticket.',
+    included: [
+      'Tier 1–2 troubleshooting across phone, chat, and email',
+      'Ticketing, triage, and clean escalation paths',
+      'Product onboarding and how-to guidance',
+      'Knowledge-base authoring and upkeep',
+      'Bilingual coverage on U.S. hours',
+    ],
+    category: 'Tech Support',
+    seatPriced: true,
+  },
+  {
     slug: 'billing-account-servicing',
     name: 'Billing & Account Servicing',
     navLabel: 'Account Servicing',
@@ -177,66 +220,19 @@ export const SERVICES: Service[] = [
     category: 'Account Servicing',
     seatPriced: false,
   },
-  {
-    slug: 'sales-lead-generation',
-    name: 'Sales Lead Generation',
-    navLabel: 'Sales & Lead Gen',
-    ic: 'OUTBOUND · SDR',
-    short: 'A bilingual pipeline engine for your sales team.',
-    tagline: 'A bilingual pipeline engine for your sales team.',
-    intro:
-      'Outbound prospecting, lead qualification, and SDR support that feeds your closers a steady stream of qualified, bilingual-ready leads — including the Hispanic market an English-only team can’t reach.',
-    included: [
-      'Outbound prospecting and cold outreach',
-      'Lead qualification and scoring before handoff',
-      'List building and CRM enrichment',
-      'Warm handoff or appointment booking for your closers',
-      'Bilingual outreach into English- and Spanish-speaking markets',
-    ],
-    category: 'Sales & Lead Gen',
-    seatPriced: true,
-  },
 ];
 
-// Two engagement models (pricing is quote-based — no public numbers).
-export interface Model {
-  tag: string;
-  name: string;
-  blurb: string;
-  includes: string[];
-  note: string;
-  feature?: boolean;
-}
+// Every service that still has a live /services/<slug> page (featured + legacy).
+export const ALL_SERVICES: Service[] = [...SERVICES, ...SERVICES_LEGACY];
 
-export const MODELS: Model[] = [
-  {
-    tag: 'Recruitment',
-    name: 'Flat-fee placement',
-    blurb:
-      'We source, screen, and interview qualified LATAM agents. You interview, you hire, and you manage and pay them directly.',
-    includes: [
-      'Sourcing, screening, and interviews',
-      'Basic background checks',
-      'A shortlist of qualified candidates',
-      '60–90 day free replacement guarantee',
-    ],
-    note: 'Flat fee per hire, or a low early-stage contingency.',
-  },
-  {
-    tag: 'Managed BPO',
-    name: 'Full-time equivalent (FTE) seat',
-    blurb:
-      'We run the whole operation. Dedicated agents work as your team; we handle everything behind them.',
-    includes: [
-      'Salary, payroll, and HR',
-      'Recruiting and replacement',
-      'Facilities and IT',
-      'QA, reporting, and a named lead',
-    ],
-    note: 'All-inclusive monthly seat, priced by role and skill.',
-    feature: true,
-  },
-];
+// ============================================================
+// Executive Assistant product (/ea) — a dedicated, full-time bilingual EA.
+// Modeled on the premium delegation category; priced simply and flat.
+// ============================================================
+export const EA = {
+  priceMonthly: 2900, // USD / month, all-in for one dedicated full-time EA
+  commitmentDays: 90, // initial commitment, then month-to-month
+} as const;
 
 // Real contact + social proof pulled from the live Teleforce brand page.
 export const PHONE = '1-866-252-3961';

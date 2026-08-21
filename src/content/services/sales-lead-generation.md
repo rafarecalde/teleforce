@@ -8,8 +8,8 @@ faq:
     a: "Yes. Teleforce agents are native bilingual speakers who conduct full discovery calls, follow-up sequences, and appointment confirmations in either English or Spanish without switching agents. This is especially valuable for companies selling into the U.S. Hispanic market, South American enterprise accounts, or any vertical with a bilingual buyer base."
   - q: "Which CRM and sales engagement tools do your teams work in?"
     a: "Agents are trained to work within your existing stack — Salesforce, HubSpot, Zoho, Pipedrive, and most major CRMs, as well as outreach platforms like Outreach, Salesloft, and Apollo. We adapt to your tools, not the other way around; you retain full data ownership throughout."
-  - q: "What's the difference between your Recruitment and Managed BPO models for lead generation?"
-    a: "In the Recruitment model, Teleforce sources, vets, and places dedicated SDR talent — you hire them directly and manage day-to-day, with a 60–90 day replacement guarantee. In the Managed BPO model, you buy an FTE seat that includes recruiting, training, QA, reporting, and ongoing supervision from our team. The right fit depends on how much internal sales management capacity you have."
+  - q: "How does the lead-generation engagement work?"
+    a: "One managed model: Teleforce recruits, employs, trains, and supervises dedicated bilingual SDR talent that works as your team. Recruiting, training, QA, reporting, and ongoing management are included in a single FTE seat, priced by role and volume — you get the qualified conversations and pay one monthly rate through us."
 ---
 
 ## Overview

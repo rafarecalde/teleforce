@@ -8,8 +8,8 @@ faq:
     a: "Both. Outbound agents apply your qualification framework — budget, authority, need, timeline, company size, or whatever criteria your team uses — before booking. Inbound agents do the same on live calls rather than passing everyone straight to calendar. A poorly qualified calendar wastes your closers' time; we treat qualification as part of the scheduling function, not a separate step."
   - q: "Which CRMs and calendar tools do you integrate with?"
     a: "We connect to the platforms your sales team already uses — Salesforce, HubSpot, Zoho, Pipedrive, and others — as well as scheduling tools like Calendly, Google Calendar, and Microsoft Outlook. Agents update records in real time so nothing needs to be re-entered or reconciled after the fact. If you use a proprietary system, we scope the integration before launch."
-  - q: "What is the difference between your Recruitment and Managed BPO models for appointment setting?"
-    a: "Under the Recruitment model, Teleforce sources and vets bilingual appointment-setting agents; you hire and directly employ them, and they work within your existing tools and management structure. Under the Managed BPO model, agents operate as a fully managed team on Teleforce's infrastructure — scheduling, QA, reporting, and supervision are handled for you. The right model depends on how much operational control and internal bandwidth your team has."
+  - q: "How does the appointment-setting engagement work?"
+    a: "One managed model: Teleforce sources, employs, and supervises bilingual appointment-setting agents who operate as a fully managed team on our infrastructure — scheduling, QA, reporting, and supervision handled for you, in a single monthly FTE seat. You get booked, confirmed appointments and pay one rate through us."
 ---
 
 ## Overview

@@ -6,8 +6,8 @@ faq:
     a: "Your team is named and dedicated — the same agents work your queue, learn your edge cases, and build familiarity with your repeat customers. We don't pool agents across unrelated brands. This is core to the brand-extension model: consistency builds the institutional knowledge that drives faster handle times and higher CSAT over time."
   - q: "What channels do you support, and can we start with just one?"
     a: "We support phone, live chat, and email. Most clients start with one channel, validate quality, then expand. Channel add-ons use the same dedicated agents, so there is no re-training cost — the agents already know your product. Multi-channel expansion is typically planned at the scoping stage so staffing levels can absorb the volume."
-  - q: "Which engagement model is right for us — Recruitment or Managed BPO?"
-    a: "Recruitment works well for companies that want to hire agents directly, manage them internally, and keep headcount on their own payroll — Teleforce handles sourcing, vetting, and a 60–90 day replacement guarantee. Managed BPO is the right fit when you want a fully loaded FTE seat: scheduling, QA, reporting, and management are all included. Both models use the same bilingual LATAM talent pool."
+  - q: "How does the engagement work?"
+    a: "One simple model: Teleforce recruits, employs, trains, and manages dedicated bilingual agents who work as your team. Payroll, benefits, scheduling, QA, reporting, and supervision are all included in a single monthly FTE seat — you get the people and the output and pay one rate through us. No separate payroll to run, no local labor law to navigate."
   - q: "How do you handle quality and reporting once we are live?"
     a: "Every engagement includes ongoing call/chat audits against a scorecard built from your brand standards, weekly CSAT and handle-time reporting, and a monthly business review with your account lead. Agents who miss thresholds go through targeted coaching before the next audit cycle. You get visibility into the numbers, not just a summary."
 ---
