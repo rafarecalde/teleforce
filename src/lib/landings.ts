@@ -23,7 +23,7 @@ export const LANDINGS: Landing[] = [
     metaTitle: 'Bilingual Customer Service Outsourcing | Teleforce',
     metaDesc:
       'Bilingual nearshore customer service on U.S. hours — native English/Spanish agents trained on your brand, at less than half the in-house cost. Book a call.',
-    img: '/brand/image8.jpg',
+    img: '/brand/image3.jpg',
     cat: 'Bilingual customer service',
     h1: 'Bilingual customer service that sounds like your brand.',
     sub: 'Native English and Spanish agents on U.S. hours, trained on your product — so every customer gets an in-house-quality answer, in their language, at less than half the loaded cost.',
