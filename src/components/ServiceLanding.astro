@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBox from './CtaBox.astro';
+import ProposalForm from './ProposalForm.astro';
+import { ALL_SERVICES } from '../consts';
+import type { Landing } from '../lib/landings';
+
+interface Props { data: Landing }
+const { data } = Astro.props;
+const svc = ALL_SERVICES.find((s) => s.slug === data.slug)!;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `${svc.name} — Teleforce`,
+  serviceType: data.cat,
+  provider: { '@type': 'Organization', name: 'Teleforce' },
+  areaServed: ['US', 'CA'],
+  description: data.sub,
+};
+---
+<BaseLayout title={data.metaTitle} description={data.metaDesc} jsonLd={jsonLd} bare>
+  <header class="ahead">
+    <div class="wrap">
+      <div class="cat">{data.cat}</div>
+      <h1>{data.h1}</h1>
+      <div class="ameta"><span>Native EN / ES</span><span>LATAM · U.S. hours</span><span>30-year operator</span></div>
+    </div>
+  </header>
+
+  <div class="wrap" style="margin-top:24px">
+    <img class="feature-img" src={data.img} alt={`Teleforce ${data.cat}`} loading="lazy" />
+  </div>
+
+  <article class="post">
+    <p class="lead">{data.sub}</p>
+
+    <div class="lp-benefits">
+      {data.bullets.map((b) => (
+        <div class="lp-benefit">
+          <h3>{b.h}</h3>
+          <p>{b.p}</p>
+        </div>
+      ))}
+    </div>
+
+    <h2>What you get</h2>
+    <ul class="svc-list">
+      {svc.included.map((item) => <li>{item}</li>)}
+    </ul>
+
+    <CtaBox
+      heading={`Scope your ${svc.name.toLowerCase()} team`}
+      body="Tell us your volumes, channels, and languages. A human comes back with a staffing plan and a go-live date — usually within two business days."
+      label="Request a proposal"
+      href="#proposal"
+    />
+
+    <p>Want the full breakdown, pricing model, and FAQ? Read more on <a href={`/services/${svc.slug}`}>{svc.name}</a>.</p>
+  </article>
+
+  <ProposalForm heading={data.formHeading} subject={data.subject} idPrefix={svc.slug} />
+</BaseLayout>
+
+<style>
+  .lp-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0 8px}
+  .lp-benefit{background:var(--paper);border:1px solid var(--line-paper);border-left:3px solid var(--amber);border-radius:0 14px 14px 0;padding:22px 24px}
+  .lp-benefit h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:16.5px;letter-spacing:-0.01em;margin:0 0 8px}
+  .lp-benefit p{font-size:14px;color:var(--on-paper-mut);line-height:1.55;margin:0}
+  @media (max-width:760px){.lp-benefits{grid-template-columns:1fr}}
+</style>

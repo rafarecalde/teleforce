@@ -1,0 +1,6 @@
+---
+import ServiceLanding from '../components/ServiceLanding.astro';
+import { LANDINGS } from '../lib/landings';
+const data = LANDINGS.find((l) => l.slug === 'sdr-bdr')!;
+---
+<ServiceLanding data={data} />
