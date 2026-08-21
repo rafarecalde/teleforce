@@ -216,6 +216,16 @@ const jsonLd = faqLd ? [serviceLd, faqLd] : serviceLd;
         <div class="calendly-inline-widget" data-url={CALENDLY_URL} style="min-width:320px;height:700px;margin-top:24px"></div>
       </div>
       <script is:inline async src="https://assets.calendly.com/assets/external/widget.js"></script>
+      <!-- Fire the Google Ads conversion when a booking completes (no /thanks redirect on Calendly). -->
+      <script is:inline>
+        window.addEventListener('message', function (e) {
+          if (e.origin === 'https://calendly.com' && e.data && e.data.event === 'calendly.event_scheduled') {
+            if (typeof window.gtag === 'function') {
+              window.gtag('event', 'conversion', { send_to: 'AW-18332056932/JvJ9COL479McEOT6s6VE' });
+            }
+          }
+        });
+      </script>
     </section>
   ) : (
     <ProposalForm heading={data.formHeading} subject={data.subject} idPrefix={svc.slug} />

@@ -21,7 +21,7 @@ export const FORM_ACTION = `https://formsubmit.co/${FORM_EMAIL}`;
 // Calendly scheduling URL. When set (e.g. 'https://calendly.com/teleforce/intro'),
 // landing pages embed the booking widget and "Book a call" CTAs open it. Empty =
 // fall back to the on-page proposal form.
-export const CALENDLY_URL = '';
+export const CALENDLY_URL = 'https://calendly.com/tryteleforce-sales';
 
 // Proof stats — exact. Never add an agent headcount. (Hubs intentionally omitted.)
 export const STATS = [
