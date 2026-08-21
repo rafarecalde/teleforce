@@ -235,7 +235,7 @@ export const ALL_SERVICES: Service[] = [...SERVICES, ...SERVICES_LEGACY];
 // Modeled on the premium delegation category; priced simply and flat.
 // ============================================================
 export const EA = {
-  priceMonthly: 2900, // USD / month, all-in for one dedicated full-time EA
+  priceMonthly: 3600, // USD / month, all-in for one dedicated full-time EA
   commitmentDays: 90, // initial commitment, then month-to-month
 } as const;
 
