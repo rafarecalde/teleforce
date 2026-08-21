@@ -15,8 +15,11 @@ export const SITE = {
 // Where lead/subscribe forms deliver. FormSubmit.co requires a ONE-TIME activation:
 // the first submission triggers a confirmation email to this address — click the
 // link once and every submission after that is delivered.
+// FormSubmit alias for sales@tryteleforce.com — keeps the raw email out of the
+// page HTML. Requires the one-time "Activate Form" click from FormSubmit's email.
 export const FORM_EMAIL = 'sales@tryteleforce.com';
-export const FORM_ACTION = `https://formsubmit.co/${FORM_EMAIL}`;
+export const FORM_ALIAS = 'b51bbe084a1d3308de0df272e7e8dd49';
+export const FORM_ACTION = `https://formsubmit.co/${FORM_ALIAS}`;
 
 // Calendly scheduling URL. When set (e.g. 'https://calendly.com/teleforce/intro'),
 // landing pages embed the booking widget and "Book a call" CTAs open it. Empty =
