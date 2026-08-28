@@ -31,6 +31,7 @@ const steps = [
 ];
 
 const faq = [
+  { q: 'How good is the talent, really?', a: 'Every Teleforce EA is a career professional who cleared a multi-stage screen — interviews, skills assessments, and background checks — that most applicants never pass. These are experienced executive assistants and operators, not gig-economy task-doers, and they’re coached on an ongoing basis. You’re getting someone you can hand real responsibility from week one.' },
   { q: 'Where are the assistants based?', a: 'Across Latin America — which means native English and Spanish, cultural alignment with U.S. work, and full overlap with your business hours. You get real-time delegation, not an overnight queue.' },
   { q: 'Is the assistant full-time and dedicated to me?', a: 'Yes. Each engagement is one dedicated, full-time executive assistant working with you — not a shared pool or a ticket queue. They learn your preferences and get better at anticipating your needs over time.' },
   { q: 'What can I actually delegate?', a: 'Both business and personal work: inbox and calendar, travel, research, CRM and data, vendor sourcing, hiring support, reporting, plus reservations, appointments, events, and errands. If it can be done from a laptop, it can likely be handed off.' },
@@ -43,10 +44,10 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Teleforce Executive Assistants',
-    serviceType: 'Dedicated bilingual executive assistant (delegation service)',
+    serviceType: 'Dedicated bilingual executive assistant',
     provider: { '@type': 'Organization', name: 'Teleforce' },
     areaServed: ['US', 'CA'],
-    description: 'A dedicated, full-time bilingual executive assistant — vetted, trained, and employed by Teleforce — working in your U.S. time zone.',
+    description: 'A dedicated, full-time executive assistant from the top tier of bilingual talent — rigorously vetted, trained, and employed by Teleforce, working in your U.S. time zone.',
     offers: { '@type': 'Offer', price: EA.priceMonthly, priceCurrency: 'USD', description: 'Per dedicated full-time assistant, per month' },
   },
   {
@@ -57,28 +58,28 @@ const jsonLd = [
 ];
 ---
 <BaseLayout
-  title="Executive Assistants | Delegate Your Day | Teleforce"
-  description={`A dedicated, full-time bilingual executive assistant — vetted, trained, and employed by Teleforce, working in your time zone. From $${price}/mo. Get matched.`}
+  title="Executive Assistants | Elite Dedicated Talent | Teleforce"
+  description={`Hire a dedicated, full-time executive assistant from the top tier of bilingual talent — rigorously vetted, career professionals, in your time zone. From $${price}/mo.`}
   jsonLd={jsonLd}
 >
   <header class="hero" id="top">
     <div class="ea-hero">
       <div class="ea-copy">
-        <div class="kicker">Teleforce EA · Delegation, done right</div>
-        <h1 class="disp">Delegate your day.<br /><span class="l2">Get your time back.</span></h1>
-        <p class="lede">A dedicated, full-time <b>bilingual executive assistant</b> — vetted, trained, and employed by Teleforce — working in <b>your time zone</b>. The relief is immediate; the hours come back to you.</p>
+        <div class="kicker">Teleforce EA · Top-tier executive talent</div>
+        <h1 class="disp">Elite executive assistants.<br /><span class="l2">Dedicated to you.</span></h1>
+        <p class="lede">A dedicated, full-time <b>executive assistant</b> from the <b>top tier of bilingual talent</b> — rigorously vetted, career professionals, not gig-economy help. In your time zone, and genuinely capable of owning what you hand them.</p>
         <div class="hero-cta">
           <a href="#match" class="btn btn-amber">Get matched</a>
           <a href="#pricing" class="btn btn-ghost">See pricing</a>
         </div>
         <div class="ea-chips">
+          <span class="chip">Top-tier, vetted talent</span>
           <span class="chip">Native EN / ES</span>
           <span class="chip">Your U.S. hours</span>
-          <span class="chip">One dedicated assistant</span>
         </div>
       </div>
       <div class="ea-media">
-        <div class="ea-photo"><img src="/brand/image8.jpg" alt="A Teleforce executive assistant at work" fetchpriority="high" /></div>
+        <div class="ea-photo"><img src="/brand/image4.jpg" alt="A Teleforce executive assistant at work" fetchpriority="high" /></div>
       </div>
     </div>
   </header>
@@ -87,7 +88,7 @@ const jsonLd = [
     <div class="wrap reveal">
       <div class="eyebrow" style="justify-content:center">What your assistant handles</div>
       <h2 class="disp" style="text-align:center">Hand off the work that isn’t yours to do.</h2>
-      <p class="sub" style="text-align:center;margin:0 auto">One assistant, across your whole life — the business admin and the personal admin, so your attention goes back to the work only you can do.</p>
+      <p class="sub" style="text-align:center;margin:0 auto">One genuinely capable professional, across your whole life — the business admin and the personal admin — so your attention goes back to the work only you can do.</p>
       <div class="ea-cards">
         {tasks.map((t) => (
           <div class="ea-card">
@@ -116,13 +117,16 @@ const jsonLd = [
 
   <section class="block" id="why">
     <div class="wrap reveal">
-      <div class="eyebrow">Why a Teleforce EA</div>
-      <h2 class="disp">Top-tier talent, in your time zone.</h2>
+      <div class="eyebrow">The talent</div>
+      <h2 class="disp">Talent that clears a very high bar.</h2>
+      <p class="sub" style="max-width:64ch">This is the difference between an assistant you have to manage and one you can hand real responsibility. Every Teleforce EA is a career professional who made it through a multi-stage screen most applicants never pass — then trained and equipped before they ever reach you.</p>
       <ul class="ea-checks">
-        <li>Rigorously vetted assistants — screened, background-checked, and trained before they ever reach you</li>
-        <li>Native English and Spanish from one assistant</li>
-        <li>Same U.S. time zone — real-time delegation, not an overnight lag</li>
-        <li>Employed, equipped, and managed by Teleforce — you just delegate</li>
+        <li>The top few percent of applicants — a multi-stage screen most never clear</li>
+        <li>Career executive assistants and operators, not gig-economy help</li>
+        <li>Background-checked, and fluent in both English and Spanish</li>
+        <li>Trained and equipped before day one — no ramp on your dime</li>
+        <li>Ongoing coaching and a performance lead — talent that keeps sharpening</li>
+        <li>Employed and managed by Teleforce, in your time zone — you just delegate</li>
       </ul>
     </div>
   </section>
@@ -132,15 +136,15 @@ const jsonLd = [
       <div class="wrap reveal">
         <div class="eyebrow" style="justify-content:center">Pricing</div>
         <h2 class="disp" style="text-align:center">Simple, predictable pricing.</h2>
-        <p class="sub" style="text-align:center;margin:0 auto">One flat monthly rate for a dedicated, full-time assistant. No hourly tracking, no surprises.</p>
+        <p class="sub" style="text-align:center;margin:0 auto">One flat monthly rate for a dedicated, full-time professional. Premium talent — no hourly games, no surprises.</p>
         <div class="ea-price">
           <div class="ea-price-head">
             <div class="ea-amount"><span class="cur">$</span>{price}<span class="per">/ month</span></div>
             <div class="ea-sub">per dedicated, full-time assistant</div>
           </div>
           <ul class="svc-list ea-plan" style="grid-template-columns:1fr;gap:11px">
-            <li>One dedicated, full-time executive assistant</li>
-            <li>Vetted, trained, and equipped by Teleforce</li>
+            <li>One dedicated, full-time executive assistant — top-tier talent</li>
+            <li>Rigorously vetted, trained, and equipped by Teleforce</li>
             <li>Tailored matching and structured onboarding</li>
             <li>A success lead managing performance</li>
             <li>Rematch if the fit isn’t right</li>
@@ -189,7 +193,7 @@ const jsonLd = [
   .ea-media{position:relative}
   .ea-photo{border-radius:220px 220px 22px 22px;overflow:hidden;aspect-ratio:4/5;
     border:1px solid var(--line-dark);box-shadow:0 30px 60px -30px rgba(0,0,0,0.55)}
-  .ea-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block}
+  .ea-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
   @media (max-width:820px){.ea-hero{grid-template-columns:1fr;gap:40px}.ea-media{max-width:400px;margin:0 auto;width:100%}}
 
   /* ---- task cards ---- */

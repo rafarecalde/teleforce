@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="You're booked — thank you | Teleforce"
+  description="Your call with the Teleforce team is booked. We'll come prepared with a staffing plan and a go-live date."
+>
+  <!-- Google Ads conversion — fires on this page load. Set Calendly to redirect
+       here after a booking, so a completed booking is measured as a conversion. -->
+  <script slot="head" is:inline>
+    gtag('event', 'conversion', {'send_to': 'AW-18332056932/JvJ9COL479McEOT6s6VE'});
+  </script>
+  <header class="ahead">
+    <div class="wrap">
+      <div class="cat">You're booked</div>
+      <h1>Thank you — your call is set.</h1>
+      <div class="ameta"><span>Check your email for the calendar invite</span></div>
+    </div>
+  </header>
+
+  <article class="post">
+    <p class="lead">Your call with the Teleforce team is booked. You'll get a calendar invite by email with the details — and we'll come prepared with a staffing plan and a rough go-live date.</p>
+    <p>While you wait, you can keep reading on <a href="/blog">Signal</a>, our journal on bilingual and nearshore support, or head back to the <a href="/">home page</a>.</p>
+
+    <div class="cta-box">
+      <h4>Want to make the call faster?</h4>
+      <p>Have your current channels (voice, chat, email), the languages you serve, and your rough monthly volume or seat count handy — that's all we need to scope a plan on the call.</p>
+      <a href="/" class="btn btn-amber">Back to home</a>
+    </div>
+  </article>
+</BaseLayout>
