@@ -7,18 +7,18 @@ const price = EA.priceMonthly.toLocaleString('en-US');
 
 const tasks = [
   {
-    label: 'Day-to-day',
-    body: 'Inbox and calendar, travel and expenses, scheduling, reminders, notes and follow-ups — the admin that quietly eats your morning.',
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+    label: 'Organized & on top',
+    body: 'Inbox triage, calendar and priorities, prep and briefings, reminders and follow-ups — so nothing slips and you always know what matters most today.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>',
   },
   {
-    label: 'Business',
-    body: 'Research, CRM and data, vendor and tool sourcing, hiring support, reporting, and keeping projects moving between the people who owe you things.',
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M9 7V5h6v2"/></svg>',
+    label: 'Projects & your team',
+    body: 'Task and project management, coordinating your team, chasing down deliverables and the people who owe you things, and reporting back — you lead, they keep it moving.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h5m0-10V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v16m0-10h5a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-5"/></svg>',
   },
   {
-    label: 'Personal',
-    body: 'Appointments, reservations, events, gifts and online errands — the life-admin you never quite get to, handled quietly in the background.',
+    label: 'Off your plate',
+    body: 'Research, travel and expenses, vendor and tool sourcing, hiring support — plus the personal admin — handled quietly in the background so it stops interrupting you.',
     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>',
   },
 ];
@@ -86,9 +86,9 @@ const jsonLd = [
 
   <section class="block" id="what">
     <div class="wrap reveal">
-      <div class="eyebrow" style="justify-content:center">What your assistant handles</div>
-      <h2 class="disp" style="text-align:center">Hand off the work that isn’t yours to do.</h2>
-      <p class="sub" style="text-align:center;margin:0 auto">One genuinely capable professional, across your whole life — the business admin and the personal admin — so your attention goes back to the work only you can do.</p>
+      <div class="eyebrow" style="justify-content:center">How they support you</div>
+      <h2 class="disp" style="text-align:center">True executive support — not just task-doing.</h2>
+      <p class="sub" style="text-align:center;margin:0 auto">A great EA keeps you organized, protects your priorities, moves projects and your team forward, and takes the rest off your plate — so you lead instead of chasing details.</p>
       <div class="ea-cards">
         {tasks.map((t) => (
           <div class="ea-card">
