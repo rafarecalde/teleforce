@@ -51,8 +51,8 @@ const EA_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stro
           From front-line support to <b>true executive support</b> — organization, priorities, task and project management, and team coordination — handled by dedicated English/Spanish talent on U.S. time.
           A <b>30-year operator</b> with Fortune 500 experience — so there's no startup ramp to wait through.</p>
         <div class="hero-cta">
-          <a href="#contact" class="btn btn-amber">Book a call</a>
-          <a href="#services" class="btn btn-ghost">See our services</a>
+          <a href="/ea" class="btn btn-amber">Meet your EA</a>
+          <a href="#contact" class="btn btn-ghost">Book a call</a>
         </div>
       </div>
       <div class="hero-media">
@@ -82,11 +82,36 @@ const EA_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stro
     </div>
   </div>
 
+  <!-- EA FLAGSHIP SPOTLIGHT -->
+  <section class="ea-spot">
+    <div class="wrap">
+      <div class="ea-spot-grid reveal">
+        <div class="ea-spot-copy">
+          <div class="eyebrow" style="color:var(--amber)">Flagship · Executive Assistants</div>
+          <h2 class="disp" style="color:#fff">Delegate to an elite executive assistant.</h2>
+          <p class="sub" style="color:var(--on-dark-mut);max-width:52ch">A dedicated, full-time EA from the <b style="color:#fff">top tier of bilingual talent</b> — rigorously vetted career professionals, not gig help. They run your calendar, inbox, travel, research, and the busywork that eats your day, in your time zone.</p>
+          <ul class="ea-spot-checks">
+            <li>The top few percent of applicants — a screen most never clear</li>
+            <li>One dedicated professional, bilingual, on your hours</li>
+            <li>Business and personal — if it lives on a laptop, hand it off</li>
+          </ul>
+          <div class="hero-cta">
+            <a href="/ea" class="btn btn-amber">Meet your assistant</a>
+            <a href="/ea#pricing" class="btn btn-ghost">See EA pricing</a>
+          </div>
+        </div>
+        <div class="ea-spot-media">
+          <img src="/brand/image4.jpg" alt="An elite Teleforce executive assistant at work" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="block" id="services">
     <div class="wrap reveal">
-      <div class="eyebrow" style="justify-content:center">What we do</div>
-      <h2 class="disp" style="text-align:center">One bilingual team, five ways to deploy it.</h2>
-      <p class="sub" style="text-align:center;margin:0 auto">Customer service is where most clients start — then they add the back-office and revenue functions behind it, from the same trained team, on U.S. hours.</p>
+      <div class="eyebrow" style="justify-content:center">The rest of the bench</div>
+      <h2 class="disp" style="text-align:center">Full bilingual teams, too.</h2>
+      <p class="sub" style="text-align:center;margin:0 auto">Beyond executive support, the same vetted talent staffs your customer service, back-office, and revenue functions — on U.S. hours, at a fraction of in-house cost.</p>
       <div class="svc-cards">
         {SERVICES.map((s) => (
           <a href={`/${s.slug}`} class="svc-card">
@@ -96,12 +121,6 @@ const EA_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stro
             <span class="more">Learn more <span class="ar">→</span></span>
           </a>
         ))}
-        <a href="/ea" class="svc-card ea-home">
-          <div class="ic-circle" set:html={EA_ICON} />
-          <h3>Executive Assistants</h3>
-          <p>A dedicated EA from the top tier of bilingual talent — high-caliber, not gig help.</p>
-          <span class="more">Meet your assistant <span class="ar">→</span></span>
-        </a>
       </div>
     </div>
   </section>
@@ -322,4 +341,15 @@ const EA_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stro
   .cb-text p{font-size:14.5px;color:var(--on-dark-mut);max-width:60ch}
   .ctabanner .btn-amber{flex-shrink:0}
   @media (max-width:680px){.ctabanner{flex-direction:column;align-items:flex-start;gap:18px;padding:28px 26px}}
+
+  /* ---------- EA flagship spotlight ---------- */
+  .ea-spot{background:var(--ink);padding:60px 0;border-top:1px solid var(--line-dark)}
+  .ea-spot-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;align-items:center}
+  .ea-spot-media img{width:100%;height:clamp(260px,32vw,360px);object-fit:cover;border-radius:18px;border:1px solid var(--line-dark)}
+  .ea-spot-checks{list-style:none;margin:22px 0 28px;display:grid;gap:12px}
+  .ea-spot-checks li{position:relative;padding-left:30px;font-size:15px;color:var(--on-dark);line-height:1.45}
+  .ea-spot-checks li::before{content:"";position:absolute;left:0;top:2px;width:19px;height:19px;border-radius:50%;background:var(--amber);
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/13px no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/13px no-repeat}
+  @media (max-width:820px){.ea-spot-grid{grid-template-columns:1fr;gap:30px}.ea-spot-media{order:-1}}
 </style>
