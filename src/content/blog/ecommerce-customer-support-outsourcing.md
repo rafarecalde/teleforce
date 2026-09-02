@@ -80,7 +80,7 @@ The cases where nearshore consistently wins: DTC ecommerce with live chat, bilin
 
 One factor worth understanding when evaluating ecommerce customer support outsourcing is what's behind the provider you're hiring.
 
-Teleforce delivers across Latin America — a deliberate choice for accent-neutral Spanish, full U.S. time-zone alignment, and higher agent retention rates compared to offshore alternatives. A common concern about nearshore LatAm markets is whether the enterprise infrastructure is there. The answer here is unambiguous: Teleforce is a 30-year operator, with systems and QA practices built and refined across 20+ industries for Fortune 500 clients. Clients get LATAM's talent, accent profile, and time-zone advantages with 30 years of Fortune 500 operating history behind the program — not a startup BPO figuring it out alongside them.
+Teleforce delivers across Latin America — a deliberate choice for accent-neutral Spanish, full U.S. time-zone alignment, and higher agent retention rates compared to offshore alternatives. A common concern about nearshore LatAm markets is whether the enterprise infrastructure is there. The answer here is unambiguous: Teleforce is a 30-year operator, with systems and QA practices built and refined across 20+ industries for Fortune 500 clients. Clients get LATAM's talent, accent profile, and time-zone advantages with 30 years of Fortune 500 operating history behind the program — an operation refined across decades of enterprise accounts.
 
 That combination is meaningfully different from both offshore providers and bare-bones nearshore shops staffing up on the fly.
 

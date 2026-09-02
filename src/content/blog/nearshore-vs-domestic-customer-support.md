@@ -89,7 +89,7 @@ If you're comparing providers in the region, the [nearshore vs. offshore breakdo
 
 Teleforce operates as a nearshore support partner built for U.S. companies, delivering bilingual English/Spanish agents across Latin America — markets that sit in U.S. Eastern and Central time zones year-round, where agents carry accent-neutral Spanish alongside strong English, and where agent retention rates are consistently higher than in larger, more saturated offshore hubs.
 
-The infrastructure question answers itself: Teleforce is a 30-year operator, with 30 years of Fortune 500 operating history running programs across 20+ industries. Clients get LATAM talent, accent quality, and time-zone alignment with enterprise-grade QA, workforce management, and compliance frameworks layered on top. You're not betting on a startup's processes.
+The infrastructure question answers itself: Teleforce is a 30-year operator, with 30 years of Fortune 500 operating history running programs across 20+ industries. Clients get LATAM talent, accent quality, and time-zone alignment with enterprise-grade QA, workforce management, and compliance frameworks layered on top. These are processes proven across decades of enterprise accounts.
 
 Pricing is quote-based — contact us for a quote tailored to your volume and coverage needs.
 
