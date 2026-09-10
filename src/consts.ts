@@ -21,10 +21,11 @@ export const FORM_EMAIL = 'sales@tryteleforce.com';
 export const FORM_ALIAS = 'b51bbe084a1d3308de0df272e7e8dd49';
 export const FORM_ACTION = `https://formsubmit.co/${FORM_ALIAS}`;
 
-// Calendly scheduling URL. When set (e.g. 'https://calendly.com/teleforce/intro'),
-// landing pages embed the booking widget and "Book a call" CTAs open it. Empty =
-// fall back to the on-page proposal form.
-export const CALENDLY_URL = 'https://calendly.com/tryteleforce-sales';
+// Google Calendar appointment scheduling — inline booking widget (?gv=true embed).
+// Booking happens on Google (name/email/phone collected there), so there is no
+// completed-booking event; BookingSection counts the "Book a call" click as the
+// Google Ads conversion signal.
+export const GOOGLE_EMBED_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2fo1Aew3luWIG34QpfXxW8rUjtxlSX88hS5s6oTdnGK7q5pBt2eVDW45meyPzZq-hbfkLFqfc6?gv=true';
 
 // Proof stats — exact. Never add an agent headcount. (Hubs intentionally omitted.)
 export const STATS = [
