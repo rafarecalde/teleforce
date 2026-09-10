@@ -241,8 +241,8 @@ export const ALL_SERVICES: Service[] = [...SERVICES, ...SERVICES_LEGACY];
 // One dedicated full-time EA, two commitments. Switch from 3-month to 12-month
 // anytime; the $500/mo premium already paid is credited toward the final month.
 export const EA = {
-  price12mo: 3000, // USD/mo on a 12-month commitment
-  price3mo: 3500, // USD/mo on a 3-month commitment
+  price12mo: 2700, // USD/mo on a 12-month commitment
+  price3mo: 3000, // USD/mo on a 3-month commitment
 } as const;
 
 // Real contact + social proof pulled from the live Teleforce brand page.
