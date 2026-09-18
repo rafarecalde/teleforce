@@ -13,6 +13,15 @@ interface Props {
   ogType?: string;
   /** Bare mode for PPC landing pages: minimal header/footer, no competing nav. */
   bare?: boolean;
+  /** Paid-only LPs: keep this URL out of the organic index. */
+  noindex?: boolean;
+  /** CTA in the bare nav. Defaults preserve existing service LPs. */
+  bareCtaHref?: string;
+  bareCtaLabel?: string;
+  /** When bare, show the phone number in the nav. Default true. */
+  barePhone?: boolean;
+  /** Logo href in bare nav. Default `/`. */
+  bareLogoHref?: string;
 }
 
 const {
@@ -21,6 +30,11 @@ const {
   jsonLd,
   ogType = 'website',
   bare = false,
+  noindex = false,
+  bareCtaHref = '#proposal',
+  bareCtaLabel = 'Request a proposal',
+  barePhone = true,
+  bareLogoHref = '/',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, SITE.url).href.replace(/\/$/, '') || SITE.url;
@@ -57,6 +71,7 @@ const ldBlocks = [org, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) 
 
   <title>{title}</title>
   <meta name="description" content={description} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
   <link rel="canonical" href={canonical} />
 
   <!-- Open Graph -->
@@ -91,10 +106,10 @@ const ldBlocks = [org, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) 
   {bare ? (
     <nav>
       <div class="bar">
-        <a href="/" class="logo" aria-label="Teleforce home"><img src="/brand/logo-light.png" alt="Teleforce" width="150" height="26" /></a>
+        <a href={bareLogoHref} class="logo" aria-label="Teleforce"><img src="/brand/logo-light.png" alt="Teleforce" width="150" height="26" /></a>
         <div class="links">
-          <a href={PHONE_HREF} class="nl">{PHONE}</a>
-          <a href="#proposal" class="btn btn-amber">Request a proposal</a>
+          {barePhone && <a href={PHONE_HREF} class="nl">{PHONE}</a>}
+          <a href={bareCtaHref} class="btn btn-amber">{bareCtaLabel}</a>
         </div>
       </div>
     </nav>

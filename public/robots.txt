@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /ea/offer
 
 Sitemap: https://tryteleforce.com/sitemap-index.xml
