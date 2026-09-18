@@ -14,5 +14,10 @@ export default defineConfig({
     '/nearshore-customer-service-mexico-colombia': '/customer-service',
     '/nearshore-bilingual-support-lenders': '/customer-service',
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Paid-only ad LPs stay out of the organic sitemap.
+      filter: (page) => !page.includes('/ea/offer'),
+    }),
+  ],
 });

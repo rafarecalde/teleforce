@@ -1,0 +1,839 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingSection from '../../components/BookingSection.astro';
+import CtaBox from '../../components/CtaBox.astro';
+import { EA, LOGOS, STATS } from '../../consts';
+
+const price12 = EA.price12mo.toLocaleString('en-US');
+const price3 = EA.price3mo.toLocaleString('en-US');
+const marquee = [...LOGOS, ...LOGOS];
+
+const falseSolutions = [
+  {
+    h: 'Upwork roulette',
+    p: 'You become the recruiter, the manager, and the QA. That’s not leverage — that’s a second job with worse hours.',
+  },
+  {
+    h: 'Chatbots dressed as EAs',
+    p: 'AI drafts. A human EA owns the follow-through. You’re not here to babysit bots that can’t hold a calendar or a relationship.',
+  },
+  {
+    h: 'Personal-assistant marketplaces',
+    p: 'Fine for dry cleaning. Wrong product when the job is inbox, follow-ups, and running the business.',
+  },
+  {
+    h: 'U.S.-only retainers',
+    p: 'Real talent, blown budget. You don’t need domestic prestige wages to get someone who will actually own the seat.',
+  },
+];
+
+const included = [
+  'One dedicated, full-time virtual executive assistant — not a shared pool',
+  'Bilingual EN/ES when you need it — vendors, stakeholders, U.S.–LatAm ops',
+  'Business-ops scope: inbox, calendar, follow-ups, coordination, sales support, PM',
+  'Matching, onboarding, coaching, and rematch — all-in',
+  'A success lead, so you’re not running foreign HR',
+  'Employed and managed by Teleforce. One monthly invoice. You delegate.',
+];
+
+const steps = [
+  ['Match', 'We learn your work, your style, and what you want owned — then match you with a virtual EA who cleared the screen.'],
+  ['Onboard', 'A structured handoff of tools, preferences, inbox, and calendar. Productive in days, not months.'],
+  ['Delegate', 'Chat, email, or a quick call. One dedicated person — not a ticket queue, not an overnight lag.'],
+  ['Optimize', 'A success lead manages performance and keeps raising the bar. Wrong fit? We rematch you.'],
+];
+
+const compare = [
+  ['Category', 'Task tickets / hour packs', 'Full-life prestige EA', 'Dedicated virtual executive assistant'],
+  ['Who it’s for', 'Errands and overflow', 'Household + business mixed', 'Founders and operators who will hand over real work'],
+  ['Bilingual EN/ES', 'Hit or miss', 'Not the wedge', 'Native, by design'],
+  ['Dedicated full-time', 'Rare', 'Yes', 'Yes — one named seat'],
+  ['Who employs them', 'You, or nobody', 'The vendor', 'Teleforce. You just delegate.'],
+  ['Rematch', 'Your problem', 'Varies', 'Included'],
+  ['Price shape', 'Hour packs', '~$3k/mo band', `$${price3} / $${price12} all-in`],
+];
+
+const faq = [
+  {
+    q: 'Virtual EA or VA?',
+    a: 'A virtual executive assistant — dedicated ownership of business ops, not task tickets. Inbox, calendar, follow-ups, coordination. Not a gig VA, not a marketplace freelancer, not an hour pack.',
+  },
+  {
+    q: 'Why 99%?',
+    a: 'Every Teleforce EA is a career professional who cleared a multi-stage screen — interviews, skills assessments, and background checks — that most applicants never pass. We run that bar so you don’t have to. We don’t publish applicant-volume theater; the point is the screen, not a leaderboard.',
+  },
+  {
+    q: 'Are they bilingual?',
+    a: 'Yes. Native-level English and Spanish from one seat — vendors, stakeholders, and U.S.–LatAm ops without a language handoff. English has to clear a high bar either way.',
+  },
+  {
+    q: 'What about time zone?',
+    a: 'LatAm nearshore, so overlap with U.S. business hours is available when you need it. That’s a practical advantage, not the reason to buy this seat. The reason is the person who made it through the screen.',
+  },
+  {
+    q: 'What’s included in the monthly rate?',
+    a: `One dedicated full-time virtual EA, matching, onboarding, coaching, a success lead, and rematch if the fit isn’t right. $${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. No foreign entity, no separate payroll, no hour packs.`,
+  },
+  {
+    q: 'How is this different from Athena, Wing, or a cheap VA?',
+    a: 'Athena sells an elite full-life EA in a similar price band. Wing-style managed VAs are a fit for generalist task work. Cheap VAs sell hours. Teleforce sells a dedicated virtual executive assistant: bilingual EN/ES, business-ops first, employed and rematched by us. Same ~$2.7–3k seat energy — different category.',
+  },
+  {
+    q: 'What if the match isn’t right?',
+    a: 'We rematch. A success lead manages the partnership, and you’re not stuck with a bad hire. That’s the risk reversal: the screen is ours, the seat stays yours.',
+  },
+  {
+    q: 'How fast can I start?',
+    a: 'Most clients are matched and onboarded within about two weeks. The recruiting and vetting are already running; your assistant is productive from the start.',
+  },
+  {
+    q: 'Do you do personal / household admin?',
+    a: 'It can sit in the background. It is not the product. This page is for operators who need a virtual EA to own business ops — not a lifestyle concierge as the ad.',
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Teleforce Virtual Executive Assistants',
+    serviceType: 'Dedicated bilingual virtual executive assistant',
+    provider: { '@type': 'Organization', name: 'Teleforce' },
+    areaServed: ['US', 'CA'],
+    description:
+      'A dedicated, full-time virtual executive assistant from the top tier of bilingual talent — multi-stage vetted, employed, and rematched by Teleforce.',
+    offers: {
+      '@type': 'AggregateOffer',
+      lowPrice: EA.price12mo,
+      highPrice: EA.price3mo,
+      priceCurrency: 'USD',
+      offerCount: 2,
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="Virtual Executive Assistants | Apply for a Match | Teleforce"
+  description="Get matched with a dedicated virtual executive assistant — bilingual EN/ES, LatAm nearshore. Top-tier talent. We reject 99% so you don’t have to."
+  jsonLd={jsonLd}
+  bare
+  noindex
+  barePhone={false}
+  bareLogoHref="#top"
+  bareCtaHref="#match"
+  bareCtaLabel="Apply for a match"
+>
+  <header class="hero" id="top">
+    <div class="offer-hero">
+      <div class="offer-copy">
+        <div class="kicker">Virtual executive assistants · Selective match</div>
+        <h1 class="disp">
+          We’re not hiring for you.<br />
+          We’re rejecting <span class="l2">99%</span> of applicants so you don’t have to.
+        </h1>
+        <p class="lede">
+          Get matched with a dedicated, full-time <b>virtual executive assistant</b> — bilingual (EN/ES), LatAm nearshore, career professionals who clear a multi-stage screen most never pass.
+        </p>
+        <p class="lede-not">Not a task VA. Not gig help. Not a marketplace freelancer.</p>
+        <div class="hero-cta">
+          <a href="#match" class="btn btn-amber">Apply for a match</a>
+        </div>
+        <p class="hero-alt">
+          Not sure you’re a fit? <a href="/ea">See the EA offer →</a>
+        </p>
+        <div class="ea-chips">
+          <span class="chip">Top-tier talent only</span>
+          <span class="chip">Multi-stage vetting</span>
+          <span class="chip">Dedicated seat</span>
+          <span class="chip">Limited seats this intake</span>
+        </div>
+      </div>
+      <div class="offer-media">
+        <div class="offer-photo">
+          <img
+            src="/brand/ea-hero.jpg"
+            alt="A dedicated bilingual LatAm virtual executive assistant at a modern office desk"
+            fetchpriority="high"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="signal">
+    <div class="wrap signal-grid">
+      <div>
+        <div class="sig-k">Exclusivity</div>
+        <p>Top-tier talent only. Multi-stage vetting. One dedicated seat — not a pool.</p>
+      </div>
+      <div>
+        <div class="sig-k">Scarcity</div>
+        <p>We match in small cohorts so quality doesn’t slip. Limited seats this intake.</p>
+      </div>
+      <div>
+        <div class="sig-k">Timeliness</div>
+        <p>Next matching window is open. Apply now for the upcoming cohort.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="block" id="fit">
+    <div class="wrap reveal">
+      <div class="eyebrow">Who this is for</div>
+      <h2 class="disp">A dedicated virtual EA — if you’ll actually hand over the work.</h2>
+      <div class="fit-grid">
+        <div class="fit-card yes">
+          <div class="fit-tag">For</div>
+          <h3>Founders, CEOs, revenue leaders, operators.</h3>
+          <p>
+            You want a dedicated virtual executive assistant to own business ops — inbox, calendar, follow-ups, coordination, sales support, project management — and you will hand over real responsibility.
+          </p>
+          <p>You already know a cheap VA isn’t the seat.</p>
+        </div>
+        <div class="fit-card no">
+          <div class="fit-tag">Not for</div>
+          <h3>Hour-pack shoppers. Errand lists. “Just browsing cheap help.”</h3>
+          <p>
+            If you want a tasker, a personal concierge as the product, or the lowest hourly on a marketplace, this isn’t it. We will tell you that on the match call.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="howwrap">
+    <section class="block" id="truth">
+      <div class="wrap reveal">
+        <div class="eyebrow">The uncomfortable truth</div>
+        <h2 class="disp">Most “assistants” online are taskers with a laptop.</h2>
+        <p class="sub" style="max-width:64ch">
+          You don’t need more taskers. You need a <b>virtual executive assistant</b> who can own inbox, calendar, follow-ups, and coordination — someone who made it through a bar most applicants fail.
+        </p>
+        <p class="sub" style="max-width:64ch;margin-top:14px">
+          If you’ve hired “help” before, you already know the pattern: the first month is training, the second is correcting, the third is you doing it yourself again. That isn’t an assistant. That’s a leak.
+        </p>
+        <p class="sub" style="max-width:64ch;margin-top:14px">We run that bar. You get the ones who pass.</p>
+        <ul class="pains">
+          <li>You’re the bottleneck. Inbox, calendar, and follow-ups eat the week.</li>
+          <li>Cheap VAs turn over. You re-explain the same preferences every quarter.</li>
+          <li>Overnight offshore looks cheap until your afternoon becomes their tomorrow.</li>
+          <li>Hour packs never own the outcome — they invoice the attempt.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <section class="block" id="false">
+    <div class="wrap reveal">
+      <div class="eyebrow">False solutions</div>
+      <h2 class="disp">You’ve probably already tried the obvious ones.</h2>
+      <p class="sub" style="max-width:64ch">
+        None of these are stupid. They’re just the wrong product when you need a dedicated virtual EA who will own the seat.
+      </p>
+      <div class="false-grid">
+        {falseSolutions.map((s) => (
+          <div class="false-card">
+            <h3>{s.h}</h3>
+            <p>{s.p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="howwrap">
+    <section class="block" id="how">
+      <div class="wrap reveal">
+        <div class="eyebrow">The mechanism</div>
+        <h2 class="disp">Teleforce Matching — we reject, employ, and rematch.</h2>
+        <p class="sub" style="max-width:64ch">
+          We don’t send you a stack of resumes. Bilingual LatAm career EAs clear a multi-stage screen — interviews, skills, background — that most applicants never pass. Then we employ them, onboard them on your tools, and sit a success lead on the partnership.
+        </p>
+        <p class="sub" style="max-width:64ch;margin-top:14px">
+          You’re not running foreign payroll. You’re not babysitting a bot. You’re delegating to one named person who already made the cut.
+        </p>
+        <div class="steps offer-steps">
+          {steps.map(([t, b], i) => (
+            <div class="step">
+              <div class="num">0{i + 1}</div>
+              <h4>{t}</h4>
+              <p>{b}</p>
+            </div>
+          ))}
+        </div>
+        <div class="hero-cta" style="margin-top:36px">
+          <a href="#match" class="btn btn-amber">Apply for a match</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="block" id="get">
+    <div class="wrap reveal">
+      <div class="get-grid">
+        <div>
+          <div class="eyebrow">What you get</div>
+          <h2 class="disp">One seat. Real ownership. All-in.</h2>
+          <p class="sub">
+            A dedicated virtual executive assistant — bilingual EN/ES, business-ops first. Personal admin can sit in the background. It is not why this page exists.
+          </p>
+          <ul class="checks">
+            {included.map((i) => <li>{i}</li>)}
+          </ul>
+          <p class="sub" style="margin-top:22px">
+            Week one is access and judgment calls, not a scavenger hunt through your Drive. A serious EA should be triaging inbox, protecting the calendar, and chasing the follow-ups you were going to drop — without you writing a novel every morning.
+          </p>
+        </div>
+        <div class="get-aside">
+          <div class="get-k">The product</div>
+          <p class="get-line">Dedicated full-time virtual EA</p>
+          <p class="get-line">Bilingual EN / ES</p>
+          <p class="get-line">LatAm nearshore</p>
+          <p class="get-line">Employed by Teleforce</p>
+          <p class="get-note">U.S. hours overlap is available when you need it — a footnote, not the pitch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="wrap reveal">
+      <CtaBox
+        heading="Apply for this intake."
+        body="Small matching cohorts. Limited seats. If you already know a cheap VA isn’t the seat, grab a time and we’ll run the screen."
+        label="Apply for a match"
+        href="#match"
+      />
+    </div>
+  </div>
+
+  <section class="block" id="proof">
+    <div class="wrap reveal">
+      <div class="eyebrow">Why the bar holds</div>
+      <h2 class="disp">Thirty years of running the operation. Applied to one seat.</h2>
+      <p class="sub" style="max-width:64ch">
+        Teleforce is a bilingual LATAM partner for U.S. companies — a 30-year operator with Fortune 500-grade delivery behind the recruiting, training, and QA. You’re not buying a marketplace profile. You’re plugging into an employer who already runs the screen.
+      </p>
+      <div class="proof-stats">
+        {STATS.map((s) => (
+          <div class="pstat">
+            <span class="n">{s.n}</span>
+            <span class="k">{s.k}</span>
+          </div>
+        ))}
+        <div class="pstat">
+          <span class="n">EN / ES</span>
+          <span class="k">Native bilingual</span>
+        </div>
+      </div>
+      <p class="proof-note">
+        When you’re ready for customer service or SDR seats, it’s the same employer — not a second vendor search. This page is still about one virtual EA.
+      </p>
+    </div>
+  </section>
+
+  <div class="logos">
+    <div class="lab">Trusted by global enterprises for 30+ years</div>
+    <div class="marquee-mask">
+      <div class="marquee">{marquee.map((n) => <span>{n}</span>)}</div>
+    </div>
+  </div>
+
+  <section class="block" id="compare">
+    <div class="wrap reveal">
+      <div class="eyebrow">The category, honestly</div>
+      <h2 class="disp">Not a cheap VA. Not a full-life clone.</h2>
+      <p class="sub" style="max-width:64ch">
+        Same dedicated-seat energy as premium EAs — bilingual, business-first, all-in. Different job than a task VA. Different job than a household concierge.
+      </p>
+      <div class="lp-compare-wrap">
+        <table class="lp-compare">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Cheap VA / marketplace</th>
+              <th>Elite full-life EA</th>
+              <th class="win">Teleforce</th>
+            </tr>
+          </thead>
+          <tbody>
+            {compare.map((row) => (
+              <tr>
+                <td>{row[0]}</td>
+                <td>{row[1]}</td>
+                <td>{row[2]}</td>
+                <td class="win">{row[3]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="pricewrap">
+    <section class="block" id="pricing">
+      <div class="wrap reveal">
+        <div class="eyebrow" style="justify-content:center">The offer</div>
+        <h2 class="disp" style="text-align:center">One flat monthly seat.</h2>
+        <p class="sub" style="text-align:center;margin:0 auto">
+          One dedicated, full-time virtual executive assistant. Premium talent, one rate — pick the commitment that fits.
+        </p>
+        <div class="ea-tiers">
+          <div class="ea-tier">
+            <div class="ea-tier-tag">3-month</div>
+            <div class="ea-amount"><span class="cur">$</span>{price3}<span class="per">/ mo</span></div>
+            <div class="ea-tier-sub">3-month commitment · stay flexible</div>
+            <a href="#match" class="btn btn-amber ea-tier-btn">Apply for a match</a>
+          </div>
+          <div class="ea-tier feature">
+            <div class="ea-best">Best value · save $300/mo</div>
+            <div class="ea-tier-tag">12-month</div>
+            <div class="ea-amount"><span class="cur">$</span>{price12}<span class="per">/ mo</span></div>
+            <div class="ea-tier-sub">12-month commitment</div>
+            <a href="#match" class="btn btn-amber ea-tier-btn">Apply for a match</a>
+          </div>
+        </div>
+        <ul class="svc-list ea-incl" style="grid-template-columns:1fr 1fr;gap:11px 30px">
+          <li>Dedicated full-time virtual executive assistant</li>
+          <li>Multi-stage vetted, trained, employed by Teleforce</li>
+          <li>Matching and structured onboarding</li>
+          <li>Success lead + rematch if the fit isn’t right</li>
+        </ul>
+        <p class="ea-fine">
+          Start on the 3-month plan and switch to 12 whenever you like — the <b style="color:var(--ink)">$300/mo difference</b> converts into a credit on your final month.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <section class="block" id="risk">
+    <div class="wrap reveal risk">
+      <div>
+        <div class="eyebrow">Risk reversal</div>
+        <h2 class="disp">Wrong fit? We rematch. You’re not stuck with a bad hire.</h2>
+        <p class="sub" style="max-width:60ch">
+          The screen is ours. The seat stays yours. A success lead manages the partnership so you’re not running foreign HR — and if the match isn’t working, we put someone else in the chair.
+        </p>
+        <div class="hero-cta">
+          <a href="#match" class="btn btn-amber">Apply for a match</a>
+        </div>
+        <p class="hero-alt dark">
+          Want the longer EA overview first? <a href="/ea">See the EA offer →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <div class="wrap reveal">
+      <div class="eyebrow">Questions</div>
+      <h2 class="disp">Straight answers.</h2>
+      <div class="ea-faq">
+        {faq.map((f) => (
+          <details class="ea-q">
+            <summary>{f.q}<span class="pl">+</span></summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <BookingSection
+    id="match"
+    heading="Apply for a match."
+    sub="Grab a time. We’ll come prepared to see whether a dedicated virtual EA is the seat — and whether this intake has one."
+    subject="New Teleforce EA match request"
+    idPrefix="ea-offer"
+  />
+</BaseLayout>
+
+<style>
+  .offer-hero {
+    position: relative;
+    z-index: 2;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 22px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .hero h1.disp {
+    font-size: clamp(28px, 4.6vw, 46px);
+    text-transform: none;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+  }
+  .hero h1.disp .l2 { color: var(--amber); }
+  .lede-not {
+    margin-top: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--on-dark-mut);
+  }
+  .hero-alt {
+    margin-top: 16px;
+    font-size: 14.5px;
+    color: var(--on-dark-mut);
+  }
+  .hero-alt a {
+    color: var(--amber);
+    font-weight: 600;
+  }
+  .hero-alt.dark { color: var(--on-paper-mut); }
+  .hero-alt.dark a { color: var(--ink); }
+  .ea-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .ea-chips .chip {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--on-dark);
+    border: 1px solid var(--line-dark);
+    border-radius: 999px;
+    padding: 8px 15px;
+    background: rgba(236, 230, 214, 0.04);
+  }
+  .offer-photo {
+    border-radius: 220px 220px 22px 22px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    border: 1px solid var(--line-dark);
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.55);
+  }
+  .offer-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 32%;
+    display: block;
+  }
+  @media (max-width: 820px) {
+    .offer-hero { grid-template-columns: 1fr; gap: 40px; }
+    .offer-media { max-width: 400px; margin: 0 auto; width: 100%; }
+  }
+
+  .signal {
+    background: var(--ink-deep);
+    color: var(--on-dark);
+    padding: 28px 0;
+    border-top: 1px solid var(--line-dark);
+  }
+  .signal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px 32px;
+  }
+  .sig-k {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+  .signal p { font-size: 14.5px; color: var(--on-dark); line-height: 1.5; }
+  @media (max-width: 700px) { .signal-grid { grid-template-columns: 1fr; gap: 18px; } }
+
+  .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 32px; }
+  .fit-card {
+    background: var(--paper);
+    border: 1px solid var(--line-paper);
+    border-radius: 16px;
+    padding: 28px 26px;
+  }
+  .fit-card.yes { border-left: 3px solid var(--sage-deep); }
+  .fit-card.no { border-left: 3px solid #c0553f; }
+  .fit-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 12px;
+  }
+  .fit-card.no .fit-tag { color: #c0553f; }
+  .fit-card h3 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .fit-card p { font-size: 15px; color: var(--on-paper-mut); line-height: 1.55; }
+  .fit-card p + p { margin-top: 10px; }
+  @media (max-width: 700px) { .fit-grid { grid-template-columns: 1fr; } }
+
+  .pains { list-style: none; margin: 26px 0 0; display: grid; gap: 12px; max-width: 720px; }
+  .pains li {
+    position: relative;
+    padding-left: 32px;
+    font-size: 15.5px;
+    color: var(--on-paper);
+    line-height: 1.5;
+  }
+  .pains li::before {
+    content: "✕";
+    position: absolute;
+    left: 6px;
+    top: 0;
+    color: #c0553f;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .false-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 32px; }
+  .false-card {
+    background: var(--paper);
+    border: 1px solid var(--line-paper);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 14px 14px 0;
+    padding: 24px 26px;
+  }
+  .false-card h3 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+    margin: 0 0 9px;
+  }
+  .false-card p { font-size: 14.5px; color: var(--on-paper-mut); line-height: 1.6; margin: 0; }
+  @media (max-width: 700px) { .false-grid { grid-template-columns: 1fr; } }
+
+  .get-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 40px; align-items: start; }
+  .checks { list-style: none; margin: 24px 0 0; display: grid; gap: 13px; }
+  .checks li {
+    position: relative;
+    padding-left: 32px;
+    font-size: 15px;
+    color: var(--on-paper);
+    line-height: 1.45;
+  }
+  .checks li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: var(--sage-deep);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/14px no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/14px no-repeat;
+  }
+  .get-aside {
+    background: var(--ink);
+    color: var(--on-dark);
+    border-radius: 18px;
+    padding: 30px 28px;
+  }
+  .get-k {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 18px;
+  }
+  .get-line {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .get-line:last-of-type { border-bottom: none; }
+  .get-note {
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--on-dark-mut);
+    line-height: 1.5;
+  }
+  @media (max-width: 760px) { .get-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+  .cta-band { background: var(--paper-2); padding: 8px 0 48px; }
+  .cta-band :global(.cta-box) { margin: 0; }
+
+  .proof-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .pstat {
+    background: var(--paper);
+    border: 1px solid var(--line-paper);
+    border-radius: 14px;
+    padding: 18px 16px;
+  }
+  .pstat .n {
+    display: block;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .pstat .k {
+    display: block;
+    margin-top: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--on-paper-mut);
+  }
+  .proof-note {
+    margin-top: 22px;
+    font-size: 14.5px;
+    color: var(--on-paper-mut);
+    max-width: 64ch;
+    line-height: 1.55;
+  }
+  @media (max-width: 700px) { .proof-stats { grid-template-columns: 1fr 1fr; } }
+
+  .lp-compare-wrap {
+    margin-top: 30px;
+    overflow-x: auto;
+    border: 1px solid var(--line-paper);
+    border-radius: 16px;
+  }
+  .lp-compare { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 640px; }
+  .lp-compare th, .lp-compare td { text-align: left; padding: 15px 18px; border-bottom: 1px solid var(--line-paper); }
+  .lp-compare thead th {
+    background: var(--ink);
+    color: var(--on-dark);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .lp-compare thead th.win { background: var(--sage-deep); color: #fff; }
+  .lp-compare tbody td:first-child { font-weight: 600; color: var(--on-paper); background: var(--paper-2); }
+  .lp-compare td.win { color: var(--ink); font-weight: 600; background: rgba(138, 168, 155, 0.14); }
+  .lp-compare tbody tr:last-child td { border-bottom: none; }
+
+  .ea-tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 640px; margin: 36px auto 0; }
+  .ea-tier {
+    background: var(--paper);
+    border: 1px solid var(--line-paper);
+    border-radius: 18px;
+    padding: 30px 26px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .ea-tier.feature { background: var(--ink); border-color: var(--ink); }
+  .ea-tier-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+  }
+  .ea-tier.feature .ea-tier-tag { color: var(--amber); }
+  .ea-amount {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 44px;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    line-height: 1;
+    margin: 12px 0 4px;
+  }
+  .ea-tier.feature .ea-amount { color: #fff; }
+  .ea-amount .cur { font-size: 24px; vertical-align: super; color: var(--amber); margin-right: 1px; }
+  .ea-amount .per {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--on-paper-mut);
+    margin-left: 6px;
+  }
+  .ea-tier.feature .ea-amount .per { color: var(--on-dark-mut); }
+  .ea-tier-sub { font-size: 13px; color: var(--on-paper-mut); margin-bottom: 20px; }
+  .ea-tier.feature .ea-tier-sub { color: var(--on-dark-mut); }
+  .ea-tier-btn { margin-top: auto; width: 100%; text-align: center; }
+  .ea-best {
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    background: var(--amber);
+    color: var(--ink-deep);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+  }
+  .ea-incl { max-width: 640px; margin: 26px auto 0; }
+  .ea-incl li { font-size: 14px; color: var(--on-paper); }
+  .ea-fine {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--on-paper-mut);
+    text-align: center;
+    max-width: 600px;
+    margin: 22px auto 0;
+    line-height: 1.6;
+  }
+  @media (max-width: 520px) {
+    .ea-tiers { grid-template-columns: 1fr; }
+    .ea-incl[style] { grid-template-columns: 1fr !important; }
+  }
+
+  .offer-steps { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 760px) { .offer-steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .offer-steps { grid-template-columns: 1fr; } }
+
+  .risk .hero-cta { margin-top: 28px; }
+
+  .ea-faq { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+  .ea-q { background: var(--paper); border: 1px solid var(--line-paper); border-radius: 14px; padding: 20px 24px; }
+  .ea-q summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 16.5px;
+    letter-spacing: -0.01em;
+  }
+  .ea-q summary::-webkit-details-marker { display: none; }
+  .ea-q .pl { color: var(--amber); font-size: 24px; line-height: 1; transition: transform .2s; }
+  .ea-q[open] .pl { transform: rotate(45deg); }
+  .ea-q p { font-size: 15px; color: var(--on-paper-mut); margin-top: 14px; line-height: 1.6; }
+
+  @media (max-width: 680px) {
+    .hero { padding: 48px 0 40px; }
+    .hero-cta .btn { width: 100%; text-align: center; }
+    .ea-tier-btn { width: 100%; }
+  }
+</style>
