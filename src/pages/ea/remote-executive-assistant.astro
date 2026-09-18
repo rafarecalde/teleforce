@@ -849,12 +849,12 @@ const jsonLd = [
   .cta-band :global(.cta-box) { margin: 0; }
 
   .role-note {
-    background: var(--ink);
+    background: transparent;
     color: var(--amber);
-    text-align: center;
-    max-width: none;
-    margin: 0;
-    padding: 18px 22px 0;
+    text-align: left;
+    max-width: 60ch;
+    margin: 14px 0 0;
+    padding: 0;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12.5px;
     letter-spacing: 0.04em;
@@ -889,6 +889,13 @@ const jsonLd = [
   ];
 
   const params = new URLSearchParams(window.location.search);
+  const noteEl = document.getElementById('role-note');
+  const matchWrap = document.querySelector('#match .wrap');
+  if (noteEl && matchWrap) {
+    const sub = matchWrap.querySelector('.sub');
+    if (sub) sub.insertAdjacentElement('afterend', noteEl);
+    else matchWrap.appendChild(noteEl);
+  }
 
   const setRole = (id: string) => {
     document.querySelectorAll<HTMLAnchorElement>('[data-role]').forEach((el) => {
