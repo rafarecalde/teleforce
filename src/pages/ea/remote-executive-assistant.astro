@@ -156,41 +156,18 @@ const jsonLd = [
           Reclaim 15+ hours a week with a full-time <span class="l2">remote executive assistant</span>
         </h1>
         <p class="lede">
-          Top-tier bilingual EN/ES. Dedicated to you — not a cheap VA, not a household concierge. All-in
-          <b>${price3}/mo</b> on 3 months or <b>${price12}/mo</b> on 12.
+          Top-tier bilingual EN/ES. Dedicated to you — not a cheap VA, not a household concierge.
         </p>
-
-        <blockquote class="hero-quote">
-          <p>
-            “CEOs spend roughly a quarter of their week on email and other electronic communication.” That’s the work a remote executive assistant is hired to own.
-          </p>
-          <cite>Harvard Business School · How CEOs Spend Their Time (Porter &amp; Nohria)</cite>
-        </blockquote>
-
-        <div class="hero-prices" aria-label="Remote executive assistant pricing">
-          <div class="hp">
-            <span class="hp-amt">${price3}</span>
-            <span class="hp-per">/mo · 3-month</span>
-          </div>
-          <div class="hp feature">
-            <span class="hp-amt">${price12}</span>
-            <span class="hp-per">/mo · 12-month</span>
-          </div>
-        </div>
+        <p class="hero-price">
+          All-in <b>${price3}/mo</b> on 3 months or <b>${price12}/mo</b> on 12.
+        </p>
 
         <div class="hero-cta">
           <a href="#match" class="btn btn-amber">Find your EA</a>
-          <a href="/ea/offer" class="btn btn-ghost" data-keep-utm>See the full offer</a>
         </div>
-
-        <div class="role-gate">
-          <p class="role-ask">What best describes your role?</p>
-          <div class="roles" role="group" aria-label="Select your role">
-            {roles.map((r) => (
-              <a href="#match" class="role" data-role={r.id}>{r.label}</a>
-            ))}
-          </div>
-        </div>
+        <p class="hero-alt">
+          <a href="#pricing">See pricing details ↓</a>
+        </p>
       </div>
       <div class="lp-media">
         <div class="lp-photo">
@@ -212,6 +189,12 @@ const jsonLd = [
       <p class="sub" style="max-width:64ch">
         Business ops only. Inbox, calendar, sales support, projects. Not household, not wellness, not ski-boot logistics — that’s a different product.
       </p>
+      <blockquote class="own-quote">
+        <p>
+          “CEOs spend roughly a quarter of their week on email and other electronic communication.” That’s the work a remote executive assistant is hired to own.
+        </p>
+        <cite>Harvard Business School · How CEOs Spend Their Time (Porter &amp; Nohria)</cite>
+      </blockquote>
       <div class="own-grid">
         {own.map((col) => (
           <div class="own-card">
@@ -403,6 +386,15 @@ const jsonLd = [
     </div>
   </div>
 
+  <div id="role-gate" class="match-role">
+    <label for="role-select">What best describes your role?</label>
+    <select id="role-select" name="role" aria-label="Select your role">
+      <option value="">Optional — pick a role</option>
+      {roles.map((r) => (
+        <option value={r.id}>{r.label}</option>
+      ))}
+    </select>
+  </div>
   <p id="role-note" class="role-note" hidden></p>
 
   <BookingSection
@@ -447,94 +439,27 @@ const jsonLd = [
     letter-spacing: -0.03em;
   }
   .hero h1.disp .l2 { color: var(--amber); }
-  .hero-quote {
-    margin: 22px 0 0;
-    padding: 16px 18px;
-    border-left: 3px solid var(--amber);
-    background: rgba(236, 230, 214, 0.06);
-    border-radius: 0 12px 12px 0;
-  }
-  .hero-quote p {
-    font-family: 'Archivo', sans-serif;
-    font-weight: 500;
+  .hero-price {
+    margin-top: 16px;
     font-size: 16px;
-    line-height: 1.4;
-    letter-spacing: -0.01em;
+    line-height: 1.5;
     color: var(--on-dark);
+    max-width: 52ch;
   }
-  .hero-quote cite {
-    display: block;
-    margin-top: 10px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11.5px;
-    font-style: normal;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+  .hero-price b { color: #fff; font-weight: 600; }
+  .hero-cta { margin-top: 28px; }
+  .hero-alt {
+    margin-top: 14px;
+    font-size: 14.5px;
+  }
+  .hero-alt a {
     color: var(--on-dark-mut);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
   }
-  .hero-prices {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 22px;
-    max-width: 420px;
-  }
-  .hp {
-    border: 1px solid var(--line-dark);
-    border-radius: 12px;
-    padding: 12px 14px;
-    background: rgba(236, 230, 214, 0.04);
-  }
-  .hp.feature {
-    border-color: rgba(242, 168, 43, 0.45);
-    background: rgba(242, 168, 43, 0.1);
-  }
-  .hp-amt {
-    display: block;
-    font-family: 'Archivo', sans-serif;
-    font-weight: 800;
-    font-size: 22px;
-    letter-spacing: -0.03em;
-    color: #fff;
-    line-height: 1;
-  }
-  .hp-per {
-    display: block;
-    margin-top: 4px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--on-dark-mut);
-  }
-  .role-gate { margin-top: 26px; }
-  .role-ask {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11.5px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--on-dark-mut);
-    margin-bottom: 10px;
-  }
-  .roles { display: flex; flex-wrap: wrap; gap: 8px; }
-  .role {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--on-dark);
-    border: 1px solid var(--line-dark);
-    border-radius: 8px;
-    padding: 9px 12px;
-    background: rgba(236, 230, 214, 0.04);
-    transition: border-color .15s, background .15s, color .15s;
-  }
-  .role:hover, .role.on {
-    border-color: var(--amber);
-    color: var(--ink-deep);
-    background: var(--amber);
-    font-weight: 600;
-  }
+  .hero-alt a:hover { color: var(--amber); }
   .lp-photo {
     border-radius: 220px 220px 22px 22px;
     overflow: hidden;
@@ -581,6 +506,32 @@ const jsonLd = [
     font-size: 18px;
     letter-spacing: -0.01em;
     margin-bottom: 6px;
+  }
+  .own-quote {
+    margin: 22px 0 0;
+    max-width: 64ch;
+    padding: 16px 18px;
+    border-left: 3px solid var(--amber);
+    background: var(--paper-2);
+    border-radius: 0 12px 12px 0;
+  }
+  .own-quote p {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .own-quote cite {
+    display: block;
+    margin-top: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    font-style: normal;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--on-paper-mut);
   }
   .own-lead {
     font-size: 13.5px;
@@ -823,7 +774,6 @@ const jsonLd = [
   @media (max-width: 520px) {
     .ea-tiers { grid-template-columns: 1fr; }
     .ea-incl[style] { grid-template-columns: 1fr !important; }
-    .hero-prices { grid-template-columns: 1fr; max-width: none; }
   }
 
   .ea-faq { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
@@ -848,12 +798,47 @@ const jsonLd = [
   .cta-band { background: var(--paper-2); padding: 8px 0 48px; }
   .cta-band :global(.cta-box) { margin: 0; }
 
+  .match-role { display: none; }
+  :global(#match) .match-role {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+    max-width: 60ch;
+    margin: 22px 0 0;
+  }
+  .match-role label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--on-dark-mut);
+  }
+  .match-role select {
+    appearance: none;
+    background: var(--ink-deep);
+    color: var(--on-dark);
+    border: 1px solid var(--line-dark);
+    border-radius: 8px;
+    padding: 9px 36px 9px 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239db0ab' d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+  .match-role select:focus {
+    outline: none;
+    border-color: var(--amber);
+  }
   .role-note {
     background: transparent;
     color: var(--amber);
     text-align: left;
     max-width: 60ch;
-    margin: 14px 0 0;
+    margin: 10px 0 0;
     padding: 0;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12.5px;
@@ -872,7 +857,7 @@ const jsonLd = [
     .hero { padding: 48px 0 40px; }
     .hero-cta .btn, .ea-tier-btn { width: 100%; text-align: center; }
     .trust-chip { font-size: 10.5px; padding: 7px 12px; }
-    .roles .role { flex: 1 1 calc(50% - 8px); text-align: center; }
+    .match-role select { width: 100%; }
   }
 </style>
 
@@ -890,33 +875,42 @@ const jsonLd = [
 
   const params = new URLSearchParams(window.location.search);
   const noteEl = document.getElementById('role-note');
+  const roleGate = document.getElementById('role-gate');
+  const roleSelect = document.getElementById('role-select') as HTMLSelectElement | null;
   const matchWrap = document.querySelector('#match .wrap');
-  if (noteEl && matchWrap) {
+  if (matchWrap) {
     const sub = matchWrap.querySelector('.sub');
-    if (sub) sub.insertAdjacentElement('afterend', noteEl);
-    else matchWrap.appendChild(noteEl);
+    const insertAfter = sub ?? matchWrap.lastElementChild;
+    if (roleGate) {
+      if (insertAfter) insertAfter.insertAdjacentElement('afterend', roleGate);
+      else matchWrap.appendChild(roleGate);
+    }
+    if (noteEl) {
+      if (roleGate) roleGate.insertAdjacentElement('afterend', noteEl);
+      else if (insertAfter) insertAfter.insertAdjacentElement('afterend', noteEl);
+      else matchWrap.appendChild(noteEl);
+    }
   }
 
   const setRole = (id: string) => {
-    document.querySelectorAll<HTMLAnchorElement>('[data-role]').forEach((el) => {
-      el.classList.toggle('on', el.dataset.role === id);
-    });
+    if (roleSelect && roleSelect.value !== id) roleSelect.value = id;
     const note = document.getElementById('role-note');
-    if (note && ROLE_LABELS[id]) {
-      note.hidden = false;
-      note.textContent = `Matching for ${ROLE_LABELS[id]} — mention it on the call.`;
+    if (note) {
+      if (ROLE_LABELS[id]) {
+        note.hidden = false;
+        note.textContent = `Matching for ${ROLE_LABELS[id]} — mention it on the call.`;
+      } else {
+        note.hidden = true;
+        note.textContent = '';
+      }
     }
     const url = new URL(window.location.href);
-    url.searchParams.set('role', id);
+    if (id && ROLE_LABELS[id]) url.searchParams.set('role', id);
+    else url.searchParams.delete('role');
     history.replaceState({}, '', url);
   };
 
-  document.querySelectorAll<HTMLAnchorElement>('a[data-role]').forEach((a) => {
-    a.addEventListener('click', () => {
-      const id = a.dataset.role;
-      if (id) setRole(id);
-    });
-  });
+  roleSelect?.addEventListener('change', () => setRole(roleSelect.value));
 
   const incoming = params.get('role');
   if (incoming && ROLE_LABELS[incoming]) setRole(incoming);
