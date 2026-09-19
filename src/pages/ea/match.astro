@@ -21,7 +21,7 @@ const steps = [
   ],
   [
     'Match',
-    'We match on how you think, communicate, and operate — not a resume stack. You interview and select your EA.',
+    'We match you to a shortlist from our top small-tier cohort — the top 1% who already cleared the screen. You interview and choose. Not an open marketplace resume stack.',
   ],
   [
     'Onboard',
@@ -40,11 +40,11 @@ const faq = [
   },
   {
     q: 'Why are new matches limited? What does top 1% mean?',
-    a: 'We only accept the top 1% of applicants who clear a multi-stage screen — interviews, skills assessments, and background checks. Most never pass. That bar is why the cohort is small, and why we only take a limited number of new matches at a time. There is no infinite bench. Scarcity here is the screen, not a countdown timer.',
+    a: 'We only accept the top 1% of applicants who clear a multi-stage screen — interviews, skills assessments, and background checks. Most never pass. That bar is why the cohort is small, and why we only take a limited number of new matches at a time. There is no infinite bench. You interview and choose from a shortlist of that top small-tier cohort — not from an open marketplace resume stack. Scarcity here is the screen, not a countdown timer.',
   },
   {
     q: 'How does matching work?',
-    a: 'Limited cohort, then a fit match on how you think, communicate, and operate. You interview and select. We run client-specific onboarding (about 2–5 hours of your time). A partnership manager sets the runway. After the official start date, you and your EA run the work. Most clients are matched in about a week and live in under two.',
+    a: 'We match you to a shortlist from our top small-tier cohort — the top 1% who cleared the multi-stage screen. You interview and choose from that shortlist, not from an open marketplace resume stack. Then client-specific onboarding (about 2–5 hours of your time). A partnership manager sets the runway. After the official start date, you and your EA run the work. Most clients are matched in about a week and live in under two.',
   },
   ...EA_JOURNEY_FAQ,
   EA_START_FAQ,
@@ -163,7 +163,7 @@ const jsonLd = [
           Every Teleforce EA clears a multi-stage screen — interviews, skills assessments, and background checks — that most applicants never pass. We only take the top 1% who do.
         </p>
         <p class="sub" style="max-width:64ch;margin-top:14px">
-          That bar is the reason the cohort stays small. We are not running an infinite bench of “available VAs.” We are matching a limited number of new clients to people who already made the cut. When this intake is full, it is full.
+          That bar is the reason the cohort stays small. We are not running an infinite bench of “available VAs.” You interview and choose from that top small-tier cohort — not from an open marketplace resume stack. When this intake is full, it is full.
         </p>
         <ul class="ea-checks">
           <li>Top 1% of applicants — a multi-stage screen most never clear</li>
@@ -178,9 +178,12 @@ const jsonLd = [
   <section class="block" id="matching">
     <div class="wrap reveal">
       <div class="eyebrow">Matching</div>
-      <h2 class="disp">Limited cohort. Fit first. Then you select.</h2>
+      <h2 class="disp">Limited cohort. Fit first. Then you choose.</h2>
       <p class="sub" style="max-width:64ch">
-        We match on how you think, communicate, and operate. You interview and select. We onboard. We set the runway. You and your EA run the work.
+        We match you to a shortlist from our top small-tier cohort — the top 1% who already cleared the screen. You interview and choose. Not an open marketplace resume stack.
+      </p>
+      <p class="sub" style="max-width:64ch;margin-top:14px">
+        We onboard. We set the runway. You and your EA run the work.
       </p>
       <div class="steps match-steps">
         {steps.map(([t, b], i) => (
@@ -195,7 +198,7 @@ const jsonLd = [
       <div class="mid-cta">
         <CtaBox
           heading="See if we have your fit."
-          body="A short quiz, then a match call if this limited cohort has someone for how you operate."
+          body="A short quiz, then a match call if this limited cohort has a fit. If we do, you interview and choose from that shortlist."
           label="See if we have your fit"
           href="/ea/quiz"
         />
@@ -268,7 +271,7 @@ const jsonLd = [
     id="match"
     eyebrow="Get matched"
     heading="Book a match call."
-    sub="Grab a time. We’ll come prepared to see whether this limited cohort has a fit — and how you think, communicate, and operate."
+    sub="Grab a time. If this limited cohort has a fit, we match you to a shortlist from the top 1% who cleared the screen. You interview and choose."
     subject="New Teleforce EA limited-match request"
     idPrefix="ea-match"
   />
