@@ -66,31 +66,9 @@ const steps = [
   ['You run your EA', 'After handoff, it’s your EA. You own the day-to-day relationship. We rematch if the fit isn’t right — we don’t babysit the seat.'],
 ];
 
-const customers = [
-  {
-    role: 'Founder / CEO',
-    img: '/brand/customers/founder.jpg',
-    pos: '50% 28%',
-    outcome: 'Inbox and calendar owned so you can actually lead — not triage until 11am.',
-  },
-  {
-    role: 'Revenue leader',
-    img: '/brand/customers/revenue.jpg',
-    pos: '50% 32%',
-    outcome: 'CRM hygiene, follow-ups, meeting logistics. Pipeline doesn’t wait on your inbox.',
-  },
-  {
-    role: 'Operator',
-    img: '/brand/customers/operator.jpg',
-    pos: '50% 22%',
-    outcome: 'Projects, vendors, chase-downs. Someone on your U.S. hours owns the queue.',
-  },
-];
-
-/** Head-and-shoulders from the same ICP set — not the tight glasses crop. */
 const featuredPortrait = {
   img: '/brand/customers/operator.jpg',
-  alt: 'Role archetype: a U.S. operator this seat is built for',
+  alt: 'A U.S. operator this seat is built for — head and shoulders, not a face crop',
 };
 
 const pillars = [
@@ -259,63 +237,44 @@ const jsonLd = {
     </section>
   </div>
 
-  <section class="block customers-sec" id="customers">
+  <section class="customers-sec" id="customers">
     <div class="customers-wrap reveal">
-      <div class="eyebrow">Our customers</div>
+      <div class="cust-pill">Our customers</div>
       <h2 class="disp">Built for U.S. leaders who need to delegate and see work done.</h2>
-      <p class="sub">
-        Founders. Revenue leaders. Operators. The named quote is a real Teleforce client. The portraits are <b>role archetypes</b> — the U.S. buyers this seat is for — not staged EA-client headshots.
-      </p>
-      <div class="icp-chips">
-        <span>Founders</span>
-        <span>Revenue leaders</span>
-        <span>Agencies</span>
-        <span>Ops</span>
-      </div>
 
-      <div class="proof-stack">
-        <div class="proof-main">
-          <figure class="proof-portrait">
-            <img
-              src={featuredPortrait.img}
-              alt={featuredPortrait.alt}
-              width="900"
-              height="1100"
-              loading="lazy"
-            />
-          </figure>
+      <div class="proof-feature">
+        <figure class="proof-portrait">
+          <img
+            src={featuredPortrait.img}
+            alt={featuredPortrait.alt}
+            width="900"
+            height="1100"
+            loading="lazy"
+          />
+        </figure>
 
-          <blockquote class="t-card">
-            <p>“{proof.quote}”</p>
-            <footer class="t-foot">
-              <div>
-                <div class="t-name">{proof.name}</div>
-                <div class="t-role">{proof.company}</div>
-              </div>
-              <div class="t-avatar" aria-hidden="true">ES</div>
-            </footer>
-          </blockquote>
-        </div>
-
-        <p class="proof-ctx">Real Teleforce client. Customer-service seats — same talent bench, same U.S. hours. We don’t invent EA-client theater.</p>
-
-        {customers.map((c, i) => (
-          <article class:list={['role-card', i % 2 === 1 && 'ink']}>
-            <div class="role-copy">
-              <div class="role-kicker">{c.role}</div>
-              <p>{c.outcome}</p>
+        <blockquote class="t-card t-overlap">
+          <p>“{proof.quote}”</p>
+          <footer class="t-foot">
+            <div>
+              <div class="t-name">{proof.name}</div>
+              <div class="t-role">{proof.company}</div>
             </div>
-            <img
-              src={c.img}
-              alt=""
-              width="88"
-              height="88"
-              loading="lazy"
-              style={`object-position:${c.pos}`}
-            />
-          </article>
-        ))}
+            <div class="t-avatar" aria-hidden="true">ES</div>
+          </footer>
+        </blockquote>
       </div>
+
+      <aside class="t-card t-ink">
+        <p>A dedicated bilingual EA on your U.S. hours — matched to how you operate, then handed to you.</p>
+        <footer class="t-foot">
+          <div>
+            <div class="t-name">English &amp; Español</div>
+            <div class="t-role">U.S. hours · matched ~1 week</div>
+          </div>
+          <a href="#contact" class="btn btn-amber t-cta">Get matched</a>
+        </footer>
+      </aside>
     </div>
   </section>
 
@@ -495,45 +454,61 @@ const jsonLd = {
   .mid-cta{margin-top:40px}
   .mid-cta :global(.cta-box){margin:0}
 
-  .customers-sec{padding:72px 0 80px}
-  .customers-wrap{max-width:580px;margin:0 auto;padding:0 28px}
-  .customers-sec .disp{font-size:clamp(28px,6.4vw,40px);line-height:1.12;letter-spacing:-0.03em;text-transform:none}
-  .customers-sec .sub{margin-top:16px;max-width:none}
-  .icp-chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
-  .icp-chips span{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;
-    color:var(--sage-deep);border:1px solid var(--line-paper);border-radius:999px;padding:6px 12px;background:var(--paper)}
-  .proof-stack{display:flex;flex-direction:column;gap:16px;margin-top:36px}
-  .proof-main{display:flex;flex-direction:column;gap:16px}
+  .customers-sec{
+    padding:72px 0 88px;
+    background:color-mix(in srgb, var(--sage) 10%, var(--paper));
+  }
+  .customers-wrap{max-width:480px;margin:0 auto;padding:0 24px}
+  .cust-pill{
+    display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    letter-spacing:0.14em;text-transform:uppercase;color:var(--sage-deep);
+    border:1px solid color-mix(in srgb, var(--sage-deep) 35%, transparent);
+    border-radius:999px;padding:6px 12px;margin-bottom:18px;
+  }
+  .customers-sec h2.disp{
+    font-weight:600;font-size:clamp(30px,7.6vw,42px);line-height:1.14;
+    letter-spacing:-0.03em;text-transform:none;margin:0 0 36px;
+  }
+  .proof-feature{position:relative}
   .proof-portrait{margin:0;border-radius:18px;overflow:hidden;background:var(--paper-2)}
-  .proof-portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 28%;display:block}
-  .t-card{margin:0;background:var(--paper-2);border:1px solid var(--line-paper);border-radius:18px;padding:28px 24px 22px}
-  .t-card > p{font-family:'Archivo',sans-serif;font-weight:500;font-size:clamp(18px,4.2vw,22px);
-    line-height:1.38;letter-spacing:-0.02em;color:var(--on-paper)}
-  .t-foot{margin-top:28px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
-  .t-name{font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;letter-spacing:-0.01em;color:var(--ink)}
-  .t-role{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
-    color:var(--sage-deep);margin-top:5px}
-  .t-avatar{width:56px;height:56px;border-radius:12px;background:var(--ink);color:var(--amber);
-    display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:800;
-    font-size:16px;letter-spacing:0.02em;flex-shrink:0}
-  .proof-ctx{margin:2px 2px 10px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.03em;
-    color:var(--on-paper-mut);line-height:1.5}
-  .role-card{margin:0;background:var(--paper-2);border:1px solid var(--line-paper);border-radius:18px;
-    padding:22px 20px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
-  .role-copy{min-width:0}
-  .role-kicker{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
-    color:var(--sage-deep);margin-bottom:10px}
-  .role-card p{font-size:15.5px;line-height:1.45;color:var(--on-paper);margin:0}
-  .role-card img{width:64px;height:64px;border-radius:12px;object-fit:cover;flex-shrink:0;display:block}
-  .role-card.ink{background:var(--ink);border-color:var(--ink);color:var(--on-dark)}
-  .role-card.ink .role-kicker{color:var(--amber)}
-  .role-card.ink p{color:var(--on-dark)}
-  @media (min-width:900px){
-    .customers-wrap{max-width:920px;padding:0 32px}
-    .proof-main{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
-    .proof-portrait img{object-position:50% 28%}
-    .t-card{height:100%}
-    .role-card p{font-size:16px}
+  .proof-portrait img{
+    width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 32%;display:block;
+  }
+  .t-card{
+    margin:0;border-radius:18px;padding:28px 24px 22px;
+    background:color-mix(in srgb, var(--sage) 14%, var(--paper));
+  }
+  .t-overlap{
+    position:relative;z-index:1;margin:-32px 10px 0;
+    box-shadow:0 18px 40px -28px rgba(14,38,41,0.45);
+  }
+  .t-card > p{
+    font-family:'Archivo',sans-serif;font-weight:500;font-size:clamp(19px,4.6vw,23px);
+    line-height:1.38;letter-spacing:-0.025em;color:var(--on-paper);
+  }
+  .t-foot{margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+  .t-name{font-family:'Archivo',sans-serif;font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink)}
+  .t-role{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.08em;
+    text-transform:uppercase;color:var(--sage-deep);margin-top:5px;
+  }
+  .t-avatar{
+    width:58px;height:58px;border-radius:12px;background:var(--ink);color:var(--amber);
+    display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;
+    font-weight:800;font-size:15px;letter-spacing:0.04em;flex-shrink:0;
+    box-shadow:0 8px 20px -12px rgba(14,38,41,0.5);
+  }
+  .t-ink{background:var(--ink);margin-top:14px}
+  .t-ink > p{color:var(--on-dark)}
+  .t-ink .t-name{color:#fff}
+  .t-ink .t-role{color:var(--amber)}
+  .t-cta{padding:10px 14px;font-size:11.5px;flex-shrink:0}
+  @media (min-width:720px){
+    .customers-sec{padding:88px 0 104px}
+    .customers-wrap{max-width:520px;padding:0 28px}
+    .customers-sec h2.disp{margin-bottom:44px}
+    .t-overlap{margin-top:-40px;margin-left:14px;margin-right:14px}
+    .t-card{padding:32px 28px 24px}
   }
 
   .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
