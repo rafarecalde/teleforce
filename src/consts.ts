@@ -7,7 +7,7 @@ export const SITE = {
   url: 'https://tryteleforce.com',
   title: 'Elite Executive Assistants | Teleforce',
   description:
-    'Elite bilingual executive assistants for U.S. operators. Dedicated LatAm talent on your hours — matched in 1 week, live in under 2. From $2,700/mo.',
+    'Your VA isn’t an executive assistant. Get a dedicated bilingual EA on your U.S. hours — LatAm nearshore, matched in about a week. From $2,700/mo.',
   tagline: 'Elite bilingual executive assistants · English/Spanish · U.S. hours',
   backbone: '30 years of Fortune 500 operating history',
 } as const;
