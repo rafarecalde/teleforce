@@ -5,10 +5,10 @@
 export const SITE = {
   name: 'Teleforce',
   url: 'https://tryteleforce.com',
-  title: 'Teleforce — Bilingual Customer Support',
+  title: 'Elite Executive Assistants | Teleforce',
   description:
-    'Bilingual LATAM BPO for U.S. companies — customer service, data entry, appointment setting, sales lead gen, and SDR/BDR teams. Native English/Spanish, on U.S. time, from a 30-year Fortune 500 operator.',
-  tagline: 'Bilingual LATAM BPO · English/Spanish · Dedicated teams on U.S. hours',
+    'Elite bilingual executive assistants for U.S. operators. Dedicated LatAm talent on your hours — matched in 1 week, live in under 2. From $2,700/mo.',
+  tagline: 'Elite bilingual executive assistants · English/Spanish · U.S. hours',
   backbone: '30 years of Fortune 500 operating history',
 } as const;
 
@@ -42,18 +42,16 @@ export const LOGOS = [
 ] as const;
 
 export const NAV_LINKS = [
-  { href: '/services', label: 'Services' },
   { href: '/ea', label: 'Executive Assistants' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Signal' },
 ] as const;
 
 export const FOOTER_LINKS = [
-  { href: '/services', label: 'Services' },
   { href: '/ea', label: 'Executive Assistants' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Signal' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/#contact', label: 'Get matched' },
 ] as const;
 
 // Blog categories — kept broad so the full SEO cluster (incl. legacy Tech Support
@@ -87,8 +85,8 @@ export interface Service {
   ic: string; // mono accent label on the card
 }
 
-// The five featured services. This is the offering shown on the homepage,
-// the services index, and the nav/footer.
+// Featured BPO seats for /services and service LPs. Homepage is EA-first
+// and does not render this grid.
 export const SERVICES: Service[] = [
   {
     slug: 'customer-service',
