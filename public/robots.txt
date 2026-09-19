@@ -3,5 +3,6 @@ Allow: /
 Disallow: /ea/offer
 Disallow: /ea/remote-executive-assistant
 Disallow: /ea/quiz
+Disallow: /ea/match
 
 Sitemap: https://tryteleforce.com/sitemap-index.xml
