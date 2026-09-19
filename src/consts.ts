@@ -5,10 +5,10 @@
 export const SITE = {
   name: 'Teleforce',
   url: 'https://tryteleforce.com',
-  title: 'Teleforce — Bilingual Customer Support',
+  title: 'Elite Executive Assistants | Teleforce',
   description:
-    'Bilingual LATAM BPO for U.S. companies — customer service, data entry, appointment setting, sales lead gen, and SDR/BDR teams. Native English/Spanish, on U.S. time, from a 30-year Fortune 500 operator.',
-  tagline: 'Bilingual LATAM BPO · English/Spanish · Dedicated teams on U.S. hours',
+    'Elite bilingual executive assistants for U.S. operators. Dedicated LatAm talent on your hours — matched in 1 week, live in under 2. From $2,700/mo.',
+  tagline: 'Elite bilingual executive assistants · English/Spanish · U.S. hours',
   backbone: '30 years of Fortune 500 operating history',
 } as const;
 
@@ -42,18 +42,16 @@ export const LOGOS = [
 ] as const;
 
 export const NAV_LINKS = [
-  { href: '/services', label: 'Services' },
   { href: '/ea', label: 'Executive Assistants' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Signal' },
 ] as const;
 
 export const FOOTER_LINKS = [
-  { href: '/services', label: 'Services' },
   { href: '/ea', label: 'Executive Assistants' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Signal' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/#contact', label: 'Get matched' },
 ] as const;
 
 // Blog categories — kept broad so the full SEO cluster (incl. legacy Tech Support
@@ -87,8 +85,8 @@ export interface Service {
   ic: string; // mono accent label on the card
 }
 
-// The five featured services. This is the offering shown on the homepage,
-// the services index, and the nav/footer.
+// Featured BPO seats for /services and service LPs. Homepage is EA-first
+// and does not render this grid.
 export const SERVICES: Service[] = [
   {
     slug: 'customer-service',
@@ -243,6 +241,34 @@ export const ALL_SERVICES: Service[] = [...SERVICES, ...SERVICES_LEGACY];
 export const EA = {
   price12mo: 2700, // USD/mo on a 12-month commitment
   price3mo: 3000, // USD/mo on a 3-month commitment
+} as const;
+
+// Client journey — single source for homepage + /ea FAQ/process copy.
+// The 90-day clock starts on the official service start date, not sign/pay.
+export const EA_JOURNEY_LINE =
+  'Sign agreement → pay first month → Executive Profile → match → you interview and select → client-specific onboarding → EA starts → 90-day clock begins.';
+
+export const EA_CLOCK_NOTE =
+  'The 90-day commitment starts on your EA’s official service start date — not when you sign or pay. The first payment is the prepaid first month of service.';
+
+export const EA_JOURNEY_FAQ = [
+  {
+    q: 'How does getting started work?',
+    a: 'Sign the agreement, pay the first month, complete an Executive Profile (intake), then we match. You interview and select your EA. Next is client-specific onboarding, the EA starts, and the 90-day commitment begins on that official start date. Most clients are matched in one week and live — handed off by a partnership manager — in under two weeks.',
+  },
+  {
+    q: 'When does the 90-day commitment start?',
+    a: 'On your EA’s official service start date — not when you sign the agreement, and not when you pay. Signing and the first payment get matching and onboarding moving. The commitment clock does not run during that setup.',
+  },
+  {
+    q: 'Is the first payment a deposit?',
+    a: 'No. The initial payment is the prepaid first month of service. It is not a deposit that burns the 90-day commitment early. The commitment clock starts only when your EA’s official service start date arrives.',
+  },
+] as const;
+
+export const EA_START_FAQ = {
+  q: 'How fast can I start?',
+  a: 'Most clients are matched in one week. You’re live, onboarded, and handed off by a partnership manager in under two weeks. Onboarding takes 2–5 hours of your time — about two weeks from signing to launch. The 90-day commitment starts on the EA’s official service start date, not when you sign or pay. The first payment is the prepaid first month of service.',
 } as const;
 
 // Real contact + social proof pulled from the live Teleforce brand page.
