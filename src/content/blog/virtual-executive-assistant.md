@@ -8,8 +8,8 @@ category: Virtual Assistance
 readMinutes: 11
 publishDate: 2026-09-19
 related:
-  - how-virtual-ea-frees-up-time
-  - virtual-ea-vs-in-house
+  - nearshore-time-zone-advantage
+  - outsourced-vs-in-house-support
 ---
 
 Most people who type “virtual executive assistant” into a search bar already know they are drowning. They want a list of tasks to hand off. That list exists — calendar, inbox, travel, research — and it is not the interesting part.
@@ -147,7 +147,7 @@ If those four things work, expand into travel, research, and project tracking. I
 
 Be honest about the cases.
 
-If you need someone in the room — hospitality for a board dinner, a physical office, classified documents that cannot leave the building — buy an in-house seat. We walk through that trade in [virtual EA vs. in-house](/blog/virtual-ea-vs-in-house).
+If you need someone in the room — hospitality for a board dinner, a physical office, classified documents that cannot leave the building — buy an in-house seat. The same build-vs-buy logic we use for [outsourced vs. in-house support](/blog/outsourced-vs-in-house-support) applies: presence and control versus speed and language coverage.
 
 If your pain is a queue of identical tickets, you need a process and a team, not a chief of staff. Customer support and data entry are different machines.
 
@@ -165,7 +165,7 @@ By day 30 you should be able to answer yes to most of these without staring at a
 
 If the answers are no, audit access and rules before you audit the person. Most “the EA isn’t proactive” complaints are a principal who still grabs every thread.
 
-If you want the time-audit version of this — what to hand off first, and in what order — read [how a virtual EA frees up time](/blog/how-virtual-ea-frees-up-time). That post is the operating manual. This one is the job definition.
+If you want the operating version of this — what to hand off first, and in what order — start with a two-week time audit (column 2 is the EA’s job) and [get matched](/#contact) once the loops are named. This post is the job definition. The seat is the test.
 
 ## What Teleforce means by the role
 

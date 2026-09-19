@@ -9,7 +9,7 @@ readMinutes: 7
 publishDate: 2026-09-23
 related:
   - virtual-executive-assistant
-  - nearshore-virtual-assistant
+  - nearshore-time-zone-advantage
 ---
 
 Founders and ops leaders do not lose the week in dramatic blocks. They lose it in status pings, “quick” reschedules, and the tab they opened to find a number they already had last Tuesday.
@@ -105,7 +105,7 @@ The Asana research is useful here for a second reason: **84% of people already w
 
 ## Nearshore hours are part of the time math
 
-A virtual EA who works while you sleep can batch research. They cannot defend a live calendar. If your buyers, vendors, and team are on U.S. clocks, you want same-day overlap — which is the point of a [nearshore virtual assistant](/blog/nearshore-virtual-assistant) in Latin America versus an overnight handoff.
+A virtual EA who works while you sleep can batch research. They cannot defend a live calendar. If your buyers, vendors, and team are on U.S. clocks, you want same-day overlap — the same [nearshore time zone advantage](/blog/nearshore-time-zone-advantage) that makes Latin America work for support, applied to one dedicated seat.
 
 Bilingual English/Spanish is the other half of that math for a lot of U.S. operators: one seat that can talk to a Miami customer, a Dallas warehouse, and a LATAM vendor without you becoming the translator.
 
