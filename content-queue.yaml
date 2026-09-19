@@ -571,3 +571,35 @@ posts:
     publishDate: 2026-10-01
     status: done
 
+  - title: "Your First 30 Days With a Virtual EA: A Handoff Playbook"
+    slug: first-30-days-virtual-ea
+    primaryKeyword: "first 30 days with a virtual EA"
+    intent: BoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-10-03
+    status: done
+
+  - title: "Calendar and Inbox Management With a Virtual EA"
+    slug: virtual-ea-calendar-inbox
+    primaryKeyword: "virtual EA calendar and inbox"
+    intent: MoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-10-06
+    status: done
+
+  - title: "Virtual EA for Founders vs. Enterprise Ops Teams"
+    slug: virtual-ea-for-founders
+    primaryKeyword: "virtual EA for founders"
+    intent: BoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-10-10
+    status: done
+
+  - title: "Bilingual Virtual Executive Assistant for Spanish-Speaking Stakeholders"
+    slug: bilingual-virtual-executive-assistant
+    primaryKeyword: "bilingual virtual executive assistant"
+    intent: BoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-10-14
+    status: done
+
