@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { EA, STATS, TESTIMONIALS } from '../../consts';
+import { EA, STATS, TESTIMONIALS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -52,9 +52,9 @@ const own = [
 ];
 
 const steps = [
-  ['Tell us', 'Role, hours, tools, and what should be owned in week one. A short match call — not a resume stack.'],
-  ['Match a bilingual EA', 'A dedicated remote executive assistant on U.S. business hours. Native EN/ES. Career operator, not a task queue.'],
-  ['Compounding ownership', 'They learn your preferences and take more. A success lead coaches the seat. Wrong fit? We rematch.'],
+  ['Tell us', 'Sign, prepay the first month, and complete an Executive Profile — how you think, communicate, and operate. Not a resume stack.'],
+  ['Match a bilingual EA', 'We match in about a week. You interview and select. Then client-specific onboarding (2–5 hours) and a partnership-manager handoff — live in under two weeks.'],
+  ['The seat starts', 'The 90-day commitment begins on the official service start date, not when you sign or pay. The first payment is the prepaid first month. A success lead coaches the seat. Wrong fit? We rematch.'],
 ];
 
 const compare = [
@@ -87,7 +87,7 @@ const faq = [
   },
   {
     q: 'What’s the price, and what’s included?',
-    a: `$${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. One dedicated remote EA, matching, onboarding, coaching, a success lead, and rematch. No foreign entity, no separate payroll, no hour packs. Start on the 3-month plan. Switch to 12 when you’re sure and save $300/mo.`,
+    a: `$${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. One dedicated remote EA, matching, onboarding, coaching, a success lead, and rematch. The initial payment is the prepaid first month of service — not a deposit. The 90-day commitment starts on the EA’s official service start date, not when you sign or pay. No foreign entity, no separate payroll, no hour packs. Start on the 3-month plan. Switch to 12 when you’re sure and save $300/mo.`,
   },
   {
     q: 'How is this different from Athena, overnight offshore, or a cheap VA?',
@@ -101,10 +101,8 @@ const faq = [
     q: 'Do you handle household or personal admin?',
     a: 'It can sit in the background. It is not the product, and it is not why this page exists. This seat is for operators who need a remote EA to own business ops.',
   },
-  {
-    q: 'How fast can I start?',
-    a: 'Most clients are matched and onboarded within about two weeks. Recruiting and vetting are already running; your assistant is productive from the start.',
-  },
+  ...EA_JOURNEY_FAQ,
+  EA_START_FAQ,
 ];
 
 const jsonLd = [
@@ -213,9 +211,9 @@ const jsonLd = [
     <section class="block" id="how">
       <div class="wrap reveal">
         <div class="eyebrow">Three steps</div>
-        <h2 class="disp">Tell us. Match. Then the seat compounds.</h2>
+        <h2 class="disp">Tell us. Match. Then the seat starts.</h2>
         <p class="sub" style="max-width:64ch">
-          Microsoft’s 2025 Work Trend Index found people are interrupted every two minutes during core hours by meetings, email, or notifications. A remote EA owns that queue so those pings aren’t all yours.
+          You interview and select your EA. {EA_CLOCK_NOTE} Microsoft’s 2025 Work Trend Index found people are interrupted every two minutes during core hours by meetings, email, or notifications. A remote EA owns that queue so those pings aren’t all yours.
         </p>
         <div class="steps lp-steps">
           {steps.map(([t, b], i) => (
@@ -226,6 +224,7 @@ const jsonLd = [
             </div>
           ))}
         </div>
+        <p class="ea-fine" style="text-align:left;margin-top:22px">{EA_JOURNEY_LINE}</p>
         <div class="hero-cta" style="margin-top:36px">
           <a href="#match" class="btn btn-amber">Find your EA</a>
         </div>
@@ -340,7 +339,7 @@ const jsonLd = [
           <li>Success lead + rematch if the fit isn’t right</li>
         </ul>
         <p class="ea-fine">
-          Start on the 3-month plan. Switch to 12 when you’re sure and save <b style="color:var(--ink)">$300/mo</b>.
+          Start on the 3-month plan. Switch to 12 when you’re sure and save <b style="color:var(--ink)">$300/mo</b>. {EA_CLOCK_NOTE}
         </p>
       </div>
     </section>

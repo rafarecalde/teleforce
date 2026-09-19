@@ -243,6 +243,34 @@ export const EA = {
   price3mo: 3000, // USD/mo on a 3-month commitment
 } as const;
 
+// Client journey — single source for homepage + /ea FAQ/process copy.
+// The 90-day clock starts on the official service start date, not sign/pay.
+export const EA_JOURNEY_LINE =
+  'Sign agreement → pay first month → Executive Profile → match → you interview and select → client-specific onboarding → EA starts → 90-day clock begins.';
+
+export const EA_CLOCK_NOTE =
+  'The 90-day commitment starts on your EA’s official service start date — not when you sign or pay. The first payment is the prepaid first month of service.';
+
+export const EA_JOURNEY_FAQ = [
+  {
+    q: 'How does getting started work?',
+    a: 'Sign the agreement, pay the first month, complete an Executive Profile (intake), then we match. You interview and select your EA. Next is client-specific onboarding, the EA starts, and the 90-day commitment begins on that official start date. Most clients are matched in one week and live — handed off by a partnership manager — in under two weeks.',
+  },
+  {
+    q: 'When does the 90-day commitment start?',
+    a: 'On your EA’s official service start date — not when you sign the agreement, and not when you pay. Signing and the first payment get matching and onboarding moving. The commitment clock does not run during that setup.',
+  },
+  {
+    q: 'Is the first payment a deposit?',
+    a: 'No. The initial payment is the prepaid first month of service. It is not a deposit that burns the 90-day commitment early. The commitment clock starts only when your EA’s official service start date arrives.',
+  },
+] as const;
+
+export const EA_START_FAQ = {
+  q: 'How fast can I start?',
+  a: 'Most clients are matched in one week. You’re live, onboarded, and handed off by a partnership manager in under two weeks. Onboarding takes 2–5 hours of your time — about two weeks from signing to launch. The 90-day commitment starts on the EA’s official service start date, not when you sign or pay. The first payment is the prepaid first month of service.',
+} as const;
+
 // Real contact + social proof pulled from the live Teleforce brand page.
 export const PHONE = '1-866-252-3961';
 export const PHONE_HREF = 'tel:+18662523961';

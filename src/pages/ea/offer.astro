@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { EA, LOGOS, STATS } from '../../consts';
+import { EA, LOGOS, STATS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -37,9 +37,9 @@ const included = [
 ];
 
 const steps = [
-  ['Match', 'We learn your work, your style, and what you want owned — then match you with a virtual EA who cleared the screen.'],
-  ['Onboard', 'A structured handoff of tools, preferences, inbox, and calendar. Productive in days, not months.'],
-  ['Delegate', 'Chat, email, or a quick call. One dedicated person — not a ticket queue, not an overnight lag.'],
+  ['Match', 'You sign, prepay the first month, and complete an Executive Profile. We match on how you think, communicate, and operate — then you interview and select. Most clients are matched in one week.'],
+  ['Onboard', 'Client-specific onboarding (2–5 hours of your time). A partnership manager hands the seat off. Live in under two weeks from signing.'],
+  ['Delegate', 'Chat, email, or a quick call. One dedicated person — not a ticket queue, not an overnight lag. The 90-day commitment starts on the official service start date, not when you sign or pay.'],
   ['Optimize', 'A success lead manages performance and keeps raising the bar. Wrong fit? We rematch you.'],
 ];
 
@@ -72,7 +72,7 @@ const faq = [
   },
   {
     q: 'What’s included in the monthly rate?',
-    a: `One dedicated full-time virtual EA, matching, onboarding, coaching, a success lead, and rematch if the fit isn’t right. $${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. No foreign entity, no separate payroll, no hour packs.`,
+    a: `One dedicated full-time virtual EA, matching, onboarding, coaching, a success lead, and rematch if the fit isn’t right. $${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. The initial payment is the prepaid first month of service — not a deposit. The 90-day commitment starts on the EA’s official service start date, not when you sign or pay. No foreign entity, no separate payroll, no hour packs.`,
   },
   {
     q: 'How is this different from Athena, Wing, or a cheap VA?',
@@ -82,10 +82,8 @@ const faq = [
     q: 'What if the match isn’t right?',
     a: 'We rematch. A success lead manages the partnership, and you’re not stuck with a bad hire. That’s the risk reversal: the screen is ours, the seat stays yours.',
   },
-  {
-    q: 'How fast can I start?',
-    a: 'Most clients are matched and onboarded within about two weeks. The recruiting and vetting are already running; your assistant is productive from the start.',
-  },
+  ...EA_JOURNEY_FAQ,
+  EA_START_FAQ,
   {
     q: 'Do you do personal / household admin?',
     a: 'It can sit in the background. It is not the product. This page is for operators who need a virtual EA to own business ops — not a lifestyle concierge as the ad.',
@@ -257,7 +255,7 @@ const jsonLd = [
         <div class="eyebrow">The mechanism</div>
         <h2 class="disp">Teleforce Matching — we reject, employ, and rematch.</h2>
         <p class="sub" style="max-width:64ch">
-          We don’t send you a stack of resumes. Bilingual LatAm career EAs clear a multi-stage screen — interviews, skills, background — that most applicants never pass. Then we employ them, onboard them on your tools, and sit a success lead on the partnership.
+          We don’t send you a stack of resumes. You sign, prepay the first month, and complete an Executive Profile. We match on how you think, communicate, and operate — then you interview and select. A partnership manager runs client-specific onboarding. {EA_CLOCK_NOTE}
         </p>
         <p class="sub" style="max-width:64ch;margin-top:14px">
           You’re not running foreign payroll. You’re not babysitting a bot. You’re delegating to one named person who already made the cut.
@@ -271,6 +269,7 @@ const jsonLd = [
             </div>
           ))}
         </div>
+        <p class="ea-fine" style="text-align:left;margin-top:22px">{EA_JOURNEY_LINE}</p>
         <div class="hero-cta" style="margin-top:36px">
           <a href="#match" class="btn btn-amber">Apply for a match</a>
         </div>
@@ -411,7 +410,7 @@ const jsonLd = [
           <li>Success lead + rematch if the fit isn’t right</li>
         </ul>
         <p class="ea-fine">
-          Start on the 3-month plan. Switch to 12 when you’re sure and save <b style="color:var(--ink)">$300/mo</b>.
+          Start on the 3-month plan. Switch to 12 when you’re sure and save <b style="color:var(--ink)">$300/mo</b>. {EA_CLOCK_NOTE}
         </p>
       </div>
     </section>
