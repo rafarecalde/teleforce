@@ -1,10 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
-import { HDYHAU_OPTIONS, ROLE_LABELS, parseRoleParam } from '../../lib/ea-quiz';
-
-const rolePrefill = parseRoleParam(Astro.url.searchParams.get('role'));
-const roleLabel = rolePrefill ? ROLE_LABELS[rolePrefill] : null;
+import { HDYHAU_OPTIONS } from '../../lib/ea-quiz';
 
 const title = 'EA Fit Quiz | Teleforce';
 const description =
@@ -27,21 +24,17 @@ const description =
     <div class="quiz-hero">
       <div class="quiz-copy">
         <div class="kicker">EA Fit Quiz · ~2 minutes</div>
-        <h1 class="disp">Find out if you need a real EA — or just better task help.</h1>
+        <h1 class="disp">Find out if you need a real EA —<br /><span class="l2">or just better task help.</span></h1>
         <p class="lede">
           <b>8 questions.</b> Instant score. Free 7-day handoff plan + scorecard.
           Takes ~2 minutes.
         </p>
         <p class="lede-note">No email until results are on screen.</p>
-        {roleLabel && (
-          <p class="role-prefill" id="role-prefill">
-            Continuing as <b>{roleLabel}</b> — we’ll skip the role question. You can change it.
-          </p>
-        )}
+        <p class="role-prefill" id="role-prefill" hidden>
+          Continuing as <b id="role-prefill-name"></b> — we’ll skip the role question. You can change it.
+        </p>
         <div class="hero-cta">
-          <a href="#quiz" class="btn btn-amber" id="start-quiz" data-start>
-            {roleLabel ? `Continue as ${roleLabel}` : 'Start the quiz'}
-          </a>
+          <a href="#quiz" class="btn btn-amber" id="start-quiz" data-start>Start the quiz</a>
         </div>
         <div class="ea-chips">
           <span class="chip">Dedicated bilingual EN/ES</span>
@@ -232,9 +225,9 @@ const description =
 
 <style>
   .hero h1.disp {
-    font-size: clamp(34px, 7vw, 62px);
+    font-size: clamp(32px, 6vw, 56px);
     text-transform: none;
-    max-width: 16ch;
+    max-width: 18ch;
   }
   .quiz-hero {
     position: relative;
@@ -272,7 +265,7 @@ const description =
 
   .quiz-stage,
   .results-stage,
-  .nurture-stage { background: var(--paper); padding: 36px 0 72px; }
+  .nurture-stage { background: var(--paper); padding: 36px 0 72px; min-height: 70vh; }
   .gate-stage { background: var(--ink); color: var(--on-dark); padding: 48px 0 80px; min-height: 70vh; }
 
   .quiz-wrap,
@@ -320,7 +313,7 @@ const description =
   }
   .prog-line { font-size: 14.5px; color: var(--on-paper); margin-top: 2px; }
 
-  .q-prompt {
+  .q-root :global(.q-prompt) {
     font-family: 'Archivo', sans-serif;
     font-weight: 800;
     font-size: clamp(24px, 4vw, 34px);
@@ -329,9 +322,9 @@ const description =
     margin-bottom: 10px;
     color: var(--ink);
   }
-  .q-hint { color: var(--on-paper-mut); font-size: 14.5px; margin-bottom: 22px; max-width: 54ch; }
-  .opts { display: flex; flex-direction: column; gap: 10px; }
-  .opt {
+  .q-root :global(.q-hint) { color: var(--on-paper-mut); font-size: 14.5px; margin-bottom: 22px; max-width: 54ch; }
+  .q-root :global(.opts) { display: flex; flex-direction: column; gap: 10px; }
+  .q-root :global(.opt) {
     text-align: left;
     width: 100%;
     background: var(--paper);
@@ -345,13 +338,13 @@ const description =
     cursor: pointer;
     transition: border-color 0.15s, background 0.15s, transform 0.15s;
   }
-  .opt:hover,
-  .opt:focus-visible {
+  .q-root :global(.opt:hover),
+  .q-root :global(.opt:focus-visible) {
     border-color: var(--amber);
     background: var(--paper-2);
     outline: none;
   }
-  .opt[aria-pressed='true'] {
+  .q-root :global(.opt[aria-pressed='true']) {
     border-color: var(--ink);
     background: var(--ink);
     color: var(--on-dark);
@@ -371,7 +364,7 @@ const description =
   .q-back:hover { color: var(--ink); }
   .q-back[hidden] { display: none; }
 
-  .band-kicker {
+  .results-wrap :global(.band-kicker) {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
     letter-spacing: 0.14em;
@@ -379,7 +372,7 @@ const description =
     color: var(--sage-deep);
     margin-bottom: 12px;
   }
-  .band-name {
+  .results-wrap :global(.band-name) {
     font-family: 'Archivo', sans-serif;
     font-weight: 800;
     font-size: clamp(28px, 5vw, 44px);
@@ -388,8 +381,8 @@ const description =
     color: var(--ink);
     margin-bottom: 16px;
   }
-  .band-block { margin: 0 0 22px; }
-  .band-block h3 {
+  .results-wrap :global(.band-block) { margin: 0 0 22px; }
+  .results-wrap :global(.band-block h3) {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11.5px;
     letter-spacing: 0.1em;
@@ -397,31 +390,31 @@ const description =
     color: var(--sage-deep);
     margin-bottom: 6px;
   }
-  .band-block p { font-size: 16px; color: var(--on-paper); max-width: 62ch; }
+  .results-wrap :global(.band-block p) { font-size: 16px; color: var(--on-paper); max-width: 62ch; }
 
-  .gift {
+  .results-wrap :global(.gift) {
     background: var(--paper-2);
     border: 1px solid var(--line-paper);
     border-radius: 16px;
     padding: 22px 22px 8px;
     margin: 28px 0;
   }
-  .gift h3 {
+  .results-wrap :global(.gift h3) {
     font-family: 'Archivo', sans-serif;
     font-weight: 700;
     font-size: 20px;
     margin-bottom: 14px;
     letter-spacing: -0.01em;
   }
-  .plan-day {
+  .results-wrap :global(.plan-day) {
     display: grid;
     grid-template-columns: 72px 1fr;
     gap: 12px;
     padding: 12px 0;
     border-top: 1px solid var(--line-paper);
   }
-  .plan-day:first-of-type { border-top: none; }
-  .plan-day .d {
+  .results-wrap :global(.plan-day:first-of-type) { border-top: none; }
+  .results-wrap :global(.plan-day .d) {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11.5px;
     letter-spacing: 0.06em;
@@ -429,18 +422,18 @@ const description =
     color: var(--amber);
     padding-top: 3px;
   }
-  .plan-day h4 { font-size: 15.5px; margin-bottom: 4px; color: var(--ink); }
-  .plan-day p { font-size: 14px; color: var(--on-paper-mut); }
+  .results-wrap :global(.plan-day h4) { font-size: 15.5px; margin-bottom: 4px; color: var(--ink); }
+  .results-wrap :global(.plan-day p) { font-size: 14px; color: var(--on-paper-mut); }
 
-  .score-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-  .score-table th,
-  .score-table td {
+  .results-wrap :global(.score-table) { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .results-wrap :global(.score-table th),
+  .results-wrap :global(.score-table td) {
     text-align: left;
     vertical-align: top;
     padding: 10px 10px 10px 0;
     border-bottom: 1px solid var(--line-paper);
   }
-  .score-table th {
+  .results-wrap :global(.score-table th) {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.08em;
@@ -449,8 +442,8 @@ const description =
     font-weight: 500;
   }
 
-  .tear { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
-  .tear-h {
+  .results-wrap :global(.tear) { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+  .results-wrap :global(.tear-h) {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.08em;
@@ -458,27 +451,27 @@ const description =
     color: var(--sage-deep);
     margin-bottom: 10px;
   }
-  .tear-col {
+  .results-wrap :global(.tear-col) {
     background: var(--paper);
     border: 1px solid var(--line-paper);
     border-radius: 12px;
     padding: 14px;
   }
-  .tear-col.ea { border-color: var(--ink); }
-  .tear-col h4 { font-size: 14px; margin-bottom: 10px; }
-  .tear-col li { font-size: 13.5px; color: var(--on-paper-mut); margin: 0 0 8px 16px; }
+  .results-wrap :global(.tear-col.ea) { border-color: var(--ink); }
+  .results-wrap :global(.tear-col h4) { font-size: 14px; margin-bottom: 10px; }
+  .results-wrap :global(.tear-col li) { font-size: 13.5px; color: var(--on-paper-mut); margin: 0 0 8px 16px; }
 
-  .preview {
+  .results-wrap :global(.preview) {
     margin: 28px 0;
     padding: 20px 22px;
     border-left: 3px solid var(--amber);
     background: var(--paper);
     border-radius: 0 12px 12px 0;
   }
-  .preview p { font-size: 16px; }
+  .results-wrap :global(.preview p) { font-size: 16px; }
 
-  .results-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
-  .print-btn {
+  .results-wrap :global(.results-cta) { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; margin-bottom: 12px; }
+  .results-wrap :global(.print-btn) {
     background: none;
     border: none;
     font-family: 'IBM Plex Mono', monospace;
@@ -489,7 +482,7 @@ const description =
     cursor: pointer;
     padding: 10px 0;
   }
-  .print-btn:hover { color: var(--ink); }
+  .results-wrap :global(.print-btn:hover) { color: var(--ink); }
 
   .bar-track {
     height: 4px;
@@ -584,10 +577,10 @@ const description =
   @media (max-width: 620px) {
     .hero { padding: 48px 0 44px; }
     .hero-cta .btn { width: 100%; text-align: center; }
-    .plan-day { grid-template-columns: 1fr; gap: 4px; }
-    .tear { grid-template-columns: 1fr; }
+    .results-wrap :global(.plan-day) { grid-template-columns: 1fr; gap: 4px; }
+    .results-wrap :global(.tear) { grid-template-columns: 1fr; }
     .field-row { grid-template-columns: 1fr; }
-    .score-table { font-size: 12.5px; }
+    .results-wrap :global(.score-table) { font-size: 12.5px; }
     .nurture-actions .btn { width: 100%; text-align: center; }
     .gate-btn { width: 100%; }
   }
@@ -656,6 +649,17 @@ const description =
     index: prefilledRole ? 1 : 0,
     screen: 'hero',
   };
+
+  if (prefilledRole) {
+    const prefillEl = document.getElementById('role-prefill');
+    const prefillName = document.getElementById('role-prefill-name');
+    const startBtn = document.getElementById('start-quiz');
+    if (prefillEl && prefillName) {
+      prefillName.textContent = ROLE_LABELS[prefilledRole];
+      prefillEl.hidden = false;
+    }
+    if (startBtn) startBtn.textContent = `Continue as ${ROLE_LABELS[prefilledRole]}`;
+  }
 
   if (prefilledRole && state.answers.role && state.answers.role !== prefilledRole) {
     state.answers = { role: prefilledRole };
@@ -918,14 +922,19 @@ const description =
       _captcha: 'false',
       ...payload,
     };
+    const ctrl = new AbortController();
+    const timer = window.setTimeout(() => ctrl.abort(), 4000);
     try {
       await fetch(`https://formsubmit.co/ajax/${FORM_ALIAS}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(body),
+        signal: ctrl.signal,
       });
     } catch {
       /* Lead stays in sessionStorage; sales email is best-effort. */
+    } finally {
+      window.clearTimeout(timer);
     }
   }
 
