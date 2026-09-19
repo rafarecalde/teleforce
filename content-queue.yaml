@@ -539,3 +539,67 @@ posts:
     publishDate: 2027-02-17
     status: done
 
+  - title: "What a Virtual Executive Assistant Actually Does"
+    slug: virtual-executive-assistant
+    primaryKeyword: "virtual executive assistant"
+    intent: ToFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-09-19
+    status: done
+
+  - title: "How a Virtual EA Frees Up Time for High-Leverage Work"
+    slug: how-virtual-ea-frees-up-time
+    primaryKeyword: "how a virtual EA frees up time"
+    intent: MoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-09-23
+    status: done
+
+  - title: "Virtual EA vs. In-House EA: When to Build and When to Buy"
+    slug: virtual-ea-vs-in-house
+    primaryKeyword: "virtual EA vs in-house"
+    intent: BoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-09-27
+    status: done
+
+  - title: "Getting Work Done With a Nearshore Virtual Assistant"
+    slug: nearshore-virtual-assistant
+    primaryKeyword: "nearshore virtual assistant"
+    intent: MoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-10-01
+    status: done
+
+  - title: "Your First 30 Days With a Virtual EA: A Handoff Playbook"
+    slug: first-30-days-virtual-ea
+    primaryKeyword: "first 30 days with a virtual EA"
+    intent: BoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-10-03
+    status: done
+
+  - title: "Calendar and Inbox Management With a Virtual EA"
+    slug: virtual-ea-calendar-inbox
+    primaryKeyword: "virtual EA calendar and inbox"
+    intent: MoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-10-06
+    status: done
+
+  - title: "Virtual EA for Founders vs. Enterprise Ops Teams"
+    slug: virtual-ea-for-founders
+    primaryKeyword: "virtual EA for founders"
+    intent: BoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-10-10
+    status: done
+
+  - title: "Bilingual Virtual Executive Assistant for Spanish-Speaking Stakeholders"
+    slug: bilingual-virtual-executive-assistant
+    primaryKeyword: "bilingual virtual executive assistant"
+    intent: BoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-10-14
+    status: done
+

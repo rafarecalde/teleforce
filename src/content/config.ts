@@ -17,6 +17,7 @@ const blog = defineCollection({
       'Account Servicing',
       'Sales & Lead Gen',
       'Nearshore',
+      'Virtual Assistance',
     ]),
     readMinutes: z.number(),
     publishDate: z.coerce.date(),

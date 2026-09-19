@@ -64,6 +64,7 @@ export const CATEGORIES = [
   'Account Servicing',
   'Sales & Lead Gen',
   'Nearshore',
+  'Virtual Assistance',
 ] as const;
 export type Category = (typeof CATEGORIES)[number];
 
