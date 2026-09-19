@@ -18,7 +18,9 @@ export default defineConfig({
     sitemap({
       // Paid-only ad LPs stay out of the organic sitemap.
       filter: (page) =>
-        !page.includes('/ea/offer') && !page.includes('/ea/remote-executive-assistant'),
+        !page.includes('/ea/offer') &&
+        !page.includes('/ea/remote-executive-assistant') &&
+        !page.includes('/ea/quiz'),
     }),
   ],
 });
