@@ -1,0 +1,1104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookingSection from '../../components/BookingSection.astro';
+import { HDYHAU_OPTIONS, ROLE_LABELS, parseRoleParam } from '../../lib/ea-quiz';
+
+const rolePrefill = parseRoleParam(Astro.url.searchParams.get('role'));
+const roleLabel = rolePrefill ? ROLE_LABELS[rolePrefill] : null;
+
+const title = 'EA Fit Quiz | Teleforce';
+const description =
+  '8 questions. Instant score. Free 7-day handoff plan + scorecard. See if a dedicated bilingual nearshore EA — or better task help — is the right seat.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  bare
+  noindex
+  barePhone={false}
+  bareLogoHref="#top"
+  bareCtaHref="#quiz"
+  bareCtaLabel="Start the quiz"
+  image="/brand/ea-hero.jpg"
+>
+  <!-- ========== HERO ========== -->
+  <header class="hero" id="top" data-screen="hero">
+    <div class="quiz-hero">
+      <div class="quiz-copy">
+        <div class="kicker">EA Fit Quiz · ~2 minutes</div>
+        <h1 class="disp">Find out if you need a real EA — or just better task help.</h1>
+        <p class="lede">
+          <b>8 questions.</b> Instant score. Free 7-day handoff plan + scorecard.
+          Takes ~2 minutes.
+        </p>
+        <p class="lede-note">No email until results are on screen.</p>
+        {roleLabel && (
+          <p class="role-prefill" id="role-prefill">
+            Continuing as <b>{roleLabel}</b> — we’ll skip the role question. You can change it.
+          </p>
+        )}
+        <div class="hero-cta">
+          <a href="#quiz" class="btn btn-amber" id="start-quiz" data-start>
+            {roleLabel ? `Continue as ${roleLabel}` : 'Start the quiz'}
+          </a>
+        </div>
+        <div class="ea-chips">
+          <span class="chip">Dedicated bilingual EN/ES</span>
+          <span class="chip">LatAm nearshore</span>
+          <span class="chip">U.S. hours</span>
+          <span class="chip">Business ops — not a cheap VA</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== QUIZ ========== -->
+  <section class="quiz-stage" id="quiz" data-screen="quiz" hidden>
+    <div class="wrap quiz-wrap">
+      <div class="quiz-progress" aria-live="polite">
+        <div class="ring-wrap" aria-hidden="true">
+          <svg class="ring" viewBox="0 0 36 36">
+            <circle class="ring-bg" cx="18" cy="18" r="15.5" />
+            <circle class="ring-fg" id="ring-fg" cx="18" cy="18" r="15.5" />
+          </svg>
+          <span class="ring-num" id="ring-num">1</span>
+        </div>
+        <div class="prog-copy">
+          <p class="prog-count" id="prog-count">Question 1 of 8</p>
+          <p class="prog-line">Each answer sharpens your plan.</p>
+        </div>
+      </div>
+
+      <div id="q-root" class="q-root"></div>
+
+      <div class="q-nav">
+        <button type="button" class="q-back" id="q-back">← Back</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESULTS (value before email) ========== -->
+  <section class="results-stage" id="results" data-screen="results" hidden>
+    <div class="wrap results-wrap" id="results-root"></div>
+  </section>
+
+  <!-- ========== EMAIL GATE ========== -->
+  <section class="gate-stage" id="email-gate" data-screen="email" hidden>
+    <div class="wrap gate-wrap">
+      <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width:100%"></div></div>
+      <p class="gate-kicker" id="email-kicker">Your plan is ready</p>
+      <h2 class="disp gate-h" id="email-h"></h2>
+      <p class="gate-sub" id="email-sub">
+        Enter your work email to get your 7-day handoff plan + scorecard (and next steps).
+      </p>
+
+      <form class="gate-form" id="email-form" novalidate>
+        <div class="field">
+          <label for="work-email">Work email</label>
+          <input
+            id="work-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            inputmode="email"
+            placeholder="you@company.com"
+            required
+          />
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="email-consent" name="consent" required />
+          <span>
+            I agree Teleforce may email my handoff plan and scorecard, and follow up about an EA match.
+            Unsubscribe anytime.
+          </span>
+        </label>
+        <p class="field-error" id="email-error" hidden></p>
+        <button class="btn btn-amber gate-btn" type="submit" id="email-submit">
+          Send my 7-day handoff plan + scorecard
+        </button>
+        <p class="gate-fine">
+          We’ll also tell you if you’re a fit for a Teleforce match — or if a task VA is still the better
+          move (honest).
+        </p>
+      </form>
+
+      <aside class="proof-card">
+        <p class="proof-k">Typical first month</p>
+        <p class="proof-q">
+          Operators who treat the seat like a hire usually get inbox, calendar, and follow-ups off their
+          plate — and stop being the bottleneck by week two.
+        </p>
+        <p class="proof-by">Business ops · U.S. hours · bilingual EN/ES — not household concierge</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ========== ENRICH ========== -->
+  <section class="gate-stage enrich-stage" id="enrich" data-screen="enrich" hidden>
+    <div class="wrap gate-wrap">
+      <div class="bar-track" aria-hidden="true"><div class="bar-fill" style="width:100%"></div></div>
+      <p class="gate-kicker">Thanks. Last step.</p>
+      <h2 class="disp gate-h">A few details so we can match you with the right EA.</h2>
+      <p class="gate-sub">First name, company, and how you found us — then pick a time.</p>
+
+      <form class="gate-form" id="enrich-form" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="first-name">First name</label>
+            <input id="first-name" name="first_name" type="text" autocomplete="given-name" required />
+          </div>
+          <div class="field">
+            <label for="last-name">Last name</label>
+            <input id="last-name" name="last_name" type="text" autocomplete="family-name" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" autocomplete="organization" required />
+        </div>
+        <div class="field">
+          <label for="hdyhau">How did you hear about us</label>
+          <select id="hdyhau" name="hdyhau" required>
+            <option value="">Please Select</option>
+            {HDYHAU_OPTIONS.map((opt) => <option value={opt}>{opt}</option>)}
+          </select>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+1 …" required />
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="sms-consent" name="sms_consent" required />
+          <span>I agree to be contacted by email and SMS about scheduling a match call.</span>
+        </label>
+        <p class="field-error" id="enrich-error" hidden></p>
+        <button class="btn btn-amber gate-btn" type="submit">Continue</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== DIY NEXT (email done, book optional) ========== -->
+  <section class="nurture-stage" id="diy-next" data-screen="diy" hidden>
+    <div class="wrap nurture-wrap">
+      <p class="gate-kicker">Plan queued</p>
+      <h2 class="disp">Your handoff plan is on the page. Book when you’re ready.</h2>
+      <p class="nurture-lede">
+        You’re a DIY operator — still carrying the week yourself. The seat works when you treat
+        onboarding like a hire. No rush from us.
+      </p>
+      <div class="nurture-actions">
+        <button type="button" class="btn btn-amber" id="diy-book">Book a match when you’re ready</button>
+        <button type="button" class="btn btn-ghost dark" id="diy-back-plan">Back to my plan</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== NURTURE (task-shopper) ========== -->
+  <section class="nurture-stage" id="nurture" data-screen="nurture" hidden>
+    <div class="wrap nurture-wrap">
+      <p class="gate-kicker">Plan saved</p>
+      <h2 class="disp">Your gifts stay on the page. No match call from here.</h2>
+      <p class="nurture-lede">
+        A dedicated bilingual EA isn’t the right seat <em>yet</em> — and that’s the useful answer.
+        Keep the 7-day plan and scorecard. Use them as a tighter brief for task help.
+      </p>
+      <p class="nurture-lede">
+        When you want ownership on U.S. hours — not overnight tickets, not household errands — come
+        back and we’ll match you.
+      </p>
+      <div class="nurture-actions">
+        <button type="button" class="btn btn-amber" id="nurture-print">Print / save your plan</button>
+        <a href="/ea" class="btn btn-ghost dark">Read the EA offer</a>
+      </div>
+      <p class="nurture-fine">
+        We’ll email the same plan when PDF delivery is live. For now it’s on screen — and printable.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== BOOK (Ready / Burned / optional DIY) ========== -->
+  <div id="match-wrap" data-screen="book" hidden>
+    <BookingSection
+      id="match"
+      heading="Pick a time."
+      sub="20–30 minutes. We’ll come prepared to match you with a dedicated bilingual nearshore EA. Time zone is detected in the scheduler. You’ll get an email with the time, timezone, and a reschedule link."
+      eyebrow="Match call"
+      subject="New Teleforce EA fit-quiz match request"
+      idPrefix="quiz"
+    />
+  </div>
+</BaseLayout>
+
+<style>
+  .hero h1.disp {
+    font-size: clamp(34px, 7vw, 62px);
+    text-transform: none;
+    max-width: 16ch;
+  }
+  .quiz-hero {
+    position: relative;
+    z-index: 2;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 22px;
+  }
+  .lede-note {
+    margin-top: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: var(--amber);
+  }
+  .role-prefill {
+    margin-top: 16px;
+    font-size: 14.5px;
+    color: var(--on-dark);
+    max-width: 52ch;
+  }
+  .role-prefill b { color: #fff; }
+  .ea-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .ea-chips .chip {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--on-dark);
+    border: 1px solid var(--line-dark);
+    border-radius: 999px;
+    padding: 8px 15px;
+    background: rgba(236, 230, 214, 0.04);
+  }
+
+  .quiz-stage,
+  .results-stage,
+  .nurture-stage { background: var(--paper); padding: 36px 0 72px; }
+  .gate-stage { background: var(--ink); color: var(--on-dark); padding: 48px 0 80px; min-height: 70vh; }
+
+  .quiz-wrap,
+  .results-wrap,
+  .gate-wrap,
+  .nurture-wrap { max-width: 720px; }
+
+  .quiz-progress {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .ring-wrap { position: relative; width: 56px; height: 56px; flex-shrink: 0; }
+  .ring { width: 56px; height: 56px; transform: rotate(-90deg); }
+  .ring-bg,
+  .ring-fg {
+    fill: none;
+    stroke-width: 3.2;
+  }
+  .ring-bg { stroke: var(--line-paper); }
+  .ring-fg {
+    stroke: var(--amber);
+    stroke-linecap: round;
+    stroke-dasharray: 0 100;
+    transition: stroke-dasharray 0.35s ease;
+  }
+  .ring-num {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .prog-count {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+  }
+  .prog-line { font-size: 14.5px; color: var(--on-paper); margin-top: 2px; }
+
+  .q-prompt {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: clamp(24px, 4vw, 34px);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .q-hint { color: var(--on-paper-mut); font-size: 14.5px; margin-bottom: 22px; max-width: 54ch; }
+  .opts { display: flex; flex-direction: column; gap: 10px; }
+  .opt {
+    text-align: left;
+    width: 100%;
+    background: var(--paper);
+    border: 1px solid var(--line-paper);
+    border-radius: 14px;
+    padding: 16px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--on-paper);
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s, transform 0.15s;
+  }
+  .opt:hover,
+  .opt:focus-visible {
+    border-color: var(--amber);
+    background: var(--paper-2);
+    outline: none;
+  }
+  .opt[aria-pressed='true'] {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--on-dark);
+  }
+  .q-nav { margin-top: 22px; }
+  .q-back {
+    background: none;
+    border: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--on-paper-mut);
+    cursor: pointer;
+    padding: 8px 0;
+  }
+  .q-back:hover { color: var(--ink); }
+  .q-back[hidden] { display: none; }
+
+  .band-kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 12px;
+  }
+  .band-name {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 5vw, 44px);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .band-block { margin: 0 0 22px; }
+  .band-block h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 6px;
+  }
+  .band-block p { font-size: 16px; color: var(--on-paper); max-width: 62ch; }
+
+  .gift {
+    background: var(--paper-2);
+    border: 1px solid var(--line-paper);
+    border-radius: 16px;
+    padding: 22px 22px 8px;
+    margin: 28px 0;
+  }
+  .gift h3 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .plan-day {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid var(--line-paper);
+  }
+  .plan-day:first-of-type { border-top: none; }
+  .plan-day .d {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--amber);
+    padding-top: 3px;
+  }
+  .plan-day h4 { font-size: 15.5px; margin-bottom: 4px; color: var(--ink); }
+  .plan-day p { font-size: 14px; color: var(--on-paper-mut); }
+
+  .score-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .score-table th,
+  .score-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 10px 10px 10px 0;
+    border-bottom: 1px solid var(--line-paper);
+  }
+  .score-table th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    font-weight: 500;
+  }
+
+  .tear { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+  .tear-h {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 10px;
+  }
+  .tear-col {
+    background: var(--paper);
+    border: 1px solid var(--line-paper);
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .tear-col.ea { border-color: var(--ink); }
+  .tear-col h4 { font-size: 14px; margin-bottom: 10px; }
+  .tear-col li { font-size: 13.5px; color: var(--on-paper-mut); margin: 0 0 8px 16px; }
+
+  .preview {
+    margin: 28px 0;
+    padding: 20px 22px;
+    border-left: 3px solid var(--amber);
+    background: var(--paper);
+    border-radius: 0 12px 12px 0;
+  }
+  .preview p { font-size: 16px; }
+
+  .results-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .print-btn {
+    background: none;
+    border: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--on-paper-mut);
+    cursor: pointer;
+    padding: 10px 0;
+  }
+  .print-btn:hover { color: var(--ink); }
+
+  .bar-track {
+    height: 4px;
+    background: var(--line-dark);
+    border-radius: 99px;
+    margin-bottom: 28px;
+    overflow: hidden;
+  }
+  .bar-fill { height: 100%; background: var(--amber); }
+  .gate-kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 14px;
+  }
+  .gate-h {
+    font-size: clamp(26px, 4.5vw, 38px);
+    color: #fff;
+    text-transform: none;
+    max-width: 20ch;
+  }
+  .gate-h b { color: var(--amber); font-weight: 800; }
+  .gate-sub { color: var(--on-dark-mut); margin: 16px 0 28px; max-width: 52ch; }
+  .gate-form { max-width: 480px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .gate-form select {
+    width: 100%;
+    background: var(--ink-deep);
+    border: 1px solid var(--line-dark);
+    border-radius: 9px;
+    padding: 12px 14px;
+    color: var(--on-dark);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239db0ab' d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+  .gate-form select:focus { outline: none; border-color: var(--amber); }
+  .consent {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: var(--on-dark-mut);
+    margin: 8px 0 14px;
+    cursor: pointer;
+  }
+  .consent input { margin-top: 3px; accent-color: var(--amber); }
+  .gate-btn { width: 100%; text-align: center; padding: 14px 18px; }
+  .gate-fine {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--on-dark-mut);
+    max-width: 48ch;
+  }
+  .field-error { color: #f0b4a0; font-size: 13px; margin: 0 0 10px; }
+  .proof-card {
+    margin-top: 36px;
+    max-width: 480px;
+    border: 1px solid var(--line-dark);
+    border-radius: 14px;
+    padding: 20px 22px;
+    background: rgba(236, 230, 214, 0.04);
+  }
+  .proof-k {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+  .proof-q { font-family: 'Archivo', sans-serif; font-size: 17px; line-height: 1.4; color: #fff; }
+  .proof-by { margin-top: 12px; font-size: 12.5px; color: var(--on-dark-mut); }
+
+  .nurture-lede { font-size: 16.5px; color: var(--on-paper); max-width: 58ch; margin-bottom: 14px; }
+  .nurture-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 16px; }
+  .btn-ghost.dark {
+    color: var(--ink);
+    border-color: var(--line-paper);
+  }
+  .btn-ghost.dark:hover { color: var(--ink); border-color: var(--ink); }
+  .nurture-fine { font-size: 13px; color: var(--on-paper-mut); max-width: 52ch; }
+
+  #match-wrap[hidden] { display: none !important; }
+  [data-screen][hidden] { display: none !important; }
+
+  @media (max-width: 620px) {
+    .hero { padding: 48px 0 44px; }
+    .hero-cta .btn { width: 100%; text-align: center; }
+    .plan-day { grid-template-columns: 1fr; gap: 4px; }
+    .tear { grid-template-columns: 1fr; }
+    .field-row { grid-template-columns: 1fr; }
+    .score-table { font-size: 12.5px; }
+    .nurture-actions .btn { width: 100%; text-align: center; }
+    .gate-btn { width: 100%; }
+  }
+
+  @media print {
+    nav, footer, .hero, .quiz-stage, .gate-stage, .nurture-stage, #match-wrap, .results-cta, .q-nav {
+      display: none !important;
+    }
+    .results-stage { display: block !important; padding: 0; background: #fff; }
+    .gift { break-inside: avoid; }
+    body { background: #fff; color: #111; }
+  }
+</style>
+
+<script>
+  import { FORM_ALIAS } from '../../consts';
+  import {
+    QUESTIONS,
+    ROLE_LABELS,
+    bandCopy,
+    handoffPlan,
+    hoursLabel,
+    isComplete,
+    matchCount,
+    matchProfile,
+    optionLabel,
+    parseRoleParam,
+    requiresEnrichment,
+    scoreQuiz,
+    scorecard,
+    summarizeAnswers,
+    teardown,
+    type Band,
+    type QuizAnswers,
+    type QuestionId,
+  } from '../../lib/ea-quiz';
+
+  const STORAGE_KEY = 'teleforce-ea-quiz-v1';
+  const KEEP = [
+    'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_id',
+    'gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid', 'li_fat_id', 'role',
+  ];
+
+  type Screen = 'hero' | 'quiz' | 'results' | 'email' | 'enrich' | 'nurture' | 'book' | 'diy';
+
+  interface Persist {
+    answers: QuizAnswers;
+    index: number;
+    screen: Screen;
+    band?: Band;
+    email?: string;
+    contact?: {
+      first_name: string;
+      last_name: string;
+      company: string;
+      hdyhau: string;
+      phone: string;
+    };
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const prefilledRole = parseRoleParam(params.get('role'));
+
+  const state: Persist = load() ?? {
+    answers: prefilledRole ? { role: prefilledRole } : {},
+    index: prefilledRole ? 1 : 0,
+    screen: 'hero',
+  };
+
+  if (prefilledRole && state.answers.role && state.answers.role !== prefilledRole) {
+    state.answers = { role: prefilledRole };
+    state.index = 1;
+    state.screen = 'hero';
+    state.band = undefined;
+    state.email = undefined;
+    state.contact = undefined;
+  } else if (prefilledRole && !state.answers.role) {
+    state.answers.role = prefilledRole;
+    if (state.screen === 'hero' && state.index === 0) state.index = 1;
+  }
+
+  const qRoot = document.getElementById('q-root') as HTMLElement;
+  const resultsRoot = document.getElementById('results-root') as HTMLElement;
+  const backBtn = document.getElementById('q-back') as HTMLButtonElement;
+  const ringFg = document.getElementById('ring-fg') as SVGCircleElement | null;
+  const ringNum = document.getElementById('ring-num');
+  const progCount = document.getElementById('prog-count');
+
+  function load(): Persist | null {
+    try {
+      const raw = sessionStorage.getItem(STORAGE_KEY);
+      return raw ? (JSON.parse(raw) as Persist) : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function save() {
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch {
+      /* private mode */
+    }
+  }
+
+  function utmBag(): Record<string, string> {
+    const out: Record<string, string> = {};
+    KEEP.forEach((k) => {
+      const v = params.get(k);
+      if (v) out[k] = v;
+    });
+    return out;
+  }
+
+  function show(screen: Screen) {
+    state.screen = screen;
+    document.querySelectorAll<HTMLElement>('[data-screen]').forEach((el) => {
+      el.hidden = el.dataset.screen !== screen;
+    });
+    if (screen === 'book') {
+      const wrap = document.getElementById('match-wrap');
+      if (wrap) wrap.hidden = false;
+    }
+    save();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function setProgress() {
+    const answered = QUESTIONS.filter((q) => Boolean(state.answers[q.id])).length;
+    const current = Math.min(state.index + 1, 8);
+    const pct = (answered / 8) * 97.4;
+    if (ringFg) ringFg.style.strokeDasharray = `${pct} 100`;
+    if (ringNum) ringNum.textContent = String(current);
+    if (progCount) progCount.textContent = `Question ${current} of 8`;
+  }
+
+  function renderQuestion() {
+    const q = QUESTIONS[state.index];
+    if (!q) return;
+    const selected = state.answers[q.id];
+    qRoot.innerHTML = `
+      <h2 class="q-prompt" id="q-prompt" tabindex="-1">${q.prompt}</h2>
+      ${q.hint ? `<p class="q-hint">${q.hint}</p>` : ''}
+      <div class="opts" role="group" aria-labelledby="q-prompt">
+        ${q.options
+          .map(
+            (o) => `
+          <button type="button" class="opt" data-opt="${o.id}" aria-pressed="${selected === o.id}">
+            ${o.label}
+          </button>`,
+          )
+          .join('')}
+      </div>
+    `;
+    qRoot.querySelectorAll<HTMLButtonElement>('.opt').forEach((btn) => {
+      btn.addEventListener('click', () => onAnswer(q.id, btn.dataset.opt as string));
+    });
+    backBtn.hidden = state.index === 0 && !state.answers.role;
+    if (state.index === 0) backBtn.hidden = true;
+    setProgress();
+    const heading = document.getElementById('q-prompt');
+    heading?.focus({ preventScroll: true });
+  }
+
+  function onAnswer(id: QuestionId, value: string) {
+    (state.answers as Record<string, string>)[id] = value;
+    save();
+    if (state.index < QUESTIONS.length - 1) {
+      state.index += 1;
+      renderQuestion();
+    } else {
+      finishQuiz();
+    }
+  }
+
+  function finishQuiz() {
+    if (!isComplete(state.answers)) {
+      const missing = QUESTIONS.findIndex((q) => !state.answers[q.id]);
+      state.index = missing === -1 ? 0 : missing;
+      renderQuestion();
+      return;
+    }
+    state.band = scoreQuiz(state.answers);
+    renderResults();
+    show('results');
+  }
+
+  function escapeHtml(s: string): string {
+    return s
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function renderResults() {
+    const answers = state.answers;
+    const band = state.band ?? scoreQuiz(answers);
+    state.band = band;
+    const copy = bandCopy(answers, band);
+    const plan = handoffPlan(answers, band);
+    const card = scorecard(answers);
+    const vs = teardown(answers, band);
+    const n = matchCount(answers);
+    const profile = matchProfile(answers);
+
+    const preview = copy.silent
+      ? `Based on your answers, a dedicated seat is the wrong buy right now. You’d be a poor match for the ${n} bilingual EAs we typically hold for operators who want ownership on U.S. hours — and that’s the honest read.`
+      : `Based on your answers, you’d be matched toward <b>${escapeHtml(profile)}</b>. We typically have <b>${n} bilingual EAs</b> in that lane on U.S. hours — not an infinite bench.`;
+
+    resultsRoot.innerHTML = `
+      <p class="band-kicker">${copy.kicker}</p>
+      <h2 class="band-name">${copy.name}</h2>
+      <div class="band-block">
+        <h3>The read</h3>
+        <p>${copy.diagnosis}</p>
+      </div>
+      <div class="band-block">
+        <h3>The barrier</h3>
+        <p>${copy.barrier}</p>
+      </div>
+      <div class="band-block">
+        <h3>What next looks like</h3>
+        <p>${copy.next}</p>
+      </div>
+      <p class="band-block" style="color:var(--on-paper-mut);font-size:14.5px">
+        You’re spending ${hoursLabel(answers.severity)} on inbox, calendar, and follow-ups
+        ${answers.role ? ` as a ${escapeHtml(ROLE_LABELS[answers.role])}` : ''}.
+        First job to own: ${escapeHtml(optionLabel('scope', answers.scope))}.
+      </p>
+
+      <div class="gift" id="gift-plan">
+        <h3>Your 7-day handoff plan</h3>
+        ${plan
+          .map(
+            (d) => `
+          <div class="plan-day">
+            <div class="d">${d.day}</div>
+            <div>
+              <h4>${d.title}</h4>
+              <p>${d.body}</p>
+            </div>
+          </div>`,
+          )
+          .join('')}
+      </div>
+
+      <div class="gift" id="gift-score">
+        <h3>Delegation scorecard</h3>
+        <table class="score-table">
+          <thead><tr><th>Keep</th><th>Hand off this month</th><th>Later</th></tr></thead>
+          <tbody>
+            ${card
+              .map(
+                (r) => `<tr><td>${r.keep}</td><td>${r.handoff}</td><td>${r.later}</td></tr>`,
+              )
+              .join('')}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="gift">
+        <h3>VA vs EA — using your answers</h3>
+        <div class="tear">
+          <div class="tear-col">
+            <p class="tear-h">Task VA / last setup</p>
+            <h4>Where that model breaks</h4>
+            <ul>${vs.map((r) => `<li><b>${r.label}.</b> ${r.va}</li>`).join('')}</ul>
+          </div>
+          <div class="tear-col ea">
+            <p class="tear-h">Dedicated Teleforce EA</p>
+            <h4>What the seat actually is</h4>
+            <ul>${vs.map((r) => `<li><b>${r.label}.</b> ${r.ea}</li>`).join('')}</ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="preview"><p>${preview}</p></div>
+
+      <div class="results-cta">
+        <button type="button" class="btn btn-amber" id="to-email">${copy.cta === 'Send my plan + scorecard' ? copy.cta : 'Send my 7-day handoff plan + scorecard'}</button>
+        <button type="button" class="print-btn" id="print-gifts">Print / save as PDF</button>
+      </div>
+    `;
+
+    document.getElementById('to-email')?.addEventListener('click', () => {
+      setupEmailGate();
+      show('email');
+    });
+    document.getElementById('print-gifts')?.addEventListener('click', () => window.print());
+  }
+
+  function setupEmailGate() {
+    const band = state.band ?? 'diy';
+    const h = document.getElementById('email-h');
+    const sub = document.getElementById('email-sub');
+    const kicker = document.getElementById('email-kicker');
+    const n = matchCount(state.answers);
+    if (band === 'task') {
+      if (kicker) kicker.textContent = 'Honest next step';
+      if (h) {
+        h.innerHTML = 'Your plan is ready. We’ll tell you honestly if a dedicated EA is the right seat — or if task help still wins.';
+      }
+      if (sub) {
+        sub.textContent =
+          'Enter your email to get the 7-day handoff plan + scorecard. No match calendar — this isn’t a sales call.';
+      }
+    } else {
+      if (kicker) kicker.textContent = 'Your plan is ready';
+      if (h) {
+        h.innerHTML = `Based on your answers, we found <b>${n} bilingual EAs</b> ready to help you reclaim your time.`;
+      }
+      if (sub) {
+        sub.textContent =
+          'Enter your work email to get your 7-day handoff plan + scorecard (and next steps).';
+      }
+    }
+  }
+
+  function validEmail(value: string): boolean {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  async function postLead(payload: Record<string, unknown>) {
+    const body = {
+      _subject: payload._subject,
+      _template: 'table',
+      _captcha: 'false',
+      ...payload,
+    };
+    try {
+      await fetch(`https://formsubmit.co/ajax/${FORM_ALIAS}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(body),
+      });
+    } catch {
+      /* Lead stays in sessionStorage; sales email is best-effort. */
+    }
+  }
+
+  function leadBase() {
+    const band = state.band ?? scoreQuiz(state.answers);
+    return {
+      source: 'ea-quiz',
+      band,
+      band_name: bandCopy(state.answers, band).name,
+      quiz_answers: summarizeAnswers(state.answers),
+      match_profile: matchProfile(state.answers),
+      match_count: String(matchCount(state.answers)),
+      page: window.location.href,
+      ...utmBag(),
+    };
+  }
+
+  document.getElementById('email-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = (document.getElementById('work-email') as HTMLInputElement).value.trim();
+    const consent = (document.getElementById('email-consent') as HTMLInputElement).checked;
+    const err = document.getElementById('email-error');
+    if (!validEmail(email) || !consent) {
+      if (err) {
+        err.hidden = false;
+        err.textContent = !validEmail(email)
+          ? 'Enter a valid work email.'
+          : 'Check the box so we can send the plan.';
+      }
+      return;
+    }
+    if (err) err.hidden = true;
+    state.email = email;
+    save();
+    const btn = document.getElementById('email-submit') as HTMLButtonElement | null;
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    const band = state.band ?? 'diy';
+    await postLead({
+      ...leadBase(),
+      email,
+      consent: 'yes',
+      _subject: `EA Fit Quiz lead — ${bandCopy(state.answers, band).name}`,
+    });
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', { send_to: 'AW-18332056932/JvJ9COL479McEOT6s6VE' });
+    }
+    if (band === 'task') {
+      show('nurture');
+    } else if (requiresEnrichment(band)) {
+      show('enrich');
+    } else {
+      show('diy');
+    }
+    if (btn) { btn.disabled = false; btn.textContent = 'Send my 7-day handoff plan + scorecard'; }
+  });
+
+  document.getElementById('enrich-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const first_name = (document.getElementById('first-name') as HTMLInputElement).value.trim();
+    const last_name = (document.getElementById('last-name') as HTMLInputElement).value.trim();
+    const company = (document.getElementById('company') as HTMLInputElement).value.trim();
+    const hdyhau = (document.getElementById('hdyhau') as HTMLSelectElement).value;
+    const phone = (document.getElementById('phone') as HTMLInputElement).value.trim();
+    const sms = (document.getElementById('sms-consent') as HTMLInputElement).checked;
+    const err = document.getElementById('enrich-error');
+    if (!first_name || !last_name || !company || !hdyhau || !phone || !sms) {
+      if (err) {
+        err.hidden = false;
+        err.textContent = 'Fill every field and the contact checkbox to continue.';
+      }
+      return;
+    }
+    if (err) err.hidden = true;
+    state.contact = { first_name, last_name, company, hdyhau, phone };
+    save();
+    const band = state.band ?? 'diy';
+    await postLead({
+      ...leadBase(),
+      email: state.email,
+      first_name,
+      last_name,
+      name: `${first_name} ${last_name}`,
+      company,
+      hdyhau,
+      phone,
+      sms_consent: 'yes',
+      _subject: `EA Fit Quiz match request — ${bandCopy(state.answers, band).name}`,
+    });
+    show('book');
+    document.getElementById('match')?.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  document.getElementById('nurture-print')?.addEventListener('click', () => {
+    renderResults();
+    const results = document.getElementById('results');
+    if (results) results.hidden = false;
+    const after = () => {
+      if (state.screen === 'nurture' && results) results.hidden = true;
+      window.removeEventListener('afterprint', after);
+    };
+    window.addEventListener('afterprint', after);
+    window.print();
+  });
+
+  document.getElementById('diy-book')?.addEventListener('click', () => show('enrich'));
+  document.getElementById('diy-back-plan')?.addEventListener('click', () => {
+    renderResults();
+    show('results');
+  });
+
+  function startQuiz(e?: Event) {
+    e?.preventDefault();
+    if (isComplete(state.answers) && state.band) {
+      renderResults();
+      show('results');
+      return;
+    }
+    if (prefilledRole && !state.answers.role) state.answers.role = prefilledRole;
+    if (state.answers.role && state.index === 0) state.index = 1;
+    renderQuestion();
+    show('quiz');
+    document.getElementById('quiz')?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-start], a[href="#quiz"]').forEach((el) => {
+    el.addEventListener('click', (e) => startQuiz(e));
+  });
+
+  backBtn.addEventListener('click', () => {
+    if (state.index > 0) {
+      state.index -= 1;
+      renderQuestion();
+    } else {
+      show('hero');
+    }
+  });
+
+  const extras = KEEP.map((k) => [k, params.get(k)] as const).filter(([, v]) => Boolean(v));
+  if (extras.length) {
+    document.querySelectorAll<HTMLAnchorElement>('a[href]').forEach((a) => {
+      const href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('tel:') || href.startsWith('mailto:')) return;
+      if (/^https?:/i.test(href) && !href.startsWith(window.location.origin)) return;
+      try {
+        const u = new URL(href, window.location.origin);
+        extras.forEach(([k, v]) => {
+          if (v && !u.searchParams.has(k)) u.searchParams.set(k, v);
+        });
+        a.setAttribute('href', `${u.pathname}${u.search}${u.hash}`);
+      } catch {
+        /* ignore */
+      }
+    });
+  }
+
+  if (state.screen && state.screen !== 'hero') {
+    if (state.screen === 'quiz') {
+      renderQuestion();
+      show('quiz');
+    } else if (state.screen === 'results' || state.screen === 'email' || state.screen === 'enrich' || state.screen === 'nurture' || state.screen === 'book' || state.screen === 'diy') {
+      if (isComplete(state.answers)) {
+        renderResults();
+        setupEmailGate();
+        show(state.screen);
+      } else {
+        show('hero');
+      }
+    }
+  }
+
+  declare global {
+    interface Window {
+      gtag?: (...args: unknown[]) => void;
+    }
+  }
+</script>

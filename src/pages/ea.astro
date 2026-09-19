@@ -73,8 +73,16 @@ const jsonLd = [
         <p class="lede">A dedicated, full-time <b>executive assistant</b> from the <b>top tier of bilingual talent</b> — rigorously vetted, career professionals, not gig-economy help. In your time zone, and genuinely capable of owning what you hand them.</p>
         <div class="hero-cta">
           <a href="#match" class="btn btn-amber">Get matched</a>
-          <a href="#pricing" class="btn btn-ghost">See pricing</a>
+          <a href="/ea/quiz" class="btn btn-ghost">Take the EA Fit Quiz</a>
         </div>
+        <p class="quiz-roles">
+          Or start the 2-minute quiz as
+          <a href="/ea/quiz?role=founder">Founder/CEO</a> ·
+          <a href="/ea/quiz?role=revenue">Revenue/Sales</a> ·
+          <a href="/ea/quiz?role=agency">Agency</a> ·
+          <a href="/ea/quiz?role=ops">Ops</a> ·
+          <a href="/ea/quiz?role=other">Other</a>
+        </p>
         <div class="ea-chips">
           <span class="chip">Top-tier, vetted talent</span>
           <span class="chip">Native EN / ES</span>
@@ -199,6 +207,9 @@ const jsonLd = [
     display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center}
   .hero h1.disp{font-size:clamp(40px,8vw,72px);text-transform:none}
   .hero h1.disp .l2{color:var(--amber)}
+  .quiz-roles{margin-top:16px;font-size:13.5px;color:var(--on-dark-mut);max-width:54ch;line-height:1.55}
+  .quiz-roles a{color:var(--amber);text-decoration:underline;text-underline-offset:3px}
+  .quiz-roles a:hover{color:#fff}
   .ea-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
   .ea-chips .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.05em;
     text-transform:uppercase;color:var(--on-dark);border:1px solid var(--line-dark);
