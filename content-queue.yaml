@@ -539,3 +539,35 @@ posts:
     publishDate: 2027-02-17
     status: done
 
+  - title: "What a Virtual Executive Assistant Actually Does"
+    slug: virtual-executive-assistant
+    primaryKeyword: "virtual executive assistant"
+    intent: ToFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-09-19
+    status: done
+
+  - title: "How a Virtual EA Frees Up Time for High-Leverage Work"
+    slug: how-virtual-ea-frees-up-time
+    primaryKeyword: "how a virtual EA frees up time"
+    intent: MoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-09-23
+    status: done
+
+  - title: "Virtual EA vs. In-House EA: When to Build and When to Buy"
+    slug: virtual-ea-vs-in-house
+    primaryKeyword: "virtual EA vs in-house"
+    intent: BoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-09-27
+    status: done
+
+  - title: "Getting Work Done With a Nearshore Virtual Assistant"
+    slug: nearshore-virtual-assistant
+    primaryKeyword: "nearshore virtual assistant"
+    intent: MoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-10-01
+    status: done
+
