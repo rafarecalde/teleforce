@@ -10,6 +10,7 @@ publishDate: 2026-09-23
 related:
   - virtual-executive-assistant
   - nearshore-time-zone-advantage
+image: /og/blog/how-virtual-ea-frees-up-time.jpg
 ---
 
 Founders and ops leaders do not lose the week in dramatic blocks. They lose it in status pings, “quick” reschedules, and the tab they opened to find a number they already had last Tuesday.

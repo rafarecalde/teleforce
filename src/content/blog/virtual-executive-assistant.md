@@ -10,6 +10,7 @@ publishDate: 2026-09-19
 related:
   - nearshore-time-zone-advantage
   - outsourced-vs-in-house-support
+image: /og/blog/virtual-executive-assistant.jpg
 ---
 
 Most people who type “virtual executive assistant” into a search bar already know they are drowning. They want a list of tasks to hand off. That list exists — calendar, inbox, travel, research — and it is not the interesting part.

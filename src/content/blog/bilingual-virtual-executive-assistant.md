@@ -19,6 +19,7 @@ faq:
 related:
   - nearshore-virtual-assistant
   - virtual-ea-for-founders
+image: /og/blog/bilingual-virtual-executive-assistant.jpg
 ---
 
 A bilingual virtual executive assistant is the opposite of a plugin: one dedicated person who can run a stakeholder conversation in English or Spanish — and switch mid-thread — without making you the translator.

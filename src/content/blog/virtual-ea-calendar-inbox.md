@@ -10,6 +10,7 @@ publishDate: 2026-10-06
 related:
   - first-30-days-virtual-ea
   - virtual-executive-assistant
+image: /og/blog/virtual-ea-calendar-inbox.jpg
 ---
 
 Virtual EA calendar and inbox management is one system: who reaches you, when they get you, and whether you walk in prepared. It is not “inbox zero as a personality.”
