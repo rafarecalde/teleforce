@@ -264,6 +264,10 @@ export const EA_JOURNEY_FAQ = [
     q: 'Is the first payment a deposit?',
     a: 'No. The initial payment is the prepaid first month of service. It is not a deposit that burns the 90-day commitment early. The commitment clock starts only when your EA’s official service start date arrives.',
   },
+  {
+    q: 'How long is onboarding?',
+    a: 'Onboarding takes about 2–5 hours of your time — tools, preferences, and live work with a partnership manager. Most clients are matched in about a week and live in under two. About two weeks from signing to launch.',
+  },
 ] as const;
 
 export const EA_START_FAQ = {
