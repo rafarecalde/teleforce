@@ -19,6 +19,7 @@ faq:
 related:
   - virtual-executive-assistant
   - how-virtual-ea-frees-up-time
+image: /og/blog/first-30-days-virtual-ea.jpg
 ---
 
 Gallup’s onboarding research is blunt: new employees typically take **around 12 months** to reach full performance in a role. Most companies still treat onboarding as a first-week orientation. Only a small share of employees say their organization does it well.

@@ -19,6 +19,7 @@ faq:
 related:
   - first-30-days-virtual-ea
   - virtual-ea-vs-in-house
+image: /og/blog/virtual-ea-for-founders.jpg
 ---
 
 A virtual EA for founders is not a junior version of the Fortune-500 brief. It is a different job that happens to share a title.

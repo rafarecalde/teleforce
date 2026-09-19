@@ -28,6 +28,8 @@ const blog = defineCollection({
       .array(z.object({ q: z.string(), a: z.string() }))
       .optional(),
     related: z.array(z.string()).optional(), // sibling slugs
+    /** Public path for OG/Twitter preview, e.g. `/og/blog/slug.jpg`. Falls back to `/og-default.png`. */
+    image: z.string().optional(),
   }),
 });
 

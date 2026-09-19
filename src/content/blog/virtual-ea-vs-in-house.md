@@ -19,6 +19,7 @@ faq:
 related:
   - virtual-executive-assistant
   - outsourced-vs-in-house-support
+image: /og/blog/virtual-ea-vs-in-house.jpg
 ---
 
 The virtual EA vs in-house debate gets framed as cheap versus premium. That is the wrong axis.

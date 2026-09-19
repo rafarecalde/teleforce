@@ -41,6 +41,9 @@ const articleLd = {
   publisher: { '@type': 'Organization', name: 'Teleforce' },
   mainEntityOfPage: `${SITE.url}/blog/${post.slug}`,
   articleSection: d.category,
+  ...(d.image
+    ? { image: new URL(d.image.startsWith('/') ? d.image : `/${d.image}`, SITE.url).href }
+    : {}),
 };
 
 const faqLd = d.faq && d.faq.length
@@ -59,7 +62,7 @@ const jsonLd = faqLd ? [articleLd, faqLd] : articleLd;
 const baseTitle = d.metaTitle ?? d.title;
 const metaTitle = baseTitle.includes('Teleforce') ? baseTitle : `${baseTitle} | Teleforce`;
 ---
-<BaseLayout title={metaTitle} description={d.description} jsonLd={jsonLd} ogType="article">
+<BaseLayout title={metaTitle} description={d.description} jsonLd={jsonLd} ogType="article" image={d.image}>
 
   <header class="ahead">
     <div class="wrap">

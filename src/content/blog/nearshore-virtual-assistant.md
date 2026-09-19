@@ -10,6 +10,7 @@ publishDate: 2026-10-01
 related:
   - virtual-executive-assistant
   - nearshore-time-zone-advantage
+image: /og/blog/nearshore-virtual-assistant.jpg
 ---
 
 A remote assistant who is excellent and twelve hours offset is still a delay. You send the brief at 4 p.m. You get the work at 7 a.m. The vendor who needed an answer at 4:30 has already moved on.
