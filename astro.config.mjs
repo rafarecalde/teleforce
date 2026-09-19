@@ -20,7 +20,8 @@ export default defineConfig({
       filter: (page) =>
         !page.includes('/ea/offer') &&
         !page.includes('/ea/remote-executive-assistant') &&
-        !page.includes('/ea/quiz'),
+        !page.includes('/ea/quiz') &&
+        !page.includes('/ea/match'),
     }),
   ],
 });
