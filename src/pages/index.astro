@@ -67,9 +67,10 @@ const steps = [
 ];
 
 const featuredPortrait = {
-  img: '/brand/customers/operator-portrait.jpg',
-  alt: 'A U.S. operator this seat is built for',
+  img: '/brand/customers/strauch.jpg',
+  alt: 'Emilio Strauch, Microtech, Inc.',
 };
+const strauchAvatar = '/brand/customers/strauch-avatar.jpg';
 
 const pillars = [
   {
@@ -247,8 +248,8 @@ const jsonLd = {
           <img
             src={featuredPortrait.img}
             alt={featuredPortrait.alt}
-            width="760"
-            height="760"
+            width="500"
+            height="500"
             loading="lazy"
           />
         </figure>
@@ -260,7 +261,13 @@ const jsonLd = {
               <div class="t-name">{proof.name}</div>
               <div class="t-role">{proof.company}</div>
             </div>
-            <div class="t-avatar" aria-hidden="true">ES</div>
+            <img
+              class="t-avatar"
+              src={strauchAvatar}
+              alt=""
+              width="208"
+              height="208"
+            />
           </div>
         </blockquote>
       </div>
@@ -472,7 +479,7 @@ const jsonLd = {
   .proof-feature{position:relative}
   .proof-portrait{margin:0;border-radius:18px;overflow:hidden;background:var(--paper-2)}
   .proof-portrait img{
-    width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 12%;display:block;
+    width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 28%;display:block;
   }
   .t-card{
     margin:0;border-radius:18px;padding:22px 22px 18px;
@@ -496,9 +503,8 @@ const jsonLd = {
     text-transform:uppercase;color:var(--sage-deep);margin-top:4px;
   }
   .t-avatar{
-    width:52px;height:52px;border-radius:12px;background:var(--ink);color:var(--amber);
-    display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;
-    font-weight:800;font-size:14px;letter-spacing:0.04em;flex-shrink:0;
+    width:52px;height:52px;border-radius:12px;object-fit:cover;object-position:50% 22%;
+    flex-shrink:0;display:block;background:var(--paper-2);
   }
   .t-ink{background:var(--ink);margin-top:12px}
   .t-ink > p{color:var(--on-dark)}
