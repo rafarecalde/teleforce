@@ -66,23 +66,10 @@ const steps = [
   ['You run your EA', 'After handoff, it’s your EA. You own the day-to-day relationship. We rematch if the fit isn’t right — we don’t babysit the seat.'],
 ];
 
-const customers = [
-  {
-    role: 'Founder / CEO',
-    img: '/brand/customers/founder.jpg',
-    outcome: 'Inbox and calendar owned so you can actually lead — not triage until 11am.',
-  },
-  {
-    role: 'Revenue leader',
-    img: '/brand/customers/revenue.jpg',
-    outcome: 'CRM hygiene, follow-ups, meeting logistics. Pipeline doesn’t wait on your inbox.',
-  },
-  {
-    role: 'Operator',
-    img: '/brand/customers/operator.jpg',
-    outcome: 'Projects, vendors, chase-downs. Someone on your U.S. hours owns the queue.',
-  },
-];
+const featuredPortrait = {
+  img: '/brand/customers/operator.jpg',
+  alt: 'A U.S. operator this seat is built for — head and shoulders, not a face crop',
+};
 
 const pillars = [
   {
@@ -250,35 +237,44 @@ const jsonLd = {
     </section>
   </div>
 
-  <section class="block" id="customers">
-    <div class="wrap reveal">
-      <div class="eyebrow">Our customers</div>
+  <section class="customers-sec" id="customers">
+    <div class="customers-wrap reveal">
+      <div class="cust-pill">Our customers</div>
       <h2 class="disp">Built for U.S. leaders who need to delegate and see work done.</h2>
-      <p class="sub" style="max-width:64ch">
-        Founders. Revenue leaders. Operators. The portraits are <b>role archetypes</b> — the U.S. buyers this seat is for — not staged “EA client” headshots. The named quote is a real Teleforce client.
-      </p>
-      <div class="icp-chips">
-        <span>Founders</span>
-        <span>Revenue leaders</span>
-        <span>Agencies</span>
-        <span>Ops</span>
+
+      <div class="proof-feature">
+        <figure class="proof-portrait">
+          <img
+            src={featuredPortrait.img}
+            alt={featuredPortrait.alt}
+            width="900"
+            height="1100"
+            loading="lazy"
+          />
+        </figure>
+
+        <blockquote class="t-card t-overlap">
+          <p>“{proof.quote}”</p>
+          <footer class="t-foot">
+            <div>
+              <div class="t-name">{proof.name}</div>
+              <div class="t-role">{proof.company}</div>
+            </div>
+            <div class="t-avatar" aria-hidden="true">ES</div>
+          </footer>
+        </blockquote>
       </div>
-      <div class="cust-grid">
-        {customers.map((c) => (
-          <figure class="cust-card">
-            <img src={c.img} alt={`Role archetype: U.S. ${c.role}`} loading="lazy" width="900" height="1100" />
-            <figcaption>
-              <div class="cust-role">{c.role}</div>
-              <p>{c.outcome}</p>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-      <blockquote class="quote proof-quote">
-        <p>“{proof.quote}”</p>
-        <div class="by"><span><b>{proof.name}</b> · {proof.company}</span></div>
-        <p class="proof-ctx">Real Teleforce client. Customer-service seats — same talent bench, same U.S. hours. We don’t invent EA-client theater.</p>
-      </blockquote>
+
+      <aside class="t-card t-ink">
+        <p>A dedicated bilingual EA on your U.S. hours — matched to how you operate, then handed to you.</p>
+        <footer class="t-foot">
+          <div>
+            <div class="t-name">English &amp; Español</div>
+            <div class="t-role">U.S. hours · matched ~1 week</div>
+          </div>
+          <a href="#contact" class="btn btn-amber t-cta">Get matched</a>
+        </footer>
+      </aside>
     </div>
   </section>
 
@@ -458,20 +454,62 @@ const jsonLd = {
   .mid-cta{margin-top:40px}
   .mid-cta :global(.cta-box){margin:0}
 
-  .icp-chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
-  .icp-chips span{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;
-    color:var(--sage-deep);border:1px solid var(--line-paper);border-radius:999px;padding:6px 12px;background:var(--paper)}
-  .cust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
-  .cust-card{margin:0;background:var(--paper);border:1px solid var(--line-paper);border-radius:16px;overflow:hidden}
-  .cust-card img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 18%;display:block}
-  .cust-card figcaption{padding:18px 18px 20px}
-  .cust-role{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
-    color:var(--sage-deep);margin-bottom:8px}
-  .cust-card p{font-size:14.5px;color:var(--on-paper);line-height:1.5;margin:0}
-  .proof-quote{margin-top:28px}
-  .proof-ctx{margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.03em;
-    color:var(--on-paper-mut);line-height:1.5;max-width:68ch}
-  @media (max-width:820px){.cust-grid{grid-template-columns:1fr}}
+  .customers-sec{
+    padding:72px 0 88px;
+    background:color-mix(in srgb, var(--sage) 10%, var(--paper));
+  }
+  .customers-wrap{max-width:480px;margin:0 auto;padding:0 24px}
+  .cust-pill{
+    display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    letter-spacing:0.14em;text-transform:uppercase;color:var(--sage-deep);
+    border:1px solid color-mix(in srgb, var(--sage-deep) 35%, transparent);
+    border-radius:999px;padding:6px 12px;margin-bottom:18px;
+  }
+  .customers-sec h2.disp{
+    font-weight:600;font-size:clamp(30px,7.6vw,42px);line-height:1.14;
+    letter-spacing:-0.03em;text-transform:none;margin:0 0 36px;
+  }
+  .proof-feature{position:relative}
+  .proof-portrait{margin:0;border-radius:18px;overflow:hidden;background:var(--paper-2)}
+  .proof-portrait img{
+    width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 32%;display:block;
+  }
+  .t-card{
+    margin:0;border-radius:18px;padding:28px 24px 22px;
+    background:color-mix(in srgb, var(--sage) 14%, var(--paper));
+  }
+  .t-overlap{
+    position:relative;z-index:1;margin:-32px 10px 0;
+    box-shadow:0 18px 40px -28px rgba(14,38,41,0.45);
+  }
+  .t-card > p{
+    font-family:'Archivo',sans-serif;font-weight:500;font-size:clamp(19px,4.6vw,23px);
+    line-height:1.38;letter-spacing:-0.025em;color:var(--on-paper);
+  }
+  .t-foot{margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+  .t-name{font-family:'Archivo',sans-serif;font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink)}
+  .t-role{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.08em;
+    text-transform:uppercase;color:var(--sage-deep);margin-top:5px;
+  }
+  .t-avatar{
+    width:58px;height:58px;border-radius:12px;background:var(--ink);color:var(--amber);
+    display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;
+    font-weight:800;font-size:15px;letter-spacing:0.04em;flex-shrink:0;
+    box-shadow:0 8px 20px -12px rgba(14,38,41,0.5);
+  }
+  .t-ink{background:var(--ink);margin-top:14px}
+  .t-ink > p{color:var(--on-dark)}
+  .t-ink .t-name{color:#fff}
+  .t-ink .t-role{color:var(--amber)}
+  .t-cta{padding:10px 14px;font-size:11.5px;flex-shrink:0}
+  @media (min-width:720px){
+    .customers-sec{padding:88px 0 104px}
+    .customers-wrap{max-width:520px;padding:0 28px}
+    .customers-sec h2.disp{margin-bottom:44px}
+    .t-overlap{margin-top:-40px;margin-left:14px;margin-right:14px}
+    .t-card{padding:32px 28px 24px}
+  }
 
   .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
   .pillar{background:var(--paper);border:1px solid var(--line-paper);border-radius:16px;padding:26px 22px}
