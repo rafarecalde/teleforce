@@ -16,13 +16,6 @@ const STAT_SUB: Record<string, string> = {
   'Fortune 500': 'Enterprise-grade delivery standards',
 };
 
-const roles = [
-  { id: 'founder', label: 'Founder / CEO' },
-  { id: 'revenue', label: 'Revenue / Sales' },
-  { id: 'agency', label: 'Agency' },
-  { id: 'ops', label: 'Ops' },
-];
-
 const falseSolutions = [
   {
     h: 'Cheap / overnight VA',
@@ -158,24 +151,15 @@ const jsonLd = {
         <div class="kicker">Dedicated EA · LatAm nearshore · U.S. hours</div>
         <h1 class="disp">
           You don’t need more tools.<br />
-          <span class="l2">You need an executive assistant.</span>
+            <span class="l2">Get an executive assistant.</span>
         </h1>
         <p class="lede">
           Teleforce matches you with a dedicated bilingual EA on U.S. hours — onboarded to how you think and operate, then handed to you. You run the seat day to day.
         </p>
-        <p class="hero-price">Dedicated bilingual EA. LatAm nearshore. Your U.S. hours. From <b>~${price12}/mo</b>.</p>
+        <p class="hero-speed">Matched ~1 week · Live under ~2 weeks</p>
         <div class="hero-cta">
           <a href="#contact" class="btn btn-amber">Get matched with your EA</a>
           <a href="#pricing" class="btn btn-ghost">See pricing</a>
-        </div>
-        <p class="hero-speed">Matched ~1 week · Live under ~2 weeks · 2–5 hrs of your time</p>
-        <div class="role-cue">
-          <span class="role-lab">What best describes your role?</span>
-          <div class="role-pills" role="group" aria-label="Your role">
-            {roles.map((r) => (
-              <a href={`#contact`} class="role-pill" data-role={r.id}>{r.label}</a>
-            ))}
-          </div>
         </div>
       </div>
       <div class="hero-media">
@@ -410,8 +394,6 @@ const jsonLd = {
     </div>
   </section>
 
-  <p id="role-note" class="role-note" hidden></p>
-
   <BookingSection
     id="contact"
     eyebrow="Get matched"
@@ -422,54 +404,6 @@ const jsonLd = {
   />
 
 </BaseLayout>
-
-<script>
-  const ROLE_LABELS: Record<string, string> = {
-    founder: 'Founder / CEO',
-    revenue: 'Revenue / Sales',
-    agency: 'Agency',
-    ops: 'Ops',
-  };
-
-  const noteEl = document.getElementById('role-note');
-  const matchWrap = document.querySelector('#contact .wrap');
-  if (matchWrap && noteEl) {
-    const sub = matchWrap.querySelector('.sub');
-    const insertAfter = sub ?? matchWrap.lastElementChild;
-    if (insertAfter) insertAfter.insertAdjacentElement('afterend', noteEl);
-    else matchWrap.appendChild(noteEl);
-  }
-
-  const setRole = (id: string) => {
-    const note = document.getElementById('role-note');
-    if (note) {
-      if (ROLE_LABELS[id]) {
-        note.hidden = false;
-        note.textContent = `Matching for ${ROLE_LABELS[id]} — mention it on the call.`;
-      } else {
-        note.hidden = true;
-        note.textContent = '';
-      }
-    }
-    document.querySelectorAll('.role-pill').forEach((el) => {
-      el.classList.toggle('on', el.getAttribute('data-role') === id);
-    });
-    const url = new URL(window.location.href);
-    if (id && ROLE_LABELS[id]) url.searchParams.set('role', id);
-    else url.searchParams.delete('role');
-    history.replaceState({}, '', url);
-  };
-
-  document.querySelectorAll<HTMLAnchorElement>('.role-pill').forEach((a) => {
-    a.addEventListener('click', () => {
-      const id = a.dataset.role || '';
-      if (id) setRole(id);
-    });
-  });
-
-  const incoming = new URLSearchParams(window.location.search).get('role');
-  if (incoming && ROLE_LABELS[incoming]) setRole(incoming);
-</script>
 
 <style>
   .hero h1.disp{font-size:clamp(28px,5.2vw,48px);text-transform:none;line-height:1.08;letter-spacing:-0.03em}
@@ -490,18 +424,9 @@ const jsonLd = {
   .hero-chips .cl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;
     text-transform:uppercase;color:var(--on-dark-mut);line-height:1.3}
   .hero-chips .cl b{color:#fff;font-weight:600}
-  .hero-price{margin-top:18px;font-size:16px;line-height:1.45;color:var(--on-dark);max-width:46ch}
-  .hero-price b{color:#fff;font-weight:600}
-  .hero-speed{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;
+  .hero-speed{margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:12px;
     letter-spacing:0.04em;color:var(--on-dark-mut);text-transform:uppercase}
-  .role-cue{margin-top:22px}
-  .role-lab{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;
-    text-transform:uppercase;color:var(--on-dark-mut);margin-bottom:10px}
-  .role-pills{display:flex;flex-wrap:wrap;gap:8px}
-  .role-pill{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.04em;text-transform:uppercase;
-    color:var(--on-dark);border:1px solid var(--line-dark);border-radius:999px;padding:7px 12px;
-    background:rgba(236,230,214,0.04);transition:border-color .15s,color .15s,background .15s}
-  .role-pill:hover,.role-pill.on{border-color:var(--amber);color:var(--amber);background:rgba(242,168,43,0.08)}
+  .hero .hero-cta{margin-top:22px}
   @media (max-width:820px){
     .hero-inner{grid-template-columns:1fr;gap:40px}
     .hero-media{max-width:400px;margin:0 auto;width:100%}
@@ -608,10 +533,6 @@ const jsonLd = {
   .cs-note a{color:var(--ink);font-weight:600;border-bottom:1px solid var(--line-paper)}
   .cs-note a:hover{color:var(--amber);border-color:var(--amber)}
 
-  .role-note{display:none}
-  :global(#contact) .role-note{display:block;color:var(--amber);text-align:left;max-width:60ch;margin:10px 0 0;padding:0;
-    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:0.04em}
-  .role-note[hidden]{display:none !important}
   :global(#contact),:global(#pricing),:global(#how),:global(#customers),:global(#work){scroll-margin-top:72px}
 
   @media (max-width:680px){
