@@ -280,12 +280,28 @@ export const EA_START_FAQ = {
 export const PHONE = '1-866-252-3961';
 export const PHONE_HREF = 'tel:+18662523961';
 
-export interface Testimonial { quote: string; name: string; company: string }
+export interface Testimonial {
+  quote: string;
+  name: string;
+  company: string;
+  img: string;
+  avatar: string;
+}
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      'Our customer service inquiries were growing out of hand and our internal staff was getting expensive. We hired Teleforce for 50 full-time customer service agents and our customer satisfaction has gone through the roof.',
+      'I stopped drowning in inbox and calendar noise. My Teleforce EA owns the day-to-day so I can actually run the company.',
     name: 'Emilio Strauch',
     company: 'Microtech, Inc.',
+    img: '/brand/customers/strauch.jpg',
+    avatar: '/brand/customers/strauch-avatar.jpg',
+  },
+  {
+    quote:
+      'I’m on the East Coast — nearshore Teleforce beats the offshore setups I tried. Same-day hours, not overnight lag.',
+    name: 'Eduardo Dávila',
+    company: 'Bioceramics',
+    img: '/brand/customers/davila.jpg',
+    avatar: '/brand/customers/davila-avatar.jpg',
   },
 ];
