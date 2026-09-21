@@ -8,8 +8,6 @@ import BookingSection from '../components/BookingSection.astro';
 const marquee = [...LOGOS, ...LOGOS];
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
-const proof = TESTIMONIALS[0];
-
 const STAT_SUB: Record<string, string> = {
   '30+': 'Operating history behind every EA seat',
   '20+': 'Regulated and consumer verticals',
@@ -65,12 +63,6 @@ const steps = [
   ['Onboard', 'Client-specific onboarding — tools, preferences, live work. About 2–5 hours of your time. Then a partnership manager hands the seat off.'],
   ['You run your EA', 'After handoff, it’s your EA. You own the day-to-day relationship. We rematch if the fit isn’t right — we don’t babysit the seat.'],
 ];
-
-const featuredPortrait = {
-  img: '/brand/customers/strauch.jpg',
-  alt: 'Emilio Strauch, Microtech, Inc.',
-};
-const strauchAvatar = '/brand/customers/strauch-avatar.jpg';
 
 const pillars = [
   {
@@ -243,34 +235,36 @@ const jsonLd = {
       <div class="cust-pill">Our customers</div>
       <h2 class="disp">Built for U.S. leaders who need to delegate and see work done.</h2>
 
-      <div class="proof-feature">
-        <figure class="proof-portrait">
-          <img
-            src={featuredPortrait.img}
-            alt={featuredPortrait.alt}
-            width="500"
-            height="500"
-            loading="lazy"
-          />
-        </figure>
-
-        <blockquote class="t-card t-overlap">
-          <p>“{proof.quote}”</p>
-          <div class="t-foot">
-            <div>
-              <div class="t-name">{proof.name}</div>
-              <div class="t-role">{proof.company}</div>
-            </div>
+      {TESTIMONIALS.map((t) => (
+        <div class="proof-feature">
+          <figure class="proof-portrait">
             <img
-              class="t-avatar"
-              src={strauchAvatar}
-              alt=""
-              width="208"
-              height="208"
+              src={t.img}
+              alt={`${t.name}, ${t.company}`}
+              width="500"
+              height="500"
+              loading="lazy"
             />
-          </div>
-        </blockquote>
-      </div>
+          </figure>
+
+          <blockquote class="t-card t-overlap">
+            <p>“{t.quote}”</p>
+            <div class="t-foot">
+              <div>
+                <div class="t-name">{t.name}</div>
+                <div class="t-role">{t.company}</div>
+              </div>
+              <img
+                class="t-avatar"
+                src={t.avatar}
+                alt=""
+                width="208"
+                height="208"
+              />
+            </div>
+          </blockquote>
+        </div>
+      ))}
 
       <aside class="t-card t-ink">
         <p>A dedicated bilingual EA on your U.S. hours — matched to how you operate, then handed to you.</p>
@@ -477,6 +471,7 @@ const jsonLd = {
     letter-spacing:-0.03em;text-transform:none;margin:0 0 28px;
   }
   .proof-feature{position:relative}
+  .proof-feature + .proof-feature{margin-top:36px}
   .proof-portrait{margin:0;border-radius:18px;overflow:hidden;background:var(--paper-2)}
   .proof-portrait img{
     width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 28%;display:block;
@@ -515,6 +510,7 @@ const jsonLd = {
     .customers-sec{padding:80px 0 96px}
     .customers-wrap{max-width:520px;padding:0 28px}
     .customers-sec h2.disp{margin-bottom:32px}
+    .proof-feature + .proof-feature{margin-top:44px}
     .t-overlap{margin-top:-56px;margin-left:16px;margin-right:16px}
     .t-card{padding:24px 24px 20px}
   }
