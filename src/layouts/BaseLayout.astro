@@ -46,7 +46,18 @@ const {
   image,
 } = Astro.props;
 
-const canonical = new URL(Astro.url.pathname, SITE.url).href.replace(/\/$/, '') || SITE.url;
+/**
+ * GitHub Pages serves directory URLs with a trailing slash and 301s the
+ * slashless twin (`/ea` → `/ea/`). Canonicals must be the 200 URL — and must
+ * match the sitemap — not the redirect. Query strings stay off the canonical
+ * because we build from pathname only.
+ */
+function canonicalHref(pathname: string): string {
+  const url = new URL(pathname, SITE.url);
+  if (!url.pathname.endsWith('/')) url.pathname += '/';
+  return url.href;
+}
+const canonical = canonicalHref(Astro.url.pathname);
 const ogImage = absoluteAssetUrl(image ?? '/og-default.png');
 
 const org = {

@@ -6,13 +6,15 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://tryteleforce.com',
   output: 'static',
-  trailingSlash: 'ignore',
+  // GitHub Pages 301s slashless directory URLs to the slashed form. Keep
+  // Astro, the sitemap, and <link rel="canonical"> on that 200 URL.
+  trailingSlash: 'always',
   // Retired the older overlapping PPC pages → route to the new solid landings.
   redirects: {
-    '/outsourced-sdr-team': '/sdr-bdr',
-    '/outsourced-saas-support': '/customer-service',
-    '/nearshore-customer-service-mexico-colombia': '/customer-service',
-    '/nearshore-bilingual-support-lenders': '/customer-service',
+    '/outsourced-sdr-team': '/sdr-bdr/',
+    '/outsourced-saas-support': '/customer-service/',
+    '/nearshore-customer-service-mexico-colombia': '/customer-service/',
+    '/nearshore-bilingual-support-lenders': '/customer-service/',
   },
   integrations: [
     sitemap({
