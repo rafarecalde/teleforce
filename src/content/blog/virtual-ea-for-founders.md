@@ -106,7 +106,7 @@ If you will not grant inbox access, neither model works. You will get a schedule
 
 ## How Teleforce staffs either pattern
 
-Teleforce is a bilingual LATAM BPO with 30+ years of Fortune 500-grade operating history across 20+ industries. The EA product is one named, full-time assistant: English and Spanish, your hours, employed and rematched by us. Your partnership manager matches you; you meet and confirm your EA.
+Teleforce is a bilingual LATAM BPO with 30+ years of Fortune 500-grade operating history across 20+ industries. The EA product is one named, full-time assistant: English and Spanish, your hours, employed and rematched by us. Your partnership manager presents one to two top-tier candidates; you select your EA.
 
 For founders, that usually means one seat next to you. For enterprise, it means a lane we will ask you to write down before we match. We will not talk a six-person company into a shared-services fantasy, and we will not drop a generalist on an ELT with no owner.
 
