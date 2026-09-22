@@ -60,8 +60,8 @@ const delegate = [
 
 const steps = [
   ['Match', 'We match on how you think, communicate, and operate. You interview and select. Most clients are matched in about a week.'],
-  ['Onboard', 'Client-specific onboarding — tools, preferences, live work. About 2–5 hours of your time. Then a partnership manager hands the seat off.'],
-  ['You run your EA', 'After handoff, it’s your EA. You own the day-to-day relationship. We rematch if the fit isn’t right — we don’t babysit the seat.'],
+  ['Onboard', 'Client-specific onboarding — tools, preferences, live work. About 2–5 hours of your time. A partnership manager helps you launch.'],
+  ['Live with support', 'You work with your EA day to day, backed by Teleforce. If the fit isn’t right, we rematch.'],
 ];
 
 const pillars = [
@@ -70,12 +70,12 @@ const pillars = [
     p: 'One named, full-time bilingual EA on your U.S. hours. Not a pool. Not an hour pack.',
   },
   {
-    h: 'Handoff, then yours',
-    p: 'We match and onboard. A partnership manager hands the seat off. You run the relationship.',
+    h: 'Full back-end support',
+    p: 'We match, onboard, and stay with you. A partnership manager helps you launch — Teleforce stays behind the seat.',
   },
   {
     h: 'The seat compounds',
-    p: 'They learn how you operate. Wrong fit? We rematch. We don’t babysit the chair.',
+    p: 'They learn how you operate. Wrong fit? We rematch. Support stays with the seat.',
   },
 ];
 
@@ -87,7 +87,7 @@ const faq = [
   },
   {
     q: 'Who runs my EA day to day?',
-    a: 'You and your EA do. We set the runway — match, onboard, and hand off. A partnership manager is there for the launch and for rematch — not to run the work forever. After the official start date, you and your EA run the work.',
+    a: 'You work with your EA day to day. Teleforce stays with full back-end support — a partnership manager is there for the launch, for ongoing support, and for a rematch if the fit fails.',
   },
   { q: 'How long until we’re live?', a: EA_START_FAQ.a },
   {
@@ -104,7 +104,7 @@ const faq = [
   },
   {
     q: 'Are they full-time and dedicated to me?',
-    a: 'Yes. One named, full-time executive assistant — bilingual English/Spanish, on your U.S. hours. Not a shared pool. After onboarding, you own the relationship.',
+    a: 'Yes. One named, full-time executive assistant — bilingual English/Spanish, on your U.S. hours. Not a shared pool. You work together day to day, backed by Teleforce.',
   },
   {
     q: 'What if the fit isn’t right?',
@@ -134,7 +134,7 @@ const jsonLd = {
             <span class="l2">Get an executive assistant.</span>
         </h1>
         <p class="lede">
-          Teleforce matches you with a dedicated bilingual EA on U.S. hours — onboarded to how you think and operate, then handed to you. We set the runway. You and your EA run the work.
+          Teleforce matches you with a dedicated bilingual EA on U.S. hours — onboarded to how you think and operate. We match, onboard, and stay with you — with full back-end support from Teleforce.
         </p>
         <p class="hero-speed">Matched ~1 week · Live under ~2 weeks</p>
         <div class="hero-cta">
@@ -198,12 +198,12 @@ const jsonLd = {
   <section class="block" id="mechanism" style="padding-top:0">
     <div class="wrap reveal">
       <div class="eyebrow">The mechanism</div>
-      <h2 class="disp">Match how you operate. Onboard. Then it’s your EA.</h2>
+      <h2 class="disp">Match how you operate. Onboard. Live with support.</h2>
       <p class="sub" style="max-width:64ch">
-        We don’t send a resume stack. We match a dedicated bilingual executive assistant to how you think, communicate, and operate. You interview and select. We onboard. A partnership manager hands the seat off.
+        We don’t send a resume stack. We match a dedicated bilingual executive assistant to how you think, communicate, and operate. You interview and select. We onboard, and a partnership manager stays available for the launch and after.
       </p>
       <p class="sub" style="max-width:64ch;margin-top:14px">
-        After that, you run the relationship. Built for leaders who want a dedicated EA in their hours — bilingual, nearshore, predictable price.
+        You work with your EA day to day, backed by Teleforce. Built for leaders who want a dedicated EA in their hours — bilingual, nearshore, predictable price.
       </p>
     </div>
   </section>
@@ -212,7 +212,7 @@ const jsonLd = {
     <section class="block" id="how">
       <div class="wrap reveal">
         <div class="eyebrow">Three steps</div>
-        <h2 class="disp">Match. Onboard. You run your EA.</h2>
+        <h2 class="disp">Match. Onboard. Live with support.</h2>
         <div class="steps">
           {steps.map(([t, b], i) => (
             <div class="step"><div class="num">0{i + 1}</div><h4>{t}</h4><p>{b}</p></div>
@@ -221,7 +221,7 @@ const jsonLd = {
         <div class="mid-cta">
           <CtaBox
             heading="Get matched with your EA."
-            body="Most clients are matched in about a week and live in under two. About 2–5 hours of your time. Then the seat is yours."
+            body="Most clients are matched in about a week and live in under two. About 2–5 hours of your time. Then you go live — and we stay with you."
             label="Get matched with your EA"
             href="#contact"
           />
@@ -267,7 +267,7 @@ const jsonLd = {
       ))}
 
       <aside class="t-card t-ink">
-        <p>A dedicated bilingual EA on your U.S. hours — matched to how you operate, then handed to you.</p>
+        <p>A dedicated bilingual EA on your U.S. hours — matched to how you operate, with Teleforce behind the seat.</p>
         <div class="t-foot">
           <div>
             <div class="t-name">English &amp; Español</div>
@@ -283,7 +283,7 @@ const jsonLd = {
     <section class="block" id="seat">
       <div class="wrap reveal">
         <div class="eyebrow">The partnership</div>
-        <h2 class="disp">A dedicated seat that compounds. After handoff, it’s yours.</h2>
+        <h2 class="disp">A dedicated seat that compounds. We stay with you.</h2>
         <div class="pillar-grid">
           {pillars.map((p) => (
             <div class="pillar">
@@ -301,7 +301,7 @@ const jsonLd = {
       <div class="trust-grid">
         <div><div class="tk">Background-checked</div><p>Career EAs. Multi-stage screen. Not gig help.</p></div>
         <div><div class="tk">Dedicated full-time</div><p>One named seat. Your hours. Bilingual EN/ES.</p></div>
-        <div><div class="tk">You own the relationship</div><p>Match → onboard → handoff. We don’t babysit the seat.</p></div>
+        <div><div class="tk">Backed by Teleforce</div><p>Match, onboard, and stay with you. Rematch if the fit fails.</p></div>
         <div><div class="tk">Rematch included</div><p>Wrong fit? We put someone else in the chair.</p></div>
       </div>
     </div>
@@ -312,7 +312,7 @@ const jsonLd = {
       <div class="eyebrow">Been here before</div>
       <h2 class="disp">“I tried a VA. Offshore. It failed.”</h2>
       <p class="sub" style="max-width:64ch">
-        Timezone. Quality. Ownership. That’s the pattern: you explain it twice, correct it once, then do it yourself. A dedicated EA on your U.S. hours — matched to how you operate, then handed to you — is a different product.
+        Timezone. Quality. Ownership. That’s the pattern: you explain it twice, correct it once, then do it yourself. A dedicated EA on your U.S. hours — matched to how you operate, and still supported after you start — is a different product.
       </p>
       <div class="hero-cta" style="margin-top:28px">
         <a href="#contact" class="btn btn-amber">Get matched with your EA</a>
@@ -395,7 +395,7 @@ const jsonLd = {
     id="contact"
     eyebrow="Get matched"
     heading="Get matched with your EA."
-    sub="We’ll match on how you think and operate. You interview and select. Most clients are matched in one week and live in under two. Then you own the relationship. The 90-day commitment starts on the official service start date."
+    sub="We’ll match on how you think and operate. You interview and select. Most clients are matched in one week and live in under two, with full back-end support from Teleforce. The 90-day commitment starts on the official service start date."
     subject="New Teleforce EA match request"
     idPrefix="home"
   />
