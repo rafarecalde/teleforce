@@ -3,11 +3,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
 import WhyTheBarHolds from '../../components/WhyTheBarHolds.astro';
-import { EA, LOGOS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
+import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
-const marquee = [...LOGOS, ...LOGOS];
 
 const falseSolutions = [
   {
@@ -315,13 +314,6 @@ const jsonLd = [
   </div>
 
   <WhyTheBarHolds />
-
-  <div class="logos">
-    <div class="lab">Trusted by global enterprises for 30+ years</div>
-    <div class="marquee-mask">
-      <div class="marquee">{marquee.map((n) => <span>{n}</span>)}</div>
-    </div>
-  </div>
 
   <section class="block" id="compare">
     <div class="wrap reveal">
