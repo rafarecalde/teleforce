@@ -90,7 +90,7 @@ Nearshore is a bet on overlap and language, not a slogan.
 
 Teleforce is a bilingual LATAM BPO with 30+ years of Fortune 500-grade operating history across 20+ industries. The EA product is one named, full-time assistant: inbox, calendar, priorities, follow-through. Not a cheap VA. Not a ticket pile.
 
-They are employed by us. Your partnership manager matches you; you meet and confirm your EA. Matching is about a week; you’re live in under about two weeks. The partnership manager stays on the engagement.
+They are employed by us. Your partnership manager presents one to two top-tier candidates; you select your EA. Matching is about a week; you’re live in under about two weeks. The partnership manager stays on the engagement.
 
 If the work later expands into a queue — [data entry](/services/data-entry), [appointment setting](/services/appointment-setting), bilingual support — you are not starting over with a new vendor. Different seat. Same employer.
 
