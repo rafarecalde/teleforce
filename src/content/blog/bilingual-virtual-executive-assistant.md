@@ -107,4 +107,4 @@ Teleforce is a bilingual LATAM operator: 30+ years of Fortune 500-grade support,
 
 They are not a cheap VA who “also speaks some Spanish.” They are a career operator who can run the week *and* the stakeholder language. Household admin can sit in the background. It is not why the seat exists.
 
-[See the EA offer](/ea), [see pricing](/#pricing), or [get matched](/#contact). Bring the threads that currently wait on your Spanish. A bilingual virtual executive assistant only pays when those threads leave your queue.
+[See the EA offer](/), [see pricing](/#pricing), or [get matched](/#contact). Bring the threads that currently wait on your Spanish. A bilingual virtual executive assistant only pays when those threads leave your queue.

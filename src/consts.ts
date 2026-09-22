@@ -5,9 +5,9 @@
 export const SITE = {
   name: 'Teleforce',
   url: 'https://tryteleforce.com',
-  title: 'Elite Executive Assistants | Teleforce',
+  title: 'Executive Assistants | Elite Dedicated Talent | Teleforce',
   description:
-    'Your VA isn’t an executive assistant. Get a dedicated bilingual EA on your U.S. hours — LatAm nearshore, matched in about a week. From $2,700/mo.',
+    'Hire a dedicated, full-time executive assistant from the top tier of bilingual talent — rigorously vetted, career professionals, in your time zone. From $2,700/mo.',
   tagline: 'Elite bilingual executive assistants · English/Spanish · U.S. hours',
   backbone: '30 years of Fortune 500 operating history',
 } as const;
@@ -42,13 +42,12 @@ export const LOGOS = [
 ] as const;
 
 export const NAV_LINKS = [
-  { href: '/ea', label: 'Executive Assistants' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Signal' },
 ] as const;
 
 export const FOOTER_LINKS = [
-  { href: '/ea', label: 'Executive Assistants' },
+  { href: '/#pricing', label: 'EA pricing' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Signal' },
   { href: '/#contact', label: 'Get matched' },
@@ -234,7 +233,7 @@ export const SERVICES_LEGACY: Service[] = [
 export const ALL_SERVICES: Service[] = [...SERVICES, ...SERVICES_LEGACY];
 
 // ============================================================
-// Executive Assistant product (/ea) — a dedicated, full-time bilingual EA.
+// Executive Assistant product (homepage) — a dedicated, full-time bilingual EA.
 // Modeled on the premium delegation category; priced simply and flat.
 // ============================================================
 // One dedicated full-time EA, two commitments. Start on the 3-month plan.
@@ -244,7 +243,7 @@ export const EA = {
   price3mo: 3000, // USD/mo on a 3-month commitment
 } as const;
 
-// Client journey — single source for homepage + /ea FAQ/process copy.
+// Client journey — single source for homepage FAQ/process copy.
 // The 90-day clock starts on the official service start date, not sign/pay.
 export const EA_JOURNEY_LINE =
   'Sign agreement → pay first month → Executive Profile → match → you interview and select → client-specific onboarding → EA starts → 90-day clock begins.';

@@ -9,6 +9,7 @@ export default defineConfig({
   trailingSlash: 'ignore',
   // Retired the older overlapping PPC pages → route to the new solid landings.
   redirects: {
+    '/ea': '/',
     '/outsourced-sdr-team': '/sdr-bdr',
     '/outsourced-saas-support': '/customer-service',
     '/nearshore-customer-service-mexico-colombia': '/customer-service',

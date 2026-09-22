@@ -31,7 +31,7 @@ The title is doing too much work in the market. “Virtual assistant,” “remo
 
 **A full-life prestige EA** will book the household, the wellness stack, and the personal logistics. Useful if that is the product you want. It is a different product.
 
-Teleforce’s [executive assistant seat](/ea) is the first model: business operations, bilingual English/Spanish, Latin America talent on U.S. hours, employed and rematched by us. Household admin can sit in the background. It is not why the seat exists.
+Teleforce’s [executive assistant seat](/) is the first model: business operations, bilingual English/Spanish, Latin America talent on U.S. hours, employed and rematched by us. Household admin can sit in the background. It is not why the seat exists.
 
 If you need volume work with no judgment — order entry, CRM cleanup, document processing — that is closer to [outsourced data entry](/blog/outsourcing-data-entry) than to an EA. Do not stuff a dedicated assistant with keystrokes they should not own.
 
@@ -174,6 +174,6 @@ Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade supp
 
 This is not a marketplace freelancer and not a shared pool. It is a seat.
 
-Most clients are matched in a week and live in under two. [See pricing](/#pricing) on the homepage, or the full [EA offer](/ea). [Contact us](/#contact) if you want a match conversation rather than a brochure. If you later need adjacent capacity — appointment setting, data entry, bilingual support — it is the same employer, a different seat.
+Most clients are matched in a week and live in under two. [See pricing](/#pricing) on the homepage, or the full [EA offer](/). [Contact us](/#contact) if you want a match conversation rather than a brochure. If you later need adjacent capacity — appointment setting, data entry, bilingual support — it is the same employer, a different seat.
 
 The test is simple: after 30 days, is the interruption layer theirs or still yours? If it is still yours, you hired a tasker. If it is theirs, you finally have a virtual executive assistant.

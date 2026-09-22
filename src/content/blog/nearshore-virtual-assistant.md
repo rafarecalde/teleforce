@@ -94,4 +94,4 @@ They are employed by us. You interview and select. Most matches happen in a week
 
 If the work later expands into a queue — [data entry](/services/data-entry), [appointment setting](/services/appointment-setting), bilingual support — you are not starting over with a new vendor. Different seat. Same employer.
 
-[See the EA offer](/ea), [see pricing](/#pricing), or [get matched](/#contact). Bring the actual loops you want closed this month, not a generic “I need a VA.” The nearshore virtual assistant only works when the work is real and the clock is shared.
+[See the EA offer](/), [see pricing](/#pricing), or [get matched](/#contact). Bring the actual loops you want closed this month, not a generic “I need a VA.” The nearshore virtual assistant only works when the work is real and the clock is shared.

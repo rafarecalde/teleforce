@@ -110,4 +110,4 @@ Teleforce is a bilingual LATAM BPO with 30+ years of Fortune 500-grade operating
 
 For founders, that usually means one seat next to you. For enterprise, it means a lane we will ask you to write down before we match. We will not talk a six-person company into a shared-services fantasy, and we will not drop a generalist on an ELT with no owner.
 
-[See the EA offer](/ea), [see pricing](/#pricing), or [get matched](/#contact). Bring the org chart and the loops. The virtual EA for founders only works when the founder is willing to stop being the assistant.
+[See the EA offer](/), [see pricing](/#pricing), or [get matched](/#contact). Bring the org chart and the loops. The virtual EA for founders only works when the founder is willing to stop being the assistant.
