@@ -103,7 +103,7 @@ Collage Group’s 2025 cultural-fluency work — picked up in the Hispanic Marke
 
 ## How Teleforce staffs the language, not a plugin
 
-Teleforce is a bilingual LATAM operator: 30+ years of Fortune 500-grade support, 20+ industries, English and Spanish only — not a long language list. The EA product is one named, full-time assistant on your U.S. hours, employed and rematched by us. You interview and select.
+Teleforce is a bilingual LATAM operator: 30+ years of Fortune 500-grade support, 20+ industries, English and Spanish only — not a long language list. The EA product is one named, full-time assistant on your U.S. hours, employed and rematched by us. Your partnership manager matches you; you meet and confirm your EA.
 
 They are not a cheap VA who “also speaks some Spanish.” They are a career operator who can run the week *and* the stakeholder language. Household admin can sit in the background. It is not why the seat exists.
 

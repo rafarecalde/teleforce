@@ -170,10 +170,10 @@ If you want the operating version of this — what to hand off first, and in wha
 
 ## What Teleforce means by the role
 
-Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade support behind the recruiting. The EA offer is one dedicated, full-time assistant — English and Spanish, on your U.S. hours — employed and managed by us. You interview and select. A partnership manager stays on the engagement and rematches if the fit is wrong.
+Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade support behind the recruiting. The EA offer is one dedicated, full-time assistant — English and Spanish, on your U.S. hours — employed and managed by us. Your partnership manager matches you; you meet and confirm your EA. They stay on the engagement for oversight, tools, and best practices, and rematch if the fit is wrong.
 
 This is not a marketplace freelancer and not a shared pool. It is a seat.
 
-Most clients are matched in a week and live in under two. [See pricing](/#pricing) on the homepage, or the full [EA offer](/). [Contact us](/#contact) if you want a match conversation rather than a brochure. If you later need adjacent capacity — appointment setting, data entry, bilingual support — it is the same employer, a different seat.
+Matching is about a week. You’re live in under about two weeks. [See pricing](/#pricing) on the homepage, or the full [EA offer](/). [Contact us](/#contact) if you want a match conversation rather than a brochure. If you later need adjacent capacity — appointment setting, data entry, bilingual support — it is the same employer, a different seat.
 
 The test is simple: after 30 days, is the interruption layer theirs or still yours? If it is still yours, you hired a tasker. If it is theirs, you finally have a virtual executive assistant.

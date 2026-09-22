@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { EA, LOGOS, STATS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
+import { EA, LOGOS, STATS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -37,10 +37,10 @@ const included = [
 ];
 
 const steps = [
-  ['Match', 'You sign, prepay the first month, and complete an Executive Profile. We match on how you think, communicate, and operate — then you interview and select. Most clients are matched in one week.'],
-  ['Onboard', 'Client-specific onboarding (2–5 hours of your time). A partnership manager hands the seat off. Live in under two weeks from signing.'],
-  ['Delegate', 'Chat, email, or a quick call. One dedicated person — not a ticket queue, not an overnight lag. The 90-day commitment starts on the official service start date, not when you sign or pay.'],
-  ['Optimize', 'A success lead manages performance and keeps raising the bar. Wrong fit? We rematch you.'],
+  ['Sign up', 'Terms and a card on file. Not charged yet.'],
+  ['Onboarding call', '~60–90 minutes on the work, the hours, and how you operate. Your partnership manager owns the match from here.'],
+  ['EA selection', 'Within about a week: meet and confirm your EA. One strong match, or one or two candidates. Rematch if you need it.'],
+  ['Kickoff', 'Your EA goes live. You and your EA run the day-to-day. We stay on — oversight, tools, best practices, rematch.'],
 ];
 
 const compare = [
@@ -72,7 +72,7 @@ const faq = [
   },
   {
     q: 'What’s included in the monthly rate?',
-    a: `One dedicated full-time virtual EA, matching, onboarding, coaching, a success lead, and rematch if the fit isn’t right. $${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. The initial payment is the prepaid first month of service — not a deposit. The 90-day commitment starts on the EA’s official service start date, not when you sign or pay. No foreign entity, no separate payroll, no hour packs.`,
+    a: `One dedicated full-time virtual EA, matching, onboarding, coaching, a success lead, and rematch if the fit isn’t right. $${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. A card goes on file at sign-up; billing and the first charge begin on the onboarding-call date, not before. That charge is the first month of service — not a deposit. The 90-day commitment starts on the EA’s official service start date. No foreign entity, no separate payroll, no hour packs.`,
   },
   {
     q: 'How is this different from Athena, Wing, or a cheap VA?',
@@ -254,11 +254,10 @@ const jsonLd = [
       <div class="wrap reveal">
         <div class="eyebrow">The mechanism</div>
         <h2 class="disp">Teleforce Matching — we reject, employ, and rematch.</h2>
-        <p class="sub" style="max-width:64ch">
-          We don’t send you a stack of resumes. You sign, prepay the first month, and complete an Executive Profile. We match on how you think, communicate, and operate — then you interview and select. A partnership manager runs client-specific onboarding. {EA_CLOCK_NOTE}
-        </p>
+        <p class="path-line">{EA_JOURNEY_LINE}</p>
+        <p class="sub" style="max-width:64ch">{EA_TIMING_LINE}</p>
         <p class="sub" style="max-width:64ch;margin-top:14px">
-          You’re not running foreign payroll. You’re not babysitting a bot. You’re delegating to one named person who already made the cut.
+          Your partnership manager owns the match after a ~60–90 minute onboarding call. You meet and confirm your EA. At kickoff, you and your EA run the day-to-day, with full back-end support behind the seat.
         </p>
         <div class="steps offer-steps">
           {steps.map(([t, b], i) => (
@@ -269,7 +268,6 @@ const jsonLd = [
             </div>
           ))}
         </div>
-        <p class="ea-fine" style="text-align:left;margin-top:22px">{EA_JOURNEY_LINE}</p>
         <div class="hero-cta" style="margin-top:36px">
           <a href="#match" class="btn btn-amber">Apply for a match</a>
         </div>
@@ -805,6 +803,14 @@ const jsonLd = [
     .ea-incl[style] { grid-template-columns: 1fr !important; }
   }
 
+  .path-line {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 2.4vw, 22px);
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin: 8px 0 12px;
+  }
   .offer-steps { grid-template-columns: repeat(4, 1fr); }
   @media (max-width: 760px) { .offer-steps { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 520px) { .offer-steps { grid-template-columns: 1fr; } }
