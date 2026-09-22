@@ -1,13 +1,14 @@
 ---
-import { STATS } from '../consts';
+import { STATS, LOGOS } from '../consts';
 
 interface Props {
   id?: string;
 }
 
 const { id = 'proof' } = Astro.props;
+const marquee = [...LOGOS, ...LOGOS];
 ---
-<section class="block" id={id}>
+<section class="block bar-holds" id={id}>
   <div class="wrap reveal">
     <div class="eyebrow">Why the bar holds</div>
     <h2 class="disp">Thirty years of running the operation. Applied to one seat.</h2>
@@ -30,9 +31,16 @@ const { id = 'proof' } = Astro.props;
       When you’re ready for customer service or SDR seats, it’s the same employer — not a second vendor search. This page is still about one virtual EA.
     </p>
   </div>
+  <div class="logos">
+    <div class="lab">Trusted by global enterprises for 30+ years</div>
+    <div class="marquee-mask">
+      <div class="marquee">{marquee.map((n) => <span>{n}</span>)}</div>
+    </div>
+  </div>
 </section>
 
 <style>
+  .bar-holds { padding-bottom: 0; }
   .proof-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
