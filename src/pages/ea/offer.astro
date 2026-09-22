@@ -2,7 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { EA, LOGOS, STATS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
+import WhyTheBarHolds from '../../components/WhyTheBarHolds.astro';
+import { EA, LOGOS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -314,30 +315,7 @@ const jsonLd = [
     </div>
   </div>
 
-  <section class="block" id="proof">
-    <div class="wrap reveal">
-      <div class="eyebrow">Why the bar holds</div>
-      <h2 class="disp">Thirty years of running the operation. Applied to one seat.</h2>
-      <p class="sub" style="max-width:64ch">
-        Teleforce is a bilingual LATAM partner for U.S. companies — a 30-year operator with Fortune 500-grade delivery behind the recruiting, training, and QA. You’re not buying a marketplace profile. You’re plugging into an employer who already runs the screen.
-      </p>
-      <div class="proof-stats">
-        {STATS.map((s) => (
-          <div class="pstat">
-            <span class="n">{s.n}</span>
-            <span class="k">{s.k}</span>
-          </div>
-        ))}
-        <div class="pstat">
-          <span class="n">EN / ES</span>
-          <span class="k">Native bilingual</span>
-        </div>
-      </div>
-      <p class="proof-note">
-        When you’re ready for customer service or SDR seats, it’s the same employer — not a second vendor search. This page is still about one virtual EA.
-      </p>
-    </div>
-  </section>
+  <WhyTheBarHolds />
 
   <div class="logos">
     <div class="lab">Trusted by global enterprises for 30+ years</div>
@@ -667,44 +645,6 @@ const jsonLd = [
 
   .cta-band { background: var(--paper-2); padding: 8px 0 48px; }
   .cta-band :global(.cta-box) { margin: 0; }
-
-  .proof-stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-top: 32px;
-  }
-  .pstat {
-    background: var(--paper);
-    border: 1px solid var(--line-paper);
-    border-radius: 14px;
-    padding: 18px 16px;
-  }
-  .pstat .n {
-    display: block;
-    font-family: 'Archivo', sans-serif;
-    font-weight: 800;
-    font-size: 22px;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-  .pstat .k {
-    display: block;
-    margin-top: 4px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--on-paper-mut);
-  }
-  .proof-note {
-    margin-top: 22px;
-    font-size: 14.5px;
-    color: var(--on-paper-mut);
-    max-width: 64ch;
-    line-height: 1.55;
-  }
-  @media (max-width: 700px) { .proof-stats { grid-template-columns: 1fr 1fr; } }
 
   .lp-compare-wrap {
     margin-top: 30px;
