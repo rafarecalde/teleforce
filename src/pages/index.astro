@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE, EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_CLOCK_NOTE, EA_START_FAQ, STATS, LOGOS, TESTIMONIALS } from '../consts';
+import { SITE, EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ, STATS, LOGOS, TESTIMONIALS } from '../consts';
 import BookingSection from '../components/BookingSection.astro';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
@@ -31,10 +31,10 @@ const tasks = [
 ];
 
 const steps = [
-  ['Match', 'You sign, prepay the first month, and complete an Executive Profile. We match on how you think, communicate, and operate — then you interview and select your EA. Most clients are matched in one week.'],
-  ['Onboard', 'Client-specific onboarding (2–5 hours of your time) hands over tools, preferences, and live work. A partnership manager gets you live in under two weeks from signing.'],
-  ['Delegate', 'Hand off by chat, email, or a quick call. Your EA works in your time zone, in real time — not on an overnight lag. The 90-day commitment starts on the official service start date, not when you sign or pay.'],
-  ['Optimize', 'A dedicated success lead manages performance and keeps raising the bar. If the fit isn’t right, we rematch you — fast.'],
+  ['Sign up', 'Terms and a payment method on file. You’re not charged yet. Book the call if you still need a time.'],
+  ['Onboarding call', '~60–90 minutes on what to delegate, priorities, hours, tools, and how you communicate. Your partnership manager owns the match after this call.'],
+  ['EA selection', 'Within about a week of the call, you meet and confirm your matched EA — one strong match, or one or two candidates. Rematch is available.'],
+  ['Kickoff', 'Your EA goes live. You and your EA run the day-to-day. Your partnership manager stays for oversight, tools, and best practices.'],
 ];
 
 const faq = [
@@ -43,7 +43,7 @@ const faq = [
   { q: 'Is the assistant full-time and dedicated to me?', a: 'Yes. Each engagement is one dedicated, full-time executive assistant working with you — not a shared pool or a ticket queue. They learn your preferences and get better at anticipating your needs over time.' },
   { q: 'What can I actually delegate?', a: 'Business operations first: inbox and calendar, priorities and follow-ups, travel and vendors, research, docs and systems, project coordination, and team facilitation. Household admin can sit in the background — it is not the product.' },
   { q: 'What if my assistant isn’t the right fit?', a: 'You’re never stuck. A success lead manages the partnership, and if the match isn’t working we rematch you with a better-suited assistant.' },
-  { q: 'Can I change my commitment later?', a: 'Yes. Start on the 3-month plan. Switch to 12 when you’re sure and save $300/mo. The 90-day clock on the opening commitment starts on your EA’s official service start date — not when you sign or pay.' },
+  { q: 'Can I change my commitment later?', a: 'Yes. Start on the 3-month plan. Switch to 12 when you’re sure and save $300/mo. The 90-day clock on the opening commitment starts on your EA’s official service start date. A card goes on file at sign-up; billing and the first charge begin on the onboarding-call date, not before.' },
   ...EA_JOURNEY_FAQ,
   EA_START_FAQ,
 ];
@@ -77,6 +77,8 @@ const jsonLd = [
         <div class="kicker">Teleforce EA · Top-tier executive talent</div>
         <h1 class="disp">Elite executive assistants.<br /><span class="l2">Dedicated to you.</span></h1>
         <p class="lede">A dedicated, full-time <b>executive assistant</b> from the <b>top tier of bilingual talent</b> — rigorously vetted, career professionals, not gig-economy help. In your time zone, and genuinely capable of owning what you hand them.</p>
+        <p class="journey-line">{EA_JOURNEY_LINE}</p>
+        <p class="journey-sub">{EA_TIMING_LINE}</p>
         <div class="hero-cta">
           <a href="#match" class="btn btn-amber">Get matched</a>
           <a href="/ea/quiz" class="btn btn-ghost">Take the EA Fit Quiz</a>
@@ -122,14 +124,13 @@ const jsonLd = [
     <section class="block" id="how">
       <div class="wrap reveal">
         <div class="eyebrow">How it works</div>
-        <h2 class="disp">Matched in one week. Live in under two.</h2>
-        <p class="sub">You interview and select your EA. The first payment is the prepaid first month of service — not a deposit. {EA_CLOCK_NOTE}</p>
-        <div class="steps" style="grid-template-columns:repeat(4,1fr)">
+        <h2 class="disp path-h">{EA_JOURNEY_LINE}</h2>
+        <p class="sub">{EA_TIMING_LINE}</p>
+        <div class="steps ea-steps">
           {steps.map(([t, b], i) => (
             <div class="step"><div class="num">0{i + 1}</div><h4>{t}</h4><p>{b}</p></div>
           ))}
         </div>
-        <p class="ea-fine" style="text-align:left;margin-top:22px">{EA_JOURNEY_LINE}</p>
       </div>
     </section>
   </div>
@@ -145,7 +146,7 @@ const jsonLd = [
         <li>Background-checked, and fluent in both English and Spanish</li>
         <li>Trained and equipped before day one — productive from the start</li>
         <li>Ongoing coaching and a performance lead — talent that keeps sharpening</li>
-        <li>Employed and managed by Teleforce, in your time zone — you just delegate</li>
+        <li>Employed and managed by Teleforce, in your time zone — full back-end support behind the seat</li>
       </ul>
     </div>
   </section>
@@ -187,7 +188,7 @@ const jsonLd = [
       ))}
 
       <aside class="t-card t-ink">
-        <p>A dedicated bilingual EA on your U.S. hours — matched to how you operate, then handed to you.</p>
+        <p>A dedicated bilingual EA on your U.S. hours. You and your EA run the day-to-day, with full back-end support behind the seat.</p>
         <div class="t-foot">
           <div>
             <div class="t-name">English &amp; Español</div>
@@ -273,8 +274,8 @@ const jsonLd = [
   <BookingSection
     id="contact"
     alias="match"
-    heading="Meet your assistant."
-    sub="Grab a time and we’ll come prepared to match you with the right EA."
+    heading="Get matched."
+    sub="Book a time. Sign-up is terms and a card on file — you’re not charged yet."
     subject="New Teleforce EA match request"
     idPrefix="ea"
   />
@@ -286,6 +287,12 @@ const jsonLd = [
     display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center}
   .hero h1.disp{font-size:clamp(40px,8vw,72px);text-transform:none}
   .hero h1.disp .l2{color:var(--amber)}
+  .journey-line{margin-top:18px;font-family:'Archivo',sans-serif;font-weight:600;font-size:15.5px;letter-spacing:-0.01em;color:#fff;line-height:1.35}
+  .journey-sub{margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.03em;color:var(--on-dark-mut);line-height:1.5}
+  .path-h{line-height:1.15;font-size:clamp(26px,4.2vw,40px)}
+  .ea-steps{grid-template-columns:repeat(4,1fr)}
+  @media (max-width:900px){.ea-steps{grid-template-columns:1fr 1fr}}
+  @media (max-width:620px){.ea-steps{grid-template-columns:1fr;gap:0}}
   .quiz-roles{margin-top:16px;font-size:13.5px;color:var(--on-dark-mut);max-width:54ch;line-height:1.55}
   .quiz-roles a{color:var(--amber);text-decoration:underline;text-underline-offset:3px}
   .quiz-roles a:hover{color:#fff}

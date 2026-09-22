@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { EA, STATS, TESTIMONIALS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
+import { EA, STATS, TESTIMONIALS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -52,9 +52,10 @@ const own = [
 ];
 
 const steps = [
-  ['Tell us', 'Sign, prepay the first month, and complete an Executive Profile — how you think, communicate, and operate. Not a resume stack.'],
-  ['Match a bilingual EA', 'We match in about a week. You interview and select. Then client-specific onboarding (2–5 hours) and a partnership-manager handoff — live in under two weeks.'],
-  ['The seat starts', 'The 90-day commitment begins on the official service start date, not when you sign or pay. The first payment is the prepaid first month. A success lead coaches the seat. Wrong fit? We rematch.'],
+  ['Sign up', 'Terms and a card on file. Not charged yet. Book the call if you still need a time.'],
+  ['Onboarding call', '~60–90 minutes on what a remote EA should own — priorities, hours, tools, communication style. Your partnership manager owns the match after this.'],
+  ['EA selection', 'Within about a week of the call, meet and confirm your bilingual EA. One strong match, or one or two candidates.'],
+  ['Kickoff', 'Your EA goes live on U.S. hours. You and your EA run the day-to-day. Your partnership manager stays for oversight, tools, and best practices.'],
 ];
 
 const compare = [
@@ -87,7 +88,7 @@ const faq = [
   },
   {
     q: 'What’s the price, and what’s included?',
-    a: `$${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. One dedicated remote EA, matching, onboarding, coaching, a success lead, and rematch. The initial payment is the prepaid first month of service — not a deposit. The 90-day commitment starts on the EA’s official service start date, not when you sign or pay. No foreign entity, no separate payroll, no hour packs. Start on the 3-month plan. Switch to 12 when you’re sure and save $300/mo.`,
+    a: `$${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. One dedicated remote EA, matching, onboarding, coaching, a success lead, and rematch. A card goes on file at sign-up; billing and the first charge begin on the onboarding-call date, not before. That charge is the first month of service — not a deposit. The 90-day commitment starts on the EA’s official service start date. No foreign entity, no separate payroll, no hour packs. Start on the 3-month plan. Switch to 12 when you’re sure and save $300/mo.`,
   },
   {
     q: 'How is this different from Athena, overnight offshore, or a cheap VA?',
@@ -210,10 +211,11 @@ const jsonLd = [
   <div class="howwrap">
     <section class="block" id="how">
       <div class="wrap reveal">
-        <div class="eyebrow">Three steps</div>
-        <h2 class="disp">Tell us. Match. Then the seat starts.</h2>
-        <p class="sub" style="max-width:64ch">
-          You interview and select your EA. {EA_CLOCK_NOTE} Microsoft’s 2025 Work Trend Index found people are interrupted every two minutes during core hours by meetings, email, or notifications. A remote EA owns that queue so those pings aren’t all yours.
+        <div class="eyebrow">How it works</div>
+        <h2 class="disp path-h">{EA_JOURNEY_LINE}</h2>
+        <p class="sub" style="max-width:64ch">{EA_TIMING_LINE}</p>
+        <p class="sub" style="max-width:64ch;margin-top:14px">
+          Microsoft’s 2025 Work Trend Index found people are interrupted every two minutes during core hours by meetings, email, or notifications. A remote EA owns that queue so those pings aren’t all yours.
         </p>
         <div class="steps lp-steps">
           {steps.map(([t, b], i) => (
@@ -224,7 +226,6 @@ const jsonLd = [
             </div>
           ))}
         </div>
-        <p class="ea-fine" style="text-align:left;margin-top:22px">{EA_JOURNEY_LINE}</p>
         <div class="hero-cta" style="margin-top:36px">
           <a href="#match" class="btn btn-amber">Find your EA</a>
         </div>
@@ -399,7 +400,7 @@ const jsonLd = [
   <BookingSection
     id="match"
     heading="Find your EA."
-    sub="Grab a time. We’ll come prepared to match a dedicated remote executive assistant to the work you actually need owned."
+    sub="Grab a time. If it’s a fit, you sign up — card on file, not charged yet — and we schedule the onboarding call."
     subject="New Teleforce remote EA match request"
     idPrefix="ea-remote"
   />
@@ -556,8 +557,10 @@ const jsonLd = [
   }
   @media (max-width: 820px) { .own-grid { grid-template-columns: 1fr; } }
 
-  .lp-steps { grid-template-columns: repeat(3, 1fr); }
-  @media (max-width: 620px) { .lp-steps { grid-template-columns: 1fr; } }
+  .path-h { line-height: 1.15; font-size: clamp(26px, 4.2vw, 40px); }
+  .lp-steps { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 760px) { .lp-steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .lp-steps { grid-template-columns: 1fr; } }
 
   .swipe {
     display: none;

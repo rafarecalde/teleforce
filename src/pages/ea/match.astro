@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
+import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -16,20 +16,20 @@ const own = [
 
 const steps = [
   [
-    'Fit',
-    'We take a limited number of new matches. Start with a short quiz so we can see whether this cohort has someone who fits how you work.',
+    'Sign up',
+    'Terms and a card on file. Not charged yet. Sign-up holds your place in this limited cohort.',
   ],
   [
-    'Match',
-    'We match you to a shortlist from our top small-tier cohort — the top 1% who already cleared the screen. You interview and choose. Not an open marketplace resume stack.',
+    'Onboarding call',
+    '~60–90 minutes on the work and how you operate. Your partnership manager owns the match after the call.',
   ],
   [
-    'Onboard',
-    'Client-specific onboarding: tools, preferences, live work. About 2–5 hours of your time. A partnership manager sets the runway.',
+    'EA selection',
+    'Within about a week, meet and confirm your EA — one strong match, or one or two candidates from this top-tier cohort.',
   ],
   [
-    'You run it',
-    'After handoff, you and your EA run the work. We rematch if the fit isn’t right — we don’t babysit the seat.',
+    'Kickoff',
+    'Your EA goes live. You and your EA run the day-to-day. We stay on with oversight, tools, best practices, and rematch.',
   ],
 ];
 
@@ -40,11 +40,11 @@ const faq = [
   },
   {
     q: 'Why are new matches limited? What does top 1% mean?',
-    a: 'We only accept the top 1% of applicants who clear a multi-stage screen — interviews, skills assessments, and background checks. Most never pass. That bar is why the cohort is small, and why we only take a limited number of new matches at a time. There is no infinite bench. You interview and choose from a shortlist of that top small-tier cohort — not from an open marketplace resume stack. Scarcity here is the screen, not a countdown timer.',
+    a: 'We only accept the top 1% of applicants who clear a multi-stage screen — interviews, skills assessments, and background checks. Most never pass. That bar is why the cohort is small, and why we only take a limited number of new matches at a time. There is no infinite bench. After the onboarding call, your partnership manager matches you from that cohort. You meet and confirm — one strong match, or one or two candidates. Scarcity here is the screen, not a countdown timer.',
   },
   {
     q: 'How does matching work?',
-    a: 'We match you to a shortlist from our top small-tier cohort — the top 1% who cleared the multi-stage screen. You interview and choose from that shortlist, not from an open marketplace resume stack. Then client-specific onboarding (about 2–5 hours of your time). A partnership manager sets the runway. After the official start date, you and your EA run the work. Most clients are matched in about a week and live in under two.',
+    a: 'Sign up (card on file, not charged yet), then a ~60–90 minute onboarding call. Your partnership manager owns the match after that call — you do not pick an EA on it. Within about a week you meet and confirm your EA from this top-tier cohort: one strong match, or one or two candidates. Rematch is available. At kickoff your EA goes live, and you run the day-to-day together, with full back-end support behind the seat. Matching is about a week. You’re live in under about two weeks. The path is about 2–3 hours of your time.',
   },
   ...EA_JOURNEY_FAQ,
   EA_START_FAQ,
@@ -98,7 +98,7 @@ const jsonLd = [
         <div class="lead-stack">
           <p class="hero-kicker">For U.S. founders &amp; operators hiring an EA</p>
           <h1 class="disp">Top-tier bilingual Executive Assistants, handpicked for you.</h1>
-          <p class="line-2">Matched in about a week. Live in under two.</p>
+          <p class="line-2">Matching ~1 week. Live under ~2 weeks.</p>
           <p class="line-3">Now accepting a limited number of new matches.</p>
           <p class="line-4">See if we have your fit.</p>
         </div>
@@ -164,7 +164,7 @@ const jsonLd = [
           Every Teleforce EA clears a multi-stage screen — interviews, skills assessments, and background checks — that most applicants never pass. We only take the top 1% who do.
         </p>
         <p class="sub" style="max-width:64ch;margin-top:14px">
-          That bar is the reason the cohort stays small. We are not running an infinite bench of “available VAs.” You interview and choose from that top small-tier cohort — not from an open marketplace resume stack. When this intake is full, it is full.
+          That bar is the reason the cohort stays small. We are not running an infinite bench of “available VAs.” You meet and confirm a matched EA from that top small-tier cohort — one strong match, or one or two candidates. When this intake is full, it is full.
         </p>
         <ul class="ea-checks">
           <li>Top 1% of applicants — a multi-stage screen most never clear</li>
@@ -178,13 +178,11 @@ const jsonLd = [
 
   <section class="block" id="matching">
     <div class="wrap reveal">
-      <div class="eyebrow">Matching</div>
-      <h2 class="disp">Limited cohort. Fit first. Then you choose.</h2>
-      <p class="sub" style="max-width:64ch">
-        We match you to a shortlist from our top small-tier cohort — the top 1% who already cleared the screen. You interview and choose. Not an open marketplace resume stack.
-      </p>
+      <div class="eyebrow">How it works</div>
+      <h2 class="disp path-h">{EA_JOURNEY_LINE}</h2>
+      <p class="sub" style="max-width:64ch">{EA_TIMING_LINE}</p>
       <p class="sub" style="max-width:64ch;margin-top:14px">
-        We onboard. We set the runway. You and your EA run the work.
+        Your partnership manager matches you from this limited top-tier cohort. You meet and confirm your EA — one strong match, or one or two candidates. Rematch is available.
       </p>
       <div class="steps match-steps">
         {steps.map(([t, b], i) => (
@@ -195,11 +193,10 @@ const jsonLd = [
           </div>
         ))}
       </div>
-      <p class="ea-fine" style="text-align:left;margin-top:22px">{EA_JOURNEY_LINE}</p>
       <div class="mid-cta">
         <CtaBox
           heading="See if we have your fit."
-          body="A short quiz, then a match call if this limited cohort has a fit. If we do, you interview and choose from that shortlist."
+          body="A short quiz, then a call if this limited cohort has a fit. Sign up, onboarding call, then you meet and confirm your matched EA."
           label="See if we have your fit"
           href="/ea/quiz"
         />
@@ -272,7 +269,7 @@ const jsonLd = [
     id="match"
     eyebrow="Get matched"
     heading="Book a match call."
-    sub="Grab a time. If this limited cohort has a fit, we match you to a shortlist from the top 1% who cleared the screen. You interview and choose."
+    sub="Grab a time. If this cohort has a fit, you sign up — card on file, not charged yet — and we schedule the onboarding call."
     subject="New Teleforce EA limited-match request"
     idPrefix="ea-match"
   />
@@ -435,6 +432,7 @@ const jsonLd = [
   }
   @media (max-width: 620px) { .ea-checks { grid-template-columns: 1fr; } }
 
+  .path-h { line-height: 1.15; font-size: clamp(26px, 4.2vw, 40px); }
   .match-steps { grid-template-columns: repeat(4, 1fr); }
   @media (max-width: 760px) { .match-steps { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 520px) { .match-steps { grid-template-columns: 1fr; } }
