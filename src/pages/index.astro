@@ -77,20 +77,13 @@ const jsonLd = [
         <div class="kicker">Teleforce EA · Top-tier executive talent</div>
         <h1 class="disp">Elite executive assistants.<br /><span class="l2">Dedicated to you.</span></h1>
         <p class="lede">A dedicated, full-time <b>executive assistant</b> from the <b>top tier of bilingual talent</b> — rigorously vetted, career professionals, not gig-economy help. In your time zone, and genuinely capable of owning what you hand them.</p>
-        <p class="journey-line">{EA_JOURNEY_LINE}</p>
-        <p class="journey-sub">{EA_TIMING_LINE}</p>
+        <div class="ea-chips ea-timing">
+          <span class="chip">Matching ~1 week</span>
+          <span class="chip">Live under ~2 weeks</span>
+        </div>
         <div class="hero-cta">
           <a href="#match" class="btn btn-amber">Get matched</a>
-          <a href="/ea/quiz" class="btn btn-ghost">Take the EA Fit Quiz</a>
         </div>
-        <p class="quiz-roles">
-          Or start the 2-minute quiz as
-          <a href="/ea/quiz?role=founder">Founder/CEO</a> ·
-          <a href="/ea/quiz?role=revenue">Revenue/Sales</a> ·
-          <a href="/ea/quiz?role=agency">Agency</a> ·
-          <a href="/ea/quiz?role=ops">Ops</a> ·
-          <a href="/ea/quiz?role=other">Other</a>
-        </p>
         <div class="ea-chips">
           <span class="chip">Top-tier, vetted talent</span>
           <span class="chip">Native EN / ES</span>
@@ -223,6 +216,12 @@ const jsonLd = [
     </div>
   </div>
 
+  <section class="quiz-nudge" id="fit">
+    <div class="wrap reveal">
+      <p>Not sure yet? <a href="/ea/quiz">Take the EA Fit Quiz</a></p>
+    </div>
+  </section>
+
   <div class="pricewrap">
     <section class="block" id="pricing">
       <div class="wrap reveal">
@@ -287,15 +286,12 @@ const jsonLd = [
     display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center}
   .hero h1.disp{font-size:clamp(40px,8vw,72px);text-transform:none}
   .hero h1.disp .l2{color:var(--amber)}
-  .journey-line{margin-top:18px;font-family:'Archivo',sans-serif;font-weight:600;font-size:15.5px;letter-spacing:-0.01em;color:#fff;line-height:1.35}
-  .journey-sub{margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.03em;color:var(--on-dark-mut);line-height:1.5}
+  .ea-timing{margin-top:22px}
+  .ea-hero .hero-cta{margin-top:22px}
   .path-h{line-height:1.15;font-size:clamp(26px,4.2vw,40px)}
   .ea-steps{grid-template-columns:repeat(4,1fr)}
   @media (max-width:900px){.ea-steps{grid-template-columns:1fr 1fr}}
   @media (max-width:620px){.ea-steps{grid-template-columns:1fr;gap:0}}
-  .quiz-roles{margin-top:16px;font-size:13.5px;color:var(--on-dark-mut);max-width:54ch;line-height:1.55}
-  .quiz-roles a{color:var(--amber);text-decoration:underline;text-underline-offset:3px}
-  .quiz-roles a:hover{color:#fff}
   .ea-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
   .ea-chips .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.05em;
     text-transform:uppercase;color:var(--on-dark);border:1px solid var(--line-dark);
@@ -398,6 +394,12 @@ const jsonLd = [
   @media (max-width:620px){.statpanel{grid-template-columns:1fr;gap:28px;padding:34px 26px}
     .sp-cell{padding:0}.sp-cell + .sp-cell::before{display:none}
     .sp-cell + .sp-cell{border-top:1px solid var(--line-dark);padding-top:26px}}
+
+  /* ---- fit quiz nudge (below the fold) ---- */
+  .quiz-nudge{padding:28px 0 8px;background:var(--paper);text-align:center}
+  .quiz-nudge p{font-size:15.5px;color:var(--on-paper-mut)}
+  .quiz-nudge a{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+  .quiz-nudge a:hover{color:var(--sage-deep)}
 
   /* ---- pricing card ---- */
   .ea-tiers{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:640px;margin:36px auto 0}
