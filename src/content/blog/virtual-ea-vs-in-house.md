@@ -68,7 +68,7 @@ A dedicated virtual EA — not a marketplace freelancer you babysit — wins whe
 - **The work is digital.** Inbox, calendar, research, travel, vendors, CRM hygiene, follow-ups. That is most of the modern EA job.
 - **You have been absorbing the BLS shift yourself** — doing your own scheduling and chase-downs “until we hire” — and the until never comes.
 
-Pricing for a Teleforce seat is on the [homepage pricing block](/#pricing) and the [EA offer](/ea). We do not treat this article as a rate card. Compare *fully loaded* in-house cost — recruiting, benefits, management time, vacancy — against a managed seat, not wage against wage.
+Pricing for a Teleforce seat is on the [homepage pricing block](/#pricing) and the [EA offer](/). We do not treat this article as a rate card. Compare *fully loaded* in-house cost — recruiting, benefits, management time, vacancy — against a managed seat, not wage against wage.
 
 ## The hybrid that actually works
 
@@ -104,4 +104,4 @@ You do not need a six-month pilot to know.
 4. If most rows are in-person, open the req.
 5. If the list is mostly “I will know it when I see it,” you are not ready to hire anyone. Write the rules first.
 
-Teleforce will not talk you into a virtual EA for a lobby. We will talk you into a match conversation if the work is inbox, calendar, follow-through, and coordination on U.S. hours — and if you are willing to hand over the keys. [Get matched](/#contact) or start on the [EA page](/ea).
+Teleforce will not talk you into a virtual EA for a lobby. We will talk you into a match conversation if the work is inbox, calendar, follow-through, and coordination on U.S. hours — and if you are willing to hand over the keys. [Get matched](/#contact) or start on the [EA page](/).

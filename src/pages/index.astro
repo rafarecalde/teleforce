@@ -1,234 +1,154 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Waveform from '../components/Waveform.astro';
-import CtaBox from '../components/CtaBox.astro';
-import { SITE, STATS, LOGOS, EA, TESTIMONIALS, EA_JOURNEY_FAQ, EA_CLOCK_NOTE, EA_START_FAQ } from '../consts';
+import { SITE, EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_CLOCK_NOTE, EA_START_FAQ, STATS, LOGOS, TESTIMONIALS } from '../consts';
 import BookingSection from '../components/BookingSection.astro';
 
-const marquee = [...LOGOS, ...LOGOS];
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
+const marquee = [...LOGOS, ...LOGOS];
 const STAT_SUB: Record<string, string> = {
   '30+': 'Operating history behind every EA seat',
   '20+': 'Regulated and consumer verticals',
   'Fortune 500': 'Enterprise-grade delivery standards',
 };
 
-const falseSolutions = [
+const tasks = [
   {
-    h: 'Cheap / overnight VA',
-    p: 'You buy hours. You still own the outcome. And your afternoon is their tomorrow.',
+    label: 'Organized & on top',
+    body: 'Inbox triage, calendar and priorities, prep and briefings, reminders and follow-ups — so nothing slips and you always know what matters most today.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="m9 16 2 2 4-4"/></svg>',
   },
   {
-    h: 'AI / chatbots',
-    p: 'Drafts are cheap. A human on your clock owns the follow-through — calendar, chase-downs, judgment.',
+    label: 'Projects & your team',
+    body: 'Task and project management, coordinating your team, chasing down deliverables and the people who owe you things, and reporting back — you lead, they keep it moving.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h5m0-10V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v16m0-10h5a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-5"/></svg>',
   },
   {
-    h: 'U.S.-only prestige',
-    p: 'Real talent. Blown budget. Nearshore economics without the overnight lag.',
-  },
-  {
-    h: 'DIY / marketplace',
-    p: 'You become the recruiter, the manager, and the QA. That’s a second job.',
-  },
-];
-
-const delegate = [
-  {
-    h: 'Exec day-to-day',
-    p: 'The work that eats the week before noon.',
-    items: [
-      'Inbox triage and drafts in your voice',
-      'Calendar, priorities, prep, and briefings',
-      'Meeting recaps and the follow-ups that slip',
-      'Business travel, expenses, and itineraries',
-      'Docs, files, and the system so nothing lives in your head',
-    ],
-  },
-  {
-    h: 'Business operations',
-    p: 'Pipeline, projects, vendors — owned, not ticketed.',
-    items: [
-      'CRM updates and pipeline tracking',
-      'Vendor coordination and chase-downs',
-      'Project tracking — who owes what, by when',
-      'Hiring support: sourcing, screening, scheduling',
-      'Bilingual EN/ES with U.S. and LatAm counterparts',
-    ],
+    label: 'Off your plate',
+    body: 'Research, travel and expenses, vendor and tool sourcing, hiring support — plus the personal admin — handled quietly in the background so it stops interrupting you.',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.5 1-1a5.5 5.5 0 0 0 0-7.9z"/></svg>',
   },
 ];
 
 const steps = [
-  ['Match', 'We match on how you think, communicate, and operate. You interview and select. Most clients are matched in about a week.'],
-  ['Onboard', 'Client-specific onboarding — tools, preferences, live work. About 2–5 hours of your time. Then a partnership manager hands the seat off.'],
-  ['You run your EA', 'After handoff, it’s your EA. You own the day-to-day relationship. We rematch if the fit isn’t right — we don’t babysit the seat.'],
-];
-
-const pillars = [
-  {
-    h: 'Dedicated seat',
-    p: 'One named, full-time bilingual EA on your U.S. hours. Not a pool. Not an hour pack.',
-  },
-  {
-    h: 'Handoff, then yours',
-    p: 'We match and onboard. A partnership manager hands the seat off. You run the relationship.',
-  },
-  {
-    h: 'The seat compounds',
-    p: 'They learn how you operate. Wrong fit? We rematch. We don’t babysit the chair.',
-  },
+  ['Match', 'You sign, prepay the first month, and complete an Executive Profile. We match on how you think, communicate, and operate — then you interview and select your EA. Most clients are matched in one week.'],
+  ['Onboard', 'Client-specific onboarding (2–5 hours of your time) hands over tools, preferences, and live work. A partnership manager gets you live in under two weeks from signing.'],
+  ['Delegate', 'Hand off by chat, email, or a quick call. Your EA works in your time zone, in real time — not on an overnight lag. The 90-day commitment starts on the official service start date, not when you sign or pay.'],
+  ['Optimize', 'A dedicated success lead manages performance and keeps raising the bar. If the fit isn’t right, we rematch you — fast.'],
 ];
 
 const faq = [
+  { q: 'How good is the talent, really?', a: 'Every Teleforce EA is a career professional who cleared a multi-stage screen — interviews, skills assessments, and background checks — that most applicants never pass. These are experienced executive assistants and operators, not gig-economy task-doers, and they’re coached on an ongoing basis. You’re getting someone you can hand real responsibility from week one.' },
+  { q: 'Where are the assistants based?', a: 'Across Latin America — which means native English and Spanish, cultural alignment with U.S. work, and full overlap with your business hours. You get real-time delegation, not an overnight queue.' },
+  { q: 'Is the assistant full-time and dedicated to me?', a: 'Yes. Each engagement is one dedicated, full-time executive assistant working with you — not a shared pool or a ticket queue. They learn your preferences and get better at anticipating your needs over time.' },
+  { q: 'What can I actually delegate?', a: 'Business operations first: inbox and calendar, priorities and follow-ups, travel and vendors, research, docs and systems, project coordination, and team facilitation. Household admin can sit in the background — it is not the product.' },
+  { q: 'What if my assistant isn’t the right fit?', a: 'You’re never stuck. A success lead manages the partnership, and if the match isn’t working we rematch you with a better-suited assistant.' },
+  { q: 'Can I change my commitment later?', a: 'Yes. Start on the 3-month plan. Switch to 12 when you’re sure and save $300/mo. The 90-day clock on the opening commitment starts on your EA’s official service start date — not when you sign or pay.' },
   ...EA_JOURNEY_FAQ,
-  {
-    q: 'How is my EA selected?',
-    a: 'On how you think, communicate, and operate — not a skills-and-resume lottery. The Executive Profile sets that bar. You interview the match and make the final selection. Most clients are matched in one week.',
-  },
-  {
-    q: 'Who runs my EA day to day?',
-    a: 'You and your EA do. We set the runway — match, onboard, and hand off. A partnership manager is there for the launch and for rematch — not to run the work forever. After the official start date, you and your EA run the work.',
-  },
-  { q: 'How long until we’re live?', a: EA_START_FAQ.a },
-  {
-    q: 'What are the contract lengths?',
-    a: `3-month ($${price3}/mo) or 12-month ($${price12}/mo). Start on 3. Switch to 12 when you’re sure and save $300/mo. ${EA_CLOCK_NOTE}`,
-  },
-  {
-    q: 'What does a Teleforce EA actually own?',
-    a: 'Business operations: inbox and calendar, follow-ups and chase-downs, priorities and prep, project coordination, travel and vendors, research, docs and systems. Dedicated business leverage — one named seat.',
-  },
-  {
-    q: 'Is this a VA hour pack or a task marketplace?',
-    a: 'No. Dedicated business leverage — one full-time bilingual EA on your U.S. hours. Not flexible hour packs. Not a task marketplace. Not overnight gig help. If you want tickets and overflow, this isn’t the seat.',
-  },
-  {
-    q: 'Are they full-time and dedicated to me?',
-    a: 'Yes. One named, full-time executive assistant — bilingual English/Spanish, on your U.S. hours. Not a shared pool. After onboarding, you own the relationship.',
-  },
-  {
-    q: 'What if the fit isn’t right?',
-    a: 'We rematch. You’re not stuck recruiting from scratch, and you’re not restarting payroll. The 90-day clock and first-month prepaid terms stay as written in the journey answers above.',
-  },
+  EA_START_FAQ,
 ];
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faq.map((f) => ({
-    '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: { '@type': 'Answer', text: f.a },
-  })),
-};
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Teleforce Executive Assistants',
+    serviceType: 'Dedicated bilingual executive assistant',
+    provider: { '@type': 'Organization', name: 'Teleforce' },
+    areaServed: ['US', 'CA'],
+    description: 'A dedicated, full-time executive assistant from the top tier of bilingual talent — rigorously vetted, trained, and employed by Teleforce, working in your U.S. time zone.',
+    offers: { '@type': 'Offer', price: EA.price12mo, priceCurrency: 'USD', description: 'Per dedicated full-time assistant, per month (12-month commitment; $3,000/mo on 3-month)' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+];
 ---
-<BaseLayout title={SITE.title} description={SITE.description} jsonLd={jsonLd}>
-
+<BaseLayout
+  title={SITE.title}
+  description={SITE.description}
+  jsonLd={jsonLd}
+>
   <header class="hero" id="top">
-    <Waveform variant="hero" />
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <div class="kicker">Dedicated EA · LatAm nearshore · U.S. hours</div>
-        <h1 class="disp">
-          You don’t need more tools.<br />
-            <span class="l2">Get an executive assistant.</span>
-        </h1>
-        <p class="lede">
-          Teleforce matches you with a dedicated bilingual EA on U.S. hours — onboarded to how you think and operate, then handed to you. We set the runway. You and your EA run the work.
-        </p>
-        <p class="hero-speed">Matched ~1 week · Live under ~2 weeks</p>
+    <div class="ea-hero">
+      <div class="ea-copy">
+        <div class="kicker">Teleforce EA · Top-tier executive talent</div>
+        <h1 class="disp">Elite executive assistants.<br /><span class="l2">Dedicated to you.</span></h1>
+        <p class="lede">A dedicated, full-time <b>executive assistant</b> from the <b>top tier of bilingual talent</b> — rigorously vetted, career professionals, not gig-economy help. In your time zone, and genuinely capable of owning what you hand them.</p>
         <div class="hero-cta">
-          <a href="#contact" class="btn btn-amber">Get matched with your EA</a>
-          <a href="#pricing" class="btn btn-ghost">See pricing</a>
+          <a href="#match" class="btn btn-amber">Get matched</a>
+          <a href="/ea/quiz" class="btn btn-ghost">Take the EA Fit Quiz</a>
+        </div>
+        <p class="quiz-roles">
+          Or start the 2-minute quiz as
+          <a href="/ea/quiz?role=founder">Founder/CEO</a> ·
+          <a href="/ea/quiz?role=revenue">Revenue/Sales</a> ·
+          <a href="/ea/quiz?role=agency">Agency</a> ·
+          <a href="/ea/quiz?role=ops">Ops</a> ·
+          <a href="/ea/quiz?role=other">Other</a>
+        </p>
+        <div class="ea-chips">
+          <span class="chip">Top-tier, vetted talent</span>
+          <span class="chip">Native EN / ES</span>
+          <span class="chip">Your U.S. hours</span>
         </div>
       </div>
-      <div class="hero-media">
-        <div class="hero-photo">
-          <img src="/brand/ea-hero.jpg" alt="A dedicated virtual executive assistant in a modern office" fetchpriority="high" />
-        </div>
-        <div class="hero-chips">
-          <div class="chip">
-            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
-            <span class="cl"><b>English</b><br />&amp; Español</span>
-          </div>
-          <div class="chip">
-            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></span>
-            <span class="cl"><b>100%</b><br />U.S. time</span>
-          </div>
-        </div>
+      <div class="ea-media">
+        <div class="ea-photo"><img src="/brand/ea-hero.jpg" alt="A dedicated virtual executive assistant in a modern office" fetchpriority="high" /></div>
       </div>
     </div>
   </header>
 
-  <div class="false-strip" id="false">
-    <div class="wrap">
-      <div class="false-k">You’ve already tried the obvious ones</div>
-      <div class="false-grid">
-        {falseSolutions.map((s) => (
-          <div class="false-card">
-            <h3>{s.h}</h3>
-            <p>{s.p}</p>
+  <section class="block" id="what">
+    <div class="wrap reveal">
+      <div class="eyebrow" style="justify-content:center">How they support you</div>
+      <h2 class="disp" style="text-align:center">True executive support — not just task-doing.</h2>
+      <p class="sub" style="text-align:center;margin:0 auto">A great EA keeps you organized, protects your priorities, moves projects and your team forward, and takes the rest off your plate — so you lead instead of chasing details.</p>
+      <div class="ea-cards">
+        {tasks.map((t) => (
+          <div class="ea-card">
+            <div class="ic-circle" set:html={t.icon} />
+            <h3>{t.label}</h3>
+            <p>{t.body}</p>
           </div>
         ))}
       </div>
-    </div>
-  </div>
-
-  <section class="block" id="work">
-    <div class="wrap reveal">
-      <div class="eyebrow">What you can delegate</div>
-      <h2 class="disp">Business ops. Off your plate.</h2>
-      <p class="sub" style="max-width:64ch">
-        Inbox, calendar, CRM, projects, vendors, business travel. Dedicated business leverage — not hour packs.
-      </p>
-      <div class="del-grid">
-        {delegate.map((col) => (
-          <div class="del-card">
-            <h3>{col.h}</h3>
-            <p class="del-lead">{col.p}</p>
-            <ul>
-              {col.items.map((item) => <li>{item}</li>)}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="mechanism" style="padding-top:0">
-    <div class="wrap reveal">
-      <div class="eyebrow">The mechanism</div>
-      <h2 class="disp">Match how you operate. Onboard. Then it’s your EA.</h2>
-      <p class="sub" style="max-width:64ch">
-        We don’t send a resume stack. We match a dedicated bilingual executive assistant to how you think, communicate, and operate. You interview and select. We onboard. A partnership manager hands the seat off.
-      </p>
-      <p class="sub" style="max-width:64ch;margin-top:14px">
-        After that, you run the relationship. Built for leaders who want a dedicated EA in their hours — bilingual, nearshore, predictable price.
-      </p>
     </div>
   </section>
 
   <div class="howwrap">
     <section class="block" id="how">
       <div class="wrap reveal">
-        <div class="eyebrow">Three steps</div>
-        <h2 class="disp">Match. Onboard. You run your EA.</h2>
-        <div class="steps">
+        <div class="eyebrow">How it works</div>
+        <h2 class="disp">Matched in one week. Live in under two.</h2>
+        <p class="sub">You interview and select your EA. The first payment is the prepaid first month of service — not a deposit. {EA_CLOCK_NOTE}</p>
+        <div class="steps" style="grid-template-columns:repeat(4,1fr)">
           {steps.map(([t, b], i) => (
             <div class="step"><div class="num">0{i + 1}</div><h4>{t}</h4><p>{b}</p></div>
           ))}
         </div>
-        <div class="mid-cta">
-          <CtaBox
-            heading="Get matched with your EA."
-            body="Most clients are matched in about a week and live in under two. About 2–5 hours of your time. Then the seat is yours."
-            label="Get matched with your EA"
-            href="#contact"
-          />
-        </div>
+        <p class="ea-fine" style="text-align:left;margin-top:22px">{EA_JOURNEY_LINE}</p>
       </div>
     </section>
   </div>
+
+  <section class="block" id="why">
+    <div class="wrap reveal">
+      <div class="eyebrow">The talent</div>
+      <h2 class="disp">Talent that clears a very high bar.</h2>
+      <p class="sub" style="max-width:64ch">This is the difference between an assistant you have to manage and one you can hand real responsibility. Every Teleforce EA is a career professional who made it through a multi-stage screen most applicants never pass — then trained and equipped before they ever reach you.</p>
+      <ul class="ea-checks">
+        <li>The top few percent of applicants — a multi-stage screen most never clear</li>
+        <li>Career executive assistants and operators, not gig-economy help</li>
+        <li>Background-checked, and fluent in both English and Spanish</li>
+        <li>Trained and equipped before day one — productive from the start</li>
+        <li>Ongoing coaching and a performance lead — talent that keeps sharpening</li>
+        <li>Employed and managed by Teleforce, in your time zone — you just delegate</li>
+      </ul>
+    </div>
+  </section>
 
   <section class="customers-sec" id="customers">
     <div class="customers-wrap reveal">
@@ -273,54 +193,13 @@ const jsonLd = {
             <div class="t-name">English &amp; Español</div>
             <div class="t-role">U.S. hours · matched ~1 week</div>
           </div>
-          <a href="#contact" class="btn btn-amber t-cta">Get matched</a>
+          <a href="#match" class="btn btn-amber t-cta">Get matched</a>
         </div>
       </aside>
     </div>
   </section>
 
-  <div class="howwrap">
-    <section class="block" id="seat">
-      <div class="wrap reveal">
-        <div class="eyebrow">The partnership</div>
-        <h2 class="disp">A dedicated seat that compounds. After handoff, it’s yours.</h2>
-        <div class="pillar-grid">
-          {pillars.map((p) => (
-            <div class="pillar">
-              <h3>{p.h}</h3>
-              <p>{p.p}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="trust-strip">
-    <div class="wrap">
-      <div class="trust-grid">
-        <div><div class="tk">Background-checked</div><p>Career EAs. Multi-stage screen. Not gig help.</p></div>
-        <div><div class="tk">Dedicated full-time</div><p>One named seat. Your hours. Bilingual EN/ES.</p></div>
-        <div><div class="tk">You own the relationship</div><p>Match → onboard → handoff. We don’t babysit the seat.</p></div>
-        <div><div class="tk">Rematch included</div><p>Wrong fit? We put someone else in the chair.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <section class="block" id="failed">
-    <div class="wrap reveal failed">
-      <div class="eyebrow">Been here before</div>
-      <h2 class="disp">“I tried a VA. Offshore. It failed.”</h2>
-      <p class="sub" style="max-width:64ch">
-        Timezone. Quality. Ownership. That’s the pattern: you explain it twice, correct it once, then do it yourself. A dedicated EA on your U.S. hours — matched to how you operate, then handed to you — is a different product.
-      </p>
-      <div class="hero-cta" style="margin-top:28px">
-        <a href="#contact" class="btn btn-amber">Get matched with your EA</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="proof" style="padding-top:0">
+  <section class="block" id="proof">
     <div class="wrap reveal">
       <div class="statpanel">
         {STATS.map((s) => (
@@ -346,25 +225,32 @@ const jsonLd = {
   <div class="pricewrap">
     <section class="block" id="pricing">
       <div class="wrap reveal">
-        <div class="eyebrow" style="justify-content:center">The seat</div>
-        <h2 class="disp" style="text-align:center">One dedicated EA. ~$2.7–3k.</h2>
-        <p class="sub" style="text-align:center;margin:0 auto">Full-time. Bilingual. Your hours. Start on 3 months. Switch to 12 and save $300/mo.</p>
+        <div class="eyebrow" style="justify-content:center">Pricing</div>
+        <h2 class="disp" style="text-align:center">Simple, predictable pricing.</h2>
+        <p class="sub" style="text-align:center;margin:0 auto">One dedicated, full-time executive assistant. Premium talent, one flat monthly rate — pick the commitment that fits.</p>
         <div class="ea-tiers">
           <div class="ea-tier">
             <div class="ea-tier-tag">3-month</div>
             <div class="ea-amount"><span class="cur">$</span>{price3}<span class="per">/ mo</span></div>
-            <div class="ea-tier-sub">3-month commitment</div>
-            <a href="#contact" class="btn btn-amber ea-tier-btn">Get matched with your EA</a>
+            <div class="ea-tier-sub">3-month commitment · stay flexible</div>
+            <a href="#match" class="btn btn-amber ea-tier-btn">Get matched</a>
           </div>
           <div class="ea-tier feature">
             <div class="ea-best">Best value · save $300/mo</div>
             <div class="ea-tier-tag">12-month</div>
             <div class="ea-amount"><span class="cur">$</span>{price12}<span class="per">/ mo</span></div>
             <div class="ea-tier-sub">12-month commitment</div>
-            <a href="#contact" class="btn btn-amber ea-tier-btn">Get matched with your EA</a>
+            <a href="#match" class="btn btn-amber ea-tier-btn">Get matched</a>
           </div>
         </div>
-        <p class="pricenote" style="text-align:center">{EA_CLOCK_NOTE}</p>
+        <ul class="svc-list ea-incl" style="grid-template-columns:1fr 1fr;gap:11px 30px">
+          <li>One dedicated, full-time executive assistant — top-tier talent</li>
+          <li>Rigorously vetted, trained, and equipped by Teleforce</li>
+          <li>Tailored matching and structured onboarding</li>
+          <li>A success lead managing performance</li>
+          <li>Rematch if the fit isn’t right</li>
+        </ul>
+        <p class="ea-fine">Start on the 3-month plan. Switch to 12 when you’re sure and save <b style="color:var(--ink)">$300/mo</b>. {EA_CLOCK_NOTE}</p>
       </div>
     </section>
   </div>
@@ -372,8 +258,7 @@ const jsonLd = {
   <section class="block" id="faq">
     <div class="wrap reveal">
       <div class="eyebrow">Questions</div>
-      <h2 class="disp">The long version lives here.</h2>
-      <p class="sub">Journey, 90-day clock, prepaid first month, rematch — straight answers.</p>
+      <h2 class="disp">Good to know.</h2>
       <div class="ea-faq">
         {faq.map((f) => (
           <details class="ea-q">
@@ -385,76 +270,54 @@ const jsonLd = {
     </div>
   </section>
 
-  <section class="block" style="padding-top:0;padding-bottom:0">
-    <div class="wrap reveal">
-      <p class="cs-note">Need bilingual <a href="/customer-service">customer service</a> later? Same talent bench. Same U.S. hours. Available when you want it — it isn’t the product on this page. Longer EA argument: <a href="/ea/offer">see the offer</a>.</p>
-    </div>
-  </section>
-
   <BookingSection
     id="contact"
-    eyebrow="Get matched"
-    heading="Get matched with your EA."
-    sub="We’ll match on how you think and operate. You interview and select. Most clients are matched in one week and live in under two. Then you own the relationship. The 90-day commitment starts on the official service start date."
+    alias="match"
+    heading="Meet your assistant."
+    sub="Grab a time and we’ll come prepared to match you with the right EA."
     subject="New Teleforce EA match request"
-    idPrefix="home"
+    idPrefix="ea"
   />
-
 </BaseLayout>
 
 <style>
-  .hero h1.disp{font-size:clamp(28px,5.2vw,48px);text-transform:none;line-height:1.08;letter-spacing:-0.03em}
-  .hero-inner{position:relative;z-index:2;max-width:1040px;margin:0 auto;padding:0 22px;
-    display:grid;grid-template-columns:1.2fr 0.8fr;gap:48px;align-items:center}
-  .hero-media{position:relative}
-  .hero-photo{position:relative;border-radius:220px 220px 22px 22px;overflow:hidden;
-    aspect-ratio:4/5;box-shadow:0 30px 60px -30px rgba(0,0,0,0.55);border:1px solid var(--line-dark)}
-  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
-  .hero-chips{position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);
-    display:flex;gap:0;background:rgba(9,28,30,0.86);backdrop-filter:blur(8px);
-    border:1px solid var(--line-dark);border-radius:16px;padding:6px;box-shadow:0 16px 40px -18px rgba(0,0,0,0.6)}
-  .hero-chips .chip{display:flex;align-items:center;gap:10px;padding:10px 18px}
-  .hero-chips .chip + .chip{border-left:1px solid var(--line-dark)}
-  .hero-chips .ci{display:flex;align-items:center;justify-content:center;width:34px;height:34px;
-    border-radius:50%;background:rgba(242,168,43,0.15);color:var(--amber);flex-shrink:0}
-  .hero-chips .ci svg{width:18px;height:18px}
-  .hero-chips .cl{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;
-    text-transform:uppercase;color:var(--on-dark-mut);line-height:1.3}
-  .hero-chips .cl b{color:#fff;font-weight:600}
-  .hero-speed{margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:12px;
-    letter-spacing:0.04em;color:var(--on-dark-mut);text-transform:uppercase}
-  .hero .hero-cta{margin-top:22px}
-  @media (max-width:820px){
-    .hero-inner{grid-template-columns:1fr;gap:40px}
-    .hero-media{max-width:400px;margin:0 auto;width:100%}
-  }
+  /* ---- EA hero ---- */
+  .ea-hero{position:relative;z-index:2;max-width:1040px;margin:0 auto;padding:0 22px;
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center}
+  .hero h1.disp{font-size:clamp(40px,8vw,72px);text-transform:none}
+  .hero h1.disp .l2{color:var(--amber)}
+  .quiz-roles{margin-top:16px;font-size:13.5px;color:var(--on-dark-mut);max-width:54ch;line-height:1.55}
+  .quiz-roles a{color:var(--amber);text-decoration:underline;text-underline-offset:3px}
+  .quiz-roles a:hover{color:#fff}
+  .ea-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .ea-chips .chip{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.05em;
+    text-transform:uppercase;color:var(--on-dark);border:1px solid var(--line-dark);
+    border-radius:999px;padding:8px 15px;background:rgba(236,230,214,0.04)}
+  .ea-media{position:relative}
+  .ea-photo{border-radius:220px 220px 22px 22px;overflow:hidden;aspect-ratio:4/5;
+    border:1px solid var(--line-dark);box-shadow:0 30px 60px -30px rgba(0,0,0,0.55)}
+  .ea-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
+  @media (max-width:820px){.ea-hero{grid-template-columns:1fr;gap:40px}.ea-media{max-width:400px;margin:0 auto;width:100%}}
 
-  :global(.hero .wave){left:-3%;right:auto;width:56%;opacity:0.32}
-  @media (max-width:820px){:global(.hero .wave){opacity:0.12;width:80%}}
+  /* ---- task cards ---- */
+  .ea-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  .ea-card{background:var(--paper);border:1px solid var(--line-paper);border-radius:16px;padding:30px 26px}
+  .ea-card .ic-circle{width:56px;height:56px;border-radius:50%;background:rgba(138,168,155,0.18);
+    color:var(--sage-deep);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .ea-card .ic-circle :global(svg){width:26px;height:26px}
+  .ea-card h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;margin-bottom:8px;letter-spacing:-0.01em}
+  .ea-card p{font-size:14.5px;color:var(--on-paper-mut);line-height:1.55}
+  @media (max-width:760px){.ea-cards{grid-template-columns:1fr}}
 
-  .false-strip{background:var(--ink-deep);color:var(--on-dark);padding:36px 0;border-top:1px solid var(--line-dark)}
-  .false-k{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;
-    color:var(--amber);margin-bottom:18px}
-  .false-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  .false-card{background:rgba(236,230,214,0.04);border:1px solid var(--line-dark);border-left:3px solid var(--amber);
-    border-radius:0 12px 12px 0;padding:18px 16px}
-  .false-card h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:15.5px;letter-spacing:-0.01em;margin:0 0 8px;color:#fff}
-  .false-card p{font-size:13.5px;color:var(--on-dark-mut);line-height:1.5;margin:0}
-  @media (max-width:900px){.false-grid{grid-template-columns:1fr 1fr}}
-  @media (max-width:540px){.false-grid{grid-template-columns:1fr}}
+  /* ---- why checklist ---- */
+  .ea-checks{list-style:none;margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:16px 36px;max-width:900px}
+  .ea-checks li{position:relative;padding-left:34px;font-size:15.5px;color:var(--on-paper);line-height:1.45}
+  .ea-checks li::before{content:"";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:var(--sage-deep);
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/15px no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/15px no-repeat}
+  @media (max-width:620px){.ea-checks{grid-template-columns:1fr}}
 
-  .del-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
-  .del-card{background:var(--paper);border:1px solid var(--line-paper);border-radius:16px;padding:28px 26px}
-  .del-card h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.02em;margin-bottom:6px}
-  .del-lead{font-size:14px;color:var(--on-paper-mut);margin-bottom:16px;line-height:1.45}
-  .del-card ul{list-style:none;display:grid;gap:10px}
-  .del-card li{position:relative;padding-left:16px;font-size:15px;color:var(--on-paper);line-height:1.45}
-  .del-card li::before{content:"›";position:absolute;left:0;color:var(--amber);font-family:'IBM Plex Mono',monospace;font-weight:600}
-  @media (max-width:700px){.del-grid{grid-template-columns:1fr}}
-
-  .mid-cta{margin-top:40px}
-  .mid-cta :global(.cta-box){margin:0}
-
+  /* ---- customers ---- */
   .customers-sec{
     padding:64px 0 80px;
     background:color-mix(in srgb, var(--sage) 10%, var(--paper));
@@ -515,21 +378,7 @@ const jsonLd = {
     .t-card{padding:24px 24px 20px}
   }
 
-  .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
-  .pillar{background:var(--paper);border:1px solid var(--line-paper);border-radius:16px;padding:26px 22px}
-  .pillar h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.01em;margin-bottom:8px}
-  .pillar p{font-size:14.5px;color:var(--on-paper-mut);line-height:1.55;margin:0}
-  @media (max-width:760px){.pillar-grid{grid-template-columns:1fr}}
-
-  .trust-strip{background:var(--ink-deep);color:var(--on-dark);padding:32px 0;border-top:1px solid var(--line-dark)}
-  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-  .tk{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
-  .trust-grid p{font-size:14px;color:var(--on-dark);line-height:1.45;margin:0}
-  @media (max-width:800px){.trust-grid{grid-template-columns:1fr 1fr;gap:18px}}
-  @media (max-width:480px){.trust-grid{grid-template-columns:1fr}}
-
-  .failed .hero-cta :global(.btn-amber){color:var(--ink-deep)}
-
+  /* ---- stats ---- */
   .statpanel{background:var(--ink);border-radius:20px;padding:44px 24px;
     display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .sp-cell{padding:0 18px;position:relative}
@@ -543,6 +392,7 @@ const jsonLd = {
     .sp-cell{padding:0}.sp-cell + .sp-cell::before{display:none}
     .sp-cell + .sp-cell{border-top:1px solid var(--line-dark);padding-top:26px}}
 
+  /* ---- pricing card ---- */
   .ea-tiers{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:640px;margin:36px auto 0}
   .ea-tier{background:var(--paper);border:1px solid var(--line-paper);border-radius:18px;padding:30px 26px;
     text-align:center;position:relative;display:flex;flex-direction:column}
@@ -560,8 +410,12 @@ const jsonLd = {
   .ea-best{position:absolute;top:-11px;left:50%;transform:translateX(-50%);white-space:nowrap;
     background:var(--amber);color:var(--ink-deep);font-family:'IBM Plex Mono',monospace;font-size:10.5px;
     font-weight:600;letter-spacing:0.05em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
-  @media (max-width:520px){.ea-tiers{grid-template-columns:1fr}}
+  .ea-incl{max-width:640px;margin:26px auto 0}
+  .ea-incl li{font-size:14px;color:var(--on-paper)}
+  .ea-fine{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--on-paper-mut);text-align:center;max-width:600px;margin:22px auto 0;line-height:1.6}
+  @media (max-width:520px){.ea-tiers{grid-template-columns:1fr}.ea-incl[style]{grid-template-columns:1fr !important}}
 
+  /* ---- faq ---- */
   .ea-faq{margin-top:28px;display:flex;flex-direction:column;gap:12px;max-width:760px}
   .ea-q{background:var(--paper);border:1px solid var(--line-paper);border-radius:14px;padding:20px 24px}
   .ea-q summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
@@ -571,14 +425,9 @@ const jsonLd = {
   .ea-q[open] .pl{transform:rotate(45deg)}
   .ea-q p{font-size:15px;color:var(--on-paper-mut);margin-top:14px;line-height:1.6}
 
-  .cs-note{font-size:13.5px;color:var(--on-paper-mut);text-align:center;max-width:62ch;margin:0 auto;line-height:1.55;padding-bottom:8px}
-  .cs-note a{color:var(--ink);font-weight:600;border-bottom:1px solid var(--line-paper)}
-  .cs-note a:hover{color:var(--amber);border-color:var(--amber)}
-
-  :global(#contact),:global(#pricing),:global(#how),:global(#customers),:global(#work){scroll-margin-top:72px}
+  :global(#contact),:global(#match),:global(#pricing),:global(#faq),:global(#how),:global(#what),:global(#customers){scroll-margin-top:72px}
 
   @media (max-width:680px){
-    .hero{padding:48px 0 40px}
     .hero-cta .btn,.ea-tier-btn{width:100%;text-align:center}
   }
 </style>

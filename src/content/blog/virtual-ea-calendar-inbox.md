@@ -119,4 +119,4 @@ Teleforce places a dedicated, full-time EA — employed by us, English and Spani
 
 We do not sell hour packs for “email help.” We sell a named seat that can own virtual EA calendar and inbox as one system, then expand into the rest of the week.
 
-[See the EA offer](/ea), [see pricing](/#pricing), or [get matched](/#contact). Bring the VIP list and the two meetings you want briefed first. If those two loops do not move in thirty days, the problem is usually the keys — not the hire.
+[See the EA offer](/), [see pricing](/#pricing), or [get matched](/#contact). Bring the VIP list and the two meetings you want briefed first. If those two loops do not move in thirty days, the problem is usually the keys — not the hire.

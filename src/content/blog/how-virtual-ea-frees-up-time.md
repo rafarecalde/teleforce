@@ -116,6 +116,6 @@ Teleforce places a dedicated, full-time EA — employed by us, on your hours, na
 
 We do not sell hour packs. We sell a seat you can hand real loops.
 
-[See how the EA offer works](/ea), [see pricing](/#pricing), or [get matched](/#contact). If what you actually need is a pipeline of meetings rather than a chief-of-staff, start with [appointment setting](/services/appointment-setting) instead. Different job. Same honesty.
+[See how the EA offer works](/), [see pricing](/#pricing), or [get matched](/#contact). If what you actually need is a pipeline of meetings rather than a chief-of-staff, start with [appointment setting](/services/appointment-setting) instead. Different job. Same honesty.
 
 The test after 30 days is not “are they busy.” It is whether column 2 of your time audit shrank — and whether column 1 finally got the week it needed.

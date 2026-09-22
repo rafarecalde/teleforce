@@ -8,6 +8,8 @@ import { GOOGLE_EMBED_URL, PHONE, PHONE_HREF } from '../consts';
 
 interface Props {
   id?: string; // anchor id CTAs point to
+  /** Second hash that scrolls to the same section (e.g. legacy #match). */
+  alias?: string;
   heading?: string;
   sub?: string;
   eyebrow?: string;
@@ -16,6 +18,7 @@ interface Props {
 }
 const {
   id = 'proposal',
+  alias,
   heading = 'Book a call.',
   sub = 'Pick a time and we’ll come prepared. Bookings run a quick discovery call — name, email, and phone are collected when you book.',
   eyebrow = 'Book a call',
@@ -23,11 +26,15 @@ const {
   idPrefix = 'p',
 } = Astro.props;
 
+const trackHashes = [id, ...(alias ? [alias] : [])];
+const ctaSelector = trackHashes.map((hash) => `a[href$="#${hash}"]`).join(', ');
+
 // Fire the Ads conversion once on the first click of a CTA that opens this section.
-const convScript = `(function(){var f=false;document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('a[href$="#${id}"]');if(t&&!f){f=true;if(typeof window.gtag==='function'){window.gtag('event','conversion',{send_to:'AW-18332056932/JvJ9COL479McEOT6s6VE'});}}},true);})();`;
+const convScript = `(function(){var f=false;document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest(${JSON.stringify(ctaSelector)});if(t&&!f){f=true;if(typeof window.gtag==='function'){window.gtag('event','conversion',{send_to:'AW-18332056932/JvJ9COL479McEOT6s6VE'});}}},true);})();`;
 ---
 {GOOGLE_EMBED_URL ? (
   <section class="contact" id={id}>
+    {alias && <span id={alias} class="anchor-alias"></span>}
     <div class="wrap">
       <div class="eyebrow" style="color:var(--amber)">{eyebrow}</div>
       <h2 class="disp" style="color:#fff">{heading}</h2>
@@ -43,6 +50,8 @@ const convScript = `(function(){var f=false;document.addEventListener('click',fu
 )}
 
 <style>
+  .contact{position:relative;scroll-margin-top:72px}
+  .anchor-alias{position:absolute;top:0;left:0;width:1px;height:1px;overflow:hidden;scroll-margin-top:72px}
   .gcal-embed{max-width:760px;margin:26px auto 0;border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--line-dark)}
   .gcal-embed iframe{display:block;width:100%;height:680px}
 </style>

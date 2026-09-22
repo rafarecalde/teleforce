@@ -30,7 +30,7 @@ The failure mode is almost never talent. It is a principal who keeps the keys.
 
 ## What to finish before day one
 
-Do this the week you sign, not the morning they start. Teleforce’s [EA offer](/ea) already assumes a short Executive Profile and a live walkthrough. Fill the gaps yourself.
+Do this the week you sign, not the morning they start. Teleforce’s [EA offer](/) already assumes a short Executive Profile and a live walkthrough. Fill the gaps yourself.
 
 **1. A one-page decision rule.** What they always take. What they close. What they draft for you. People who skip the line. Tone notes (“short, no exclamation points, never apologize for a delay we caused”). This is the document [what a virtual executive assistant actually does](/blog/virtual-executive-assistant) assumes you will write and almost nobody does.
 
@@ -123,6 +123,6 @@ Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade supp
 
 Most clients are matched in a week and live in under two. Client-side onboarding is a few focused hours, not a quarter. If the fit is wrong after you have actually granted access, we rematch.
 
-We will not talk you into a 40-page playbook. We will ask for the decision rule and the live queue. [See the EA offer](/ea), [see pricing](/#pricing), or [get matched](/#contact).
+We will not talk you into a 40-page playbook. We will ask for the decision rule and the live queue. [See the EA offer](/), [see pricing](/#pricing), or [get matched](/#contact).
 
 The test is not whether they were busy. It is whether, after the first 30 days with a virtual EA, the interruption layer is theirs.
