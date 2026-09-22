@@ -247,7 +247,7 @@ export const EA = {
 // Client journey — single source for homepage + /ea FAQ/process copy.
 // The 90-day clock starts on the official service start date, not sign/pay.
 export const EA_JOURNEY_LINE =
-  'Sign agreement → pay first month → Executive Profile → match → you interview and select → onboard with a partnership manager → EA starts → 90-day clock begins, with full back-end support.';
+  'Sign agreement → pay first month → Executive Profile → match → you interview and select → onboard with a partnership manager → EA starts → 90-day clock begins. You and your EA run the day-to-day, with full back-end support.';
 
 export const EA_CLOCK_NOTE =
   'The 90-day commitment starts on your EA’s official service start date — not when you sign or pay. The first payment is the prepaid first month of service.';
@@ -255,7 +255,7 @@ export const EA_CLOCK_NOTE =
 export const EA_JOURNEY_FAQ = [
   {
     q: 'How does getting started work?',
-    a: 'Sign the agreement, pay the first month, complete an Executive Profile (intake), then we match. You interview and select your EA. Next is client-specific onboarding with a partnership manager, the EA starts, and the 90-day commitment begins on that official start date. Most clients are matched in one week and live — with a partnership manager and full back-end support — in under two weeks.',
+    a: 'Sign the agreement, pay the first month, complete an Executive Profile (intake), then we match. You interview and select your EA. Next is client-specific onboarding with a partnership manager, the EA starts, and the 90-day commitment begins on that official start date. Most clients are matched in one week and live in under two weeks. You and your EA run the day-to-day — with full back-end support from Teleforce (partnership manager, oversight, tools, best practices, and a rematch if needed).',
   },
   {
     q: 'When does the 90-day commitment start?',
@@ -267,13 +267,13 @@ export const EA_JOURNEY_FAQ = [
   },
   {
     q: 'How long is onboarding?',
-    a: 'Onboarding takes about 2–5 hours of your time — tools, preferences, and live work with a partnership manager. Most clients are matched in about a week and live in under two, with full back-end support. About two weeks from signing to launch.',
+    a: 'Onboarding takes about 2–5 hours of your time — tools, preferences, and live work with a partnership manager. Most clients are matched in about a week and live in under two. You and your EA run the day-to-day from there, while Teleforce backs the seat. About two weeks from signing to launch.',
   },
 ] as const;
 
 export const EA_START_FAQ = {
   q: 'How fast can I start?',
-  a: 'Most clients are matched in one week. You’re live in under two weeks — onboarded with a partnership manager and backed by full back-end support from Teleforce. Onboarding takes 2–5 hours of your time — about two weeks from signing to launch. The 90-day commitment starts on the EA’s official service start date, not when you sign or pay. The first payment is the prepaid first month of service.',
+  a: 'Most clients are matched in one week. You’re live in under two weeks — onboarded with a partnership manager. You and your EA run the day-to-day, with full back-end support from Teleforce. Onboarding takes 2–5 hours of your time — about two weeks from signing to launch. The 90-day commitment starts on the EA’s official service start date, not when you sign or pay. The first payment is the prepaid first month of service.',
 } as const;
 
 // Real contact + social proof pulled from the live Teleforce brand page.

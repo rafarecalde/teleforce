@@ -287,7 +287,7 @@ export function bandCopy(answers: QuizAnswers, band: Band): BandCopy {
         'You’ve already paid for help. Quality, timezone, or ownership failed — or it worked until turnover flattened it. You don’t need another freelancer audition.',
       barrier:
         'The next hire can’t be a task queue in the wrong hours. You need bilingual EN/ES, U.S. overlap, and someone who owns the work.',
-      next: 'Priority match. We match, onboard with a partnership manager, and you go live with full back-end support — including a rematch if the fit fails.',
+      next: 'Priority match. We match and onboard with a partnership manager. You and your EA run the day-to-day — with full back-end support from Teleforce, including a rematch if the fit fails.',
       cta: 'Book a priority match',
       silent: false,
     };
@@ -302,7 +302,7 @@ export function bandCopy(answers: QuizAnswers, band: Band): BandCopy {
         'Scope is business ops, hours need to overlap, and you’re willing to onboard. That’s the bar for a dedicated bilingual LatAm EA on U.S. hours.',
       barrier:
         'Waiting. Every week without a seat, you’re still the follow-up bottleneck.',
-      next: 'Book a match. Top-tier bilingual EN/ES, LatAm nearshore, U.S. hours. Match → onboard with a partnership manager → live with full back-end support.',
+      next: 'Book a match. Top-tier bilingual EN/ES, LatAm nearshore, U.S. hours. Match → onboard with a partnership manager → you and your EA run the day-to-day, with full back-end support.',
       cta: 'Book your match',
       silent: false,
     };
@@ -490,7 +490,7 @@ export function teardown(answers: QuizAnswers, band: Band): TeardownRow[] {
       ? {
           label: 'Onboarding',
           va: 'You want zero input. That’s how work stays shallow.',
-          ea: '2–4 weeks of investment. Match → onboard with a partnership manager → live with full back-end support.',
+          ea: '2–4 weeks of investment. Match → onboard with a partnership manager → you and your EA run the day-to-day, backed by Teleforce.',
         }
       : {
           label: 'Ownership',
