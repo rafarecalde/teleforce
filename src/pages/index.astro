@@ -1,16 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE, EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ, STATS, LOGOS, TESTIMONIALS } from '../consts';
+import { SITE, EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ, TESTIMONIALS } from '../consts';
 import BookingSection from '../components/BookingSection.astro';
+import WhyTheBarHolds from '../components/WhyTheBarHolds.astro';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
-const marquee = [...LOGOS, ...LOGOS];
-const STAT_SUB: Record<string, string> = {
-  '30+': 'Operating history behind every EA seat',
-  '20+': 'Regulated and consumer verticals',
-  'Fortune 500': 'Enterprise-grade delivery standards',
-};
 
 const tasks = [
   {
@@ -31,7 +26,7 @@ const tasks = [
 ];
 
 const steps = [
-  ['Sign up', 'Terms and a payment method on file. You’re not charged yet. Book the call if you still need a time.'],
+  ['Sign up', 'After your discovery call, when you’re ready to move forward: review and accept the terms and put a payment method on file. You’re not charged yet — the first charge begins on the onboarding call. Book that call if you still need a time.'],
   ['Onboarding call', '~60–90 minutes on what to delegate, priorities, hours, tools, and how you communicate. Your partnership manager owns the match after this call.'],
   ['EA selection', 'Within about a week of the call, you meet and confirm your matched EA — one strong match, or one or two candidates. Rematch is available.'],
   ['Kickoff', 'Your EA goes live. You and your EA run the day-to-day. Your partnership manager stays for oversight, tools, and best practices.'],
@@ -77,10 +72,7 @@ const jsonLd = [
         <div class="kicker">Teleforce EA · Top-tier executive talent</div>
         <h1 class="disp">Elite executive assistants.<br /><span class="l2">Dedicated to you.</span></h1>
         <p class="lede">A dedicated, full-time <b>executive assistant</b> from the <b>top tier of bilingual talent</b> — rigorously vetted, career professionals, not gig-economy help. In your time zone, and genuinely capable of owning what you hand them.</p>
-        <div class="ea-chips ea-timing">
-          <span class="chip">Matching ~1 week</span>
-          <span class="chip">Live under ~2 weeks</span>
-        </div>
+        <p class="ea-timing">Matching ~1 week <span aria-hidden="true">·</span> Live under ~2 weeks</p>
         <div class="hero-cta">
           <a href="#match" class="btn btn-amber">Get matched</a>
         </div>
@@ -193,28 +185,7 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="block" id="proof">
-    <div class="wrap reveal">
-      <div class="statpanel">
-        {STATS.map((s) => (
-          <div class="sp-cell">
-            <div class="sp-n">{s.n}</div>
-            <div class="sp-k">{s.k}</div>
-            <div class="sp-sub">{STAT_SUB[s.n]}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <div class="logos">
-    <div class="lab">Trusted by global enterprises — 30-year operating history</div>
-    <div class="marquee-mask">
-      <div class="marquee">
-        {marquee.map((name) => <span>{name}</span>)}
-      </div>
-    </div>
-  </div>
+  <WhyTheBarHolds />
 
   <section class="quiz-nudge" id="fit">
     <div class="wrap reveal">
@@ -286,7 +257,9 @@ const jsonLd = [
     display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center}
   .hero h1.disp{font-size:clamp(40px,8vw,72px);text-transform:none}
   .hero h1.disp .l2{color:var(--amber)}
-  .ea-timing{margin-top:22px}
+  .ea-timing{margin:20px 0 0;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.02em;
+    color:var(--on-dark-mut);line-height:1.45}
+  .ea-timing span{margin:0 0.35em;color:var(--sage)}
   .ea-hero .hero-cta{margin-top:22px}
   .path-h{line-height:1.15;font-size:clamp(26px,4.2vw,40px)}
   .ea-steps{grid-template-columns:repeat(4,1fr)}
@@ -381,20 +354,6 @@ const jsonLd = [
     .t-card{padding:24px 24px 20px}
   }
 
-  /* ---- stats ---- */
-  .statpanel{background:var(--ink);border-radius:20px;padding:44px 24px;
-    display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .sp-cell{padding:0 18px;position:relative}
-  .sp-cell + .sp-cell::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:1px;background:var(--line-dark)}
-  .sp-n{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(34px,5vw,46px);
-    letter-spacing:-0.02em;color:var(--amber);line-height:1}
-  .sp-k{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
-    color:#fff;margin:12px 0 6px}
-  .sp-sub{font-size:13.5px;color:var(--on-dark-mut);line-height:1.4}
-  @media (max-width:620px){.statpanel{grid-template-columns:1fr;gap:28px;padding:34px 26px}
-    .sp-cell{padding:0}.sp-cell + .sp-cell::before{display:none}
-    .sp-cell + .sp-cell{border-top:1px solid var(--line-dark);padding-top:26px}}
-
   /* ---- fit quiz nudge (below the fold) ---- */
   .quiz-nudge{padding:28px 0 8px;background:var(--paper);text-align:center}
   .quiz-nudge p{font-size:15.5px;color:var(--on-paper-mut)}
@@ -434,7 +393,7 @@ const jsonLd = [
   .ea-q[open] .pl{transform:rotate(45deg)}
   .ea-q p{font-size:15px;color:var(--on-paper-mut);margin-top:14px;line-height:1.6}
 
-  :global(#contact),:global(#match),:global(#pricing),:global(#faq),:global(#how),:global(#what),:global(#customers){scroll-margin-top:72px}
+  :global(#contact),:global(#match),:global(#pricing),:global(#faq),:global(#how),:global(#what),:global(#customers),:global(#proof){scroll-margin-top:72px}
 
   @media (max-width:680px){
     .hero-cta .btn,.ea-tier-btn{width:100%;text-align:center}
