@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import { HDYHAU_OPTIONS } from '../../lib/ea-quiz';
-import { EA_PAY_LINE } from '../../consts';
 
 const title = 'EA Fit Quiz | Teleforce';
 const description =
@@ -215,9 +214,6 @@ const description =
   <div id="match-wrap" data-screen="book" hidden>
     <BookingSection
       id="match"
-      heading="Pick a time."
-      sub={`20–30 minutes to see if a dedicated bilingual nearshore EA is the right seat. If it is, sign-up is next: terms and a card on file. ${EA_PAY_LINE} Time zone is detected in the scheduler. You’ll get an email with the time, timezone, and a reschedule link.`}
-      eyebrow="Match call"
       subject="New Teleforce EA fit-quiz match request"
       idPrefix="quiz"
     />
