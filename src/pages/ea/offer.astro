@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
 import WhyTheBarHolds from '../../components/WhyTheBarHolds.astro';
-import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_MATCH_STEP, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
+import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_MATCH_STEP, EA_TIMING_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -376,9 +376,7 @@ const jsonLd = [
           <li>Matching and structured onboarding</li>
           <li>Success lead + rematch if the fit isn’t right</li>
         </ul>
-        <p class="ea-fine">
-          Start on the 3-month plan. Switch to 12 when you’re sure and save <b style="color:var(--ink)">$300/mo</b>. {EA_CLOCK_NOTE}
-        </p>
+        <p class="ea-fine">{EA_PRICING_NOTE_LEAD} <b style="color:var(--ink)">$300/mo</b>. {EA_PRICING_NOTE_TAIL}</p>
       </div>
     </section>
   </div>
