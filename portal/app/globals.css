@@ -1,15 +1,22 @@
 :root {
-  --navy: #102133;
-  --navy-2: #1c3049;
-  --orange: #f35e38;
-  --paper: #f6f7f9;
-  --card: #ffffff;
-  --line: #e4e7ec;
-  --ink: #102133;
-  --muted: #64748b;
-  --ok: #0f9d6a;
-  --danger: #c23b22;
-  --radius: 14px;
+  /* Teleforce brand tokens — matched to tryteleforce.com */
+  --ink: #0e2629;
+  --ink-deep: #091c1e;
+  --paper: #f6f2e8;
+  --paper-2: #efe9da;
+  --amber: #f2a82b;
+  --sage: #8aa89b;
+  --sage-deep: #5e7d72;
+  --on-dark: #ece6d6;
+  --on-dark-mut: #9db0ab;
+  --on-paper: #17302e;
+  --on-paper-mut: #5a6e69;
+  --line: rgba(23, 48, 46, 0.13);
+  --line-dark: rgba(236, 230, 214, 0.14);
+  --card: #fffdf8;
+  --ok: #2e7d5b;
+  --danger: #c0553f;
+  --radius: 16px;
 }
 
 * { box-sizing: border-box; }
@@ -17,12 +24,12 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--paper);
-  color: var(--ink);
+  color: var(--on-paper);
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
-a { color: var(--orange); }
+a { color: var(--sage-deep); }
 .display { font-family: 'Archivo', sans-serif; letter-spacing: -0.02em; }
 .mono { font-family: 'IBM Plex Mono', monospace; }
 
@@ -30,9 +37,9 @@ a { color: var(--orange); }
 .wrap { max-width: 640px; margin: 0 auto; padding: 0 18px; }
 
 .topbar {
-  background: var(--navy);
+  background: var(--ink);
   color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--line-dark);
 }
 .topbar .row {
   max-width: 640px;
@@ -46,17 +53,30 @@ a { color: var(--orange); }
   font-family: 'Archivo', sans-serif;
   font-weight: 900;
   letter-spacing: -0.02em;
-  font-size: 18px;
+  font-size: 19px;
   color: #fff;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
 }
-.brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+.brand .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 0 0 rgba(242, 168, 43, 0.6);
+  animation: pulse 2.4s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(242, 168, 43, 0.5); }
+  70% { box-shadow: 0 0 0 8px rgba(242, 168, 43, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(242, 168, 43, 0); }
+}
+.dim { color: var(--on-dark-mut); }
 
 main { padding: 26px 0 60px; }
-.page-title { font-size: 22px; font-weight: 800; margin: 4px 0 4px; }
-.page-sub { color: var(--muted); font-size: 14px; margin: 0 0 22px; }
+.page-title { font-size: 24px; font-weight: 800; margin: 4px 0 4px; }
+.page-sub { color: var(--on-paper-mut); font-size: 14px; margin: 0 0 22px; }
 
 /* sections */
 section.card {
@@ -68,12 +88,13 @@ section.card {
 }
 section.card > h2 {
   font-family: 'Archivo', sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: -0.01em;
   margin: 0 0 4px;
+  color: var(--ink);
 }
-section.card > .hint { color: var(--muted); font-size: 13.5px; margin: 0 0 16px; }
+section.card > .hint { color: var(--on-paper-mut); font-size: 13.5px; margin: 0 0 16px; }
 
 /* plan card */
 .plan {
@@ -81,32 +102,33 @@ section.card > .hint { color: var(--muted); font-size: 13.5px; margin: 0 0 16px;
   border-radius: 12px;
   padding: 16px;
   margin-top: 14px;
+  background: #fff;
 }
 .plan + .plan { margin-top: 12px; }
 .plan-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
-.plan-ea { font-weight: 700; font-size: 16px; }
+.plan-ea { font-weight: 700; font-size: 16px; color: var(--ink); }
 .badge {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--navy);
-  background: #eef1f5;
+  color: var(--sage-deep);
+  background: rgba(138, 168, 155, 0.16);
   border-radius: 999px;
   padding: 4px 10px;
 }
 .kv { display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; margin-top: 14px; font-size: 14px; }
-.kv .k { color: var(--muted); }
-.kv .v { text-align: right; font-weight: 600; }
+.kv .k { color: var(--on-paper-mut); }
+.kv .v { text-align: right; font-weight: 600; color: var(--ink); }
 
 /* fields */
 .field { margin-bottom: 12px; }
-.field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+.field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: var(--ink); }
 .field input, .field select, .field textarea {
   width: 100%;
   font: inherit;
   font-size: 15px;
-  color: var(--ink);
+  color: var(--on-paper);
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 9px;
@@ -115,8 +137,8 @@ section.card > .hint { color: var(--muted); font-size: 13.5px; margin: 0 0 16px;
 .field textarea { min-height: 72px; resize: vertical; }
 .field input:focus, .field select:focus, .field textarea:focus {
   outline: none;
-  border-color: var(--orange);
-  box-shadow: 0 0 0 3px rgba(243, 94, 56, 0.14);
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(242, 168, 43, 0.18);
 }
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
 @media (max-width: 460px) { .grid2 { grid-template-columns: 1fr; } }
@@ -126,15 +148,15 @@ section.card > .hint { color: var(--muted); font-size: 13.5px; margin: 0 0 16px;
   display: flex;
   gap: 10px;
   align-items: flex-start;
-  background: #f8fafc;
+  background: var(--paper-2);
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 12px 14px;
   font-size: 13px;
-  color: var(--navy-2);
+  color: var(--on-paper);
   margin: 4px 0 14px;
 }
-.ack input { margin-top: 3px; flex: none; width: 16px; height: 16px; accent-color: var(--orange); }
+.ack input { margin-top: 3px; flex: none; width: 16px; height: 16px; accent-color: var(--amber); }
 
 /* buttons */
 .btn {
@@ -149,21 +171,21 @@ section.card > .hint { color: var(--muted); font-size: 13.5px; margin: 0 0 16px;
   text-align: center;
   text-decoration: none;
 }
-.btn-primary { background: var(--orange); color: #fff; }
-.btn-primary:hover { filter: brightness(1.04); }
-.btn-primary:disabled { background: #f0b3a5; cursor: not-allowed; }
-.btn-ghost { background: #fff; color: var(--navy); border-color: var(--line); }
-.btn-ghost:hover { border-color: var(--navy); }
+.btn-primary { background: var(--amber); color: var(--ink-deep); }
+.btn-primary:hover { transform: translateY(-1px); background: #f5b647; }
+.btn-primary:disabled { background: #ecd6a6; color: #8a7c54; cursor: not-allowed; transform: none; }
+.btn-ghost { background: #fff; color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--ink); }
 .btn-full { width: 100%; }
 
 .divider { height: 1px; background: var(--line); margin: 20px 0; border: none; }
-.subhead { font-weight: 700; font-size: 14.5px; margin: 0 0 8px; }
+.subhead { font-weight: 700; font-size: 14.5px; margin: 0 0 8px; color: var(--ink); }
 
 /* messages */
 .note { font-size: 13.5px; border-radius: 9px; padding: 10px 12px; margin-top: 12px; }
-.note.ok { background: #e9f7f0; color: var(--ok); }
-.note.err { background: #fdecec; color: var(--danger); }
-.muted { color: var(--muted); }
+.note.ok { background: rgba(46, 125, 91, 0.12); color: var(--ok); }
+.note.err { background: rgba(192, 85, 63, 0.12); color: var(--danger); }
+.muted { color: var(--on-paper-mut); }
 .savings { color: var(--ok); font-weight: 700; }
 
 /* card-on-file line */
@@ -174,10 +196,10 @@ section.card > .hint { color: var(--muted); font-size: 13.5px; margin: 0 0 16px;
   border: 1px solid var(--line);
   border-radius: 9px;
   padding: 11px 12px;
-  background: #fbfcfd;
+  background: #fff;
   font-size: 14px;
 }
-.cardbrand { font-weight: 700; color: var(--navy); }
+.cardbrand { font-weight: 700; color: var(--ink); }
 
 /* preview tag in the top bar */
 .preview-tag {
@@ -185,8 +207,8 @@ section.card > .hint { color: var(--muted); font-size: 13.5px; margin: 0 0 16px;
   font-size: 9.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--orange);
-  border: 1px solid rgba(243, 94, 56, 0.5);
+  color: var(--amber);
+  border: 1px solid rgba(242, 168, 43, 0.5);
   border-radius: 999px;
   padding: 2px 7px;
   margin-left: 6px;
@@ -195,5 +217,3 @@ section.card > .hint { color: var(--muted); font-size: 13.5px; margin: 0 0 16px;
 
 /* login */
 .login { max-width: 400px; margin: 8vh auto 0; }
-.login .card { text-align: left; }
-.login h1 { font-size: 20px; margin: 0 0 6px; }

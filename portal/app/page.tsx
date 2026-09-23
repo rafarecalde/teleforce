@@ -29,12 +29,12 @@ function Shell({
           </span>
           {signedIn && (
             <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-              {company && <span className="mono" style={{ fontSize: 12, color: '#9fb0c4' }}>{company}</span>}
+              {company && <span className="mono" style={{ fontSize: 12, color: 'var(--on-dark-mut)' }}>{company}</span>}
               <form action="/api/auth/logout" method="post">
                 <button
                   type="submit"
                   className="mono"
-                  style={{ background: 'none', border: 'none', color: '#cdd6e2', cursor: 'pointer', fontSize: 12.5 }}
+                  style={{ background: 'none', border: 'none', color: 'var(--on-dark-mut)', cursor: 'pointer', fontSize: 12.5 }}
                 >
                   Sign out
                 </button>
