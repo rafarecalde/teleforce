@@ -238,7 +238,7 @@ export const ALL_SERVICES: Service[] = [...SERVICES, ...SERVICES_LEGACY];
 // Modeled on the premium delegation category; priced simply and flat.
 // ============================================================
 // One dedicated full-time EA, two commitments. Start on the 3-month plan.
-// Switch to 12 when you’re sure and save $300/mo.
+// Switch to 12 when you’re ready and save $300/mo. Early switch is fine, including in month one.
 export const EA = {
   price12mo: 2700, // USD/mo on a 12-month commitment
   price3mo: 3000, // USD/mo on a 3-month commitment
