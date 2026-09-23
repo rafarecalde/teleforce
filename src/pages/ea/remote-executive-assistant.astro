@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { EA, STATS, TESTIMONIALS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_KICKOFF_STEP, EA_TIMING_LINE, EA_PAY_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
+import { EA, STATS, TESTIMONIALS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_KICKOFF_STEP, EA_TIMING_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -396,8 +396,6 @@ const jsonLd = [
 
   <BookingSection
     id="match"
-    heading="Find your EA."
-    sub={`Grab a time. If it’s a fit, you sign up — terms and a card on file — and we schedule the onboarding call. ${EA_PAY_LINE}`}
     subject="New Teleforce remote EA match request"
     idPrefix="ea-remote"
   />
