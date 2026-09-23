@@ -1,46 +1,82 @@
-export type BillingView = {
-  cardBrand: string | null;
-  last4: string | null;
-  nextChargeDate: string;
-  nextChargeAmount: string;
-  billingEmail: string;
+'use client';
+
+import { useState } from 'react';
+
+export type BillingInit = {
+  contactName: string;
+  company: string;
+  email: string;
+  address: string;
+  cardBrand: string;
+  cardLast4: string;
 };
 
-export default function BillingInfo({ billing }: { billing: BillingView }) {
-  const method =
-    billing.cardBrand && billing.last4
-      ? `${cap(billing.cardBrand)} ···· ${billing.last4}`
-      : 'No card on file';
+export default function BillingInfo({ init }: { init: BillingInit }) {
+  const [form, setForm] = useState({
+    contactName: init.contactName,
+    company: init.company,
+    email: init.email,
+    address: init.address,
+  });
+  const [status, setStatus] = useState<'idle' | 'working' | 'saved'>('idle');
+
+  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((f) => ({ ...f, [k]: e.target.value }));
+    setStatus('idle');
+  };
+
+  function save(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus('working');
+    setTimeout(() => setStatus('saved'), 500);
+  }
 
   return (
-    <div>
-      <div className="kv" style={{ marginTop: 0 }}>
-        <span className="k">Payment method</span>
-        <span className="v">{method}</span>
-        <span className="k">Next charge</span>
-        <span className="v">
-          {billing.nextChargeAmount} on {billing.nextChargeDate}
-        </span>
-        <span className="k">Billing email</span>
-        <span className="v">{billing.billingEmail}</span>
+    <form onSubmit={save}>
+      {/* Card on file — read-only. Secure card collection is handled by the
+          payment processor at kickoff; never typed into this form. */}
+      <div className="field">
+        <label>Payment method</label>
+        <div className="cardline">
+          <span className="cardbrand">{init.cardBrand}</span>
+          <span className="mono">···· ···· ···· {init.cardLast4}</span>
+          <span className="badge" style={{ marginLeft: 'auto' }}>On file</span>
+        </div>
+        <p className="muted" style={{ fontSize: 12.5, margin: '6px 0 0' }}>
+          Your card is stored securely with our payment processor. To update it, your account
+          manager sends a secure link — it&apos;s never entered here.
+        </p>
       </div>
 
       <hr className="divider" />
 
-      {/* Opens Stripe's hosted Billing Portal (update card, view invoices). */}
-      <form action="/api/billing/portal" method="post">
-        <button className="btn btn-primary" type="submit">
-          Manage billing
-        </button>
-      </form>
-      <p className="muted" style={{ fontSize: 12.5, marginTop: 10 }}>
-        Update your card, billing email, or download invoices. To change or cancel a plan, contact
-        your account manager.
-      </p>
-    </div>
-  );
-}
+      <div className="grid2">
+        <div className="field">
+          <label htmlFor="b-contact">Billing contact</label>
+          <input id="b-contact" value={form.contactName} onChange={set('contactName')} />
+        </div>
+        <div className="field">
+          <label htmlFor="b-company">Company</label>
+          <input id="b-company" value={form.company} onChange={set('company')} />
+        </div>
+      </div>
+      <div className="field">
+        <label htmlFor="b-email">Billing email</label>
+        <input id="b-email" type="email" value={form.email} onChange={set('email')} />
+      </div>
+      <div className="field">
+        <label htmlFor="b-address">Billing address</label>
+        <textarea id="b-address" value={form.address} onChange={set('address')} />
+      </div>
 
-function cap(s: string) {
-  return s.charAt(0).toUpperCase() + s.slice(1);
+      <button className="btn btn-primary" type="submit" disabled={status === 'working'}>
+        {status === 'working' ? 'Saving…' : 'Save billing info'}
+      </button>
+      {status === 'saved' && (
+        <div className="note ok" role="status">
+          Billing information updated.
+        </div>
+      )}
+    </form>
+  );
 }

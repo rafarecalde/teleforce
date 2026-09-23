@@ -1,58 +1,38 @@
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
-import { SESSION_COOKIE, SESSION_TTL_DAYS, MAGIC_TTL_MIN } from './constants';
+import { SESSION_COOKIE, SESSION_TTL_DAYS } from './constants';
+
+// A stable default so the preview runs with zero config. Override AUTH_SECRET for
+// anything shared publicly. (This build stores no sensitive data — it's a demo.)
+const DEMO_SECRET = 'teleforce-portal-preview-demo-secret-please-override';
 
 function secret(): Uint8Array {
-  const s = process.env.AUTH_SECRET;
-  if (!s || s.length < 16) {
-    throw new Error('AUTH_SECRET is missing or too short (need 16+ chars).');
-  }
-  return new TextEncoder().encode(s);
+  return new TextEncoder().encode(process.env.AUTH_SECRET || DEMO_SECRET);
 }
 
-export type Principal = { cid: string; email: string };
+export type Principal = { email: string; name?: string; company?: string };
 
-// ── magic-link token (single-use intent, 15-min) ────────────────────────────
-export async function signMagicToken(p: Principal): Promise<string> {
-  return new SignJWT({ email: p.email })
-    .setProtectedHeader({ alg: 'HS256' })
-    .setSubject(p.cid)
-    .setAudience('magic')
-    .setIssuedAt()
-    .setJti(crypto.randomUUID())
-    .setExpirationTime(`${MAGIC_TTL_MIN}m`)
-    .sign(secret());
-}
-
-export async function verifyMagicToken(token: string): Promise<Principal | null> {
-  try {
-    const { payload } = await jwtVerify(token, secret(), { audience: 'magic' });
-    if (!payload.sub || !payload.email) return null;
-    return { cid: String(payload.sub), email: String(payload.email) };
-  } catch {
-    return null;
-  }
-}
-
-// ── session token (7-day, httpOnly cookie) ──────────────────────────────────
 export async function signSession(p: Principal): Promise<string> {
-  return new SignJWT({ email: p.email })
+  return new SignJWT({ email: p.email, name: p.name ?? '', company: p.company ?? '' })
     .setProtectedHeader({ alg: 'HS256' })
-    .setSubject(p.cid)
+    .setSubject(p.email)
     .setAudience('session')
     .setIssuedAt()
     .setExpirationTime(`${SESSION_TTL_DAYS}d`)
     .sign(secret());
 }
 
-/** Read + verify the session cookie. Server-signed, so it can't be forged. */
 export async function getSession(): Promise<Principal | null> {
   const token = cookies().get(SESSION_COOKIE)?.value;
   if (!token) return null;
   try {
     const { payload } = await jwtVerify(token, secret(), { audience: 'session' });
-    if (!payload.sub || !payload.email) return null;
-    return { cid: String(payload.sub), email: String(payload.email) };
+    if (!payload.email) return null;
+    return {
+      email: String(payload.email),
+      name: payload.name ? String(payload.name) : undefined,
+      company: payload.company ? String(payload.company) : undefined,
+    };
   } catch {
     return null;
   }

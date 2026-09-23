@@ -2,46 +2,21 @@
 
 import { useState } from 'react';
 
-export default function SeatRequest({
-  type,
-  label,
-}: {
-  type: 'customer_service' | 'sdr';
-  label: string;
-}) {
+export default function SeatRequest({ label }: { type?: string; label: string }) {
   const [open, setOpen] = useState(false);
-  const [notes, setNotes] = useState('');
   const [status, setStatus] = useState<'idle' | 'working' | 'done'>('idle');
-  const [error, setError] = useState('');
 
-  async function submit(e: React.FormEvent) {
+  function submit(e: React.FormEvent) {
     e.preventDefault();
-    setError('');
     setStatus('working');
-    try {
-      const res = await fetch('/api/request/seat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type, notes }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        setError(data.error || 'Could not send the request.');
-        setStatus('idle');
-        return;
-      }
-      setStatus('done');
-    } catch {
-      setError('Something went wrong. Please try again.');
-      setStatus('idle');
-    }
+    setTimeout(() => setStatus('done'), 500);
   }
 
   if (status === 'done') {
     return (
       <div className="note ok" role="status">
-        Request sent — we&apos;ll follow up by email to scope it. No charge until we agree on the
-        details.
+        Request sent — your account manager would follow up to scope it. No charge until you agree
+        on the details.
       </div>
     );
   }
@@ -57,22 +32,12 @@ export default function SeatRequest({
   return (
     <form onSubmit={submit}>
       <div className="field">
-        <label htmlFor={`notes-${type}`}>{label} — what do you need?</label>
-        <textarea
-          id={`notes-${type}`}
-          placeholder="Rough volume, hours, languages, anything relevant…"
-          value={notes}
-          onChange={(e) => setNotes(e.target.value)}
-        />
+        <label>{label} — what do you need?</label>
+        <textarea placeholder="Rough volume, hours, languages, anything relevant…" />
       </div>
       <button className="btn btn-ghost" type="submit" disabled={status === 'working'}>
         {status === 'working' ? 'Sending…' : 'Send request'}
       </button>
-      {error && (
-        <div className="note err" role="alert">
-          {error}
-        </div>
-      )}
     </form>
   );
 }

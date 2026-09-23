@@ -1,135 +1,68 @@
-# Teleforce client portal
+# Teleforce client portal — preview
 
-A minimal client account portal for Teleforce clients — one page (`/`) with four
-sections: **Your plan**, **Increase your plan**, **Add another EA**, and
-**Billing information**.
+A client-facing **preview** of the Teleforce account portal — the experience a
+client gets to manage their Executive Assistant plan and billing. Built to demo
+on sales calls (personalize it with a prospect's name/company) and to screenshot
+for the marketing site.
 
-- **Framework:** Next.js (App Router), deployed to **Vercel** at
+- **Framework:** Next.js (App Router), deploys to **Vercel** at
   `portal.tryteleforce.com`.
-- **No database.** Stripe is the source of truth; subscription metadata holds the
-  plan details.
-- **Auth:** passwordless magic link (JWT via `jose`, 15-min expiry) emailed by
-  Resend, exchanged for an httpOnly, `SameSite=Lax`, 7-day session cookie.
-- The marketing site (Astro on GitHub Pages) is untouched except for a "Client
-  login" link.
+- **Demo data, no billing.** No Stripe, no charges, and **no card is ever
+  collected or stored** — the card is shown as "on file" only. Wire it to real
+  billing when you have a live client (see below).
+- Runs with **zero config**.
 
----
+## One page, four sections
+1. **Your plan** — term, monthly rate, EA name, service start, commitment end.
+2. **Increase your plan** — "Switch to 12-month" (with the acknowledgment
+   checkbox) + no-charge "add a customer service / SDR seat" requests.
+3. **Add another EA** — request form + acknowledgment.
+4. **Billing information** — editable billing contact / email / address, and the
+   card shown as **on file** (secure card collection is handled by a processor at
+   kickoff, never typed here).
 
-## 1. Local setup
+All actions show a realistic success state; nothing is persisted.
+
+## Run it
 
 ```bash
 cd portal
 npm install
-cp .env.example .env.local   # then fill it in (see below)
-```
-
-### Environment variables (`.env.local`)
-
-| Var | What |
-|---|---|
-| `STRIPE_SECRET_KEY` | Stripe **test** secret key (`sk_test_…`) while developing |
-| `STRIPE_PRICE_3MO` | Price ID for the 3-month EA plan |
-| `STRIPE_PRICE_12MO` | Price ID for the 12-month EA plan |
-| `RESEND_API_KEY` | Resend API key (email). If unset, sign-in links print to the server console |
-| `AUTH_SECRET` | 32+ random chars — signs the JWTs. `openssl rand -base64 48` |
-| `OPS_EMAIL` | Where order/ops notifications go |
-| `APP_URL` | This app's base URL, no trailing slash (`http://localhost:3000` locally) |
-| `MAIL_FROM` | *(optional)* verified Resend sender; `onboarding@resend.dev` works for testing |
-| `STRIPE_PORTAL_CONFIGURATION_ID` | *(optional but recommended)* from `npm run setup:portal` |
-
----
-
-## 2. Stripe setup (test mode)
-
-1. In the Stripe dashboard (test mode), create a **Product** "Executive
-   Assistant" with two recurring monthly **Prices** — one for the 3-month plan,
-   one for the 12-month plan. Copy their IDs into `STRIPE_PRICE_3MO` /
-   `STRIPE_PRICE_12MO`. **Amounts are read from these Price objects — never
-   hardcoded.**
-2. Create the restricted **Billing Portal configuration**:
-   ```bash
-   npm run setup:portal
-   ```
-   Copy the printed `bpc_…` id into `STRIPE_PORTAL_CONFIGURATION_ID`. It allows
-   payment-method updates + invoice history + billing email/address, and
-   **disables cancellation and plan switching**.
-3. Seed a test customer with an active 3-month subscription:
-   ```bash
-   npm run seed                     # uses test.client@example.com
-   npm run seed you@example.com     # or your own email
-   ```
-   This creates the customer, attaches a test card, and writes the subscription
-   metadata (`term`, `ea_name`, `service_start`, `commitment_end`).
-
-### Subscription metadata (the portal reads these)
-
-| Key | Example |
-|---|---|
-| `term` | `"3"` or `"12"` |
-| `ea_name` | `María González` |
-| `service_start` | ISO date of kickoff |
-| `commitment_end` | ISO date the initial term ends |
-
-The "switch to 12-month" flow also writes `amend_ack_at`, `amend_ack_ip`,
-`amend_ack_version`, `amend_ack_email`.
-
----
-
-## 3. Run it
-
-```bash
 npm run dev            # http://localhost:3000
 ```
 
-Enter the seeded email → the magic link is emailed (or printed to the console if
-`RESEND_API_KEY` is unset) → click it → you're in.
+Sign in with any email (name + company optional) to see the account.
 
-**Test cards:** the seed uses Stripe's `pm_card_visa`. In the Billing Portal, use
-`4242 4242 4242 4242` to update the card.
+## Personalize it for a sales call
 
----
+Open a link with query params — the portal renders as that prospect's account, no
+sign-in needed:
 
-## 4. Deploy to Vercel (preview — do not point production DNS yet)
+```
+https://portal.tryteleforce.com/?company=Acme%20Corp&name=Jane%20Doe
+```
 
-1. Push the `portal` branch and open the PR (already done if you're reading this
-   in a PR).
-2. In Vercel, **New Project** → import this repo → set **Root Directory** to
-   `portal`. Framework preset: Next.js.
-3. Add all env vars from the table above (still **test** keys for now). Set
-   `APP_URL` to the Vercel preview URL.
-4. Deploy. Vercel gives you a preview URL — test the full flow there.
+Or sign in with their name/company on the form.
 
-### Going to the `portal.tryteleforce.com` subdomain
+## Optional config (`.env.local`)
 
-1. In Vercel → Project → **Domains**, add `portal.tryteleforce.com`.
-2. In your DNS (Namecheap), add the **CNAME** Vercel shows (host `portal` →
-   `cname.vercel-dns.com`). The apex `tryteleforce.com` stays on GitHub Pages —
-   only the `portal` subdomain points to Vercel.
-3. Set `APP_URL=https://portal.tryteleforce.com` and redeploy.
+| Var | What |
+|---|---|
+| `APP_URL` | This app's base URL, no trailing slash |
+| `AUTH_SECRET` | Signs the session cookie (a demo default is used if unset) |
+| `PORTAL_PASSCODE` | If set, visitors must enter it on the sign-in screen |
 
----
+## Deploy (Vercel)
 
-## 5. Going live (production Stripe)
+1. Vercel → New Project → import this repo → **Root Directory = `portal`**.
+2. (Optional) set `APP_URL`, `AUTH_SECRET`, `PORTAL_PASSCODE`.
+3. Add the domain `portal.tryteleforce.com` and the CNAME Vercel shows to your DNS
+   (the apex stays on GitHub Pages).
 
-1. Recreate the two Prices and the Billing Portal configuration in **live** mode;
-   update `STRIPE_PRICE_3MO`, `STRIPE_PRICE_12MO`,
-   `STRIPE_PORTAL_CONFIGURATION_ID`.
-2. Swap `STRIPE_SECRET_KEY` to the live key (`sk_live_…`).
-3. Verify your sending domain in Resend and set `MAIL_FROM` to an address on it.
-4. Confirm `APP_URL=https://portal.tryteleforce.com`.
-5. Real subscriptions are created by ops at kickoff (the portal never creates a
-   charge for new EAs).
+## Making it real later
 
----
-
-## Notes / limitations
-
-- **Rate limiting** (login) is in-memory per serverless instance — enough to
-  blunt abuse for a low-traffic portal. For hard guarantees, back
-  `lib/ratelimit.ts` with Upstash/Vercel KV.
-- **Magic links** are single-use *intent* (short 15-min expiry). Hard one-time
-  invalidation (a used-token blocklist) also needs a shared store; not included.
-- Every server call re-derives the Stripe customer from the signed session — a
-  customer ID from the client is never trusted.
-- No Stripe **webhooks** are required for this portal. If you later want the UI to
-  reflect out-of-band changes instantly, add one.
+When you have a live client, wire the four sections to your billing source of
+truth (e.g. Stripe): replace `lib/demo.ts` with real reads, add passwordless
+magic-link auth + a Stripe customer lookup, and use Stripe's hosted card
+collection (SetupIntent / Billing Portal) so card data never touches this app.
+The section components stay the same.

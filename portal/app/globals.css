@@ -166,6 +166,33 @@ section.card > .hint { color: var(--muted); font-size: 13.5px; margin: 0 0 16px;
 .muted { color: var(--muted); }
 .savings { color: var(--ok); font-weight: 700; }
 
+/* card-on-file line */
+.cardline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 11px 12px;
+  background: #fbfcfd;
+  font-size: 14px;
+}
+.cardbrand { font-weight: 700; color: var(--navy); }
+
+/* preview tag in the top bar */
+.preview-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  border: 1px solid rgba(243, 94, 56, 0.5);
+  border-radius: 999px;
+  padding: 2px 7px;
+  margin-left: 6px;
+  font-weight: 500;
+}
+
 /* login */
 .login { max-width: 400px; margin: 8vh auto 0; }
 .login .card { text-align: left; }

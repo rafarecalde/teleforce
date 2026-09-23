@@ -1,28 +1,6 @@
-import { formatDate, formatMoney } from '@/lib/money';
-import type Stripe from 'stripe';
-import { subPrice } from '@/lib/stripe';
+import type { DemoPlan } from '@/lib/demo';
 
-export type PlanView = {
-  eaName: string;
-  term: string; // "3" | "12" | ""
-  rate: string;
-  serviceStart: string;
-  commitmentEnd: string;
-};
-
-export function toPlanView(sub: Stripe.Subscription): PlanView {
-  const price = subPrice(sub);
-  const term = sub.metadata?.term ?? '';
-  return {
-    eaName: sub.metadata?.ea_name || 'Your executive assistant',
-    term,
-    rate: formatMoney(price?.unit_amount, price?.currency ?? 'usd'),
-    serviceStart: formatDate(sub.metadata?.service_start || null),
-    commitmentEnd: formatDate(sub.metadata?.commitment_end || null),
-  };
-}
-
-export default function PlanCard({ plan }: { plan: PlanView }) {
+export default function PlanCard({ plan }: { plan: DemoPlan }) {
   const termLabel = plan.term === '12' ? '12-month' : plan.term === '3' ? '3-month' : '—';
   return (
     <div className="plan">
