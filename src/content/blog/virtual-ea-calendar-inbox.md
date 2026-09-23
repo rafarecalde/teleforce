@@ -115,7 +115,7 @@ If you need a body in the lobby, hire local. Digital calendar and inbox work is 
 
 ## What Teleforce staffs
 
-Teleforce places a dedicated, full-time EA — employed by us, English and Spanish, on your U.S. hours — behind a Fortune 500-grade operating backbone (30+ years, 20+ industries). Your partnership manager presents one to two top-tier candidates; you select your EA. They stay on the account for oversight, tools, and best practices.
+Teleforce places a dedicated, full-time EA — employed by us, English and Spanish, on your U.S. hours — behind a Fortune 500-grade operating backbone (30+ years, 20+ industries). Your partnership manager matches you with an executive assistant from the top tier. They stay on the account for oversight, tools, and best practices.
 
 We do not sell hour packs for “email help.” We sell a named seat that can own virtual EA calendar and inbox as one system, then expand into the rest of the week.
 

@@ -119,7 +119,7 @@ You will not have 12-month “full performance.” You should have a working ope
 
 ## How Teleforce runs the first month
 
-Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade support behind the recruiting. The EA product is one named, full-time assistant — English and Spanish, on your U.S. hours — employed and managed by us. Your partnership manager presents one to two top-tier candidates; you select your EA. They stay on the engagement for oversight, tools, and best practices.
+Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade support behind the recruiting. The EA product is one named, full-time assistant — English and Spanish, on your U.S. hours — employed and managed by us. Your partnership manager matches you with an executive assistant from the top tier. They stay on the engagement for oversight, tools, and best practices.
 
 Matching is about a week. You’re live in under about two weeks. The path is about 2–3 hours of your time. If the fit is wrong after you have actually granted access, we rematch.
 
