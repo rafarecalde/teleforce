@@ -287,6 +287,11 @@ export const EA_PRICING_NOTE_TAIL =
 export const EA_CLOCK_NOTE =
   'You don’t pay until your EA starts. Signup puts terms and a payment method on file with no charge yet. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or up to 10 days after you’ve been matched / accepted your EA, whichever comes first.';
 
+export const EA_START_FAQ = {
+  q: 'How fast can I start / get matched with my EA?',
+  a: 'Matching is about a week from the onboarding call. You’re live in under about two weeks. You’re matched with an executive assistant from the top tier. You and your EA run the day-to-day. Your partnership manager stays on with oversight, tools, best practices, and rematch. You don’t pay until your EA starts. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or up to 10 days after you’ve been matched / accepted your EA, whichever comes first.',
+} as const;
+
 export const EA_JOURNEY_FAQ = [
   {
     q: 'What do next steps look like?',
@@ -295,6 +300,11 @@ export const EA_JOURNEY_FAQ = [
   {
     q: 'What does onboarding look like?',
     a: 'Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. The call covers what to delegate, priorities, hours, tools, and how you like to communicate. Your partnership manager owns matching after that. Within 24–48 hours you get a short written plan and an access checklist. Next, you’re matched. Meet your executive assistant — selected from the top tier after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support. Rematch is available if the fit isn’t right. Most clients are matched within about a week of the call and are live in under about two weeks.',
+  },
+  EA_START_FAQ,
+  {
+    q: 'After being matched, when does kickoff start?',
+    a: 'Same day or the next business day after you’re matched — or later if you need, up to 10 days from matching.',
   },
   {
     q: 'When does the 90-day commitment start?',
@@ -309,11 +319,6 @@ export const EA_JOURNEY_FAQ = [
     a: 'Your EA works 40 hours/week. One dedicated, full-time seat — not a shared pool or an hour pack.',
   },
 ] as const;
-
-export const EA_START_FAQ = {
-  q: 'How fast can I start?',
-  a: 'Matching is about a week from the onboarding call. You’re live in under about two weeks. You’re matched with an executive assistant from the top tier. You and your EA run the day-to-day. Your partnership manager stays on with oversight, tools, best practices, and rematch. You don’t pay until your EA starts. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or up to 10 days after you’ve been matched / accepted your EA, whichever comes first.',
-} as const;
 
 // Real contact + social proof pulled from the live Teleforce brand page.
 export const PHONE = '1-866-252-3961';

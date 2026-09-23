@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
 import WhyTheBarHolds from '../../components/WhyTheBarHolds.astro';
-import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_KICKOFF_STEP, EA_TIMING_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
+import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_KICKOFF_STEP, EA_TIMING_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, EA_CLOCK_NOTE } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -82,7 +82,6 @@ const faq = [
     a: 'We rematch. A success lead manages the partnership, and you’re not stuck with a bad hire. That’s the risk reversal: the screen is ours, the seat stays yours.',
   },
   ...EA_JOURNEY_FAQ,
-  EA_START_FAQ,
   {
     q: 'Do you do personal / household admin?',
     a: 'It can sit in the background. It is not the product. This page is for operators who need a virtual EA to own business ops — not a lifestyle concierge as the ad.',
