@@ -238,7 +238,7 @@ export const ALL_SERVICES: Service[] = [...SERVICES, ...SERVICES_LEGACY];
 // Modeled on the premium delegation category; priced simply and flat.
 // ============================================================
 // One dedicated full-time EA, two commitments. Start on the 3-month plan.
-// Switch to 12 when you’re sure and save $300/mo.
+// Switch to 12 when you’re ready and save $300/mo. Early switch is fine, including in month one.
 export const EA = {
   price12mo: 2700, // USD/mo on a 12-month commitment
   price3mo: 3000, // USD/mo on a 3-month commitment
@@ -250,9 +250,9 @@ export const EA = {
 // The numbered step card keeps the full title: Get matched with your EA.
 // Step 2 is a confident match from the top tier. Rematch stays in kickoff and FAQ, not in this step.
 // Signup is terms and a payment method on file. No charge yet.
-// First month begins at kickoff, or 10 days after the client is matched and has accepted their EA, whichever comes first.
+// First month and the 90-day commitment both begin at kickoff, or 10 days after the client is matched and has accepted their EA, whichever comes first.
 // Never say 10 days after onboarding — that can bill during matching.
-// The 90-day clock starts only at kickoff, even if the first charge fires under the 10-day post-match rule.
+// Teleforce is ready on match day; post-match delay is on the client.
 export const EA_JOURNEY_LINE =
   'Onboarding → Get matched → Kickoff';
 
@@ -285,12 +285,12 @@ export const EA_PRICING_NOTE_TAIL =
 
 // Full billing rule for FAQ answers only — not the pricing-card footnote.
 export const EA_CLOCK_NOTE =
-  'You don’t pay until your EA starts. Signup puts terms and a payment method on file with no charge yet. The first month begins at kickoff — when your EA goes live — or 10 days after you’ve been matched / accepted your EA, whichever comes first. The 90-day commitment starts on your EA’s official service start date (kickoff), not on signup and not on the charge date if that charge fires under the 10-day post-match rule before kickoff.';
+  'You don’t pay until your EA starts. Signup puts terms and a payment method on file with no charge yet. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or 10 days after you’ve been matched / accepted your EA, whichever comes first.';
 
 export const EA_JOURNEY_FAQ = [
   {
     q: 'What do next steps look like?',
-    a: 'Discovery and signup come first. They are not numbered steps. A discovery call can happen before signup. Signup is terms and a payment method on file, with no charge yet. You don’t pay until your EA starts. Then three steps. Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. We cover what to delegate, your priorities, hours, tools, and how you like to communicate. Your partnership manager owns matching after this call. Within 24–48 hours you get a short written plan and an access checklist. Get matched with your EA: you’re matched. Meet your executive assistant — selected from the top tier after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support. Kickoff: service starts. Same day or next business day after you’re matched, your EA goes live. You and your EA run the day-to-day. Your partnership manager stays for oversight, tools, and best practices — full back-end support, including rematch. Matching is about a week. You’re live in under about two weeks. The path is about 2–3 hours of your time. The first month begins at kickoff — when your EA goes live — or 10 days after you’ve been matched / accepted your EA, whichever comes first. The 90-day commitment starts on your EA’s official service start date (kickoff), not on signup and not on the charge date if that charge fires under the 10-day post-match rule before kickoff.',
+    a: 'Discovery and signup come first. They are not numbered steps. A discovery call can happen before signup. Signup is terms and a payment method on file, with no charge yet. You don’t pay until your EA starts. Then three steps. Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. We cover what to delegate, your priorities, hours, tools, and how you like to communicate. Your partnership manager owns matching after this call. Within 24–48 hours you get a short written plan and an access checklist. Get matched with your EA: you’re matched. Meet your executive assistant — selected from the top tier after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support. Kickoff: service starts. Same day or next business day after you’re matched, your EA goes live. You and your EA run the day-to-day. Your partnership manager stays for oversight, tools, and best practices — full back-end support, including rematch. Matching is about a week. You’re live in under about two weeks. The path is about 2–3 hours of your time. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or 10 days after you’ve been matched / accepted your EA, whichever comes first.',
   },
   {
     q: 'What does onboarding look like?',
@@ -298,7 +298,7 @@ export const EA_JOURNEY_FAQ = [
   },
   {
     q: 'When does the 90-day commitment start?',
-    a: 'The 90-day commitment starts on your EA’s official service start date (kickoff), not on signup and not on the charge date if that charge fires under the 10-day post-match rule before kickoff. You don’t pay until your EA starts. Signup puts terms and a payment method on file with no charge yet. The first month begins at kickoff — when your EA goes live — or 10 days after you’ve been matched / accepted your EA, whichever comes first.',
+    a: EA_CLOCK_NOTE,
   },
   {
     q: 'When am I charged?',
@@ -312,7 +312,7 @@ export const EA_JOURNEY_FAQ = [
 
 export const EA_START_FAQ = {
   q: 'How fast can I start?',
-  a: 'Matching is about a week from the onboarding call. You’re live in under about two weeks, and the path takes about 2–3 hours of your time: onboarding, get matched, kickoff. You’re matched with an executive assistant from the top tier. You and your EA run the day-to-day. Your partnership manager stays on with oversight, tools, best practices, and rematch. You don’t pay until your EA starts. The first month begins at kickoff — when your EA goes live — or 10 days after you’ve been matched / accepted your EA, whichever comes first. The 90-day commitment starts on your EA’s official service start date (kickoff), not on signup and not on the charge date if that charge fires under the 10-day post-match rule before kickoff.',
+  a: 'Matching is about a week from the onboarding call. You’re live in under about two weeks, and the path takes about 2–3 hours of your time: onboarding, get matched, kickoff. You’re matched with an executive assistant from the top tier. You and your EA run the day-to-day. Your partnership manager stays on with oversight, tools, best practices, and rematch. You don’t pay until your EA starts. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or 10 days after you’ve been matched / accepted your EA, whichever comes first.',
 } as const;
 
 // Real contact + social proof pulled from the live Teleforce brand page.
