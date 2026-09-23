@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { EA, STATS, TESTIMONIALS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_MATCH_STEP, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
+import { EA, STATS, TESTIMONIALS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_MATCH_STEP, EA_TIMING_LINE, EA_PAY_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -87,7 +87,7 @@ const faq = [
   },
   {
     q: 'What’s the price, and what’s included?',
-    a: `$${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. One dedicated remote EA, matching, onboarding, coaching, a success lead, and rematch. You won’t be charged until your onboarding call. Billing will begin at the onboarding call. That charge is the first month of service — not a deposit. The 90-day commitment starts on your EA’s official service start date. No foreign entity, no separate payroll, no hour packs. Start on the 3-month plan. Switch to 12 when you’re sure and save $300/mo.`,
+    a: `$${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. One dedicated remote EA, matching, onboarding, coaching, a success lead, and rematch. ${EA_CLOCK_NOTE} That first charge is the first month of service — not a deposit. No foreign entity, no separate payroll, no hour packs. Start on the 3-month plan. Switch to 12 when you’re sure and save $300/mo.`,
   },
   {
     q: 'How is this different from Athena, overnight offshore, or a cheap VA?',
@@ -399,7 +399,7 @@ const jsonLd = [
   <BookingSection
     id="match"
     heading="Find your EA."
-    sub="Grab a time. If it’s a fit, you sign up — terms and a card on file — and we schedule the onboarding call. You won’t be charged until your onboarding call."
+    sub={`Grab a time. If it’s a fit, you sign up — terms and a card on file — and we schedule the onboarding call. ${EA_PAY_LINE}`}
     subject="New Teleforce remote EA match request"
     idPrefix="ea-remote"
   />
