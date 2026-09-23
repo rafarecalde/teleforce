@@ -273,7 +273,7 @@ export const EA_KICKOFF_STEP = {
 } as const;
 
 export const EA_TIMING_LINE =
-  'Matching ~1 week · Live under ~2 weeks · ~2–3 hrs of your time.';
+  'Matching ~1 week · Live under ~2 weeks.';
 
 export const EA_PAY_LINE = 'You don’t pay until your EA starts.';
 
