@@ -247,7 +247,7 @@ export const EA = {
 // Client journey — single source for homepage, EA LPs, and FAQ.
 // Discovery and signup come before the numbered path. Three named steps:
 // Onboarding → Get matched with your EA → Kickoff.
-// Step 2 is a match we make from the top tier. Rematch if the fit isn’t right.
+// Step 2 is a confident match from the top tier. Rematch stays in kickoff and FAQ, not in this step.
 // You won’t be charged until the onboarding call. Billing will begin at that call.
 // The 90-day clock starts on the official service start date (kickoff), not at signup or the charge.
 export const EA_JOURNEY_LINE =
@@ -255,7 +255,7 @@ export const EA_JOURNEY_LINE =
 
 export const EA_MATCH_STEP = {
   title: 'Get matched with your EA',
-  body: 'Meet your executive assistant — selected from the top tier after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support. Rematch is available if the fit isn’t right.',
+  body: 'Meet your executive assistant — selected from the top tier after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support.',
 } as const;
 
 export const EA_TIMING_LINE =
