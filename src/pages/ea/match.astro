@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_TIMING_LINE, EA_PAY_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, EA_START_FAQ } from '../../consts';
+import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_KICKOFF_STEP, EA_TIMING_LINE, EA_PAY_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -16,14 +16,8 @@ const own = [
 
 const steps = [
   [EA_ONBOARDING_STEP.title, EA_ONBOARDING_STEP.body],
-  [
-    EA_MATCH_STEP.title,
-    EA_MATCH_STEP.body,
-  ],
-  [
-    'Kickoff',
-    'Your EA goes live. You and your EA run the day-to-day. Your partnership manager and full back-end support stay on — oversight, tools, best practices, rematch.',
-  ],
+  [EA_MATCH_STEP.title, EA_MATCH_STEP.body],
+  [EA_KICKOFF_STEP.title, EA_KICKOFF_STEP.body],
 ];
 
 const faq = [
@@ -37,7 +31,7 @@ const faq = [
   },
   {
     q: 'How does matching work?',
-    a: 'Discovery can happen before signup. Signup is terms and a payment method on file, with no charge yet. You don’t pay until your EA starts. Then three steps. Onboarding is one deep call (~60 minutes), with a prep sheet beforehand. It covers the work and how you operate. Your partnership manager owns matching after that call. Within 24–48 hours you get a written plan and an access checklist. Get matched with your EA: meet your executive assistant — selected from the top tier of this cohort after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support. Rematch is available if the fit isn’t right. Kickoff: your EA goes live, and you run the day-to-day together, with full back-end support behind the seat. Matching is about a week. You’re live in under about two weeks. The path is about 2–3 hours of your time. The first month begins at kickoff — when your EA goes live — or 10 days after you’ve been matched / accepted your EA, whichever comes first. The 90-day commitment starts on your EA’s official service start date (kickoff), not on signup and not on the charge date if that charge fires under the 10-day post-match rule before kickoff.',
+    a: 'Discovery can happen before signup. Signup is terms and a payment method on file, with no charge yet. You don’t pay until your EA starts. Then three steps. Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. It covers the work and how you operate. Your partnership manager owns matching after that call. Within 24–48 hours you get a written plan and an access checklist. You’re matched. Meet your executive assistant — selected from the top tier of this cohort after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support. Rematch is available if the fit isn’t right. Kickoff: service starts the same day or next business day after you’re matched, and your EA goes live. You run the day-to-day together, with full back-end support behind the seat. Matching is about a week. You’re live in under about two weeks. The path is about 2–3 hours of your time. The first month begins at kickoff — when your EA goes live — or 10 days after you’ve been matched / accepted your EA, whichever comes first. The 90-day commitment starts on your EA’s official service start date (kickoff), not on signup and not on the charge date if that charge fires under the 10-day post-match rule before kickoff.',
   },
   ...EA_JOURNEY_FAQ,
   EA_START_FAQ,

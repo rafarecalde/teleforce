@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
 import WhyTheBarHolds from '../../components/WhyTheBarHolds.astro';
-import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_TIMING_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
+import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_KICKOFF_STEP, EA_TIMING_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -39,7 +39,7 @@ const included = [
 const steps = [
   [EA_ONBOARDING_STEP.title, EA_ONBOARDING_STEP.body],
   [EA_MATCH_STEP.title, EA_MATCH_STEP.body],
-  ['Kickoff', 'Your EA goes live. You and your EA run the day-to-day. Your partnership manager and full back-end support stay on — oversight, tools, best practices, rematch.'],
+  [EA_KICKOFF_STEP.title, EA_KICKOFF_STEP.body],
 ];
 
 const compare = [
@@ -256,7 +256,7 @@ const jsonLd = [
         <p class="path-line">{EA_JOURNEY_LINE}</p>
         <p class="sub" style="max-width:64ch">{EA_TIMING_LINE}</p>
         <p class="sub" style="max-width:64ch;margin-top:14px">
-          After discovery and signup, onboarding is one deep call (~60 minutes), with a prep sheet beforehand. Your partnership manager owns matching after it. We match you with an executive assistant from the top tier. At kickoff, you and your EA run the day-to-day, with full back-end support behind the seat.
+          Post-signup: one deep onboarding call (~60 minutes), with a prep sheet beforehand. Your partnership manager owns matching after it. You’re matched with an executive assistant from the top tier. At kickoff, service starts the same day or next business day, and you and your EA run the day-to-day, with full back-end support behind the seat.
         </p>
         <div class="steps offer-steps">
           {steps.map(([t, b], i) => (
