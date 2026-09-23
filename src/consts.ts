@@ -266,6 +266,13 @@ export const EA_TIMING_LINE =
 
 export const EA_PAY_LINE = 'You don’t pay until your EA starts.';
 
+// Short footnote under pricing bullets. The kickoff / 10-day / 90-day rule stays in FAQ.
+export const EA_PRICING_NOTE_LEAD =
+  'Start on the 3-month plan. Switch to 12 when you’re ready and save';
+export const EA_PRICING_NOTE_TAIL =
+  'You don’t pay until your EA starts. Terms and conditions apply.';
+
+// Full billing rule for FAQ answers only — not the pricing-card footnote.
 export const EA_CLOCK_NOTE =
   'You don’t pay until your EA starts. Signup puts terms and a payment method on file with no charge yet. The first month begins at kickoff — when your EA goes live — or 10 days after you’ve been matched / accepted your EA, whichever comes first. The 90-day commitment starts on your EA’s official service start date (kickoff), not on signup and not on the charge date if that charge fires under the 10-day post-match rule before kickoff.';
 
@@ -280,7 +287,7 @@ export const EA_JOURNEY_FAQ = [
   },
   {
     q: 'When does the 90-day commitment start?',
-    a: 'The 90-day commitment starts on your EA’s official service start date — kickoff, when your EA goes live. It does not start at signup, and it does not start on the charge date. You don’t pay until your EA starts. The first month begins at kickoff — when your EA goes live — or 10 days after you’ve been matched / accepted your EA, whichever comes first. If that charge fires under the 10-day post-match rule before kickoff, the 90-day commitment still starts at kickoff.',
+    a: 'The 90-day commitment starts on your EA’s official service start date (kickoff), not on signup and not on the charge date if that charge fires under the 10-day post-match rule before kickoff. You don’t pay until your EA starts. Signup puts terms and a payment method on file with no charge yet. The first month begins at kickoff — when your EA goes live — or 10 days after you’ve been matched / accepted your EA, whichever comes first.',
   },
   {
     q: 'When am I charged?',
