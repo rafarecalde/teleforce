@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
+import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_MATCH_STEP, EA_TIMING_LINE, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -20,8 +20,8 @@ const steps = [
     'After discovery and signup, you’re ready for onboarding. ~60–90 minutes on the work and how you operate. Your partnership manager owns matching after the call. Within 24–48 hours: a written plan and an access checklist.',
   ],
   [
-    'Select your EA',
-    'You pick. We present one to two top-tier candidates from this cohort, AI-superpowered and backed by Teleforce. Rematch is available.',
+    EA_MATCH_STEP.title,
+    EA_MATCH_STEP.body,
   ],
   [
     'Kickoff',
@@ -36,11 +36,11 @@ const faq = [
   },
   {
     q: 'Why are new matches limited? What does top 1% mean?',
-    a: 'We only accept the top 1% of applicants who clear a multi-stage screen — interviews, skills assessments, and background checks. Most never pass. That bar is why the cohort is small, and why we only take a limited number of new matches at a time. There is no infinite bench. After the onboarding call, your partnership manager matches you from that cohort. You select your EA from one to two top-tier candidates. Scarcity here is the screen, not a countdown timer.',
+    a: 'We only accept the top 1% of applicants who clear a multi-stage screen — interviews, skills assessments, and background checks. Most never pass. That bar is why the cohort is small, and why we only take a limited number of new matches at a time. There is no infinite bench. After the onboarding call, your partnership manager matches you with an executive assistant from that top-tier cohort. Rematch is available if the fit isn’t right. Scarcity here is the screen, not a countdown timer.',
   },
   {
     q: 'How does matching work?',
-    a: 'Discovery can happen before signup. Signup is terms and a payment method on file. You won’t be charged until your onboarding call. Then three steps. Onboarding is a ~60–90 minute call on the work and how you operate. Your partnership manager owns matching after that call. Within 24–48 hours you get a written plan and an access checklist. Select your EA: we present one to two top-tier candidates from this cohort, AI-superpowered and backed by Teleforce, and you pick. Rematch is available. Kickoff: your EA goes live, and you run the day-to-day together, with full back-end support behind the seat. Matching is about a week. You’re live in under about two weeks. The path is about 2–3 hours of your time. Billing will begin at the onboarding call. The 90-day commitment starts on your EA’s official service start date.',
+    a: 'Discovery can happen before signup. Signup is terms and a payment method on file. You won’t be charged until your onboarding call. Then three steps. Onboarding is a ~60–90 minute call on the work and how you operate. Your partnership manager owns matching after that call. Within 24–48 hours you get a written plan and an access checklist. Get matched with your EA: meet your executive assistant — selected from the top tier of this cohort after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support. Rematch is available if the fit isn’t right. Kickoff: your EA goes live, and you run the day-to-day together, with full back-end support behind the seat. Matching is about a week. You’re live in under about two weeks. The path is about 2–3 hours of your time. Billing will begin at the onboarding call. The 90-day commitment starts on your EA’s official service start date.',
   },
   ...EA_JOURNEY_FAQ,
   EA_START_FAQ,
@@ -160,7 +160,7 @@ const jsonLd = [
           Every Teleforce EA clears a multi-stage screen — interviews, skills assessments, and background checks — that most applicants never pass. We only take the top 1% who do.
         </p>
         <p class="sub" style="max-width:64ch;margin-top:14px">
-          That bar is the reason the cohort stays small. We are not running an infinite bench of “available VAs.” You select your EA from that top small-tier cohort — one to two candidates. When this intake is full, it is full.
+          That bar is the reason the cohort stays small. We are not running an infinite bench of “available VAs.” Your partnership manager matches you from that top-tier cohort. When this intake is full, it is full.
         </p>
         <ul class="ea-checks">
           <li>Top 1% of applicants — a multi-stage screen most never clear</li>
@@ -178,7 +178,7 @@ const jsonLd = [
       <h2 class="disp path-h">{EA_JOURNEY_LINE}</h2>
       <p class="sub" style="max-width:64ch">{EA_TIMING_LINE}</p>
       <p class="sub" style="max-width:64ch;margin-top:14px">
-        After discovery and signup, your partnership manager matches you from this limited top-tier cohort. You select your EA from one to two candidates. Rematch is available. Signup holds your place in this cohort.
+        After discovery and signup, your partnership manager matches you with an executive assistant from this limited top-tier cohort. Rematch is available if the fit isn’t right. Signup holds your place in this cohort.
       </p>
       <div class="steps match-steps">
         {steps.map(([t, b], i) => (
@@ -192,7 +192,7 @@ const jsonLd = [
       <div class="mid-cta">
         <CtaBox
           heading="See if we have your fit."
-          body="A short quiz, then a call if this limited cohort has a fit. Onboarding, select your EA, kickoff — you pick from one to two candidates."
+          body="A short quiz, then a call if this limited cohort has a fit. Onboarding → Get matched with your EA → Kickoff."
           label="See if we have your fit"
           href="/ea/quiz"
         />

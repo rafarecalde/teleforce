@@ -170,7 +170,7 @@ If you want the operating version of this — what to hand off first, and in wha
 
 ## What Teleforce means by the role
 
-Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade support behind the recruiting. The EA offer is one dedicated, full-time assistant — English and Spanish, on your U.S. hours — employed and managed by us. Your partnership manager presents one to two top-tier candidates; you select your EA. They stay on the engagement for oversight, tools, and best practices, and rematch if the fit is wrong.
+Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade support behind the recruiting. The EA offer is one dedicated, full-time assistant — English and Spanish, on your U.S. hours — employed and managed by us. Your partnership manager matches you with an executive assistant from the top tier. They stay on the engagement for oversight, tools, and best practices, and rematch if the fit is wrong.
 
 This is not a marketplace freelancer and not a shared pool. It is a seat.
 

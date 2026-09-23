@@ -90,7 +90,7 @@ The other hybrid: you are not ready for an EA at all. You need [appointment sett
 
 **Hour packs and ticket VAs.** Cheap feelings. No one owns the week. You stay the integrator.
 
-**Employed, dedicated seat.** The provider recruits, pays, coaches, and rematches. You select your EA from one to two top-tier candidates. This is the Teleforce model: LATAM talent, U.S. hours, English and Spanish, Fortune 500-grade delivery standards behind a 30-year operator. You are not hiring “a VA from the internet.” You are buying a named FTE without running the foreign entity.
+**Employed, dedicated seat.** The provider recruits, pays, coaches, and rematches. They match you with an executive assistant from the top tier. This is the Teleforce model: LATAM talent, U.S. hours, English and Spanish, Fortune 500-grade delivery standards behind a 30-year operator. You are not hiring “a VA from the internet.” You are buying a named FTE without running the foreign entity.
 
 If you want the longer version of build-vs-buy for customer operations, the [support framework](/blog/outsourced-vs-in-house-support) is the sibling. Same questions. Different queue.
 

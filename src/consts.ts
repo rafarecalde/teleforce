@@ -245,11 +245,18 @@ export const EA = {
 } as const;
 
 // Client journey — single source for homepage, EA LPs, and FAQ.
-// Discovery and signup come before the numbered path. Three named steps.
+// Discovery and signup come before the numbered path. Three named steps:
+// Onboarding → Get matched with your EA → Kickoff.
+// Step 2 is a match we make from the top tier. Rematch if the fit isn’t right.
 // You won’t be charged until the onboarding call. Billing will begin at that call.
 // The 90-day clock starts on the official service start date (kickoff), not at signup or the charge.
 export const EA_JOURNEY_LINE =
-  'Onboarding → Select your EA → Kickoff';
+  'Onboarding → Get matched with your EA → Kickoff';
+
+export const EA_MATCH_STEP = {
+  title: 'Get matched with your EA',
+  body: 'Meet your executive assistant — selected from the top tier after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support. Rematch is available if the fit isn’t right.',
+} as const;
 
 export const EA_TIMING_LINE =
   'Matching ~1 week · Live under ~2 weeks · ~2–3 hrs of your time.';
@@ -260,11 +267,11 @@ export const EA_CLOCK_NOTE =
 export const EA_JOURNEY_FAQ = [
   {
     q: 'What do next steps look like?',
-    a: 'Discovery and signup come first. They are not numbered steps. A discovery call can happen before signup. Signup is terms and a payment method on file. You won’t be charged until your onboarding call. Then three steps. Onboarding (~60–90 minutes): after discovery and signup, you’re ready. We cover what to delegate, your priorities, hours, tools, and communication style. Your partnership manager owns matching after this call. Within 24–48 hours you get a short written plan and an access checklist. Select your EA: we present one to two top-tier candidates — AI-superpowered and backed by Teleforce — and you pick. Rematch is available. Kickoff: your EA goes live. You and your EA run the day-to-day. Your partnership manager stays for oversight, tools, and best practices — full back-end support, including rematch. Matching is about a week. You’re live in under about two weeks. The path is about 2–3 hours of your time. Billing will begin at the onboarding call. The 90-day commitment starts on your EA’s official service start date.',
+    a: 'Discovery and signup come first. They are not numbered steps. A discovery call can happen before signup. Signup is terms and a payment method on file. You won’t be charged until your onboarding call. Then three steps. Onboarding (~60–90 minutes): after discovery and signup, you’re ready. We cover what to delegate, your priorities, hours, tools, and communication style. Your partnership manager owns matching after this call. Within 24–48 hours you get a short written plan and an access checklist. Get matched with your EA: meet your executive assistant — selected from the top tier after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support. Rematch is available if the fit isn’t right. Kickoff: your EA goes live. You and your EA run the day-to-day. Your partnership manager stays for oversight, tools, and best practices — full back-end support, including rematch. Matching is about a week. You’re live in under about two weeks. The path is about 2–3 hours of your time. Billing will begin at the onboarding call. The 90-day commitment starts on your EA’s official service start date.',
   },
   {
     q: 'What does onboarding look like?',
-    a: 'After discovery and signup, you’re ready for onboarding. The call runs about 60–90 minutes: what to delegate, priorities, hours, tools, and how you like to communicate. Your partnership manager owns matching after that. Within 24–48 hours you get a short written plan and an access checklist. Next you select your EA: we present one to two top-tier candidates, AI-superpowered and backed by Teleforce, and you pick. Rematch is available. Across onboarding, selection, and kickoff, plan on about 2–3 hours of your time. Most clients select within about a week of the call and are live in under about two weeks.',
+    a: 'After discovery and signup, you’re ready for onboarding. The call runs about 60–90 minutes: what to delegate, priorities, hours, tools, and how you like to communicate. Your partnership manager owns matching after that. Within 24–48 hours you get a short written plan and an access checklist. Next, get matched with your EA: we match you with an executive assistant from the top tier — an adaptable partner for strategic work, with AI multiplying their capabilities beyond typical admin support. Rematch is available if the fit isn’t right. Across onboarding, matching, and kickoff, plan on about 2–3 hours of your time. Most clients are matched within about a week of the call and are live in under about two weeks.',
   },
   {
     q: 'When does the 90-day commitment start?',
@@ -282,7 +289,7 @@ export const EA_JOURNEY_FAQ = [
 
 export const EA_START_FAQ = {
   q: 'How fast can I start?',
-  a: 'Matching is about a week from the onboarding call. You’re live in under about two weeks, and the path takes about 2–3 hours of your time: onboarding, select your EA, kickoff. You pick from one to two top-tier candidates. You and your EA run the day-to-day. Your partnership manager stays on with oversight, tools, best practices, and rematch. You won’t be charged until your onboarding call. Billing will begin at the onboarding call. The 90-day commitment starts on your EA’s official service start date.',
+  a: 'Matching is about a week from the onboarding call. You’re live in under about two weeks, and the path takes about 2–3 hours of your time: onboarding, get matched with your EA, kickoff. We match you with an executive assistant from the top tier. You and your EA run the day-to-day. Your partnership manager stays on with oversight, tools, best practices, and rematch. You won’t be charged until your onboarding call. Billing will begin at the onboarding call. The 90-day commitment starts on your EA’s official service start date.',
 } as const;
 
 // Real contact + social proof pulled from the live Teleforce brand page.
