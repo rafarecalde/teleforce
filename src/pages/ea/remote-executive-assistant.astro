@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { EA, STATS, TESTIMONIALS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_MATCH_STEP, EA_TIMING_LINE, EA_PAY_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
+import { EA, STATS, TESTIMONIALS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_TIMING_LINE, EA_PAY_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, EA_CLOCK_NOTE, EA_START_FAQ } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -52,7 +52,7 @@ const own = [
 ];
 
 const steps = [
-  ['Onboarding', 'After discovery and signup, you’re ready for onboarding. ~60–90 minutes on what a remote EA should own — priorities, hours, tools, communication style. Your partnership manager owns matching after the call. Within 24–48 hours: a written plan and an access checklist.'],
+  [EA_ONBOARDING_STEP.title, EA_ONBOARDING_STEP.body],
   [EA_MATCH_STEP.title, EA_MATCH_STEP.body],
   ['Kickoff', 'Your EA goes live on U.S. hours. You and your EA run the day-to-day. Your partnership manager stays for oversight, tools, and best practices — full back-end support.'],
 ];
