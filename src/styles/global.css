@@ -190,6 +190,8 @@ footer .fnav{display:flex;gap:26px;flex-wrap:wrap}
 footer .fnav a{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;transition:color .2s}
 footer .fnav a:hover{color:var(--amber)}
 footer .legal{padding-top:22px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:rgba(157,176,171,0.7)}
+footer .legal a{color:inherit}
+footer .legal a:hover{color:var(--amber)}
 
 /* ---------- blog index: masthead + filter ---------- */
 .masthead{background:var(--ink);color:var(--on-dark);padding:54px 0 46px}
