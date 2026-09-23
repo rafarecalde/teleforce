@@ -292,10 +292,38 @@ export const EA_START_FAQ = {
   a: 'Matching is about a week from the onboarding call. You’re live in under about two weeks. You’re matched with an executive assistant from the top tier. You and your EA run the day-to-day. Your partnership manager stays on with oversight, tools, best practices, and rematch. You don’t pay until your EA starts. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or up to 10 days after you’ve been matched / accepted your EA, whichever comes first.',
 } as const;
 
+export type FaqStep = { label: string; detail: string };
+
+/** Plain text for FAQPage JSON-LD. UI renders `steps` as a list. */
+export function faqAnswerText(item: {
+  a: string;
+  steps?: readonly FaqStep[];
+  tail?: string;
+}): string {
+  const steps = (item.steps ?? []).map((step) => `${step.label} — ${step.detail}`);
+  return [item.a, ...steps, item.tail ?? ''].filter((part) => part.length > 0).join(' ');
+}
+
 export const EA_JOURNEY_FAQ = [
   {
+    // Short on purpose. Onboarding, match speed, kickoff timing, billing, and the 90-day clock have their own answers.
     q: 'What do next steps look like?',
-    a: 'Discovery and signup come first. They are not numbered steps. A discovery call can happen before signup. Signup is terms and a payment method on file, with no charge yet. You don’t pay until your EA starts. Then three steps. Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. We cover what to delegate, your priorities, hours, tools, and how you like to communicate. Your partnership manager owns matching after this call. Within 24–48 hours you get a short written plan and an access checklist. Get matched with your EA: you’re matched. Meet your executive assistant — selected from the top tier after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support. Kickoff: service starts. Same day or next business day after you’re matched, your EA goes live. You and your EA run the day-to-day. Your partnership manager stays for oversight, tools, and best practices — full back-end support, including rematch. Matching is about a week. You’re live in under about two weeks. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or up to 10 days after you’ve been matched / accepted your EA, whichever comes first.',
+    a: 'Signup, review and accept our terms and conditions, select your plan, and set a payment method on file. Don’t worry, you won’t be charged until your EA starts. Then three steps.',
+    steps: [
+      {
+        label: 'Onboarding',
+        detail: 'one deep ~60-min call (prep sheet beforehand; plan + access checklist within 24–48 hours)',
+      },
+      {
+        label: 'Get matched',
+        detail: 'you’re matched with your EA from the top tier',
+      },
+      {
+        label: 'Kickoff',
+        detail: 'service starts; same day or next business day after you’re matched',
+      },
+    ],
+    tail: EA_TIMING_LINE,
   },
   {
     q: 'What does onboarding look like?',

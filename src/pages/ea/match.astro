@@ -2,7 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
 import CtaBox from '../../components/CtaBox.astro';
-import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_KICKOFF_STEP, EA_TIMING_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL } from '../../consts';
+import FaqAnswer from '../../components/FaqAnswer.astro';
+import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_KICKOFF_STEP, EA_TIMING_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, faqAnswerText } from '../../consts';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
 const price3 = EA.price3mo.toLocaleString('en-US');
@@ -60,7 +61,7 @@ const jsonLd = [
     mainEntity: faq.map((f) => ({
       '@type': 'Question',
       name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
+      acceptedAnswer: { '@type': 'Answer', text: faqAnswerText(f) },
     })),
   },
 ];
@@ -244,7 +245,7 @@ const jsonLd = [
         {faq.map((f) => (
           <details class="ea-q">
             <summary>{f.q}<span class="pl">+</span></summary>
-            <p>{f.a}</p>
+            <FaqAnswer answer={f.a} steps={'steps' in f ? f.steps : undefined} tail={'tail' in f ? f.tail : undefined} />
           </details>
         ))}
       </div>
