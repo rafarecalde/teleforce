@@ -288,7 +288,7 @@ export const EA_CLOCK_NOTE =
   'You don’t pay until your EA starts. Signup puts terms and a payment method on file with no charge yet. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or up to 10 days after you’ve been matched / accepted your EA, whichever comes first.';
 
 export const EA_START_FAQ = {
-  q: 'How fast can I start / get matched with my EA?',
+  q: 'How fast do I get matched with my EA?',
   a: 'Matching is about a week from the onboarding call. You’re live in under about two weeks. You’re matched with an executive assistant from the top tier. You and your EA run the day-to-day. Your partnership manager stays on with oversight, tools, best practices, and rematch. You don’t pay until your EA starts. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or up to 10 days after you’ve been matched / accepted your EA, whichever comes first.',
 } as const;
 
