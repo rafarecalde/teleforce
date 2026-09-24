@@ -342,10 +342,6 @@ export const EA_JOURNEY_FAQ = [
     q: 'When am I charged?',
     a: EA_CLOCK_NOTE,
   },
-  {
-    q: 'How many hours a week does my EA work?',
-    a: 'Your EA works 40 hours/week. One dedicated, full-time seat — not a shared pool or an hour pack.',
-  },
 ] as const;
 
 // Real contact + social proof pulled from the live Teleforce brand page.
