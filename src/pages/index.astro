@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE, EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_KICKOFF_STEP, EA_TIMING_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, TESTIMONIALS } from '../consts';
+import { SITE, EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_KICKOFF_STEP, EA_TIMING_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, TESTIMONIALS, faqAnswerText } from '../consts';
 import BookingSection from '../components/BookingSection.astro';
+import FaqAnswer from '../components/FaqAnswer.astro';
 import WhyTheBarHolds from '../components/WhyTheBarHolds.astro';
 
 const price12 = EA.price12mo.toLocaleString('en-US');
@@ -55,7 +56,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: faqAnswerText(f) } })),
   },
 ];
 ---
@@ -232,7 +233,7 @@ const jsonLd = [
         {faq.map((f) => (
           <details class="ea-q">
             <summary>{f.q}<span class="pl">+</span></summary>
-            <p>{f.a}</p>
+            <FaqAnswer answer={f.a} steps={'steps' in f ? f.steps : undefined} tail={'tail' in f ? f.tail : undefined} />
           </details>
         ))}
       </div>
