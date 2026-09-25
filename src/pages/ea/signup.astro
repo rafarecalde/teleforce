@@ -1,0 +1,680 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { EA, EA_CLOCK_NOTE, EA_PAY_LINE, PHONE, PHONE_HREF } from '../../consts';
+
+const price3 = EA.price3mo.toLocaleString('en-US');
+const price12 = EA.price12mo.toLocaleString('en-US');
+const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
+---
+<BaseLayout
+  title="Complete your signup | Teleforce"
+  description="After discovery, accept terms, choose a 3- or 12-month EA plan, and put a card on file. You don’t pay until your EA starts."
+>
+  <header class="hero signup-hero">
+    <div class="inner">
+      <p class="kicker">After your discovery call</p>
+      <h1 class="disp">Complete your signup.</h1>
+      <p class="lede">
+        Discovery is done. This step is terms, your plan, and a card on file.
+        <b>{EA_PAY_LINE}</b> Next is onboarding — one call, about 60 minutes, with a prep sheet beforehand.
+      </p>
+      <ol class="path">
+        <li class="done">Discovery</li>
+        <li class="now" aria-current="step">Signup</li>
+        <li>Onboarding</li>
+        <li>Get matched</li>
+        <li>Kickoff</li>
+      </ol>
+    </div>
+  </header>
+
+  <section class="signup" id="signup">
+    <div class="wrap">
+      <form id="signup-form" class="stack" novalidate onsubmit="return false">
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+
+        <section class="step-card" aria-labelledby="step-terms-title">
+          <header class="step-head">
+            <span class="step-num">01</span>
+            <div>
+              <h2 id="step-terms-title">Accept Terms & Conditions</h2>
+              <p>Required before a plan or a card on file.</p>
+            </div>
+          </header>
+          <label class="agree" for="terms">
+            <input id="terms" type="checkbox" name="terms" />
+            <span>I agree to the <a href="/terms">Teleforce Terms & Conditions</a>.</span>
+          </label>
+          <p class="err" id="terms-err"></p>
+        </section>
+
+        <section class="step-card" aria-labelledby="step-plan-title">
+          <header class="step-head">
+            <span class="step-num">02</span>
+            <div>
+              <h2 id="step-plan-title">Plan and payment</h2>
+              <p>Pick the commitment. The card stays on file — it is not charged today.</p>
+            </div>
+          </header>
+
+          <fieldset>
+            <legend>Choose a plan</legend>
+            <div class="plans">
+              <label class="plan">
+                <input type="radio" name="plan" value="3" checked data-label="3-month" data-price={`$${price3}/mo`} />
+                <span class="plan-top">
+                  <span class="plan-tag">3-month</span>
+                  <span class="radio" aria-hidden="true"></span>
+                </span>
+                <span class="plan-price"><span class="cur">$</span>{price3}<span class="per">/mo</span></span>
+                <span class="plan-sub">3-month commitment · stay flexible</span>
+              </label>
+              <label class="plan">
+                <input type="radio" name="plan" value="12" data-label="12-month" data-price={`$${price12}/mo`} />
+                <span class="plan-top">
+                  <span class="plan-tag">12-month</span>
+                  <span class="radio" aria-hidden="true"></span>
+                </span>
+                <span class="plan-price"><span class="cur">$</span>{price12}<span class="per">/mo</span></span>
+                <span class="plan-sub">Save ${save}/mo on a 12-month commitment</span>
+              </label>
+            </div>
+            <p class="plan-switch">Start on the 3-month plan. Switch to 12 when you’re ready and save ${save}/mo. You can switch as soon as you’re ready, including in month one.</p>
+          </fieldset>
+
+          <div class="pay-lock">
+            <p>{EA_CLOCK_NOTE}</p>
+          </div>
+
+          <p class="preview-note" id="pay-preview">
+            UI preview — not a live charge. Don’t enter a real card. These fields stay in your browser and are never sent.
+          </p>
+
+          <div class="field">
+            <label for="card-name">Name on card</label>
+            <input id="card-name" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="Name on card" aria-describedby="pay-preview" />
+            <p class="err" id="card-name-err"></p>
+          </div>
+
+          <div class="field">
+            <label for="card-number">Card</label>
+            <div class="elements" aria-describedby="pay-preview">
+              <div class="el-number">
+                <input id="card-number" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="1234 1234 1234 1234" maxlength="23" aria-label="Card number" />
+                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                  <rect x="2" y="5" width="20" height="14" rx="2" />
+                  <path d="M2 10h20" />
+                </svg>
+              </div>
+              <div class="el-row">
+                <input id="card-exp" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="MM / YY" maxlength="7" aria-label="Expiry" />
+                <input id="card-cvc" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="CVC" maxlength="4" aria-label="CVC" />
+              </div>
+            </div>
+            <p class="err" id="card-number-err"></p>
+            <p class="err" id="card-exp-err"></p>
+            <p class="err" id="card-cvc-err"></p>
+          </div>
+
+          <div class="field">
+            <label for="card-zip">Billing ZIP</label>
+            <input id="card-zip" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="12345" maxlength="10" />
+            <p class="err" id="card-zip-err"></p>
+          </div>
+        </section>
+
+        <section class="step-card" aria-labelledby="step-account-title">
+          <header class="step-head">
+            <span class="step-num">03</span>
+            <div>
+              <h2 id="step-account-title">Create your account</h2>
+              <p>This is how you’ll sign back in. It does not start billing.</p>
+            </div>
+          </header>
+
+          <div class="field">
+            <label for="full-name">Full name</label>
+            <input id="full-name" type="text" autocomplete="name" placeholder="Full name" />
+            <p class="err" id="full-name-err"></p>
+          </div>
+          <div class="field">
+            <label for="email">Work email</label>
+            <input id="email" type="email" autocomplete="email" inputmode="email" placeholder="you@company.com" />
+            <p class="err" id="email-err"></p>
+          </div>
+          <div class="split">
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" />
+              <p class="err" id="password-err"></p>
+            </div>
+            <div class="field">
+              <label for="password-2">Confirm password</label>
+              <input id="password-2" type="password" autocomplete="new-password" placeholder="Repeat password" />
+              <p class="err" id="password-2-err"></p>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-amber submit" id="signup-submit">Complete signup</button>
+        </section>
+      </form>
+
+      <section id="signup-done" class="step-card done-card" hidden>
+        <p class="step-kicker">Signup complete</p>
+        <h2 class="disp">You’re set for onboarding.</h2>
+        <p class="done-lead">
+          Next is your onboarding call — about 60 minutes. You’ll get a prep sheet beforehand.
+          When signup is live, that’s the call we schedule. There’s no booking calendar on this page.
+        </p>
+        <p class="done-plan" id="done-plan"></p>
+        <ol class="path path-paper">
+          <li class="done">Discovery</li>
+          <li class="done">Signup</li>
+          <li class="now">Onboarding</li>
+          <li>Get matched</li>
+          <li>Kickoff</li>
+        </ol>
+        <div class="pay-lock">
+          <p>{EA_CLOCK_NOTE}</p>
+        </div>
+        <p class="support">
+          After the onboarding call, your partnership manager owns matching. Once your EA is live, you run the day-to-day together, with full back-end support behind the seat.
+        </p>
+        <p class="preview-note">Payment and account wiring come next. This preview did not charge a card or create an account.</p>
+        <div class="done-actions">
+          <button type="button" class="btn btn-amber" id="review-signup">Review signup</button>
+          <a class="btn btn-quiet" href="/">Home</a>
+        </div>
+      </section>
+
+      <p class="help">
+        Questions before you finish? Call <a href={PHONE_HREF}>{PHONE}</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('signup-form');
+  const done = document.getElementById('signup-done');
+  const formError = document.getElementById('form-error');
+
+  const fields = {
+    terms: document.getElementById('terms'),
+    cardName: document.getElementById('card-name'),
+    cardNumber: document.getElementById('card-number'),
+    cardExp: document.getElementById('card-exp'),
+    cardCvc: document.getElementById('card-cvc'),
+    cardZip: document.getElementById('card-zip'),
+    fullName: document.getElementById('full-name'),
+    email: document.getElementById('email'),
+    password: document.getElementById('password'),
+    password2: document.getElementById('password-2'),
+  };
+
+  function digits(value) {
+    return value.replace(/\D/g, '');
+  }
+
+  function setErr(id, message) {
+    const err = document.getElementById(`${id}-err`);
+    const input = document.getElementById(id);
+    if (err) err.textContent = message;
+    if (input) input.setAttribute('aria-invalid', message ? 'true' : 'false');
+    return !message;
+  }
+
+  function clearErrors() {
+    document.querySelectorAll('.err').forEach((el) => {
+      el.textContent = '';
+    });
+    document.querySelectorAll('[aria-invalid="true"]').forEach((el) => {
+      el.setAttribute('aria-invalid', 'false');
+    });
+    if (formError) {
+      formError.hidden = true;
+      formError.textContent = '';
+    }
+  }
+
+  function expiryOk(value) {
+    const match = value.match(/^(\d{2})\s*\/\s*(\d{2})$/);
+    if (!match) return false;
+    const month = Number(match[1]);
+    const year = 2000 + Number(match[2]);
+    if (month < 1 || month > 12) return false;
+    return new Date(year, month, 1) > new Date();
+  }
+
+  if (fields.cardNumber instanceof HTMLInputElement) {
+    fields.cardNumber.addEventListener('input', () => {
+      const d = digits(fields.cardNumber.value).slice(0, 19);
+      fields.cardNumber.value = d.replace(/(\d{4})(?=\d)/g, '$1 ').trim();
+    });
+  }
+
+  if (fields.cardExp instanceof HTMLInputElement) {
+    fields.cardExp.addEventListener('input', () => {
+      const d = digits(fields.cardExp.value).slice(0, 4);
+      fields.cardExp.value = d.length > 2 ? `${d.slice(0, 2)} / ${d.slice(2)}` : d;
+    });
+  }
+
+  if (fields.cardCvc instanceof HTMLInputElement) {
+    fields.cardCvc.addEventListener('input', () => {
+      fields.cardCvc.value = digits(fields.cardCvc.value).slice(0, 4);
+    });
+  }
+
+  if (fields.cardZip instanceof HTMLInputElement) {
+    fields.cardZip.addEventListener('input', () => {
+      const d = digits(fields.cardZip.value).slice(0, 9);
+      fields.cardZip.value = d.length > 5 ? `${d.slice(0, 5)}-${d.slice(5)}` : d;
+    });
+  }
+
+  let running = false;
+
+  function finish(event) {
+    event?.preventDefault();
+    if (running) return;
+    running = true;
+    clearErrors();
+
+    let firstBad = null;
+    const mark = (id, message) => {
+      const ok = setErr(id, message);
+      if (!ok && !firstBad) firstBad = document.getElementById(id);
+      return ok;
+    };
+
+    const termsOk = fields.terms instanceof HTMLInputElement && fields.terms.checked;
+    mark('terms', termsOk ? '' : 'Agree to the Terms & Conditions to continue.');
+
+    const cardName = fields.cardName instanceof HTMLInputElement ? fields.cardName.value.trim() : '';
+    mark('card-name', cardName.length >= 2 ? '' : 'Enter the name on the card.');
+
+    const cardDigits = fields.cardNumber instanceof HTMLInputElement ? digits(fields.cardNumber.value) : '';
+    mark('card-number', cardDigits.length >= 13 && cardDigits.length <= 19 ? '' : 'Enter a card number.');
+
+    const exp = fields.cardExp instanceof HTMLInputElement ? fields.cardExp.value.trim() : '';
+    mark('card-exp', expiryOk(exp) ? '' : 'Enter a valid expiry (MM / YY).');
+
+    const cvc = fields.cardCvc instanceof HTMLInputElement ? digits(fields.cardCvc.value) : '';
+    mark('card-cvc', cvc.length >= 3 && cvc.length <= 4 ? '' : 'Enter the CVC.');
+
+    const zipDigits = fields.cardZip instanceof HTMLInputElement ? digits(fields.cardZip.value) : '';
+    mark('card-zip', zipDigits.length === 5 || zipDigits.length === 9 ? '' : 'Enter a billing ZIP code.');
+
+    const name = fields.fullName instanceof HTMLInputElement ? fields.fullName.value.trim() : '';
+    mark('full-name', name.length >= 2 ? '' : 'Enter your name.');
+
+    const email = fields.email instanceof HTMLInputElement ? fields.email.value.trim() : '';
+    mark('email', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? '' : 'Enter a work email.');
+
+    const password = fields.password instanceof HTMLInputElement ? fields.password.value : '';
+    mark('password', password.length >= 8 ? '' : 'Use at least 8 characters.');
+
+    const password2 = fields.password2 instanceof HTMLInputElement ? fields.password2.value : '';
+    mark(
+      'password-2',
+      password2.length === 0 ? 'Confirm your password.' : password2 === password ? '' : 'Passwords don’t match.',
+    );
+
+    if (firstBad) {
+      if (formError) {
+        formError.hidden = false;
+        formError.textContent = 'Check the highlighted fields. Nothing was sent.';
+      }
+      if (firstBad instanceof HTMLElement) firstBad.focus();
+      running = false;
+      return;
+    }
+
+    if (!form) {
+      running = false;
+      return;
+    }
+    const selected = form.querySelector('input[name="plan"]:checked');
+    const planLabel = selected instanceof HTMLInputElement ? selected.dataset.label : '3-month';
+    const planPrice = selected instanceof HTMLInputElement ? selected.dataset.price : '';
+    const planLine = document.getElementById('done-plan');
+    if (planLine) planLine.textContent = `${planLabel} plan · ${planPrice}`;
+
+    ['card-name', 'card-number', 'card-exp', 'card-cvc', 'card-zip', 'password', 'password-2'].forEach((id) => {
+      const input = document.getElementById(id);
+      if (input instanceof HTMLInputElement) input.value = '';
+    });
+
+    if (form) form.hidden = true;
+    if (done) {
+      done.hidden = false;
+      done.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    running = false;
+  }
+
+  // Never let this preview emit a real form submit. The site tag treats
+  // submit as a conversion and can forward field values.
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    finish(event);
+  }, true);
+
+  document.getElementById('signup-submit')?.addEventListener('click', finish);
+
+  form?.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter') return;
+    if (!(event.target instanceof HTMLInputElement)) return;
+    if (event.target.type === 'checkbox' || event.target.type === 'radio') return;
+    event.preventDefault();
+    finish(event);
+  });
+
+  document.getElementById('review-signup')?.addEventListener('click', () => {
+    if (done) done.hidden = true;
+    if (form) {
+      form.hidden = false;
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+</script>
+
+<style>
+  .signup-hero { padding: 52px 0 40px; }
+  .signup-hero h1.disp {
+    font-size: clamp(36px, 6vw, 58px);
+    text-transform: none;
+    line-height: 1.02;
+    max-width: 14ch;
+    margin: 0;
+  }
+  .signup-hero .lede { margin-top: 18px; }
+  .path {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 0;
+    list-style: none;
+    margin: 26px 0 0;
+    padding: 0;
+  }
+  .path li {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--on-dark-mut);
+  }
+  .path li:not(:last-child)::after {
+    content: "→";
+    margin: 0 10px;
+    color: var(--sage);
+  }
+  .path li.done { color: var(--sage); }
+  .path li.now { color: var(--amber); }
+
+  .signup { background: var(--paper-2); padding: 28px 0 72px; }
+  .stack { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+  .step-card {
+    background: var(--paper);
+    border: 1px solid var(--line-paper);
+    border-radius: 18px;
+    padding: 26px 26px 28px;
+  }
+  .step-head { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 18px; }
+  .step-head h2 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0 0 4px;
+  }
+  .step-head p, .support, .done-lead { font-size: 14.5px; color: var(--on-paper-mut); line-height: 1.55; }
+  .step-num, .step-kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--amber);
+    padding-top: 4px;
+  }
+  .step-kicker { display: block; margin-bottom: 10px; text-transform: uppercase; padding-top: 0; }
+
+  .agree {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15.5px;
+    line-height: 1.45;
+    cursor: pointer;
+  }
+  .agree input {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: var(--amber);
+    flex-shrink: 0;
+  }
+  .agree a {
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--sage);
+    text-underline-offset: 3px;
+  }
+  .agree a:hover { text-decoration-color: var(--amber); }
+
+  fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+  legend {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 10px;
+  }
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .plan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border: 1px solid var(--line-paper);
+    border-radius: 14px;
+    padding: 16px 16px 18px;
+    cursor: pointer;
+    background: #fff;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .plan:has(input:checked) {
+    border-color: var(--ink);
+    box-shadow: 0 0 0 1px var(--ink);
+  }
+  .plan:has(input:focus-visible) { outline: 2px solid var(--amber); outline-offset: 2px; }
+  .plan input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+  }
+  .plan-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .plan-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+  }
+  .plan:has(input:checked) .plan-tag { color: var(--ink); }
+  .radio {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1.5px solid var(--sage);
+    flex-shrink: 0;
+  }
+  .plan:has(input:checked) .radio {
+    border-color: var(--ink);
+    background: radial-gradient(circle, var(--amber) 0 5px, transparent 6px);
+  }
+  .plan-price {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .plan-price .cur { font-size: 16px; color: var(--amber); vertical-align: super; margin-right: 1px; }
+  .plan-price .per {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--on-paper-mut);
+    margin-left: 4px;
+  }
+  .plan-sub { font-size: 13px; color: var(--on-paper-mut); line-height: 1.4; }
+  .plan-switch { margin-top: 12px; font-size: 14px; color: var(--on-paper-mut); line-height: 1.5; }
+
+  .pay-lock {
+    margin-top: 16px;
+    background: var(--paper-2);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .pay-lock p { font-size: 15px; color: var(--on-paper); line-height: 1.55; }
+
+  .preview-note {
+    margin-top: 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+    color: var(--sage-deep);
+  }
+  .field { margin-top: 14px; }
+  .field label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 6px;
+  }
+  .field input {
+    width: 100%;
+    background: #fff;
+    border: 1px solid rgba(23, 48, 46, 0.16);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: var(--on-paper);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+  }
+  .field input::placeholder { color: #8b9aa0; }
+  .field input:focus { outline: none; border-color: var(--amber); box-shadow: 0 0 0 3px rgba(242, 168, 43, 0.25); }
+  .field input[aria-invalid="true"] { border-color: #8c3a2f; }
+
+  .elements {
+    background: #fff;
+    border: 1px solid rgba(23, 48, 46, 0.16);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .field .elements input {
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 12px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--on-paper);
+  }
+  .field .elements input::placeholder { color: #8b9aa0; }
+  .field .elements input:focus { outline: none; border-color: transparent; box-shadow: inset 0 0 0 1px var(--amber); }
+  .field .elements input[aria-invalid="true"] { border-color: transparent; box-shadow: none; }
+  .el-number { position: relative; border-bottom: 1px solid rgba(23, 48, 46, 0.12); }
+  .field .el-number input { padding-right: 44px; }
+  .card-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    color: #8b9aa0;
+    pointer-events: none;
+  }
+  .el-row { display: grid; grid-template-columns: 1fr 1fr; }
+  .el-row input + input { border-left: 1px solid rgba(23, 48, 46, 0.12); }
+  .elements:has(input[aria-invalid="true"]) { border-color: #8c3a2f; }
+
+  .err { font-size: 12.5px; color: #8c3a2f; margin-top: 6px; line-height: 1.4; }
+  .err:empty { display: none; }
+  .form-error {
+    background: #fff;
+    border: 1px solid #8c3a2f;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #8c3a2f;
+  }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .submit { width: 100%; text-align: center; margin-top: 18px; padding: 14px 18px; font-size: 13px; }
+
+  .done-card { max-width: 720px; margin: 0 auto; }
+  .done-card h2.disp {
+    font-size: clamp(28px, 4vw, 36px);
+    text-transform: none;
+    margin: 0 0 10px;
+  }
+  .done-plan {
+    margin-top: 14px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+  }
+  .path-paper { margin-top: 16px; }
+  .path-paper li { color: var(--on-paper-mut); }
+  .path-paper li.done { color: var(--sage-deep); }
+  .path-paper li.now { color: var(--ink); }
+  .path-paper li:not(:last-child)::after { color: var(--sage); }
+  .support { margin-top: 16px; }
+  .done-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .btn-quiet {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line-paper);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 8px;
+  }
+  .btn-quiet:hover { border-color: var(--ink); }
+
+  .help {
+    max-width: 720px;
+    margin: 18px auto 0;
+    font-size: 14px;
+    color: var(--on-paper-mut);
+  }
+  .help a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .plans, .split { grid-template-columns: 1fr; }
+    .step-card { padding: 22px 18px 24px; }
+    .signup-hero { padding: 40px 0 32px; }
+  }
+</style>

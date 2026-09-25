@@ -33,7 +33,7 @@ const COMPANY_COL = [
         <a href="/#contact" class="fcontact"><span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg></span>Get matched</a>
       </div>
     </div>
-    <div class="legal">© {year} Teleforce · tryteleforce.com · Privacy · Terms</div>
+    <div class="legal">© {year} Teleforce · tryteleforce.com · Privacy · <a href="/terms">Terms</a></div>
   </div>
 </footer>
 
@@ -54,6 +54,8 @@ const COMPANY_COL = [
     background:rgba(236,230,214,0.06);color:var(--amber);flex-shrink:0}
   .fic svg{width:15px;height:15px}
   .legal{padding-top:22px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:rgba(157,176,171,0.7)}
+  .legal a{color:inherit}
+  .legal a:hover{color:var(--amber)}
   @media (max-width:720px){.fcols{grid-template-columns:1fr 1fr;gap:26px}.fbrand{grid-column:1 / -1}}
   @media (max-width:440px){.fcols{grid-template-columns:1fr}}
 </style>

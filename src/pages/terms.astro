@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PHONE, PHONE_HREF } from '../consts';
+---
+<BaseLayout
+  title="Terms & Conditions | Teleforce"
+  description="Teleforce Terms & Conditions are being finalized. Contact us or check back soon."
+  noindex
+>
+  <header class="ahead">
+    <div class="wrap">
+      <div class="crumb"><a href="/">Home</a> · <a href="/ea/signup">Signup</a></div>
+      <div class="cat">Legal</div>
+      <h1>Terms & Conditions</h1>
+    </div>
+  </header>
+
+  <article class="post">
+    <p class="lead">Teleforce Terms & Conditions are being finalized. Contact us, or check back soon.</p>
+    <p>
+      Questions in the meantime: call <a href={PHONE_HREF}>{PHONE}</a>, or
+      <a href="/#contact">contact the team</a>.
+    </p>
+    <p>
+      <a href="/ea/signup">Back to signup</a>
+      <span aria-hidden="true"> · </span>
+      <a href="/">Home</a>
+    </p>
+  </article>
+</BaseLayout>
