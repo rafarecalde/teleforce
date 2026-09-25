@@ -5,7 +5,7 @@ import { HDYHAU_OPTIONS } from '../../lib/ea-quiz';
 
 const title = 'EA Fit Quiz | Teleforce';
 const description =
-  '8 questions. Instant score. Free 7-day handoff plan + scorecard. See if a dedicated bilingual nearshore EA — or better task help — is the right seat.';
+  'Get your scorecard, a personalized 7-day handoff plan, and a VA-vs-EA teardown. Stop guessing what to delegate. Free, and takes about 2 minutes.';
 ---
 
 <BaseLayout
@@ -24,10 +24,9 @@ const description =
     <div class="quiz-hero">
       <div class="quiz-copy">
         <div class="kicker">EA Fit Quiz · ~2 minutes</div>
-        <h1 class="disp">Find out if you need a real EA —<br /><span class="l2">or just better task help.</span></h1>
+        <h1 class="disp">Stop guessing what to delegate.<br /><span class="l2">Get your scorecard.</span></h1>
         <p class="lede">
-          <b>8 questions.</b> Instant score. Free 7-day handoff plan + scorecard.
-          Takes ~2 minutes.
+          8 questions → personalized 7-day handoff plan + VA-vs-EA teardown. Free. ~2 minutes.
         </p>
         <p class="lede-note">No email until results are on screen.</p>
         <p class="role-prefill" id="role-prefill" hidden>
@@ -191,19 +190,22 @@ const description =
   <section class="nurture-stage" id="nurture" data-screen="nurture" hidden>
     <div class="wrap nurture-wrap">
       <p class="gate-kicker">Plan saved</p>
-      <h2 class="disp">Your gifts stay on the page. No match call from here.</h2>
+      <h2 class="disp">Your gifts stay on the page.</h2>
       <p class="nurture-lede">
         A dedicated bilingual EA isn’t the right seat <em>yet</em> — and that’s the useful answer.
         Keep the 7-day plan and scorecard. Use them as a tighter brief for task help.
       </p>
       <p class="nurture-lede">
-        When you want ownership on U.S. hours — not overnight tickets, not household errands — come
-        back and we’ll match you.
+        When you want ownership on U.S. hours — not overnight tickets, not household errands — a
+        match call is still optional.
       </p>
       <div class="nurture-actions">
         <button type="button" class="btn btn-amber" id="nurture-print">Print / save your plan</button>
         <a href="/" class="btn btn-ghost dark">Read the EA offer</a>
       </div>
+      <p class="nurture-fine">
+        Still want to talk? <button type="button" id="nurture-book">Book a match call</button>
+      </p>
       <p class="nurture-fine">
         We’ll email the same plan when PDF delivery is live. For now it’s on screen — and printable.
       </p>
@@ -467,7 +469,35 @@ const description =
   }
   .results-wrap :global(.preview p) { font-size: 16px; }
 
-  .results-wrap :global(.results-cta) { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; margin-bottom: 12px; }
+  .results-wrap :global(.results-cta) { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 8px; margin-bottom: 12px; }
+  .results-wrap :global(.btn-book) {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+  }
+  .results-wrap :global(.btn-book:hover) {
+    background: var(--ink);
+    color: var(--on-dark);
+  }
+  .results-wrap :global(.book-soft) {
+    flex-basis: 100%;
+    margin: 2px 0 0;
+    font-size: 14.5px;
+    color: var(--on-paper-mut);
+  }
+  .results-wrap :global(.book-soft button),
+  .nurture-fine button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+  }
+  .results-wrap :global(.book-soft button:hover),
+  .nurture-fine button:hover { color: var(--sage-deep); }
   .results-wrap :global(.print-btn) {
     background: none;
     border: none;
@@ -579,6 +609,7 @@ const description =
     .field-row { grid-template-columns: 1fr; }
     .results-wrap :global(.score-table) { font-size: 12.5px; }
     .nurture-actions .btn { width: 100%; text-align: center; }
+    .results-wrap :global(.results-cta .btn) { width: 100%; text-align: center; }
     .gate-btn { width: 100%; }
   }
 
@@ -598,6 +629,7 @@ const description =
     QUESTIONS,
     ROLE_LABELS,
     bandCopy,
+    bookable,
     handoffPlan,
     hoursLabel,
     isComplete,
@@ -870,6 +902,11 @@ const description =
 
       <div class="results-cta">
         <button type="button" class="btn btn-amber" id="to-email">${copy.cta === 'Send my plan + scorecard' ? copy.cta : 'Send my 7-day handoff plan + scorecard'}</button>
+        ${
+          bookable(band)
+            ? `<button type="button" class="btn btn-book" id="to-book">Book a match call</button>`
+            : `<p class="book-soft">Still want to talk? <button type="button" id="to-book">Book a match call</button></p>`
+        }
         <button type="button" class="print-btn" id="print-gifts">Print / save as PDF</button>
       </div>
     `;
@@ -878,7 +915,14 @@ const description =
       setupEmailGate();
       show('email');
     });
+    document.getElementById('to-book')?.addEventListener('click', () => openMatchCall());
     document.getElementById('print-gifts')?.addEventListener('click', () => window.print());
+  }
+
+  function openMatchCall() {
+    // Gifts stay on the results screen. Booking skips the plan email and uses
+    // the match path: enrichment, then the scheduler on submit.
+    show('enrich');
   }
 
   function setupEmailGate() {
@@ -1036,7 +1080,8 @@ const description =
     window.print();
   });
 
-  document.getElementById('diy-book')?.addEventListener('click', () => show('enrich'));
+  document.getElementById('diy-book')?.addEventListener('click', () => openMatchCall());
+  document.getElementById('nurture-book')?.addEventListener('click', () => openMatchCall());
   document.getElementById('diy-back-plan')?.addEventListener('click', () => {
     renderResults();
     show('results');
