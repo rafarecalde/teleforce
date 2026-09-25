@@ -327,7 +327,7 @@ export const EA_JOURNEY_FAQ = [
   },
   {
     q: 'What does onboarding look like?',
-    a: 'Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. The call covers what to delegate, priorities, hours, tools, and how you like to communicate. Your partnership manager owns matching after that. Within 24–48 hours you get a short written plan and an access checklist. Next, you’re matched. Meet your executive assistant — selected from the top tier after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support. Rematch is available if the fit isn’t right. Most clients are matched within about a week of the call and are live in under about two weeks.',
+    a: 'Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. The call covers what to delegate, priorities, hours, tools, and how you like to communicate. Your partnership manager owns matching after that. Within 24–48 hours you get a short written plan and an access checklist.',
   },
   EA_START_FAQ,
   {
