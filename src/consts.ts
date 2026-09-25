@@ -289,7 +289,7 @@ export const EA_CLOCK_NOTE =
 
 export const EA_START_FAQ = {
   q: 'How fast do I get matched with my EA?',
-  a: 'Matching is about a week from the onboarding call. You’re live in under about two weeks. You’re matched with an executive assistant from the top tier. You and your EA run the day-to-day. Your partnership manager stays on with oversight, tools, best practices, and rematch. You don’t pay until your EA starts. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or up to 10 days after you’ve been matched / accepted your EA, whichever comes first.',
+  a: 'Matching is about a week from the onboarding call. You’re matched with an executive assistant from the top tier.',
 } as const;
 
 export type FaqStep = { label: string; detail: string };
@@ -332,7 +332,7 @@ export const EA_JOURNEY_FAQ = [
   EA_START_FAQ,
   {
     q: 'After being matched, when does kickoff start?',
-    a: 'Same day or the next business day after you’re matched — or later if you need, up to 10 days from matching.',
+    a: 'Same day or the next business day after you’re matched — or later if you need, up to 10 days from matching. You and your EA run the day-to-day. Your partnership manager stays on with oversight, tools, best practices, and rematch. You don’t pay until your EA starts.',
   },
   {
     q: 'When does the 90-day commitment start?',
