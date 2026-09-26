@@ -1,9 +1,8 @@
 ---
-import { readFileSync } from 'node:fs';
+import termsMarkdown from '../../legal/terms.md?raw';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { EA, EA_PAY_LINE, PHONE, PHONE_HREF } from '../../consts';
 
-const termsMarkdown = readFileSync(new URL('../../legal/terms.md', import.meta.url), 'utf8');
 const termsVersionMatch = termsMarkdown.match(/^\*Effective\s+([^*]+?)\s*\*/m);
 const termsVersion = termsVersionMatch?.[1]?.trim() ?? '';
 if (!termsVersion) {
