@@ -250,8 +250,8 @@ export const EA = {
 // The numbered step card keeps the full title: Get matched with your EA.
 // Step 2 is a confident match from the top tier. Rematch stays in kickoff and FAQ, not in this step.
 // Signup is terms and a payment method on file. No charge yet.
-// First month and the 90-day commitment both begin at kickoff, or up to 10 days after the client is matched and has accepted their EA, whichever comes first.
-// Never say 10 days after onboarding — that can bill during matching.
+// First month and the 90-day commitment both begin at kickoff, or 3 business days after the client is matched, whichever comes first.
+// Never say 3 business days after onboarding — that can bill during matching.
 // Teleforce is ready on match day; post-match delay is on the client.
 export const EA_JOURNEY_LINE =
   'Onboarding → Get matched → Kickoff';
@@ -266,7 +266,7 @@ export const EA_MATCH_STEP = {
   body: 'You’re matched. Meet your executive assistant — selected from the top tier after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support.',
 } as const;
 
-// Rematch stays here and in FAQ. The billing clock (kickoff, or up to 10 days after match) stays in FAQ / T&Cs only.
+// Rematch stays here and in FAQ. The billing clock (kickoff, or 3 business days after match) stays in FAQ / T&Cs only.
 export const EA_KICKOFF_STEP = {
   title: 'Kickoff',
   body: 'Service starts. Same day or next business day after you’re matched, your EA goes live. You and your EA run the day-to-day. Your partnership manager stays for oversight, tools, and best practices — full back-end support, including rematch.',
@@ -277,7 +277,7 @@ export const EA_TIMING_LINE =
 
 export const EA_PAY_LINE = 'You don’t pay until your EA starts.';
 
-// Short footnote under pricing bullets. The kickoff, up to 10 days, and 90-day rule stays in FAQ.
+// Short footnote under pricing bullets. The kickoff, 3 business days, and 90-day rule stays in FAQ.
 export const EA_PRICING_NOTE_LEAD =
   'Start on the 3-month plan. Switch to 12 when you’re ready and save';
 export const EA_PRICING_NOTE_TAIL =
@@ -285,7 +285,7 @@ export const EA_PRICING_NOTE_TAIL =
 
 // Full billing rule for FAQ answers only — not the pricing-card footnote.
 export const EA_CLOCK_NOTE =
-  'You don’t pay until your EA starts. Signup puts terms and a payment method on file with no charge yet. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or up to 10 days after you’ve been matched / accepted your EA, whichever comes first.';
+  'You don’t pay until your EA starts. Signup puts terms and a payment method on file with no charge yet. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or 3 business days after you’re matched, whichever comes first.';
 
 export const EA_START_FAQ = {
   q: 'How fast do I get matched with my EA?',
@@ -332,7 +332,7 @@ export const EA_JOURNEY_FAQ = [
   EA_START_FAQ,
   {
     q: 'After being matched, when does kickoff start?',
-    a: 'Same day or the next business day after you’re matched — or later if you need, up to 10 days from matching. You and your EA run the day-to-day. Your partnership manager stays on with oversight, tools, best practices, and rematch. You don’t pay until your EA starts.',
+    a: 'Same day or the next business day after you’re matched — or later if you need, up to 3 business days from matching. You and your EA run the day-to-day. Your partnership manager stays on with oversight, tools, best practices, and rematch. You don’t pay until your EA starts.',
   },
   {
     q: 'When does the 90-day commitment start?',
