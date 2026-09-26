@@ -1,6 +1,14 @@
 ---
+import { readFileSync } from 'node:fs';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { EA, EA_PAY_LINE, PHONE, PHONE_HREF } from '../../consts';
+
+const termsMarkdown = readFileSync(new URL('../../legal/terms.md', import.meta.url), 'utf8');
+const termsVersionMatch = termsMarkdown.match(/^\*Effective\s+([^*]+?)\s*\*/m);
+const termsVersion = termsVersionMatch?.[1]?.trim() ?? '';
+if (!termsVersion) {
+  throw new Error('Terms are missing an effective date.');
+}
 
 const price3 = EA.price3mo.toLocaleString('en-US');
 const price12 = EA.price12mo.toLocaleString('en-US');
@@ -41,14 +49,20 @@ const payNote =
             <span class="step-num">01</span>
             <div>
               <h2 id="step-terms-title">Accept Terms & Conditions</h2>
-              <p>Required before you create an account.</p>
+              <p>Required before you create an account. We’ll email you a copy of the Terms you accept.</p>
             </div>
           </header>
           <label class="agree" for="terms">
             <input id="terms" type="checkbox" name="terms" />
-            <span>I agree to the <a href="/terms">Teleforce Terms & Conditions</a>.</span>
+            <span>I agree to the <a href="/terms" target="_blank" rel="noopener">Teleforce Terms & Conditions</a> effective <span id="terms-version">{termsVersion}</span>.</span>
           </label>
           <p class="err" id="terms-err"></p>
+          <div class="field">
+            <label for="signed-name">Full legal name</label>
+            <input id="signed-name" type="text" name="signed-name" autocomplete="name" spellcheck="false" placeholder="Type your full legal name" />
+            <p class="esign" id="esign-note">By typing your full legal name, you agree this is your electronic signature and that it has the same effect as a handwritten signature under the U.S. ESIGN Act and the Uniform Electronic Transactions Act (UETA).</p>
+            <p class="err" id="signed-name-err"></p>
+          </div>
         </section>
 
         <section class="step-card" aria-labelledby="step-plan-title">
@@ -213,12 +227,74 @@ const payNote =
 
   const fields = {
     terms: document.getElementById('terms'),
+    signedName: document.getElementById('signed-name'),
     cardName: document.getElementById('card-name'),
     fullName: document.getElementById('full-name'),
     email: document.getElementById('email'),
     password: document.getElementById('password'),
     password2: document.getElementById('password-2'),
   };
+
+  let termsVersion = document.getElementById('terms-version')?.textContent?.trim() || '';
+  let termsReady = false;
+  let signedDirty = false;
+  let signedConfirmed = false;
+
+  const submitButton = document.getElementById('signup-submit');
+  if (submitButton instanceof HTMLButtonElement) {
+    submitButton.disabled = true;
+    submitButton.textContent = 'Loading terms…';
+  }
+
+  function currentSignedName() {
+    if (!(fields.signedName instanceof HTMLInputElement)) return '';
+    return fields.signedName.value.trim().replace(/\s+/g, ' ');
+  }
+
+  fields.fullName?.addEventListener('input', () => {
+    if (signedDirty) return;
+    if (!(fields.fullName instanceof HTMLInputElement)) return;
+    if (!(fields.signedName instanceof HTMLInputElement)) return;
+    fields.signedName.value = fields.fullName.value;
+    signedConfirmed = false;
+  });
+
+  fields.signedName?.addEventListener('input', () => {
+    signedDirty = true;
+    signedConfirmed = true;
+  });
+
+  fields.signedName?.addEventListener('blur', () => {
+    if (currentSignedName().length >= 2) signedConfirmed = true;
+  });
+
+  async function loadTermsVersion() {
+    try {
+      const res = await fetch(`${portalUrl}/api/signup/terms`, { credentials: 'omit' });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.termsVersion) return;
+      const next = String(data.termsVersion).trim();
+      if (!next || next === termsVersion) {
+        termsVersion = next || termsVersion;
+        return;
+      }
+      const node = document.getElementById('terms-version');
+      if (node) node.textContent = next;
+      termsVersion = next;
+      if (fields.terms instanceof HTMLInputElement && fields.terms.checked) {
+        fields.terms.checked = false;
+        setErr('terms', 'The Terms version changed. Review them and agree again.');
+      }
+    } catch {
+      // Keep the version rendered with this page. The server rejects a mismatch.
+    } finally {
+      termsReady = true;
+      if (submitButton instanceof HTMLButtonElement && !running) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Complete signup';
+      }
+    }
+  }
 
   /** @type {any} */
   let stripe = null;
@@ -347,9 +423,11 @@ const payNote =
 
   let running = false;
 
+  loadTermsVersion();
+
   async function finish(event) {
     event?.preventDefault();
-    if (running) return;
+    if (running || !termsReady) return;
     running = true;
     clearErrors();
 
@@ -362,6 +440,13 @@ const payNote =
 
     const termsOk = fields.terms instanceof HTMLInputElement && fields.terms.checked;
     mark('terms', termsOk ? '' : 'Agree to the Terms & Conditions to continue.');
+
+    const signed = currentSignedName();
+    let signedError = '';
+    if (signed.length < 2) signedError = 'Type your full legal name to sign the Terms.';
+    else if (!signed.includes(' ')) signedError = 'Type your full legal name to sign the Terms.';
+    else if (!signedDirty && !signedConfirmed) signedError = 'Confirm your full legal name in the signature field.';
+    mark('signed-name', signedError);
 
     const addingCard = wantsCard();
     const cardName = fields.cardName instanceof HTMLInputElement ? fields.cardName.value.trim() : '';
@@ -421,6 +506,8 @@ const payNote =
         password,
         plan,
         termsAccepted: true,
+        signedName: signed,
+        termsVersion,
       };
 
       if (addingCard) {
@@ -578,6 +665,12 @@ const payNote =
     text-underline-offset: 3px;
   }
   .agree a:hover { text-decoration-color: var(--amber); }
+  .esign {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--on-paper-mut);
+  }
 
   fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
   legend {

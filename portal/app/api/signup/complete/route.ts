@@ -1,5 +1,5 @@
 import { NextRequest } from 'next/server';
-import { json, jsonError, originAllowed, preflight } from '@/lib/http';
+import { json, jsonError, originAllowed, preflight, requestEvidence } from '@/lib/http';
 import { completeSignup } from '@/lib/signup';
 
 export const dynamic = 'force-dynamic';
@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   if (!originAllowed(req)) return json(req, { error: 'Origin not allowed.' }, 403);
   try {
     const body = await req.json();
-    return json(req, await completeSignup(body));
+    return json(req, await completeSignup(body, requestEvidence(req)));
   } catch (err) {
     return jsonError(req, err, 'Could not create the account. Try again.');
   }

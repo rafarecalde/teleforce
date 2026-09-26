@@ -92,9 +92,8 @@ export function getUserById(id: string): Promise<User | null> {
   return one(`SELECT ${COLUMNS} FROM users WHERE id = ?`, [id]);
 }
 
-export async function insertUser(user: NewUser): Promise<void> {
-  const client = await db();
-  await client.execute({
+export function userInsert(user: NewUser): { sql: string; args: (string | null)[] } {
+  return {
     sql: `INSERT INTO users (
       id, email, full_name, password_hash, plan, terms_accepted_at,
       stripe_customer_id, default_payment_method_id, setup_intent_id,
@@ -115,7 +114,12 @@ export async function insertUser(user: NewUser): Promise<void> {
       user.cardLast4,
       user.createdAt,
     ],
-  });
+  };
+}
+
+export async function insertUser(user: NewUser): Promise<void> {
+  const client = await db();
+  await client.execute(userInsert(user));
 }
 
 export async function updatePaymentMethod(
