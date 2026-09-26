@@ -47,7 +47,15 @@ nav .links a:not(.btn):hover{color:var(--amber)}
 .btn-amber:hover{transform:translateY(-1px);background:#f5b647}
 .btn-ghost{background:transparent;color:var(--on-dark);border:1px solid var(--line-dark)}
 .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
-@media (max-width:680px){nav .links a.nl{display:none}}
+@media (max-width:680px){
+  nav .links a.nl{display:none}
+  nav .links{gap:10px}
+}
+@media (max-width:400px){
+  nav .bar{padding-left:14px;padding-right:14px}
+  nav .links .btn{padding:8px 10px;font-size:11px}
+  .logo img{height:22px}
+}
 
 /* ---------- hero ---------- */
 .hero{background:var(--ink);color:var(--on-dark);padding:64px 0 56px;position:relative;overflow:hidden}
