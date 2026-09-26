@@ -11,40 +11,68 @@ export type BillingInit = {
   cardLast4: string;
 };
 
-export default function BillingInfo({ init }: { init: BillingInit }) {
+export default function BillingInfo({ init, persist = false }: { init: BillingInit; persist?: boolean }) {
   const [form, setForm] = useState({
     contactName: init.contactName,
     company: init.company,
     email: init.email,
     address: init.address,
   });
-  const [status, setStatus] = useState<'idle' | 'working' | 'saved'>('idle');
+  const [status, setStatus] = useState<'idle' | 'working' | 'saved' | 'error'>('idle');
+  const [message, setMessage] = useState('');
 
-  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm((f) => ({ ...f, [k]: e.target.value }));
+  const set = (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((current) => ({ ...current, [key]: e.target.value }));
     setStatus('idle');
+    setMessage('');
   };
 
-  function save(e: React.FormEvent) {
+  async function save(e: React.FormEvent) {
     e.preventDefault();
     setStatus('working');
-    setTimeout(() => setStatus('saved'), 500);
+    setMessage('');
+    if (!persist) {
+      window.setTimeout(() => {
+        setStatus('saved');
+        setMessage('Billing information updated.');
+      }, 500);
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/account/billing', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = (await res.json().catch(() => ({}))) as { error?: string };
+      if (!res.ok) {
+        setStatus('error');
+        setMessage(data.error || 'Could not save billing information.');
+        return;
+      }
+      setStatus('saved');
+      setMessage('Billing information updated.');
+    } catch {
+      setStatus('error');
+      setMessage('Could not save billing information.');
+    }
   }
+
+  const last4 = init.cardLast4 || '••••';
 
   return (
     <form onSubmit={save}>
-      {/* Card on file — read-only. Secure card collection is handled by the
-          payment processor at kickoff; never typed into this form. */}
       <div className="field">
         <label>Payment method</label>
         <div className="cardline">
-          <span className="cardbrand">{init.cardBrand}</span>
-          <span className="mono">···· ···· ···· {init.cardLast4}</span>
+          <span className="cardbrand">{init.cardBrand || 'Card'}</span>
+          <span className="mono">···· ···· ···· {last4}</span>
           <span className="badge" style={{ marginLeft: 'auto' }}>On file</span>
         </div>
         <p className="muted" style={{ fontSize: 12.5, margin: '6px 0 0' }}>
-          Your card is stored securely with our payment processor. To update it, your account
-          manager sends a secure link — it&apos;s never entered here.
+          Saved with Stripe at signup. Nothing is charged until your EA starts. To replace the card,
+          your account manager sends a secure link — it is not typed here.
         </p>
       </div>
 
@@ -72,9 +100,9 @@ export default function BillingInfo({ init }: { init: BillingInit }) {
       <button className="btn btn-primary" type="submit" disabled={status === 'working'}>
         {status === 'working' ? 'Saving…' : 'Save billing info'}
       </button>
-      {status === 'saved' && (
-        <div className="note ok" role="status">
-          Billing information updated.
+      {message && (
+        <div className={`note ${status === 'error' ? 'err' : 'ok'}`} role="status">
+          {message}
         </div>
       )}
     </form>

@@ -1,50 +1,56 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { signSession, sessionCookieOptions } from '@/lib/auth';
 import { SESSION_COOKIE } from '@/lib/constants';
+import { verifyPassword } from '@/lib/password';
+import { getUserByEmail } from '@/lib/users';
+import { normalizeEmail } from '@/lib/validate';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
-// Preview sign-in: no verification (demo data only). If PORTAL_PASSCODE is set,
-// it must match. Accepts a form POST or JSON.
+function redirectTo(base: string, error?: string) {
+  const url = error ? `${base}/?error=${encodeURIComponent(error)}` : `${base}/`;
+  return NextResponse.redirect(url, { status: 303 });
+}
+
 export async function POST(req: NextRequest) {
   const base = (process.env.APP_URL || req.nextUrl.origin).replace(/\/$/, '');
 
   let email = '';
-  let name = '';
-  let company = '';
-  let passcode = '';
-
-  const ct = req.headers.get('content-type') || '';
-  if (ct.includes('application/json')) {
-    const b = await req.json().catch(() => ({}));
-    email = String(b?.email ?? '');
-    name = String(b?.name ?? '');
-    company = String(b?.company ?? '');
-    passcode = String(b?.passcode ?? '');
-  } else {
-    const f = await req.formData();
-    email = String(f.get('email') ?? '');
-    name = String(f.get('name') ?? '');
-    company = String(f.get('company') ?? '');
-    passcode = String(f.get('passcode') ?? '');
+  let password = '';
+  try {
+    const contentType = req.headers.get('content-type') || '';
+    if (contentType.includes('application/json')) {
+      const body = await req.json().catch(() => ({}));
+      email = String(body?.email ?? '');
+      password = String(body?.password ?? '');
+    } else {
+      const form = await req.formData();
+      email = String(form.get('email') ?? '');
+      password = String(form.get('password') ?? '');
+    }
+  } catch {
+    return redirectTo(base, 'credentials');
   }
 
-  email = email.trim();
-  const required = process.env.PORTAL_PASSCODE;
-  if (required && passcode.trim() !== required) {
-    return NextResponse.redirect(`${base}/?error=passcode`, { status: 303 });
-  }
-  if (!email) {
-    return NextResponse.redirect(`${base}/?error=email`, { status: 303 });
-  }
+  const normalized = normalizeEmail(email);
+  if (!normalized || !password) return redirectTo(base, 'credentials');
 
-  const token = await signSession({
-    email,
-    name: name.trim() || undefined,
-    company: company.trim() || undefined,
-  });
-  const res = NextResponse.redirect(`${base}/`, { status: 303 });
-  res.cookies.set(SESSION_COOKIE, token, sessionCookieOptions());
-  return res;
+  try {
+    const user = await getUserByEmail(normalized);
+    const ok = await verifyPassword(password, user?.passwordHash);
+    if (!user || !ok) return redirectTo(base, 'credentials');
+
+    const token = await signSession({
+      userId: user.id,
+      email: user.email,
+      name: user.fullName,
+    });
+    const res = redirectTo(base);
+    res.cookies.set(SESSION_COOKIE, token, sessionCookieOptions());
+    return res;
+  } catch (err) {
+    console.error('login failed', err instanceof Error ? err.message : 'error');
+    return redirectTo(base, 'unavailable');
+  }
 }

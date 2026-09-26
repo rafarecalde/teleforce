@@ -1,68 +1,109 @@
-# Teleforce client portal — preview
+# Teleforce client portal
 
-A client-facing **preview** of the Teleforce account portal — the experience a
-client gets to manage their Executive Assistant plan and billing. Built to demo
-on sales calls (personalize it with a prospect's name/company) and to screenshot
-for the marketing site.
+Next.js (App Router) account portal for Executive Assistant clients. Deploy to
+**Vercel** with root directory `portal`, at `portal.tryteleforce.com`.
 
-- **Framework:** Next.js (App Router), deploys to **Vercel** at
-  `portal.tryteleforce.com`.
-- **Demo data, no billing.** No Stripe, no charges, and **no card is ever
-  collected or stored** — the card is shown as "on file" only. Wire it to real
-  billing when you have a live client (see below).
-- Runs with **zero config**.
+Signup stays on the marketing site (`src/pages/ea/signup.astro`, GitHub Pages).
+That page calls this app to save a card and create the account. Sign-in uses the
+same email and password.
 
-## One page, four sections
-1. **Your plan** — term, monthly rate, EA name, service start, commitment end.
-2. **Increase your plan** — "Switch to 12-month" (with the acknowledgment
-   checkbox) + no-charge "add a customer service / SDR seat" requests.
-3. **Add another EA** — request form + acknowledgment.
-4. **Billing information** — editable billing contact / email / address, and the
-   card shown as **on file** (secure card collection is handled by a processor at
-   kickoff, never typed here).
+## What signup does
 
-All actions show a realistic success state; nothing is persisted.
+Nothing is charged. There is no PaymentIntent, invoice, or subscription in this
+flow. Billing at kickoff (or day 10 after match acceptance) is later work.
 
-## Run it
+1. The browser asks `GET /api/signup/config` for the Stripe publishable key.
+2. Stripe.js mounts a Card Element. Card numbers go to Stripe, not to our server.
+3. `POST /api/signup/setup-intent` creates or reuses a Stripe Customer and a
+   **SetupIntent** (`usage: off_session`, card only).
+4. The browser confirms the card with `stripe.confirmCardSetup`.
+5. `POST /api/signup/complete` checks that the SetupIntent succeeded, stores the
+   PaymentMethod as the customer default, and writes the account:
+   full name, work email, bcrypt password hash, plan (`3` or `12`), Terms
+   acceptance time, `stripeCustomerId`, `defaultPaymentMethodId`.
+
+Those routes allow browser calls from `https://tryteleforce.com`,
+`https://www.tryteleforce.com`, and `http://localhost:4321` (Astro’s dev server).
+Add more with `SIGNUP_CORS_ORIGINS`.
+
+The marketing site has no Content-Security-Policy today, so Stripe.js can load.
+If you add one, allow `https://js.stripe.com` (script and frame),
+`https://hooks.stripe.com` (frame), `https://api.stripe.com` (connect), and the
+portal origin (connect).
+
+## Sign-in
+
+`POST /api/auth/login` checks email + password against the account row and sets
+an httpOnly session cookie (`jose` JWT, `AUTH_SECRET`).
+
+`PREVIEW_MODE=1` keeps the sales-call link (`?company=&name=&email=`) as sample
+data only. It does not create a session and does not read real accounts. Leave
+it unset in production.
+
+Seat-request and “add another EA” buttons are still local success states. The
+12-month switch on a real account is a note, not a fake contract change.
+
+## Run locally
 
 ```bash
 cd portal
+cp .env.example .env.local
+# fill AUTH_SECRET, STRIPE_SECRET_KEY, STRIPE_PUBLISHABLE_KEY
 npm install
 npm run dev            # http://localhost:3000
 ```
 
-Sign in with any email (name + company optional) to see the account.
+In another terminal, from the repo root:
 
-## Personalize it for a sales call
-
-Open a link with query params — the portal renders as that prospect's account, no
-sign-in needed:
-
-```
-https://portal.tryteleforce.com/?company=Acme%20Corp&name=Jane%20Doe
+```bash
+npm run dev            # http://localhost:4321/ea/signup
 ```
 
-Or sign in with their name/company on the form.
+Omit `TURSO_DATABASE_URL` locally. Accounts are stored in
+`portal/data/teleforce.db` (gitignored). That file is not durable on Vercel.
 
-## Optional config (`.env.local`)
+Stripe test card: `4242 4242 4242 4242`, any future expiry, any CVC, any ZIP.
+Use **test** keys until go-live. Live keys save a real card and still do not
+charge, because signup only confirms a SetupIntent.
 
-| Var | What |
+`PUBLIC_PORTAL_URL` is optional for the Astro site. Dev defaults to
+`http://localhost:3000`. A production build defaults to
+`https://portal.tryteleforce.com`.
+
+## Environment
+
+| Variable | What |
 |---|---|
-| `APP_URL` | This app's base URL, no trailing slash |
-| `AUTH_SECRET` | Signs the session cookie (a demo default is used if unset) |
-| `PORTAL_PASSCODE` | If set, visitors must enter it on the sign-in screen |
+| `APP_URL` | This app’s base URL, no trailing slash |
+| `AUTH_SECRET` | Signs the session cookie. Required in production |
+| `STRIPE_SECRET_KEY` | Server key. SetupIntent and Customer only |
+| `STRIPE_PUBLISHABLE_KEY` | Returned to the signup page. `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` is a fallback |
+| `TURSO_DATABASE_URL` | `libsql://…` in production. Local file URL if unset outside production |
+| `TURSO_AUTH_TOKEN` | Turso token. Not used for a local file |
+| `PREVIEW_MODE` | `1` enables the sample-data sales link |
+| `SIGNUP_CORS_ORIGINS` | Extra allowed origins, comma-separated |
+| `MARKETING_URL` | Used for the signup link on the sign-in screen |
 
-## Deploy (Vercel)
+The Astro site reads `PUBLIC_PORTAL_URL` (see the repo root `.env.example`).
 
-1. Vercel → New Project → import this repo → **Root Directory = `portal`**.
-2. (Optional) set `APP_URL`, `AUTH_SECRET`, `PORTAL_PASSCODE`.
-3. Add the domain `portal.tryteleforce.com` and the CNAME Vercel shows to your DNS
-   (the apex stays on GitHub Pages).
+## Deploy the portal (Vercel)
 
-## Making it real later
+This repo does not deploy the portal for you.
 
-When you have a live client, wire the four sections to your billing source of
-truth (e.g. Stripe): replace `lib/demo.ts` with real reads, add passwordless
-magic-link auth + a Stripe customer lookup, and use Stripe's hosted card
-collection (SetupIntent / Billing Portal) so card data never touches this app.
-The section components stay the same.
+1. Create a Turso database and token (`turso db create`, `turso db show --url`,
+   `turso db tokens create`). Put the URL and token in `TURSO_DATABASE_URL` and
+   `TURSO_AUTH_TOKEN`.
+2. Vercel → New Project → this repo → **Root Directory = `portal`**.
+3. Set `APP_URL=https://portal.tryteleforce.com`, `AUTH_SECRET`, the Stripe
+   keys, and the Turso variables. Leave `PREVIEW_MODE` empty.
+4. Add the domain `portal.tryteleforce.com` and the CNAME Vercel shows. The apex
+   stays on GitHub Pages.
+5. Stripe → Developers → API keys. Put the secret and publishable keys on
+   Vercel only. Do not commit them. Webhooks are not required for SetupIntent
+   confirmation; the browser confirm plus `setupIntents.retrieve` is the check.
+6. Redeploy the marketing site only if the portal host is not
+   `https://portal.tryteleforce.com`. In that case set `PUBLIC_PORTAL_URL` for
+   the Astro build.
+
+Plans stay $3,000/mo (3-month) and $2,700/mo (12-month). Those figures are
+display-only here, matching `src/consts.ts`.
