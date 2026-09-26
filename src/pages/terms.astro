@@ -1,11 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { PHONE, PHONE_HREF } from '../consts';
+import { Content } from '../legal/terms.md';
 ---
 <BaseLayout
   title="Terms & Conditions | Teleforce"
-  description="Teleforce Terms & Conditions are being finalized. Contact us or check back soon."
-  noindex
+  description="Teleforce Terms of Service for executive assistant services. Covers signup, when billing starts, matching, rematch, and 3-month or 12-month plans."
 >
   <header class="ahead">
     <div class="wrap">
@@ -16,15 +15,14 @@ import { PHONE, PHONE_HREF } from '../consts';
   </header>
 
   <article class="post">
-    <p class="lead">Teleforce Terms & Conditions are being finalized. Contact us, or check back soon.</p>
-    <p>
-      Questions in the meantime: call <a href={PHONE_HREF}>{PHONE}</a>, or
-      <a href="/#contact">contact the team</a>.
-    </p>
-    <p>
-      <a href="/ea/signup">Back to signup</a>
-      <span aria-hidden="true"> · </span>
-      <a href="/">Home</a>
-    </p>
+    <p class="lead">Teleforce Terms of Service</p>
+    <Content />
   </article>
 </BaseLayout>
+
+<style>
+  /* Marketing headlines cap at 18ch. This title should sit on one line. */
+  .ahead h1 {
+    max-width: none;
+  }
+</style>
