@@ -2,17 +2,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createClient, type Client } from '@libsql/client';
 
-const SCHEMA = `
-CREATE TABLE IF NOT EXISTS users (
+const USER_TABLE = `
   id TEXT PRIMARY KEY,
   email TEXT NOT NULL UNIQUE,
   full_name TEXT NOT NULL,
   password_hash TEXT NOT NULL,
   plan TEXT NOT NULL CHECK (plan IN ('3', '12')),
   terms_accepted_at TEXT NOT NULL,
-  stripe_customer_id TEXT NOT NULL,
-  default_payment_method_id TEXT NOT NULL,
-  setup_intent_id TEXT NOT NULL UNIQUE,
+  stripe_customer_id TEXT,
+  default_payment_method_id TEXT,
+  setup_intent_id TEXT UNIQUE,
   card_brand TEXT NOT NULL DEFAULT '',
   card_last4 TEXT NOT NULL DEFAULT '',
   company TEXT NOT NULL DEFAULT '',
@@ -20,7 +19,32 @@ CREATE TABLE IF NOT EXISTS users (
   billing_email TEXT NOT NULL DEFAULT '',
   billing_address TEXT NOT NULL DEFAULT '',
   created_at TEXT NOT NULL
-)`;
+`;
+
+const SCHEMA = `CREATE TABLE IF NOT EXISTS users (${USER_TABLE})`;
+
+const REBUILD_PAYMENT_OPTIONAL = `
+BEGIN IMMEDIATE;
+DROP TABLE IF EXISTS users_payment_optional;
+CREATE TABLE users_payment_optional (${USER_TABLE});
+INSERT INTO users_payment_optional (
+  id, email, full_name, password_hash, plan, terms_accepted_at,
+  stripe_customer_id, default_payment_method_id, setup_intent_id,
+  card_brand, card_last4, company, billing_contact, billing_email, billing_address,
+  created_at
+)
+SELECT
+  id, email, full_name, password_hash, plan, terms_accepted_at,
+  NULLIF(stripe_customer_id, ''),
+  NULLIF(default_payment_method_id, ''),
+  NULLIF(setup_intent_id, ''),
+  card_brand, card_last4, company, billing_contact, billing_email, billing_address,
+  created_at
+FROM users;
+DROP TABLE users;
+ALTER TABLE users_payment_optional RENAME TO users;
+COMMIT;
+`;
 
 let client: Client | null = null;
 let ready: Promise<void> | null = null;
@@ -52,16 +76,46 @@ function getClient(): Client {
   return client;
 }
 
+async function setupIntentRequired(current: Client): Promise<boolean> {
+  const result = await current.execute('PRAGMA table_info(users)');
+  const column = result.rows.find((row) => String(row.name) === 'setup_intent_id');
+  if (!column) return false;
+  return Number(column.notnull) === 1;
+}
+
+/**
+ * Early accounts required a SetupIntent. Card-optional signup stores NULL for
+ * stripe_customer_id, default_payment_method_id, and setup_intent_id.
+ * SQLite cannot drop NOT NULL in place, so an existing table is rebuilt once.
+ * NULL setup_intent_id values stay unique-compatible (many NULLs are allowed).
+ */
+async function migratePaymentOptional(current: Client): Promise<void> {
+  if (!(await setupIntentRequired(current))) return;
+  try {
+    await current.executeMultiple(REBUILD_PAYMENT_OPTIONAL);
+  } catch (err) {
+    try {
+      await current.execute('ROLLBACK');
+    } catch {
+      // The failed script may not have left a transaction open.
+    }
+    throw err;
+  }
+}
+
 export async function db(): Promise<Client> {
   const current = getClient();
   if (!ready) {
-    ready = current.execute(SCHEMA).then(
-      () => undefined,
-      (err) => {
-        ready = null;
-        throw err;
-      },
-    );
+    ready = current
+      .execute(SCHEMA)
+      .then(() => migratePaymentOptional(current))
+      .then(
+        () => undefined,
+        (err) => {
+          ready = null;
+          throw err;
+        },
+      );
   }
   await ready;
   return current;

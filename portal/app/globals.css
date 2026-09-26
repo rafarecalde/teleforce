@@ -188,6 +188,17 @@ section.card > .hint { color: var(--on-paper-mut); font-size: 13.5px; margin: 0 
 .muted { color: var(--on-paper-mut); }
 .savings { color: var(--ok); font-weight: 700; }
 
+.pay-banner {
+  background: rgba(242, 168, 43, 0.16);
+  border: 1px solid rgba(242, 168, 43, 0.55);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 0 0 18px;
+  color: var(--ink);
+}
+.pay-banner p { margin: 0; font-size: 14.5px; line-height: 1.5; }
+.pay-banner .btn { margin-top: 12px; }
+
 /* card-on-file line */
 .cardline {
   display: flex;

@@ -4,13 +4,23 @@ Next.js (App Router) account portal for Executive Assistant clients. Deploy to
 **Vercel** with root directory `portal`, at `portal.tryteleforce.com`.
 
 Signup stays on the marketing site (`src/pages/ea/signup.astro`, GitHub Pages).
-That page calls this app to save a card and create the account. Sign-in uses the
-same email and password.
+That page calls this app to create the account. A card is optional. Sign-in uses
+the same email and password either way.
 
 ## What signup does
 
 Nothing is charged. There is no PaymentIntent, invoice, or subscription in this
 flow. Billing at kickoff (or day 10 after match acceptance) is later work.
+
+**Without a card** (the default on the signup page): `POST /api/signup/complete`
+with name, email, password, plan, and `termsAccepted: true`. No SetupIntent and
+no Stripe call. The account stores null `stripeCustomerId`,
+`defaultPaymentMethodId`, and `setupIntentId`. The portal lets that email and
+password sign in, and shows an “Add payment method” link to billing. Card entry
+in the portal is a later step; the banner tells the client we’ll follow up
+before kickoff.
+
+**With a card** (unchanged):
 
 1. The browser asks `GET /api/signup/config` for the Stripe publishable key.
 2. Stripe.js mounts a Card Element. Card numbers go to Stripe, not to our server.
@@ -48,7 +58,7 @@ Seat-request and “add another EA” buttons are still local success states. Th
 ```bash
 cd portal
 cp .env.example .env.local
-# fill AUTH_SECRET, STRIPE_SECRET_KEY, STRIPE_PUBLISHABLE_KEY
+# fill AUTH_SECRET. Stripe keys are required only when a card is submitted.
 npm install
 npm run dev            # http://localhost:3000
 ```
@@ -62,9 +72,10 @@ npm run dev            # http://localhost:4321/ea/signup
 Omit `TURSO_DATABASE_URL` locally. Accounts are stored in
 `portal/data/teleforce.db` (gitignored). That file is not durable on Vercel.
 
-Stripe test card: `4242 4242 4242 4242`, any future expiry, any CVC, any ZIP.
+Stripe test card, if you add one: `4242 4242 4242 4242`, any future expiry, any CVC, any ZIP.
 Use **test** keys until go-live. Live keys save a real card and still do not
-charge, because signup only confirms a SetupIntent.
+charge, because a card at signup only confirms a SetupIntent. Signup without a
+card does not call Stripe.
 
 `PUBLIC_PORTAL_URL` is optional for the Astro site. Dev defaults to
 `http://localhost:3000`. A production build defaults to
@@ -76,8 +87,8 @@ charge, because signup only confirms a SetupIntent.
 |---|---|
 | `APP_URL` | This app’s base URL, no trailing slash |
 | `AUTH_SECRET` | Signs the session cookie. Required in production |
-| `STRIPE_SECRET_KEY` | Server key. SetupIntent and Customer only |
-| `STRIPE_PUBLISHABLE_KEY` | Returned to the signup page. `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` is a fallback |
+| `STRIPE_SECRET_KEY` | Server key. Used only when a card is submitted: SetupIntent and Customer, no charge |
+| `STRIPE_PUBLISHABLE_KEY` | Returned to the signup page when someone adds a card. `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` is a fallback |
 | `TURSO_DATABASE_URL` | `libsql://…` in production. Local file URL if unset outside production |
 | `TURSO_AUTH_TOKEN` | Turso token. Not used for a local file |
 | `PREVIEW_MODE` | `1` enables the sample-data sales link |
@@ -95,7 +106,11 @@ This repo does not deploy the portal for you.
    `TURSO_AUTH_TOKEN`.
 2. Vercel → New Project → this repo → **Root Directory = `portal`**.
 3. Set `APP_URL=https://portal.tryteleforce.com`, `AUTH_SECRET`, the Stripe
-   keys, and the Turso variables. Leave `PREVIEW_MODE` empty.
+   keys, and the Turso variables. Leave `PREVIEW_MODE` empty. Stripe keys can
+   stay set; they are used only when a signup includes a card.
+   Databases created when a card was required are rebuilt once on startup so
+   `stripe_customer_id`, `default_payment_method_id`, and `setup_intent_id`
+   can be null. Existing card-on-file rows are kept.
 4. Add the domain `portal.tryteleforce.com` and the CNAME Vercel shows. The apex
    stays on GitHub Pages.
 5. Stripe → Developers → API keys. Put the secret and publishable keys on

@@ -3,7 +3,7 @@ import { HttpError } from './http';
 
 let stripe: Stripe | null = null;
 
-/** Customers and SetupIntents only. Do not create PaymentIntents, Charges, or Subscriptions here. */
+/** Customers and SetupIntents only, and only when a card is submitted. Do not create PaymentIntents, Charges, Subscriptions, or Invoices here. */
 export function getStripe(): Stripe {
   const key = process.env.STRIPE_SECRET_KEY;
   if (!key) throw new HttpError(503, 'Payments are not configured.');

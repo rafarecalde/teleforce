@@ -80,6 +80,55 @@ export async function createSetup(body: unknown): Promise<{ clientSecret: string
   }
 }
 
+function optionalText(value: unknown): string {
+  if (value == null) return '';
+  const text = String(value).trim();
+  if (!text || text === 'null' || text === 'undefined') return '';
+  return text;
+}
+
+async function saveAccount(input: {
+  email: string;
+  fullName: string;
+  password: string;
+  plan: '3' | '12';
+  stripeCustomerId: string | null;
+  defaultPaymentMethodId: string | null;
+  setupIntentId: string | null;
+  cardBrand: string;
+  cardLast4: string;
+}): Promise<{ ok: true; email: string }> {
+  const createdAt = new Date().toISOString();
+  const passwordHash = await hashPassword(input.password);
+  try {
+    await insertUser({
+      id: crypto.randomUUID(),
+      email: input.email,
+      fullName: input.fullName,
+      passwordHash,
+      plan: input.plan,
+      termsAcceptedAt: createdAt,
+      stripeCustomerId: input.stripeCustomerId,
+      defaultPaymentMethodId: input.defaultPaymentMethodId,
+      setupIntentId: input.setupIntentId,
+      cardBrand: input.cardBrand,
+      cardLast4: input.cardLast4,
+      createdAt,
+    });
+  } catch (err) {
+    if (isUniqueError(err)) {
+      const again = await getUserByEmail(input.email);
+      if (again && input.setupIntentId && again.setupIntentId === input.setupIntentId) {
+        return { ok: true, email: input.email };
+      }
+      if (again) throw new HttpError(409, DUPLICATE);
+      throw new HttpError(500, 'Could not create the account. Try again.');
+    }
+    throw err;
+  }
+  return { ok: true, email: input.email };
+}
+
 export async function completeSignup(body: unknown): Promise<{ ok: true; email: string }> {
   const record = asRecord(body);
   const email = normalizeEmail(String(record.email ?? ''));
@@ -87,14 +136,31 @@ export async function completeSignup(body: unknown): Promise<{ ok: true; email: 
   const plan = normalizePlan(String(record.plan ?? ''));
   const password = String(record.password ?? '');
   const termsAccepted = record.termsAccepted === true;
-  const setupIntentId = String(record.setupIntentId ?? '');
-  const nonce = String(record.nonce ?? '');
+  const setupIntentId = optionalText(record.setupIntentId);
+  const nonce = optionalText(record.nonce);
 
   if (!termsAccepted) throw new HttpError(400, 'Agree to the Terms & Conditions to continue.');
   if (!email) throw new HttpError(400, 'Enter a work email.');
   if (!fullName) throw new HttpError(400, 'Enter your name.');
   if (!plan) throw new HttpError(400, 'Choose a 3-month or 12-month plan.');
   if (!passwordOk(password)) throw new HttpError(400, 'Use a password of 8 to 72 characters.');
+
+  if (!setupIntentId && !nonce) {
+    const existing = await getUserByEmail(email);
+    if (existing) throw new HttpError(409, DUPLICATE);
+    return saveAccount({
+      email,
+      fullName,
+      password,
+      plan,
+      stripeCustomerId: null,
+      defaultPaymentMethodId: null,
+      setupIntentId: null,
+      cardBrand: '',
+      cardLast4: '',
+    });
+  }
+
   if (!/^seti_[A-Za-z0-9]+$/.test(setupIntentId)) {
     throw new HttpError(400, 'Card setup did not finish. Try again.');
   }
@@ -127,7 +193,6 @@ export async function completeSignup(body: unknown): Promise<{ ok: true; email: 
     throw new HttpError(400, 'Card setup did not finish. Try again.');
   }
 
-  const passwordHash = await hashPassword(password);
   const customerId = idOf(intent.customer);
   const paymentMethod = intent.payment_method;
   const paymentMethodId = idOf(paymentMethod);
@@ -167,30 +232,15 @@ export async function completeSignup(body: unknown): Promise<{ ok: true; email: 
     throw stripeHttpError(err);
   }
 
-  const createdAt = new Date().toISOString();
-  try {
-    await insertUser({
-      id: crypto.randomUUID(),
-      email,
-      fullName,
-      passwordHash,
-      plan,
-      termsAcceptedAt: createdAt,
-      stripeCustomerId: customerId,
-      defaultPaymentMethodId: paymentMethodId,
-      setupIntentId,
-      cardBrand: brand,
-      cardLast4: last4,
-      createdAt,
-    });
-  } catch (err) {
-    if (isUniqueError(err)) {
-      const again = await getUserByEmail(email);
-      if (again?.setupIntentId === setupIntentId) return { ok: true, email };
-      throw new HttpError(409, DUPLICATE);
-    }
-    throw err;
-  }
-
-  return { ok: true, email };
+  return saveAccount({
+    email,
+    fullName,
+    password,
+    plan,
+    stripeCustomerId: customerId,
+    defaultPaymentMethodId: paymentMethodId,
+    setupIntentId,
+    cardBrand: brand,
+    cardLast4: last4,
+  });
 }

@@ -1,22 +1,25 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { EA, EA_CLOCK_NOTE, EA_PAY_LINE, PHONE, PHONE_HREF } from '../../consts';
+import { EA, EA_PAY_LINE, PHONE, PHONE_HREF } from '../../consts';
 
 const price3 = EA.price3mo.toLocaleString('en-US');
 const price12 = EA.price12mo.toLocaleString('en-US');
 const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
+const payNote =
+  'Nothing is charged now. Add a card now, or add one later before kickoff when we follow up. The first month begins at kickoff — when your EA goes live — or up to 10 days after you’ve been matched and accepted your EA, whichever comes first.';
 ---
 <BaseLayout
   title="Complete your signup | Teleforce"
-  description="After discovery, accept terms, choose a 3- or 12-month EA plan, and put a card on file. You don’t pay until your EA starts."
+  description="After discovery, accept terms and choose a 3- or 12-month EA plan. A card is optional. Nothing is charged now."
 >
   <header class="hero signup-hero">
     <div class="inner">
       <p class="kicker">After your discovery call</p>
       <h1 class="disp">Complete your signup.</h1>
       <p class="lede">
-        Discovery is done. This step is terms, your plan, and a card on file.
-        <b>{EA_PAY_LINE}</b> Next is onboarding — one call, about 60 minutes, with a prep sheet beforehand.
+        Discovery is done. Accept the terms, choose a plan, and create your account.
+        <b>{EA_PAY_LINE}</b> A card is optional — nothing is charged now. Add one now, or add it later before kickoff when we follow up.
+        Next is onboarding — one call, about 60 minutes, with a prep sheet beforehand.
       </p>
       <ol class="path">
         <li class="done">Discovery</li>
@@ -38,7 +41,7 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
             <span class="step-num">01</span>
             <div>
               <h2 id="step-terms-title">Accept Terms & Conditions</h2>
-              <p>Required before a plan or a card on file.</p>
+              <p>Required before you create an account.</p>
             </div>
           </header>
           <label class="agree" for="terms">
@@ -52,8 +55,8 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
           <header class="step-head">
             <span class="step-num">02</span>
             <div>
-              <h2 id="step-plan-title">Plan and payment</h2>
-              <p>Pick the commitment. The card stays on file — it is not charged today.</p>
+              <h2 id="step-plan-title">Choose your plan</h2>
+              <p>Pick a 3-month or 12-month commitment. Nothing is charged now. A card is optional.</p>
             </div>
           </header>
 
@@ -83,24 +86,44 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
           </fieldset>
 
           <div class="pay-lock">
-            <p>{EA_CLOCK_NOTE}</p>
+            <p>{payNote}</p>
           </div>
 
-          <p class="fine-print" id="pay-note">
-            Card details are entered in Stripe’s secure field and are not stored on this site. Nothing is charged today.
-          </p>
+          <fieldset class="pay-choice">
+            <legend>Payment method</legend>
+            <label class="choice">
+              <input type="radio" name="card-choice" value="later" checked />
+              <span>
+                <strong>Add a card later</strong>
+                <span class="choice-sub">No charge now. Add a card in the portal before kickoff when we follow up.</span>
+              </span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="card-choice" value="now" />
+              <span>
+                <strong>Add a card now</strong>
+                <span class="choice-sub">Saved with Stripe. Nothing is charged today.</span>
+              </span>
+            </label>
+          </fieldset>
 
-          <div class="field">
-            <label for="card-name">Name on card</label>
-            <input id="card-name" type="text" inputmode="text" autocomplete="cc-name" spellcheck="false" placeholder="Name on card" aria-describedby="pay-note" />
-            <p class="err" id="card-name-err"></p>
-          </div>
+          <div id="card-fields" hidden>
+            <p class="fine-print" id="pay-note">
+              Card details are entered in Stripe’s secure field and are not stored on this site. Nothing is charged today.
+            </p>
 
-          <div class="field">
-            <label for="card-element">Card</label>
-            <div id="card-element" class="card-mount" role="group" aria-label="Card number, expiry, CVC, and ZIP" aria-describedby="pay-note card-status"></div>
-            <p class="fine-print" id="card-status">Loading secure card field…</p>
-            <p class="err" id="card-element-err"></p>
+            <div class="field">
+              <label for="card-name">Name on card</label>
+              <input id="card-name" type="text" inputmode="text" autocomplete="cc-name" spellcheck="false" placeholder="Name on card" aria-describedby="pay-note" />
+              <p class="err" id="card-name-err"></p>
+            </div>
+
+            <div class="field">
+              <label for="card-element">Card</label>
+              <div id="card-element" class="card-mount" role="group" aria-label="Card number, expiry, CVC, and ZIP" aria-describedby="pay-note card-status"></div>
+              <p class="fine-print" id="card-status">Loading secure card field…</p>
+              <p class="err" id="card-element-err"></p>
+            </div>
           </div>
         </section>
 
@@ -157,7 +180,7 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
           <li>Kickoff</li>
         </ol>
         <div class="pay-lock">
-          <p>{EA_CLOCK_NOTE}</p>
+          <p>{payNote}</p>
         </div>
         <p class="support">
           After the onboarding call, your partnership manager owns matching. Once your EA is live, you run the day-to-day together, with full back-end support behind the seat.
@@ -202,7 +225,27 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
   /** @type {any} */
   let card = null;
   let cardComplete = false;
+  let cardEmpty = true;
   let cardReady = false;
+  let cardInitStarted = false;
+
+  function wantsCard() {
+    const selected = form?.querySelector('input[name="card-choice"]:checked');
+    return selected instanceof HTMLInputElement && selected.value === 'now';
+  }
+
+  function syncCardFields() {
+    const box = document.getElementById('card-fields');
+    if (box) box.hidden = !wantsCard();
+  }
+
+  syncCardFields();
+  form?.addEventListener('change', (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLInputElement) || target.name !== 'card-choice') return;
+    syncCardFields();
+    if (wantsCard()) initCard();
+  });
 
   function setErr(id, message) {
     const err = document.getElementById(`${id}-err`);
@@ -245,6 +288,8 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
   }
 
   async function initCard() {
+    if (cardInitStarted || cardReady) return;
+    cardInitStarted = true;
     try {
       const res = await fetch(`${portalUrl}/api/signup/config`, { credentials: 'omit' });
       const data = await res.json().catch(() => ({}));
@@ -268,6 +313,7 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
       card.mount('#card-element');
       card.on('change', (event) => {
         cardComplete = !!event.complete;
+        cardEmpty = !!event.empty;
         setErr('card-element', event.error ? event.error.message : '');
       });
       card.on('ready', () => {
@@ -275,13 +321,12 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
         if (cardStatus) cardStatus.textContent = 'Secured by Stripe. Nothing is charged today.';
       });
     } catch (err) {
+      cardInitStarted = false;
       if (cardStatus) {
         cardStatus.textContent = err instanceof Error ? err.message : 'Card form is unavailable.';
       }
     }
   }
-
-  initCard();
 
   async function postJson(path, body) {
     let res;
@@ -318,14 +363,19 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
     const termsOk = fields.terms instanceof HTMLInputElement && fields.terms.checked;
     mark('terms', termsOk ? '' : 'Agree to the Terms & Conditions to continue.');
 
+    const addingCard = wantsCard();
     const cardName = fields.cardName instanceof HTMLInputElement ? fields.cardName.value.trim() : '';
-    mark('card-name', cardName.length >= 2 ? '' : 'Enter the name on the card.');
-
-    if (!cardReady || !card) {
-      mark('card-element', 'The secure card field isn’t ready yet.');
-    } else if (!cardComplete) {
-      mark('card-element', 'Enter the card number, expiry, CVC, and ZIP.');
+    if (addingCard) {
+      mark('card-name', cardName.length >= 2 ? '' : 'Enter the name on the card.');
+      if (!cardReady || !card) {
+        mark('card-element', 'The secure card field isn’t ready yet. You can add a card later instead.');
+      } else if (!cardComplete || cardEmpty) {
+        mark('card-element', 'Enter the card number, expiry, CVC, and ZIP.');
+      } else {
+        mark('card-element', '');
+      }
     } else {
+      mark('card-name', '');
       mark('card-element', '');
     }
 
@@ -360,41 +410,48 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
 
     if (submit instanceof HTMLButtonElement) {
       submit.disabled = true;
-      submit.textContent = 'Saving card…';
+      submit.textContent = addingCard ? 'Saving card…' : 'Creating account…';
     }
 
     try {
-      const setup = await postJson('/api/signup/setup-intent', {
-        email,
-        fullName: name,
-        plan,
-      });
-      const confirmed = await stripe.confirmCardSetup(setup.clientSecret, {
-        payment_method: {
-          card,
-          billing_details: { name: cardName, email },
-        },
-      });
-      if (confirmed.error) {
-        throw new Error(confirmed.error.message || 'The card was not saved.');
-      }
-
-      if (submit instanceof HTMLButtonElement) submit.textContent = 'Creating account…';
-      await postJson('/api/signup/complete', {
+      /** @type {Record<string, unknown>} */
+      const account = {
         email,
         fullName: name,
         password,
         plan,
         termsAccepted: true,
-        setupIntentId: confirmed.setupIntent && confirmed.setupIntent.id,
-        nonce: setup.nonce,
-      });
+      };
+
+      if (addingCard) {
+        const setup = await postJson('/api/signup/setup-intent', {
+          email,
+          fullName: name,
+          plan,
+        });
+        const confirmed = await stripe.confirmCardSetup(setup.clientSecret, {
+          payment_method: {
+            card,
+            billing_details: { name: cardName, email },
+          },
+        });
+        if (confirmed.error) {
+          throw new Error(confirmed.error.message || 'The card was not saved.');
+        }
+        account.setupIntentId = confirmed.setupIntent && confirmed.setupIntent.id;
+        account.nonce = setup.nonce;
+        if (submit instanceof HTMLButtonElement) submit.textContent = 'Creating account…';
+      }
+
+      await postJson('/api/signup/complete', account);
 
       const planLine = document.getElementById('done-plan');
       if (planLine) planLine.textContent = `${planLabel} plan · ${planPrice}`;
       const accountLine = document.getElementById('done-account');
       if (accountLine) {
-        accountLine.textContent = `Account created for ${email}. Your card is on file. Nothing was charged.`;
+        accountLine.textContent = addingCard
+          ? `Account created for ${email}. Your card is on file. Nothing was charged.`
+          : `Account created for ${email}. No card on file yet. Nothing was charged. Add a payment method before kickoff — we’ll follow up.`;
       }
 
       ['card-name', 'password', 'password-2'].forEach((id) => {
@@ -595,6 +652,32 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
   }
   .plan-sub { font-size: 13px; color: var(--on-paper-mut); line-height: 1.4; }
   .plan-switch { margin-top: 12px; font-size: 14px; color: var(--on-paper-mut); line-height: 1.5; }
+
+  .pay-choice { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .choice {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    border: 1px solid var(--line-paper);
+    border-radius: 14px;
+    padding: 14px 16px;
+    background: #fff;
+    cursor: pointer;
+  }
+  .choice:has(input:checked) {
+    border-color: var(--ink);
+    box-shadow: 0 0 0 1px var(--ink);
+  }
+  .choice:has(input:focus-visible) { outline: 2px solid var(--amber); outline-offset: 2px; }
+  .choice input {
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    accent-color: var(--amber);
+    flex-shrink: 0;
+  }
+  .choice strong { display: block; font-size: 15px; color: var(--ink); }
+  .choice-sub { display: block; margin-top: 4px; font-size: 13px; color: var(--on-paper-mut); line-height: 1.45; }
 
   .pay-lock {
     margin-top: 16px;
