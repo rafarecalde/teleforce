@@ -9,6 +9,7 @@ import SwitchTo12 from './components/SwitchTo12';
 import SeatRequest from './components/SeatRequest';
 import AddEaForm from './components/AddEaForm';
 import BillingInfo from './components/BillingInfo';
+import PaymentBanner from './components/PaymentBanner';
 
 export const dynamic = 'force-dynamic';
 
@@ -263,17 +264,7 @@ function AccountView({
       <h1 className="page-title display">Welcome back, {firstName(displayName)}.</h1>
       <p className="page-sub">{preview ? `Previewing ${email}` : `Signed in as ${email}`}</p>
 
-      {!preview && !hasCard && (
-        <div className="pay-banner" role="status">
-          <p>
-            <strong>Add a payment method before kickoff.</strong> Nothing is charged now.
-            We’ll follow up so you can add a card.
-          </p>
-          <a className="btn btn-primary" href="#billing">
-            Add payment method
-          </a>
-        </div>
-      )}
+      {!preview && !hasCard && <PaymentBanner />}
 
       <section className="card">
         <h2>Your plan</h2>
@@ -330,7 +321,7 @@ function AccountView({
 
       <section className="card" id="billing">
         <h2>Billing information</h2>
-        <BillingInfo init={billing} persist={persistBilling} hasCard={hasCard} />
+        <BillingInfo init={billing} persist={persistBilling} hasCard={hasCard} accountEmail={email} />
       </section>
     </Shell>
   );

@@ -16,9 +16,8 @@ flow. Billing at kickoff (or day 10 after match acceptance) is later work.
 with name, email, password, plan, and `termsAccepted: true`. No SetupIntent and
 no Stripe call. The account stores null `stripeCustomerId`,
 `defaultPaymentMethodId`, and `setupIntentId`. The portal lets that email and
-password sign in, and shows an “Add payment method” link to billing. Card entry
-in the portal is a later step; the banner tells the client we’ll follow up
-before kickoff.
+password sign in. A banner and the billing section open a Stripe Card Element
+so the client can add a card later. Nothing is charged.
 
 **With a card** (unchanged):
 
@@ -39,7 +38,40 @@ Add more with `SIGNUP_CORS_ORIGINS`.
 The marketing site has no Content-Security-Policy today, so Stripe.js can load.
 If you add one, allow `https://js.stripe.com` (script and frame),
 `https://hooks.stripe.com` (frame), `https://api.stripe.com` (connect), and the
-portal origin (connect).
+portal origin (connect). The portal loads the same Stripe.js Card Element for
+signed-in clients who still need a card.
+
+## Add a card after signup
+
+Signed-in accounts with no `defaultPaymentMethodId` see an “Add payment method”
+banner. It scrolls to a Card Element under Billing information. There is still
+no PaymentIntent, invoice, subscription, or charge.
+
+1. `GET /api/account/payment/config` returns the publishable key. The session
+   cookie is required.
+2. Stripe.js mounts a Card Element. Card numbers go to Stripe, not to this app.
+3. `POST /api/account/payment/setup-intent` reuses or creates a Stripe Customer
+   and a **SetupIntent** (`usage: off_session`, card only).
+4. The browser confirms the card with `stripe.confirmCardSetup`.
+5. `POST /api/account/payment/complete` checks that the SetupIntent succeeded
+   for this account, stores the PaymentMethod as the customer default, and
+   writes `stripeCustomerId`, `defaultPaymentMethodId`, `setupIntentId`, brand,
+   and last4 on the user row.
+
+Signup’s “Add a card later” and “Add a card now” choices are unchanged.
+
+### Test with a logged-in cardless account
+
+1. From the repo root, run the marketing site and the portal (`npm run dev` in
+   each). On `/ea/signup`, choose **Add a card later**, create the account, then
+   sign in at the portal with that email and password.
+2. Or insert a user with null `stripe_customer_id`, `default_payment_method_id`,
+   and `setup_intent_id`, then sign in.
+3. **Add payment method** on the banner opens the secure card field. Use Stripe
+   test card `4242 4242 4242 4242`, any future expiry, any CVC, and any ZIP.
+   Live keys save a real card and still do not charge.
+4. The banner goes away and Billing shows the card on file. In Stripe, the
+   Customer has a default payment method and no charge.
 
 ## Sign-in
 
@@ -88,7 +120,7 @@ card does not call Stripe.
 | `APP_URL` | This app’s base URL, no trailing slash |
 | `AUTH_SECRET` | Signs the session cookie. Required in production |
 | `STRIPE_SECRET_KEY` | Server key. Used only when a card is submitted: SetupIntent and Customer, no charge |
-| `STRIPE_PUBLISHABLE_KEY` | Returned to the signup page when someone adds a card. `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` is a fallback |
+| `STRIPE_PUBLISHABLE_KEY` | Returned when someone adds a card at signup or in the portal. `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` is a fallback |
 | `TURSO_DATABASE_URL` | `libsql://…` in production. Local file URL if unset outside production |
 | `TURSO_AUTH_TOKEN` | Turso token. Not used for a local file |
 | `PREVIEW_MODE` | `1` enables the sample-data sales link |
@@ -107,7 +139,8 @@ This repo does not deploy the portal for you.
 2. Vercel → New Project → this repo → **Root Directory = `portal`**.
 3. Set `APP_URL=https://portal.tryteleforce.com`, `AUTH_SECRET`, the Stripe
    keys, and the Turso variables. Leave `PREVIEW_MODE` empty. Stripe keys can
-   stay set; they are used only when a signup includes a card.
+   stay set; they are used when a signup includes a card, or when a signed-in
+   client adds a card in the portal.
    Databases created when a card was required are rebuilt once on startup so
    `stripe_customer_id`, `default_payment_method_id`, and `setup_intent_id`
    can be null. Existing card-on-file rows are kept.

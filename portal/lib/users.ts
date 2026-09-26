@@ -118,6 +118,43 @@ export async function insertUser(user: NewUser): Promise<void> {
   });
 }
 
+export async function updatePaymentMethod(
+  id: string,
+  fields: {
+    stripeCustomerId: string;
+    defaultPaymentMethodId: string;
+    setupIntentId: string;
+    cardBrand: string;
+    cardLast4: string;
+  },
+): Promise<number> {
+  const client = await db();
+  const result = await client.execute({
+    sql: `UPDATE users
+      SET stripe_customer_id = ?,
+          default_payment_method_id = ?,
+          setup_intent_id = ?,
+          card_brand = ?,
+          card_last4 = ?
+      WHERE id = ?
+        AND (
+          default_payment_method_id IS NULL
+          OR default_payment_method_id = ''
+          OR default_payment_method_id = ?
+        )`,
+    args: [
+      fields.stripeCustomerId,
+      fields.defaultPaymentMethodId,
+      fields.setupIntentId,
+      fields.cardBrand,
+      fields.cardLast4,
+      id,
+      fields.defaultPaymentMethodId,
+    ],
+  });
+  return Number(result.rowsAffected);
+}
+
 export async function updateBilling(
   id: string,
   fields: { company: string; billingContact: string; billingEmail: string; billingAddress: string },

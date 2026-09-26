@@ -11,6 +11,28 @@ export function getStripe(): Stripe {
   return stripe;
 }
 
+/** Reuse a Customer with this email, or create one. Does not charge. */
+export async function findOrCreateCustomer(
+  email: string,
+  fullName: string,
+  metadata: Record<string, string> = { source: 'ea-signup' },
+): Promise<Stripe.Customer> {
+  const stripe = getStripe();
+  const listed = await stripe.customers.list({ email, limit: 10 });
+  const found = listed.data.find((customer) => (customer.email || '').toLowerCase() === email);
+  if (found) {
+    if (found.name !== fullName) {
+      return stripe.customers.update(found.id, { name: fullName });
+    }
+    return found;
+  }
+  return stripe.customers.create({
+    email,
+    name: fullName,
+    metadata,
+  });
+}
+
 export function publishableKey(): string {
   const key = process.env.STRIPE_PUBLISHABLE_KEY || process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
   if (!key) throw new HttpError(503, 'Payments are not configured.');
