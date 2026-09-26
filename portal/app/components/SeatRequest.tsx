@@ -2,41 +2,43 @@
 
 import { useState } from 'react';
 
-export default function SeatRequest({ label }: { type?: string; label: string }) {
+export default function SeatRequest({ label }: { label: string }) {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<'idle' | 'working' | 'done'>('idle');
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
     setStatus('working');
-    setTimeout(() => setStatus('done'), 500);
+    setTimeout(() => setStatus('done'), 400);
   }
 
   if (status === 'done') {
     return (
       <div className="note ok" role="status">
-        Request sent — your account manager would follow up to scope it. No charge until you agree
-        on the details.
+        Noted. We’ll follow up to scope {label.toLowerCase()}. Nothing is charged until you agree on
+        the details.
       </div>
     );
   }
 
   if (!open) {
     return (
-      <button className="btn btn-ghost" onClick={() => setOpen(true)}>
+      <button className="btn-link" type="button" onClick={() => setOpen(true)}>
         Request {label.toLowerCase()}
       </button>
     );
   }
 
   return (
-    <form onSubmit={submit}>
+    <form onSubmit={submit} className="aside-form">
       <div className="field">
-        <label>{label} — what do you need?</label>
-        <textarea placeholder="Rough volume, hours, languages, anything relevant…" />
+        <label>
+          {label} — what should we scope?
+        </label>
+        <textarea placeholder="Rough volume, languages, anything relevant…" required />
       </div>
       <button className="btn btn-ghost" type="submit" disabled={status === 'working'}>
-        {status === 'working' ? 'Sending…' : 'Send request'}
+        {status === 'working' ? 'Sending…' : 'Send note'}
       </button>
     </form>
   );

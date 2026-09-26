@@ -23,6 +23,24 @@ const USER_TABLE = `
 
 const SCHEMA = `CREATE TABLE IF NOT EXISTS users (${USER_TABLE})`;
 
+/** Additional dedicated EA seats. Ops bills the same Stripe customer later. No charge is created here. */
+const EA_REQUESTS_SCHEMA = `
+  CREATE TABLE IF NOT EXISTS ea_requests (
+    id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL,
+    focus TEXT NOT NULL,
+    tasks TEXT NOT NULL,
+    bilingual TEXT NOT NULL,
+    start_timing TEXT NOT NULL,
+    notes TEXT NOT NULL DEFAULT '',
+    schedule TEXT NOT NULL DEFAULT 'full-time',
+    ack_version TEXT NOT NULL,
+    created_at TEXT NOT NULL
+  )
+`;
+
+const EA_REQUESTS_INDEX = `CREATE INDEX IF NOT EXISTS ea_requests_user_id ON ea_requests (user_id)`;
+
 const REBUILD_PAYMENT_OPTIONAL = `
 BEGIN IMMEDIATE;
 DROP TABLE IF EXISTS users_payment_optional;
@@ -108,6 +126,8 @@ export async function db(): Promise<Client> {
   if (!ready) {
     ready = current
       .execute(SCHEMA)
+      .then(() => current.execute(EA_REQUESTS_SCHEMA))
+      .then(() => current.execute(EA_REQUESTS_INDEX))
       .then(() => migratePaymentOptional(current))
       .then(
         () => undefined,

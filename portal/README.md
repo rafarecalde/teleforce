@@ -82,8 +82,16 @@ an httpOnly session cookie (`jose` JWT, `AUTH_SECRET`).
 data only. It does not create a session and does not read real accounts. Leave
 it unset in production.
 
-Seat-request and “add another EA” buttons are still local success states. The
-12-month switch on a real account is a note, not a fake contract change.
+A signed-in **Add another EA** request is stored in `ea_requests` (focus, tasks,
+bilingual need, start timing, notes, and `schedule = full-time`). `POST
+/api/account/ea-request` requires the session cookie. It does not create a
+Stripe PaymentIntent, invoice, subscription, or charge. Ops can bill the same
+Stripe customer at kickoff. The sales preview (`PREVIEW_MODE=1`) still shows a
+local success state and does not write a row.
+
+Customer service and SDR stay as quiet notes at the bottom of the dashboard.
+They are not stored. The 12-month switch on a real account is a note under the
+plan, not a contract change.
 
 ## Run locally
 
