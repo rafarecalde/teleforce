@@ -1,6 +1,5 @@
-// Sample data for the client-facing preview. When this portal is wired to real
-// billing later, replace these with data read from your source of truth — the
-// section components don't need to change.
+// Sample data for the sales-call preview (PREVIEW_MODE=1 only).
+// Signed-in accounts read the user row and the Stripe PaymentMethod instead.
 
 export type DemoPlan = {
   id: string;

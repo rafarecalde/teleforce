@@ -1,5 +1,4 @@
-// All money comes straight from Stripe Price objects (amount in the smallest
-// currency unit). We never hardcode dollar figures.
+// Formatting helpers. EA plan amounts live in lib/plans.ts (display only).
 
 export function formatMoney(
   amountMinor: number | null | undefined,

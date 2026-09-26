@@ -2,20 +2,28 @@ import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
 import { SESSION_COOKIE, SESSION_TTL_DAYS } from './constants';
 
-// A stable default so the preview runs with zero config. Override AUTH_SECRET for
-// anything shared publicly. (This build stores no sensitive data — it's a demo.)
-const DEMO_SECRET = 'teleforce-portal-preview-demo-secret-please-override';
+const DEV_SECRET = 'teleforce-portal-dev-only-secret-not-for-production';
 
 function secret(): Uint8Array {
-  return new TextEncoder().encode(process.env.AUTH_SECRET || DEMO_SECRET);
+  const value = process.env.AUTH_SECRET;
+  if (value) return new TextEncoder().encode(value);
+  const building = process.env.NEXT_PHASE === 'phase-production-build';
+  if (process.env.NODE_ENV === 'production' && !building) {
+    throw new Error('AUTH_SECRET is required in production');
+  }
+  return new TextEncoder().encode(DEV_SECRET);
 }
 
-export type Principal = { email: string; name?: string; company?: string };
+export type Principal = { userId: string; email: string; name: string };
 
-export async function signSession(p: Principal): Promise<string> {
-  return new SignJWT({ email: p.email, name: p.name ?? '', company: p.company ?? '' })
+export async function signSession(principal: Principal): Promise<string> {
+  return new SignJWT({
+    email: principal.email,
+    name: principal.name,
+    userId: principal.userId,
+  })
     .setProtectedHeader({ alg: 'HS256' })
-    .setSubject(p.email)
+    .setSubject(principal.userId)
     .setAudience('session')
     .setIssuedAt()
     .setExpirationTime(`${SESSION_TTL_DAYS}d`)
@@ -27,11 +35,13 @@ export async function getSession(): Promise<Principal | null> {
   if (!token) return null;
   try {
     const { payload } = await jwtVerify(token, secret(), { audience: 'session' });
-    if (!payload.email) return null;
+    const userId = payload.userId ? String(payload.userId) : '';
+    const email = payload.email ? String(payload.email) : '';
+    if (!userId || !email) return null;
     return {
-      email: String(payload.email),
-      name: payload.name ? String(payload.name) : undefined,
-      company: payload.company ? String(payload.company) : undefined,
+      userId,
+      email,
+      name: payload.name ? String(payload.name) : '',
     };
   } catch {
     return null;
