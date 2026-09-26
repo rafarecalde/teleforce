@@ -3,7 +3,7 @@ import { addMonthsISO, formatDate } from '@/lib/money';
 import { DEMO, type DemoPlan } from '@/lib/demo';
 import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/plans';
 import { retrieveCard } from '@/lib/stripe';
-import { getUserById, type User } from '@/lib/users';
+import { getUserById, hasCardOnFile, type User } from '@/lib/users';
 import PlanCard from './components/PlanCard';
 import SwitchTo12 from './components/SwitchTo12';
 import SeatRequest from './components/SeatRequest';
@@ -197,13 +197,15 @@ export default async function Page({
         </Shell>
       );
     }
-    const card = await cardOnFile(user);
+    const hasCard = hasCardOnFile(user);
+    const card = hasCard ? await cardOnFile(user) : { brand: '', last4: '' };
     return (
       <AccountView
         email={user.email}
         displayName={user.fullName || user.email}
         company={user.company}
         plans={[accountPlan(user)]}
+        hasCard={hasCard}
         billing={{
           contactName: user.billingContact,
           company: user.company,
@@ -233,6 +235,7 @@ function AccountView({
   company,
   plans,
   billing,
+  hasCard = true,
   persistBilling = false,
 }: {
   preview?: boolean;
@@ -248,6 +251,7 @@ function AccountView({
     cardBrand: string;
     cardLast4: string;
   };
+  hasCard?: boolean;
   persistBilling?: boolean;
 }) {
   const threeMonth = plans.filter((plan) => plan.term === '3');
@@ -259,9 +263,27 @@ function AccountView({
       <h1 className="page-title display">Welcome back, {firstName(displayName)}.</h1>
       <p className="page-sub">{preview ? `Previewing ${email}` : `Signed in as ${email}`}</p>
 
+      {!preview && !hasCard && (
+        <div className="pay-banner" role="status">
+          <p>
+            <strong>Add a payment method before kickoff.</strong> Nothing is charged now.
+            We’ll follow up so you can add a card.
+          </p>
+          <a className="btn btn-primary" href="#billing">
+            Add payment method
+          </a>
+        </div>
+      )}
+
       <section className="card">
         <h2>Your plan</h2>
-        {!preview && <p className="hint">Your card is on file. Nothing is charged until your EA starts.</p>}
+        {!preview && (
+          <p className="hint">
+            {hasCard
+              ? 'Your card is on file. Nothing is charged until your EA starts.'
+              : 'No card on file yet. Nothing is charged until your EA starts.'}
+          </p>
+        )}
         {plans.map((plan) => (
           <PlanCard key={plan.id} plan={plan} />
         ))}
@@ -306,9 +328,9 @@ function AccountView({
         <AddEaForm />
       </section>
 
-      <section className="card">
+      <section className="card" id="billing">
         <h2>Billing information</h2>
-        <BillingInfo init={billing} persist={persistBilling} />
+        <BillingInfo init={billing} persist={persistBilling} hasCard={hasCard} />
       </section>
     </Shell>
   );

@@ -27,13 +27,17 @@ export type NewUser = {
   passwordHash: string;
   plan: PlanCode;
   termsAcceptedAt: string;
-  stripeCustomerId: string;
-  defaultPaymentMethodId: string;
-  setupIntentId: string;
+  stripeCustomerId: string | null;
+  defaultPaymentMethodId: string | null;
+  setupIntentId: string | null;
   cardBrand: string;
   cardLast4: string;
   createdAt: string;
 };
+
+export function hasCardOnFile(user: Pick<User, 'defaultPaymentMethodId'>): boolean {
+  return user.defaultPaymentMethodId.trim().length > 0;
+}
 
 type Row = Record<string, unknown>;
 

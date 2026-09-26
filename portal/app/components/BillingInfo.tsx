@@ -11,7 +11,15 @@ export type BillingInit = {
   cardLast4: string;
 };
 
-export default function BillingInfo({ init, persist = false }: { init: BillingInit; persist?: boolean }) {
+export default function BillingInfo({
+  init,
+  persist = false,
+  hasCard = true,
+}: {
+  init: BillingInit;
+  persist?: boolean;
+  hasCard?: boolean;
+}) {
   const [form, setForm] = useState({
     contactName: init.contactName,
     company: init.company,
@@ -63,17 +71,32 @@ export default function BillingInfo({ init, persist = false }: { init: BillingIn
 
   return (
     <form onSubmit={save}>
-      <div className="field">
+      <div className="field" id="add-payment">
         <label>Payment method</label>
-        <div className="cardline">
-          <span className="cardbrand">{init.cardBrand || 'Card'}</span>
-          <span className="mono">···· ···· ···· {last4}</span>
-          <span className="badge" style={{ marginLeft: 'auto' }}>On file</span>
-        </div>
-        <p className="muted" style={{ fontSize: 12.5, margin: '6px 0 0' }}>
-          Saved with Stripe at signup. Nothing is charged until your EA starts. To replace the card,
-          your account manager sends a secure link — it is not typed here.
-        </p>
+        {hasCard ? (
+          <>
+            <div className="cardline">
+              <span className="cardbrand">{init.cardBrand || 'Card'}</span>
+              <span className="mono">···· ···· ···· {last4}</span>
+              <span className="badge" style={{ marginLeft: 'auto' }}>On file</span>
+            </div>
+            <p className="muted" style={{ fontSize: 12.5, margin: '6px 0 0' }}>
+              Saved with Stripe. Nothing is charged until your EA starts. To replace the card,
+              your account manager sends a secure link — it is not typed here.
+            </p>
+          </>
+        ) : (
+          <>
+            <div className="cardline">
+              <span className="cardbrand">No card on file</span>
+              <span className="badge" style={{ marginLeft: 'auto' }}>Add before kickoff</span>
+            </div>
+            <p className="muted" style={{ fontSize: 12.5, margin: '6px 0 0' }}>
+              Nothing is charged now. Add a card before kickoff when we follow up.
+              This page does not collect a card number.
+            </p>
+          </>
+        )}
       </div>
 
       <hr className="divider" />
