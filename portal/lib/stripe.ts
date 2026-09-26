@@ -69,6 +69,16 @@ export function formatBrand(brand?: string | null): string {
   return BRANDS[brand] || brand.charAt(0).toUpperCase() + brand.slice(1);
 }
 
+/** Stripe's own message, with key material removed. Card and request errors are safe to show. */
+function publicStripeMessage(err: Stripe.errors.StripeError): string {
+  const message = (err.message || '').replace(/\s+/g, ' ').trim();
+  const redacted = message
+    .replace(/\b(?:sk|rk|pk)_(?:live|test)_[A-Za-z0-9]+/g, '[key]')
+    .replace(/\bwhsec_[A-Za-z0-9]+/g, '[secret]');
+  if (!redacted) return 'Card setup could not be completed. Try again.';
+  return redacted.slice(0, 400);
+}
+
 export function stripeHttpError(err: unknown, where = 'stripe'): HttpError {
   if (err instanceof HttpError) return err;
   if (err instanceof Stripe.errors.StripeError) {
@@ -80,7 +90,9 @@ export function stripeHttpError(err: unknown, where = 'stripe'): HttpError {
       err.requestId || '',
       err.message,
     );
-    return new HttpError(502, 'Card setup could not be completed. Try again.');
+    const status =
+      err.statusCode && err.statusCode >= 400 && err.statusCode < 500 ? err.statusCode : 502;
+    return new HttpError(status, publicStripeMessage(err));
   }
   console.error(`stripe ${where}:`, err instanceof Error ? err.message : 'error');
   return new HttpError(502, 'Card setup could not be completed. Try again.');

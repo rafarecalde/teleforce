@@ -47,7 +47,8 @@ export async function createSetup(body: unknown): Promise<{ clientSecret: string
     const customer = await findOrCreateCustomer(email, fullName);
     const intent = await stripe.setupIntents.create({
       customer: customer.id,
-      payment_method_types: ['card'],
+      // API 2026-08-26.dahlia rejects payment_method_types (400 payment_method_types_no_longer_supported).
+      allowed_payment_method_types: ['card'],
       usage: 'off_session',
       metadata: {
         email,
