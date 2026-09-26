@@ -10,7 +10,7 @@ the same email and password either way.
 ## What signup does
 
 Nothing is charged. There is no PaymentIntent, invoice, or subscription in this
-flow. Billing at kickoff (or day 10 after match acceptance) is later work.
+flow. Billing at kickoff (or 3 business days after the client is matched, whichever comes first) is later work.
 
 **Without a card** (the default on the signup page): `POST /api/signup/complete`
 with name, email, password, plan, `termsAccepted: true`, and `signedName` (the
