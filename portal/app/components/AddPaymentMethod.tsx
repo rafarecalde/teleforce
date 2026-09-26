@@ -48,14 +48,33 @@ function loadStripeJs(): Promise<void> {
   return stripeJs;
 }
 
+async function requestJson(path: string, init?: RequestInit): Promise<{ ok: boolean; status: number; data: Record<string, unknown> }> {
+  let lastStatus = 0;
+  let lastData: Record<string, unknown> = {};
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    let res: Response;
+    try {
+      res = await fetch(path, init);
+    } catch (err) {
+      if (attempt === 0) continue;
+      throw err;
+    }
+    lastStatus = res.status;
+    lastData = (await res.json().catch(() => ({}))) as Record<string, unknown>;
+    if (res.ok || res.status !== 502 || attempt === 1) {
+      return { ok: res.ok, status: res.status, data: lastData };
+    }
+  }
+  return { ok: false, status: lastStatus, data: lastData };
+}
+
 async function postJson(path: string, body?: unknown): Promise<Record<string, unknown>> {
-  const res = await fetch(path, {
+  const { ok, data } = await requestJson(path, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body ?? {}),
   });
-  const data = (await res.json().catch(() => ({}))) as Record<string, unknown>;
-  if (!res.ok) throw new Error(typeof data.error === 'string' ? data.error : 'Could not save the card.');
+  if (!ok) throw new Error(typeof data.error === 'string' ? data.error : 'Could not save the card.');
   return data;
 }
 
@@ -86,16 +105,16 @@ export default function AddPaymentMethod({
     let mounted = false;
 
     async function init() {
-      const res = await fetch('/api/account/payment/config');
-      const data = (await res.json().catch(() => ({}))) as { publishableKey?: string; error?: string };
-      if (!res.ok || !data.publishableKey) {
-        throw new Error(data.error || 'Card form is unavailable.');
+      const { ok, data } = await requestJson('/api/account/payment/config');
+      const publishableKey = typeof data.publishableKey === 'string' ? data.publishableKey : '';
+      if (!ok || !publishableKey) {
+        throw new Error(typeof data.error === 'string' ? data.error : 'Card form is unavailable.');
       }
       await loadStripeJs();
       if (!active || !mountRef.current) return;
       const factory = (window as Window & { Stripe?: StripeFactory }).Stripe;
       if (typeof factory !== 'function') throw new Error('Could not load the secure card field.');
-      const stripe = factory(data.publishableKey);
+      const stripe = factory(publishableKey);
       const card = stripe.elements().create('card', {
         hidePostalCode: false,
         style: {

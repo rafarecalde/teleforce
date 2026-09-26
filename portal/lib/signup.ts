@@ -60,7 +60,7 @@ export async function createSetup(body: unknown): Promise<{ clientSecret: string
     if (!intent.client_secret) throw new HttpError(502, 'Card setup could not be completed. Try again.');
     return { clientSecret: intent.client_secret, nonce };
   } catch (err) {
-    throw stripeHttpError(err);
+    throw stripeHttpError(err, 'signup setup-intent');
   }
 }
 
@@ -162,7 +162,7 @@ export async function completeSignup(body: unknown): Promise<{ ok: true; email: 
   try {
     intent = await stripe.setupIntents.retrieve(setupIntentId, { expand: ['payment_method'] });
   } catch (err) {
-    throw stripeHttpError(err);
+    throw stripeHttpError(err, 'signup setup-intent retrieve');
   }
 
   if (intent.status !== 'succeeded') {
@@ -213,7 +213,7 @@ export async function completeSignup(body: unknown): Promise<{ ok: true; email: 
       metadata: { source: 'ea-signup', plan },
     });
   } catch (err) {
-    throw stripeHttpError(err);
+    throw stripeHttpError(err, 'signup complete');
   }
 
   return saveAccount({

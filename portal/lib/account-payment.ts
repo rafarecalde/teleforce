@@ -59,7 +59,7 @@ export async function createAccountSetup(user: User): Promise<{ clientSecret: st
     if (!intent.client_secret) throw new HttpError(502, 'Card setup could not be completed. Try again.');
     return { clientSecret: intent.client_secret };
   } catch (err) {
-    throw stripeHttpError(err);
+    throw stripeHttpError(err, 'portal setup-intent');
   }
 }
 
@@ -103,7 +103,7 @@ export async function saveAccountPaymentMethod(
   try {
     intent = await stripe.setupIntents.retrieve(setupIntentId, { expand: ['payment_method'] });
   } catch (err) {
-    throw stripeHttpError(err);
+    throw stripeHttpError(err, 'portal setup-intent retrieve');
   }
 
   if (intent.status !== 'succeeded') {
@@ -137,7 +137,7 @@ export async function saveAccountPaymentMethod(
       throw new HttpError(400, 'Card setup did not finish. Try again.');
     }
   } catch (err) {
-    throw stripeHttpError(err);
+    throw stripeHttpError(err, 'portal payment method');
   }
 
   const current = await getUserById(user.id);
@@ -177,7 +177,7 @@ export async function saveAccountPaymentMethod(
       invoice_settings: { default_payment_method: paymentMethodId },
     });
   } catch (err) {
-    throw stripeHttpError(err);
+    throw stripeHttpError(err, 'portal default payment method');
   }
 
   return { brand, last4 };
@@ -192,6 +192,6 @@ export async function ensureDefaultCard(user: User): Promise<void> {
       invoice_settings: { default_payment_method: user.defaultPaymentMethodId },
     });
   } catch (err) {
-    throw stripeHttpError(err);
+    throw stripeHttpError(err, 'portal ensure default card');
   }
 }

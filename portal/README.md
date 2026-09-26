@@ -119,7 +119,7 @@ card does not call Stripe.
 |---|---|
 | `APP_URL` | This app’s base URL, no trailing slash |
 | `AUTH_SECRET` | Signs the session cookie. Required in production |
-| `STRIPE_SECRET_KEY` | Server key. Used only when a card is submitted: SetupIntent and Customer, no charge |
+| `STRIPE_SECRET_KEY` | Server key. Used only when a card is submitted: SetupIntent and Customer, no charge. Calls retry once on a network error or Stripe 5xx, and the server logs the Stripe type, code, status, and request id |
 | `STRIPE_PUBLISHABLE_KEY` | Returned when someone adds a card at signup or in the portal. `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` is a fallback |
 | `TURSO_DATABASE_URL` | `libsql://…` in production. Local file URL if unset outside production |
 | `TURSO_AUTH_TOKEN` | Turso token. Not used for a local file |
