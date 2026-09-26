@@ -3,7 +3,7 @@ import type Stripe from 'stripe';
 import { HttpError } from './http';
 import { isUniqueError } from './db';
 import { hashPassword, passwordOk } from './password';
-import { formatBrand, getStripe, stripeHttpError } from './stripe';
+import { findOrCreateCustomer, formatBrand, getStripe, stripeHttpError } from './stripe';
 import { getUserByEmail, insertUser } from './users';
 import { asRecord, normalizeEmail, normalizeName, normalizePlan } from './validate';
 
@@ -29,22 +29,6 @@ function idOf(value: string | { id: string } | null | undefined): string {
   return typeof value === 'string' ? value : value.id;
 }
 
-async function findOrCreateCustomer(stripe: Stripe, email: string, fullName: string) {
-  const listed = await stripe.customers.list({ email, limit: 10 });
-  const found = listed.data.find((customer) => (customer.email || '').toLowerCase() === email);
-  if (found) {
-    if (found.name !== fullName) {
-      return stripe.customers.update(found.id, { name: fullName });
-    }
-    return found;
-  }
-  return stripe.customers.create({
-    email,
-    name: fullName,
-    metadata: { source: 'ea-signup' },
-  });
-}
-
 export async function createSetup(body: unknown): Promise<{ clientSecret: string; nonce: string }> {
   const record = asRecord(body);
   const email = normalizeEmail(String(record.email ?? ''));
@@ -60,7 +44,7 @@ export async function createSetup(body: unknown): Promise<{ clientSecret: string
   const nonce = newNonce();
   try {
     const stripe = getStripe();
-    const customer = await findOrCreateCustomer(stripe, email, fullName);
+    const customer = await findOrCreateCustomer(email, fullName);
     const intent = await stripe.setupIntents.create({
       customer: customer.id,
       payment_method_types: ['card'],
@@ -76,7 +60,7 @@ export async function createSetup(body: unknown): Promise<{ clientSecret: string
     if (!intent.client_secret) throw new HttpError(502, 'Card setup could not be completed. Try again.');
     return { clientSecret: intent.client_secret, nonce };
   } catch (err) {
-    throw stripeHttpError(err);
+    throw stripeHttpError(err, 'signup setup-intent');
   }
 }
 
@@ -178,7 +162,7 @@ export async function completeSignup(body: unknown): Promise<{ ok: true; email: 
   try {
     intent = await stripe.setupIntents.retrieve(setupIntentId, { expand: ['payment_method'] });
   } catch (err) {
-    throw stripeHttpError(err);
+    throw stripeHttpError(err, 'signup setup-intent retrieve');
   }
 
   if (intent.status !== 'succeeded') {
@@ -229,7 +213,7 @@ export async function completeSignup(body: unknown): Promise<{ ok: true; email: 
       metadata: { source: 'ea-signup', plan },
     });
   } catch (err) {
-    throw stripeHttpError(err);
+    throw stripeHttpError(err, 'signup complete');
   }
 
   return saveAccount({

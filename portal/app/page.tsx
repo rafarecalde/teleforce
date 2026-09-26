@@ -9,6 +9,8 @@ import SwitchTo12 from './components/SwitchTo12';
 import SeatRequest from './components/SeatRequest';
 import AddEaForm from './components/AddEaForm';
 import BillingInfo from './components/BillingInfo';
+import PaymentBanner from './components/PaymentBanner';
+import LoginForm from './components/LoginForm';
 
 export const dynamic = 'force-dynamic';
 
@@ -156,27 +158,7 @@ export default async function Page({
             <p className="page-sub" style={{ marginBottom: 18 }}>
               Sign in with the email and password from EA signup.
             </p>
-            <form action="/api/auth/login" method="post">
-              <div className="field">
-                <label htmlFor="email">Email</label>
-                <input id="email" name="email" type="email" autoComplete="email" placeholder="you@company.com" required />
-              </div>
-              <div className="field">
-                <label htmlFor="password">Password</label>
-                <input id="password" name="password" type="password" autoComplete="current-password" required />
-              </div>
-              <button className="btn btn-primary btn-full" type="submit">
-                Sign in
-              </button>
-              {err && (
-                <div className="note err" role="alert">
-                  {err}
-                </div>
-              )}
-              <p className="muted" style={{ fontSize: 12.5, marginTop: 14 }}>
-                New client? <a href={signupHref}>Complete signup</a> after your discovery call.
-              </p>
-            </form>
+            <LoginForm signupHref={signupHref} error={err} />
           </section>
         </div>
       </Shell>
@@ -263,17 +245,7 @@ function AccountView({
       <h1 className="page-title display">Welcome back, {firstName(displayName)}.</h1>
       <p className="page-sub">{preview ? `Previewing ${email}` : `Signed in as ${email}`}</p>
 
-      {!preview && !hasCard && (
-        <div className="pay-banner" role="status">
-          <p>
-            <strong>Add a payment method before kickoff.</strong> Nothing is charged now.
-            We’ll follow up so you can add a card.
-          </p>
-          <a className="btn btn-primary" href="#billing">
-            Add payment method
-          </a>
-        </div>
-      )}
+      {!preview && !hasCard && <PaymentBanner />}
 
       <section className="card">
         <h2>Your plan</h2>
@@ -330,7 +302,7 @@ function AccountView({
 
       <section className="card" id="billing">
         <h2>Billing information</h2>
-        <BillingInfo init={billing} persist={persistBilling} hasCard={hasCard} />
+        <BillingInfo init={billing} persist={persistBilling} hasCard={hasCard} accountEmail={email} />
       </section>
     </Shell>
   );
