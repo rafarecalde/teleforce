@@ -18,13 +18,12 @@ export default defineConfig({
   integrations: [
     sitemap({
       // Paid-only ad LPs stay out of the organic sitemap.
-      // /terms is a placeholder until the legal copy is published.
+      // /terms is a public legal page and stays in the sitemap.
       filter: (page) =>
         !page.includes('/ea/offer') &&
         !page.includes('/ea/remote-executive-assistant') &&
         !page.includes('/ea/quiz') &&
-        !page.includes('/ea/match') &&
-        !page.includes('/terms'),
+        !page.includes('/ea/match'),
     }),
   ],
 });
