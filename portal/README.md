@@ -24,7 +24,7 @@ so the client can add a card later. Nothing is charged.
 1. The browser asks `GET /api/signup/config` for the Stripe publishable key.
 2. Stripe.js mounts a Card Element. Card numbers go to Stripe, not to our server.
 3. `POST /api/signup/setup-intent` creates or reuses a Stripe Customer and a
-   **SetupIntent** (`usage: off_session`, card only).
+   **SetupIntent** (`usage: off_session`, `allowed_payment_method_types: ['card']`).
 4. The browser confirms the card with `stripe.confirmCardSetup`.
 5. `POST /api/signup/complete` checks that the SetupIntent succeeded, stores the
    PaymentMethod as the customer default, and writes the account:
@@ -51,7 +51,7 @@ no PaymentIntent, invoice, subscription, or charge.
    cookie is required.
 2. Stripe.js mounts a Card Element. Card numbers go to Stripe, not to this app.
 3. `POST /api/account/payment/setup-intent` reuses or creates a Stripe Customer
-   and a **SetupIntent** (`usage: off_session`, card only).
+   and a **SetupIntent** (`usage: off_session`, `allowed_payment_method_types: ['card']`).
 4. The browser confirms the card with `stripe.confirmCardSetup`.
 5. `POST /api/account/payment/complete` checks that the SetupIntent succeeded
    for this account, stores the PaymentMethod as the customer default, and
@@ -119,7 +119,7 @@ card does not call Stripe.
 |---|---|
 | `APP_URL` | This app’s base URL, no trailing slash |
 | `AUTH_SECRET` | Signs the session cookie. Required in production |
-| `STRIPE_SECRET_KEY` | Server key. Used only when a card is submitted: SetupIntent and Customer, no charge. Calls retry once on a network error or Stripe 5xx, and the server logs the Stripe type, code, status, and request id |
+| `STRIPE_SECRET_KEY` | Server key. Used only when a card is submitted: SetupIntent and Customer, no charge. Calls retry once on a network error or Stripe 5xx, and the server logs the Stripe type, code, status, and request id. Stripe 4xx messages are returned to the card form (keys redacted) |
 | `STRIPE_PUBLISHABLE_KEY` | Returned when someone adds a card at signup or in the portal. `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` is a fallback |
 | `TURSO_DATABASE_URL` | `libsql://…` in production. Local file URL if unset outside production |
 | `TURSO_AUTH_TOKEN` | Turso token. Not used for a local file |
