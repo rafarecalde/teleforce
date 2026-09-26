@@ -41,6 +41,28 @@ const EA_REQUESTS_SCHEMA = `
 
 const EA_REQUESTS_INDEX = `CREATE INDEX IF NOT EXISTS ea_requests_user_id ON ea_requests (user_id)`;
 
+/**
+ * One row per acceptance. Older accounts may have only users.terms_accepted_at
+ * and no row here; login does not read this table. A later Terms version does
+ * not ask those accounts to accept again.
+ */
+const TERMS_ACCEPTANCES_SCHEMA = `
+  CREATE TABLE IF NOT EXISTS terms_acceptances (
+    id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL,
+    signed_name TEXT NOT NULL,
+    terms_version TEXT NOT NULL,
+    terms_content_hash TEXT NOT NULL,
+    accepted_at TEXT NOT NULL,
+    ip TEXT NOT NULL DEFAULT '',
+    ua TEXT NOT NULL DEFAULT '',
+    email_sent_at TEXT,
+    email_error TEXT NOT NULL DEFAULT ''
+  )
+`;
+
+const TERMS_ACCEPTANCES_INDEX = `CREATE INDEX IF NOT EXISTS terms_acceptances_user_id ON terms_acceptances (user_id)`;
+
 const REBUILD_PAYMENT_OPTIONAL = `
 BEGIN IMMEDIATE;
 DROP TABLE IF EXISTS users_payment_optional;
@@ -128,6 +150,8 @@ export async function db(): Promise<Client> {
       .execute(SCHEMA)
       .then(() => current.execute(EA_REQUESTS_SCHEMA))
       .then(() => current.execute(EA_REQUESTS_INDEX))
+      .then(() => current.execute(TERMS_ACCEPTANCES_SCHEMA))
+      .then(() => current.execute(TERMS_ACCEPTANCES_INDEX))
       .then(() => migratePaymentOptional(current))
       .then(
         () => undefined,

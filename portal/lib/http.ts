@@ -58,6 +58,16 @@ export function preflight(req: Request): NextResponse {
   return new NextResponse(null, { status: 204, headers: corsHeaders(req) });
 }
 
+/** IP and User-Agent from the incoming request. Body fields are ignored. */
+export function requestEvidence(req: Request): { ip: string; userAgent: string } {
+  const forwarded = req.headers.get('x-forwarded-for') || '';
+  const vercelForwarded = req.headers.get('x-vercel-forwarded-for') || '';
+  const first = (vercelForwarded || forwarded).split(',')[0]?.trim() || '';
+  const ip = (first || req.headers.get('x-real-ip') || '').trim().slice(0, 80);
+  const userAgent = (req.headers.get('user-agent') || '').trim().slice(0, 512);
+  return { ip, userAgent };
+}
+
 export function jsonError(req: Request, err: unknown, fallback: string): NextResponse {
   if (err instanceof HttpError) return json(req, { error: err.message }, err.status);
   console.error(fallback, err instanceof Error ? err.message : 'error');

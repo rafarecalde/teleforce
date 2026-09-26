@@ -3,8 +3,12 @@ import type Stripe from 'stripe';
 import { HttpError } from './http';
 import { isUniqueError } from './db';
 import { hashPassword, passwordOk } from './password';
+import { formatDollars, planLabel, planMonthly } from './plans';
 import { findOrCreateCustomer, formatBrand, getStripe, stripeHttpError } from './stripe';
-import { getUserByEmail, insertUser } from './users';
+import { insertAccountWithAcceptance, recordTermsEmailResult } from './terms-acceptance';
+import { sendTermsAcceptanceEmail } from './terms-email';
+import { getTermsDocument } from './terms';
+import { getUserByEmail } from './users';
 import { asRecord, normalizeEmail, normalizeName, normalizePlan } from './validate';
 
 const DUPLICATE = 'An account with this email already exists. Sign in to the client portal.';
@@ -72,6 +76,65 @@ function optionalText(value: unknown): string {
   return text;
 }
 
+type AcceptanceInput = {
+  signedName: string;
+  termsVersion: string;
+  termsContentHash: string;
+  termsMarkdown: string;
+  acceptedIp: string;
+  acceptedUa: string;
+};
+
+async function emailAcceptedTerms(input: AcceptanceInput & {
+  acceptanceId: string;
+  email: string;
+  fullName: string;
+  plan: '3' | '12';
+  acceptedAt: string;
+}): Promise<void> {
+  let resendId = '';
+  try {
+    resendId = await sendTermsAcceptanceEmail({
+      to: input.email,
+      fullName: input.fullName,
+      planSummary: `${planLabel(input.plan)} · ${formatDollars(planMonthly(input.plan))}/mo`,
+      signedName: input.signedName,
+      termsVersion: input.termsVersion,
+      termsContentHash: input.termsContentHash,
+      acceptedAt: input.acceptedAt,
+      ip: input.acceptedIp,
+      markdown: input.termsMarkdown,
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Email failed';
+    console.error('terms acceptance email failed', input.acceptanceId, message);
+    try {
+      await recordTermsEmailResult(input.acceptanceId, { sentAt: null, error: message });
+    } catch (updateErr) {
+      console.error(
+        'could not record terms email failure',
+        input.acceptanceId,
+        updateErr instanceof Error ? updateErr.message : 'error',
+      );
+    }
+    return;
+  }
+
+  try {
+    await recordTermsEmailResult(input.acceptanceId, {
+      sentAt: new Date().toISOString(),
+      error: '',
+    });
+    console.info('terms acceptance email sent', input.acceptanceId, resendId);
+  } catch (err) {
+    console.error(
+      'terms acceptance email sent but the receipt was not saved',
+      input.acceptanceId,
+      err instanceof Error ? err.message : 'error',
+    );
+  }
+}
+
 async function saveAccount(input: {
   email: string;
   fullName: string;
@@ -82,24 +145,38 @@ async function saveAccount(input: {
   setupIntentId: string | null;
   cardBrand: string;
   cardLast4: string;
-}): Promise<{ ok: true; email: string }> {
+} & AcceptanceInput): Promise<{ ok: true; email: string }> {
   const createdAt = new Date().toISOString();
+  const userId = crypto.randomUUID();
+  const acceptanceId = crypto.randomUUID();
   const passwordHash = await hashPassword(input.password);
   try {
-    await insertUser({
-      id: crypto.randomUUID(),
-      email: input.email,
-      fullName: input.fullName,
-      passwordHash,
-      plan: input.plan,
-      termsAcceptedAt: createdAt,
-      stripeCustomerId: input.stripeCustomerId,
-      defaultPaymentMethodId: input.defaultPaymentMethodId,
-      setupIntentId: input.setupIntentId,
-      cardBrand: input.cardBrand,
-      cardLast4: input.cardLast4,
-      createdAt,
-    });
+    await insertAccountWithAcceptance(
+      {
+        id: userId,
+        email: input.email,
+        fullName: input.fullName,
+        passwordHash,
+        plan: input.plan,
+        termsAcceptedAt: createdAt,
+        stripeCustomerId: input.stripeCustomerId,
+        defaultPaymentMethodId: input.defaultPaymentMethodId,
+        setupIntentId: input.setupIntentId,
+        cardBrand: input.cardBrand,
+        cardLast4: input.cardLast4,
+        createdAt,
+      },
+      {
+        id: acceptanceId,
+        userId,
+        signedName: input.signedName,
+        termsVersion: input.termsVersion,
+        termsContentHash: input.termsContentHash,
+        acceptedAt: createdAt,
+        ip: input.acceptedIp,
+        ua: input.acceptedUa,
+      },
+    );
   } catch (err) {
     if (isUniqueError(err)) {
       const again = await getUserByEmail(input.email);
@@ -111,10 +188,38 @@ async function saveAccount(input: {
     }
     throw err;
   }
+
+  // Mail is not part of the account transaction. A failed send leaves
+  // email_sent_at null and email_error set so ops can retry.
+  await emailAcceptedTerms({
+    acceptanceId,
+    email: input.email,
+    fullName: input.fullName,
+    plan: input.plan,
+    acceptedAt: createdAt,
+    signedName: input.signedName,
+    termsVersion: input.termsVersion,
+    termsContentHash: input.termsContentHash,
+    termsMarkdown: input.termsMarkdown,
+    acceptedIp: input.acceptedIp,
+    acceptedUa: input.acceptedUa,
+  });
   return { ok: true, email: input.email };
 }
 
-export async function completeSignup(body: unknown): Promise<{ ok: true; email: string }> {
+export type SignupEvidence = {
+  ip: string;
+  userAgent: string;
+};
+
+function clip(value: string, max: number): string {
+  return value.trim().slice(0, max);
+}
+
+export async function completeSignup(
+  body: unknown,
+  evidence: SignupEvidence = { ip: '', userAgent: '' },
+): Promise<{ ok: true; email: string }> {
   const record = asRecord(body);
   const email = normalizeEmail(String(record.email ?? ''));
   const fullName = normalizeName(String(record.fullName ?? ''));
@@ -123,12 +228,31 @@ export async function completeSignup(body: unknown): Promise<{ ok: true; email: 
   const termsAccepted = record.termsAccepted === true;
   const setupIntentId = optionalText(record.setupIntentId);
   const nonce = optionalText(record.nonce);
+  const signedName = normalizeName(String(record.signedName ?? ''));
+  const submittedVersion = optionalText(record.termsVersion);
 
   if (!termsAccepted) throw new HttpError(400, 'Agree to the Terms & Conditions to continue.');
   if (!email) throw new HttpError(400, 'Enter a work email.');
   if (!fullName) throw new HttpError(400, 'Enter your name.');
   if (!plan) throw new HttpError(400, 'Choose a 3-month or 12-month plan.');
   if (!passwordOk(password)) throw new HttpError(400, 'Use a password of 8 to 72 characters.');
+  if (!signedName || !signedName.includes(' ')) {
+    throw new HttpError(400, 'Type your full legal name to sign the Terms.');
+  }
+
+  const terms = getTermsDocument();
+  if (submittedVersion && submittedVersion !== terms.version) {
+    throw new HttpError(400, 'These Terms were updated. Refresh the page and agree to the current version.');
+  }
+
+  const acceptance: AcceptanceInput = {
+    signedName,
+    termsVersion: terms.version,
+    termsContentHash: terms.contentHash,
+    termsMarkdown: terms.markdown,
+    acceptedIp: clip(evidence.ip || '', 80),
+    acceptedUa: clip(evidence.userAgent || '', 512),
+  };
 
   if (!setupIntentId && !nonce) {
     const existing = await getUserByEmail(email);
@@ -143,6 +267,7 @@ export async function completeSignup(body: unknown): Promise<{ ok: true; email: 
       setupIntentId: null,
       cardBrand: '',
       cardLast4: '',
+      ...acceptance,
     });
   }
 
@@ -227,5 +352,6 @@ export async function completeSignup(body: unknown): Promise<{ ok: true; email: 
     setupIntentId,
     cardBrand: brand,
     cardLast4: last4,
+    ...acceptance,
   });
 }

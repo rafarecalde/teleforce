@@ -13,13 +13,15 @@ Nothing is charged. There is no PaymentIntent, invoice, or subscription in this
 flow. Billing at kickoff (or day 10 after match acceptance) is later work.
 
 **Without a card** (the default on the signup page): `POST /api/signup/complete`
-with name, email, password, plan, and `termsAccepted: true`. No SetupIntent and
-no Stripe call. The account stores null `stripeCustomerId`,
-`defaultPaymentMethodId`, and `setupIntentId`. The portal lets that email and
-password sign in. A banner and the billing section open a Stripe Card Element
-so the client can add a card later. Nothing is charged.
+with name, email, password, plan, `termsAccepted: true`, and `signedName` (the
+typed legal name). `termsVersion` is optional; if it is sent and it is not the
+current Terms, signup is rejected. No SetupIntent and no Stripe call. The
+account stores null `stripeCustomerId`, `defaultPaymentMethodId`, and
+`setupIntentId`. The portal lets that email and password sign in. A banner and
+the billing section open a Stripe Card Element so the client can add a card
+later. Nothing is charged.
 
-**With a card** (unchanged):
+**With a card:**
 
 1. The browser asks `GET /api/signup/config` for the Stripe publishable key.
 2. Stripe.js mounts a Card Element. Card numbers go to Stripe, not to our server.
@@ -29,7 +31,9 @@ so the client can add a card later. Nothing is charged.
 5. `POST /api/signup/complete` checks that the SetupIntent succeeded, stores the
    PaymentMethod as the customer default, and writes the account:
    full name, work email, bcrypt password hash, plan (`3` or `12`), Terms
-   acceptance time, `stripeCustomerId`, `defaultPaymentMethodId`.
+   acceptance time, `stripeCustomerId`, `defaultPaymentMethodId`. The same
+   Terms record described below is stored either way. IP and User-Agent are
+   taken from this request, not from the JSON body.
 
 Those routes allow browser calls from `https://tryteleforce.com`,
 `https://www.tryteleforce.com`, and `http://localhost:4321` (Astro’s dev server).
@@ -40,6 +44,46 @@ If you add one, allow `https://js.stripe.com` (script and frame),
 `https://hooks.stripe.com` (frame), `https://api.stripe.com` (connect), and the
 portal origin (connect). The portal loads the same Stripe.js Card Element for
 signed-in clients who still need a card.
+
+## Terms acceptance record
+
+The signup page is a clickwrap plus a typed electronic signature. The checkbox
+names the effective date, for example “I agree to the Teleforce Terms &
+Conditions effective September 25, 2026.” That date is read from the Terms
+file. The legal name field can be filled from the account name, and the client
+confirms or types it. Short ESIGN / UETA language sits under that field.
+
+`GET /api/signup/terms` returns `{ termsVersion, termsContentHash }` so the
+page can show the version the server will store. The hash is SHA-256 of the
+Terms markdown (UTF-8). The server computes both from the file. A hash in the
+JSON body is ignored. If `termsVersion` is present and does not match, the
+client is told to refresh.
+
+On success the portal writes:
+
+- `users.terms_accepted_at` (unchanged column; still required on the account)
+- a `terms_acceptances` row: `user_id`, `signed_name`, `terms_version`,
+  `terms_content_hash`, `accepted_at`, `ip`, `ua`, `email_sent_at`,
+  `email_error`
+
+Accounts created before this table existed have only `terms_accepted_at`.
+Login does not read `terms_acceptances`, so those accounts still sign in.
+Asking them to accept a newer version later is not built.
+
+The Terms text is `src/legal/terms.md` on the marketing site (`/terms`). The
+portal ships a copy at `portal/content/terms.md` because its Vercel root is
+`portal/`. When both files are readable they must be identical, or signup
+refuses to run. After counsel edits the Terms, copy the file and redeploy
+both apps.
+
+After the account row is committed, the portal emails the client through
+[Resend](https://resend.com): an HTML cover (name, email, plan, signed name,
+version, hash, timestamp, IP) and the Terms in the body, plus the markdown
+file attached. Those attachment bytes are what the hash covers. Ops is BCC’d
+(`TERMS_ACCEPTANCE_BCC`, else `OPS_EMAIL`, else `legal@tryteleforce.com`).
+If the send fails, or `RESEND_API_KEY` / `EMAIL_FROM` is unset, the account
+stays. `email_sent_at` remains null and `email_error` stores a short reason
+so the send can be retried. There is no retry button in the portal yet.
 
 ## Add a card after signup
 
@@ -134,6 +178,10 @@ card does not call Stripe.
 | `PREVIEW_MODE` | `1` enables the sample-data sales link |
 | `SIGNUP_CORS_ORIGINS` | Extra allowed origins, comma-separated |
 | `MARKETING_URL` | Used for the signup link on the sign-in screen |
+| `RESEND_API_KEY` | Sends the accepted-Terms email. If unset, the account is still created and `email_sent_at` stays null |
+| `EMAIL_FROM` | From address on a domain verified in Resend, e.g. `Teleforce <legal@tryteleforce.com>` |
+| `TERMS_ACCEPTANCE_BCC` | Ops BCC. If unset, `OPS_EMAIL` is used, then `legal@tryteleforce.com` |
+| `OPS_EMAIL` | Fallback ops address when `TERMS_ACCEPTANCE_BCC` is unset |
 
 The Astro site reads `PUBLIC_PORTAL_URL` (see the repo root `.env.example`).
 
@@ -160,6 +208,11 @@ This repo does not deploy the portal for you.
 6. Redeploy the marketing site only if the portal host is not
    `https://portal.tryteleforce.com`. In that case set `PUBLIC_PORTAL_URL` for
    the Astro build.
+7. In Resend, verify the sending domain and create an API key. On the portal
+   project set `RESEND_API_KEY` and `EMAIL_FROM`. Set `TERMS_ACCEPTANCE_BCC`
+   when the ops copy should go somewhere other than `legal@tryteleforce.com`.
+   Signup still creates the account if these are missing; the Terms email
+   will not go out until they are set.
 
 Plans stay $3,000/mo (3-month) and $2,700/mo (12-month). Those figures are
 display-only here, matching `src/consts.ts`.
