@@ -259,50 +259,52 @@ function AccountView({
         {plans.map((plan) => (
           <PlanCard key={plan.id} plan={plan} />
         ))}
-      </section>
-
-      <section className="card">
-        <h2>Increase your plan</h2>
-        <p className="hint">Move to the better rate, or add a support seat.</p>
         {threeMonth.length === 0 ? (
-          <p className="muted" style={{ fontSize: 14 }}>You&apos;re already on the 12-month rate — the best price.</p>
+          <p className="muted" style={{ fontSize: 13.5, margin: '14px 0 0' }}>
+            You&apos;re on the 12-month rate — the best price on this plan.
+          </p>
         ) : preview ? (
-          <SwitchTo12
-            rate12={threeMonth[0].rate12}
-            monthlySavings={threeMonth[0].monthlySavings}
-            annualSavings={threeMonth[0].annualSavings}
-            commitmentEndPreview={commitmentEndPreview}
-          />
+          <>
+            <hr className="divider" />
+            <SwitchTo12
+              rate12={threeMonth[0].rate12}
+              monthlySavings={threeMonth[0].monthlySavings}
+              annualSavings={threeMonth[0].annualSavings}
+              commitmentEndPreview={commitmentEndPreview}
+            />
+          </>
         ) : (
-          <p style={{ fontSize: 14, margin: '0 0 12px' }}>
+          <p className="muted" style={{ fontSize: 13.5, margin: '14px 0 0' }}>
             The 12-month rate is {threeMonth[0].rate12}/month (save {threeMonth[0].monthlySavings}/month).
-            Switching is confirmed with your partnership manager — it is not applied from this page.
+            A switch is confirmed with your partnership manager — it is not applied from this page.
           </p>
         )}
-        <hr className="divider" />
-        <p className="subhead">Add a support seat</p>
-        <p className="muted" style={{ fontSize: 13.5, margin: '0 0 12px' }}>
-          Beyond your EA — request customer service or SDR coverage. No charge; we scope it with you
-          first.
-        </p>
-        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-          <SeatRequest label="Customer service seat" />
-          <SeatRequest label="SDR seat" />
-        </div>
       </section>
 
-      <section className="card">
+      <section className="card" id="add-ea">
         <h2>Add another EA</h2>
         <p className="hint">
-          Request a second executive assistant. This is an additional order under your existing
-          agreement — no charge until the new EA starts.
+          Request another dedicated executive assistant for your team. Each seat is full-time, on
+          your existing agreement. We use this to match someone, then follow up. Nothing is charged
+          until that EA starts.
         </p>
-        <AddEaForm />
+        <AddEaForm persist={persistBilling} />
       </section>
 
       <section className="card" id="billing">
         <h2>Billing information</h2>
         <BillingInfo init={billing} persist={persistBilling} hasCard={hasCard} accountEmail={email} />
+      </section>
+
+      <section className="aside" aria-labelledby="other-coverage">
+        <h2 id="other-coverage">Other coverage</h2>
+        <p className="aside-copy">
+          Customer service and SDR coverage can be scoped separately, whenever you want it.
+        </p>
+        <div className="aside-list">
+          <SeatRequest label="Customer service" />
+          <SeatRequest label="SDR" />
+        </div>
       </section>
     </Shell>
   );
