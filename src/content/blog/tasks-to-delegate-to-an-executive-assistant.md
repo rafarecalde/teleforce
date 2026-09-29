@@ -1,5 +1,6 @@
 ---
 title: "Tasks to Delegate to an Executive Assistant: The Complete List"
+metaTitle: "Tasks to Delegate to an Executive Assistant | Teleforce"
 description: "A categorized list of tasks to delegate to an executive assistant—inbox, calendar, travel, research, CRM, vendors, hiring, finance, and personal admin."
 excerpt: "Not sure what to hand off? Here's a scannable, category-by-category list of the work a great EA can take off your plate starting week one."
 primaryKeyword: tasks to delegate to an executive assistant
@@ -62,7 +63,7 @@ Travel is high-effort, detail-heavy, and perfect to hand off:
 - Rebook and troubleshoot when plans change mid-trip
 - Coordinate visas, dinner reservations, and on-site logistics
 
-> **Delegate to an elite EA.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/ea/offer)
+> **Delegate to an elite EA.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/#contact)
 
 ## Research & Prep
 
@@ -137,8 +138,8 @@ The bottom-right quadrant is where your EA ends up after 60–90 days of built t
 
 ## Start Small, Then Compound
 
-You don't need to delegate this entire list tomorrow. Pick the three tasks that drain you most this week and hand those off first. As SOPs form and trust builds, keep pulling more from the list. To see the full scope of a dedicated assistant's role, read [what an executive assistant does](/blog/what-does-an-executive-assistant-do), and when you're ready, a [Teleforce Executive Assistant](/ea/offer) can start absorbing these tasks in your time zone within the month.
+You don't need to delegate this entire list tomorrow. Pick the three tasks that drain you most this week and hand those off first. As SOPs form and trust builds, keep pulling more from the list. To see the full scope of a dedicated assistant's role, read [what an executive assistant does](/blog/what-does-an-executive-assistant-do), and when you're ready, a [Teleforce Executive Assistant](/#contact) can start absorbing these tasks in your time zone within the month.
 
 Knowing the right tasks to delegate to an executive assistant is the difference between a busy calendar and a focused one. Pick your three, hand them off, and build from there.
 
-> **Ready to hand off your list?** A dedicated Teleforce EA—bilingual, vetted, and working your hours—can take these tasks starting this month. [Book a discovery call →](/ea/quiz)
+> **Ready to hand off your list?** A dedicated Teleforce EA—bilingual, vetted, and working your hours—can take these tasks starting this month. [Book a discovery call →](/#contact)

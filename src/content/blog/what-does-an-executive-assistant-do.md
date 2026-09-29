@@ -1,5 +1,6 @@
 ---
 title: "What Does an Executive Assistant Do? The Role in Depth"
+metaTitle: "What Does an Executive Assistant Do | Teleforce"
 description: "What does an executive assistant do? A deep look at day-to-day, business operations, and personal support—and why great EAs anticipate, not just react."
 excerpt: "Far more than scheduling. A great EA runs your inbox, your operations, and your logistics with judgment—and takes on more as trust grows."
 primaryKeyword: what does an executive assistant do
@@ -37,7 +38,7 @@ The daily work is the foundation, and it's where an EA earns your trust fastest.
 
 Handled well, this tier alone can return several hours a week. Handled with anticipation, it changes how your whole week feels.
 
-> **Get your calendar—and your evenings—back.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent, vetted and working on your clock. [Meet your assistant →](/ea/offer)
+> **Get your calendar—and your evenings—back.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent, vetted and working on your clock. [Meet your assistant →](/#contact)
 
 ## Business Operations Support
 
@@ -81,4 +82,4 @@ Teleforce places dedicated, full-time, bilingual (English/Spanish) executive ass
 
 The best way to see what a great EA can own for you is to talk through your actual week. Start there.
 
-> **See what an EA could take off your plate.** Book a 30-minute discovery call and we'll match you with a [Teleforce Executive Assistant](/ea/offer) built for how you work. [Book a discovery call →](/ea/quiz)
+> **See what an EA could take off your plate.** Book a 30-minute discovery call and we'll match you with a [Teleforce Executive Assistant](/#contact) built for how you work. [Book a discovery call →](/#contact)

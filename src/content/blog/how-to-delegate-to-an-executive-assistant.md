@@ -1,5 +1,6 @@
 ---
 title: "How to Delegate to an Executive Assistant: A Step-by-Step Playbook"
+metaTitle: "How to Delegate to an Executive Assistant | Teleforce"
 description: "Learn how to delegate to an executive assistant the right way: what to hand off first, how to give context, build SOPs, and grow trust over 30/60/90 days."
 excerpt: "Delegation isn't dumping tasks—it's transferring judgment. Here's a practical playbook for handing work to a new EA and getting hours back fast."
 primaryKeyword: how to delegate to an executive assistant
@@ -50,7 +51,7 @@ Good SOPs are living documents. When an edge case comes up, the fix goes into th
 
 Have your assistant maintain these, not you. Writing and updating SOPs is itself a task to delegate.
 
-> **Delegate to an elite EA.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/ea/offer)
+> **Delegate to an elite EA.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/#contact)
 
 ## Use One Shared Task Tool and a Weekly Rhythm
 
@@ -102,4 +103,4 @@ Delegate consistently, even when you're busy—*especially* when you're busy. Th
 
 Learning how to delegate to an executive assistant is less about technique and more about repetition. Give context, accept imperfect first drafts, document as you go, and watch your capacity expand month over month.
 
-> **Ready to get your time back?** A dedicated Teleforce EA—bilingual, vetted, working in your time zone—can start absorbing your busywork this month. [Book a discovery call →](/ea/quiz)
+> **Ready to get your time back?** A dedicated Teleforce EA—bilingual, vetted, working in your time zone—can start absorbing your busywork this month. [Book a discovery call →](/#contact)

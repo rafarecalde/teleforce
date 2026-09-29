@@ -1,5 +1,6 @@
 ---
 title: "Nearshore Executive Assistant: Why Latin America Is the Right Fit"
+metaTitle: "Nearshore Executive Assistant | Teleforce"
 description: "A nearshore executive assistant gives you full U.S.-hours overlap, native Spanish, near-native English, and lower cost than in-house—without the offshore gap."
 excerpt: "Far-offshore support means handing off work at night and hoping it's right by morning. Nearshore means delegating in real time. Here's why that difference matters for an EA."
 primaryKeyword: nearshore executive assistant
@@ -7,6 +8,7 @@ category: Virtual Assistance
 readMinutes: 7
 publishDate: 2026-09-17
 updatedDate: 2026-09-17
+featured: true
 faq:
   - q: "What does nearshore mean for an executive assistant?"
     a: "Nearshore means your executive assistant works from Latin America, in or close to your U.S. time zone. Instead of handing off tasks that get done overnight, you delegate in real time during your own business hours. It combines the cost advantage of offshoring with the collaboration of a local hire."
@@ -48,7 +50,7 @@ Onshore gets you overlap and native English but at the highest cost. Offshore ge
 
 The cost gap between offshore and nearshore is real, but for an executive assistant it's the wrong thing to optimize. Saving a few hundred dollars a month means nothing if half your delegated work waits twelve hours for a reply.
 
-> **Delegate in real time, not overnight.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/ea/offer)
+> **Delegate in real time, not overnight.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/#contact)
 
 ## The Language Advantage You Don't Get Offshore
 
@@ -74,6 +76,6 @@ Teleforce places **nearshore executive assistants** from the top tier of Latin A
 
 Pricing is straightforward: **$3,000/mo on a 3-month commitment, or $2,700/mo on a 12-month commitment.** You can switch 3→12 anytime, and the $300/mo difference is credited to your final month. No payroll, benefits, or equipment to manage on your side—we handle employment and management, you get a strategic partner on your clock.
 
-If overlap and language are what's been holding back your delegation, nearshore is the answer that keeps both. When you're ready, [book a discovery call](/ea/quiz) and we'll match you with an EA built for how you work.
+If overlap and language are what's been holding back your delegation, nearshore is the answer that keeps both. When you're ready, [book a discovery call](/#contact) and we'll match you with an EA built for how you work.
 
-> **Ready for an assistant who works when you work?** Book a 30-minute discovery call and meet a nearshore EA matched to your business. [Book a discovery call →](/ea/quiz)
+> **Ready for an assistant who works when you work?** Book a 30-minute discovery call and meet a nearshore EA matched to your business. [Book a discovery call →](/#contact)
