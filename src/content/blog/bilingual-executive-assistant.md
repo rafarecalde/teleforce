@@ -47,7 +47,7 @@ The value isn't the second language on its own—it's what the language lets the
 
 **Consistency across both languages.** The same person handling your English correspondence also owns the Spanish side, so tone, formatting, and follow-through stay identical no matter which language a contact uses. You're not stitching together two support experiences or hoping a freelance translator matches your voice—one dedicated EA carries your standard through every conversation.
 
-> **Delegate to an elite EA.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/ea/offer)
+> **Delegate to an elite EA.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/#contact)
 
 ## Monolingual vs. Bilingual EA: What Changes
 
@@ -75,4 +75,4 @@ A bilingual executive assistant isn't about ticking a diversity box or handling 
 
 And because the talent is nearshore, you get that capability at no premium. If your world touches Spanish in any meaningful way, the question isn't whether a bilingual EA is worth it—it's how much the workaround has already cost you.
 
-> **Ready to close the language gap?** Book a 30-minute discovery call with [Teleforce Executive Assistants](/ea/offer) and we'll match you with a bilingual EA built for how you work. [Book a discovery call →](/ea/quiz)
+> **Ready to close the language gap?** Book a 30-minute discovery call with [Teleforce Executive Assistants](/#contact) and we'll match you with a bilingual EA built for how you work. [Book a discovery call →](/#contact)

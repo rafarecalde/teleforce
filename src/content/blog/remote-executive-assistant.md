@@ -1,5 +1,6 @@
 ---
 title: "The Case for a Remote Executive Assistant (And Why It Works Now)"
+metaTitle: "Remote Executive Assistant Guide | Teleforce"
 description: "A remote executive assistant delivers full-time, dedicated support without the overhead—here's why remote works now, how they integrate, and the myths."
 excerpt: "The office is no longer where great support lives. Here's why a dedicated remote EA outperforms the person you'd hire down the hall—and how they plug in."
 primaryKeyword: remote executive assistant
@@ -45,7 +46,7 @@ A remote executive assistant isn't a freelancer you email tasks to. Done right, 
 
 The integration deepens over weeks. The EA learns how you write, which meetings you'll always decline, and which fires are real. Context compounds, and the work bounces back to your desk less and less.
 
-> **Delegate to an elite EA.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/ea/offer)
+> **Delegate to an elite EA.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/#contact)
 
 ## The Myths Worth Addressing
 
@@ -84,4 +85,4 @@ The economics are the quiet argument for going remote. A dedicated Teleforce EA 
 
 Remote isn't the discount version of executive support. It's the version that gives you the widest talent pool, real-time overlap, and lower total cost at once. The only thing you give up is the commute.
 
-> **Ready to hand off the work for good?** Book a 30-minute discovery call with [Teleforce Executive Assistants](/ea/offer) and we'll match you with a remote EA built for how you work. [Book a discovery call →](/ea/quiz)
+> **Ready to hand off the work for good?** Book a 30-minute discovery call with [Teleforce Executive Assistants](/#contact) and we'll match you with a remote EA built for how you work. [Book a discovery call →](/#contact)

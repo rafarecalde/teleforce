@@ -1,5 +1,6 @@
 ---
 title: "How to Hire an Executive Assistant: A Practical Step-by-Step Guide"
+metaTitle: "How to Hire an Executive Assistant | Teleforce"
 description: "Learn how to hire an executive assistant: define the role, source and vet candidates, run a paid trial, and onboard well in the first 30 days."
 excerpt: "Hiring an EA is easy to get wrong. This is the practical playbook—from writing the scope to the paid trial task to a 30-day onboarding that sticks."
 primaryKeyword: how to hire an executive assistant
@@ -44,7 +45,7 @@ You have four realistic paths, each with tradeoffs.
 | Staffing agency | Medium | Shared | Markup or fee | One-off placements |
 | Managed service | Fast | Handled for you | Flat monthly rate | Dedicated remote EA, fast |
 
-Job boards and referrals give you maximum control but put all of the sourcing, screening, payroll, and replacement risk on you. A managed service like [Teleforce Executive Assistants](/ea/offer) handles recruiting, vetting, training, and replacement, and places a dedicated bilingual EA who already works your U.S. hours. The right path depends on whether you want to own the hiring machinery or offload it.
+Job boards and referrals give you maximum control but put all of the sourcing, screening, payroll, and replacement risk on you. A managed service like [Teleforce Executive Assistants](/#contact) handles recruiting, vetting, training, and replacement, and places a dedicated bilingual EA who already works your U.S. hours. The right path depends on whether you want to own the hiring machinery or offload it.
 
 ## Step 4: Screen and vet
 
@@ -56,7 +57,7 @@ Screening is where you filter for the non-negotiables before spending interview 
 - **Background checks.** For a role with access to your calendar, inbox, and possibly finances, a background check is basic hygiene.
 - **Bilingual verification.** If your work spans English and Spanish, verify it live, not from a resume line.
 
-> **Skip the vetting grind.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—already vetted, trained, and working on your clock. [Meet your assistant →](/ea/offer)
+> **Skip the vetting grind.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—already vetted, trained, and working on your clock. [Meet your assistant →](/#contact)
 
 ## Step 5: Interview for judgment, not just polish
 
@@ -97,4 +98,4 @@ Both paths can work. The honest comparison is about who carries the load.
 
 Choose DIY when in-office presence is essential or you want to own the process end to end. Choose a service when you value speed, want the vetting and replacement risk off your plate, and are comfortable with a dedicated remote EA.
 
-> **Hire without the hiring.** Book a 30-minute discovery call and we'll match you with a dedicated bilingual EA—vetted, trained, and ready for your workflow. [Book a discovery call →](/ea/quiz)
+> **Hire without the hiring.** Book a 30-minute discovery call and we'll match you with a dedicated bilingual EA—vetted, trained, and ready for your workflow. [Book a discovery call →](/#contact)

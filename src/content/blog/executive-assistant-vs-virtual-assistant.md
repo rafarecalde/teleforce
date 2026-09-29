@@ -1,5 +1,6 @@
 ---
 title: "Executive Assistant vs. Virtual Assistant: What's the Real Difference?"
+metaTitle: "Executive Assistant vs Virtual Assistant | Teleforce"
 description: "Executive assistant vs virtual assistant: what each really is, where each fits, what you pay for, and why a cheap VA often costs more in rework."
 excerpt: "One owns outcomes and uses judgment. The other waits for instructions. Here's how to tell which you actually need before you hire the wrong one."
 primaryKeyword: executive assistant vs virtual assistant
@@ -57,7 +58,7 @@ Rates mislead because they price the hour, not the outcome. Here's the real comp
 
 The line that matters is the last one. A cheap VA looks like savings until you count the rework: the tasks that come back wrong, the context you re-explain every week, the turnover that resets your onboarding investment every few months. Those costs don't show up on the invoice—they show up in your calendar and your stress level.
 
-> **Stop paying twice for the same work.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/ea/offer)
+> **Stop paying twice for the same work.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/#contact)
 
 ## Why "Cheap VA" Often Costs More
 
@@ -75,4 +76,4 @@ Pricing is straightforward: **$3,000/mo on a 3-month commitment, or $2,700/mo on
 
 If you're weighing the choice, the question isn't "which is cheaper per hour." It's "which one gives me my time back." When the work needs judgment, the answer is an executive assistant. When you're ready to hire one, here's [how to hire an executive assistant](/blog/how-to-hire-an-executive-assistant).
 
-> **Ready to delegate work that actually stays delegated?** Book a 30-minute discovery call and we'll match you with an EA built for how you work. [Book a discovery call →](/ea/quiz)
+> **Ready to delegate work that actually stays delegated?** Book a 30-minute discovery call and we'll match you with an EA built for how you work. [Book a discovery call →](/#contact)

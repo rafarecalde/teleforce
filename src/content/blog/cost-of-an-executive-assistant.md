@@ -1,5 +1,6 @@
 ---
 title: "What Does an Executive Assistant Cost? The Fully Loaded Numbers"
+metaTitle: "What an Executive Assistant Costs | Teleforce"
 description: "Executive assistant cost goes beyond salary. See the fully loaded numbers for U.S. in-house vs. nearshore EAs, and how to frame the ROI on your time."
 excerpt: "The sticker price is never the real price. Here's the fully loaded math on an executive assistant—and how to judge whether the spend pays for itself."
 primaryKeyword: executive assistant cost
@@ -55,7 +56,7 @@ Put together, a U.S. in-house EA who "costs $75,000" really costs **$95,000 to $
 
 The part-time or agency route looks cheaper than in-house, and it can be—but you often trade away dedication. A shared or pooled assistant does not learn your business the way a full-time person does, and context-switching across several clients caps how much they can own.
 
-> **Delegate to an elite EA without the payroll headache.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock, for one flat monthly rate. [Meet your assistant →](/ea/offer)
+> **Delegate to an elite EA without the payroll headache.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock, for one flat monthly rate. [Meet your assistant →](/#contact)
 
 ## Where Teleforce lands
 
@@ -83,4 +84,4 @@ There is also a ramp period. Any new assistant, in any model, needs a few weeks 
 
 If you are weighing whether to build the role yourself or buy it as a service, read our guide on [how to hire an executive assistant](/blog/how-to-hire-an-executive-assistant), and if location is the sticking point, our case for a [remote executive assistant](/blog/remote-executive-assistant) covers how dedicated remote EAs actually perform against in-office ones.
 
-> **See the real number for your situation.** Book a 30-minute discovery call and we'll map your workload against a dedicated bilingual EA—no obligation. [Book a discovery call →](/ea/quiz)
+> **See the real number for your situation.** Book a 30-minute discovery call and we'll map your workload against a dedicated bilingual EA—no obligation. [Book a discovery call →](/#contact)

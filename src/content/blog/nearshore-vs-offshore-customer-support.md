@@ -7,7 +7,6 @@ category: Nearshore
 readMinutes: 8
 publishDate: 2026-06-27
 updatedDate: 2026-06-27
-featured: true
 related:
   - bilingual-customer-support-us-companies
   - cost-of-in-house-customer-support
@@ -82,3 +81,5 @@ Nearshore is the stronger choice when:
 ## The bottom line
 
 Don't choose on hourly rate alone. Map your real requirements — languages, channels, complexity, how much support shapes your brand — and pick the model that lowers your cost per *happy* customer. And before you compare an outsourced rate to your current setup, make sure you're [costing in-house support honestly](/blog/cost-of-in-house-customer-support). For most U.S. companies with bilingual customers and a brand worth protecting, that's nearshore.
+
+> **Also for executives.** If you are the one still running the calendar and the inbox, the same nearshore bench places a dedicated bilingual executive assistant on your hours. Read about a [nearshore executive assistant](/blog/nearshore-executive-assistant), the [cost of an executive assistant](/blog/cost-of-an-executive-assistant), and a [bilingual virtual executive assistant](/blog/bilingual-virtual-executive-assistant). [Get matched →](/#contact)

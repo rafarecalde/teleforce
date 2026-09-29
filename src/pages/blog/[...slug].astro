@@ -61,6 +61,7 @@ const faqLd = d.faq && d.faq.length
 const jsonLd = faqLd ? [articleLd, faqLd] : articleLd;
 const baseTitle = d.metaTitle ?? d.title;
 const metaTitle = baseTitle.includes('Teleforce') ? baseTitle : `${baseTitle} | Teleforce`;
+const isEa = d.category === 'Virtual Assistance';
 ---
 <BaseLayout title={metaTitle} description={d.description} jsonLd={jsonLd} ogType="article" image={d.image}>
 
@@ -92,18 +93,34 @@ const metaTitle = baseTitle.includes('Teleforce') ? baseTitle : `${baseTitle} | 
       </section>
     )}
 
-    <CtaBox
-      heading="Let's scope your bilingual team"
-      body="Teleforce runs dedicated English/Spanish support on U.S. hours as a 30-year Fortune 500 operator. Tell us your channels and volumes — we'll come back with a staffing plan in two business days."
-      label="Book a call"
-    />
+    {isEa ? (
+      <CtaBox
+        heading="See what a dedicated bilingual EA costs"
+        body="Teleforce matches U.S. executives with a dedicated bilingual executive assistant — English and Spanish, on your hours, employed on a Fortune 500-grade support backbone. Tell us how you work and we'll come back with a fit."
+        label="Get matched"
+      />
+    ) : (
+      <CtaBox
+        heading="Let's scope your bilingual team"
+        body="Teleforce runs dedicated English/Spanish support on U.S. hours as a 30-year Fortune 500 operator. Tell us your channels and volumes — we'll come back with a staffing plan in two business days."
+        label="Book a call"
+      />
+    )}
 
     <div class="rule"></div>
-    <p style="font-size:15px;color:var(--on-paper-mut)">
-      Teleforce provides bilingual (English/Spanish) nearshore customer support for U.S.
-      companies — dedicated agents on U.S. hours, from a 30-year Fortune 500 operator.
-      <a href="/#contact" style="color:var(--ink);font-weight:600">Book a call →</a>
-    </p>
+    {isEa ? (
+      <p style="font-size:15px;color:var(--on-paper-mut)">
+        Teleforce places dedicated bilingual (English/Spanish) executive assistants for U.S.
+        leaders — one person on your hours, on a Fortune 500-grade support backbone.
+        <a href="/#contact" style="color:var(--ink);font-weight:600">Get matched →</a>
+      </p>
+    ) : (
+      <p style="font-size:15px;color:var(--on-paper-mut)">
+        Teleforce provides bilingual (English/Spanish) nearshore customer support for U.S.
+        companies — dedicated agents on U.S. hours, from a 30-year Fortune 500 operator.
+        <a href="/#contact" style="color:var(--ink);font-weight:600">Book a call →</a>
+      </p>
+    )}
   </article>
 
   {related.length > 0 && (

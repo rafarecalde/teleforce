@@ -80,3 +80,5 @@ Keep it in-house when support is a core differentiator you want absolute control
 ## The takeaway
 
 Before you conclude in-house is cheaper, load the cost: benefits, management, tools, recruiting, attrition, and idle capacity. Compare that full figure against a partner's all-in rate. For a lot of growing companies — especially those with spiky volume or bilingual needs — the honest comparison is the moment outsourcing stops looking like a compromise and starts looking like the obvious move.
+
+> **Also for executives.** If you are the one still running the calendar and the inbox, the same nearshore bench places a dedicated bilingual executive assistant on your hours. Read about a [nearshore executive assistant](/blog/nearshore-executive-assistant), the [cost of an executive assistant](/blog/cost-of-an-executive-assistant), and a [bilingual virtual executive assistant](/blog/bilingual-virtual-executive-assistant). [Get matched →](/#contact)

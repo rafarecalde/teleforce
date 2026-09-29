@@ -56,3 +56,5 @@ If you're evaluating bilingual support, pressure-test three things:
 ## The takeaway
 
 Bilingual support has quietly moved from "nice to have" to table stakes for any U.S. company with Spanish-speaking customers. The question isn't whether to offer it — it's whether to offer it as a bolted-on afterthought or as one consistent team. Weigh it against [the real cost of staffing support in-house](/blog/cost-of-in-house-customer-support), and the companies that pick one consistent bilingual team keep customers the others are quietly losing.
+
+> **Also for executives.** If you are the one still running the calendar and the inbox, the same nearshore bench places a dedicated bilingual executive assistant on your hours. Read about a [nearshore executive assistant](/blog/nearshore-executive-assistant), the [cost of an executive assistant](/blog/cost-of-an-executive-assistant), and a [bilingual virtual executive assistant](/blog/bilingual-virtual-executive-assistant). [Get matched →](/#contact)

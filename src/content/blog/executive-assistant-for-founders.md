@@ -1,5 +1,6 @@
 ---
 title: "Executive Assistant for Founders: When Are You Ready to Hire One?"
+metaTitle: "Executive Assistant for Founders | Teleforce"
 description: "An executive assistant for founders isn't a perk—it's leverage. The signs you're ready, the real ROI of your time, and what to hand off first."
 excerpt: "If you're doing admin at 11 p.m. and dropping follow-ups during the day, you don't have a discipline problem. You have a delegation problem. Here's when to fix it."
 primaryKeyword: executive assistant for founders
@@ -49,7 +50,7 @@ Now price your own hour. Not your salary—your value to the business. What's an
 
 Delegating a $17/hour task to yourself at a several-hundred-dollar opportunity cost isn't frugal. It's the most expensive habit in your business. The EA doesn't cost you money—it converts low-value hours into high-value ones.
 
-> **Buy back the hours that matter.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/ea/offer)
+> **Buy back the hours that matter.** Teleforce places dedicated bilingual executive assistants from the top tier of LatAm talent—vetted, trained, and working on your clock. [Meet your assistant →](/#contact)
 
 ## What to Delegate First
 
@@ -82,8 +83,8 @@ If your problem is a one-off overflow, part-time may fit. If your problem is tha
 
 Teleforce places **executive assistants for founders**—dedicated, full-time, bilingual (English/Spanish) career professionals from the top tier of Latin American talent, rigorously vetted, employed and managed by us, and working in your U.S. time zone so you delegate in real time.
 
-Pricing is straightforward: **$3,000/mo on a 3-month commitment, or $2,700/mo on a 12-month commitment.** You can switch 3→12 anytime, and the $300/mo difference is credited to your final month. When you're ready to hire, [how to hire an executive assistant](/blog/how-to-hire-an-executive-assistant) walks through the process—or skip ahead and [book a discovery call](/ea/quiz).
+Pricing is straightforward: **$3,000/mo on a 3-month commitment, or $2,700/mo on a 12-month commitment.** You can switch 3→12 anytime, and the $300/mo difference is credited to your final month. When you're ready to hire, [how to hire an executive assistant](/blog/how-to-hire-an-executive-assistant) walks through the process—or skip ahead and [book a discovery call](/#contact).
 
 The founders who scale aren't the ones who do the most. They're the ones who protect their leverage and delegate the rest. An EA is how you start.
 
-> **Stop being your own assistant.** Book a 30-minute discovery call and we'll match you with an executive assistant built for how you work. [Book a discovery call →](/ea/quiz)
+> **Stop being your own assistant.** Book a 30-minute discovery call and we'll match you with an executive assistant built for how you work. [Book a discovery call →](/#contact)

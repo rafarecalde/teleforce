@@ -133,3 +133,5 @@ If your support model depends on real-time collaboration between your internal t
 The right question isn't whether time zone alignment matters. The question is how much it's currently costing you not to have it—and what it looks like when that drag is gone.
 
 Teleforce delivers bilingual EN/ES support across Latin America, fully aligned to U.S. Eastern Time, backed by 30 years of Fortune 500 operating history behind every seat. Pricing is quote-based — [contact us for a quote](/#contact) or [see how we vet agents →](/blog/how-to-vet-nearshore-support-provider).
+
+> **Also for executives.** If you are the one still running the calendar and the inbox, the same nearshore bench places a dedicated bilingual executive assistant on your hours. Read about a [nearshore executive assistant](/blog/nearshore-executive-assistant), the [cost of an executive assistant](/blog/cost-of-an-executive-assistant), and a [bilingual virtual executive assistant](/blog/bilingual-virtual-executive-assistant). [Get matched →](/#contact)
