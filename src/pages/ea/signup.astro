@@ -42,16 +42,15 @@ const payNote =
 
         <section class="step-card" aria-labelledby="step-terms-title">
           <header class="step-head">
-            <span class="step-num">01</span>
             <div>
-              <h2 id="step-terms-title">Accept Terms & Conditions</h2>
-              <p>Required before you create an account. We’ll email you a copy of the Terms you accept.</p>
+              <h2 id="step-terms-title">1. Terms and Conditions</h2>
             </div>
           </header>
           <label class="agree" for="terms">
             <input id="terms" type="checkbox" name="terms" />
-            <span>I agree to the <a href="/terms" target="_blank" rel="noopener">Teleforce Terms & Conditions</a> effective <span id="terms-version">{termsVersion}</span>.</span>
+            <span>By checking this box I am accepting and agreeing to the <a href="/terms" target="_blank" rel="noopener">terms and conditions</a> and I acknowledge that they contain important provisions establishing my rights and obligations under a binding agreement with Teleforce.</span>
           </label>
+          <span id="terms-version" hidden>{termsVersion}</span>
           <p class="err" id="terms-err"></p>
           <div class="field">
             <label for="signed-name">Full legal name</label>
