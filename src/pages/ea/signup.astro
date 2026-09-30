@@ -1,7 +1,7 @@
 ---
 import termsMarkdown from '../../legal/terms.md?raw';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { EA, EA_PAY_LINE, PHONE, PHONE_HREF } from '../../consts';
+import { EA, PHONE, PHONE_HREF } from '../../consts';
 
 const termsVersionMatch = termsMarkdown.match(/^\*Effective\s+([^*]+?)\s*\*/m);
 const termsVersion = termsVersionMatch?.[1]?.trim() ?? '';
@@ -16,18 +16,15 @@ const payNote =
   'Nothing is charged now. Add a card now, or add one later before kickoff when we follow up. The first month begins at kickoff — when your EA goes live — or 3 business days after you’re matched, whichever comes first.';
 ---
 <BaseLayout
-  title="Complete your signup | Teleforce"
+  title="Terms, Payment Information & Account | Teleforce"
   description="After discovery, accept terms and choose a 3- or 12-month EA plan. A card is optional. Nothing is charged now."
   noindex
 >
   <header class="hero signup-hero">
     <div class="inner">
-      <p class="kicker">After your discovery call</p>
-      <h1 class="disp">Complete your signup.</h1>
-      <p class="lede">
-        Discovery is done. Accept the terms, choose a plan, and create your account.
-        <b>{EA_PAY_LINE}</b>
-      </p>
+      <p class="kicker">Onboarding</p>
+      <h1 class="disp">Terms, Payment Information & Account</h1>
+      <p class="lede">Just a couple more steps so we can reserve your spot and get you placed with your EA.</p>
       <ol class="path">
         <li class="done">Discovery</li>
         <li class="now" aria-current="step">Signup</li>
@@ -585,7 +582,7 @@ const payNote =
     font-size: clamp(36px, 6vw, 58px);
     text-transform: none;
     line-height: 1.02;
-    max-width: 14ch;
+    max-width: 22ch;
     margin: 0;
   }
   .signup-hero .lede { margin-top: 18px; }
