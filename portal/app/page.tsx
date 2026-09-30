@@ -1,6 +1,6 @@
 import Script from 'next/script';
 import { getSession } from '@/lib/auth';
-import { ONBOARDING_CALENDLY_URL } from '@/lib/constants';
+import { EA_PAY_LINE, ONBOARDING_CALENDLY_URL, SUBSCRIPTION_START_COPY } from '@/lib/constants';
 import { addMonthsISO, formatDate } from '@/lib/money';
 import { DEMO, type DemoPlan } from '@/lib/demo';
 import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/plans';
@@ -11,7 +11,6 @@ import SwitchTo12 from './components/SwitchTo12';
 import SeatRequest from './components/SeatRequest';
 import AddEaForm from './components/AddEaForm';
 import BillingInfo from './components/BillingInfo';
-import PaymentBanner from './components/PaymentBanner';
 import LoginForm from './components/LoginForm';
 
 export const dynamic = 'force-dynamic';
@@ -287,15 +286,11 @@ function AccountView({
 
       {!eaName && <p className="ea-match pending">Your assistant: matching in progress</p>}
 
-      {!preview && !hasCard && <PaymentBanner />}
-
       <section className="card">
         <h2>Your plan</h2>
         {!preview && (
           <p className="hint">
-            {hasCard
-              ? 'Your card is on file. Nothing is charged until your EA starts.'
-              : 'No card on file yet. Nothing is charged until your EA starts.'}
+            {EA_PAY_LINE} {SUBSCRIPTION_START_COPY}
           </p>
         )}
         {plans.map((plan) => (

@@ -2,16 +2,27 @@ import Stripe from 'stripe';
 import { HttpError } from './http';
 import { isUniqueError } from './db';
 import { findOrCreateCustomer, formatBrand, getStripe, stripeHttpError } from './stripe';
-import { getUserById, hasCardOnFile, updatePaymentMethod, type User } from './users';
+import { getUserById, updatePaymentMethod, type User } from './users';
 
 /**
- * Signed-in card on file. SetupIntent only — no PaymentIntent, charge, invoice, or subscription.
+ * Signed-in card on file, including a replacement.
+ * SetupIntent only — no PaymentIntent, charge, invoice, or subscription.
  */
 const SOURCE = 'portal-add-card';
 
 function idOf(value: string | { id: string } | null | undefined): string {
   if (!value) return '';
   return typeof value === 'string' ? value : value.id;
+}
+
+async function detachCard(stripe: Stripe, paymentMethodId: string, label: string): Promise<void> {
+  if (!paymentMethodId) return;
+  try {
+    await stripe.paymentMethods.detach(paymentMethodId);
+  } catch (err) {
+    if (err instanceof Stripe.errors.StripeError && err.code === 'resource_missing') return;
+    console.error(label);
+  }
 }
 
 function missingCustomer(err: unknown): boolean {
@@ -143,26 +154,25 @@ export async function saveAccountPaymentMethod(
 
   const current = await getUserById(user.id);
   if (!current) throw new HttpError(401, 'Sign in required.');
-  if (hasCardOnFile(current) && current.defaultPaymentMethodId !== paymentMethodId) {
-    throw new HttpError(409, 'A card is already on file.');
-  }
+  const previousPaymentMethodId = current.defaultPaymentMethodId;
 
   try {
-    const updated = await updatePaymentMethod(current.id, {
-      stripeCustomerId: customerId,
-      defaultPaymentMethodId: paymentMethodId,
-      setupIntentId,
-      cardBrand: brand,
-      cardLast4: last4,
-    });
+    const updated = await updatePaymentMethod(
+      current.id,
+      {
+        stripeCustomerId: customerId,
+        defaultPaymentMethodId: paymentMethodId,
+        setupIntentId,
+        cardBrand: brand,
+        cardLast4: last4,
+      },
+      previousPaymentMethodId,
+    );
     if (updated < 1) {
       const again = await getUserById(current.id);
-      if (again?.defaultPaymentMethodId === paymentMethodId) {
-        // The same card was stored by a concurrent save.
-      } else if (again && hasCardOnFile(again)) {
-        throw new HttpError(409, 'A card is already on file.');
-      } else {
-        throw new HttpError(500, 'Could not save the card. Try again.');
+      if (again?.defaultPaymentMethodId !== paymentMethodId) {
+        await detachCard(stripe, paymentMethodId, 'portal detach unused card');
+        throw new HttpError(409, 'The payment method changed. Refresh and try again.');
       }
     }
   } catch (err) {
@@ -181,18 +191,9 @@ export async function saveAccountPaymentMethod(
     throw stripeHttpError(err, 'portal default payment method');
   }
 
-  return { brand, last4 };
-}
-
-/** Idempotent. Used when the card is already stored and Stripe’s default still needs to match. */
-export async function ensureDefaultCard(user: User): Promise<void> {
-  if (!hasCardOnFile(user) || !user.stripeCustomerId) return;
-  try {
-    const stripe = getStripe();
-    await stripe.customers.update(user.stripeCustomerId, {
-      invoice_settings: { default_payment_method: user.defaultPaymentMethodId },
-    });
-  } catch (err) {
-    throw stripeHttpError(err, 'portal ensure default card');
+  if (previousPaymentMethodId !== paymentMethodId) {
+    await detachCard(stripe, previousPaymentMethodId, 'portal detach replaced card');
   }
+
+  return { brand, last4 };
 }

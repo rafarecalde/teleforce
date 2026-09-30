@@ -146,6 +146,7 @@ export async function updatePaymentMethod(
     cardBrand: string;
     cardLast4: string;
   },
+  previousPaymentMethodId: string,
 ): Promise<number> {
   const client = await db();
   const result = await client.execute({
@@ -156,11 +157,7 @@ export async function updatePaymentMethod(
           card_brand = ?,
           card_last4 = ?
       WHERE id = ?
-        AND (
-          default_payment_method_id IS NULL
-          OR default_payment_method_id = ''
-          OR default_payment_method_id = ?
-        )`,
+        AND IFNULL(default_payment_method_id, '') = ?`,
     args: [
       fields.stripeCustomerId,
       fields.defaultPaymentMethodId,
@@ -168,7 +165,7 @@ export async function updatePaymentMethod(
       fields.cardBrand,
       fields.cardLast4,
       id,
-      fields.defaultPaymentMethodId,
+      previousPaymentMethodId,
     ],
   });
   return Number(result.rowsAffected);
