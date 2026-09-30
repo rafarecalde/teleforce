@@ -126,10 +126,11 @@ an httpOnly session cookie (`jose` JWT, `AUTH_SECRET`).
 The sign-in screen does not show onboarding or an assistant. After sign-in the
 dashboard follows the account row:
 
-1. Before `onboarding_completed_at` is set, a **Schedule your onboarding call**
-   card embeds Calendly (`https://calendly.com/tryteleforce-sales`, the URL the
-   marketing site used, via Calendly’s inline widget). Under that card the page
-   reads **Your assistant: matching in progress**.
+1. Before `onboarding_completed_at` is set, a collapsed **Schedule your onboarding
+   call** card stays on the dashboard with a **Schedule** label. Opening it loads
+   Calendly (`https://calendly.com/tryteleforce-sales`, the URL the marketing site
+   used, via Calendly’s inline widget). The widget script is not requested until
+   then. Under that card the page reads **Your assistant: matching in progress**.
 2. After ops sets `onboarding_completed_at`, the Calendly card is gone.
 3. After ops sets `matched_ea_name` to the assistant’s first and last name, the
    top of the dashboard reads **Your assistant is First Last**.
@@ -167,7 +168,8 @@ completion screen uses the same Calendly URL.
 data only. It does not create a session and does not read real accounts. Leave
 it unset in production.
 
-A signed-in **Add another EA** request is stored in `ea_requests` (focus, tasks,
+**Add another EA** is a collapsed card. Opening it shows the request form. A
+signed-in request is stored in `ea_requests` (focus, tasks,
 bilingual need, start timing, notes, and `schedule = full-time`). `POST
 /api/account/ea-request` requires the session cookie. It does not create a
 Stripe PaymentIntent, invoice, subscription, or charge. Ops can bill the same

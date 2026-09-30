@@ -1,6 +1,5 @@
-import Script from 'next/script';
 import { getSession } from '@/lib/auth';
-import { EA_PAY_LINE, ONBOARDING_CALENDLY_URL, SUBSCRIPTION_START_COPY } from '@/lib/constants';
+import { EA_PAY_LINE, SUBSCRIPTION_START_COPY } from '@/lib/constants';
 import { addMonthsISO, formatDate } from '@/lib/money';
 import { DEMO, type DemoPlan } from '@/lib/demo';
 import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/plans';
@@ -11,7 +10,9 @@ import SwitchTo12 from './components/SwitchTo12';
 import SeatRequest from './components/SeatRequest';
 import AddEaForm from './components/AddEaForm';
 import BillingInfo from './components/BillingInfo';
+import CollapseCard from './components/CollapseCard';
 import LoginForm from './components/LoginForm';
+import OnboardingScheduler from './components/OnboardingScheduler';
 
 export const dynamic = 'force-dynamic';
 
@@ -269,19 +270,9 @@ function AccountView({
       <p className="page-sub">{preview ? `Previewing ${email}` : `Signed in as ${email}`}</p>
 
       {!onboardingComplete && (
-        <section className="card" id="onboarding-call">
-          <h2>Schedule your onboarding call</h2>
-          <p className="hint">
-            About 60 minutes, with a prep sheet beforehand. Nothing is charged on this call.
-          </p>
-          <div className="calendly-inline-widget" data-url={ONBOARDING_CALENDLY_URL} />
-          <p className="muted" style={{ fontSize: 13.5, margin: '12px 0 0' }}>
-            <a href={ONBOARDING_CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-              Open the scheduler
-            </a>
-          </p>
-          <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
-        </section>
+        <CollapseCard id="onboarding-call" title="Schedule your onboarding call" label="Schedule">
+          <OnboardingScheduler />
+        </CollapseCard>
       )}
 
       {!eaName && <p className="ea-match pending">Your assistant: matching in progress</p>}
@@ -318,15 +309,14 @@ function AccountView({
         )}
       </section>
 
-      <section className="card" id="add-ea">
-        <h2>Add another EA</h2>
+      <CollapseCard id="add-ea" title="Add another EA">
         <p className="hint">
           Request another dedicated executive assistant for your team. Each seat is full-time, on
           your existing agreement. We use this to match someone, then follow up. Nothing is charged
           until that EA starts.
         </p>
         <AddEaForm persist={persistBilling} />
-      </section>
+      </CollapseCard>
 
       <section className="card" id="billing">
         <h2>Billing information</h2>
