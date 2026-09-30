@@ -306,11 +306,10 @@ function AccountView({
       <section className="aside" aria-labelledby="other-coverage">
         <h2 id="other-coverage">Other coverage</h2>
         <p className="aside-copy">
-          Customer service and SDR coverage can be scoped separately, whenever you want it.
+          Customer service coverage can be scoped separately, whenever you want it.
         </p>
         <div className="aside-list">
           <SeatRequest label="Customer service" />
-          <SeatRequest label="SDR" />
         </div>
       </section>
     </Shell>

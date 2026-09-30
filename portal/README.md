@@ -133,8 +133,8 @@ Stripe PaymentIntent, invoice, subscription, or charge. Ops can bill the same
 Stripe customer at kickoff. The sales preview (`PREVIEW_MODE=1`) still shows a
 local success state and does not write a row.
 
-Customer service and SDR stay as quiet notes at the bottom of the dashboard.
-They are not stored. The 12-month switch on a real account is a note under the
+Customer service stays as a quiet note at the bottom of the dashboard.
+It is not stored. The 12-month switch on a real account is a note under the
 plan, not a contract change.
 
 ## Run locally
