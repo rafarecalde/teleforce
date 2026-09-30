@@ -367,9 +367,9 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
       'I’m on the East Coast — nearshore Teleforce beats the offshore setups I tried. Same-day hours, not overnight lag.',
-    name: 'Eduardo Dávila',
+    name: 'Jessica Simon',
     company: 'Bioceramics',
-    img: '/brand/customers/davila.jpg',
-    avatar: '/brand/customers/davila-avatar.jpg',
+    img: '/brand/customers/simon.jpg',
+    avatar: '/brand/customers/simon-avatar.jpg',
   },
 ];
