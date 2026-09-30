@@ -44,7 +44,6 @@ export const LOGOS = [
 export const NAV_LINKS = [
   { href: '/about', label: 'About' },
   { href: '/#pricing', label: 'Pricing' },
-  { href: '/blog', label: 'Signal' },
 ] as const;
 
 export const FOOTER_LINKS = [
