@@ -26,8 +26,7 @@ const payNote =
       <h1 class="disp">Complete your signup.</h1>
       <p class="lede">
         Discovery is done. Accept the terms, choose a plan, and create your account.
-        <b>{EA_PAY_LINE}</b> A card is optional — nothing is charged now. Add one now, or add it later before kickoff when we follow up.
-        Next is onboarding — one call, about 60 minutes, with a prep sheet beforehand.
+        <b>{EA_PAY_LINE}</b>
       </p>
       <ol class="path">
         <li class="done">Discovery</li>
@@ -96,7 +95,6 @@ const payNote =
                 <span class="plan-sub">Save ${save}/mo on a 12-month commitment</span>
               </label>
             </div>
-            <p class="plan-switch">Start on the 3-month plan. Switch to 12 when you’re ready and save ${save}/mo. You can switch as soon as you’re ready, including in month one.</p>
           </fieldset>
 
           <div class="pay-lock">
@@ -667,9 +665,11 @@ const payNote =
   .agree a:hover { text-decoration-color: var(--amber); }
   .esign {
     margin-top: 8px;
-    font-size: 13px;
-    line-height: 1.5;
-    color: var(--on-paper-mut);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+    color: var(--sage-deep);
   }
 
   fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
@@ -744,7 +744,6 @@ const payNote =
     margin-left: 4px;
   }
   .plan-sub { font-size: 13px; color: var(--on-paper-mut); line-height: 1.4; }
-  .plan-switch { margin-top: 12px; font-size: 14px; color: var(--on-paper-mut); line-height: 1.5; }
 
   .pay-choice { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
   .choice {
