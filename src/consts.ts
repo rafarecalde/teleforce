@@ -48,7 +48,6 @@ export const LOGOS = [
 export const NAV_LINKS = [
   { href: '/about', label: 'About' },
   { href: '/#pricing', label: 'Pricing' },
-  { href: '/blog', label: 'Signal' },
 ] as const;
 
 export const FOOTER_LINKS = [
@@ -371,9 +370,9 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
       'I’m on the East Coast — nearshore Teleforce beats the offshore setups I tried. Same-day hours, not overnight lag.',
-    name: 'Eduardo Dávila',
+    name: 'Jessica Simon',
     company: 'Bioceramics',
-    img: '/brand/customers/davila.jpg',
-    avatar: '/brand/customers/davila-avatar.jpg',
+    img: '/brand/customers/simon.jpg',
+    avatar: '/brand/customers/simon-avatar.jpg',
   },
 ];

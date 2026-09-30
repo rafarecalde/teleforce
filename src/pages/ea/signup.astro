@@ -1,7 +1,7 @@
 ---
 import termsMarkdown from '../../legal/terms.md?raw';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { EA, EA_PAY_LINE, ONBOARDING_CALENDLY_URL, PHONE, PHONE_HREF } from '../../consts';
+import { EA, ONBOARDING_CALENDLY_URL, PHONE, PHONE_HREF } from '../../consts';
 
 const termsVersionMatch = termsMarkdown.match(/^\*Effective\s+([^*]+?)\s*\*/m);
 const termsVersion = termsVersionMatch?.[1]?.trim() ?? '';
@@ -12,25 +12,18 @@ if (!termsVersion) {
 const price3 = EA.price3mo.toLocaleString('en-US');
 const price12 = EA.price12mo.toLocaleString('en-US');
 const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
-const payNote =
-  'Nothing is charged now. Add a card now, or add one later before kickoff when we follow up. The first month begins at kickoff — when your EA goes live — or 3 business days after you’re matched, whichever comes first.';
 ---
 <BaseLayout
-  title="Complete your signup | Teleforce"
-  description="After discovery, accept terms and choose a 3- or 12-month EA plan. A card is optional. Nothing is charged now."
+  title="Terms, Payment Information and Account | Teleforce"
+  description="After discovery, accept terms and choose a 3- or 12-month EA plan. Payment information is required. Nothing is charged at this step."
   noindex
 >
   <header class="hero signup-hero">
     <div class="inner">
-      <p class="kicker">After your discovery call</p>
-      <h1 class="disp">Complete your signup.</h1>
-      <p class="lede">
-        Discovery is done. Accept the terms, choose a plan, and create your account.
-        <b>{EA_PAY_LINE}</b> A card is optional — nothing is charged now. Add one now, or add it later before kickoff when we follow up.
-        Next is onboarding — one call, about 60 minutes, with a prep sheet beforehand.
-      </p>
+      <p class="kicker">Signup</p>
+      <h1 class="disp">Terms, Payment Information and Account</h1>
+      <p class="lede">Just a couple more steps so we can reserve your spot and get you placed with your EA.</p>
       <ol class="path">
-        <li class="done">Discovery</li>
         <li class="now" aria-current="step">Signup</li>
         <li>Onboarding</li>
         <li>Get matched</li>
@@ -46,21 +39,20 @@ const payNote =
 
         <section class="step-card" aria-labelledby="step-terms-title">
           <header class="step-head">
-            <span class="step-num">01</span>
             <div>
-              <h2 id="step-terms-title">Accept Terms & Conditions</h2>
-              <p>Required before you create an account. We’ll email you a copy of the Terms you accept.</p>
+              <h2 id="step-terms-title">1. Terms and Conditions</h2>
             </div>
           </header>
           <label class="agree" for="terms">
             <input id="terms" type="checkbox" name="terms" />
-            <span>I agree to the <a href="/terms" target="_blank" rel="noopener">Teleforce Terms & Conditions</a> effective <span id="terms-version">{termsVersion}</span>.</span>
+            <span>By checking this box I am accepting and agreeing to the <a href="/terms" target="_blank" rel="noopener">terms and conditions</a> and I acknowledge that they contain important provisions establishing my rights and obligations under a binding agreement with Teleforce.</span>
           </label>
+          <span id="terms-version" hidden>{termsVersion}</span>
           <p class="err" id="terms-err"></p>
           <div class="field">
             <label for="signed-name">Full legal name</label>
             <input id="signed-name" type="text" name="signed-name" autocomplete="name" spellcheck="false" placeholder="Type your full legal name" />
-            <p class="esign" id="esign-note">By typing your full legal name, you agree this is your electronic signature and that it has the same effect as a handwritten signature under the U.S. ESIGN Act and the Uniform Electronic Transactions Act (UETA).</p>
+            <p class="esign" id="esign-note">Typing your full legal name is your electronic signature.</p>
             <p class="err" id="signed-name-err"></p>
           </div>
         </section>
@@ -70,7 +62,6 @@ const payNote =
             <span class="step-num">02</span>
             <div>
               <h2 id="step-plan-title">Choose your plan</h2>
-              <p>Pick a 3-month or 12-month commitment. Nothing is charged now. A card is optional.</p>
             </div>
           </header>
 
@@ -96,34 +87,16 @@ const payNote =
                 <span class="plan-sub">Save ${save}/mo on a 12-month commitment</span>
               </label>
             </div>
-            <p class="plan-switch">Start on the 3-month plan. Switch to 12 when you’re ready and save ${save}/mo. You can switch as soon as you’re ready, including in month one.</p>
           </fieldset>
 
-          <div class="pay-lock">
-            <p>{payNote}</p>
+          <div class="pay-block">
+            <h3 class="pay-heading">Provide your payment information</h3>
+            <p class="pay-copy">You won’t be charged at this step. Your subscription starts when your EA goes live, or 3 business days after you’ve been matched and met your EA — whichever comes first.</p>
           </div>
 
-          <fieldset class="pay-choice">
-            <legend>Payment method</legend>
-            <label class="choice">
-              <input type="radio" name="card-choice" value="later" checked />
-              <span>
-                <strong>Add a card later</strong>
-                <span class="choice-sub">No charge now. Add a card in the portal before kickoff when we follow up.</span>
-              </span>
-            </label>
-            <label class="choice">
-              <input type="radio" name="card-choice" value="now" />
-              <span>
-                <strong>Add a card now</strong>
-                <span class="choice-sub">Saved with Stripe. Nothing is charged today.</span>
-              </span>
-            </label>
-          </fieldset>
-
-          <div id="card-fields" hidden>
+          <div id="card-fields">
             <p class="fine-print" id="pay-note">
-              Card details are entered in Stripe’s secure field and are not stored on this site. Nothing is charged today.
+              Card details go through Stripe and aren’t stored on this site.
             </p>
 
             <div class="field">
@@ -198,15 +171,11 @@ const payNote =
         <p class="done-plan" id="done-plan"></p>
         <p class="support" id="done-account"></p>
         <ol class="path path-paper">
-          <li class="done">Discovery</li>
           <li class="done">Signup</li>
           <li class="now">Onboarding</li>
           <li>Get matched</li>
           <li>Kickoff</li>
         </ol>
-        <div class="pay-lock">
-          <p>{payNote}</p>
-        </div>
         <p class="support">
           After the onboarding call, your partnership manager owns matching. Once your EA is live, you run the day-to-day together, with full back-end support behind the seat.
         </p>
@@ -318,24 +287,6 @@ const payNote =
   let cardReady = false;
   let cardInitStarted = false;
 
-  function wantsCard() {
-    const selected = form?.querySelector('input[name="card-choice"]:checked');
-    return selected instanceof HTMLInputElement && selected.value === 'now';
-  }
-
-  function syncCardFields() {
-    const box = document.getElementById('card-fields');
-    if (box) box.hidden = !wantsCard();
-  }
-
-  syncCardFields();
-  form?.addEventListener('change', (event) => {
-    const target = event.target;
-    if (!(target instanceof HTMLInputElement) || target.name !== 'card-choice') return;
-    syncCardFields();
-    if (wantsCard()) initCard();
-  });
-
   function setErr(id, message) {
     const err = document.getElementById(`${id}-err`);
     const input = document.getElementById(id);
@@ -407,7 +358,7 @@ const payNote =
       });
       card.on('ready', () => {
         cardReady = true;
-        if (cardStatus) cardStatus.textContent = 'Secured by Stripe. Nothing is charged today.';
+        if (cardStatus) cardStatus.textContent = 'Secured by Stripe.';
       });
     } catch (err) {
       cardInitStarted = false;
@@ -437,6 +388,7 @@ const payNote =
   let running = false;
 
   loadTermsVersion();
+  initCard();
 
   async function finish(event) {
     event?.preventDefault();
@@ -461,19 +413,13 @@ const payNote =
     else if (!signedDirty && !signedConfirmed) signedError = 'Confirm your full legal name in the signature field.';
     mark('signed-name', signedError);
 
-    const addingCard = wantsCard();
     const cardName = fields.cardName instanceof HTMLInputElement ? fields.cardName.value.trim() : '';
-    if (addingCard) {
-      mark('card-name', cardName.length >= 2 ? '' : 'Enter the name on the card.');
-      if (!cardReady || !card) {
-        mark('card-element', 'The secure card field isn’t ready yet. You can add a card later instead.');
-      } else if (!cardComplete || cardEmpty) {
-        mark('card-element', 'Enter the card number, expiry, CVC, and ZIP.');
-      } else {
-        mark('card-element', '');
-      }
+    mark('card-name', cardName.length >= 2 ? '' : 'Enter the name on the card.');
+    if (!cardReady || !card) {
+      mark('card-element', 'The secure card field isn’t ready yet. Wait a moment and try again.');
+    } else if (!cardComplete || cardEmpty) {
+      mark('card-element', 'Enter the card number, expiry, CVC, and ZIP.');
     } else {
-      mark('card-name', '');
       mark('card-element', '');
     }
 
@@ -508,7 +454,7 @@ const payNote =
 
     if (submit instanceof HTMLButtonElement) {
       submit.disabled = true;
-      submit.textContent = addingCard ? 'Saving card…' : 'Creating account…';
+      submit.textContent = 'Saving card…';
     }
 
     try {
@@ -523,25 +469,23 @@ const payNote =
         termsVersion,
       };
 
-      if (addingCard) {
-        const setup = await postJson('/api/signup/setup-intent', {
-          email,
-          fullName: name,
-          plan,
-        });
-        const confirmed = await stripe.confirmCardSetup(setup.clientSecret, {
-          payment_method: {
-            card,
-            billing_details: { name: cardName, email },
-          },
-        });
-        if (confirmed.error) {
-          throw new Error(confirmed.error.message || 'The card was not saved.');
-        }
-        account.setupIntentId = confirmed.setupIntent && confirmed.setupIntent.id;
-        account.nonce = setup.nonce;
-        if (submit instanceof HTMLButtonElement) submit.textContent = 'Creating account…';
+      const setup = await postJson('/api/signup/setup-intent', {
+        email,
+        fullName: name,
+        plan,
+      });
+      const confirmed = await stripe.confirmCardSetup(setup.clientSecret, {
+        payment_method: {
+          card,
+          billing_details: { name: cardName, email },
+        },
+      });
+      if (confirmed.error) {
+        throw new Error(confirmed.error.message || 'The card was not saved.');
       }
+      account.setupIntentId = confirmed.setupIntent && confirmed.setupIntent.id;
+      account.nonce = setup.nonce;
+      if (submit instanceof HTMLButtonElement) submit.textContent = 'Creating account…';
 
       await postJson('/api/signup/complete', account);
 
@@ -549,9 +493,7 @@ const payNote =
       if (planLine) planLine.textContent = `${planLabel} plan · ${planPrice}`;
       const accountLine = document.getElementById('done-account');
       if (accountLine) {
-        accountLine.textContent = addingCard
-          ? `Account created for ${email}. Your card is on file. Nothing was charged.`
-          : `Account created for ${email}. No card on file yet. Nothing was charged. Add a payment method before kickoff — we’ll follow up.`;
+        accountLine.textContent = `Account created for ${email}. Your card is on file. Nothing was charged.`;
       }
 
       ['card-name', 'password', 'password-2'].forEach((id) => {
@@ -636,10 +578,10 @@ const payNote =
 <style>
   .signup-hero { padding: 52px 0 40px; }
   .signup-hero h1.disp {
-    font-size: clamp(36px, 6vw, 58px);
+    font-size: clamp(30px, 4.8vw, 46px);
     text-transform: none;
     line-height: 1.02;
-    max-width: 14ch;
+    max-width: 22ch;
     margin: 0;
   }
   .signup-hero .lede { margin-top: 18px; }
@@ -719,9 +661,11 @@ const payNote =
   .agree a:hover { text-decoration-color: var(--amber); }
   .esign {
     margin-top: 8px;
-    font-size: 13px;
-    line-height: 1.5;
-    color: var(--on-paper-mut);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+    color: var(--sage-deep);
   }
 
   fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
@@ -796,41 +740,23 @@ const payNote =
     margin-left: 4px;
   }
   .plan-sub { font-size: 13px; color: var(--on-paper-mut); line-height: 1.4; }
-  .plan-switch { margin-top: 12px; font-size: 14px; color: var(--on-paper-mut); line-height: 1.5; }
 
-  .pay-choice { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
-  .choice {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    border: 1px solid var(--line-paper);
-    border-radius: 14px;
-    padding: 14px 16px;
-    background: #fff;
-    cursor: pointer;
+  .pay-block { margin-top: 22px; }
+  .pay-heading {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 0 0 8px;
   }
-  .choice:has(input:checked) {
-    border-color: var(--ink);
-    box-shadow: 0 0 0 1px var(--ink);
+  .pay-copy {
+    margin: 0;
+    font-size: 15px;
+    color: var(--on-paper);
+    line-height: 1.55;
   }
-  .choice:has(input:focus-visible) { outline: 2px solid var(--amber); outline-offset: 2px; }
-  .choice input {
-    width: 16px;
-    height: 16px;
-    margin-top: 3px;
-    accent-color: var(--amber);
-    flex-shrink: 0;
-  }
-  .choice strong { display: block; font-size: 15px; color: var(--ink); }
-  .choice-sub { display: block; margin-top: 4px; font-size: 13px; color: var(--on-paper-mut); line-height: 1.45; }
-
-  .pay-lock {
-    margin-top: 16px;
-    background: var(--paper-2);
-    border-radius: 12px;
-    padding: 14px 16px;
-  }
-  .pay-lock p { font-size: 15px; color: var(--on-paper); line-height: 1.55; }
 
   .fine-print {
     margin-top: 16px;
