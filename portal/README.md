@@ -122,29 +122,45 @@ Signup’s “Add a card later” and “Add a card now” choices are unchanged
 `POST /api/auth/login` checks email + password against the account row and sets
 an httpOnly session cookie (`jose` JWT, `AUTH_SECRET`).
 
-The sign-in screen does not show a matched EA. After sign-in, the top of the
-dashboard reads **Your EA: First Last** when `users.matched_ea_name` is set.
-Until then it reads **Matching in progress**. The column is added on startup
-(`ALTER TABLE` only when it is missing). New accounts leave it null.
+The sign-in screen does not show onboarding or an assistant. After sign-in the
+dashboard follows the account row:
 
-Set or clear the name in Turso. Use the client’s work email. The value is the
-EA’s first and last name, shown only to that signed-in client.
+1. Before `onboarding_completed_at` is set, a **Schedule your onboarding call**
+   card embeds Calendly (`https://calendly.com/tryteleforce-sales`, the URL the
+   marketing site used, via Calendly’s inline widget). Under that card the page
+   reads **Your assistant: matching in progress**.
+2. After ops sets `onboarding_completed_at`, the Calendly card is gone.
+3. After ops sets `matched_ea_name` to the assistant’s first and last name, the
+   top of the dashboard reads **Your assistant is First Last**.
+
+Both columns are nullable and added on startup (`ALTER TABLE` only when the
+column is missing). New accounts leave them null. There is no admin route.
+Ops sets them in Turso with the client’s work email. The Terms email is
+unchanged; the scheduling link is not sent automatically.
 
 ```bash
 turso db shell <database-name>
 ```
 
 ```sql
+-- Hide the scheduler after the onboarding call:
+UPDATE users
+SET onboarding_completed_at = strftime('%Y-%m-%dT%H:%M:%SZ', 'now')
+WHERE email = 'client@company.com';
+
+-- Assign the assistant (first and last name):
 UPDATE users
 SET matched_ea_name = 'First Last'
 WHERE email = 'client@company.com';
 
--- Back to the unmatched state:
+-- Undo either one:
+UPDATE users SET onboarding_completed_at = NULL WHERE email = 'client@company.com';
 UPDATE users SET matched_ea_name = NULL WHERE email = 'client@company.com';
 ```
 
 Locally, with no `TURSO_DATABASE_URL`, the same statements run against
-`portal/data/teleforce.db` (for example with the `sqlite3` CLI).
+`portal/data/teleforce.db` (for example with the `sqlite3` CLI). The signup
+completion screen uses the same Calendly URL.
 
 `PREVIEW_MODE=1` keeps the sales-call link (`?company=&name=&email=`) as sample
 data only. It does not create a session and does not read real accounts. Leave

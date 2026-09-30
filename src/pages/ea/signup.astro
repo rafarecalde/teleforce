@@ -1,7 +1,7 @@
 ---
 import termsMarkdown from '../../legal/terms.md?raw';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { EA, EA_PAY_LINE, PHONE, PHONE_HREF } from '../../consts';
+import { EA, EA_PAY_LINE, ONBOARDING_CALENDLY_URL, PHONE, PHONE_HREF } from '../../consts';
 
 const termsVersionMatch = termsMarkdown.match(/^\*Effective\s+([^*]+?)\s*\*/m);
 const termsVersion = termsVersionMatch?.[1]?.trim() ?? '';
@@ -188,9 +188,13 @@ const payNote =
         <p class="step-kicker">Signup complete</p>
         <h2 class="disp">You’re set for onboarding.</h2>
         <p class="done-lead">
-          Next is your onboarding call — about 60 minutes. You’ll get a prep sheet beforehand.
-          There’s no booking calendar on this page. Sign in to the client portal with the email and password you just chose.
+          Next: schedule your onboarding call. About 60 minutes, with a prep sheet beforehand.
+          Sign in to the client portal with the email and password you just chose.
         </p>
+        <p class="done-next">
+          <a class="btn btn-amber" href={ONBOARDING_CALENDLY_URL} target="_blank" rel="noopener">Schedule your onboarding call</a>
+        </p>
+        <div id="onboarding-calendly" class="calendly-inline-widget" data-url={ONBOARDING_CALENDLY_URL}></div>
         <p class="done-plan" id="done-plan"></p>
         <p class="support" id="done-account"></p>
         <ol class="path path-paper">
@@ -559,6 +563,7 @@ const payNote =
       form.hidden = true;
       if (done) {
         done.hidden = false;
+        mountOnboardingCalendly();
         done.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     } catch (err) {
@@ -588,6 +593,31 @@ const payNote =
     event.preventDefault();
     finish(event);
   });
+
+  function mountOnboardingCalendly() {
+    const parent = document.getElementById('onboarding-calendly');
+    if (!(parent instanceof HTMLElement) || parent.dataset.ready === '1') return;
+    const url = parent.dataset.url || '';
+    if (!url) return;
+    const start = () => {
+      const host = /** @type {any} */ (window);
+      if (!host.Calendly || typeof host.Calendly.initInlineWidget !== 'function') return false;
+      host.Calendly.initInlineWidget({ url, parentElement: parent });
+      parent.dataset.ready = '1';
+      return true;
+    };
+    if (start()) return;
+    const existing = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+    if (existing) {
+      existing.addEventListener('load', () => start());
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    script.onload = () => start();
+    document.head.appendChild(script);
+  }
 
   form?.addEventListener('click', (event) => {
     const target = event.target;
@@ -962,6 +992,14 @@ const payNote =
   .path-paper li.now { color: var(--ink); }
   .path-paper li:not(:last-child)::after { color: var(--sage); }
   .support { margin-top: 16px; }
+  .done-next { margin-top: 16px; }
+  .done-next .btn { text-align: center; }
+  #onboarding-calendly {
+    width: 100%;
+    min-width: 0;
+    height: 700px;
+    margin-top: 16px;
+  }
   .done-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
   .btn-quiet {
     background: transparent;

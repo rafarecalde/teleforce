@@ -92,6 +92,17 @@ main { padding: 26px 0 60px; }
   font-size: 16px;
   letter-spacing: 0;
   color: var(--on-paper-mut);
+  margin: 0 0 22px;
+}
+.calendly-inline-widget {
+  width: 100%;
+  min-width: 0;
+  height: 700px;
+  margin-top: 8px;
+}
+@media (max-width: 640px) {
+  .calendly-inline-widget { height: 720px; }
+  .ea-match { font-size: 22px; }
 }
 
 /* sections */

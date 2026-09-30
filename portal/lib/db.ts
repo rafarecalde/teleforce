@@ -18,6 +18,7 @@ const USER_TABLE = `
   billing_contact TEXT NOT NULL DEFAULT '',
   billing_email TEXT NOT NULL DEFAULT '',
   billing_address TEXT NOT NULL DEFAULT '',
+  onboarding_completed_at TEXT,
   matched_ea_name TEXT,
   created_at TEXT NOT NULL
 `;
@@ -124,12 +125,19 @@ async function setupIntentRequired(current: Client): Promise<boolean> {
   return Number(column.notnull) === 1;
 }
 
-/** Existing databases predate matched_ea_name. New databases get it from USER_TABLE. */
-async function migrateMatchedEaName(current: Client): Promise<void> {
+/**
+ * Existing databases predate these columns. New databases get them from USER_TABLE.
+ * Each ALTER runs only when that column is missing.
+ */
+async function migrateAccountLifecycle(current: Client): Promise<void> {
   const result = await current.execute('PRAGMA table_info(users)');
-  const exists = result.rows.some((row) => String(row.name) === 'matched_ea_name');
-  if (exists) return;
-  await current.execute('ALTER TABLE users ADD COLUMN matched_ea_name TEXT');
+  const names = new Set(result.rows.map((row) => String(row.name)));
+  if (!names.has('onboarding_completed_at')) {
+    await current.execute('ALTER TABLE users ADD COLUMN onboarding_completed_at TEXT');
+  }
+  if (!names.has('matched_ea_name')) {
+    await current.execute('ALTER TABLE users ADD COLUMN matched_ea_name TEXT');
+  }
 }
 
 /**
@@ -162,7 +170,7 @@ export async function db(): Promise<Client> {
       .then(() => current.execute(TERMS_ACCEPTANCES_SCHEMA))
       .then(() => current.execute(TERMS_ACCEPTANCES_INDEX))
       .then(() => migratePaymentOptional(current))
-      .then(() => migrateMatchedEaName(current))
+      .then(() => migrateAccountLifecycle(current))
       .then(
         () => undefined,
         (err) => {

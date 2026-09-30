@@ -1,9 +1,11 @@
+import Script from 'next/script';
 import { getSession } from '@/lib/auth';
+import { ONBOARDING_CALENDLY_URL } from '@/lib/constants';
 import { addMonthsISO, formatDate } from '@/lib/money';
 import { DEMO, type DemoPlan } from '@/lib/demo';
 import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/plans';
 import { retrieveCard } from '@/lib/stripe';
-import { displayMatchedEa, getUserById, hasCardOnFile, type User } from '@/lib/users';
+import { displayMatchedEa, getUserById, hasCardOnFile, onboardingIsComplete, type User } from '@/lib/users';
 import PlanCard from './components/PlanCard';
 import SwitchTo12 from './components/SwitchTo12';
 import SeatRequest from './components/SeatRequest';
@@ -146,6 +148,7 @@ export default async function Page({
         company={company}
         plans={DEMO.plans}
         matchedEaName={DEMO.plans[0]?.eaName || ''}
+        onboardingComplete
         billing={{
           contactName: name || DEMO.billing.contactName,
           company: company || DEMO.billing.company,
@@ -199,6 +202,7 @@ export default async function Page({
         company={user.company}
         plans={[accountPlan(user)]}
         matchedEaName={user.matchedEaName}
+        onboardingComplete={onboardingIsComplete(user.onboardingCompletedAt)}
         hasCard={hasCard}
         billing={{
           contactName: user.billingContact,
@@ -229,6 +233,7 @@ function AccountView({
   company,
   plans,
   matchedEaName = '',
+  onboardingComplete = false,
   billing,
   hasCard = true,
   persistBilling = false,
@@ -238,8 +243,10 @@ function AccountView({
   displayName: string;
   company?: string;
   plans: DemoPlan[];
-  /** Signed-in accounts only. Empty until ops records the match. */
+  /** Signed-in accounts only. Empty until ops assigns the assistant. */
   matchedEaName?: string;
+  /** Hides the scheduler once ops marks the onboarding call complete. */
+  onboardingComplete?: boolean;
   billing: {
     contactName: string;
     company: string;
@@ -259,10 +266,26 @@ function AccountView({
     <Shell signedIn={!preview} company={company} preview={preview}>
       {preview && <p className="page-sub">Sales preview with sample data. This is not a signed-in account.</p>}
       <h1 className="page-title display">Welcome back, {firstName(displayName)}.</h1>
-      <p className={eaName ? 'ea-match' : 'ea-match pending'} role="status">
-        {eaName ? `Your EA: ${eaName}` : 'Matching in progress'}
-      </p>
+      {eaName && <p className="ea-match">Your assistant is {eaName}</p>}
       <p className="page-sub">{preview ? `Previewing ${email}` : `Signed in as ${email}`}</p>
+
+      {!onboardingComplete && (
+        <section className="card" id="onboarding-call">
+          <h2>Schedule your onboarding call</h2>
+          <p className="hint">
+            About 60 minutes, with a prep sheet beforehand. Nothing is charged on this call.
+          </p>
+          <div className="calendly-inline-widget" data-url={ONBOARDING_CALENDLY_URL} />
+          <p className="muted" style={{ fontSize: 13.5, margin: '12px 0 0' }}>
+            <a href={ONBOARDING_CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+              Open the scheduler
+            </a>
+          </p>
+          <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
+        </section>
+      )}
+
+      {!eaName && <p className="ea-match pending">Your assistant: matching in progress</p>}
 
       {!preview && !hasCard && <PaymentBanner />}
 

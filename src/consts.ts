@@ -27,6 +27,10 @@ export const FORM_ACTION = `https://formsubmit.co/${FORM_ALIAS}`;
 // Google Ads conversion signal.
 export const GOOGLE_EMBED_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2fo1Aew3luWIG34QpfXxW8rUjtxlSX88hS5s6oTdnGK7q5pBt2eVDW45meyPzZq-hbfkLFqfc6?gv=true';
 
+// Onboarding scheduler. This is the Calendly URL the marketing site embedded
+// before discovery booking moved to Google Calendar. The portal uses the same URL.
+export const ONBOARDING_CALENDLY_URL = 'https://calendly.com/tryteleforce-sales';
+
 // Proof stats — exact. Never add an agent headcount. (Hubs intentionally omitted.)
 export const STATS = [
   { n: '30+', k: 'Years operating' },

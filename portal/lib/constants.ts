@@ -9,3 +9,6 @@ export const ADD_EA_ACK_TEXT =
 
 export const SESSION_COOKIE = 'tf_session';
 export const SESSION_TTL_DAYS = 7;
+
+/** Same URL as src/consts.ts ONBOARDING_CALENDLY_URL. Inline widget via Calendly’s widget.js. */
+export const ONBOARDING_CALENDLY_URL = 'https://calendly.com/tryteleforce-sales';
