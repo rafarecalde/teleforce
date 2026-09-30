@@ -1,7 +1,7 @@
 ---
 import termsMarkdown from '../../legal/terms.md?raw';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { EA, PHONE, PHONE_HREF } from '../../consts';
+import { EA, ONBOARDING_CALENDLY_URL, PHONE, PHONE_HREF } from '../../consts';
 
 const termsVersionMatch = termsMarkdown.match(/^\*Effective\s+([^*]+?)\s*\*/m);
 const termsVersion = termsVersionMatch?.[1]?.trim() ?? '';
@@ -114,14 +114,10 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
           </div>
         </section>
 
-        <section class="step-card" aria-labelledby="step-account-title">
-          <header class="step-head">
-            <span class="step-num">03</span>
-            <div>
-              <h2 id="step-account-title">Create your account</h2>
-              <p>This is how you’ll sign back in. It does not start billing.</p>
-            </div>
-          </header>
+        <section class="step-card auth-card" aria-labelledby="step-account-title">
+          <a href="/" class="logo" aria-label="Teleforce home"><img src="/brand/logo-light.png" alt="Teleforce" width="150" height="26" /></a>
+          <h2 id="step-account-title" class="auth-title">Create your account</h2>
+          <p class="auth-sub">This is how you’ll sign back in. It does not start billing.</p>
 
           <div class="field">
             <label for="full-name">Full name</label>
@@ -133,20 +129,31 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
             <input id="email" type="email" autocomplete="email" inputmode="email" placeholder="you@company.com" />
             <p class="err" id="email-err"></p>
           </div>
-          <div class="split">
-            <div class="field">
-              <label for="password">Password</label>
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="pw">
               <input id="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" />
-              <p class="err" id="password-err"></p>
+              <button type="button" class="eye" aria-label="Show password" aria-pressed="false" aria-controls="password">
+                <svg class="eye-open" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                <svg class="eye-shut" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 3l18 18M10.6 6.1A11 11 0 0 1 12 6c6.5 0 10 6 10 6a18 18 0 0 1-4.1 4.6M6.1 6.7C3.6 8.4 2 12 2 12s3.5 7 10 7a11 11 0 0 0 4.2-.8M9.9 9.9a3 3 0 0 0 4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
-            <div class="field">
-              <label for="password-2">Confirm password</label>
+            <p class="err" id="password-err"></p>
+          </div>
+          <div class="field">
+            <label for="password-2">Confirm password</label>
+            <div class="pw">
               <input id="password-2" type="password" autocomplete="new-password" placeholder="Repeat password" />
-              <p class="err" id="password-2-err"></p>
+              <button type="button" class="eye" aria-label="Show password" aria-pressed="false" aria-controls="password-2">
+                <svg class="eye-open" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                <svg class="eye-shut" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 3l18 18M10.6 6.1A11 11 0 0 1 12 6c6.5 0 10 6 10 6a18 18 0 0 1-4.1 4.6M6.1 6.7C3.6 8.4 2 12 2 12s3.5 7 10 7a11 11 0 0 0 4.2-.8M9.9 9.9a3 3 0 0 0 4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
+            <p class="err" id="password-2-err"></p>
           </div>
 
           <button type="button" class="btn btn-amber submit" id="signup-submit">Complete signup</button>
+          <p class="auth-foot">Already have an account? <a id="login-link" href="https://portal.tryteleforce.com">Log in</a></p>
         </section>
       </form>
 
@@ -154,9 +161,13 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
         <p class="step-kicker">Signup complete</p>
         <h2 class="disp">You’re set for onboarding.</h2>
         <p class="done-lead">
-          Next is your onboarding call — about 60 minutes. You’ll get a prep sheet beforehand.
-          There’s no booking calendar on this page. Sign in to the client portal with the email and password you just chose.
+          Next: schedule your onboarding call. About 60 minutes, with a prep sheet beforehand.
+          Sign in to the client portal with the email and password you just chose.
         </p>
+        <p class="done-next">
+          <a class="btn btn-amber" href={ONBOARDING_CALENDLY_URL} target="_blank" rel="noopener">Schedule your onboarding call</a>
+        </p>
+        <div id="onboarding-calendly" class="calendly-inline-widget" data-url={ONBOARDING_CALENDLY_URL}></div>
         <p class="done-plan" id="done-plan"></p>
         <p class="support" id="done-account"></p>
         <ol class="path path-paper">
@@ -193,6 +204,8 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
   const cardStatus = document.getElementById('card-status');
   const portalLink = document.getElementById('portal-link');
   if (portalLink instanceof HTMLAnchorElement) portalLink.href = portalUrl;
+  const loginLink = document.getElementById('login-link');
+  if (loginLink instanceof HTMLAnchorElement) loginLink.href = portalUrl;
 
   const fields = {
     terms: document.getElementById('terms'),
@@ -492,6 +505,7 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
       form.hidden = true;
       if (done) {
         done.hidden = false;
+        mountOnboardingCalendly();
         done.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     } catch (err) {
@@ -520,6 +534,44 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
     if (event.target.type === 'checkbox' || event.target.type === 'radio') return;
     event.preventDefault();
     finish(event);
+  });
+
+  function mountOnboardingCalendly() {
+    const parent = document.getElementById('onboarding-calendly');
+    if (!(parent instanceof HTMLElement) || parent.dataset.ready === '1') return;
+    const url = parent.dataset.url || '';
+    if (!url) return;
+    const start = () => {
+      const host = /** @type {any} */ (window);
+      if (!host.Calendly || typeof host.Calendly.initInlineWidget !== 'function') return false;
+      host.Calendly.initInlineWidget({ url, parentElement: parent });
+      parent.dataset.ready = '1';
+      return true;
+    };
+    if (start()) return;
+    const existing = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+    if (existing) {
+      existing.addEventListener('load', () => start());
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    script.onload = () => start();
+    document.head.appendChild(script);
+  }
+
+  form?.addEventListener('click', (event) => {
+    const target = event.target;
+    const button = target instanceof Element ? target.closest('.eye') : null;
+    if (!(button instanceof HTMLButtonElement)) return;
+    const input = document.getElementById(button.getAttribute('aria-controls') || '');
+    if (!(input instanceof HTMLInputElement)) return;
+    const show = input.type === 'password';
+    input.type = show ? 'text' : 'password';
+    button.setAttribute('aria-pressed', show ? 'true' : 'false');
+    button.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+    button.classList.toggle('is-shown', show);
   });
 </script>
 
@@ -761,7 +813,91 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
   }
 
   .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .submit { width: 100%; text-align: center; margin-top: 18px; padding: 14px 18px; font-size: 13px; }
+  .submit { width: 100%; text-align: center; margin-top: 18px; padding: 14px 18px; font-size: 13px; min-height: 48px; }
+
+  .auth-card {
+    background: var(--ink);
+    color: var(--on-dark);
+    border-color: transparent;
+    box-shadow: 0 18px 48px rgba(9, 28, 30, 0.16);
+    padding: 28px 26px 24px;
+  }
+  /* Same /brand/logo-light.png as the header. The file is 2023×352 with the
+     wordmark in y 3–244, so the nav’s 26px box leaves the mark short. Crop to
+     that ink and let the wordmark fill the slot. */
+  .auth-card .logo {
+    position: relative;
+    display: block;
+    width: min(220px, 100%);
+    aspect-ratio: 2016 / 242;
+    overflow: hidden;
+    margin: 0 0 18px;
+  }
+  .auth-card .logo img {
+    position: absolute;
+    display: block;
+    width: calc(2023 / 2016 * 100%);
+    height: calc(352 / 242 * 100%);
+    max-width: none;
+    left: calc(-3 / 2016 * 100%);
+    top: calc(-3 / 242 * 100%);
+    margin: 0;
+  }
+  .auth-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: clamp(30px, 5vw, 36px);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: #fff;
+    margin: 0 0 8px;
+  }
+  .auth-sub {
+    margin: 0 0 6px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--on-dark-mut);
+  }
+  .auth-card .field label { color: var(--sage); }
+  .auth-card .field input { font-size: 16px; min-height: 48px; }
+  .auth-card .err { color: #ffc7ba; }
+  .pw { position: relative; }
+  .pw input { padding-right: 48px; }
+  .eye {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 48px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--sage-deep);
+    cursor: pointer;
+  }
+  .eye:hover { color: var(--ink); }
+  .eye:focus-visible { outline: 2px solid var(--amber); outline-offset: -2px; }
+  .eye svg { display: block; }
+  .eye .eye-shut { display: none; }
+  .eye.is-shown .eye-open { display: none; }
+  .eye.is-shown .eye-shut { display: block; }
+  .auth-foot {
+    margin: 16px 0 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--on-dark-mut);
+  }
+  .auth-foot a {
+    color: var(--amber);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .auth-foot a:hover { color: #f5b647; }
 
   .done-card { max-width: 720px; margin: 0 auto; }
   .done-card h2.disp {
@@ -782,6 +918,14 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
   .path-paper li.now { color: var(--ink); }
   .path-paper li:not(:last-child)::after { color: var(--sage); }
   .support { margin-top: 16px; }
+  .done-next { margin-top: 16px; }
+  .done-next .btn { text-align: center; }
+  #onboarding-calendly {
+    width: 100%;
+    min-width: 0;
+    height: 700px;
+    margin-top: 16px;
+  }
   .done-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
   .btn-quiet {
     background: transparent;
@@ -808,6 +952,8 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
   @media (max-width: 640px) {
     .plans, .split { grid-template-columns: 1fr; }
     .step-card { padding: 22px 18px 24px; }
+    .auth-card { padding: 24px 18px 20px; }
+    .auth-title { font-size: 28px; }
     .signup-hero { padding: 40px 0 32px; }
   }
 </style>

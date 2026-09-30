@@ -18,6 +18,8 @@ const USER_TABLE = `
   billing_contact TEXT NOT NULL DEFAULT '',
   billing_email TEXT NOT NULL DEFAULT '',
   billing_address TEXT NOT NULL DEFAULT '',
+  onboarding_completed_at TEXT,
+  matched_ea_name TEXT,
   created_at TEXT NOT NULL
 `;
 
@@ -124,6 +126,21 @@ async function setupIntentRequired(current: Client): Promise<boolean> {
 }
 
 /**
+ * Existing databases predate these columns. New databases get them from USER_TABLE.
+ * Each ALTER runs only when that column is missing.
+ */
+async function migrateAccountLifecycle(current: Client): Promise<void> {
+  const result = await current.execute('PRAGMA table_info(users)');
+  const names = new Set(result.rows.map((row) => String(row.name)));
+  if (!names.has('onboarding_completed_at')) {
+    await current.execute('ALTER TABLE users ADD COLUMN onboarding_completed_at TEXT');
+  }
+  if (!names.has('matched_ea_name')) {
+    await current.execute('ALTER TABLE users ADD COLUMN matched_ea_name TEXT');
+  }
+}
+
+/**
  * Early accounts required a SetupIntent. Card-optional signup stores NULL for
  * stripe_customer_id, default_payment_method_id, and setup_intent_id.
  * SQLite cannot drop NOT NULL in place, so an existing table is rebuilt once.
@@ -153,6 +170,7 @@ export async function db(): Promise<Client> {
       .then(() => current.execute(TERMS_ACCEPTANCES_SCHEMA))
       .then(() => current.execute(TERMS_ACCEPTANCES_INDEX))
       .then(() => migratePaymentOptional(current))
+      .then(() => migrateAccountLifecycle(current))
       .then(
         () => undefined,
         (err) => {

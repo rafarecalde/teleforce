@@ -77,6 +77,33 @@ a { color: var(--sage-deep); }
 main { padding: 26px 0 60px; }
 .page-title { font-size: 24px; font-weight: 800; margin: 4px 0 4px; }
 .page-sub { color: var(--on-paper-mut); font-size: 14px; margin: 0 0 22px; }
+.ea-match {
+  margin: 10px 0 6px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: clamp(22px, 5vw, 28px);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.ea-match.pending {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0;
+  color: var(--on-paper-mut);
+  margin: 0 0 22px;
+}
+.calendly-inline-widget {
+  width: 100%;
+  min-width: 0;
+  height: 700px;
+  margin-top: 8px;
+}
+@media (max-width: 640px) {
+  .calendly-inline-widget { height: 720px; }
+  .ea-match { font-size: 22px; }
+}
 
 /* sections */
 section.card {
@@ -238,7 +265,105 @@ section.card > .hint { color: var(--on-paper-mut); font-size: 13.5px; margin: 0 
 }
 
 /* login */
-.login { max-width: 400px; margin: 8vh auto 0; }
+.login { max-width: 420px; margin: 28px auto 0; }
+section.card.auth-card {
+  background: var(--ink);
+  color: var(--on-dark);
+  border-color: transparent;
+  box-shadow: 0 18px 48px rgba(9, 28, 30, 0.16);
+  padding: 28px 24px 22px;
+}
+/* Same wordmark as the marketing header (public/brand/logo-light.png).
+   Crop the file’s empty lower band so the mark fills this slot. */
+.auth-card .logo {
+  position: relative;
+  display: block;
+  width: min(220px, 100%);
+  aspect-ratio: 2016 / 242;
+  overflow: hidden;
+  margin: 0 0 18px;
+}
+.auth-card .logo img {
+  position: absolute;
+  display: block;
+  width: calc(2023 / 2016 * 100%);
+  height: calc(352 / 242 * 100%);
+  max-width: none;
+  left: calc(-3 / 2016 * 100%);
+  top: calc(-3 / 242 * 100%);
+  margin: 0;
+}
+.auth-title {
+  font-size: clamp(30px, 6vw, 34px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin: 0 0 8px;
+}
+.auth-sub {
+  color: var(--on-dark-mut);
+  font-size: 14.5px;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+.auth-card .field label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+.auth-card .field input {
+  font-size: 16px;
+  min-height: 48px;
+  background: #fff;
+}
+.auth-card .btn-full { min-height: 48px; margin-top: 6px; }
+.auth-card .note { margin-top: 0; margin-bottom: 12px; }
+.pw { position: relative; }
+.pw input { padding-right: 48px; }
+.eye {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 48px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--sage-deep);
+  cursor: pointer;
+}
+.eye:hover { color: var(--ink); }
+.eye:focus-visible { outline: 2px solid var(--amber); outline-offset: -2px; }
+.eye svg { display: block; }
+.eye .eye-shut { display: none; }
+.eye.is-shown .eye-open { display: none; }
+.eye.is-shown .eye-shut { display: block; }
+.auth-foot {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--on-dark-mut);
+}
+.auth-foot a {
+  color: var(--amber);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.auth-foot a:hover { color: #f5b647; }
+@media (max-width: 640px) {
+  .login { margin-top: 8px; }
+  section.card.auth-card { padding: 24px 16px 18px; }
+  .auth-title { font-size: 28px; }
+}
 
 /* secondary coverage, after the EA and billing path */
 .aside { margin: 8px 2px 0; }

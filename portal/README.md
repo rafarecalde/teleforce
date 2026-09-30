@@ -122,6 +122,46 @@ Signup’s “Add a card later” and “Add a card now” choices are unchanged
 `POST /api/auth/login` checks email + password against the account row and sets
 an httpOnly session cookie (`jose` JWT, `AUTH_SECRET`).
 
+The sign-in screen does not show onboarding or an assistant. After sign-in the
+dashboard follows the account row:
+
+1. Before `onboarding_completed_at` is set, a **Schedule your onboarding call**
+   card embeds Calendly (`https://calendly.com/tryteleforce-sales`, the URL the
+   marketing site used, via Calendly’s inline widget). Under that card the page
+   reads **Your assistant: matching in progress**.
+2. After ops sets `onboarding_completed_at`, the Calendly card is gone.
+3. After ops sets `matched_ea_name` to the assistant’s first and last name, the
+   top of the dashboard reads **Your assistant is First Last**.
+
+Both columns are nullable and added on startup (`ALTER TABLE` only when the
+column is missing). New accounts leave them null. There is no admin route.
+Ops sets them in Turso with the client’s work email. The Terms email is
+unchanged; the scheduling link is not sent automatically.
+
+```bash
+turso db shell <database-name>
+```
+
+```sql
+-- Hide the scheduler after the onboarding call:
+UPDATE users
+SET onboarding_completed_at = strftime('%Y-%m-%dT%H:%M:%SZ', 'now')
+WHERE email = 'client@company.com';
+
+-- Assign the assistant (first and last name):
+UPDATE users
+SET matched_ea_name = 'First Last'
+WHERE email = 'client@company.com';
+
+-- Undo either one:
+UPDATE users SET onboarding_completed_at = NULL WHERE email = 'client@company.com';
+UPDATE users SET matched_ea_name = NULL WHERE email = 'client@company.com';
+```
+
+Locally, with no `TURSO_DATABASE_URL`, the same statements run against
+`portal/data/teleforce.db` (for example with the `sqlite3` CLI). The signup
+completion screen uses the same Calendly URL.
+
 `PREVIEW_MODE=1` keeps the sales-call link (`?company=&name=&email=`) as sample
 data only. It does not create a session and does not read real accounts. Leave
 it unset in production.
@@ -133,8 +173,8 @@ Stripe PaymentIntent, invoice, subscription, or charge. Ops can bill the same
 Stripe customer at kickoff. The sales preview (`PREVIEW_MODE=1`) still shows a
 local success state and does not write a row.
 
-Customer service and SDR stay as quiet notes at the bottom of the dashboard.
-They are not stored. The 12-month switch on a real account is a note under the
+Customer service stays as a quiet note at the bottom of the dashboard.
+It is not stored. The 12-month switch on a real account is a note under the
 plan, not a contract change.
 
 ## Run locally

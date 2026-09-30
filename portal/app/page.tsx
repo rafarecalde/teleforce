@@ -1,9 +1,11 @@
+import Script from 'next/script';
 import { getSession } from '@/lib/auth';
+import { ONBOARDING_CALENDLY_URL } from '@/lib/constants';
 import { addMonthsISO, formatDate } from '@/lib/money';
 import { DEMO, type DemoPlan } from '@/lib/demo';
 import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/plans';
 import { retrieveCard } from '@/lib/stripe';
-import { getUserById, hasCardOnFile, type User } from '@/lib/users';
+import { displayMatchedEa, getUserById, hasCardOnFile, onboardingIsComplete, type User } from '@/lib/users';
 import PlanCard from './components/PlanCard';
 import SwitchTo12 from './components/SwitchTo12';
 import SeatRequest from './components/SeatRequest';
@@ -63,6 +65,15 @@ function loginMessage(error?: string): string {
   return '';
 }
 
+function AuthMark() {
+  const home = (process.env.MARKETING_URL || 'https://tryteleforce.com').replace(/\/$/, '');
+  return (
+    <a href={home} className="logo" aria-label="Teleforce home">
+      <img src="/brand/logo-light.png" alt="Teleforce" width={150} height={26} />
+    </a>
+  );
+}
+
 function firstName(value: string): string {
   if (value.includes('@')) return value.split('@')[0];
   return value.split(' ')[0];
@@ -72,7 +83,7 @@ function accountPlan(user: User): DemoPlan {
   const monthlySavings = PLAN_PRICE_3 - PLAN_PRICE_12;
   return {
     id: user.id,
-    eaName: 'Pending match',
+    eaName: user.matchedEaName || 'Pending match',
     term: user.plan,
     rate: formatDollars(planMonthly(user.plan)),
     rate12: formatDollars(PLAN_PRICE_12),
@@ -112,9 +123,10 @@ export default async function Page({
     return (
       <Shell signedIn={false}>
         <div className="login">
-          <section className="card">
-            <h1 className="display">Client account</h1>
-            <p className="page-sub">The portal is missing AUTH_SECRET. Set it and reload.</p>
+          <section className="card auth-card">
+            <AuthMark />
+            <h1 className="display auth-title">Client account</h1>
+            <p className="auth-sub">The portal is missing AUTH_SECRET. Set it and reload.</p>
           </section>
         </div>
       </Shell>
@@ -135,6 +147,8 @@ export default async function Page({
         displayName={displayName}
         company={company}
         plans={DEMO.plans}
+        matchedEaName={DEMO.plans[0]?.eaName || ''}
+        onboardingComplete
         billing={{
           contactName: name || DEMO.billing.contactName,
           company: company || DEMO.billing.company,
@@ -153,11 +167,10 @@ export default async function Page({
     return (
       <Shell signedIn={false}>
         <div className="login">
-          <section className="card">
-            <h1 className="display">Client account</h1>
-            <p className="page-sub" style={{ marginBottom: 18 }}>
-              Sign in with the email and password from EA signup.
-            </p>
+          <section className="card auth-card">
+            <AuthMark />
+            <h1 className="display auth-title">Sign in</h1>
+            <p className="auth-sub">Sign in with the email and password from EA signup.</p>
             <LoginForm signupHref={signupHref} error={err} />
           </section>
         </div>
@@ -171,9 +184,10 @@ export default async function Page({
       return (
         <Shell signedIn={false}>
           <div className="login">
-            <section className="card">
-              <h1 className="display">Client account</h1>
-              <p className="page-sub">That session doesn’t match an account. Sign in again.</p>
+            <section className="card auth-card">
+              <AuthMark />
+              <h1 className="display auth-title">Client account</h1>
+              <p className="auth-sub">That session doesn’t match an account. Sign in again.</p>
             </section>
           </div>
         </Shell>
@@ -187,6 +201,8 @@ export default async function Page({
         displayName={user.fullName || user.email}
         company={user.company}
         plans={[accountPlan(user)]}
+        matchedEaName={user.matchedEaName}
+        onboardingComplete={onboardingIsComplete(user.onboardingCompletedAt)}
         hasCard={hasCard}
         billing={{
           contactName: user.billingContact,
@@ -216,6 +232,8 @@ function AccountView({
   displayName,
   company,
   plans,
+  matchedEaName = '',
+  onboardingComplete = false,
   billing,
   hasCard = true,
   persistBilling = false,
@@ -225,6 +243,10 @@ function AccountView({
   displayName: string;
   company?: string;
   plans: DemoPlan[];
+  /** Signed-in accounts only. Empty until ops assigns the assistant. */
+  matchedEaName?: string;
+  /** Hides the scheduler once ops marks the onboarding call complete. */
+  onboardingComplete?: boolean;
   billing: {
     contactName: string;
     company: string;
@@ -238,12 +260,32 @@ function AccountView({
 }) {
   const threeMonth = plans.filter((plan) => plan.term === '3');
   const commitmentEndPreview = formatDate(addMonthsISO(12));
+  const eaName = displayMatchedEa(matchedEaName);
 
   return (
     <Shell signedIn={!preview} company={company} preview={preview}>
       {preview && <p className="page-sub">Sales preview with sample data. This is not a signed-in account.</p>}
       <h1 className="page-title display">Welcome back, {firstName(displayName)}.</h1>
+      {eaName && <p className="ea-match">Your assistant is {eaName}</p>}
       <p className="page-sub">{preview ? `Previewing ${email}` : `Signed in as ${email}`}</p>
+
+      {!onboardingComplete && (
+        <section className="card" id="onboarding-call">
+          <h2>Schedule your onboarding call</h2>
+          <p className="hint">
+            About 60 minutes, with a prep sheet beforehand. Nothing is charged on this call.
+          </p>
+          <div className="calendly-inline-widget" data-url={ONBOARDING_CALENDLY_URL} />
+          <p className="muted" style={{ fontSize: 13.5, margin: '12px 0 0' }}>
+            <a href={ONBOARDING_CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+              Open the scheduler
+            </a>
+          </p>
+          <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="afterInteractive" />
+        </section>
+      )}
+
+      {!eaName && <p className="ea-match pending">Your assistant: matching in progress</p>}
 
       {!preview && !hasCard && <PaymentBanner />}
 
@@ -299,11 +341,10 @@ function AccountView({
       <section className="aside" aria-labelledby="other-coverage">
         <h2 id="other-coverage">Other coverage</h2>
         <p className="aside-copy">
-          Customer service and SDR coverage can be scoped separately, whenever you want it.
+          Customer service coverage can be scoped separately, whenever you want it.
         </p>
         <div className="aside-list">
           <SeatRequest label="Customer service" />
-          <SeatRequest label="SDR" />
         </div>
       </section>
     </Shell>
