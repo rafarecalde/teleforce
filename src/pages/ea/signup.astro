@@ -141,14 +141,10 @@ const payNote =
           </div>
         </section>
 
-        <section class="step-card" aria-labelledby="step-account-title">
-          <header class="step-head">
-            <span class="step-num">03</span>
-            <div>
-              <h2 id="step-account-title">Create your account</h2>
-              <p>This is how you’ll sign back in. It does not start billing.</p>
-            </div>
-          </header>
+        <section class="step-card auth-card" aria-labelledby="step-account-title">
+          <img class="auth-logo" src="/brand/logo-light.png" alt="Teleforce" width="150" height="26" />
+          <h2 id="step-account-title" class="auth-title">Create your account</h2>
+          <p class="auth-sub">This is how you’ll sign back in. It does not start billing.</p>
 
           <div class="field">
             <label for="full-name">Full name</label>
@@ -160,20 +156,31 @@ const payNote =
             <input id="email" type="email" autocomplete="email" inputmode="email" placeholder="you@company.com" />
             <p class="err" id="email-err"></p>
           </div>
-          <div class="split">
-            <div class="field">
-              <label for="password">Password</label>
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="pw">
               <input id="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" />
-              <p class="err" id="password-err"></p>
+              <button type="button" class="eye" aria-label="Show password" aria-pressed="false" aria-controls="password">
+                <svg class="eye-open" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                <svg class="eye-shut" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 3l18 18M10.6 6.1A11 11 0 0 1 12 6c6.5 0 10 6 10 6a18 18 0 0 1-4.1 4.6M6.1 6.7C3.6 8.4 2 12 2 12s3.5 7 10 7a11 11 0 0 0 4.2-.8M9.9 9.9a3 3 0 0 0 4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
-            <div class="field">
-              <label for="password-2">Confirm password</label>
+            <p class="err" id="password-err"></p>
+          </div>
+          <div class="field">
+            <label for="password-2">Confirm password</label>
+            <div class="pw">
               <input id="password-2" type="password" autocomplete="new-password" placeholder="Repeat password" />
-              <p class="err" id="password-2-err"></p>
+              <button type="button" class="eye" aria-label="Show password" aria-pressed="false" aria-controls="password-2">
+                <svg class="eye-open" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                <svg class="eye-shut" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 3l18 18M10.6 6.1A11 11 0 0 1 12 6c6.5 0 10 6 10 6a18 18 0 0 1-4.1 4.6M6.1 6.7C3.6 8.4 2 12 2 12s3.5 7 10 7a11 11 0 0 0 4.2-.8M9.9 9.9a3 3 0 0 0 4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
             </div>
+            <p class="err" id="password-2-err"></p>
           </div>
 
           <button type="button" class="btn btn-amber submit" id="signup-submit">Complete signup</button>
+          <p class="auth-foot">Already have an account? <a id="login-link" href="https://portal.tryteleforce.com">Log in</a></p>
         </section>
       </form>
 
@@ -224,6 +231,8 @@ const payNote =
   const cardStatus = document.getElementById('card-status');
   const portalLink = document.getElementById('portal-link');
   if (portalLink instanceof HTMLAnchorElement) portalLink.href = portalUrl;
+  const loginLink = document.getElementById('login-link');
+  if (loginLink instanceof HTMLAnchorElement) loginLink.href = portalUrl;
 
   const fields = {
     terms: document.getElementById('terms'),
@@ -579,6 +588,19 @@ const payNote =
     event.preventDefault();
     finish(event);
   });
+
+  form?.addEventListener('click', (event) => {
+    const target = event.target;
+    const button = target instanceof Element ? target.closest('.eye') : null;
+    if (!(button instanceof HTMLButtonElement)) return;
+    const input = document.getElementById(button.getAttribute('aria-controls') || '');
+    if (!(input instanceof HTMLInputElement)) return;
+    const show = input.type === 'password';
+    input.type = show ? 'text' : 'password';
+    button.setAttribute('aria-pressed', show ? 'true' : 'false');
+    button.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+    button.classList.toggle('is-shown', show);
+  });
 </script>
 
 <style>
@@ -835,7 +857,71 @@ const payNote =
   }
 
   .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .submit { width: 100%; text-align: center; margin-top: 18px; padding: 14px 18px; font-size: 13px; }
+  .submit { width: 100%; text-align: center; margin-top: 18px; padding: 14px 18px; font-size: 13px; min-height: 48px; }
+
+  .auth-card {
+    background: var(--ink);
+    color: var(--on-dark);
+    border-color: transparent;
+    box-shadow: 0 18px 48px rgba(9, 28, 30, 0.16);
+    padding: 28px 26px 24px;
+  }
+  .auth-logo { display: block; height: 26px; width: auto; margin: 0 0 18px; }
+  .auth-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: clamp(30px, 5vw, 36px);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: #fff;
+    margin: 0 0 8px;
+  }
+  .auth-sub {
+    margin: 0 0 6px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--on-dark-mut);
+  }
+  .auth-card .field label { color: var(--sage); }
+  .auth-card .field input { font-size: 16px; min-height: 48px; }
+  .auth-card .err { color: #ffc7ba; }
+  .pw { position: relative; }
+  .pw input { padding-right: 48px; }
+  .eye {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 48px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--sage-deep);
+    cursor: pointer;
+  }
+  .eye:hover { color: var(--ink); }
+  .eye:focus-visible { outline: 2px solid var(--amber); outline-offset: -2px; }
+  .eye svg { display: block; }
+  .eye .eye-shut { display: none; }
+  .eye.is-shown .eye-open { display: none; }
+  .eye.is-shown .eye-shut { display: block; }
+  .auth-foot {
+    margin: 16px 0 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--on-dark-mut);
+  }
+  .auth-foot a {
+    color: var(--amber);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .auth-foot a:hover { color: #f5b647; }
 
   .done-card { max-width: 720px; margin: 0 auto; }
   .done-card h2.disp {
@@ -882,6 +968,8 @@ const payNote =
   @media (max-width: 640px) {
     .plans, .split { grid-template-columns: 1fr; }
     .step-card { padding: 22px 18px 24px; }
+    .auth-card { padding: 24px 18px 20px; }
+    .auth-title { font-size: 28px; }
     .signup-hero { padding: 40px 0 32px; }
   }
 </style>

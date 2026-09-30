@@ -63,6 +63,12 @@ function loginMessage(error?: string): string {
   return '';
 }
 
+function AuthMark() {
+  return (
+    <img className="auth-logo" src="/brand/logo-light.png" alt="Teleforce" width={150} height={26} />
+  );
+}
+
 function firstName(value: string): string {
   if (value.includes('@')) return value.split('@')[0];
   return value.split(' ')[0];
@@ -112,9 +118,10 @@ export default async function Page({
     return (
       <Shell signedIn={false}>
         <div className="login">
-          <section className="card">
-            <h1 className="display">Client account</h1>
-            <p className="page-sub">The portal is missing AUTH_SECRET. Set it and reload.</p>
+          <section className="card auth-card">
+            <AuthMark />
+            <h1 className="display auth-title">Client account</h1>
+            <p className="auth-sub">The portal is missing AUTH_SECRET. Set it and reload.</p>
           </section>
         </div>
       </Shell>
@@ -153,11 +160,10 @@ export default async function Page({
     return (
       <Shell signedIn={false}>
         <div className="login">
-          <section className="card">
-            <h1 className="display">Client account</h1>
-            <p className="page-sub" style={{ marginBottom: 18 }}>
-              Sign in with the email and password from EA signup.
-            </p>
+          <section className="card auth-card">
+            <AuthMark />
+            <h1 className="display auth-title">Sign in</h1>
+            <p className="auth-sub">Sign in with the email and password from EA signup.</p>
             <LoginForm signupHref={signupHref} error={err} />
           </section>
         </div>
@@ -171,9 +177,10 @@ export default async function Page({
       return (
         <Shell signedIn={false}>
           <div className="login">
-            <section className="card">
-              <h1 className="display">Client account</h1>
-              <p className="page-sub">That session doesn’t match an account. Sign in again.</p>
+            <section className="card auth-card">
+              <AuthMark />
+              <h1 className="display auth-title">Client account</h1>
+              <p className="auth-sub">That session doesn’t match an account. Sign in again.</p>
             </section>
           </div>
         </Shell>
