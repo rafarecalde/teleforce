@@ -1,7 +1,7 @@
 ---
 import termsMarkdown from '../../legal/terms.md?raw';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { EA, EA_PAY_LINE, PHONE, PHONE_HREF } from '../../consts';
+import { EA, PHONE, PHONE_HREF } from '../../consts';
 
 const termsVersionMatch = termsMarkdown.match(/^\*Effective\s+([^*]+?)\s*\*/m);
 const termsVersion = termsVersionMatch?.[1]?.trim() ?? '';
@@ -16,19 +16,15 @@ const payNote =
   'Nothing is charged now. Add a card now, or add one later before kickoff when we follow up. The first month begins at kickoff — when your EA goes live — or 3 business days after you’re matched, whichever comes first.';
 ---
 <BaseLayout
-  title="Complete your signup | Teleforce"
+  title="Terms, Payment Information & Account | Teleforce"
   description="After discovery, accept terms and choose a 3- or 12-month EA plan. A card is optional. Nothing is charged now."
   noindex
 >
   <header class="hero signup-hero">
     <div class="inner">
-      <p class="kicker">After your discovery call</p>
-      <h1 class="disp">Complete your signup.</h1>
-      <p class="lede">
-        Discovery is done. Accept the terms, choose a plan, and create your account.
-        <b>{EA_PAY_LINE}</b> A card is optional — nothing is charged now. Add one now, or add it later before kickoff when we follow up.
-        Next is onboarding — one call, about 60 minutes, with a prep sheet beforehand.
-      </p>
+      <p class="kicker">Onboarding</p>
+      <h1 class="disp">Terms, Payment Information & Account</h1>
+      <p class="lede">Just a couple more steps so we can reserve your spot and get you placed with your EA.</p>
       <ol class="path">
         <li class="done">Discovery</li>
         <li class="now" aria-current="step">Signup</li>
@@ -46,16 +42,15 @@ const payNote =
 
         <section class="step-card" aria-labelledby="step-terms-title">
           <header class="step-head">
-            <span class="step-num">01</span>
             <div>
-              <h2 id="step-terms-title">Accept Terms & Conditions</h2>
-              <p>Required before you create an account. We’ll email you a copy of the Terms you accept.</p>
+              <h2 id="step-terms-title">1. Terms and Conditions</h2>
             </div>
           </header>
           <label class="agree" for="terms">
             <input id="terms" type="checkbox" name="terms" />
-            <span>I agree to the <a href="/terms" target="_blank" rel="noopener">Teleforce Terms & Conditions</a> effective <span id="terms-version">{termsVersion}</span>.</span>
+            <span>By checking this box I am accepting and agreeing to the <a href="/terms" target="_blank" rel="noopener">terms and conditions</a> and I acknowledge that they contain important provisions establishing my rights and obligations under a binding agreement with Teleforce.</span>
           </label>
+          <span id="terms-version" hidden>{termsVersion}</span>
           <p class="err" id="terms-err"></p>
           <div class="field">
             <label for="signed-name">Full legal name</label>
@@ -96,7 +91,6 @@ const payNote =
                 <span class="plan-sub">Save ${save}/mo on a 12-month commitment</span>
               </label>
             </div>
-            <p class="plan-switch">Start on the 3-month plan. Switch to 12 when you’re ready and save ${save}/mo. You can switch as soon as you’re ready, including in month one.</p>
           </fieldset>
 
           <div class="pay-lock">
@@ -587,7 +581,7 @@ const payNote =
     font-size: clamp(36px, 6vw, 58px);
     text-transform: none;
     line-height: 1.02;
-    max-width: 14ch;
+    max-width: 22ch;
     margin: 0;
   }
   .signup-hero .lede { margin-top: 18px; }
@@ -667,9 +661,11 @@ const payNote =
   .agree a:hover { text-decoration-color: var(--amber); }
   .esign {
     margin-top: 8px;
-    font-size: 13px;
-    line-height: 1.5;
-    color: var(--on-paper-mut);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+    color: var(--sage-deep);
   }
 
   fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
@@ -744,7 +740,6 @@ const payNote =
     margin-left: 4px;
   }
   .plan-sub { font-size: 13px; color: var(--on-paper-mut); line-height: 1.4; }
-  .plan-switch { margin-top: 12px; font-size: 14px; color: var(--on-paper-mut); line-height: 1.5; }
 
   .pay-choice { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
   .choice {
