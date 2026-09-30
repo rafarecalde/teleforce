@@ -17,6 +17,8 @@ export type User = {
   billingContact: string;
   billingEmail: string;
   billingAddress: string;
+  /** "First Last" once ops records the match. Empty until then. */
+  matchedEaName: string;
   createdAt: string;
 };
 
@@ -39,13 +41,18 @@ export function hasCardOnFile(user: Pick<User, 'defaultPaymentMethodId'>): boole
   return user.defaultPaymentMethodId.trim().length > 0;
 }
 
+/** Collapses whitespace. An empty result means the client is not matched yet. */
+export function displayMatchedEa(value: string): string {
+  return value.trim().replace(/\s+/g, ' ');
+}
+
 type Row = Record<string, unknown>;
 
 const COLUMNS = `
   id, email, full_name, password_hash, plan, terms_accepted_at,
   stripe_customer_id, default_payment_method_id, setup_intent_id,
   card_brand, card_last4, company, billing_contact, billing_email, billing_address,
-  created_at
+  matched_ea_name, created_at
 `;
 
 function text(row: Row, key: string): string {
@@ -73,6 +80,7 @@ function mapUser(row: Row): User {
     billingContact: text(row, 'billing_contact') || fullName,
     billingEmail: text(row, 'billing_email') || email,
     billingAddress: text(row, 'billing_address'),
+    matchedEaName: displayMatchedEa(text(row, 'matched_ea_name')),
     createdAt: text(row, 'created_at'),
   };
 }

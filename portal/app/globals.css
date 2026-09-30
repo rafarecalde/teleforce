@@ -77,6 +77,22 @@ a { color: var(--sage-deep); }
 main { padding: 26px 0 60px; }
 .page-title { font-size: 24px; font-weight: 800; margin: 4px 0 4px; }
 .page-sub { color: var(--on-paper-mut); font-size: 14px; margin: 0 0 22px; }
+.ea-match {
+  margin: 10px 0 6px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: clamp(22px, 5vw, 28px);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.ea-match.pending {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0;
+  color: var(--on-paper-mut);
+}
 
 /* sections */
 section.card {

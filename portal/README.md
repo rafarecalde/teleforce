@@ -122,6 +122,30 @@ Signup’s “Add a card later” and “Add a card now” choices are unchanged
 `POST /api/auth/login` checks email + password against the account row and sets
 an httpOnly session cookie (`jose` JWT, `AUTH_SECRET`).
 
+The sign-in screen does not show a matched EA. After sign-in, the top of the
+dashboard reads **Your EA: First Last** when `users.matched_ea_name` is set.
+Until then it reads **Matching in progress**. The column is added on startup
+(`ALTER TABLE` only when it is missing). New accounts leave it null.
+
+Set or clear the name in Turso. Use the client’s work email. The value is the
+EA’s first and last name, shown only to that signed-in client.
+
+```bash
+turso db shell <database-name>
+```
+
+```sql
+UPDATE users
+SET matched_ea_name = 'First Last'
+WHERE email = 'client@company.com';
+
+-- Back to the unmatched state:
+UPDATE users SET matched_ea_name = NULL WHERE email = 'client@company.com';
+```
+
+Locally, with no `TURSO_DATABASE_URL`, the same statements run against
+`portal/data/teleforce.db` (for example with the `sqlite3` CLI).
+
 `PREVIEW_MODE=1` keeps the sales-call link (`?company=&name=&email=`) as sample
 data only. It does not create a session and does not read real accounts. Leave
 it unset in production.

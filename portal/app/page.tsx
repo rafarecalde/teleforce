@@ -3,7 +3,7 @@ import { addMonthsISO, formatDate } from '@/lib/money';
 import { DEMO, type DemoPlan } from '@/lib/demo';
 import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/plans';
 import { retrieveCard } from '@/lib/stripe';
-import { getUserById, hasCardOnFile, type User } from '@/lib/users';
+import { displayMatchedEa, getUserById, hasCardOnFile, type User } from '@/lib/users';
 import PlanCard from './components/PlanCard';
 import SwitchTo12 from './components/SwitchTo12';
 import SeatRequest from './components/SeatRequest';
@@ -81,7 +81,7 @@ function accountPlan(user: User): DemoPlan {
   const monthlySavings = PLAN_PRICE_3 - PLAN_PRICE_12;
   return {
     id: user.id,
-    eaName: 'Pending match',
+    eaName: user.matchedEaName || 'Pending match',
     term: user.plan,
     rate: formatDollars(planMonthly(user.plan)),
     rate12: formatDollars(PLAN_PRICE_12),
@@ -145,6 +145,7 @@ export default async function Page({
         displayName={displayName}
         company={company}
         plans={DEMO.plans}
+        matchedEaName={DEMO.plans[0]?.eaName || ''}
         billing={{
           contactName: name || DEMO.billing.contactName,
           company: company || DEMO.billing.company,
@@ -197,6 +198,7 @@ export default async function Page({
         displayName={user.fullName || user.email}
         company={user.company}
         plans={[accountPlan(user)]}
+        matchedEaName={user.matchedEaName}
         hasCard={hasCard}
         billing={{
           contactName: user.billingContact,
@@ -226,6 +228,7 @@ function AccountView({
   displayName,
   company,
   plans,
+  matchedEaName = '',
   billing,
   hasCard = true,
   persistBilling = false,
@@ -235,6 +238,8 @@ function AccountView({
   displayName: string;
   company?: string;
   plans: DemoPlan[];
+  /** Signed-in accounts only. Empty until ops records the match. */
+  matchedEaName?: string;
   billing: {
     contactName: string;
     company: string;
@@ -248,11 +253,15 @@ function AccountView({
 }) {
   const threeMonth = plans.filter((plan) => plan.term === '3');
   const commitmentEndPreview = formatDate(addMonthsISO(12));
+  const eaName = displayMatchedEa(matchedEaName);
 
   return (
     <Shell signedIn={!preview} company={company} preview={preview}>
       {preview && <p className="page-sub">Sales preview with sample data. This is not a signed-in account.</p>}
       <h1 className="page-title display">Welcome back, {firstName(displayName)}.</h1>
+      <p className={eaName ? 'ea-match' : 'ea-match pending'} role="status">
+        {eaName ? `Your EA: ${eaName}` : 'Matching in progress'}
+      </p>
       <p className="page-sub">{preview ? `Previewing ${email}` : `Signed in as ${email}`}</p>
 
       {!preview && !hasCard && <PaymentBanner />}
