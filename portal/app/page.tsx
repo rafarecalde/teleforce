@@ -64,8 +64,11 @@ function loginMessage(error?: string): string {
 }
 
 function AuthMark() {
+  const home = (process.env.MARKETING_URL || 'https://tryteleforce.com').replace(/\/$/, '');
   return (
-    <img className="auth-logo" src="/brand/logo-light.png" alt="Teleforce" width={150} height={26} />
+    <a href={home} className="logo" aria-label="Teleforce home">
+      <img src="/brand/logo-light.png" alt="Teleforce" width={150} height={26} />
+    </a>
   );
 }
 

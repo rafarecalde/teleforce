@@ -142,7 +142,7 @@ const payNote =
         </section>
 
         <section class="step-card auth-card" aria-labelledby="step-account-title">
-          <img class="auth-logo" src="/brand/logo-light.png" alt="Teleforce" width="150" height="26" />
+          <a href="/" class="logo" aria-label="Teleforce home"><img src="/brand/logo-light.png" alt="Teleforce" width="150" height="26" /></a>
           <h2 id="step-account-title" class="auth-title">Create your account</h2>
           <p class="auth-sub">This is how you’ll sign back in. It does not start billing.</p>
 
@@ -866,7 +866,27 @@ const payNote =
     box-shadow: 0 18px 48px rgba(9, 28, 30, 0.16);
     padding: 28px 26px 24px;
   }
-  .auth-logo { display: block; height: 26px; width: auto; margin: 0 0 18px; }
+  /* Same /brand/logo-light.png as the header. The file is 2023×352 with the
+     wordmark in y 3–244, so the nav’s 26px box leaves the mark short. Crop to
+     that ink and let the wordmark fill the slot. */
+  .auth-card .logo {
+    position: relative;
+    display: block;
+    width: min(220px, 100%);
+    aspect-ratio: 2016 / 242;
+    overflow: hidden;
+    margin: 0 0 18px;
+  }
+  .auth-card .logo img {
+    position: absolute;
+    display: block;
+    width: calc(2023 / 2016 * 100%);
+    height: calc(352 / 242 * 100%);
+    max-width: none;
+    left: calc(-3 / 2016 * 100%);
+    top: calc(-3 / 242 * 100%);
+    margin: 0;
+  }
   .auth-title {
     font-family: 'Archivo', sans-serif;
     font-weight: 800;
