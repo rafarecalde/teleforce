@@ -36,7 +36,7 @@ Score yourself honestly. Do not score the brochure.
 
 | Dimension | In-house EA | Dedicated virtual EA |
 |---|---|---|
-| Time to a productive seat | Recruit, offer, notice period, ramp — often months | Match and onboard in days to a couple of weeks |
+| Time to a productive seat | Recruit, offer, notice period, ramp — often months | Matched in about 3 days. Live within about a week. |
 | Presence | In the room, on the floor, at the dinner | On the tools, on the clock, not in the lobby |
 | Employer of record | You (payroll, benefits, unemployment, management) | Provider employs; you get a monthly seat |
 | Language | Whatever you can hire in your city | Bilingual English/Spanish is a design choice, not a unicorn search |

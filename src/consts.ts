@@ -276,7 +276,7 @@ export const EA_KICKOFF_STEP = {
 } as const;
 
 export const EA_TIMING_LINE =
-  'Matching ~1 week · Live under ~2 weeks.';
+  'Matched in days. Live within a week.';
 
 export const EA_PAY_LINE = 'You don’t pay until your EA starts.';
 
@@ -292,7 +292,7 @@ export const EA_CLOCK_NOTE =
 
 export const EA_START_FAQ = {
   q: 'How fast do I get matched with my EA?',
-  a: 'Matching is about a week from the onboarding call. You’re matched with an executive assistant from the top tier.',
+  a: 'You’re matched in about 3 days from the onboarding call. You’re matched with an executive assistant from the top tier.',
 } as const;
 
 export type FaqStep = { label: string; detail: string };
