@@ -27,12 +27,12 @@ function Shell({
   company?: string;
   preview?: boolean;
 }) {
-  // The auth card carries the wordmark. The old top-bar mark only belongs on
-  // the signed-in dashboard (and the sales preview of that dashboard).
-  const showBar = signedIn || Boolean(preview);
+  // Signed-in dashboard (and its sales preview) keeps the existing bar.
+  // Signed-out screens get a separate green header with the marketing wordmark.
+  const dashboard = signedIn || Boolean(preview);
   return (
     <>
-      {showBar && (
+      {dashboard ? (
         <header className="topbar">
           <div className="row">
             <span className="brand">
@@ -56,11 +56,30 @@ function Shell({
             )}
           </div>
         </header>
+      ) : (
+        <AuthHeader />
       )}
-      <main className={showBar ? undefined : 'auth-screen'}>
+      <main className={dashboard ? undefined : 'auth-screen'}>
         <div className="wrap">{children}</div>
       </main>
     </>
+  );
+}
+
+function AuthHeader() {
+  const home = (process.env.MARKETING_URL || 'https://tryteleforce.com').replace(/\/$/, '');
+  return (
+    <nav className="site-nav" aria-label="Teleforce">
+      <div className="bar">
+        <a href={home} className="logo" aria-label="Teleforce home">
+          <img src="/brand/logo-light.png" alt="Teleforce" width={150} height={26} />
+        </a>
+        <div className="links">
+          <a href="/" className="btn btn-ghost">Login</a>
+          <a href={`${home}/#contact`} className="btn btn-amber">Get matched</a>
+        </div>
+      </div>
+    </nav>
   );
 }
 
@@ -68,15 +87,6 @@ function loginMessage(error?: string): string {
   if (error === 'credentials') return 'Email or password is incorrect.';
   if (error === 'unavailable') return 'The portal can’t reach accounts right now. Try again shortly.';
   return '';
-}
-
-function AuthMark() {
-  const home = (process.env.MARKETING_URL || 'https://tryteleforce.com').replace(/\/$/, '');
-  return (
-    <a href={home} className="logo" aria-label="Teleforce home">
-      <img src="/brand/logo-light.png" alt="Teleforce" width={150} height={26} />
-    </a>
-  );
 }
 
 function firstName(value: string): string {
@@ -129,7 +139,6 @@ export default async function Page({
       <Shell signedIn={false}>
         <div className="login">
           <section className="card auth-card">
-            <AuthMark />
             <h1 className="display auth-title">Client account</h1>
             <p className="auth-sub">The portal is missing AUTH_SECRET. Set it and reload.</p>
           </section>
@@ -173,7 +182,6 @@ export default async function Page({
       <Shell signedIn={false}>
         <div className="login">
           <section className="card auth-card">
-            <AuthMark />
             <h1 className="display auth-title">Sign in</h1>
             <p className="auth-sub">Sign in with the email and password from EA signup.</p>
             <LoginForm signupHref={signupHref} error={err} />
@@ -190,7 +198,6 @@ export default async function Page({
         <Shell signedIn={false}>
           <div className="login">
             <section className="card auth-card">
-              <AuthMark />
               <h1 className="display auth-title">Client account</h1>
               <p className="auth-sub">That session doesn’t match an account. Sign in again.</p>
             </section>
