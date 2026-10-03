@@ -87,7 +87,7 @@ A 30-day review is a working session, not a vibe check. Bring the scoreboard. Na
 | Loops | Someone else nudges the quiet person | You are still the chase |
 | Access | They can act without pinging you for logins | View-only calendar, shared passwords in chat |
 
-> **Month one is the seat, live.** If you want a dedicated bilingual EA on U.S. hours — employed, rematched, live in under two weeks — bring the live queue, not a wish list. [Book a call →](/#contact)
+> **Month one is the seat, live.** If you want a dedicated bilingual EA on U.S. hours — employed, rematched, live within about a week — bring the live queue, not a wish list. [Book a call →](/#contact)
 
 ## The five ways principals stall their own EA
 
@@ -121,7 +121,7 @@ You will not have 12-month “full performance.” You should have a working ope
 
 Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade support behind the recruiting. The EA product is one named, full-time assistant — English and Spanish, on your U.S. hours — employed and managed by us. Your partnership manager matches you with an executive assistant from the top tier. They stay on the engagement for oversight, tools, and best practices.
 
-Matching is about a week. You’re live in under about two weeks. The path is about 2–3 hours of your time. If the fit is wrong after you have actually granted access, we rematch.
+You’re matched in about 3 days. You’re live within about a week. The path is about 2–3 hours of your time. If the fit is wrong after you have actually granted access, we rematch.
 
 We will not talk you into a 40-page playbook. We will ask for the decision rule and the live queue. [See the EA offer](/), [see pricing](/#pricing), or [get matched](/#contact).
 

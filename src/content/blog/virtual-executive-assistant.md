@@ -174,6 +174,6 @@ Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade supp
 
 This is not a marketplace freelancer and not a shared pool. It is a seat.
 
-Matching is about a week. You’re live in under about two weeks. [See pricing](/#pricing) on the homepage, or the full [EA offer](/). [Contact us](/#contact) if you want a match conversation rather than a brochure. If you later need adjacent capacity — appointment setting, data entry, bilingual support — it is the same employer, a different seat.
+You’re matched in about 3 days. You’re live within about a week. [See pricing](/#pricing) on the homepage, or the full [EA offer](/). [Contact us](/#contact) if you want a match conversation rather than a brochure. If you later need adjacent capacity — appointment setting, data entry, bilingual support — it is the same employer, a different seat.
 
 The test is simple: after 30 days, is the interruption layer theirs or still yours? If it is still yours, you hired a tasker. If it is theirs, you finally have a virtual executive assistant.
