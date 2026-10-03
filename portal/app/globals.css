@@ -264,19 +264,35 @@ section.card > .hint { color: var(--on-paper-mut); font-size: 13.5px; margin: 0 
   font-weight: 500;
 }
 
-/* login — no top bar on this screen, so the card sits in the page */
+/* Signed-out header: same ink as the marketing nav, full wordmark asset.
+   The image is shown whole (no overflow crop, no pulsing dot). */
+.auth-topbar {
+  background: #0e2629;
+}
+.auth-logo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+.auth-logo img {
+  height: 26px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+
+/* login — card sits just under the header, not vertically centered */
 main.auth-screen {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 0;
 }
 main.auth-screen .wrap {
   width: 100%;
-  margin-top: auto;
-  margin-bottom: auto;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 16px;
+  padding-bottom: 28px;
 }
 .login { max-width: 420px; margin: 0 auto; }
 section.card.auth-card {
@@ -285,26 +301,6 @@ section.card.auth-card {
   border-color: transparent;
   box-shadow: 0 18px 48px rgba(9, 28, 30, 0.16);
   padding: 28px 24px 22px;
-}
-/* Same wordmark as the marketing header (public/brand/logo-light.png).
-   Crop the file’s empty lower band so the mark fills this slot. */
-.auth-card .logo {
-  position: relative;
-  display: block;
-  width: min(220px, 100%);
-  aspect-ratio: 2016 / 242;
-  overflow: hidden;
-  margin: 0 0 18px;
-}
-.auth-card .logo img {
-  position: absolute;
-  display: block;
-  width: calc(2023 / 2016 * 100%);
-  height: calc(352 / 242 * 100%);
-  max-width: none;
-  left: calc(-3 / 2016 * 100%);
-  top: calc(-3 / 242 * 100%);
-  margin: 0;
 }
 .auth-title {
   font-size: clamp(30px, 6vw, 34px);
@@ -373,8 +369,13 @@ section.card.auth-card {
 }
 .auth-foot a:hover { color: #f5b647; }
 @media (max-width: 640px) {
-  main.auth-screen .wrap { padding-top: 32px; padding-bottom: 32px; }
-  section.card.auth-card { padding: 24px 16px 18px; }
+  main.auth-screen .wrap {
+    padding-top: 12px;
+    padding-bottom: 20px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  section.card.auth-card { padding: 22px 16px 18px; }
   .auth-title { font-size: 28px; }
 }
 
