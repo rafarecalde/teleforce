@@ -30,7 +30,7 @@ The failure mode is almost never talent. It is a principal who keeps the keys.
 
 ## What to finish before day one
 
-Do this before kickoff, not the morning they start. Teleforce’s [EA offer](/) covers this on the onboarding call, then sends a short written plan and an access checklist within 24–48 hours. Fill the gaps yourself.
+Do this before kickoff, not the morning they start. Teleforce’s [EA offer](/) covers this on the onboarding call, which produces a starter plan. Fill the gaps yourself.
 
 **1. A one-page decision rule.** What they always take. What they close. What they draft for you. People who skip the line. Tone notes (“short, no exclamation points, never apologize for a delay we caused”). This is the document [what a virtual executive assistant actually does](/blog/virtual-executive-assistant) assumes you will write and almost nobody does.
 
