@@ -264,10 +264,16 @@ section.card > .hint { color: var(--on-paper-mut); font-size: 13.5px; margin: 0 
   font-weight: 500;
 }
 
-/* Signed-out header: same ink as the marketing nav, full wordmark asset.
-   The image is shown whole (no overflow crop, no pulsing dot). */
+/* Signed-out header: same ink as the marketing nav (#0e2629) and the same
+   /brand/logo-light.png wordmark, painted in full. The file is 2023×352 with
+   the mark in the upper portion and a transparent lower band, so the box is
+   taller than the ink and the row’s bottom padding is tightened to match.
+   No overflow crop and no pulsing dot. */
 .auth-topbar {
   background: #0e2629;
+}
+.auth-topbar .row {
+  padding: 10px 18px 0;
 }
 .auth-logo {
   display: inline-flex;
@@ -275,7 +281,7 @@ section.card > .hint { color: var(--on-paper-mut); font-size: 13.5px; margin: 0 
   line-height: 0;
 }
 .auth-logo img {
-  height: 26px;
+  height: 36px;
   width: auto;
   max-width: 100%;
   display: block;
@@ -369,6 +375,7 @@ section.card.auth-card {
 }
 .auth-foot a:hover { color: #f5b647; }
 @media (max-width: 640px) {
+  .auth-topbar .row { padding-left: 14px; padding-right: 14px; }
   main.auth-screen .wrap {
     padding-top: 12px;
     padding-bottom: 20px;

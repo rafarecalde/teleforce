@@ -72,7 +72,7 @@ function AuthHeader() {
     <header className="topbar auth-topbar">
       <div className="row">
         <a href={home} className="auth-logo" aria-label="Teleforce home">
-          <img src="/brand/logo-light.png" alt="Teleforce" width={150} height={26} />
+          <img src="/brand/logo-light.png" alt="Teleforce" width={207} height={36} />
         </a>
       </div>
     </header>
