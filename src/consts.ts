@@ -261,7 +261,7 @@ export const EA_JOURNEY_LINE =
 
 export const EA_ONBOARDING_STEP = {
   title: 'Onboarding',
-  body: 'Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. We cover what to delegate, priorities, hours, tools, and how you like to communicate. Your partnership manager owns matching after this call. Within 24–48 hours: a short written plan and an access checklist.',
+  body: 'Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. We cover what to delegate, priorities, hours, tools, and how you like to communicate. You leave with a personalized kickoff plan. Your partnership manager owns matching after this call.',
 } as const;
 
 export const EA_MATCH_STEP = {
@@ -315,7 +315,7 @@ export const EA_JOURNEY_FAQ = [
     steps: [
       {
         label: 'Onboarding',
-        detail: 'one deep ~60-min call (prep sheet beforehand; plan + access checklist within 24–48 hours)',
+        detail: 'one deep ~60-min call (prep sheet beforehand; you leave with a personalized kickoff plan; partnership manager owns matching after)',
       },
       {
         label: 'Get matched',
@@ -330,7 +330,7 @@ export const EA_JOURNEY_FAQ = [
   },
   {
     q: 'What does onboarding look like?',
-    a: 'Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. The call covers what to delegate, priorities, hours, tools, and how you like to communicate. Your partnership manager owns matching after that. Within 24–48 hours you get a short written plan and an access checklist.',
+    a: 'Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. The call covers what to delegate, priorities, hours, tools, and how you like to communicate. You leave with a personalized kickoff plan. Your partnership manager owns matching after that.',
   },
   EA_START_FAQ,
   {
