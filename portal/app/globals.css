@@ -264,27 +264,83 @@ section.card > .hint { color: var(--on-paper-mut); font-size: 13.5px; margin: 0 
   font-weight: 500;
 }
 
-/* Signed-out header: same ink as the marketing nav (#0e2629) and the same
-   /brand/logo-light.png wordmark, painted in full. The file is 2023×352 with
-   the mark in the upper portion and a transparent lower band, so the box is
-   taller than the ink and the row’s bottom padding is tightened to match.
-   No overflow crop and no pulsing dot. */
-.auth-topbar {
-  background: #0e2629;
+/* Signed-out header: marketing nav (src/styles/global.css), scoped so the
+   portal’s own .btn rules stay on the form. Same wordmark asset, uncropped. */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(14, 38, 41, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line-dark);
 }
-.auth-topbar .row {
-  padding: 10px 18px 0;
-}
-.auth-logo {
-  display: inline-flex;
+.site-nav .bar {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 13px 22px;
+  display: flex;
   align-items: center;
-  line-height: 0;
+  justify-content: space-between;
+  gap: 12px;
 }
-.auth-logo img {
-  height: 36px;
+.site-nav .logo {
+  display: flex;
+  align-items: center;
+  flex: none;
+  line-height: 0;
+  text-decoration: none;
+}
+.site-nav .logo img {
+  height: 26px;
   width: auto;
-  max-width: 100%;
   display: block;
+}
+.site-nav .links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex: none;
+}
+.site-nav .btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 8px;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s, background 0.2s, border-color 0.2s, color 0.2s;
+}
+.site-nav .btn-amber {
+  background: var(--amber);
+  color: var(--ink-deep);
+  font-weight: 600;
+}
+.site-nav .btn-amber:hover {
+  transform: translateY(-1px);
+  background: #f5b647;
+}
+.site-nav .btn-ghost {
+  background: transparent;
+  color: var(--on-dark);
+  border: 1px solid var(--line-dark);
+}
+.site-nav .btn-ghost:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+@media (max-width: 680px) {
+  .site-nav .links { gap: 10px; }
+}
+@media (max-width: 400px) {
+  .site-nav .bar { padding-left: 14px; padding-right: 14px; }
+  .site-nav .links .btn { padding: 8px 10px; font-size: 11px; }
+  .site-nav .logo img { height: 22px; }
 }
 
 /* login — card sits just under the header, not vertically centered */
@@ -375,7 +431,6 @@ section.card.auth-card {
 }
 .auth-foot a:hover { color: #f5b647; }
 @media (max-width: 640px) {
-  .auth-topbar .row { padding-left: 14px; padding-right: 14px; }
   main.auth-screen .wrap {
     padding-top: 12px;
     padding-bottom: 20px;

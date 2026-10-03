@@ -69,13 +69,17 @@ function Shell({
 function AuthHeader() {
   const home = (process.env.MARKETING_URL || 'https://tryteleforce.com').replace(/\/$/, '');
   return (
-    <header className="topbar auth-topbar">
-      <div className="row">
-        <a href={home} className="auth-logo" aria-label="Teleforce home">
-          <img src="/brand/logo-light.png" alt="Teleforce" width={207} height={36} />
+    <nav className="site-nav" aria-label="Teleforce">
+      <div className="bar">
+        <a href={home} className="logo" aria-label="Teleforce home">
+          <img src="/brand/logo-light.png" alt="Teleforce" width={150} height={26} />
         </a>
+        <div className="links">
+          <a href="/" className="btn btn-ghost">Login</a>
+          <a href={`${home}/#contact`} className="btn btn-amber">Get matched</a>
+        </div>
       </div>
-    </header>
+    </nav>
   );
 }
 
