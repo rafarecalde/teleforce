@@ -4,22 +4,23 @@ Next.js (App Router) account portal for Executive Assistant clients. Deploy to
 **Vercel** with root directory `portal`, at `portal.tryteleforce.com`.
 
 Signup stays on the marketing site (`src/pages/ea/signup.astro`, GitHub Pages).
-That page calls this app to create the account. A card is optional. Sign-in uses
-the same email and password either way.
+That page calls this app to create the account. Payment information is required
+on that page. Sign-in uses the same email and password. Accounts created before
+a card was required still sign in.
 
 ## What signup does
 
 Nothing is charged. There is no PaymentIntent, invoice, or subscription in this
 flow. Billing at kickoff (or 3 business days after the client is matched, whichever comes first) is later work.
 
-**Without a card** (the default on the signup page): `POST /api/signup/complete`
-with name, email, password, plan, `termsAccepted: true`, and `signedName` (the
-typed legal name). `termsVersion` is optional; if it is sent and it is not the
-current Terms, signup is rejected. No SetupIntent and no Stripe call. The
-account stores null `stripeCustomerId`, `defaultPaymentMethodId`, and
-`setupIntentId`. The portal lets that email and password sign in. A banner and
-the billing section open a Stripe Card Element so the client can add a card
-later. Nothing is charged.
+**Without a card** (older accounts, or a `POST /api/signup/complete` that omits
+the SetupIntent): name, email, password, plan, `termsAccepted: true`, and
+`signedName` (the typed legal name). `termsVersion` is optional; if it is sent
+and it is not the current Terms, signup is rejected. No SetupIntent and no
+Stripe call. The account stores null `stripeCustomerId`, `defaultPaymentMethodId`,
+and `setupIntentId`. The portal lets that email and password sign in. Billing
+information offers **Change payment method**, which opens a Stripe Card Element
+so the client can put a card on file. Nothing is charged.
 
 **With a card:**
 
@@ -42,8 +43,8 @@ Add more with `SIGNUP_CORS_ORIGINS`.
 The marketing site has no Content-Security-Policy today, so Stripe.js can load.
 If you add one, allow `https://js.stripe.com` (script and frame),
 `https://hooks.stripe.com` (frame), `https://api.stripe.com` (connect), and the
-portal origin (connect). The portal loads the same Stripe.js Card Element for
-signed-in clients who still need a card.
+portal origin (connect). The portal loads the same Stripe.js Card Element when
+a signed-in client changes the payment method.
 
 ## Terms acceptance record
 
@@ -85,37 +86,37 @@ If the send fails, or `RESEND_API_KEY` / `EMAIL_FROM` is unset, the account
 stays. `email_sent_at` remains null and `email_error` stores a short reason
 so the send can be retried. There is no retry button in the portal yet.
 
-## Add a card after signup
+## Change a payment method
 
-Signed-in accounts with no `defaultPaymentMethodId` see an “Add payment method”
-banner. It scrolls to a Card Element under Billing information. There is still
-no PaymentIntent, invoice, subscription, or charge.
+Billing information has **Change payment method**. It opens the same Stripe
+Card Element used at signup (a SetupIntent, not a charge). The signed-in
+dashboard does not prompt for a card. Accounts with no `defaultPaymentMethodId`
+use that same action to put one on file. There is still no PaymentIntent,
+invoice, subscription, or charge.
 
 1. `GET /api/account/payment/config` returns the publishable key. The session
    cookie is required.
 2. Stripe.js mounts a Card Element. Card numbers go to Stripe, not to this app.
 3. `POST /api/account/payment/setup-intent` reuses or creates a Stripe Customer
-   and a **SetupIntent** (`usage: off_session`, `allowed_payment_method_types: ['card']`).
+   and a **SetupIntent** (`usage: off_session`, `allowed_payment_method_types: ['card']`),
+   including when a card is already on file.
 4. The browser confirms the card with `stripe.confirmCardSetup`.
 5. `POST /api/account/payment/complete` checks that the SetupIntent succeeded
-   for this account, stores the PaymentMethod as the customer default, and
-   writes `stripeCustomerId`, `defaultPaymentMethodId`, `setupIntentId`, brand,
-   and last4 on the user row.
+   for this account, stores the PaymentMethod as the customer default (replacing
+   a previous card), and writes `stripeCustomerId`, `defaultPaymentMethodId`,
+   `setupIntentId`, brand, and last4 on the user row.
 
-Signup’s “Add a card later” and “Add a card now” choices are unchanged.
+### Test a card change
 
-### Test with a logged-in cardless account
-
-1. From the repo root, run the marketing site and the portal (`npm run dev` in
-   each). On `/ea/signup`, choose **Add a card later**, create the account, then
-   sign in at the portal with that email and password.
-2. Or insert a user with null `stripe_customer_id`, `default_payment_method_id`,
-   and `setup_intent_id`, then sign in.
-3. **Add payment method** on the banner opens the secure card field. Use Stripe
-   test card `4242 4242 4242 4242`, any future expiry, any CVC, and any ZIP.
-   Live keys save a real card and still do not charge.
-4. The banner goes away and Billing shows the card on file. In Stripe, the
-   Customer has a default payment method and no charge.
+1. Sign in with an account from `/ea/signup`, or insert a user with null
+   `stripe_customer_id`, `default_payment_method_id`, and `setup_intent_id`,
+   then sign in.
+2. Under Billing information, choose **Change payment method**. Use Stripe test
+   card `4242 4242 4242 4242`, any future expiry, any CVC, and any ZIP. Live
+   keys save a real card and still do not charge.
+3. Billing shows the card on file. In Stripe, the Customer has that card as the
+   default payment method and no charge. **Change payment method** again
+   replaces it.
 
 ## Sign-in
 
@@ -125,10 +126,11 @@ an httpOnly session cookie (`jose` JWT, `AUTH_SECRET`).
 The sign-in screen does not show onboarding or an assistant. After sign-in the
 dashboard follows the account row:
 
-1. Before `onboarding_completed_at` is set, a **Schedule your onboarding call**
-   card embeds Calendly (`https://calendly.com/tryteleforce-sales`, the URL the
-   marketing site used, via Calendly’s inline widget). Under that card the page
-   reads **Your assistant: matching in progress**.
+1. Before `onboarding_completed_at` is set, a collapsed **Schedule your onboarding
+   call** card stays on the dashboard with a **Schedule** label. Opening it loads
+   Calendly (`https://calendly.com/tryteleforce-sales`, the URL the marketing site
+   used, via Calendly’s inline widget). The widget script is not requested until
+   then. Under that card the page reads **Your assistant: matching in progress**.
 2. After ops sets `onboarding_completed_at`, the Calendly card is gone.
 3. After ops sets `matched_ea_name` to the assistant’s first and last name, the
    top of the dashboard reads **Your assistant is First Last**.
@@ -166,7 +168,8 @@ completion screen uses the same Calendly URL.
 data only. It does not create a session and does not read real accounts. Leave
 it unset in production.
 
-A signed-in **Add another EA** request is stored in `ea_requests` (focus, tasks,
+**Add another EA** is a collapsed card. Opening it shows the request form. A
+signed-in request is stored in `ea_requests` (focus, tasks,
 bilingual need, start timing, notes, and `schedule = full-time`). `POST
 /api/account/ea-request` requires the session cookie. It does not create a
 Stripe PaymentIntent, invoice, subscription, or charge. Ops can bill the same
@@ -198,8 +201,9 @@ Omit `TURSO_DATABASE_URL` locally. Accounts are stored in
 
 Stripe test card, if you add one: `4242 4242 4242 4242`, any future expiry, any CVC, any ZIP.
 Use **test** keys until go-live. Live keys save a real card and still do not
-charge, because a card at signup only confirms a SetupIntent. Signup without a
-card does not call Stripe.
+charge, because a card at signup only confirms a SetupIntent. The signup page
+requires payment information. A complete call that omits the SetupIntent still
+does not call Stripe.
 
 `PUBLIC_PORTAL_URL` is optional for the Astro site. Dev defaults to
 `http://localhost:3000`. A production build defaults to
@@ -212,7 +216,7 @@ card does not call Stripe.
 | `APP_URL` | This app’s base URL, no trailing slash |
 | `AUTH_SECRET` | Signs the session cookie. Required in production |
 | `STRIPE_SECRET_KEY` | Server key. Used only when a card is submitted: SetupIntent and Customer, no charge. Calls retry once on a network error or Stripe 5xx, and the server logs the Stripe type, code, status, and request id. Stripe 4xx messages are returned to the card form (keys redacted) |
-| `STRIPE_PUBLISHABLE_KEY` | Returned when someone adds a card at signup or in the portal. `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` is a fallback |
+| `STRIPE_PUBLISHABLE_KEY` | Returned when someone submits a card at signup or changes the payment method in the portal. `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` is a fallback |
 | `TURSO_DATABASE_URL` | `libsql://…` in production. Local file URL if unset outside production |
 | `TURSO_AUTH_TOKEN` | Turso token. Not used for a local file |
 | `PREVIEW_MODE` | `1` enables the sample-data sales link |
@@ -236,7 +240,7 @@ This repo does not deploy the portal for you.
 3. Set `APP_URL=https://portal.tryteleforce.com`, `AUTH_SECRET`, the Stripe
    keys, and the Turso variables. Leave `PREVIEW_MODE` empty. Stripe keys can
    stay set; they are used when a signup includes a card, or when a signed-in
-   client adds a card in the portal.
+   client changes the payment method in the portal.
    Databases created when a card was required are rebuilt once on startup so
    `stripe_customer_id`, `default_payment_method_id`, and `setup_intent_id`
    can be null. Existing card-on-file rows are kept.

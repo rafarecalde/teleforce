@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { PAYMENT_CARD_NOTE } from '@/lib/constants';
 
 type CardChange = { complete?: boolean; error?: { message?: string } };
 
@@ -134,7 +135,7 @@ export default function AddPaymentMethod({
       card.on('ready', () => {
         if (!active) return;
         setReady(true);
-        setStatusText('Secured by Stripe. Nothing is charged today.');
+        setStatusText('Secured by Stripe.');
       });
       if (!active || !mountRef.current) return;
       stripeRef.current = stripe;
@@ -182,13 +183,6 @@ export default function AddPaymentMethod({
     setWorking(true);
     try {
       const setup = await postJson('/api/account/payment/setup-intent');
-      if (setup.alreadyOnFile === true) {
-        onSaved({
-          brand: typeof setup.brand === 'string' && setup.brand ? setup.brand : 'Card',
-          last4: typeof setup.last4 === 'string' ? setup.last4 : '',
-        });
-        return;
-      }
       const clientSecret = typeof setup.clientSecret === 'string' ? setup.clientSecret : '';
       if (!clientSecret) throw new Error('Card setup could not be completed. Try again.');
 
@@ -216,8 +210,8 @@ export default function AddPaymentMethod({
 
   return (
     <form onSubmit={submit}>
-      <p className="muted" style={{ fontSize: 12.5, margin: '8px 0 12px' }}>
-        Card details are entered in Stripe’s secure field and are not stored on this site. Nothing is charged now.
+      <p className="muted" id="pay-note" style={{ fontSize: 12.5, margin: '8px 0 12px' }}>
+        {PAYMENT_CARD_NOTE}
       </p>
       <div className="field">
         <label htmlFor="pm-card-name">Name on card</label>
@@ -229,7 +223,9 @@ export default function AddPaymentMethod({
             setNameError('');
           }}
           autoComplete="cc-name"
+          autoFocus
           placeholder="Name on card"
+          aria-describedby="pay-note"
           aria-invalid={nameError ? 'true' : 'false'}
         />
         {nameError && <p className="field-err">{nameError}</p>}
@@ -243,7 +239,7 @@ export default function AddPaymentMethod({
           role="group"
           aria-label="Card number, expiry, CVC, and ZIP"
           aria-invalid={cardError ? 'true' : 'false'}
-          aria-describedby="pm-card-status"
+          aria-describedby="pay-note pm-card-status"
         />
         <p className="muted" id="pm-card-status" style={{ fontSize: 12.5, margin: '6px 0 0' }}>
           {statusText}
@@ -251,7 +247,7 @@ export default function AddPaymentMethod({
         {cardError && <p className="field-err">{cardError}</p>}
       </div>
       <button className="btn btn-primary" type="submit" disabled={working}>
-        {working ? 'Saving card…' : 'Add payment method'}
+        {working ? 'Saving card…' : 'Change payment method'}
       </button>
       {formError && (
         <div className="note err" role="alert">

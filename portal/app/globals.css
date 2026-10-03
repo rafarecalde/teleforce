@@ -123,6 +123,65 @@ section.card > h2 {
 }
 section.card > .hint { color: var(--on-paper-mut); font-size: 13.5px; margin: 0 0 16px; }
 
+.collapse-card { padding: 0; }
+.collapse-card > h2 { margin: 0; font: inherit; letter-spacing: 0; }
+.collapse-head {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.collapse-head:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: -2px;
+}
+.collapse-title {
+  flex: 1;
+  min-width: 0;
+  font-family: 'Archivo', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.collapse-label {
+  flex: none;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink-deep);
+  background: var(--amber);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+.collapse-chevron {
+  flex: none;
+  color: var(--ink);
+  transition: transform 0.15s ease;
+}
+.collapse-head[aria-expanded="true"] .collapse-chevron { transform: rotate(180deg); }
+.collapse-panel { padding: 0 18px 18px; border-top: 1px solid var(--line); }
+.collapse-panel[hidden] { display: none; }
+.collapse-panel .hint {
+  color: var(--on-paper-mut);
+  font-size: 13.5px;
+  margin: 14px 0 16px;
+}
+@media (max-width: 640px) {
+  .collapse-head { padding: 14px 16px; }
+  .collapse-title { font-size: 16px; }
+  .collapse-panel { padding: 0 16px 16px; }
+}
+
 /* plan card */
 .plan {
   border: 1px solid var(--line);
@@ -215,18 +274,47 @@ section.card > .hint { color: var(--on-paper-mut); font-size: 13.5px; margin: 0 
 .muted { color: var(--on-paper-mut); }
 .savings { color: var(--ok); font-weight: 700; }
 
-.pay-banner {
-  background: rgba(242, 168, 43, 0.16);
-  border: 1px solid rgba(242, 168, 43, 0.55);
-  border-radius: 12px;
-  padding: 14px 16px;
-  margin: 0 0 18px;
-  color: var(--ink);
+.pm-change { margin-top: 12px; }
+.pay-copy { margin: 0 0 4px; font-size: 14.5px; line-height: 1.5; }
+.modal-back {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(9, 28, 30, 0.55);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 18px;
+  overflow: auto;
 }
-.pay-banner p { margin: 0; font-size: 14.5px; line-height: 1.5; }
-.pay-banner .btn { margin-top: 12px; }
-.pay-banner a.btn-primary { color: var(--ink-deep); }
-#add-payment { scroll-margin-top: 18px; }
+.modal {
+  width: min(100%, 480px);
+  background: var(--card);
+  color: var(--on-paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 18px 20px;
+  margin-top: 8vh;
+}
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.modal-head h3 { margin: 0; font-size: 18px; }
+.modal-close {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 13px;
+  color: var(--on-paper-mut);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .card-mount {
   background: #fff;
   border: 1px solid var(--line);

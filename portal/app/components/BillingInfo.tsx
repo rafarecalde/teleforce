@@ -1,7 +1,8 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { EA_PAY_LINE, PAYMENT_STEP_COPY, SUBSCRIPTION_START_COPY } from '@/lib/constants';
 import AddPaymentMethod from './AddPaymentMethod';
 
 export type BillingInit = {
@@ -36,6 +37,20 @@ export default function BillingInfo({
   });
   const [status, setStatus] = useState<'idle' | 'working' | 'saved' | 'error'>('idle');
   const [message, setMessage] = useState('');
+  const [changing, setChanging] = useState(false);
+
+  useEffect(() => {
+    if (!changing) return;
+    const previous = document.activeElement;
+    function onKey(event: KeyboardEvent) {
+      if (event.key === 'Escape') setChanging(false);
+    }
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      if (previous instanceof HTMLElement) previous.focus();
+    };
+  }, [changing]);
 
   const set = (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((current) => ({ ...current, [key]: e.target.value }));
@@ -80,47 +95,56 @@ export default function BillingInfo({
 
   return (
     <>
-      <div className="field" id="add-payment">
+      <div className="field">
         <label>Payment method</label>
         {onFile ? (
-          <>
-            <div className="cardline">
-              <span className="cardbrand">{onFile.brand || 'Card'}</span>
-              <span className="mono">···· ···· ···· {last4}</span>
-              <span className="badge" style={{ marginLeft: 'auto' }}>On file</span>
+          <div className="cardline">
+            <span className="cardbrand">{onFile.brand || 'Card'}</span>
+            <span className="mono">···· ···· ···· {last4}</span>
+            <span className="badge" style={{ marginLeft: 'auto' }}>On file</span>
+          </div>
+        ) : (
+          <div className="cardline">
+            <span className="cardbrand">No card on file</span>
+          </div>
+        )}
+        <p className="muted" style={{ fontSize: 12.5, margin: '6px 0 0' }}>
+          {EA_PAY_LINE} {SUBSCRIPTION_START_COPY}
+        </p>
+        {persist && (
+          <button className="btn btn-ghost pm-change" type="button" onClick={() => setChanging(true)}>
+            Change payment method
+          </button>
+        )}
+      </div>
+
+      {persist && changing && (
+        <div
+          className="modal-back"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) setChanging(false);
+          }}
+        >
+          <div className="modal" role="dialog" aria-modal="true" aria-labelledby="change-pm-title">
+            <div className="modal-head">
+              <h3 id="change-pm-title">Change payment method</h3>
+              <button className="modal-close" type="button" onClick={() => setChanging(false)}>
+                Close
+              </button>
             </div>
-            <p className="muted" style={{ fontSize: 12.5, margin: '6px 0 0' }}>
-              Saved with Stripe. Nothing is charged until your EA starts. To replace the card,
-              your account manager sends a secure link — it is not typed here.
-            </p>
-          </>
-        ) : persist ? (
-          <>
-            <div className="cardline">
-              <span className="cardbrand">No card on file</span>
-              <span className="badge" style={{ marginLeft: 'auto' }}>Add before kickoff</span>
-            </div>
+            <p className="pay-copy">{PAYMENT_STEP_COPY}</p>
             <AddPaymentMethod
               email={accountEmail || init.email}
               defaultName={init.contactName}
               onSaved={(card) => {
                 setSavedCard(card);
+                setChanging(false);
                 router.refresh();
               }}
             />
-          </>
-        ) : (
-          <>
-            <div className="cardline">
-              <span className="cardbrand">No card on file</span>
-              <span className="badge" style={{ marginLeft: 'auto' }}>Add before kickoff</span>
-            </div>
-            <p className="muted" style={{ fontSize: 12.5, margin: '6px 0 0' }}>
-              Nothing is charged now. Add a card before kickoff when we follow up.
-            </p>
-          </>
-        )}
-      </div>
+          </div>
+        </div>
+      )}
 
       <hr className="divider" />
 
