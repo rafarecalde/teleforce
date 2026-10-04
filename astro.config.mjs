@@ -26,7 +26,9 @@ export default defineConfig({
         !page.includes('/ea/remote-executive-assistant') &&
         !page.includes('/ea/quiz') &&
         !page.includes('/ea/match') &&
-        !page.includes('/ea/signup'),
+        !page.includes('/ea/signup') &&
+        !page.includes('/thanks') &&
+        !page.includes('/thankyou'),
     }),
   ],
 });
