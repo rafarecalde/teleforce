@@ -39,8 +39,9 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
 
         <section class="step-card" aria-labelledby="step-terms-title">
           <header class="step-head">
+            <span class="step-num">1</span>
             <div>
-              <h2 id="step-terms-title">1. Terms and Conditions</h2>
+              <h2 id="step-terms-title">Terms and Conditions</h2>
             </div>
           </header>
           <label class="agree" for="terms">
@@ -59,7 +60,7 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
 
         <section class="step-card" aria-labelledby="step-plan-title">
           <header class="step-head">
-            <span class="step-num">02</span>
+            <span class="step-num">2</span>
             <div>
               <h2 id="step-plan-title">Choose your plan</h2>
             </div>
@@ -114,10 +115,14 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
           </div>
         </section>
 
-        <section class="step-card auth-card" aria-labelledby="step-account-title">
-          <a href="/" class="logo" aria-label="Teleforce home"><img src="/brand/logo-light.png" alt="Teleforce" width="150" height="26" /></a>
-          <h2 id="step-account-title" class="auth-title">Create your account</h2>
-          <p class="auth-sub">This is how you’ll sign back in. It does not start billing.</p>
+        <section class="step-card" aria-labelledby="step-account-title">
+          <header class="step-head">
+            <span class="step-num">3</span>
+            <div>
+              <h2 id="step-account-title">Create your account</h2>
+              <p class="auth-sub">This is how you’ll sign back in. It does not start billing.</p>
+            </div>
+          </header>
 
           <div class="field">
             <label for="full-name">Full name</label>
@@ -815,52 +820,6 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
   .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .submit { width: 100%; text-align: center; margin-top: 18px; padding: 14px 18px; font-size: 13px; min-height: 48px; }
 
-  .auth-card {
-    background: var(--ink);
-    color: var(--on-dark);
-    border-color: transparent;
-    box-shadow: 0 18px 48px rgba(9, 28, 30, 0.16);
-    padding: 28px 26px 24px;
-  }
-  /* Same /brand/logo-light.png as the header. The file is 2023×352 with the
-     wordmark in y 3–244, so the nav’s 26px box leaves the mark short. Crop to
-     that ink and let the wordmark fill the slot. */
-  .auth-card .logo {
-    position: relative;
-    display: block;
-    width: min(220px, 100%);
-    aspect-ratio: 2016 / 242;
-    overflow: hidden;
-    margin: 0 0 18px;
-  }
-  .auth-card .logo img {
-    position: absolute;
-    display: block;
-    width: calc(2023 / 2016 * 100%);
-    height: calc(352 / 242 * 100%);
-    max-width: none;
-    left: calc(-3 / 2016 * 100%);
-    top: calc(-3 / 242 * 100%);
-    margin: 0;
-  }
-  .auth-title {
-    font-family: 'Archivo', sans-serif;
-    font-weight: 800;
-    font-size: clamp(30px, 5vw, 36px);
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-    color: #fff;
-    margin: 0 0 8px;
-  }
-  .auth-sub {
-    margin: 0 0 6px;
-    font-size: 15px;
-    line-height: 1.5;
-    color: var(--on-dark-mut);
-  }
-  .auth-card .field label { color: var(--sage); }
-  .auth-card .field input { font-size: 16px; min-height: 48px; }
-  .auth-card .err { color: #ffc7ba; }
   .pw { position: relative; }
   .pw input { padding-right: 48px; }
   .eye {
@@ -889,15 +848,16 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
     text-align: center;
     font-size: 14px;
     line-height: 1.45;
-    color: var(--on-dark-mut);
+    color: var(--on-paper-mut);
   }
   .auth-foot a {
-    color: var(--amber);
+    color: var(--ink);
     font-weight: 600;
     text-decoration: underline;
+    text-decoration-color: var(--sage);
     text-underline-offset: 3px;
   }
-  .auth-foot a:hover { color: #f5b647; }
+  .auth-foot a:hover { text-decoration-color: var(--amber); }
 
   .done-card { max-width: 720px; margin: 0 auto; }
   .done-card h2.disp {
@@ -952,8 +912,6 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
   @media (max-width: 640px) {
     .plans, .split { grid-template-columns: 1fr; }
     .step-card { padding: 22px 18px 24px; }
-    .auth-card { padding: 24px 18px 20px; }
-    .auth-title { font-size: 28px; }
     .signup-hero { padding: 40px 0 32px; }
   }
 </style>
