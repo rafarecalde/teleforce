@@ -6,6 +6,7 @@ import { hashPassword, passwordOk } from './password';
 import { formatDollars, planLabel, planMonthly } from './plans';
 import { findOrCreateCustomer, formatBrand, getStripe, stripeHttpError } from './stripe';
 import { insertAccountWithAcceptance, recordTermsEmailResult } from './terms-acceptance';
+import { sendSignupAlertEmail } from './signup-alert';
 import { sendTermsAcceptanceEmail } from './terms-email';
 import { getTermsDocument } from './terms';
 import { getUserByEmail } from './users';
@@ -189,21 +190,33 @@ async function saveAccount(input: {
     throw err;
   }
 
-  // Mail is not part of the account transaction. A failed send leaves
-  // email_sent_at null and email_error set so ops can retry.
-  await emailAcceptedTerms({
-    acceptanceId,
-    email: input.email,
-    fullName: input.fullName,
-    plan: input.plan,
-    acceptedAt: createdAt,
-    signedName: input.signedName,
-    termsVersion: input.termsVersion,
-    termsContentHash: input.termsContentHash,
-    termsMarkdown: input.termsMarkdown,
-    acceptedIp: input.acceptedIp,
-    acceptedUa: input.acceptedUa,
-  });
+  // Mail is not part of the account transaction. A failed Terms send leaves
+  // email_sent_at null and email_error set so ops can retry. The internal
+  // signup alert runs beside it and cannot fail or change this response.
+  await Promise.all([
+    emailAcceptedTerms({
+      acceptanceId,
+      email: input.email,
+      fullName: input.fullName,
+      plan: input.plan,
+      acceptedAt: createdAt,
+      signedName: input.signedName,
+      termsVersion: input.termsVersion,
+      termsContentHash: input.termsContentHash,
+      termsMarkdown: input.termsMarkdown,
+      acceptedIp: input.acceptedIp,
+      acceptedUa: input.acceptedUa,
+    }),
+    sendSignupAlertEmail({
+      fullName: input.fullName,
+      email: input.email,
+      plan: input.plan,
+      cardBrand: input.cardBrand,
+      cardLast4: input.cardLast4,
+      signedUpAt: createdAt,
+      stripeCustomerId: input.stripeCustomerId,
+    }),
+  ]);
   return { ok: true, email: input.email };
 }
 
