@@ -311,7 +311,7 @@ export const EA_JOURNEY_FAQ = [
   {
     // Short on purpose. Onboarding, match speed, kickoff timing, billing, and the 90-day clock have their own answers.
     q: 'What do next steps look like?',
-    a: 'Signup, review and accept our terms and conditions, select your plan, and set a payment method on file. Don’t worry, you won’t be charged until your EA starts. Then three steps.',
+    a: 'Signup, review and accept our terms and conditions, select your plan, and set a payment method on file. Then three steps.',
     steps: [
       {
         label: 'Onboarding',
