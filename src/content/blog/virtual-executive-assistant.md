@@ -33,7 +33,7 @@ The title is doing too much work in the market. “Virtual assistant,” “remo
 
 Teleforce’s [executive assistant seat](/) is the first model: business operations, bilingual English/Spanish, Latin America talent on U.S. hours, employed and rematched by us. Household admin can sit in the background. It is not why the seat exists.
 
-If you need volume work with no judgment — order entry, CRM cleanup, document processing — that is closer to [outsourced data entry](/blog/outsourcing-data-entry) than to an EA. Do not stuff a dedicated assistant with keystrokes they should not own.
+If you need volume work with no judgment — order entry, CRM cleanup, document processing — that is closer to outsourced data entry than to an EA. Do not stuff a dedicated assistant with keystrokes they should not own.
 
 ## The eight workstreams that actually fill the seat
 
@@ -90,7 +90,7 @@ Give the EA a spend ceiling and a “check with me above X” rule. Then let the
 
 Files that live in your downloads folder are a liability. The EA keeps the shared drive, the SOP, the naming convention, and the CRM fields that sales swore they would update.
 
-This is adjacent to [CRM data hygiene](/blog/crm-data-hygiene). An EA can own *your* system of record. A high-volume backlog of dirty records is a data-entry program, not an EA side quest.
+This is adjacent to CRM data hygiene. An EA can own *your* system of record. A high-volume backlog of dirty records is a data-entry program, not an EA side quest.
 
 ### 8. Light project coordination
 
@@ -113,9 +113,9 @@ A virtual executive assistant fails for predictable reasons. The work is usually
 
 **Do not hire an EA to fix a broken product or an undocumented process.** They will faithfully run a mess.
 
-**Do not treat them as an overnight offshore queue.** If your afternoon is their tomorrow, you still own the interruption layer. That is the opposite of the job. (More on same-day overlap in our note on the [nearshore time zone advantage](/blog/nearshore-time-zone-advantage).)
+**Do not treat them as an overnight offshore queue.** If your afternoon is their tomorrow, you still own the interruption layer. That is the opposite of the job.
 
-**Do not confuse them with an SDR.** If the output you need is booked meetings at volume, that is [outsourced appointment setting](/blog/outsourced-appointment-setting), not “EA plus a dialer.” An EA can prep you for the meetings. They should not become your entire outbound engine.
+**Do not confuse them with an SDR.** If the output you need is booked meetings at volume, that is outsourced appointment setting, not “EA plus a dialer.” An EA can prep you for the meetings. They should not become your entire outbound engine.
 
 **Do not hide access.** Calendar, email, the CRM, the travel card, the Slack channels where work actually happens. A locked-down “assistant” who cannot see the work cannot own it.
 
@@ -148,7 +148,7 @@ If those four things work, expand into travel, research, and project tracking. I
 
 Be honest about the cases.
 
-If you need someone in the room — hospitality for a board dinner, a physical office, classified documents that cannot leave the building — buy an in-house seat. The same build-vs-buy logic we use for [outsourced vs. in-house support](/blog/outsourced-vs-in-house-support) applies: presence and control versus speed and language coverage.
+If you need someone in the room — hospitality for a board dinner, a physical office, classified documents that cannot leave the building — buy an in-house seat. The same build-vs-buy logic we use for outsourced vs. in-house support applies: presence and control versus speed and language coverage.
 
 If your pain is a queue of identical tickets, you need a process and a team, not a chief of staff. Customer support and data entry are different machines.
 

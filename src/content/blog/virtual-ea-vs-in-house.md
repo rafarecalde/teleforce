@@ -45,7 +45,7 @@ Score yourself honestly. Do not score the brochure.
 | Backup | You recruit again when they leave | A rematch is part of a managed seat |
 | Brand / hospitality | Hosts visitors, reads the room | Does not replace a front-of-house hire |
 
-This is the same shape as the [outsourced vs. in-house support](/blog/outsourced-vs-in-house-support) decision: speed, control, language, and volume — not a single cost cell.
+This is the same shape as the outsourced vs. in-house support decision: speed, control, language, and volume — not a single cost cell.
 
 ## When in-house wins
 
@@ -78,7 +78,7 @@ Keep a senior in-house EA next to a CEO who lives in the office. Add a virtual E
 
 The failure mode is two people with unclear lanes. Write the swim lane on day one. One owns the principal’s live calendar. The other owns a named workstream. Review it in 30 days.
 
-The other hybrid: you are not ready for an EA at all. You need [appointment setting](/services/appointment-setting) or a support queue. Different seat. Do not dress an SDR up as a chief of staff.
+The other hybrid: you are not ready for an EA at all. You need appointment setting or a support queue. Different seat. Do not dress an SDR up as a chief of staff.
 
 > **Build when you need a body in the room. Buy when you need an owner on the clock.** If you want a dedicated bilingual seat without standing up foreign payroll, we will tell you if the work even fits. [Book a call →](/#contact)
 
@@ -92,7 +92,7 @@ The other hybrid: you are not ready for an EA at all. You need [appointment sett
 
 **Employed, dedicated seat.** The provider recruits, pays, coaches, and rematches. They match you with an executive assistant from the top tier. This is the Teleforce model: LATAM talent, U.S. hours, English and Spanish, Fortune 500-grade delivery standards behind a 30-year operator. You are not hiring “a VA from the internet.” You are buying a named FTE without running the foreign entity.
 
-If you want the longer version of build-vs-buy for customer operations, the [support framework](/blog/outsourced-vs-in-house-support) is the sibling. Same questions. Different queue.
+The longer version of build-vs-buy for customer operations asks the same questions. Different queue.
 
 ## A 30-day decision test
 
