@@ -58,7 +58,7 @@ A founder EA is chief-of-staff-lite. They are not your head of people, your clos
 
 - The actual customer, investor, or product conversation
 - Comp, equity, and anything that creates a company obligation you have not written down
-- A full outbound engine. That is [appointment setting](/services/appointment-setting) or an SDR seat, not “EA plus a dialer”
+- A full outbound engine. That is appointment setting or an SDR seat, not “EA plus a dialer”
 - Being the shared assistant for every cofounder, the board, and the office dog
 
 The [first 30 days with a virtual EA](/blog/first-30-days-virtual-ea) still apply: access, a decision rule, two meetings, one ugly chase. Founders skip the rule because “we’re informal.” Informal is how you become the bottleneck again by week three.

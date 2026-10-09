@@ -106,7 +106,7 @@ The Asana research is useful here for a second reason: **84% of people already w
 
 ## Nearshore hours are part of the time math
 
-A virtual EA who works while you sleep can batch research. They cannot defend a live calendar. If your buyers, vendors, and team are on U.S. clocks, you want same-day overlap — the same [nearshore time zone advantage](/blog/nearshore-time-zone-advantage) that makes Latin America work for support, applied to one dedicated seat.
+A virtual EA who works while you sleep can batch research. They cannot defend a live calendar. If your buyers, vendors, and team are on U.S. clocks, you want same-day overlap — the same nearshore time-zone advantage that makes Latin America work for support, applied to one dedicated seat.
 
 Bilingual English/Spanish is the other half of that math for a lot of U.S. operators: one seat that can talk to a Miami customer, a Dallas warehouse, and a LATAM vendor without you becoming the translator.
 
@@ -116,6 +116,6 @@ Teleforce places a dedicated, full-time EA — employed by us, on your hours, na
 
 We do not sell hour packs. We sell a seat you can hand real loops.
 
-[See how the EA offer works](/), [see pricing](/#pricing), or [get matched](/#contact). If what you actually need is a pipeline of meetings rather than a chief-of-staff, start with [appointment setting](/services/appointment-setting) instead. Different job. Same honesty.
+[See how the EA offer works](/), [see pricing](/#pricing), or [get matched](/#contact). If what you actually need is a pipeline of meetings rather than a chief-of-staff, start with appointment setting instead. Different job. Same honesty.
 
 The test after 30 days is not “are they busy.” It is whether column 2 of your time audit shrank — and whether column 1 finally got the week it needed.

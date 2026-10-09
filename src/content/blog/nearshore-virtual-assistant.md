@@ -23,7 +23,7 @@ Microsoft’s 2025 Work Trend Index put a current number on the cost of ignoring
 
 ## Why a nearshore virtual assistant beats overnight handoffs
 
-Harvard, Georgetown, and Rice researchers, writing in *Organization Science*, found that **synchronous communication drops about 11% for every extra hour of time-zone separation.** We have walked through that math for support teams in the [nearshore time zone advantage](/blog/nearshore-time-zone-advantage). It is sharper for an executive assistant.
+Harvard, Georgetown, and Rice researchers, writing in *Organization Science*, found that **synchronous communication drops about 11% for every extra hour of time-zone separation.** It is sharper for an executive assistant.
 
 An EA’s job is live: a moved meeting, a same-day flight, a customer who replies at 2:10 p.m., a founder who thinks out loud in Slack. Those are not batch jobs. They are interrupts. Microsoft’s same 2025 telemetry says people already get interrupted every two minutes during core hours. You cannot add a 12-hour lag on top of that and call it leverage.
 
@@ -43,12 +43,12 @@ Pew Research Center’s latest population estimates put the U.S. Hispanic popula
 A nearshore EA who is truly bilingual — English and Spanish, not a plugin — does three things a monolingual U.S. hire often cannot:
 
 1. **Talk to Spanish-speaking stakeholders without you on the thread.** Suppliers, property contacts, customers, internal teams in both languages.
-2. **Catch tone, not just vocabulary.** Code-switching and register matter when the person is chasing money, a date, or a yes. See how we think about that in [code-switching in customer support](/blog/code-switching-customer-support) — the same ear applies to executive ops.
+2. **Catch tone, not just vocabulary.** Code-switching and register matter when the person is chasing money, a date, or a yes. The same ear applies to executive ops.
 3. **Stop you from becoming the translator.** Translation is a hidden EA tax. It should not sit on the founder.
 
 Teleforce is English and Spanish — done properly — from Latin America, on your clock. Not a long language menu.
 
-If a large share of your *revenue* motion is Spanish-language outbound, you may also need a specialist seat — [bilingual appointment setting](/blog/bilingual-appointment-setting) — rather than asking one EA to be an entire SDR team.
+If a large share of your *revenue* motion is Spanish-language outbound, you may also need a specialist seat for bilingual appointment setting rather than asking one EA to be an entire SDR team.
 
 ## What “getting work done” looks like in a live week
 
@@ -92,6 +92,6 @@ Teleforce is a bilingual LATAM BPO with 30+ years of Fortune 500-grade operating
 
 They are employed by us. Your partnership manager matches you with an executive assistant from the top tier. You’re matched in about 3 days. You’re live within about a week. The partnership manager stays on the engagement.
 
-If the work later expands into a queue — [data entry](/services/data-entry), [appointment setting](/services/appointment-setting), bilingual support — you are not starting over with a new vendor. Different seat. Same employer.
+If the work later expands into a queue — data entry, appointment setting, bilingual support — you are not starting over with a new vendor. Different seat. Same employer.
 
 [See the EA offer](/), [see pricing](/#pricing), or [get matched](/#contact). Bring the actual loops you want closed this month, not a generic “I need a VA.” The nearshore virtual assistant only works when the work is real and the clock is shared.

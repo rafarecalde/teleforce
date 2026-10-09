@@ -97,13 +97,13 @@ None of that requires them in your office. All of it requires your hours, real a
 
 Be precise. A calendar-and-inbox EA is not every adjacent job.
 
-**Do not turn them into an SDR.** If you need a pipeline of meetings at volume, that is [outsourced appointment setting](/blog/outsourced-appointment-setting). An EA can prep you for the meetings that belong on your calendar. They should not become the outbound engine.
+**Do not turn them into an SDR.** If you need a pipeline of meetings at volume, that is outsourced appointment setting. An EA can prep you for the meetings that belong on your calendar. They should not become the outbound engine.
 
 **Do not hide the channels where work happens.** If the real queue is Slack at 2:10 p.m., Outlook-only access is theater.
 
 **Do not ask for inbox zero as a KPI.** Zero is a mood. The KPI is: you saw the right eight things, the week had a shape, and you walked into two meetings prepared.
 
-**Do not skip same-day overlap.** An overnight VA can batch a research folder. They cannot defend a live Tuesday. That is the [nearshore time zone](/blog/nearshore-time-zone-advantage) point applied to one person.
+**Do not skip same-day overlap.** An overnight VA can batch a research folder. They cannot defend a live Tuesday. That is the nearshore time-zone point applied to one person.
 
 ## When this is the wrong first hire
 

@@ -38,7 +38,7 @@ That tax does not show up as a line item. It shows up as you being the only pers
 
 A plugin will give you a sentence. It will not catch register — when the other side has gone formal, or switched to *tú*, or is about to walk. It will not move the calendar hold while they are still reachable. It will not leave a recap in the CRM in the language your team actually reads.
 
-If your *customer experience* problem is a Spanish support queue, fix that with a support seat. Start with the [Hispanic-market CX playbook](/blog/hispanic-market-customer-experience). Do not ask one EA to become the contact center.
+If your *customer experience* problem is a Spanish support queue, fix that with a support seat. Do not ask one EA to become the contact center.
 
 ## What a bilingual virtual executive assistant owns that a translator does not
 
@@ -60,7 +60,7 @@ If the last call mixed English and Spanish, the brief should too. The number, th
 
 Founders selling into Hispanic-owned businesses, bilingual professional services, or U.S. operators with LATAM suppliers often need *careful* outreach: an intro, a packet, a follow-up, a scheduled conversation. An EA can run that motion for *your* relationships.
 
-They should not become a volume SDR. If you need booked meetings at scale in Spanish, that is [bilingual appointment setting](/blog/bilingual-appointment-setting). Different seat. Same employer, if you want it later.
+They should not become a volume SDR. If you need booked meetings at scale in Spanish, that is bilingual appointment setting. Different seat. Same employer, if you want it later.
 
 ### 5. Stopping the translation pile-on
 
