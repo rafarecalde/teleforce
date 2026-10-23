@@ -1,13 +1,12 @@
 import Script from 'next/script';
+import { formatDeadline } from '@/lib/business-days';
 import { formatDate } from '@/lib/money';
 import type { MatchPackage } from '@/lib/match';
 import {
   BILLING_NOTE,
   TERMS_URL,
-  differentMatchMailto,
   kickoffCalendlyUrl,
   questionsMailto,
-  rematchMailto,
   safeImageUrl,
   videoEmbed,
 } from '@/lib/match-terms';
@@ -71,8 +70,11 @@ function IntroVideo({ url, name }: { url: string; name: string }) {
   );
 }
 
-export default function MeetYourEa({ match }: { match: MatchPackage }) {
+export default function MeetYourEa({ match, rematchAvailable = false }: { match: MatchPackage; rematchAvailable?: boolean }) {
   const accepted = Boolean(match.matchAcceptedAt);
+  const declined = Boolean(match.declinedAt);
+  const deadline = !accepted && !declined ? formatDeadline(match.matchReadyAt) : '';
+  const canDecline = !accepted && !declined && match.presentation === 1;
   const facts = [
     ['Experience', match.experience],
     ['Languages', match.languages],
@@ -127,36 +129,53 @@ export default function MeetYourEa({ match }: { match: MatchPackage }) {
         </>
       )}
 
-      {!accepted ? (
+      {declined && (
+        <p className="meet-lead">You asked for a different match. We&apos;re lining up another introduction.</p>
+      )}
+
+      {!accepted && !declined && (
         <>
           <hr className="divider" />
+          {deadline && (
+            <p className="deadline-note">Say yes by <strong>{deadline}</strong>.</p>
+          )}
           <form action="/api/account/match/accept" method="post" className="meet-actions">
             <button className="btn btn-primary" type="submit" aria-describedby="match-billing">
               Accept &amp; book your kickoff
             </button>
           </form>
           <TermsNote id="match-billing" />
+          {canDecline && (
+            <form action="/api/account/match/decline" method="post" style={{ marginTop: 12 }}>
+              <button className="btn btn-ghost" type="submit">Request a different match</button>
+            </form>
+          )}
           {pmEmail && (
             <p className="meet-links">
-              <a className="btn-link" href={differentMatchMailto(pmEmail, match.eaName || 'my match')}>
-                Looking for a different match?
-              </a>
               <a className="btn-link" href={questionsMailto(pmEmail)}>
                 Questions? Your Partnership Manager would love to help
               </a>
             </p>
           )}
         </>
-      ) : (
+      )}
+
+      {accepted && (
         <>
           <p className="meet-lead">
             Whenever you want to talk it through, your Partnership Manager is right here.
           </p>
+          {rematchAvailable && (
+            <form action="/api/account/match/rematch" method="post" style={{ marginTop: 8 }}>
+              <div className="field">
+                <label htmlFor="rematch-note">What would make this a better fit?</label>
+                <textarea id="rematch-note" name="note" maxLength={1000} placeholder="Optional. A sentence or two is plenty." />
+              </div>
+              <button className="btn btn-ghost" type="submit">Request a rematch</button>
+            </form>
+          )}
           {pmEmail && (
             <p className="meet-links">
-              <a className="btn-link" href={rematchMailto(pmEmail, match.eaName || 'my EA')}>
-                Ask about another match
-              </a>
               <a className="btn-link" href={questionsMailto(pmEmail)}>
                 Questions? Write your Partnership Manager
               </a>

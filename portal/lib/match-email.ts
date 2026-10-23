@@ -1,15 +1,39 @@
-import { BILLING_NOTE, TERMS_URL, kickoffCalendlyUrl, portalHomeUrl } from './match-terms';
+import { formatNewYork } from './business-days';
+import {
+  BILLING_NOTE,
+  TERMS_URL,
+  kickoffCalendlyUrl,
+  portalHomeUrl,
+  publicAssetUrl,
+  videoEmbed,
+} from './match-terms';
 
 const DEFAULT_MATCH_ALERT_TO = 'sales@tryteleforce.com';
 const GUAYAQUIL = 'America/Guayaquil';
+const INK = '#0e2629';
+const PAPER = '#f6f2e8';
+const AMBER = '#f2a82b';
 
-export type MatchReadyEmailInput = {
+export type MatchProfileEmailInput = {
   to: string;
   fullName: string;
   eaName: string;
+  eaPhotoUrl: string;
+  eaVideoUrl: string;
+  experience: string;
+  languages: string;
+  tools: string;
+  strengths: string;
+  timezone: string;
+  hours: string;
   pmName: string;
   pmEmail: string;
+  deadlineLabel: string;
+  acceptUrl: string;
+  declineUrl: string;
 };
+
+export type MatchReadyEmailInput = MatchProfileEmailInput;
 
 export type MatchAcceptedClientInput = {
   to: string;
@@ -23,6 +47,19 @@ export type MatchAcceptedInternalInput = {
   eaName: string;
   acceptedAt: string;
   stripeCustomerId: string;
+  method?: string;
+  /** When true, the alert tells sales to charge. Omitted on a click before billing starts. */
+  chargeNow?: boolean;
+  subscriptionStarted?: boolean;
+};
+
+export type ChargeAlertInput = {
+  fullName: string;
+  email: string;
+  eaName: string;
+  billingStartAt: string;
+  stripeCustomerId: string;
+  subscriptionStarted: boolean;
 };
 
 function looksLikeEmail(value: string): boolean {
@@ -97,15 +134,33 @@ function matchAlertRecipients(): string[] {
   return recipients;
 }
 
+function logoUrl(): string {
+  return `${portalHomeUrl().replace(/\/$/, '')}/brand/logo-light.png`;
+}
+
 function shell(heading: string, inner: string): string {
+  const logo = escapeHtml(logoUrl());
   return `<!DOCTYPE html>
 <html lang="en">
-<body style="margin:0;padding:24px;background:#f4f1ea;color:#17302e;font-family:Georgia,serif;font-size:16px;line-height:1.5;">
-  <div style="max-width:640px;margin:0 auto;background:#fff;padding:28px 28px 32px;border:1px solid #e4ddd0;">
-    <p style="margin:0 0 8px;font-family:ui-monospace,monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#6b7c78;">Teleforce</p>
-    <h1 style="margin:0 0 12px;font-size:22px;line-height:1.25;">${escapeHtml(heading)}</h1>
-    ${inner}
-  </div>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>${escapeHtml(heading)}</title>
+</head>
+<body style="margin:0;padding:0;background:${PAPER};">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${PAPER};">
+    <tr><td align="center" style="padding:24px 12px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#fffdf8;border:1px solid #e6dece;border-radius:16px;overflow:hidden;">
+        <tr><td style="background:${INK};padding:18px 24px;">
+          <img src="${logo}" width="148" height="26" alt="Teleforce" style="display:block;border:0;height:26px;width:auto;" />
+        </td></tr>
+        <tr><td style="padding:28px 24px 32px;font-family:Georgia,'Times New Roman',serif;color:#17302e;font-size:16px;line-height:1.5;">
+          <h1 style="margin:0 0 14px;font-size:26px;line-height:1.2;color:${INK};">${escapeHtml(heading)}</h1>
+          ${inner}
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
 </body>
 </html>`;
 }
@@ -119,9 +174,12 @@ function linkParagraph(label: string, href: string): string {
   return `<p style="margin:0 0 16px;"><a href="${safe}" style="color:#17302e;">${escapeHtml(label)}</a><br><span style="font-size:14px;">${safe}</span></p>`;
 }
 
-function buttonParagraph(label: string, href: string): string {
+function buttonParagraph(label: string, href: string, tone: 'primary' | 'secondary' = 'primary'): string {
   const safe = escapeHtml(href);
-  return `<p style="margin:0 0 8px;"><a href="${safe}" style="display:inline-block;background:#f2a82b;color:#091c1e;font-weight:700;font-family:Georgia,serif;font-size:16px;line-height:1.2;text-decoration:none;padding:12px 18px;border-radius:9px;">${escapeHtml(label)}</a></p><p style="margin:0 0 16px;font-size:14px;"><a href="${safe}" style="color:#17302e;">${safe}</a></p>`;
+  const style = tone === 'primary'
+    ? `display:block;text-align:center;background:${AMBER};color:#091c1e;font-weight:700;font-family:Georgia,serif;font-size:18px;line-height:1.2;text-decoration:none;padding:14px 18px;border-radius:10px;`
+    : `display:block;text-align:center;background:#fffdf8;color:${INK};font-weight:700;font-family:Georgia,serif;font-size:16px;line-height:1.2;text-decoration:none;padding:12px 18px;border-radius:10px;border:1px solid #d9d1c3;`;
+  return `<p style="margin:0 0 10px;"><a href="${safe}" style="${style}">${escapeHtml(label)}</a></p><p style="margin:0 0 16px;font-size:13px;"><a href="${safe}" style="color:#5a6e69;">${safe}</a></p>`;
 }
 
 function termsNoteHtml(): string {
@@ -139,54 +197,163 @@ type Outbound = {
   text: string;
 };
 
-function readyMessage(input: MatchReadyEmailInput): Outbound {
-  const name = firstName(input.fullName);
-  const hello = name ? `Hi ${name},` : 'Hello,';
-  const portal = portalHomeUrl();
-  const ea = oneLine(input.eaName);
+function profileFacts(input: MatchProfileEmailInput): Array<[string, string]> {
+  return [
+    ['Experience', input.experience],
+    ['Languages', input.languages],
+    ['Tools', input.tools],
+    ['Strengths', input.strengths],
+    ['Timezone', input.timezone],
+    ['Hours', input.hours],
+  ].filter((entry): entry is [string, string] => Boolean(oneLine(entry[1])));
+}
+
+function profileBlock(input: MatchProfileEmailInput): { html: string; text: string } {
+  const ea = oneLine(input.eaName) || 'Your EA';
+  const photo = publicAssetUrl(input.eaPhotoUrl);
+  const video = videoEmbed(input.eaVideoUrl);
+  const facts = profileFacts(input);
   const pmName = oneLine(input.pmName);
   const pmEmail = oneLine(input.pmEmail);
-  const pmLine = pmName
-    ? `${pmName} is your Partnership Manager${pmEmail ? ` (${pmEmail})` : ''}, if you'd like a quick word before you say yes.`
-    : pmEmail
-      ? `Your Partnership Manager is ${pmEmail}, if you'd like a quick word before you say yes.`
-      : '';
+  const photoHtml = photo
+    ? `<img src="${escapeHtml(photo)}" alt="" width="72" height="72" style="border-radius:50%;object-fit:cover;display:block;background:#efe9da;" />`
+    : '';
+  const factHtml = facts
+    .map(([label, value]) => `<tr><td style="padding:4px 12px 4px 0;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:#5a6e69;vertical-align:top;">${escapeHtml(label)}</td><td style="padding:4px 0;vertical-align:top;">${escapeHtml(oneLine(value))}</td></tr>`)
+    .join('');
+  const html = [
+    `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 16px;"><tr>`,
+    photoHtml ? `<td style="padding-right:14px;vertical-align:middle;">${photoHtml}</td>` : '',
+    `<td style="vertical-align:middle;"><div style="font-size:20px;font-weight:700;color:${INK};">${escapeHtml(ea)}</div><div style="color:#5a6e69;">Your executive assistant</div></td>`,
+    `</tr></table>`,
+    video ? `<p style="margin:0 0 16px;"><a href="${escapeHtml(video.href)}" style="color:#5e7d72;font-weight:700;">Watch ${escapeHtml(ea)}'s intro</a></p>` : '',
+    factHtml ? `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 16px;font-size:15px;">${factHtml}</table>` : '',
+    pmName || pmEmail
+      ? paragraph(`${pmName || 'Your Partnership Manager'} is your Partnership Manager${pmEmail ? ` (${pmEmail})` : ''}.`)
+      : '',
+  ].join('');
+  const text = [
+    ea,
+    video ? `Intro: ${video.href}` : '',
+    ...facts.map(([label, value]) => `${label}: ${oneLine(value)}`),
+    pmName || pmEmail ? `Partnership Manager: ${pmName}${pmEmail ? ` <${pmEmail}>` : ''}` : '',
+  ].filter(Boolean).join('\n');
+  return { html, text };
+}
+
+function decisionButtons(input: MatchProfileEmailInput): { html: string; text: string } {
+  const accept = input.acceptUrl.trim();
+  const decline = input.declineUrl.trim();
+  const pmEmail = oneLine(input.pmEmail);
+  const mailto = pmEmail
+    ? `mailto:${pmEmail}?subject=${encodeURIComponent('A different match?')}`
+    : '';
+  const html = [
+    accept ? buttonParagraph('Accept EA', accept, 'primary') : '',
+    decline ? buttonParagraph('Request a different match', decline, 'secondary') : '',
+    mailto
+      ? `<p style="margin:0 0 16px;font-size:14px;">Or write your Partnership Manager: <a href="${escapeHtml(mailto)}" style="color:#5e7d72;">${escapeHtml(pmEmail)}</a></p>`
+      : '',
+  ].join('');
+  const text = [
+    accept ? `Accept EA: ${accept}` : '',
+    decline ? `Request a different match: ${decline}` : '',
+    mailto ? `Or email ${pmEmail}` : '',
+  ].filter(Boolean).join('\n');
+  return { html, text };
+}
+
+function profileMessage(input: MatchProfileEmailInput, kind: 'ready' | 'reminder'): Outbound {
+  const name = firstName(input.fullName);
+  const hello = name ? `Hi ${name},` : 'Hello,';
+  const ea = oneLine(input.eaName) || 'your EA';
+  const deadline = oneLine(input.deadlineLabel);
+  const profile = profileBlock(input);
+  const actions = decisionButtons(input);
+  const lead = kind === 'ready'
+    ? `Wonderful news. ${ea} is your match. Handpicked for how you work.`
+    : `A quick nudge. ${ea} is still yours to claim.`;
+  const when = deadline ? `Say yes by ${deadline}.` : '';
+  const subject = kind === 'ready' ? 'Meet your EA' : 'One day left to meet your EA';
+  const heading = kind === 'ready' ? 'Meet your EA' : 'One day left';
   const text = `${hello}
 
-Wonderful news. ${ea} is your match.
+${lead}
+${when}
 
-Pop into the portal for the photo, the intro video, and a little background. When it feels right, accept and book your kickoff.
+${profile.text}
 
-Meet your EA:
+${actions.text}
+
+${termsNoteText()}
+
+Teleforce
+`;
+  const html = shell(heading, [
+    paragraph(hello),
+    paragraph(lead),
+    when ? `<p style="margin:0 0 16px;padding:12px 14px;background:${PAPER};border-radius:10px;"><strong>${escapeHtml(when)}</strong></p>` : '',
+    profile.html,
+    actions.html,
+    termsNoteHtml(),
+  ].join(''));
+  return { to: [input.to], subject, html, text };
+}
+
+function readyMessage(input: MatchReadyEmailInput): Outbound {
+  return profileMessage(input, 'ready');
+}
+
+function reminderMessage(input: MatchProfileEmailInput): Outbound {
+  return profileMessage(input, 'reminder');
+}
+
+/** HTML used by the client match email. Safe to call without sending. */
+export function matchReadyEmailContent(input: MatchReadyEmailInput): { subject: string; html: string; text: string } {
+  const message = readyMessage(input);
+  return { subject: message.subject, html: message.html, text: message.text };
+}
+
+/** HTML used by the 24-hour reminder. Safe to call without sending. */
+export function matchReminderEmailContent(input: MatchProfileEmailInput): { subject: string; html: string; text: string } {
+  const message = reminderMessage(input);
+  return { subject: message.subject, html: message.html, text: message.text };
+}
+
+function allSetMessage(input: MatchAcceptedClientInput): Outbound {
+  const name = firstName(input.fullName);
+  const hello = name ? `Hi ${name},` : 'Hello,';
+  const ea = oneLine(input.eaName) || 'your EA';
+  const kickoff = kickoffCalendlyUrl();
+  const portal = portalHomeUrl();
+  const text = `${hello}
+
+You're all set. ${ea} is ready to start.
+
+Book your kickoff and you'll be handing off your week in no time. We can't wait for you two to meet.
+
+Book your kickoff:
+${kickoff}
+
+Your portal:
 ${portal}
 
-${pmLine ? `${pmLine}\n\n` : ''}${termsNoteText()}
+${termsNoteText()}
 
 Teleforce
 `;
   const html = shell(
-    'Meet your EA',
+    "You're all set, book your kickoff",
     [
       paragraph(hello),
-      paragraph(`Wonderful news. ${ea} is your match.`),
-      paragraph('Pop into the portal for the photo, the intro video, and a little background. When it feels right, accept and book your kickoff.'),
-      buttonParagraph('Meet your EA', portal),
-      pmLine ? paragraph(pmLine) : '',
+      paragraph(`You're all set. ${ea} is ready to start.`),
+      paragraph("Book your kickoff and you'll be handing off your week in no time. We can't wait for you two to meet."),
+      buttonParagraph('Book your kickoff', kickoff),
+      linkParagraph('Open your portal', portal),
       termsNoteHtml(),
     ].join(''),
   );
-  return {
-    to: [input.to],
-    subject: 'Meet your EA',
-    html,
-    text,
-  };
-}
-
-/** HTML used by the client “match is ready” email. Safe to call without sending. */
-export function matchReadyEmailContent(input: MatchReadyEmailInput): { subject: string; html: string; text: string } {
-  const message = readyMessage(input);
-  return { subject: message.subject, html: message.html, text: message.text };
+  return { to: [input.to], subject: "You're all set, book your kickoff", html, text };
 }
 
 function acceptedClientMessage(input: MatchAcceptedClientInput): Outbound {
@@ -237,11 +404,13 @@ function acceptedInternalMessage(input: MatchAcceptedInternalInput): Outbound {
     { label: 'Email', value: oneLine(input.email) },
     { label: 'Assistant', value: oneLine(input.eaName) },
     { label: 'Accepted', value: formatGuayaquil(input.acceptedAt) },
+    { label: 'Method', value: oneLine(input.method || '') || 'portal' },
     customerUrl
       ? { label: 'Stripe customer', value: customerUrl, href: customerUrl }
       : { label: 'Stripe customer', value: 'None' },
   ];
-  const text = `Match accepted\n\n${rows.map((row) => `${row.label}: ${row.value}`).join('\n')}\n`;
+  const charge = chargeCopy(Boolean(input.chargeNow), Boolean(input.subscriptionStarted), customerUrl);
+  const text = `Match accepted\n\n${rows.map((row) => `${row.label}: ${row.value}`).join('\n')}${charge.text ? `\n\n${charge.text}` : ''}\n`;
   const cover = rows
     .map((row) => {
       const value = row.href
@@ -250,7 +419,7 @@ function acceptedInternalMessage(input: MatchAcceptedInternalInput): Outbound {
       return `<tr><th align="left" style="padding:6px 12px 6px 0;font-weight:600;vertical-align:top;white-space:nowrap;">${escapeHtml(row.label)}</th><td style="padding:6px 0;vertical-align:top;">${value}</td></tr>`;
     })
     .join('');
-  const html = shell('Match accepted', `<table style="border-collapse:collapse;margin:0;font-size:14px;">${cover}</table>`);
+  const html = shell('Match accepted', `<table style="border-collapse:collapse;margin:0 0 16px;font-size:14px;">${cover}</table>${charge.html}`);
   const who = oneLine(input.fullName).slice(0, 80) || 'Client';
   return {
     to: matchAlertRecipients(),
@@ -342,4 +511,93 @@ export function sendMatchAcceptedInternalEmail(input: MatchAcceptedInternalInput
     return Promise.resolve(false);
   }
   return send('match accepted alert', message);
+}
+
+/** 24 hours before the reply deadline. Never throws. */
+export function sendMatchReminderEmail(input: MatchProfileEmailInput): Promise<boolean> {
+  if (!looksLikeEmail(input.to)) {
+    console.error('match reminder email skipped invalid recipient');
+    return Promise.resolve(false);
+  }
+  return send('match reminder email', reminderMessage(input));
+}
+
+/** After an automatic acceptance. Never throws. */
+export function sendMatchAutoClientEmail(input: MatchAcceptedClientInput): Promise<boolean> {
+  if (!looksLikeEmail(input.to)) {
+    console.error('match auto email skipped invalid recipient');
+    return Promise.resolve(false);
+  }
+  return send('match auto email', allSetMessage(input));
+}
+
+function chargeCopy(chargeNow: boolean, started: boolean, customerUrl: string): { html: string; text: string } {
+  if (started) {
+    const line = customerUrl
+      ? `Subscription started in Stripe. ${customerUrl}`
+      : 'Subscription started in Stripe.';
+    const html = customerUrl
+      ? `<p style="margin:0;font-size:15px;"><strong>Subscription started in Stripe.</strong> <a href="${escapeHtml(customerUrl)}">${escapeHtml(customerUrl)}</a></p>`
+      : '<p style="margin:0;font-size:15px;"><strong>Subscription started in Stripe.</strong></p>';
+    return { html, text: line };
+  }
+  if (!chargeNow) return { html: '', text: '' };
+  const html = customerUrl
+    ? `<p style="margin:0;font-size:15px;"><strong>Charge now in Stripe.</strong> <a href="${escapeHtml(customerUrl)}">${escapeHtml(customerUrl)}</a></p>`
+    : '<p style="margin:0;font-size:15px;"><strong>Charge now in Stripe.</strong> No Stripe customer is stored on this account.</p>';
+  const text = customerUrl
+    ? `Charge now in Stripe. ${customerUrl}`
+    : 'Charge now in Stripe. No Stripe customer is stored on this account.';
+  return { html, text };
+}
+
+function chargeAlertMessage(input: ChargeAlertInput): Outbound {
+  const customerUrl = stripeCustomerUrl(input.stripeCustomerId);
+  const when = formatNewYork(input.billingStartAt) || oneLine(input.billingStartAt);
+  const charge = chargeCopy(!input.subscriptionStarted, input.subscriptionStarted, customerUrl);
+  const who = oneLine(input.fullName).slice(0, 80) || 'Client';
+  const text = `Billing start for ${who}
+
+Client: ${oneLine(input.fullName)}
+Email: ${oneLine(input.email)}
+Assistant: ${oneLine(input.eaName)}
+Billing start: ${when}
+
+${charge.text}
+`;
+  const html = shell('Billing start', [
+    paragraph(`${oneLine(input.fullName)} · ${oneLine(input.email)}`),
+    paragraph(`Assistant: ${oneLine(input.eaName)}`),
+    paragraph(`Billing start: ${when}`),
+    charge.html,
+  ].join(''));
+  return {
+    to: matchAlertRecipients(),
+    subject: input.subscriptionStarted ? `Subscription started: ${who}` : `Charge now in Stripe: ${who}`,
+    html,
+    text,
+  };
+}
+
+/** Short internal note. Never throws. Not a billing instruction. */
+export function sendOpsNote(input: { subject: string; lines: string[] }): Promise<boolean> {
+  const lines = input.lines.map((line) => oneLine(line)).filter(Boolean);
+  const text = `${lines.join('\n')}\n`;
+  const html = shell(input.subject, lines.map((line) => paragraph(line)).join(''));
+  const message: Outbound = { to: matchAlertRecipients(), subject: input.subject.slice(0, 140), html, text };
+  if (message.to.length === 0) {
+    console.error('ops note has no valid recipient');
+    return Promise.resolve(false);
+  }
+  return send('ops note', message);
+}
+
+/** Sales alert when a billing start is reached and the acceptance email did not already cover it. */
+export function sendChargeAlert(input: ChargeAlertInput): Promise<boolean> {
+  const message = chargeAlertMessage(input);
+  if (message.to.length === 0) {
+    console.error('charge alert has no valid recipient');
+    return Promise.resolve(false);
+  }
+  return send('charge alert', message);
 }

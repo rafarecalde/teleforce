@@ -27,6 +27,7 @@ export async function POST(req: NextRequest) {
       acceptedAt,
       ip,
       userAgent,
+      method: 'portal',
     });
   } catch (err) {
     console.error('match accept failed', err instanceof Error ? err.message : 'error');
@@ -52,6 +53,7 @@ export async function POST(req: NextRequest) {
             eaName: match.eaName,
             acceptedAt: match.matchAcceptedAt || acceptedAt,
             stripeCustomerId: user.stripeCustomerId,
+            method: 'portal',
           }),
         ]);
       }

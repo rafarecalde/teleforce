@@ -7,6 +7,7 @@ export const dynamic = 'force-dynamic';
 function notice(code?: string): string {
   if (code === 'onboarding') return 'Onboarding marked complete.';
   if (code === 'kickoff') return 'Kickoff marked done.';
+  if (code === 'departure') return 'Departure recorded. It does not count as a client rematch.';
   return '';
 }
 
@@ -57,6 +58,14 @@ export default async function AdminPage({
               <span className="v">{describeMatch(client)}</span>
               <span className="k">Accepted</span>
               <span className="v">{accepted}</span>
+              <span className="k">Introductions</span>
+              <span className="v">{client.hasPackage ? client.presentation : '—'}</span>
+              <span className="k">Declines</span>
+              <span className="v">{client.declines}</span>
+              <span className="k">Rematches</span>
+              <span className="v">{client.rematches} of 1 this year</span>
+              <span className="k">Departures</span>
+              <span className="v">{client.departures}</span>
             </div>
             <div className="admin-actions">
               <a className="btn btn-primary" href={`/admin/${client.id}`}>

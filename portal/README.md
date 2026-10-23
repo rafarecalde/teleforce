@@ -144,13 +144,18 @@ dashboard follows the account row:
    published or `matched_ea_name` is set.
 3. When a match package is published, the client sees **Meet your EA**: photo
    URL, intro video (YouTube, Loom, and Vimeo embed; any other https link stays
-   a link), background, and the Partnership Manager. **Accept & book your kickoff**
-   records the acceptance time, IP, and user agent. Billing on that card is one
-   short line plus a link to `https://tryteleforce.com/terms/`. The client can
-   still email the Partnership Manager about a different match, or with a question.
+   a link), background, and the Partnership Manager. The card shows a reply
+   deadline three business days (Monday–Friday, America/New_York) after publish.
+   **Accept & book your kickoff** records the acceptance time, IP, and user agent
+   with method `portal`. The first introduction also has **Request a different
+   match**, which records that one decline. A second introduction does not.
+   Billing on that card is one short line plus a link to `https://tryteleforce.com/terms/`.
 4. After acceptance, a kickoff card links to `KICKOFF_CALENDLY_URL` (default
    `https://calendly.com/tryteleforce-sales`) and stays until ops marks kickoff
    done. The client can note that they booked; the card still stays.
+   **Request a rematch** shows only after kickoff, and only when the client has
+   not already requested one in the rolling 12 months. **Mark departure** on the
+   admin client page records an EA departure and does not use that rematch.
 5. `matched_ea_name` is set from the package on publish, so **Your assistant is
    First Last** shows after acceptance, and it still shows for an account that
    only has the SQL name and no package.
@@ -161,12 +166,23 @@ leave the match empty. Photos are URLs. There is no file upload.
 
 `/admin` lists clients and edits the package. It requires a signed-in portal
 account whose email is in `ADMIN_EMAILS` (default `rafael@recaldelaw.com`).
-Publish emails the client “Meet your EA” and links to the portal. Acceptance
-emails the client “Your EA is ready to start” with the kickoff link, and emails
-`SIGNUP_ALERT_TO` when that is set.
-When `SIGNUP_ALERT_TO` is unset, that acceptance alert goes to
-`sales@tryteleforce.com` (signup alerts keep their own default). A failed send
-is logged and does not change the response. Nothing here charges a card.
+Publish emails a branded **Meet your EA** message: photo, intro link, background,
+Partnership Manager, the reply deadline, an **Accept EA** link, and (on the first
+introduction) **Request a different match**. The accept link is a signed token.
+Opening it records acceptance (time, IP, user agent, method `email`) and lands
+on the kickoff scheduler. A reminder with the same buttons goes out 24 hours
+before the deadline. If the client has neither accepted nor declined by then,
+`/api/cron/match` (hourly, `Authorization: Bearer $CRON_SECRET`) records method
+`auto`, emails **You're all set, book your kickoff**, and alerts sales.
+
+A click or portal acceptance bills on the earlier of kickoff and three business
+days after acceptance. An automatic acceptance bills on that acceptance time.
+`STRIPE_AUTO_BILLING` is off unless it is exactly `true`. While it is off, the
+sales alert says **Charge now in Stripe** and links the customer. While it is
+on, the cron creates a subscription on the saved card (`STRIPE_PRICE_3` or
+`STRIPE_PRICE_12`) anchored to that billing start. A failed send is logged and
+does not change the response. Signup alerts keep their own default
+(`SIGNUP_ALERT_TO` unset still means `sales@tryteleforce.com` for match alerts only).
 
 The same fields can still be set in Turso. Publishing is what copies the
 assistant name onto `matched_ea_name`.
@@ -252,6 +268,9 @@ card does not call Stripe.
 | `SIGNUP_CORS_ORIGINS` | Extra allowed origins, comma-separated |
 | `MARKETING_URL` | Used for the signup link on the sign-in screen |
 | `KICKOFF_CALENDLY_URL` | Kickoff scheduler after the client accepts. Defaults to `https://calendly.com/tryteleforce-sales` |
+| `CRON_SECRET` | Bearer token for `GET /api/cron/match`. Vercel Cron sends it. The route returns 401 when this is empty |
+| `STRIPE_AUTO_BILLING` | `true` creates a subscription at billing start. Anything else leaves charging to the sales alert |
+| `STRIPE_PRICE_3` / `STRIPE_PRICE_12` | Stripe Price ids used only when auto billing is on |
 | `ADMIN_EMAILS` | Comma-separated allowlist for `/admin`. The person must also be able to sign in. Defaults to `rafael@recaldelaw.com` |
 | `DEFAULT_PARTNERSHIP_MANAGER_NAME` | Prefilled Partnership Manager name on a match package |
 | `DEFAULT_PARTNERSHIP_MANAGER_EMAIL` | Prefilled Partnership Manager email. Publish requires one, from the form or here |

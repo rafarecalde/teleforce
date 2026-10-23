@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
+import { formatDeadline, formatNewYork } from '@/lib/business-days';
 import { formatDate } from '@/lib/money';
-import { defaultPartnershipManager, describeMatch, getMatchByUserId, isUserId, type AdminClient } from '@/lib/match';
+import { defaultPartnershipManager, describeMatch, getMatchByUserId, isUserId, listMatchEvents, matchCounts, type AdminClient } from '@/lib/match';
 import { planLabel } from '@/lib/plans';
 import { getUserById } from '@/lib/users';
 
@@ -15,6 +16,7 @@ function banner(notice?: string, mail?: string, error?: string): { ok: string; e
   }
   if (notice === 'kickoff') ok = 'Kickoff marked done.';
   if (notice === 'onboarding') ok = 'Onboarding marked complete.';
+  if (notice === 'departure') ok = 'Departure recorded. It does not count as a client rematch.';
   let err = '';
   if (error === 'name') err = 'Enter the assistant’s first and last name.';
   if (error === 'photo') err = 'Photo URLs must be an http(s) link, or a path that starts with /.';
@@ -24,6 +26,7 @@ function banner(notice?: string, mail?: string, error?: string): { ok: string; e
   if (error === 'missing') err = 'That client was not found.';
   if (error === 'kickoff') err = 'Kickoff can be marked done after the client accepts the match.';
   if (error === 'save') err = 'That update didn’t save. Try again.';
+  if (error === 'limit') err = 'This client already used the one pre-acceptance decline. Edit the current introduction, or wait until they accept.';
   return { ok, err };
 }
 
@@ -38,6 +41,8 @@ export default async function AdminClientPage({
   const user = await getUserById(params.userId);
   if (!user) notFound();
   const match = await getMatchByUserId(user.id);
+  const counts = await matchCounts(user.id);
+  const events = await listMatchEvents(user.id);
   const defaults = defaultPartnershipManager();
   const { ok, err } = banner(searchParams?.notice, searchParams?.mail, searchParams?.error);
   const summary: AdminClient = {
@@ -54,6 +59,13 @@ export default async function AdminClientPage({
     matchAcceptedAt: match?.matchAcceptedAt || '',
     kickoffBooked: Boolean(match?.kickoffBooked),
     kickoffCompletedAt: match?.kickoffCompletedAt || '',
+    acceptanceMethod: match?.acceptanceMethod || '',
+    declinedAt: match?.declinedAt || '',
+    presentation: match?.presentation || 1,
+    billingStartAt: match?.billingStartAt || '',
+    declines: counts.declines,
+    rematches: counts.rematches,
+    departures: counts.departures,
   };
 
   return (
@@ -78,8 +90,31 @@ export default async function AdminClientPage({
           <span className="k">Presented</span>
           <span className="v">{match?.matchReadyAt ? formatDate(match.matchReadyAt) : '—'}</span>
           <span className="k">Accepted</span>
-          <span className="v">{match?.matchAcceptedAt ? formatDate(match.matchAcceptedAt) : '—'}</span>
+          <span className="v">{match?.matchAcceptedAt ? `${formatDate(match.matchAcceptedAt)}${match.acceptanceMethod ? ` · ${match.acceptanceMethod}` : ''}` : '—'}</span>
+          <span className="k">Reply by</span>
+          <span className="v">{match?.matchReadyAt && !match.matchAcceptedAt && !match.declinedAt ? formatDeadline(match.matchReadyAt) : '—'}</span>
+          <span className="k">Billing start</span>
+          <span className="v">{match?.billingStartAt ? formatNewYork(match.billingStartAt) : '—'}</span>
+          <span className="k">Introductions</span>
+          <span className="v">{match ? summary.presentation : '—'}</span>
+          <span className="k">Declines</span>
+          <span className="v">{counts.declines}</span>
+          <span className="k">Rematches</span>
+          <span className="v">{counts.rematches} of 1 in the last 12 months</span>
+          <span className="k">Departures</span>
+          <span className="v">{counts.departures}</span>
         </div>
+        {events.length > 0 && (
+          <ul className="hint" style={{ paddingLeft: 18 }}>
+            {events.map((event) => (
+              <li key={event.id}>
+                {event.kind} · {formatDate(event.createdAt)}
+                {event.eaName ? ` · ${event.eaName}` : ''}
+                {event.note ? ` · ${event.note}` : ''}
+              </li>
+            ))}
+          </ul>
+        )}
         <div className="admin-actions">
           {!user.onboardingCompletedAt && (
             <form action="/api/admin/onboarding" method="post">
@@ -99,14 +134,24 @@ export default async function AdminClientPage({
               </button>
             </form>
           )}
+          {(match?.eaName || user.matchedEaName) && (
+            <form action="/api/admin/departure" method="post">
+              <input type="hidden" name="userId" value={user.id} />
+              <input type="hidden" name="returnTo" value="edit" />
+              <button className="btn btn-ghost" type="submit">
+                Mark departure
+              </button>
+            </form>
+          )}
         </div>
       </section>
 
       <form action="/api/admin/match" method="post" className="card" autoComplete="off">
         <h2>Match package</h2>
         <p className="hint">
-          Save keeps a draft. Publish shows Meet your EA, sets the assistant name on the account, and emails the client.
-          Publishing again sends the email again and does not change the original presentation date.
+          Save keeps a draft. Publish emails Meet your EA, with a 3-business-day reply deadline in Eastern time.
+          Publishing again sends the email again and does not change that deadline.
+          After the client asks for a different match, the next publish is the second introduction and starts a new deadline.
           Photos are URLs. This portal doesn’t store uploaded files.
         </p>
         <input type="hidden" name="userId" value={user.id} />

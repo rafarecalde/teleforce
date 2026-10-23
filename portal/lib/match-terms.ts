@@ -42,6 +42,14 @@ export function safeHttpUrl(raw: string): string {
   }
 }
 
+/** Photo URL for an email. Same-origin paths are prefixed with the portal origin. */
+export function publicAssetUrl(raw: string): string {
+  const safe = safeImageUrl(raw);
+  if (!safe) return '';
+  if (safe.startsWith('/')) return `${portalHomeUrl().replace(/\/$/, '')}${safe}`;
+  return safe;
+}
+
 /** https image, or a same-origin path such as /sample/ea.svg. */
 export function safeImageUrl(raw: string): string {
   const value = raw.trim();

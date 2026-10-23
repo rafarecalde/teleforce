@@ -1,6 +1,7 @@
 import { NextRequest } from 'next/server';
 import { adminPrincipal } from '@/lib/admin-auth';
 import { appRedirect } from '@/lib/http';
+import { settleBillingForUser } from '@/lib/match-cron';
 import { isUserId, markKickoffComplete } from '@/lib/match';
 
 export const dynamic = 'force-dynamic';
@@ -20,6 +21,11 @@ export async function POST(req: NextRequest) {
     const result = await markKickoffComplete(userId, new Date().toISOString());
     if (result === 'missing') return back(`${returnTo}?error=missing`);
     if (result === 'not-accepted') return back(`${returnTo}?error=kickoff`);
+    try {
+      await settleBillingForUser(userId);
+    } catch (err) {
+      console.error('billing start after kickoff failed', err instanceof Error ? err.message : 'error');
+    }
   } catch (err) {
     console.error('mark kickoff failed', err instanceof Error ? err.message : 'error');
     return back(`${returnTo}?error=save`);

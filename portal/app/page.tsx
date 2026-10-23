@@ -6,7 +6,7 @@ import { DEMO, type DemoPlan } from '@/lib/demo';
 import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/plans';
 import { retrieveCard } from '@/lib/stripe';
 import { displayMatchedEa, getUserById, hasCardOnFile, onboardingIsComplete, type User } from '@/lib/users';
-import { getMatchByUserId, isAdminEmail, type MatchPackage } from '@/lib/match';
+import { clientCanRequestRematch, getMatchByUserId, isAdminEmail, type MatchPackage } from '@/lib/match';
 import MeetYourEa, { KickoffPrompt } from './components/MatchCards';
 import PlanCard from './components/PlanCard';
 import SwitchTo12 from './components/SwitchTo12';
@@ -217,6 +217,7 @@ export default async function Page({
     const hasCard = hasCardOnFile(user);
     const card = hasCard ? await cardOnFile(user) : { brand: '', last4: '' };
     const match = await getMatchByUserId(user.id);
+    const rematchAvailable = await clientCanRequestRematch(user.id, match);
     return (
       <AccountView
         email={user.email}
@@ -226,6 +227,7 @@ export default async function Page({
         matchedEaName={user.matchedEaName}
         onboardingComplete={onboardingIsComplete(user.onboardingCompletedAt)}
         match={match}
+        rematchAvailable={rematchAvailable}
         isAdmin={isAdminEmail(session.email)}
         matchNotice={searchParams?.match}
         hasCard={hasCard}
@@ -260,6 +262,7 @@ function AccountView({
   matchedEaName = '',
   onboardingComplete = false,
   match = null,
+  rematchAvailable = false,
   isAdmin = false,
   matchNotice = '',
   billing,
@@ -277,6 +280,7 @@ function AccountView({
   onboardingComplete?: boolean;
   /** Draft rows stay hidden until matchReadyAt is set. */
   match?: MatchPackage | null;
+  rematchAvailable?: boolean;
   isAdmin?: boolean;
   matchNotice?: string;
   billing: {
@@ -308,6 +312,18 @@ function AccountView({
       {matchNotice === 'unavailable' && (
         <p className="note err" role="alert">We couldn’t open that match just yet. Refresh and try again.</p>
       )}
+      {matchNotice === 'different' && (
+        <p className="note ok" role="status">We&apos;re on it. A new introduction is on the way.</p>
+      )}
+      {matchNotice === 'closed' && (
+        <p className="note ok" role="status">This introduction is ready for your yes.</p>
+      )}
+      {matchNotice === 'rematch' && (
+        <p className="note ok" role="status">Request received. Your Partnership Manager will be in touch.</p>
+      )}
+      {matchNotice === 'rematch-used' && (
+        <p className="note ok" role="status">Your Partnership Manager already has a rematch request from this past year.</p>
+      )}
 
       {!onboardingComplete && (
         <section className="card" id="onboarding-call">
@@ -329,7 +345,7 @@ function AccountView({
 
       {showKickoff && liveMatch && <KickoffPrompt match={liveMatch} />}
 
-      {liveMatch && <MeetYourEa match={liveMatch} />}
+      {liveMatch && <MeetYourEa match={liveMatch} rematchAvailable={rematchAvailable} />}
 
       {!preview && !hasCard && <PaymentBanner />}
 

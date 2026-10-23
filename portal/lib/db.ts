@@ -89,11 +89,33 @@ const MATCH_PACKAGES_SCHEMA = `
     match_accepted_at TEXT,
     match_accepted_ip TEXT NOT NULL DEFAULT '',
     match_accepted_ua TEXT NOT NULL DEFAULT '',
+    acceptance_method TEXT NOT NULL DEFAULT '',
+    declined_at TEXT,
+    presentation INTEGER NOT NULL DEFAULT 1,
+    reminder_sent_at TEXT,
+    billing_start_at TEXT,
+    stripe_subscription_id TEXT NOT NULL DEFAULT '',
+    billing_notified_at TEXT,
+    client_notified_at TEXT,
     kickoff_booked INTEGER NOT NULL DEFAULT 0,
     kickoff_completed_at TEXT,
     updated_at TEXT NOT NULL
   )
 `;
+
+/** Decline, client rematch, and departure. Departures are not rematches. */
+const MATCH_EVENTS_SCHEMA = `
+  CREATE TABLE IF NOT EXISTS match_events (
+    id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL,
+    kind TEXT NOT NULL,
+    ea_name TEXT NOT NULL DEFAULT '',
+    note TEXT NOT NULL DEFAULT '',
+    created_at TEXT NOT NULL
+  )
+`;
+
+const MATCH_EVENTS_INDEX = `CREATE INDEX IF NOT EXISTS match_events_user_kind ON match_events (user_id, kind, created_at)`;
 
 const REBUILD_PAYMENT_OPTIONAL = `
 BEGIN IMMEDIATE;
@@ -190,6 +212,26 @@ async function migratePaymentOptional(current: Client): Promise<void> {
   }
 }
 
+/** Columns added after the first match_packages table. ALTER only when missing. */
+async function migrateMatchFlow(current: Client): Promise<void> {
+  const result = await current.execute('PRAGMA table_info(match_packages)');
+  if (result.rows.length === 0) return;
+  const names = new Set(result.rows.map((row) => String(row.name)));
+  const adds: Array<[string, string]> = [
+    ['acceptance_method', `ALTER TABLE match_packages ADD COLUMN acceptance_method TEXT NOT NULL DEFAULT ''`],
+    ['declined_at', `ALTER TABLE match_packages ADD COLUMN declined_at TEXT`],
+    ['presentation', `ALTER TABLE match_packages ADD COLUMN presentation INTEGER NOT NULL DEFAULT 1`],
+    ['reminder_sent_at', `ALTER TABLE match_packages ADD COLUMN reminder_sent_at TEXT`],
+    ['billing_start_at', `ALTER TABLE match_packages ADD COLUMN billing_start_at TEXT`],
+    ['stripe_subscription_id', `ALTER TABLE match_packages ADD COLUMN stripe_subscription_id TEXT NOT NULL DEFAULT ''`],
+    ['billing_notified_at', `ALTER TABLE match_packages ADD COLUMN billing_notified_at TEXT`],
+    ['client_notified_at', `ALTER TABLE match_packages ADD COLUMN client_notified_at TEXT`],
+  ];
+  for (const [name, sql] of adds) {
+    if (!names.has(name)) await current.execute(sql);
+  }
+}
+
 export async function db(): Promise<Client> {
   const current = getClient();
   if (!ready) {
@@ -202,6 +244,9 @@ export async function db(): Promise<Client> {
       .then(() => migratePaymentOptional(current))
       .then(() => migrateAccountLifecycle(current))
       .then(() => current.execute(MATCH_PACKAGES_SCHEMA))
+      .then(() => migrateMatchFlow(current))
+      .then(() => current.execute(MATCH_EVENTS_SCHEMA))
+      .then(() => current.execute(MATCH_EVENTS_INDEX))
       .then(
         () => undefined,
         (err) => {

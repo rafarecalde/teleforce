@@ -562,6 +562,15 @@ section.card.meet-card > h2 { font-size: 26px; letter-spacing: -0.03em; margin-b
 .bio-list dd { margin: 0; white-space: pre-wrap; }
 .pm-row { display: flex; align-items: center; gap: 12px; margin: 0 0 8px; }
 .meet-lead { margin: 0 0 16px; font-size: 15px; line-height: 1.5; }
+.deadline-note {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(242, 168, 43, 0.16);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.45;
+}
 .terms-note {
   font-size: 12.5px;
   line-height: 1.45;

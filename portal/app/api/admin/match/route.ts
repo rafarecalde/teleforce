@@ -1,8 +1,10 @@
 import { NextRequest } from 'next/server';
 import { adminPrincipal } from '@/lib/admin-auth';
+import { formatDeadline } from '@/lib/business-days';
 import { appRedirect } from '@/lib/http';
-import { isUserId, saveMatchPackage, type MatchDraft } from '@/lib/match';
+import { getMatchByUserId, isUserId, saveMatchPackage, type MatchDraft } from '@/lib/match';
 import { sendMatchReadyEmail } from '@/lib/match-email';
+import { matchActionUrl } from '@/lib/match-token';
 import { getUserById } from '@/lib/users';
 
 export const dynamic = 'force-dynamic';
@@ -46,14 +48,34 @@ export async function POST(req: NextRequest) {
     if (!publish) return back(`${edit}?notice=saved`);
 
     const user = await getUserById(userId);
+    const match = await getMatchByUserId(userId);
     let mailed = false;
-    if (user) {
+    if (user && match?.matchReadyAt) {
+      const acceptUrl = await matchActionUrl({
+        userId,
+        readyAt: match.matchReadyAt,
+        action: 'accept',
+      });
+      const declineUrl = match.presentation === 1
+        ? await matchActionUrl({ userId, readyAt: match.matchReadyAt, action: 'decline' })
+        : '';
       mailed = await sendMatchReadyEmail({
         to: user.email,
         fullName: user.fullName,
-        eaName: saved.eaName,
-        pmName: saved.pmName,
-        pmEmail: saved.pmEmail,
+        eaName: match.eaName,
+        eaPhotoUrl: match.eaPhotoUrl,
+        eaVideoUrl: match.eaVideoUrl,
+        experience: match.experience,
+        languages: match.languages,
+        tools: match.tools,
+        strengths: match.strengths,
+        timezone: match.timezone,
+        hours: match.hours,
+        pmName: match.pmName,
+        pmEmail: match.pmEmail,
+        deadlineLabel: formatDeadline(match.matchReadyAt),
+        acceptUrl,
+        declineUrl,
       });
     }
     return back(`${edit}?notice=published&mail=${mailed ? 'sent' : 'failed'}`);
