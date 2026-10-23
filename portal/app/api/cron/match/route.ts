@@ -5,10 +5,14 @@ export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 export const maxDuration = 60;
 
+/**
+ * Vercel Cron and the GitHub Action both send `Authorization: Bearer <CRON_SECRET>`.
+ * An empty secret keeps the route closed.
+ */
 function authorized(req: NextRequest): boolean {
   const secret = process.env.CRON_SECRET?.trim() || '';
   if (!secret) return false;
-  const header = req.headers.get('authorization') || '';
+  const header = (req.headers.get('authorization') || '').trim();
   return header === `Bearer ${secret}`;
 }
 

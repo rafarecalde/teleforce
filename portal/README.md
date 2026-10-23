@@ -178,10 +178,12 @@ introduction) **Request a different match**. The accept link is a signed token.
 Opening it records acceptance (time, IP, user agent, method `email`) and lands
 on the kickoff scheduler. A reminder with the same buttons goes out 24 hours
 before the deadline. If the client has neither accepted nor declined by then,
-`/api/cron/match` (hourly, `Authorization: Bearer $CRON_SECRET`) records method
+`/api/cron/match` (`Authorization: Bearer $CRON_SECRET`, GET or POST) records method
 `auto`, emails **You're all set, book your kickoff**, and alerts sales. The same
 job sends one **Your kickoff is waiting** reminder when kickoff is still
-unbooked one business day after acceptance.
+unbooked one business day after acceptance. GitHub Actions calls it hourly.
+Vercel Cron is a once-a-day backstop, because a Hobby project cannot schedule
+a cron more often than daily.
 
 A click or portal acceptance bills on the earlier of kickoff and three business
 days after acceptance. An automatic acceptance bills on that acceptance time.
@@ -276,7 +278,7 @@ card does not call Stripe.
 | `SIGNUP_CORS_ORIGINS` | Extra allowed origins, comma-separated |
 | `MARKETING_URL` | Used for the signup link on the sign-in screen |
 | `KICKOFF_CALENDLY_URL` | Kickoff scheduler after the client accepts. Defaults to `https://calendly.com/tryteleforce-sales` |
-| `CRON_SECRET` | Bearer token for `GET /api/cron/match`. Vercel Cron sends it. The route returns 401 when this is empty |
+| `CRON_SECRET` | Bearer token for `GET` or `POST /api/cron/match`. Set this on the Vercel project. Set the same value as the GitHub repo secret `PORTAL_CRON_SECRET`. The route returns 401 when this is empty |
 | `STRIPE_AUTO_BILLING` | `true` creates a subscription at billing start. Anything else leaves charging to the sales alert |
 | `STRIPE_PRICE_3` / `STRIPE_PRICE_12` | Stripe Price ids used only when auto billing is on |
 | `ADMIN_EMAILS` | Comma-separated allowlist for `/admin`. The person must also be able to sign in. Defaults to `rafael@recaldelaw.com` |
@@ -298,10 +300,14 @@ This repo does not deploy the portal for you.
    `turso db tokens create`). Put the URL and token in `TURSO_DATABASE_URL` and
    `TURSO_AUTH_TOKEN`.
 2. Vercel → New Project → this repo → **Root Directory = `portal`**.
-3. Set `APP_URL=https://portal.tryteleforce.com`, `AUTH_SECRET`, the Stripe
-   keys, and the Turso variables. Leave `PREVIEW_MODE` empty. Stripe keys can
-   stay set; they are used when a signup includes a card, or when a signed-in
-   client adds a card in the portal.
+3. Set `APP_URL=https://portal.tryteleforce.com`, `AUTH_SECRET`, `CRON_SECRET`,
+   the Stripe keys, and the Turso variables. Leave `PREVIEW_MODE` empty. Stripe
+   keys can stay set; they are used when a signup includes a card, or when a
+   signed-in client adds a card in the portal. `CRON_SECRET` must also be stored
+   as the GitHub repository secret `PORTAL_CRON_SECRET` (same value). Vercel Cron
+   and the hourly GitHub Action both send `Authorization: Bearer` with that value.
+   The portal build does not read `CRON_SECRET`, `AUTH_SECRET`, or
+   `TURSO_DATABASE_URL`; those are required at runtime, not during `next build`.
    Databases created when a card was required are rebuilt once on startup so
    `stripe_customer_id`, `default_payment_method_id`, and `setup_intent_id`
    can be null. Existing card-on-file rows are kept.
