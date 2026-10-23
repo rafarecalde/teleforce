@@ -94,6 +94,18 @@ time in America/Guayaquil, and
 customer exists. A send failure is logged and does not change the signup
 response. The message has no password, API key, or full card number.
 
+It also sends the client a separate welcome email from `EMAIL_FROM`, so the
+onboarding note is not buried under the Terms copy. The message thanks them,
+asks them to book a short onboarding call, and links
+`ONBOARDING_CALENDLY_URL` (default `https://calendly.com/tryteleforce-sales`,
+the same scheduler on the signed-in home page). It points them at
+`https://portal.tryteleforce.com` and states that nothing is charged at
+signup: the first monthly fee and the initial period begin on the earlier of
+Kickoff and the third business day after Match Acceptance, matching Terms
+§3.1 and §3.3. A send failure is logged and does not change the signup
+response. The three messages are sent together, so the welcome email does
+not add a second wait after the Terms email.
+
 ## Add a card after signup
 
 Signed-in accounts with no `defaultPaymentMethodId` see an “Add payment method”
@@ -232,6 +244,7 @@ card does not call Stripe.
 | `TERMS_ACCEPTANCE_BCC` | Ops BCC. If unset, `OPS_EMAIL` is used, then `legal@tryteleforce.com` |
 | `OPS_EMAIL` | Fallback ops address when `TERMS_ACCEPTANCE_BCC` is unset |
 | `SIGNUP_ALERT_TO` | Internal new-signup alert, comma-separated. Defaults to `rafael@recaldelaw.com`. Uses `RESEND_API_KEY` and `EMAIL_FROM`. A send failure is logged and signup still succeeds |
+| `ONBOARDING_CALENDLY_URL` | Onboarding-call link in the client welcome email and the signed-in scheduler. Defaults to `https://calendly.com/tryteleforce-sales`. A welcome-email failure is logged and signup still succeeds |
 
 The Astro site reads `PUBLIC_PORTAL_URL` (see the repo root `.env.example`).
 
@@ -262,9 +275,11 @@ This repo does not deploy the portal for you.
    project set `RESEND_API_KEY` and `EMAIL_FROM`. Set `TERMS_ACCEPTANCE_BCC`
    when the ops copy should go somewhere other than `legal@tryteleforce.com`.
    Set `SIGNUP_ALERT_TO` when the new-signup alert should go somewhere other
-   than `rafael@recaldelaw.com` (comma-separated). Signup still creates the
-   account if these are missing; the Terms email and the signup alert will
-   not go out until Resend is configured.
+   than `rafael@recaldelaw.com` (comma-separated). Set
+   `ONBOARDING_CALENDLY_URL` when the onboarding scheduler is not
+   `https://calendly.com/tryteleforce-sales`. Signup still creates the
+   account if these are missing; the Terms email, the signup alert, and the
+   welcome email will not go out until Resend is configured.
 
 Plans stay $3,000/mo (3-month) and $2,700/mo (12-month). Those figures are
 display-only here, matching `src/consts.ts`.
