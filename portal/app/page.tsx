@@ -6,6 +6,8 @@ import { DEMO, type DemoPlan } from '@/lib/demo';
 import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/plans';
 import { retrieveCard } from '@/lib/stripe';
 import { displayMatchedEa, getUserById, hasCardOnFile, onboardingIsComplete, type User } from '@/lib/users';
+import { getMatchByUserId, isAdminEmail, type MatchPackage } from '@/lib/match';
+import MeetYourEa, { KickoffPrompt } from './components/MatchCards';
 import PlanCard from './components/PlanCard';
 import SwitchTo12 from './components/SwitchTo12';
 import SeatRequest from './components/SeatRequest';
@@ -21,11 +23,13 @@ function Shell({
   signedIn,
   company,
   preview,
+  adminHref,
 }: {
   children: React.ReactNode;
   signedIn: boolean;
   company?: string;
   preview?: boolean;
+  adminHref?: string;
 }) {
   // Signed-in dashboard (and its sales preview) keeps the existing bar.
   // Signed-out screens get a separate green header with the marketing wordmark.
@@ -42,6 +46,11 @@ function Shell({
             </span>
             {signedIn && (
               <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                {adminHref && (
+                  <a href={adminHref} className="mono" style={{ fontSize: 12.5, color: 'var(--on-dark-mut)', textDecoration: 'none' }}>
+                    Admin
+                  </a>
+                )}
                 {company && <span className="mono" style={{ fontSize: 12, color: 'var(--on-dark-mut)' }}>{company}</span>}
                 <form action="/api/auth/logout" method="post">
                   <button
@@ -128,7 +137,7 @@ async function cardOnFile(user: User): Promise<{ brand: string; last4: string }>
 export default async function Page({
   searchParams,
 }: {
-  searchParams: { name?: string; company?: string; email?: string; error?: string };
+  searchParams: { name?: string; company?: string; email?: string; error?: string; match?: string };
 }) {
   let session = null;
   try {
@@ -207,6 +216,7 @@ export default async function Page({
     }
     const hasCard = hasCardOnFile(user);
     const card = hasCard ? await cardOnFile(user) : { brand: '', last4: '' };
+    const match = await getMatchByUserId(user.id);
     return (
       <AccountView
         email={user.email}
@@ -215,6 +225,9 @@ export default async function Page({
         plans={[accountPlan(user)]}
         matchedEaName={user.matchedEaName}
         onboardingComplete={onboardingIsComplete(user.onboardingCompletedAt)}
+        match={match}
+        isAdmin={isAdminEmail(session.email)}
+        matchNotice={searchParams?.match}
         hasCard={hasCard}
         billing={{
           contactName: user.billingContact,
@@ -246,6 +259,9 @@ function AccountView({
   plans,
   matchedEaName = '',
   onboardingComplete = false,
+  match = null,
+  isAdmin = false,
+  matchNotice = '',
   billing,
   hasCard = true,
   persistBilling = false,
@@ -259,6 +275,10 @@ function AccountView({
   matchedEaName?: string;
   /** Hides the scheduler once ops marks the onboarding call complete. */
   onboardingComplete?: boolean;
+  /** Draft rows stay hidden until matchReadyAt is set. */
+  match?: MatchPackage | null;
+  isAdmin?: boolean;
+  matchNotice?: string;
   billing: {
     contactName: string;
     company: string;
@@ -273,13 +293,21 @@ function AccountView({
   const threeMonth = plans.filter((plan) => plan.term === '3');
   const commitmentEndPreview = formatDate(addMonthsISO(12));
   const eaName = displayMatchedEa(matchedEaName);
+  const liveMatch = match?.matchReadyAt ? match : null;
+  const accepted = Boolean(liveMatch?.matchAcceptedAt);
+  const showKickoff = Boolean(liveMatch && accepted && !liveMatch.kickoffCompletedAt);
+  const showHeadline = Boolean(eaName) && (!liveMatch || accepted);
+  const showPending = !liveMatch && !eaName;
 
   return (
-    <Shell signedIn={!preview} company={company} preview={preview}>
+    <Shell signedIn={!preview} company={company} preview={preview} adminHref={isAdmin ? '/admin' : undefined}>
       {preview && <p className="page-sub">Sales preview with sample data. This is not a signed-in account.</p>}
       <h1 className="page-title display">Welcome back, {firstName(displayName)}.</h1>
-      {eaName && <p className="ea-match">Your assistant is {eaName}</p>}
+      {showHeadline && <p className="ea-match">Your assistant is {eaName}</p>}
       <p className="page-sub">{preview ? `Previewing ${email}` : `Signed in as ${email}`}</p>
+      {matchNotice === 'unavailable' && (
+        <p className="note err" role="alert">That match isn’t available to accept.</p>
+      )}
 
       {!onboardingComplete && (
         <section className="card" id="onboarding-call">
@@ -297,7 +325,11 @@ function AccountView({
         </section>
       )}
 
-      {!eaName && <p className="ea-match pending">Your assistant: matching in progress</p>}
+      {showPending && <p className="ea-match pending">Your assistant: matching in progress</p>}
+
+      {showKickoff && liveMatch && <KickoffPrompt match={liveMatch} />}
+
+      {liveMatch && <MeetYourEa match={liveMatch} />}
 
       {!preview && !hasCard && <PaymentBanner />}
 
