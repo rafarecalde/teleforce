@@ -77,13 +77,25 @@ refuses to run. After counsel edits the Terms, copy the file and redeploy
 both apps.
 
 After the account row is committed, the portal emails the client through
-[Resend](https://resend.com): an HTML cover (name, email, plan, signed name,
-version, hash, timestamp, IP) and the Terms in the body, plus the markdown
-file attached. Those attachment bytes are what the hash covers. Ops is BCC’d
-(`TERMS_ACCEPTANCE_BCC`, else `OPS_EMAIL`, else `legal@tryteleforce.com`).
-If the send fails, or `RESEND_API_KEY` / `EMAIL_FROM` is unset, the account
-stays. `email_sent_at` remains null and `email_error` stores a short reason
-so the send can be retried. There is no retry button in the portal yet.
+[Resend](https://resend.com). The note is short. It attaches a PDF of the
+accepted Terms, rendered on the server from `content/terms.md` (headings,
+bold clause numbers, italics, and lists when the file has them). Each page
+has the Teleforce name at the top and a page number. The first page includes
+an acceptance record: the typed full name, email, plan, acceptance time in
+America/Guayaquil and in UTC, the Terms version (the effective date), and
+the SHA-256 stored with the account. That hash is of the Terms markdown, not
+of the PDF file. The filename is
+`Teleforce-Terms-<effective-date>-<Last-name>.pdf`.
+
+If the PDF cannot be built, or Resend rejects the message that carries it,
+the portal logs the error and sends the same note without an attachment,
+with a link to https://tryteleforce.com/terms/. There is no markdown or
+plain-text file attached. Ops is BCC’d (`TERMS_ACCEPTANCE_BCC`, else
+`OPS_EMAIL`, else `legal@tryteleforce.com`). If that send also fails, or
+`RESEND_API_KEY` / `EMAIL_FROM` is unset, the account stays.
+`email_sent_at` remains null and `email_error` stores a short reason so the
+send can be retried. There is no retry button in the portal yet. The IP
+address and user agent stay on the `terms_acceptances` row.
 
 The same moment sends an internal new-signup notice from `EMAIL_FROM`.
 `SIGNUP_ALERT_TO` is a comma-separated list. When it is unset, the message
@@ -156,8 +168,8 @@ dashboard follows the account row:
 
 Both columns are nullable and added on startup (`ALTER TABLE` only when the
 column is missing). New accounts leave them null. There is no admin route.
-Ops sets them in Turso with the client’s work email. The Terms email is
-unchanged; the scheduling link is not sent automatically.
+Ops sets them in Turso with the client’s work email. Updating those columns
+does not send another email.
 
 ```bash
 turso db shell <database-name>

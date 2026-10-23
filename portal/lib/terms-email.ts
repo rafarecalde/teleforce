@@ -1,4 +1,7 @@
+import { buildTermsPdf } from './terms-pdf';
+
 const DEFAULT_BCC = 'legal@tryteleforce.com';
+const TERMS_URL = 'https://tryteleforce.com/terms/';
 
 export type TermsEmailInput = {
   to: string;
@@ -31,6 +34,15 @@ function opsBcc(clientEmail: string): string | null {
   return candidate;
 }
 
+function safeLog(err: unknown): string {
+  const message = err instanceof Error ? err.message : 'Email failed';
+  return message
+    .replace(/\b(?:sk|rk|pk)_(?:live|test)_[A-Za-z0-9]+/g, '[key]')
+    .replace(/\bre_[A-Za-z0-9]{8,}\b/g, '[key]')
+    .replace(/Bearer\s+[A-Za-z0-9._\-]+/gi, 'Bearer [key]')
+    .slice(0, 400);
+}
+
 function escapeHtml(value: string): string {
   return value
     .replace(/&/g, '&amp;')
@@ -39,87 +51,77 @@ function escapeHtml(value: string): string {
     .replace(/"/g, '&quot;');
 }
 
-function attachmentName(version: string): string {
-  const slug = version.replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  return `Teleforce-Terms-${slug || 'accepted'}.md`;
+function renderText(attached: boolean): string {
+  const body = attached
+    ? 'Your signed copy is attached as a PDF, including your acceptance record.'
+    : `We could not attach the PDF to this message. You can read the Terms at ${TERMS_URL}`;
+  return `Terms you accepted
+
+This confirms the Teleforce Terms & Conditions you accepted for your executive assistant account. ${body}
+
+Teleforce
+`;
 }
 
-function renderHtml(input: TermsEmailInput): string {
-  const rows: [string, string][] = [
-    ['Name', input.fullName],
-    ['Email', input.to],
-    ['Plan', input.planSummary],
-    ['Signed name', input.signedName],
-    ['Terms version', input.termsVersion],
-    ['SHA-256', input.termsContentHash],
-    ['Accepted at (UTC)', input.acceptedAt],
-    ['IP address', input.ip || 'Not available'],
-  ];
-  const cover = rows
-    .map(
-      ([label, value]) =>
-        `<tr><th align="left" style="padding:6px 12px 6px 0;font-weight:600;vertical-align:top;white-space:nowrap;">${escapeHtml(label)}</th><td style="padding:6px 0;vertical-align:top;">${escapeHtml(value)}</td></tr>`,
-    )
-    .join('');
-
+function renderHtml(attached: boolean): string {
+  const body = attached
+    ? 'Your signed copy is attached as a PDF, including your acceptance record.'
+    : `We could not attach the PDF to this message. You can read the Terms at <a href="${TERMS_URL}" style="color:#17302e;">${escapeHtml(TERMS_URL)}</a>`;
   return `<!DOCTYPE html>
 <html lang="en">
 <body style="margin:0;padding:24px;background:#f4f1ea;color:#17302e;font-family:Georgia,serif;font-size:16px;line-height:1.5;">
   <div style="max-width:640px;margin:0 auto;background:#fff;padding:28px 28px 32px;border:1px solid #e4ddd0;">
     <p style="margin:0 0 8px;font-family:ui-monospace,monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#6b7c78;">Teleforce</p>
     <h1 style="margin:0 0 12px;font-size:22px;line-height:1.25;">Terms you accepted</h1>
-    <p style="margin:0 0 16px;">This message records the Teleforce Terms &amp; Conditions accepted when this executive assistant account was created. The attached file is the exact Terms text. Its SHA-256 is the hash below.</p>
-    <table style="border-collapse:collapse;margin:0 0 20px;font-size:14px;">${cover}</table>
-    <h2 style="margin:0 0 8px;font-size:16px;">Terms &amp; Conditions</h2>
-    <pre style="margin:0;white-space:pre-wrap;font-family:ui-monospace,monospace;font-size:12px;line-height:1.45;">${escapeHtml(input.markdown)}</pre>
+    <p style="margin:0;">This confirms the Teleforce Terms &amp; Conditions you accepted for your executive assistant account. ${body}</p>
   </div>
 </body>
 </html>`;
 }
 
-/** Sends via Resend. Throws if mail is not configured or Resend rejects the message. */
-export async function sendTermsAcceptanceEmail(input: TermsEmailInput): Promise<string> {
-  const apiKey = process.env.RESEND_API_KEY?.trim() || '';
-  const from = process.env.EMAIL_FROM?.trim() || '';
-  if (!apiKey || !from) {
-    throw new Error('RESEND_API_KEY or EMAIL_FROM is not set.');
-  }
+type Outbound = {
+  apiKey: string;
+  from: string;
+  to: string;
+  bcc: string | null;
+  subject: string;
+  attached: boolean;
+  attachment?: { filename: string; content: string };
+};
 
-  const bcc = opsBcc(input.to);
+async function postTermsEmail(message: Outbound): Promise<string> {
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${apiKey}`,
+      Authorization: `Bearer ${message.apiKey}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from,
-      to: [input.to],
-      ...(bcc ? { bcc: [bcc] } : {}),
-      subject: `Teleforce Terms you accepted (${input.termsVersion})`,
-      html: renderHtml(input),
-      attachments: [
-        {
-          filename: attachmentName(input.termsVersion),
-          content: Buffer.from(input.markdown, 'utf8').toString('base64'),
-        },
-      ],
+      from: message.from,
+      to: [message.to],
+      ...(message.bcc ? { bcc: [message.bcc] } : {}),
+      subject: message.subject,
+      html: renderHtml(message.attached),
+      text: renderText(message.attached),
+      ...(message.attachment
+        ? { attachments: [{ filename: message.attachment.filename, content: message.attachment.content }] }
+        : {}),
     }),
     signal: AbortSignal.timeout(10000),
   });
 
   const raw = await response.text();
   if (!response.ok) {
-    let message = `Resend returned ${response.status}`;
+    let detail = `Resend returned ${response.status}`;
     try {
       const parsed = JSON.parse(raw) as { message?: unknown };
       if (typeof parsed.message === 'string' && parsed.message.trim()) {
-        message = `Resend returned ${response.status}: ${parsed.message.trim()}`;
+        detail = `Resend returned ${response.status}: ${parsed.message.trim()}`;
       }
     } catch {
       // Status is enough. Do not store an unstructured body.
     }
-    throw new Error(message.slice(0, 400));
+    throw new Error(detail.slice(0, 400));
   }
 
   try {
@@ -128,4 +130,48 @@ export async function sendTermsAcceptanceEmail(input: TermsEmailInput): Promise<
   } catch {
     return '';
   }
+}
+
+/**
+ * Sends the acceptance note via Resend. The Terms are a PDF attachment.
+ * If the PDF cannot be built, or Resend rejects the message that carries it,
+ * this logs the error and sends the note with a link to the published Terms
+ * instead. Throws only when that fallback send also fails, or mail is not
+ * configured. Signup catches that and still creates the account.
+ */
+export async function sendTermsAcceptanceEmail(input: TermsEmailInput): Promise<string> {
+  const apiKey = process.env.RESEND_API_KEY?.trim() || '';
+  const from = process.env.EMAIL_FROM?.trim() || '';
+  if (!apiKey || !from) {
+    throw new Error('RESEND_API_KEY or EMAIL_FROM is not set.');
+  }
+
+  const subject = `Teleforce Terms you accepted (${input.termsVersion})`;
+  const bcc = opsBcc(input.to);
+  let attachment: { filename: string; content: string } | undefined;
+  try {
+    const pdf = await buildTermsPdf({
+      markdown: input.markdown,
+      signedName: input.signedName,
+      email: input.to,
+      planSummary: input.planSummary,
+      acceptedAt: input.acceptedAt,
+      termsVersion: input.termsVersion,
+      termsContentHash: input.termsContentHash,
+    });
+    attachment = { filename: pdf.filename, content: pdf.bytes.toString('base64') };
+  } catch (err) {
+    console.error('terms pdf failed', safeLog(err));
+  }
+
+  const base = { apiKey, from, to: input.to, bcc, subject };
+  if (attachment) {
+    try {
+      return await postTermsEmail({ ...base, attached: true, attachment });
+    } catch (err) {
+      console.error('terms email with pdf failed', safeLog(err));
+    }
+  }
+
+  return postTermsEmail({ ...base, attached: false });
 }

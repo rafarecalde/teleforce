@@ -3,11 +3,17 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   experimental: {
-    serverComponentsExternalPackages: ['@libsql/client'],
-    // The acceptance email attaches this file. Trace it into the signup routes
-    // even if the read path is not obvious to the file tracer.
+    serverComponentsExternalPackages: ['@libsql/client', 'pdfkit'],
+    // Terms markdown and the PDF fonts are read from disk when a signup email
+    // is sent. Trace them into that route even if the path is dynamic.
     outputFileTracingIncludes: {
-      '/api/signup/complete': ['./content/terms.md'],
+      '/api/signup/complete': [
+        './content/terms.md',
+        './assets/fonts/LiberationSerif-Regular.ttf',
+        './assets/fonts/LiberationSerif-Bold.ttf',
+        './assets/fonts/LiberationSerif-Italic.ttf',
+        './assets/fonts/LiberationSerif-BoldItalic.ttf',
+      ],
       '/api/signup/terms': ['./content/terms.md'],
     },
   },
