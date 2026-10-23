@@ -320,6 +320,18 @@ export function matchReminderEmailContent(input: MatchProfileEmailInput): { subj
   return { subject: message.subject, html: message.html, text: message.text };
 }
 
+/** HTML for the acceptance email. Safe to call without sending. */
+export function allSetEmailContent(input: MatchAcceptedClientInput): { subject: string; html: string; text: string } {
+  const message = allSetMessage(input);
+  return { subject: message.subject, html: message.html, text: message.text };
+}
+
+/** HTML for the one kickoff reminder. Safe to call without sending. */
+export function kickoffReminderEmailContent(input: MatchAcceptedClientInput): { subject: string; html: string; text: string } {
+  const message = kickoffReminderMessage(input);
+  return { subject: message.subject, html: message.html, text: message.text };
+}
+
 function allSetMessage(input: MatchAcceptedClientInput): Outbound {
   const name = firstName(input.fullName);
   const hello = name ? `Hi ${name},` : 'Hello,';
@@ -356,22 +368,22 @@ Teleforce
   return { to: [input.to], subject: "You're all set, book your kickoff", html, text };
 }
 
-function acceptedClientMessage(input: MatchAcceptedClientInput): Outbound {
+function kickoffReminderMessage(input: MatchAcceptedClientInput): Outbound {
   const name = firstName(input.fullName);
   const hello = name ? `Hi ${name},` : 'Hello,';
-  const ea = oneLine(input.eaName);
+  const ea = oneLine(input.eaName) || 'your EA';
   const kickoff = kickoffCalendlyUrl();
   const portal = portalHomeUrl();
   const text = `${hello}
 
-You and ${ea} are officially a team. Your EA is ready to start.
+${ea} is ready whenever you are. Your kickoff is still open.
 
-Book a kickoff and you'll be handing off your week in no time. We can't wait for you two to meet.
+Grab a time and you'll be handing off your week in no time.
 
 Book your kickoff:
 ${kickoff}
 
-Or open your portal anytime:
+Your portal:
 ${portal}
 
 ${termsNoteText()}
@@ -379,22 +391,17 @@ ${termsNoteText()}
 Teleforce
 `;
   const html = shell(
-    'Your EA is ready to start',
+    'Your kickoff is waiting',
     [
       paragraph(hello),
-      paragraph(`You and ${ea} are officially a team. Your EA is ready to start.`),
-      paragraph("Book a kickoff and you'll be handing off your week in no time. We can't wait for you two to meet."),
+      paragraph(`${ea} is ready whenever you are. Your kickoff is still open.`),
+      paragraph("Grab a time and you'll be handing off your week in no time."),
       buttonParagraph('Book your kickoff', kickoff),
       linkParagraph('Open your portal', portal),
       termsNoteHtml(),
     ].join(''),
   );
-  return {
-    to: [input.to],
-    subject: 'Your EA is ready to start',
-    html,
-    text,
-  };
+  return { to: [input.to], subject: 'Your kickoff is waiting', html, text };
 }
 
 function acceptedInternalMessage(input: MatchAcceptedInternalInput): Outbound {
@@ -494,13 +501,13 @@ export function sendMatchReadyEmail(input: MatchReadyEmailInput): Promise<boolea
   return send('match ready email', readyMessage(input));
 }
 
-/** Client confirmation after they accept, with the kickoff link. Never throws. */
+/** Branded "You're all set" note after a click or portal acceptance. Never throws. */
 export function sendMatchAcceptedClientEmail(input: MatchAcceptedClientInput): Promise<boolean> {
   if (!looksLikeEmail(input.to)) {
     console.error('match accepted email skipped invalid recipient');
     return Promise.resolve(false);
   }
-  return send('match accepted email', acceptedClientMessage(input));
+  return send('match accepted email', allSetMessage(input));
 }
 
 /** Internal alert. Never throws. */
@@ -522,13 +529,22 @@ export function sendMatchReminderEmail(input: MatchProfileEmailInput): Promise<b
   return send('match reminder email', reminderMessage(input));
 }
 
-/** After an automatic acceptance. Never throws. */
+/** Same "You're all set" note after an automatic acceptance. Never throws. */
 export function sendMatchAutoClientEmail(input: MatchAcceptedClientInput): Promise<boolean> {
   if (!looksLikeEmail(input.to)) {
     console.error('match auto email skipped invalid recipient');
     return Promise.resolve(false);
   }
   return send('match auto email', allSetMessage(input));
+}
+
+/** One reminder when kickoff is still unbooked a business day later. Never throws. */
+export function sendKickoffReminderEmail(input: MatchAcceptedClientInput): Promise<boolean> {
+  if (!looksLikeEmail(input.to)) {
+    console.error('kickoff reminder email skipped invalid recipient');
+    return Promise.resolve(false);
+  }
+  return send('kickoff reminder email', kickoffReminderMessage(input));
 }
 
 function chargeCopy(chargeNow: boolean, started: boolean, customerUrl: string): { html: string; text: string } {

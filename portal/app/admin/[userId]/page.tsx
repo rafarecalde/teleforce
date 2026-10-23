@@ -15,6 +15,7 @@ function banner(notice?: string, mail?: string, error?: string): { ok: string; e
     ok = 'Match published and the assistant name is on the account. The client email did not send. Check RESEND_API_KEY and EMAIL_FROM, then publish again to resend.';
   }
   if (notice === 'kickoff') ok = 'Kickoff marked done.';
+  if (notice === 'kickoff-booked') ok = 'Kickoff marked booked. The portal booking card is hidden, and no kickoff reminder will go out.';
   if (notice === 'onboarding') ok = 'Onboarding marked complete.';
   if (notice === 'departure') {
     ok = `Departure recorded. It does not count as a rematch and does not create a credit. Present a replacement within ${REPLACEMENT_BUSINESS_DAYS} business days.`;
@@ -142,6 +143,15 @@ export default async function AdminClientPage({
               <input type="hidden" name="returnTo" value="edit" />
               <button className="btn btn-ghost" type="submit">
                 Mark onboarding complete
+              </button>
+            </form>
+          )}
+          {match?.matchAcceptedAt && !match.kickoffCompletedAt && !match.kickoffBooked && (
+            <form action="/api/admin/kickoff-booked" method="post">
+              <input type="hidden" name="userId" value={user.id} />
+              <input type="hidden" name="returnTo" value="edit" />
+              <button className="btn btn-ghost" type="submit">
+                Mark kickoff booked
               </button>
             </form>
           )}

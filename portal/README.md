@@ -150,9 +150,14 @@ dashboard follows the account row:
    with method `portal`. The first introduction also has **Request a different
    match**, which records that one decline. A second introduction does not.
    Billing on that card is one short line plus a link to `https://tryteleforce.com/terms/`.
-4. After acceptance, a kickoff card links to `KICKOFF_CALENDLY_URL` (default
-   `https://calendly.com/tryteleforce-sales`) and stays until ops marks kickoff
-   done. The client can note that they booked; the card still stays.
+4. After a click, email, or automatic acceptance, the client gets a branded
+   **You're all set** email with a **Book your kickoff** button
+   (`KICKOFF_CALENDLY_URL`, default `https://calendly.com/tryteleforce-sales`).
+   The portal shows the same **Book your kickoff** card until kickoff is marked
+   booked or done. The client can mark it booked, and admin can mark it booked
+   or done. If it is still unbooked one business day (Monday–Friday,
+   America/New_York) after acceptance, the hourly cron sends one branded
+   reminder with the same button. Marking kickoff booked does not start billing.
    **Request a rematch** shows only after kickoff, and only while the client has
    fewer than two client-requested rematches in the rolling 12 months. **Mark
    departure** records an EA departure, does not use a rematch, and does not
@@ -175,7 +180,9 @@ Opening it records acceptance (time, IP, user agent, method `email`) and lands
 on the kickoff scheduler. A reminder with the same buttons goes out 24 hours
 before the deadline. If the client has neither accepted nor declined by then,
 `/api/cron/match` (hourly, `Authorization: Bearer $CRON_SECRET`) records method
-`auto`, emails **You're all set, book your kickoff**, and alerts sales.
+`auto`, emails **You're all set, book your kickoff**, and alerts sales. The same
+job sends one **Your kickoff is waiting** reminder when kickoff is still
+unbooked one business day after acceptance.
 
 A click or portal acceptance bills on the earlier of kickoff and three business
 days after acceptance. An automatic acceptance bills on that acceptance time.

@@ -6,7 +6,7 @@ import { DEMO, type DemoPlan } from '@/lib/demo';
 import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/plans';
 import { retrieveCard } from '@/lib/stripe';
 import { displayMatchedEa, getUserById, hasCardOnFile, onboardingIsComplete, type User } from '@/lib/users';
-import { clientCanRequestRematch, getMatchByUserId, isAdminEmail, type MatchPackage } from '@/lib/match';
+import { clientCanRequestRematch, getMatchByUserId, isAdminEmail, kickoffPromptOpen, type MatchPackage } from '@/lib/match';
 import MeetYourEa, { KickoffPrompt } from './components/MatchCards';
 import PlanCard from './components/PlanCard';
 import SwitchTo12 from './components/SwitchTo12';
@@ -299,7 +299,7 @@ function AccountView({
   const eaName = displayMatchedEa(matchedEaName);
   const liveMatch = match?.matchReadyAt ? match : null;
   const accepted = Boolean(liveMatch?.matchAcceptedAt);
-  const showKickoff = Boolean(liveMatch && accepted && !liveMatch.kickoffCompletedAt);
+  const showKickoff = kickoffPromptOpen(liveMatch);
   const showHeadline = Boolean(eaName) && (!liveMatch || accepted);
   const showPending = !liveMatch && !eaName;
 

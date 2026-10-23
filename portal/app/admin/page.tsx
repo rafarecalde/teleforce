@@ -8,6 +8,7 @@ export const dynamic = 'force-dynamic';
 function notice(code?: string): string {
   if (code === 'onboarding') return 'Onboarding marked complete.';
   if (code === 'kickoff') return 'Kickoff marked done.';
+  if (code === 'kickoff-booked') return 'Kickoff marked booked. The portal booking card is hidden, and no kickoff reminder will go out.';
   if (code === 'departure') {
     return `Departure recorded. It does not count as a rematch and does not create a credit. Present a replacement within ${REPLACEMENT_BUSINESS_DAYS} business days.`;
   }
@@ -53,6 +54,7 @@ export default async function AdminPage({
           : 'Not complete';
         const accepted = client.matchAcceptedAt ? formatDate(client.matchAcceptedAt) : '—';
         const canKickoff = Boolean(client.matchAcceptedAt) && !client.kickoffCompletedAt;
+        const canMarkBooked = canKickoff && !client.kickoffBooked;
         return (
           <section className="card" key={client.id}>
             <h2>{client.fullName || client.email}</h2>
@@ -88,6 +90,14 @@ export default async function AdminPage({
                   <input type="hidden" name="userId" value={client.id} />
                   <button className="btn btn-ghost" type="submit">
                     Mark onboarding complete
+                  </button>
+                </form>
+              )}
+              {canMarkBooked && (
+                <form action="/api/admin/kickoff-booked" method="post">
+                  <input type="hidden" name="userId" value={client.id} />
+                  <button className="btn btn-ghost" type="submit">
+                    Mark kickoff booked
                   </button>
                 </form>
               )}

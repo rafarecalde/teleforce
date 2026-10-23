@@ -40,6 +40,8 @@ export type MatchPackage = {
   stripeSubscriptionId: string;
   billingNotifiedAt: string;
   clientNotifiedAt: string;
+  /** One kickoff reminder, sent a business day after acceptance if still unbooked. */
+  kickoffReminderSentAt: string;
   /** Set when ops publishes an assistant after a rematch or departure. */
   replacementPresentedAt: string;
   kickoffBooked: boolean;
@@ -174,6 +176,7 @@ function mapMatch(row: Row): MatchPackage {
     stripeSubscriptionId: text(row, 'stripe_subscription_id'),
     billingNotifiedAt: text(row, 'billing_notified_at'),
     clientNotifiedAt: text(row, 'client_notified_at'),
+    kickoffReminderSentAt: text(row, 'kickoff_reminder_sent_at'),
     replacementPresentedAt: text(row, 'replacement_presented_at'),
     kickoffBooked: Number(row.kickoff_booked) === 1,
     kickoffCompletedAt: text(row, 'kickoff_completed_at'),
@@ -188,7 +191,7 @@ const MATCH_COLUMNS = `
   match_ready_at, match_accepted_at, match_accepted_ip, match_accepted_ua,
   acceptance_method, declined_at, presentation, reminder_sent_at,
   billing_start_at, stripe_subscription_id, billing_notified_at, client_notified_at,
-  replacement_presented_at, kickoff_booked, kickoff_completed_at, updated_at
+  kickoff_reminder_sent_at, replacement_presented_at, kickoff_booked, kickoff_completed_at, updated_at
 `;
 
 export async function getMatchByUserId(userId: string): Promise<MatchPackage | null> {
@@ -421,6 +424,7 @@ export async function saveMatchPackage(userId: string, draft: MatchDraft, publis
         acceptance_method = '',
         kickoff_booked = 0,
         kickoff_completed_at = NULL,
+        kickoff_reminder_sent_at = NULL,
         billing_start_at = NULL,
         stripe_subscription_id = '',
         billing_notified_at = NULL,
@@ -605,7 +609,7 @@ export async function markKickoffComplete(userId: string, at: string): Promise<'
   const client = await db();
   await client.execute({
     sql: `UPDATE match_packages
-      SET kickoff_completed_at = ?, updated_at = ?
+      SET kickoff_completed_at = ?, kickoff_booked = 1, updated_at = ?
       WHERE user_id = ?
         AND match_accepted_at IS NOT NULL
         AND length(trim(match_accepted_at)) > 0
@@ -814,6 +818,41 @@ export function claimReminder(userId: string, at: string): Promise<boolean> {
   );
 }
 
+/** Portal booking card: accepted, and not yet marked booked or done. */
+export function kickoffPromptOpen(match: Pick<MatchPackage, 'matchAcceptedAt' | 'kickoffBooked' | 'kickoffCompletedAt'> | null): boolean {
+  return Boolean(match?.matchAcceptedAt && !match.kickoffBooked && !match.kickoffCompletedAt);
+}
+
+/** True once `nowIso` is at least one New York business day after acceptance. */
+export function kickoffReminderDue(acceptedAt: string, nowIso: string): boolean {
+  const due = addBusinessDays(acceptedAt, 1);
+  if (!due) return false;
+  const dueMs = new Date(due).getTime();
+  const nowMs = new Date(nowIso).getTime();
+  return !Number.isNaN(dueMs) && !Number.isNaN(nowMs) && nowMs >= dueMs;
+}
+
+export function claimKickoffReminder(userId: string, at: string): Promise<boolean> {
+  return claimStamp(
+    `UPDATE match_packages SET kickoff_reminder_sent_at = ?
+      WHERE user_id = ?
+        AND match_accepted_at IS NOT NULL
+        AND length(trim(match_accepted_at)) > 0
+        AND kickoff_booked = 0
+        AND (kickoff_completed_at IS NULL OR length(trim(kickoff_completed_at)) = 0)
+        AND (kickoff_reminder_sent_at IS NULL OR length(trim(kickoff_reminder_sent_at)) = 0)`,
+    [at, userId],
+  );
+}
+
+export async function releaseKickoffReminder(userId: string, at: string): Promise<void> {
+  const client = await db();
+  await client.execute({
+    sql: `UPDATE match_packages SET kickoff_reminder_sent_at = NULL WHERE user_id = ? AND kickoff_reminder_sent_at = ?`,
+    args: [userId, at],
+  });
+}
+
 export async function releaseReminder(userId: string, at: string): Promise<void> {
   const client = await db();
   await client.execute({
@@ -885,7 +924,7 @@ export async function listMatchWork(): Promise<MatchWork[]> {
       m.match_ready_at, m.match_accepted_at, m.match_accepted_ip, m.match_accepted_ua,
       m.acceptance_method, m.declined_at, m.presentation, m.reminder_sent_at,
       m.billing_start_at, m.stripe_subscription_id, m.billing_notified_at, m.client_notified_at,
-      m.replacement_presented_at, m.kickoff_booked, m.kickoff_completed_at, m.updated_at,
+      m.kickoff_reminder_sent_at, m.replacement_presented_at, m.kickoff_booked, m.kickoff_completed_at, m.updated_at,
       u.email, u.full_name, u.plan, u.stripe_customer_id, u.default_payment_method_id
     FROM match_packages m
     JOIN users u ON u.id = m.user_id

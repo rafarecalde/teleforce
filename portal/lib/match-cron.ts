@@ -2,6 +2,7 @@ import { deadlineFrom, formatDeadline } from './business-days';
 import { createMatchSubscription, stripeAutoBillingEnabled } from './match-billing';
 import {
   sendChargeAlert,
+  sendKickoffReminderEmail,
   sendMatchAutoClientEmail,
   sendMatchAcceptedInternalEmail,
   sendMatchReminderEmail,
@@ -10,12 +11,15 @@ import {
   acceptMatch,
   claimBillingNotified,
   claimClientNotified,
+  claimKickoffReminder,
   claimReminder,
   getMatchByUserId,
+  kickoffReminderDue,
   listMatchWork,
   openBillingStart,
   releaseBillingNotified,
   releaseClientNotified,
+  releaseKickoffReminder,
   releaseReminder,
   saveSubscription,
   type MatchPackage,
@@ -142,6 +146,23 @@ async function bill(row: MatchWork, fresh: MatchPackage, nowIso: string): Promis
   return true;
 }
 
+async function remindKickoff(row: MatchWork, nowIso: string): Promise<boolean> {
+  if (!row.matchAcceptedAt || row.kickoffBooked || row.kickoffCompletedAt || row.kickoffReminderSentAt) return false;
+  if (!kickoffReminderDue(row.matchAcceptedAt, nowIso)) return false;
+  const claimed = await claimKickoffReminder(row.userId, nowIso);
+  if (!claimed) return false;
+  const sent = await sendKickoffReminderEmail({
+    to: row.email,
+    fullName: row.fullName,
+    eaName: row.eaName,
+  });
+  if (!sent) {
+    await releaseKickoffReminder(row.userId, nowIso);
+    return false;
+  }
+  return true;
+}
+
 async function autoClientRetry(row: MatchWork, fresh: MatchPackage, nowIso: string): Promise<void> {
   if (fresh.acceptanceMethod !== 'auto' || fresh.clientNotifiedAt) return;
   const claimed = await claimClientNotified(row.userId, nowIso);
@@ -154,13 +175,14 @@ async function autoClientRetry(row: MatchWork, fresh: MatchPackage, nowIso: stri
   if (!sent) await releaseClientNotified(row.userId, nowIso);
 }
 
-/** Hourly pass: reminder, auto-accept, and billing start. One row never stops the rest. */
-export async function runMatchCron(now = new Date()): Promise<{ reminded: number; autoAccepted: number; billed: number }> {
+/** Hourly pass: reply reminder, auto-accept, billing start, and one kickoff reminder. One row never stops the rest. */
+export async function runMatchCron(now = new Date()): Promise<{ reminded: number; autoAccepted: number; billed: number; kickoffReminded: number }> {
   const nowIso = now.toISOString();
   const rows = await listMatchWork();
   let reminded = 0;
   let autoAccepted = 0;
   let billed = 0;
+  let kickoffReminded = 0;
   for (const row of rows) {
     try {
       if (!row.matchAcceptedAt && !row.declinedAt) {
@@ -182,11 +204,15 @@ export async function runMatchCron(now = new Date()): Promise<{ reminded: number
       if (!fresh) continue;
       if (await bill(row, fresh, nowIso)) billed += 1;
       await autoClientRetry(row, fresh, nowIso);
+      const booked = fresh.kickoffBooked || fresh.kickoffCompletedAt;
+      if (!booked && await remindKickoff({ ...row, ...fresh, email: row.email, fullName: row.fullName }, nowIso)) {
+        kickoffReminded += 1;
+      }
     } catch (err) {
       console.error('match cron row failed', row.userId, err instanceof Error ? err.message : 'error');
     }
   }
-  return { reminded, autoAccepted, billed };
+  return { reminded, autoAccepted, billed, kickoffReminded };
 }
 
 /** After kickoff is marked done, open billing if that date is the earlier one. */
