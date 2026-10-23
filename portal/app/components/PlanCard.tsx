@@ -11,7 +11,7 @@ export default function PlanCard({ plan }: { plan: DemoPlan }) {
       <div className="kv">
         <span className="k">Monthly rate</span>
         <span className="v">{plan.rate}/mo</span>
-        <span className="k">Service start</span>
+        <span className="k">Billing starts</span>
         <span className="v">{plan.serviceStart}</span>
         <span className="k">Initial term ends</span>
         <span className="v">{plan.commitmentEnd}</span>

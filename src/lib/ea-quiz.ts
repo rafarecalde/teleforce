@@ -287,7 +287,7 @@ export function bandCopy(answers: QuizAnswers, band: Band): BandCopy {
         'You’ve already paid for help. Quality, timezone, or ownership failed — or it worked until turnover flattened it. You don’t need another freelancer audition.',
       barrier:
         'The next hire can’t be a task queue in the wrong hours. You need bilingual EN/ES, U.S. overlap, and someone who owns the work.',
-      next: 'Priority match. Onboarding → Get matched → Kickoff. We match you with an executive assistant from the top tier. You and your EA run the day-to-day — your partnership manager stays on with full back-end support.',
+      next: 'Priority match. Onboarding → Get matched → Kickoff. We match you with an executive assistant from the top tier. You and your EA run the day-to-day — your Partnership Manager stays on with full back-end support.',
       cta: 'Book a priority match',
       silent: false,
     };
@@ -509,7 +509,7 @@ export function teardown(answers: QuizAnswers, band: Band): TeardownRow[] {
         ? {
             label: 'The plateau',
             va: 'Fine until they churned or couldn’t take the next layer.',
-            ea: 'Career EA + a success lead if the fit slips — not a new Upwork search.',
+            ea: 'Career EA + a Partnership Manager if the fit slips — not a new Upwork search.',
           }
         : {
             label: 'What you’re buying',

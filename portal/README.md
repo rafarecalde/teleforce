@@ -4,24 +4,23 @@ Next.js (App Router) account portal for Executive Assistant clients. Deploy to
 **Vercel** with root directory `portal`, at `portal.tryteleforce.com`.
 
 Signup stays on the marketing site (`src/pages/ea/signup.astro`, GitHub Pages).
-That page calls this app to create the account. A card is optional. Sign-in uses
-the same email and password either way.
+That page calls this app to create the account. A saved card is required.
+Sign-in uses the same email and password.
 
 ## What signup does
 
-Nothing is charged. There is no PaymentIntent, invoice, or subscription in this
-flow. Billing at kickoff (or 3 business days after the client is matched, whichever comes first) is later work.
+Nothing is charged at signup. There is no PaymentIntent, invoice, or subscription
+in this flow. No charge while we search and match. For an accepted match, billing
+starts when the EA kicks off, or 3 business days after Match Acceptance, whichever
+is earlier. If the match is deemed accepted because the client did not accept or
+decline within 3 business days, the card is charged that day. This app does not
+create that charge.
 
-**Without a card** (the default on the signup page): `POST /api/signup/complete`
-with name, email, password, plan, `termsAccepted: true`, and `signedName` (the
-typed legal name). `termsVersion` is optional; if it is sent and it is not the
-current Terms, signup is rejected. No SetupIntent and no Stripe call. The
-account stores null `stripeCustomerId`, `defaultPaymentMethodId`, and
-`setupIntentId`. The portal lets that email and password sign in. A banner and
-the billing section open a Stripe Card Element so the client can add a card
-later. Nothing is charged.
+A card is required. `POST /api/signup/complete` without a succeeded SetupIntent
+is rejected. `termsVersion` is optional; if it is sent and it is not the current
+Terms, signup is rejected.
 
-**With a card:**
+**Card on file:**
 
 1. The browser asks `GET /api/signup/config` for the Stripe publishable key.
 2. Stripe.js mounts a Card Element. Card numbers go to Stripe, not to our server.
@@ -31,8 +30,9 @@ later. Nothing is charged.
 5. `POST /api/signup/complete` checks that the SetupIntent succeeded, stores the
    PaymentMethod as the customer default, and writes the account:
    full name, work email, bcrypt password hash, plan (`3` or `12`), Terms
-   acceptance time, `stripeCustomerId`, `defaultPaymentMethodId`. The same
-   Terms record described below is stored either way. IP and User-Agent are
+   acceptance time, `stripeCustomerId`, `defaultPaymentMethodId`, and the card
+   brand and last4. The Terms record described below is stored with the account.
+   IP and User-Agent are
    taken from this request, not from the JSON body.
 
 Those routes allow browser calls from `https://tryteleforce.com`,
@@ -49,7 +49,7 @@ signed-in clients who still need a card.
 
 The signup page is a clickwrap plus a typed electronic signature. The checkbox
 names the effective date, for example “I agree to the Teleforce Terms &
-Conditions effective September 25, 2026.” That date is read from the Terms
+Conditions effective October 23, 2026.” That date is read from the Terms
 file. The legal name field can be filled from the account name, and the client
 confirms or types it. Short ESIGN / UETA language sits under that field.
 
@@ -96,9 +96,9 @@ response. The message has no password, API key, or full card number.
 
 ## Add a card after signup
 
-Signed-in accounts with no `defaultPaymentMethodId` see an “Add payment method”
-banner. It scrolls to a Card Element under Billing information. There is still
-no PaymentIntent, invoice, subscription, or charge.
+New signups already have a card. An older account with no `defaultPaymentMethodId`
+still sees an “Add your card” banner. It scrolls to a Card Element under Billing
+information. There is still no PaymentIntent, invoice, subscription, or charge.
 
 1. `GET /api/account/payment/config` returns the publishable key. The session
    cookie is required.
@@ -111,14 +111,13 @@ no PaymentIntent, invoice, subscription, or charge.
    writes `stripeCustomerId`, `defaultPaymentMethodId`, `setupIntentId`, brand,
    and last4 on the user row.
 
-Signup’s “Add a card later” and “Add a card now” choices are unchanged.
+Signup no longer offers “Add a card later.”
 
-### Test with a logged-in cardless account
+### Test with a logged-in account that has no card
 
 1. From the repo root, run the marketing site and the portal (`npm run dev` in
-   each). On `/ea/signup`, choose **Add a card later**, create the account, then
-   sign in at the portal with that email and password.
-2. Or insert a user with null `stripe_customer_id`, `default_payment_method_id`,
+   each). `/ea/signup` will not create an account without a saved card.
+2. Insert a user with null `stripe_customer_id`, `default_payment_method_id`,
    and `setup_intent_id`, then sign in.
 3. **Add payment method** on the banner opens the secure card field. Use Stripe
    test card `4242 4242 4242 4242`, any future expiry, any CVC, and any ZIP.
@@ -136,9 +135,10 @@ dashboard follows the account row:
 
 1. Before `onboarding_completed_at` is set, a **Schedule your onboarding call**
    card embeds Calendly (`https://calendly.com/tryteleforce-sales`, the URL the
-   marketing site used, via Calendly’s inline widget). Under that card the page
-   reads **Your assistant: matching in progress**.
-2. After ops sets `onboarding_completed_at`, the Calendly card is gone.
+   marketing site used, via Calendly’s inline widget). The page does not say
+   matching is in progress. Onboarding comes first.
+2. After ops sets `onboarding_completed_at`, the Calendly card is gone. If no
+   assistant name is set, the page reads **Your assistant: matching in progress**.
 3. After ops sets `matched_ea_name` to the assistant’s first and last name, the
    top of the dashboard reads **Your assistant is First Last**.
 

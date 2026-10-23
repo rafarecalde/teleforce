@@ -141,8 +141,10 @@ async function migrateAccountLifecycle(current: Client): Promise<void> {
 }
 
 /**
- * Early accounts required a SetupIntent. Card-optional signup stores NULL for
- * stripe_customer_id, default_payment_method_id, and setup_intent_id.
+ * Early accounts required a SetupIntent. A later release stored NULL so signup
+ * could finish without a card. New signups reject a missing SetupIntent.
+ * stripe_customer_id, default_payment_method_id, and setup_intent_id stay nullable
+ * so older rows still load.
  * SQLite cannot drop NOT NULL in place, so an existing table is rebuilt once.
  * NULL setup_intent_id values stay unique-compatible (many NULLs are allowed).
  */

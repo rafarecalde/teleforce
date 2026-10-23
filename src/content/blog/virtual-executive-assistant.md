@@ -78,11 +78,11 @@ If you are still opening fifteen tabs the night before a call, you do not have r
 
 Business travel is a project: constraints, backups, seat and hotel rules, the calendar impact, and the expense packet when you land. A good EA books it once and then owns the exceptions — delayed flight, moved dinner, the invoice that accounts payable will bounce.
 
-Personal travel can ride along. It should not crowd out the business calendar.
+Keep the calendar on the business. A lifestyle itinerary is a different product.
 
 ### 6. Vendor follow-up and light procurement
 
-Software renewals, contractor invoices, the insurance broker who needs one more document, the landlord, the freight quote. Someone has to chase. If that someone is you, you are the most expensive collections agent in the building.
+Software renewals, contractor invoices, the insurance broker who needs one more document, the landlord, the freight quote. Someone has to chase. If that someone is you, that chase is sitting on the most expensive calendar in the building.
 
 Give the EA a spend ceiling and a “check with me above X” rule. Then let them close loops.
 
@@ -170,10 +170,10 @@ If you want the operating version of this — what to hand off first, and in wha
 
 ## What Teleforce means by the role
 
-Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade support behind the recruiting. The EA offer is one dedicated, full-time assistant — English and Spanish, on your U.S. hours — employed and managed by us. Your partnership manager matches you with an executive assistant from the top tier. They stay on the engagement for oversight, tools, and best practices, and rematch if the fit is wrong.
+Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade support behind the recruiting. The EA offer is one dedicated, full-time assistant — English and Spanish, on your U.S. hours — employed and managed by us. Your Partnership Manager matches you with an executive assistant from the top tier. They stay on the engagement for oversight, tools, and best practices, and rematch if the fit is wrong.
 
 This is not a marketplace freelancer and not a shared pool. It is a seat.
 
-You’re matched in about 3 days. You’re live within about a week. [See pricing](/#pricing) on the homepage, or the full [EA offer](/). [Contact us](/#contact) if you want a match conversation rather than a brochure. If you later need adjacent capacity — appointment setting, data entry, bilingual support — it is the same employer, a different seat.
+Onboarding is about 30 minutes. You’re matched in about a week. You’re live within about two weeks. [See pricing](/#pricing) on the homepage, or the full [EA offer](/). [Contact us](/#contact) if you want a match conversation rather than a brochure. If you later need adjacent capacity — appointment setting, data entry, bilingual support — it is the same employer, a different seat.
 
 The test is simple: after 30 days, is the interruption layer theirs or still yours? If it is still yours, you hired a tasker. If it is theirs, you finally have a virtual executive assistant.

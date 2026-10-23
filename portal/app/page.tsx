@@ -104,7 +104,7 @@ function accountPlan(user: User): DemoPlan {
     rate12: formatDollars(PLAN_PRICE_12),
     monthlySavings: formatDollars(monthlySavings),
     annualSavings: formatDollars(monthlySavings * 12),
-    serviceStart: 'At kickoff',
+    serviceStart: 'When your EA kicks off, or 3 business days after you accept',
     commitmentEnd: 'Set at kickoff',
   };
 }
@@ -273,6 +273,10 @@ function AccountView({
   const threeMonth = plans.filter((plan) => plan.term === '3');
   const commitmentEndPreview = formatDate(addMonthsISO(12));
   const eaName = displayMatchedEa(matchedEaName);
+  // Onboarding comes first. Do not show matching-in-progress on a fresh signup.
+  // A later match-package view should keep this gate: pending only after
+  // onboarding is complete, and only when there is no assistant name yet.
+  const showMatching = onboardingComplete && !eaName;
 
   return (
     <Shell signedIn={!preview} company={company} preview={preview}>
@@ -285,7 +289,7 @@ function AccountView({
         <section className="card" id="onboarding-call">
           <h2>Schedule your onboarding call</h2>
           <p className="hint">
-            About 60 minutes, with a prep sheet beforehand. Nothing is charged on this call.
+            About 30 minutes, with a prep sheet beforehand. We’ll learn how you work, then find your EA. Nothing is charged on this call.
           </p>
           <div className="calendly-inline-widget" data-url={ONBOARDING_CALENDLY_URL} />
           <p className="muted" style={{ fontSize: 13.5, margin: '12px 0 0' }}>
@@ -297,7 +301,7 @@ function AccountView({
         </section>
       )}
 
-      {!eaName && <p className="ea-match pending">Your assistant: matching in progress</p>}
+      {showMatching && <p className="ea-match pending">Your assistant: matching in progress</p>}
 
       {!preview && !hasCard && <PaymentBanner />}
 
@@ -305,9 +309,7 @@ function AccountView({
         <h2>Your plan</h2>
         {!preview && (
           <p className="hint">
-            {hasCard
-              ? 'Your card is on file. Nothing is charged until your EA starts.'
-              : 'No card on file yet. Nothing is charged until your EA starts.'}
+            No charge while we search and match. Billing starts when your EA kicks off — or 3 business days after you accept your match.
           </p>
         )}
         {plans.map((plan) => (
@@ -330,7 +332,7 @@ function AccountView({
         ) : (
           <p className="muted" style={{ fontSize: 13.5, margin: '14px 0 0' }}>
             The 12-month rate is {threeMonth[0].rate12}/month (save {threeMonth[0].monthlySavings}/month).
-            A switch is confirmed with your partnership manager — it is not applied from this page.
+            A switch is confirmed with your Partnership Manager — it is not applied from this page.
           </p>
         )}
       </section>
@@ -339,8 +341,8 @@ function AccountView({
         <h2>Add another EA</h2>
         <p className="hint">
           Request another dedicated executive assistant for your team. Each seat is full-time, on
-          your existing agreement. We use this to match someone, then follow up. Nothing is charged
-          until that EA starts.
+          the same Terms. We use this to match someone, then follow up. No charge while we search
+          and match. Billing starts when that EA kicks off — or 3 business days after you accept.
         </p>
         <AddEaForm persist={persistBilling} />
       </section>
