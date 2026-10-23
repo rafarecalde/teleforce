@@ -6,6 +6,8 @@ import { DEMO, type DemoPlan } from '@/lib/demo';
 import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/plans';
 import { retrieveCard } from '@/lib/stripe';
 import { displayMatchedEa, getUserById, hasCardOnFile, onboardingIsComplete, type User } from '@/lib/users';
+import { clientCanRequestRematch, getMatchByUserId, isAdminEmail, kickoffPromptOpen, type MatchPackage } from '@/lib/match';
+import MeetYourEa, { KickoffPrompt } from './components/MatchCards';
 import PlanCard from './components/PlanCard';
 import SwitchTo12 from './components/SwitchTo12';
 import SeatRequest from './components/SeatRequest';
@@ -21,11 +23,13 @@ function Shell({
   signedIn,
   company,
   preview,
+  adminHref,
 }: {
   children: React.ReactNode;
   signedIn: boolean;
   company?: string;
   preview?: boolean;
+  adminHref?: string;
 }) {
   // Signed-in dashboard (and its sales preview) keeps the existing bar.
   // Signed-out screens get a separate green header with the marketing wordmark.
@@ -42,6 +46,11 @@ function Shell({
             </span>
             {signedIn && (
               <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                {adminHref && (
+                  <a href={adminHref} className="mono" style={{ fontSize: 12.5, color: 'var(--on-dark-mut)', textDecoration: 'none' }}>
+                    Admin
+                  </a>
+                )}
                 {company && <span className="mono" style={{ fontSize: 12, color: 'var(--on-dark-mut)' }}>{company}</span>}
                 <form action="/api/auth/logout" method="post">
                   <button
@@ -128,7 +137,7 @@ async function cardOnFile(user: User): Promise<{ brand: string; last4: string }>
 export default async function Page({
   searchParams,
 }: {
-  searchParams: { name?: string; company?: string; email?: string; error?: string };
+  searchParams: { name?: string; company?: string; email?: string; error?: string; match?: string };
 }) {
   let session = null;
   try {
@@ -207,6 +216,8 @@ export default async function Page({
     }
     const hasCard = hasCardOnFile(user);
     const card = hasCard ? await cardOnFile(user) : { brand: '', last4: '' };
+    const match = await getMatchByUserId(user.id);
+    const rematchAvailable = await clientCanRequestRematch(user.id, match);
     return (
       <AccountView
         email={user.email}
@@ -215,6 +226,10 @@ export default async function Page({
         plans={[accountPlan(user)]}
         matchedEaName={user.matchedEaName}
         onboardingComplete={onboardingIsComplete(user.onboardingCompletedAt)}
+        match={match}
+        rematchAvailable={rematchAvailable}
+        isAdmin={isAdminEmail(session.email)}
+        matchNotice={searchParams?.match}
         hasCard={hasCard}
         billing={{
           contactName: user.billingContact,
@@ -246,6 +261,10 @@ function AccountView({
   plans,
   matchedEaName = '',
   onboardingComplete = false,
+  match = null,
+  rematchAvailable = false,
+  isAdmin = false,
+  matchNotice = '',
   billing,
   hasCard = true,
   persistBilling = false,
@@ -259,6 +278,11 @@ function AccountView({
   matchedEaName?: string;
   /** Hides the scheduler once ops marks the onboarding call complete. */
   onboardingComplete?: boolean;
+  /** Draft rows stay hidden until matchReadyAt is set. */
+  match?: MatchPackage | null;
+  rematchAvailable?: boolean;
+  isAdmin?: boolean;
+  matchNotice?: string;
   billing: {
     contactName: string;
     company: string;
@@ -273,17 +297,35 @@ function AccountView({
   const threeMonth = plans.filter((plan) => plan.term === '3');
   const commitmentEndPreview = formatDate(addMonthsISO(12));
   const eaName = displayMatchedEa(matchedEaName);
-  // Onboarding comes first. Do not show matching-in-progress on a fresh signup.
-  // A later match-package view should keep this gate: pending only after
-  // onboarding is complete, and only when there is no assistant name yet.
-  const showMatching = onboardingComplete && !eaName;
+  const liveMatch = match?.matchReadyAt ? match : null;
+  const accepted = Boolean(liveMatch?.matchAcceptedAt);
+  const showKickoff = kickoffPromptOpen(liveMatch);
+  const showHeadline = Boolean(eaName) && (!liveMatch || accepted);
+  // Onboarding comes first. Matching in progress only after onboarding, and
+  // only before a live package or an assistant name.
+  const showMatching = onboardingComplete && !liveMatch && !eaName;
 
   return (
-    <Shell signedIn={!preview} company={company} preview={preview}>
+    <Shell signedIn={!preview} company={company} preview={preview} adminHref={isAdmin ? '/admin' : undefined}>
       {preview && <p className="page-sub">Sales preview with sample data. This is not a signed-in account.</p>}
       <h1 className="page-title display">Welcome back, {firstName(displayName)}.</h1>
-      {eaName && <p className="ea-match">Your assistant is {eaName}</p>}
+      {showHeadline && <p className="ea-match">Your assistant is {eaName}</p>}
       <p className="page-sub">{preview ? `Previewing ${email}` : `Signed in as ${email}`}</p>
+      {matchNotice === 'unavailable' && (
+        <p className="note err" role="alert">We couldn’t open that match just yet. Refresh and try again.</p>
+      )}
+      {matchNotice === 'different' && (
+        <p className="note ok" role="status">We&apos;re on it. A new introduction is on the way.</p>
+      )}
+      {matchNotice === 'closed' && (
+        <p className="note ok" role="status">This introduction is ready for your yes.</p>
+      )}
+      {matchNotice === 'rematch' && (
+        <p className="note ok" role="status">Request received. Your Partnership Manager will be in touch.</p>
+      )}
+      {matchNotice === 'rematch-used' && (
+        <p className="note ok" role="status">You&apos;ve used both rematches for the past year. Your Partnership Manager is still glad to talk it through.</p>
+      )}
 
       {!onboardingComplete && (
         <section className="card" id="onboarding-call">
@@ -302,6 +344,10 @@ function AccountView({
       )}
 
       {showMatching && <p className="ea-match pending">Your assistant: matching in progress</p>}
+
+      {showKickoff && liveMatch && <KickoffPrompt match={liveMatch} />}
+
+      {liveMatch && <MeetYourEa match={liveMatch} rematchAvailable={rematchAvailable} />}
 
       {!preview && !hasCard && <PaymentBanner />}
 

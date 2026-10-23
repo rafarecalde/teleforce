@@ -4,6 +4,10 @@ import { SESSION_COOKIE, SESSION_TTL_DAYS } from './constants';
 
 const DEV_SECRET = 'teleforce-portal-dev-only-secret-not-for-production';
 
+export function signingKey(): Uint8Array {
+  return secret();
+}
+
 function secret(): Uint8Array {
   const value = process.env.AUTH_SECRET;
   if (value) return new TextEncoder().encode(value);

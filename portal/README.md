@@ -9,12 +9,12 @@ Sign-in uses the same email and password.
 
 ## What signup does
 
-Nothing is charged at signup. There is no PaymentIntent, invoice, or subscription
-in this flow. No charge while we search and match. For an accepted match, billing
-starts when the EA kicks off, or 3 business days after Match Acceptance, whichever
-is earlier. If the match is deemed accepted because the client did not accept or
-decline within 3 business days, the card is charged that day. This app does not
-create that charge.
+Nothing is charged at signup. A saved card is required. There is no PaymentIntent
+or subscription in the signup flow. No charge while we search and match. A click
+or portal acceptance bills on the earlier of kickoff and three business days after
+acceptance. If the client neither accepts nor declines within three business days,
+acceptance is recorded automatically and billing starts that day. This app does not
+charge the card unless `STRIPE_AUTO_BILLING` is exactly `true`.
 
 A card is required. `POST /api/signup/complete` without a succeeded SetupIntent
 is rejected. `termsVersion` is optional; if it is sent and it is not the current
@@ -135,17 +135,67 @@ dashboard follows the account row:
 
 1. Before `onboarding_completed_at` is set, a **Schedule your onboarding call**
    card embeds Calendly (`https://calendly.com/tryteleforce-sales`, the URL the
-   marketing site used, via Calendly’s inline widget). The page does not say
-   matching is in progress. Onboarding comes first.
-2. After ops sets `onboarding_completed_at`, the Calendly card is gone. If no
-   assistant name is set, the page reads **Your assistant: matching in progress**.
-3. After ops sets `matched_ea_name` to the assistant’s first and last name, the
-   top of the dashboard reads **Your assistant is First Last**.
+   marketing site used, via Calendly’s inline widget). About 30 minutes. The
+   page does not say matching is in progress. Onboarding comes first.
+2. After ops sets `onboarding_completed_at`, the Calendly card is gone. If there
+   is no live match package and no assistant name, the page reads **Your
+   assistant: matching in progress**.
+3. When a match package is published, the client sees **Meet your EA**: photo
+   URL, intro video (YouTube, Loom, and Vimeo embed; any other https link stays
+   a link), background, and the Partnership Manager. The card shows a reply
+   deadline three business days (Monday–Friday, America/New_York) after publish.
+   **Accept & book your kickoff** records the acceptance time, IP, and user agent
+   with method `portal`. The first introduction also has **Request a different
+   match**, which records that one decline. A second introduction does not.
+   Billing on that card is one short line plus a link to `https://tryteleforce.com/terms/`.
+4. After a click, email, or automatic acceptance, the client gets a branded
+   **You're all set** email with a **Book your kickoff** button
+   (`KICKOFF_CALENDLY_URL`, default `https://calendly.com/tryteleforce-sales`).
+   The portal shows the same **Book your kickoff** card until kickoff is marked
+   booked or done. The client can mark it booked, and admin can mark it booked
+   or done. If it is still unbooked one business day (Monday–Friday,
+   America/New_York) after acceptance, the hourly cron sends one branded
+   reminder with the same button. Marking kickoff booked does not start billing.
+   **Request a rematch** shows only after kickoff, and only while the client has
+   fewer than two client-requested rematches in the rolling 12 months. **Mark
+   departure** records an EA departure and does not use a rematch. A replacement
+   is due 10 business days after either event. Admin shows that date. Publishing
+   the next assistant records it as presented.
+5. `matched_ea_name` is set from the package on publish. **Your assistant is
+   First Last** shows after acceptance, and it still shows for an account that
+   only has the SQL name and no package. It stays hidden while a published
+   package is waiting for a yes.
 
 Both columns are nullable and added on startup (`ALTER TABLE` only when the
-column is missing). New accounts leave them null. There is no admin route.
-Ops sets them in Turso with the client’s work email. The Terms email is
-unchanged; the scheduling link is not sent automatically.
+column is missing). `match_packages` is created the same way. New accounts
+leave the match empty. Photos are URLs. There is no file upload.
+
+`/admin` lists clients and edits the package. It requires a signed-in portal
+account whose email is in `ADMIN_EMAILS` (default `rafael@recaldelaw.com`).
+Publish emails a branded **Meet your EA** message: photo, intro link, background,
+Partnership Manager, the reply deadline, an **Accept EA** link, and (on the first
+introduction) **Request a different match**. The accept link is a signed token.
+Opening it records acceptance (time, IP, user agent, method `email`) and lands
+on the kickoff scheduler. A reminder with the same buttons goes out 24 hours
+before the deadline. If the client has neither accepted nor declined by then,
+`/api/cron/match` (`Authorization: Bearer $CRON_SECRET`, GET or POST) records method
+`auto`, emails **You're all set, book your kickoff**, and alerts sales. The same
+job sends one **Your kickoff is waiting** reminder when kickoff is still
+unbooked one business day after acceptance. GitHub Actions calls it hourly.
+Vercel Cron is a once-a-day backstop, because a Hobby project cannot schedule
+a cron more often than daily.
+
+A click or portal acceptance bills on the earlier of kickoff and three business
+days after acceptance. An automatic acceptance bills on that acceptance time.
+`STRIPE_AUTO_BILLING` is off unless it is exactly `true`. While it is off, the
+sales alert says **Charge now in Stripe** and links the customer. While it is
+on, the cron creates a subscription on the saved card (`STRIPE_PRICE_3` or
+`STRIPE_PRICE_12`) anchored to that billing start. A failed send is logged and
+does not change the response. Signup alerts keep their own default
+(`SIGNUP_ALERT_TO` unset still means `sales@tryteleforce.com` for match alerts only).
+
+The same fields can still be set in Turso. Publishing is what copies the
+assistant name onto `matched_ea_name`.
 
 ```bash
 turso db shell <database-name>
@@ -227,6 +277,13 @@ card does not call Stripe.
 | `PREVIEW_MODE` | `1` enables the sample-data sales link |
 | `SIGNUP_CORS_ORIGINS` | Extra allowed origins, comma-separated |
 | `MARKETING_URL` | Used for the signup link on the sign-in screen |
+| `KICKOFF_CALENDLY_URL` | Kickoff scheduler after the client accepts. Defaults to `https://calendly.com/tryteleforce-sales` |
+| `CRON_SECRET` | Bearer token for `GET` or `POST /api/cron/match`. Set this on the Vercel project. Set the same value as the GitHub repo secret `PORTAL_CRON_SECRET`. The route returns 401 when this is empty |
+| `STRIPE_AUTO_BILLING` | `true` creates a subscription at billing start. Anything else leaves charging to the sales alert |
+| `STRIPE_PRICE_3` / `STRIPE_PRICE_12` | Stripe Price ids used only when auto billing is on |
+| `ADMIN_EMAILS` | Comma-separated allowlist for `/admin`. The person must also be able to sign in. Defaults to `rafael@recaldelaw.com` |
+| `DEFAULT_PARTNERSHIP_MANAGER_NAME` | Prefilled Partnership Manager name on a match package |
+| `DEFAULT_PARTNERSHIP_MANAGER_EMAIL` | Prefilled Partnership Manager email. Publish requires one, from the form or here |
 | `RESEND_API_KEY` | Sends the accepted-Terms email. If unset, the account is still created and `email_sent_at` stays null |
 | `EMAIL_FROM` | From address on a domain verified in Resend, e.g. `Teleforce <legal@tryteleforce.com>` |
 | `TERMS_ACCEPTANCE_BCC` | Ops BCC. If unset, `OPS_EMAIL` is used, then `legal@tryteleforce.com` |
@@ -243,10 +300,14 @@ This repo does not deploy the portal for you.
    `turso db tokens create`). Put the URL and token in `TURSO_DATABASE_URL` and
    `TURSO_AUTH_TOKEN`.
 2. Vercel → New Project → this repo → **Root Directory = `portal`**.
-3. Set `APP_URL=https://portal.tryteleforce.com`, `AUTH_SECRET`, the Stripe
-   keys, and the Turso variables. Leave `PREVIEW_MODE` empty. Stripe keys can
-   stay set; they are used when a signup includes a card, or when a signed-in
-   client adds a card in the portal.
+3. Set `APP_URL=https://portal.tryteleforce.com`, `AUTH_SECRET`, `CRON_SECRET`,
+   the Stripe keys, and the Turso variables. Leave `PREVIEW_MODE` empty. Stripe
+   keys can stay set; they are used when a signup includes a card, or when a
+   signed-in client adds a card in the portal. `CRON_SECRET` must also be stored
+   as the GitHub repository secret `PORTAL_CRON_SECRET` (same value). Vercel Cron
+   and the hourly GitHub Action both send `Authorization: Bearer` with that value.
+   The portal build does not read `CRON_SECRET`, `AUTH_SECRET`, or
+   `TURSO_DATABASE_URL`; those are required at runtime, not during `next build`.
    Databases created when a card was required are rebuilt once on startup so
    `stripe_customer_id`, `default_payment_method_id`, and `setup_intent_id`
    can be null. Existing card-on-file rows are kept.
