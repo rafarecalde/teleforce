@@ -2,16 +2,8 @@ import Script from 'next/script';
 import { formatDate } from '@/lib/money';
 import type { MatchPackage } from '@/lib/match';
 import {
-  BILLING_HOLD_SENTENCE,
-  BILLING_START_SENTENCE,
-  BINDING_SENTENCE,
-  DECLINE_SENTENCE,
-  KICKOFF_AIM_SENTENCE,
-  MATCH_ACCEPTANCE_SENTENCE,
-  REMATCH_AFTER_SENTENCE,
-  REMATCH_FEE_SENTENCE,
-  REMATCH_REQUEST_SENTENCE,
-  SILENCE_SENTENCE,
+  BILLING_NOTE,
+  TERMS_URL,
   differentMatchMailto,
   kickoffCalendlyUrl,
   questionsMailto,
@@ -19,6 +11,15 @@ import {
   safeImageUrl,
   videoEmbed,
 } from '@/lib/match-terms';
+
+function TermsNote({ id }: { id?: string }) {
+  return (
+    <p className="terms-note" id={id}>
+      {BILLING_NOTE}{' '}
+      <a href={TERMS_URL}>See Terms</a>
+    </p>
+  );
+}
 
 function initials(name: string): string {
   const parts = name.trim().split(/\s+/).filter(Boolean);
@@ -45,7 +46,7 @@ function IntroVideo({ url, name }: { url: string; name: string }) {
     return (
       <p style={{ margin: '0 0 16px' }}>
         <a href={presentation.href} target="_blank" rel="noopener noreferrer">
-          Watch the introduction
+          Watch {name}&apos;s intro
         </a>
       </p>
     );
@@ -63,7 +64,7 @@ function IntroVideo({ url, name }: { url: string; name: string }) {
       </div>
       <p className="muted" style={{ fontSize: 13.5, margin: '0 0 16px' }}>
         <a href={presentation.href} target="_blank" rel="noopener noreferrer">
-          Open the introduction video
+          Watch {name}&apos;s intro
         </a>
       </p>
     </>
@@ -85,15 +86,18 @@ export default function MeetYourEa({ match }: { match: MatchPackage }) {
 
   return (
     <section className="card meet-card" id="meet-your-ea">
-      <p className="meet-kicker">Your match</p>
+      <p className="meet-kicker">It&apos;s a match</p>
       <h2>Meet your EA</h2>
       <div className="meet-head">
         <Portrait url={match.eaPhotoUrl} name={match.eaName} className="meet-photo" />
         <div>
           <p className="meet-name">{match.eaName || 'Your assistant'}</p>
-          <p className="meet-role">Proposed executive assistant</p>
+          <p className="meet-role">Your executive assistant</p>
         </div>
       </div>
+      <p className="meet-lead">
+        Handpicked for how you work. Watch the intro, then say yes and book your kickoff.
+      </p>
 
       <IntroVideo url={match.eaVideoUrl} name={match.eaName || 'your assistant'} />
 
@@ -110,7 +114,7 @@ export default function MeetYourEa({ match }: { match: MatchPackage }) {
 
       {(pmName || pmEmail) && (
         <>
-          <h3 className="subhead">Partnership Manager</h3>
+          <h3 className="subhead">Your Partnership Manager</h3>
           <div className="pm-row">
             <Portrait url={match.pmPhotoUrl} name={pmName || 'Partnership Manager'} className="pm-photo" />
             <div>
@@ -126,42 +130,35 @@ export default function MeetYourEa({ match }: { match: MatchPackage }) {
       {!accepted ? (
         <>
           <hr className="divider" />
-          <p className="legal-copy" id="match-billing">
-            Accepting in the portal is Match Acceptance. {MATCH_ACCEPTANCE_SENTENCE} {BINDING_SENTENCE}
-          </p>
-          <p className="legal-copy">{BILLING_START_SENTENCE}</p>
-          <p className="legal-copy">{BILLING_HOLD_SENTENCE}</p>
           <form action="/api/account/match/accept" method="post" className="meet-actions">
             <button className="btn btn-primary" type="submit" aria-describedby="match-billing">
-              Accept match
+              Accept &amp; book your kickoff
             </button>
           </form>
-          <p className="legal-copy" style={{ marginTop: 14 }}>
-            {DECLINE_SENTENCE} {SILENCE_SENTENCE}
-          </p>
+          <TermsNote id="match-billing" />
           {pmEmail && (
             <p className="meet-links">
-              <a className="btn-link" href={differentMatchMailto(pmEmail, match.eaName || 'the proposed Assistant')}>
-                Request a different match
+              <a className="btn-link" href={differentMatchMailto(pmEmail, match.eaName || 'my match')}>
+                Looking for a different match?
               </a>
               <a className="btn-link" href={questionsMailto(pmEmail)}>
-                Questions? Contact your Partnership Manager
+                Questions? Your Partnership Manager would love to help
               </a>
             </p>
           )}
         </>
       ) : (
         <>
-          <p className="legal-copy">
-            {REMATCH_AFTER_SENTENCE} {REMATCH_REQUEST_SENTENCE} {REMATCH_FEE_SENTENCE}
+          <p className="meet-lead">
+            Whenever you want to talk it through, your Partnership Manager is right here.
           </p>
           {pmEmail && (
             <p className="meet-links">
-              <a className="btn-link" href={rematchMailto(pmEmail, match.eaName || 'my Assistant')}>
-                Request a rematch
+              <a className="btn-link" href={rematchMailto(pmEmail, match.eaName || 'my EA')}>
+                Ask about another match
               </a>
               <a className="btn-link" href={questionsMailto(pmEmail)}>
-                Questions? Contact your Partnership Manager
+                Questions? Write your Partnership Manager
               </a>
             </p>
           )}
@@ -176,19 +173,20 @@ export function KickoffPrompt({ match }: { match: MatchPackage }) {
   const when = formatDate(match.matchAcceptedAt);
   return (
     <section className="card meet-card" id="kickoff">
-      <p className="meet-kicker">Next step</p>
+      <p className="meet-kicker">Your EA is ready to start</p>
       <h2>Book your kickoff with {match.eaName}</h2>
       <p className="note ok" role="status">
-        You accepted this match{when && when !== '—' ? ` on ${when}` : ''}.
+        You&apos;re matched{when && when !== '—' ? ` as of ${when}` : ''}. {match.eaName} can&apos;t wait to get started.
       </p>
-      <p className="legal-copy">{KICKOFF_AIM_SENTENCE}</p>
-      <p className="legal-copy">{BILLING_START_SENTENCE}</p>
-      <p className="legal-copy">{BILLING_HOLD_SENTENCE}</p>
+      <p className="meet-lead">
+        Grab a time for a short kickoff. You&apos;ll hand off priorities and be working together in no time.
+      </p>
       <p className="meet-actions">
         <a className="btn btn-primary" href={url} target="_blank" rel="noopener noreferrer">
-          Book the kickoff call
+          Book your kickoff
         </a>
       </p>
+      <TermsNote id="kickoff-billing" />
       <div className="calendly-inline-widget" data-url={url} />
       <p className="muted" style={{ fontSize: 13.5, margin: '12px 0 0' }}>
         <a href={url} target="_blank" rel="noopener noreferrer">
@@ -197,12 +195,12 @@ export function KickoffPrompt({ match }: { match: MatchPackage }) {
       </p>
       {match.kickoffBooked ? (
         <p className="hint" style={{ marginTop: 14 }}>
-          Kickoff booked. This card stays until kickoff is marked done.
+          You&apos;re on the calendar. We&apos;ll leave this here until kickoff is confirmed.
         </p>
       ) : (
         <form action="/api/account/match/kickoff-booked" method="post" style={{ marginTop: 14 }}>
           <button className="btn btn-ghost" type="submit">
-            I’ve booked the kickoff
+            I&apos;ve booked my kickoff
           </button>
         </form>
       )}

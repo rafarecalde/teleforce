@@ -306,7 +306,7 @@ function AccountView({
       {showHeadline && <p className="ea-match">Your assistant is {eaName}</p>}
       <p className="page-sub">{preview ? `Previewing ${email}` : `Signed in as ${email}`}</p>
       {matchNotice === 'unavailable' && (
-        <p className="note err" role="alert">That match isn’t available to accept.</p>
+        <p className="note err" role="alert">We couldn’t open that match just yet. Refresh and try again.</p>
       )}
 
       {!onboardingComplete && (

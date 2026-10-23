@@ -561,7 +561,14 @@ section.card.meet-card > h2 { font-size: 26px; letter-spacing: -0.03em; margin-b
 }
 .bio-list dd { margin: 0; white-space: pre-wrap; }
 .pm-row { display: flex; align-items: center; gap: 12px; margin: 0 0 8px; }
-.legal-copy { font-size: 14px; line-height: 1.5; margin: 0 0 12px; color: var(--on-paper); }
+.meet-lead { margin: 0 0 16px; font-size: 15px; line-height: 1.5; }
+.terms-note {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--on-paper-mut);
+  margin: 10px 0 0;
+}
+.terms-note a { font-weight: 600; }
 .meet-actions { margin: 4px 0 0; }
 .meet-links { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin: 4px 0 0; }
 @media (max-width: 640px) {

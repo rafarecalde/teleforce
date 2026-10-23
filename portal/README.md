@@ -10,9 +10,8 @@ the same email and password either way.
 ## What signup does
 
 Nothing is charged. There is no PaymentIntent, invoice, or subscription in this
-flow. Match Acceptance is recorded in the portal. Per the Terms, the first
-monthly fee is charged on the earlier of Kickoff and the third business day
-after Match Acceptance. This app does not create that charge.
+flow. Accepting a match is recorded in the portal. This app does not create
+that charge. Billing follows the Terms.
 
 **Without a card** (the default on the signup page): `POST /api/signup/complete`
 with name, email, password, plan, `termsAccepted: true`, and `signedName` (the
@@ -145,13 +144,10 @@ dashboard follows the account row:
    published or `matched_ea_name` is set.
 3. When a match package is published, the client sees **Meet your EA**: photo
    URL, intro video (YouTube, Loom, and Vimeo embed; any other https link stays
-   a link), background, and the Partnership Manager. **Accept match** records
-   Match Acceptance (time, IP, user agent). The button quotes Terms §3.3: the
-   first monthly fee and the Initial Period begin on the earlier of Kickoff and
-   the third business day after Match Acceptance. Before acceptance, the client
-   can email the Partnership Manager to decline the first proposed Assistant and
-   request one additional match, one time only, within three business days
-   (Terms §3.2). After acceptance, a rematch email follows Terms §4.4.
+   a link), background, and the Partnership Manager. **Accept & book your kickoff**
+   records the acceptance time, IP, and user agent. Billing on that card is one
+   short line plus a link to `https://tryteleforce.com/terms/`. The client can
+   still email the Partnership Manager about a different match, or with a question.
 4. After acceptance, a kickoff card links to `KICKOFF_CALENDLY_URL` (default
    `https://calendly.com/tryteleforce-sales`) and stays until ops marks kickoff
    done. The client can note that they booked; the card still stays.
@@ -165,9 +161,9 @@ leave the match empty. Photos are URLs. There is no file upload.
 
 `/admin` lists clients and edits the package. It requires a signed-in portal
 account whose email is in `ADMIN_EMAILS` (default `rafael@recaldelaw.com`).
-Publish emails the client “Your Teleforce match is ready” and links to the
-portal. Acceptance emails the client a confirmation with the kickoff link and
-the billing-start sentence, and emails `SIGNUP_ALERT_TO` when that is set.
+Publish emails the client “Meet your EA” and links to the portal. Acceptance
+emails the client “Your EA is ready to start” with the kickoff link, and emails
+`SIGNUP_ALERT_TO` when that is set.
 When `SIGNUP_ALERT_TO` is unset, that acceptance alert goes to
 `sales@tryteleforce.com` (signup alerts keep their own default). A failed send
 is logged and does not change the response. Nothing here charges a card.
@@ -255,7 +251,7 @@ card does not call Stripe.
 | `PREVIEW_MODE` | `1` enables the sample-data sales link |
 | `SIGNUP_CORS_ORIGINS` | Extra allowed origins, comma-separated |
 | `MARKETING_URL` | Used for the signup link on the sign-in screen |
-| `KICKOFF_CALENDLY_URL` | Kickoff scheduler after Match Acceptance. Defaults to `https://calendly.com/tryteleforce-sales` |
+| `KICKOFF_CALENDLY_URL` | Kickoff scheduler after the client accepts. Defaults to `https://calendly.com/tryteleforce-sales` |
 | `ADMIN_EMAILS` | Comma-separated allowlist for `/admin`. The person must also be able to sign in. Defaults to `rafael@recaldelaw.com` |
 | `DEFAULT_PARTNERSHIP_MANAGER_NAME` | Prefilled Partnership Manager name on a match package |
 | `DEFAULT_PARTNERSHIP_MANAGER_EMAIL` | Prefilled Partnership Manager email. Publish requires one, from the form or here |

@@ -1,13 +1,4 @@
-import {
-  BILLING_HOLD_SENTENCE,
-  BILLING_START_SENTENCE,
-  BINDING_SENTENCE,
-  DECLINE_SENTENCE,
-  KICKOFF_AIM_SENTENCE,
-  MATCH_ACCEPTANCE_SENTENCE,
-  kickoffCalendlyUrl,
-  portalHomeUrl,
-} from './match-terms';
+import { BILLING_NOTE, TERMS_URL, kickoffCalendlyUrl, portalHomeUrl } from './match-terms';
 
 const DEFAULT_MATCH_ALERT_TO = 'sales@tryteleforce.com';
 const GUAYAQUIL = 'America/Guayaquil';
@@ -128,6 +119,19 @@ function linkParagraph(label: string, href: string): string {
   return `<p style="margin:0 0 16px;"><a href="${safe}" style="color:#17302e;">${escapeHtml(label)}</a><br><span style="font-size:14px;">${safe}</span></p>`;
 }
 
+function buttonParagraph(label: string, href: string): string {
+  const safe = escapeHtml(href);
+  return `<p style="margin:0 0 8px;"><a href="${safe}" style="display:inline-block;background:#f2a82b;color:#091c1e;font-weight:700;font-family:Georgia,serif;font-size:16px;line-height:1.2;text-decoration:none;padding:12px 18px;border-radius:9px;">${escapeHtml(label)}</a></p><p style="margin:0 0 16px;font-size:14px;"><a href="${safe}" style="color:#17302e;">${safe}</a></p>`;
+}
+
+function termsNoteHtml(): string {
+  return `<p style="margin:0;font-size:13px;color:#5a6e69;">${escapeHtml(BILLING_NOTE)} <a href="${TERMS_URL}" style="color:#5e7d72;font-weight:600;">See Terms</a></p>`;
+}
+
+function termsNoteText(): string {
+  return `${BILLING_NOTE} See Terms: ${TERMS_URL}`;
+}
+
 type Outbound = {
   to: string[];
   subject: string;
@@ -140,45 +144,49 @@ function readyMessage(input: MatchReadyEmailInput): Outbound {
   const hello = name ? `Hi ${name},` : 'Hello,';
   const portal = portalHomeUrl();
   const ea = oneLine(input.eaName);
-  const pm = [oneLine(input.pmName), oneLine(input.pmEmail)].filter(Boolean).join(' · ');
+  const pmName = oneLine(input.pmName);
+  const pmEmail = oneLine(input.pmEmail);
+  const pmLine = pmName
+    ? `${pmName} is your Partnership Manager${pmEmail ? ` (${pmEmail})` : ''}, if you'd like a quick word before you say yes.`
+    : pmEmail
+      ? `Your Partnership Manager is ${pmEmail}, if you'd like a quick word before you say yes.`
+      : '';
   const text = `${hello}
 
-Your Teleforce match is ready. ${ea} is the proposed Assistant.
+Wonderful news. ${ea} is your match.
 
-Review the introduction and accept the match in your portal:
+Pop into the portal for the photo, the intro video, and a little background. When it feels right, accept and book your kickoff.
+
+Meet your EA:
 ${portal}
 
-${MATCH_ACCEPTANCE_SENTENCE} ${BINDING_SENTENCE}
+${pmLine ? `${pmLine}\n\n` : ''}${termsNoteText()}
 
-${BILLING_START_SENTENCE}
-
-${BILLING_HOLD_SENTENCE}
-
-${DECLINE_SENTENCE}
-
-${pm ? `Partnership Manager: ${pm}\n` : ''}
 Teleforce
 `;
   const html = shell(
-    'Your match is ready',
+    'Meet your EA',
     [
       paragraph(hello),
-      paragraph(`Your Teleforce match is ready. ${ea} is the proposed Assistant.`),
-      paragraph('Review the introduction and accept the match in your portal.'),
-      linkParagraph('Open your portal', portal),
-      paragraph(`${MATCH_ACCEPTANCE_SENTENCE} ${BINDING_SENTENCE}`),
-      paragraph(BILLING_START_SENTENCE),
-      paragraph(BILLING_HOLD_SENTENCE),
-      paragraph(DECLINE_SENTENCE),
-      pm ? paragraph(`Partnership Manager: ${pm}`) : '',
+      paragraph(`Wonderful news. ${ea} is your match.`),
+      paragraph('Pop into the portal for the photo, the intro video, and a little background. When it feels right, accept and book your kickoff.'),
+      buttonParagraph('Meet your EA', portal),
+      pmLine ? paragraph(pmLine) : '',
+      termsNoteHtml(),
     ].join(''),
   );
   return {
     to: [input.to],
-    subject: 'Your Teleforce match is ready',
+    subject: 'Meet your EA',
     html,
     text,
   };
+}
+
+/** HTML used by the client “match is ready” email. Safe to call without sending. */
+export function matchReadyEmailContent(input: MatchReadyEmailInput): { subject: string; html: string; text: string } {
+  const message = readyMessage(input);
+  return { subject: message.subject, html: message.html, text: message.text };
 }
 
 function acceptedClientMessage(input: MatchAcceptedClientInput): Outbound {
@@ -189,38 +197,34 @@ function acceptedClientMessage(input: MatchAcceptedClientInput): Outbound {
   const portal = portalHomeUrl();
   const text = `${hello}
 
-You accepted ${ea} as your Assistant. ${MATCH_ACCEPTANCE_SENTENCE} ${BINDING_SENTENCE}
+You and ${ea} are officially a team. Your EA is ready to start.
+
+Book a kickoff and you'll be handing off your week in no time. We can't wait for you two to meet.
 
 Book your kickoff:
 ${kickoff}
 
-You can also book from your portal:
+Or open your portal anytime:
 ${portal}
 
-${KICKOFF_AIM_SENTENCE}
-
-${BILLING_START_SENTENCE}
-
-${BILLING_HOLD_SENTENCE}
+${termsNoteText()}
 
 Teleforce
 `;
   const html = shell(
-    'You accepted your match',
+    'Your EA is ready to start',
     [
       paragraph(hello),
-      paragraph(`You accepted ${ea} as your Assistant. ${MATCH_ACCEPTANCE_SENTENCE} ${BINDING_SENTENCE}`),
-      paragraph('Book your kickoff with your Assistant.'),
-      linkParagraph('Book the kickoff call', kickoff),
+      paragraph(`You and ${ea} are officially a team. Your EA is ready to start.`),
+      paragraph("Book a kickoff and you'll be handing off your week in no time. We can't wait for you two to meet."),
+      buttonParagraph('Book your kickoff', kickoff),
       linkParagraph('Open your portal', portal),
-      paragraph(KICKOFF_AIM_SENTENCE),
-      paragraph(BILLING_START_SENTENCE),
-      paragraph(BILLING_HOLD_SENTENCE),
+      termsNoteHtml(),
     ].join(''),
   );
   return {
     to: [input.to],
-    subject: 'You accepted your Teleforce match',
+    subject: 'Your EA is ready to start',
     html,
     text,
   };
@@ -321,7 +325,7 @@ export function sendMatchReadyEmail(input: MatchReadyEmailInput): Promise<boolea
   return send('match ready email', readyMessage(input));
 }
 
-/** Client confirmation after Match Acceptance, with the kickoff link. Never throws. */
+/** Client confirmation after they accept, with the kickoff link. Never throws. */
 export function sendMatchAcceptedClientEmail(input: MatchAcceptedClientInput): Promise<boolean> {
   if (!looksLikeEmail(input.to)) {
     console.error('match accepted email skipped invalid recipient');
