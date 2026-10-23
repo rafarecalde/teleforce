@@ -8,6 +8,7 @@ import { findOrCreateCustomer, formatBrand, getStripe, stripeHttpError } from '.
 import { insertAccountWithAcceptance, recordTermsEmailResult } from './terms-acceptance';
 import { sendSignupAlertEmail } from './signup-alert';
 import { sendTermsAcceptanceEmail } from './terms-email';
+import { sendWelcomeEmail } from './welcome-email';
 import { getTermsDocument } from './terms';
 import { getUserByEmail } from './users';
 import { asRecord, normalizeEmail, normalizeName, normalizePlan } from './validate';
@@ -192,7 +193,8 @@ async function saveAccount(input: {
 
   // Mail is not part of the account transaction. A failed Terms send leaves
   // email_sent_at null and email_error set so ops can retry. The internal
-  // signup alert runs beside it and cannot fail or change this response.
+  // signup alert and the client welcome email run beside it. Neither can
+  // fail or change this response, and they share the same send window.
   await Promise.all([
     emailAcceptedTerms({
       acceptanceId,
@@ -215,6 +217,10 @@ async function saveAccount(input: {
       cardLast4: input.cardLast4,
       signedUpAt: createdAt,
       stripeCustomerId: input.stripeCustomerId,
+    }),
+    sendWelcomeEmail({
+      to: input.email,
+      fullName: input.fullName,
     }),
   ]);
   return { ok: true, email: input.email };

@@ -1,6 +1,6 @@
 import Script from 'next/script';
 import { getSession } from '@/lib/auth';
-import { BILLING_LINE, ONBOARDING_CALENDLY_URL } from '@/lib/constants';
+import { BILLING_LINE, onboardingCalendlyUrl } from '@/lib/constants';
 import { addMonthsISO, formatDate } from '@/lib/money';
 import { DEMO, type DemoPlan } from '@/lib/demo';
 import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/plans';
@@ -297,6 +297,7 @@ function AccountView({
   const threeMonth = plans.filter((plan) => plan.term === '3');
   const commitmentEndPreview = formatDate(addMonthsISO(12));
   const eaName = displayMatchedEa(matchedEaName);
+  const calendlyUrl = onboardingCalendlyUrl();
   const liveMatch = match?.matchReadyAt ? match : null;
   const accepted = Boolean(liveMatch?.matchAcceptedAt);
   const showKickoff = kickoffPromptOpen(liveMatch);
@@ -333,9 +334,9 @@ function AccountView({
           <p className="hint">
             About 30 minutes, with a prep sheet beforehand. We’ll learn how you work, then your Partnership Manager starts the match. Nothing is charged on this call.
           </p>
-          <div className="calendly-inline-widget" data-url={ONBOARDING_CALENDLY_URL} />
+          <div className="calendly-inline-widget" data-url={calendlyUrl} />
           <p className="muted" style={{ fontSize: 13.5, margin: '12px 0 0' }}>
-            <a href={ONBOARDING_CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+            <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
               Open the scheduler
             </a>
           </p>

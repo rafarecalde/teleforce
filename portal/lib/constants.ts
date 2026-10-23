@@ -14,5 +14,25 @@ export const ADD_EA_ACK_TEXT =
 export const SESSION_COOKIE = 'tf_session';
 export const SESSION_TTL_DAYS = 7;
 
-/** Same URL as src/consts.ts ONBOARDING_CALENDLY_URL. Inline widget via Calendly’s widget.js. */
+/** Same default as src/consts.ts. Override with ONBOARDING_CALENDLY_URL. */
 export const ONBOARDING_CALENDLY_URL = 'https://calendly.com/tryteleforce-sales';
+
+/**
+ * Scheduler for the onboarding call. `ONBOARDING_CALENDLY_URL` wins when it
+ * is an http(s) URL. Otherwise the default above is used.
+ */
+export function onboardingCalendlyUrl(): string {
+  const configured = process.env.ONBOARDING_CALENDLY_URL?.trim() ?? '';
+  if (!configured) return ONBOARDING_CALENDLY_URL;
+  try {
+    const url = new URL(configured);
+    if ((url.protocol !== 'https:' && url.protocol !== 'http:') || url.username || url.password) {
+      console.error('ONBOARDING_CALENDLY_URL is not an http(s) URL; using the default');
+      return ONBOARDING_CALENDLY_URL;
+    }
+    return url.href;
+  } catch {
+    console.error('ONBOARDING_CALENDLY_URL is not an http(s) URL; using the default');
+    return ONBOARDING_CALENDLY_URL;
+  }
+}

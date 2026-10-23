@@ -77,13 +77,25 @@ refuses to run. After counsel edits the Terms, copy the file and redeploy
 both apps.
 
 After the account row is committed, the portal emails the client through
-[Resend](https://resend.com): an HTML cover (name, email, plan, signed name,
-version, hash, timestamp, IP) and the Terms in the body, plus the markdown
-file attached. Those attachment bytes are what the hash covers. Ops is BCC’d
-(`TERMS_ACCEPTANCE_BCC`, else `OPS_EMAIL`, else `legal@tryteleforce.com`).
-If the send fails, or `RESEND_API_KEY` / `EMAIL_FROM` is unset, the account
-stays. `email_sent_at` remains null and `email_error` stores a short reason
-so the send can be retried. There is no retry button in the portal yet.
+[Resend](https://resend.com). The note is short. It attaches a PDF of the
+accepted Terms, rendered on the server from `content/terms.md` (headings,
+bold clause numbers, italics, and lists when the file has them). Each page
+has the Teleforce name at the top and a page number. The first page includes
+an acceptance record: the typed full name, email, plan, acceptance time in
+America/Guayaquil and in UTC, the Terms version (the effective date), and
+the SHA-256 stored with the account. That hash is of the Terms markdown, not
+of the PDF file. The filename is
+`Teleforce-Terms-<effective-date>-<Last-name>.pdf`.
+
+If the PDF cannot be built, or Resend rejects the message that carries it,
+the portal logs the error and sends the same note without an attachment,
+with a link to https://tryteleforce.com/terms/. There is no markdown or
+plain-text file attached. Ops is BCC’d (`TERMS_ACCEPTANCE_BCC`, else
+`OPS_EMAIL`, else `legal@tryteleforce.com`). If that send also fails, or
+`RESEND_API_KEY` / `EMAIL_FROM` is unset, the account stays.
+`email_sent_at` remains null and `email_error` stores a short reason so the
+send can be retried. There is no retry button in the portal yet. The IP
+address and user agent stay on the `terms_acceptances` row.
 
 The same moment sends an internal new-signup notice from `EMAIL_FROM`.
 `SIGNUP_ALERT_TO` is a comma-separated list. When it is unset, the message
@@ -93,6 +105,18 @@ time in America/Guayaquil, and
 `https://dashboard.stripe.com/customers/<stripe_customer_id>` when a Stripe
 customer exists. A send failure is logged and does not change the signup
 response. The message has no password, API key, or full card number.
+
+It also sends the client a separate welcome email from `EMAIL_FROM`, so the
+onboarding note is not buried under the Terms copy. The message thanks them,
+asks them to book a short onboarding call, and links
+`ONBOARDING_CALENDLY_URL` (default `https://calendly.com/tryteleforce-sales`,
+the same scheduler on the signed-in home page). It points them at
+`https://portal.tryteleforce.com` and uses the same billing line as the
+dashboard: nothing is charged at signup, and billing starts at kickoff or 3
+business days after they accept, whichever comes first, or the day the match
+is accepted automatically. A send failure is logged and does not change the
+signup response. The three messages are sent together, so the welcome email
+does not add a second wait after the Terms email.
 
 ## Add a card after signup
 
@@ -168,7 +192,8 @@ dashboard follows the account row:
 
 Both columns are nullable and added on startup (`ALTER TABLE` only when the
 column is missing). `match_packages` is created the same way. New accounts
-leave the match empty. Photos are URLs. There is no file upload.
+leave the match empty. Photos are URLs. There is no file upload. Setting
+onboarding or the assistant name in Turso does not send another email.
 
 `/admin` lists clients and edits the package. It requires a signed-in portal
 account whose email is in `ADMIN_EMAILS` (default `rafael@recaldelaw.com`).
@@ -289,6 +314,7 @@ card does not call Stripe.
 | `TERMS_ACCEPTANCE_BCC` | Ops BCC. If unset, `OPS_EMAIL` is used, then `legal@tryteleforce.com` |
 | `OPS_EMAIL` | Fallback ops address when `TERMS_ACCEPTANCE_BCC` is unset |
 | `SIGNUP_ALERT_TO` | Internal new-signup alert, comma-separated. Defaults to `rafael@recaldelaw.com`. Uses `RESEND_API_KEY` and `EMAIL_FROM`. A send failure is logged and signup still succeeds |
+| `ONBOARDING_CALENDLY_URL` | Onboarding-call link in the client welcome email and the signed-in scheduler. Defaults to `https://calendly.com/tryteleforce-sales`. A welcome-email failure is logged and signup still succeeds |
 
 The Astro site reads `PUBLIC_PORTAL_URL` (see the repo root `.env.example`).
 
@@ -323,9 +349,11 @@ This repo does not deploy the portal for you.
    project set `RESEND_API_KEY` and `EMAIL_FROM`. Set `TERMS_ACCEPTANCE_BCC`
    when the ops copy should go somewhere other than `legal@tryteleforce.com`.
    Set `SIGNUP_ALERT_TO` when the new-signup alert should go somewhere other
-   than `rafael@recaldelaw.com` (comma-separated). Signup still creates the
-   account if these are missing; the Terms email and the signup alert will
-   not go out until Resend is configured.
+   than `rafael@recaldelaw.com` (comma-separated). Set
+   `ONBOARDING_CALENDLY_URL` when the onboarding scheduler is not
+   `https://calendly.com/tryteleforce-sales`. Signup still creates the
+   account if these are missing; the Terms email, the signup alert, and the
+   welcome email will not go out until Resend is configured.
 
 Plans stay $3,000/mo (3-month) and $2,700/mo (12-month). Those figures are
 display-only here, matching `src/consts.ts`.
