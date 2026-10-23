@@ -28,11 +28,11 @@ const faq = [
   },
   {
     q: 'Why are new matches limited? What does top 1% mean?',
-    a: 'We only accept the top 1% of applicants who clear a multi-stage screen — interviews, skills assessments, and background checks. Most never pass. That bar is why the cohort is small, and why we only take a limited number of new matches at a time. There is no infinite bench. After the onboarding call, your partnership manager matches you with an executive assistant from that top-tier cohort. Rematch is available if the fit isn’t right. Scarcity here is the screen, not a countdown timer.',
+    a: 'We only accept the top 1% of applicants who clear a multi-stage screen — interviews, skills assessments, and background checks. Most never pass. That bar is why the cohort is small, and why we only take a limited number of new matches at a time. There is no infinite bench. After the onboarding call, your Partnership Manager matches you with an executive assistant from that top-tier cohort. You can pass once before you accept. Scarcity here is the screen, not a countdown timer.',
   },
   {
     q: 'How does matching work?',
-    a: 'Discovery can happen before signup. Signup is terms and a payment method on file, with no charge yet. You don’t pay until your EA starts. Then three steps. Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. It covers the work and how you operate. You leave with a personalized kickoff plan. Your partnership manager owns matching after that call. You’re matched. Meet your executive assistant — selected from the top tier of this cohort after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support. Rematch is available if the fit isn’t right. Kickoff: service starts the same day or next business day after you’re matched, and your EA goes live. You run the day-to-day together, with full back-end support behind the seat. You’re matched in about 3 days. You’re live within about a week. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or 3 business days after you’re matched, whichever comes first.',
+    a: 'Discovery can happen before signup. Signup is terms and a card on file. No charge while we search and match. Then three steps. One onboarding call, about 30 minutes, with a prep sheet beforehand. It covers the work and how you operate. Your Partnership Manager starts matching after that call. About a week later, your Meet-your-EA package arrives by email and in the portal: an intro video, background on your Assistant, and your Partnership Manager. Accept with one click, or pass once and we’ll bring you one more. Kickoff is usually the same day you accept or the next business day. You’re typically live within about two weeks. Billing starts when your EA kicks off — or 3 business days after you accept your match.',
   },
   ...EA_JOURNEY_FAQ,
 ];
@@ -46,7 +46,7 @@ const jsonLd = [
     provider: { '@type': 'Organization', name: 'Teleforce' },
     areaServed: ['US', 'CA'],
     description:
-      'Top-tier bilingual Executive Assistants, handpicked for you. Matched in about 3 days. Limited new matches.',
+      'Top-tier bilingual Executive Assistants, handpicked for you. Matched in about a week. Limited new matches.',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: EA.price12mo,
@@ -69,7 +69,7 @@ const jsonLd = [
 
 <BaseLayout
   title="See If We Have Your Fit | Teleforce"
-  description="Top-tier bilingual Executive Assistants, handpicked for you. Matched in about 3 days. Now accepting limited new matches — see if we have your fit."
+  description="Top-tier bilingual Executive Assistants, handpicked for you. Matched in about a week. Now accepting limited new matches — see if we have your fit."
   jsonLd={jsonLd}
   bare
   noindex
@@ -85,7 +85,7 @@ const jsonLd = [
         <div class="lead-stack">
           <p class="hero-kicker">For U.S. founders &amp; operators hiring an EA</p>
           <h1 class="disp">Top-tier bilingual Executive Assistants, handpicked for you.</h1>
-          <p class="line-2">Matched in days. Live within a week.</p>
+          <p class="line-2">Matched in about a week. Live in about two weeks.</p>
           <p class="line-3">Now accepting a limited number of new matches.</p>
           <p class="line-4">See if we have your fit.</p>
         </div>
@@ -151,7 +151,7 @@ const jsonLd = [
           Every Teleforce EA clears a multi-stage screen — interviews, skills assessments, and background checks — that most applicants never pass. We only take the top 1% who do.
         </p>
         <p class="sub" style="max-width:64ch;margin-top:14px">
-          That bar is the reason the cohort stays small. We are not running an infinite bench of “available VAs.” Your partnership manager matches you from that top-tier cohort. When this intake is full, it is full.
+          That bar is the reason the cohort stays small. We are not running an infinite bench of “available VAs.” Your Partnership Manager matches you from that top-tier cohort. When this intake is full, it is full.
         </p>
         <ul class="ea-checks">
           <li>Top 1% of applicants — a multi-stage screen most never clear</li>
@@ -169,7 +169,7 @@ const jsonLd = [
       <h2 class="disp path-h">{EA_JOURNEY_LINE}</h2>
       <p class="sub" style="max-width:64ch">{EA_TIMING_LINE}</p>
       <p class="sub" style="max-width:64ch;margin-top:14px">
-        After discovery and signup, your partnership manager matches you with an executive assistant from this limited top-tier cohort. Signup holds your place in this cohort.
+        After discovery and signup, your Partnership Manager matches you with an executive assistant from this limited top-tier cohort. Signup holds your place in this cohort.
       </p>
       <div class="steps match-steps">
         {steps.map(([t, b], i) => (
@@ -195,9 +195,9 @@ const jsonLd = [
     <section class="block" id="own">
       <div class="wrap reveal">
         <div class="eyebrow">What they own</div>
-        <h2 class="disp">Business ops. Not household concierge.</h2>
+        <h2 class="disp">Business ops, owned.</h2>
         <p class="sub" style="max-width:64ch">
-          Inbox, calendar, follow-ups, projects, vendors. Personal admin can sit in the background — it is not the product.
+          Inbox, calendar, follow-ups, projects, vendors. The work that keeps the company moving.
         </p>
         <ul class="own-list">
           {own.map((item) => <li>{item}</li>)}
@@ -229,7 +229,7 @@ const jsonLd = [
             <a href="/ea/quiz" class="btn btn-amber ea-tier-btn">See if we have your fit</a>
           </div>
         </div>
-        <p class="ea-fine">{EA_PRICING_NOTE_LEAD} <b style="color:var(--ink)">$300/mo</b>. {EA_PRICING_NOTE_TAIL}</p>
+        <p class="ea-fine">{EA_PRICING_NOTE_LEAD} <b style="color:var(--ink)">$300/mo</b>. {EA_PRICING_NOTE_TAIL} <a href="/terms">See Terms</a>.</p>
         <p class="hero-alt">
           Ready to talk? <a href="#match">Book a match call →</a>
         </p>
@@ -245,7 +245,7 @@ const jsonLd = [
         {faq.map((f) => (
           <details class="ea-q">
             <summary>{f.q}<span class="pl">+</span></summary>
-            <FaqAnswer answer={f.a} steps={'steps' in f ? f.steps : undefined} tail={'tail' in f ? f.tail : undefined} />
+            <FaqAnswer answer={f.a} steps={'steps' in f ? f.steps : undefined} tail={'tail' in f ? f.tail : undefined} linkHref={'linkHref' in f ? f.linkHref : undefined} linkLabel={'linkLabel' in f ? f.linkLabel : undefined} />
           </details>
         ))}
       </div>

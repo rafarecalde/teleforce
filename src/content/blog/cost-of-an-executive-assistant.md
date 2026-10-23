@@ -10,7 +10,7 @@ publishDate: 2026-09-13
 updatedDate: 2026-09-13
 faq:
   - q: "How much does an executive assistant cost per month?"
-    a: "A fully loaded U.S. in-house executive assistant typically runs $7,000 to $10,000 per month once you add benefits, payroll taxes, tools, and recruiting. A dedicated nearshore EA through a managed service like Teleforce is $3,000 per month on a 3-month commitment or $2,700 per month on a 12-month commitment, all-in with no separate payroll."
+    a: "A fully loaded U.S. in-house executive assistant typically runs $7,000 to $10,000 per month once you add benefits, payroll taxes, tools, and recruiting. A dedicated nearshore EA through a managed service like Teleforce is $3,000 per month on a 3-month commitment or $2,700 per month on a 12-month commitment, one monthly card charge with no separate payroll. Taxes are extra."
   - q: "Why is a nearshore executive assistant so much cheaper than a U.S. hire?"
     a: "The gap comes from labor-market differences in Latin America, not from lower quality or fewer hours. You are still getting a dedicated, full-time, vetted professional working your U.S. hours. The savings come from geography plus the fact that a managed service absorbs recruiting, benefits, payroll, and management into one flat rate."
   - q: "Is an executive assistant worth the cost?"
@@ -46,7 +46,7 @@ Put together, a U.S. in-house EA who "costs $75,000" really costs **$95,000 to $
 
 | Factor | U.S. in-house full-time | U.S. part-time / agency | Nearshore dedicated (Teleforce) |
 |---|---|---|---|
-| Monthly cost | $8,000–$10,000 all-in | $3,500–$6,000 | $2,700–$3,000 flat, all-in |
+| Monthly cost | $8,000–$10,000 fully loaded | $3,500–$6,000 | $2,700–$3,000 flat monthly rate |
 | Dedicated to you | Yes | Sometimes (often shared) | Yes, full-time |
 | Benefits & payroll | You pay & administer | Varies | Included, handled by Teleforce |
 | Recruiting & vetting | You own it | Agency handles | Teleforce handles |
@@ -62,9 +62,9 @@ The part-time or agency route looks cheaper than in-house, and it can be—but y
 
 Teleforce prices its dedicated executive assistants at **$3,000 per month on a 3-month commitment** and **$2,700 per month on a 12-month commitment**. You can switch from the 3-month to the 12-month plan anytime, and the $300 per month difference is credited to your final month.
 
-That rate is all-in. There is no separate payroll to run, no benefits to administer, no recruiting fee, and no equipment budget on your side. Teleforce employs and manages the assistant. The EA is a dedicated, full-time, bilingual (English/Spanish) career professional—not a gig-economy VA juggling five clients—working in your U.S. time zone.
+That rate is one monthly card charge. Taxes are extra. There is no separate payroll to run, no benefits to administer, no recruiting fee, and no equipment budget on your side. Teleforce employs and manages the assistant. The EA is a dedicated, full-time, bilingual (English/Spanish) career professional—not a gig-economy VA juggling five clients—working in your U.S. time zone.
 
-Compared to the $8,000-to-$10,000 all-in cost of a U.S. in-house EA, that is roughly a third of the price for a full-time, dedicated seat. The savings come from the Latin American labor market and the managed model, not from cutting hours or corners.
+Compared to the $8,000-to-$10,000 fully loaded cost of a U.S. in-house EA, that is roughly a third of the price for a full-time, dedicated seat. The savings come from the Latin American labor market and the managed model, not from cutting hours or corners.
 
 ## The ROI framing: your hour vs. the EA rate
 

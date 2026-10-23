@@ -90,15 +90,16 @@ export default function BillingInfo({
               <span className="badge" style={{ marginLeft: 'auto' }}>On file</span>
             </div>
             <p className="muted" style={{ fontSize: 12.5, margin: '6px 0 0' }}>
-              Saved with Stripe. Nothing is charged until your EA starts. To replace the card,
-              your account manager sends a secure link — it is not typed here.
+              Saved with Stripe. No charge while we search and match. Billing starts when your EA
+              kicks off — or 3 business days after you accept your match. To replace the card, your
+              Partnership Manager sends a secure link — it is not typed here.
             </p>
           </>
         ) : persist ? (
           <>
             <div className="cardline">
-              <span className="cardbrand">No card on file</span>
-              <span className="badge" style={{ marginLeft: 'auto' }}>Add before kickoff</span>
+              <span className="cardbrand">Card required</span>
+              <span className="badge" style={{ marginLeft: 'auto' }}>Add your card</span>
             </div>
             <AddPaymentMethod
               email={accountEmail || init.email}
@@ -112,11 +113,11 @@ export default function BillingInfo({
         ) : (
           <>
             <div className="cardline">
-              <span className="cardbrand">No card on file</span>
-              <span className="badge" style={{ marginLeft: 'auto' }}>Add before kickoff</span>
+              <span className="cardbrand">Card required</span>
+              <span className="badge" style={{ marginLeft: 'auto' }}>Add your card</span>
             </div>
             <p className="muted" style={{ fontSize: 12.5, margin: '6px 0 0' }}>
-              Nothing is charged now. Add a card before kickoff when we follow up.
+              A card is part of signup. Nothing is charged while we search and match.
             </p>
           </>
         )}

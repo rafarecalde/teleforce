@@ -56,7 +56,8 @@ export default function AddEaForm({ persist = false }: { persist?: boolean }) {
     return (
       <div className="note ok" role="status">
         Request received. We’ll match a full-time EA to the work you described and follow up with
-        timing. Nothing is charged until that EA starts.
+        timing. No charge while we search and match. Billing starts when that EA kicks off — or 3
+        business days after you accept.
       </div>
     );
   }

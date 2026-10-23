@@ -5,13 +5,23 @@ interface Props {
   answer: string;
   steps?: readonly FaqStep[];
   tail?: string;
+  linkHref?: string;
+  linkLabel?: string;
 }
 
-const { answer, steps, tail } = Astro.props;
+const { answer, steps, tail, linkHref, linkLabel } = Astro.props;
 const list = steps ?? [];
 ---
 
-<p>{answer}</p>
+<p>
+  {answer}
+  {linkHref && (
+    <>
+      {' '}
+      <a href={linkHref}>{linkLabel || 'See Terms'}</a>
+    </>
+  )}
+</p>
 {
   list.length > 0 && (
     <ul>
@@ -31,6 +41,10 @@ const list = steps ?? [];
     color: var(--on-paper-mut);
     margin-top: 14px;
     line-height: 1.6;
+  }
+  p a {
+    color: var(--sage-deep);
+    font-weight: 600;
   }
   ul {
     list-style: none;

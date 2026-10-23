@@ -16,8 +16,8 @@ export default function PaymentBanner() {
   return (
     <div className="pay-banner" role="status">
       <p>
-        <strong>Add a payment method before kickoff.</strong> Nothing is charged now.
-        Add a card in the secure field below. It stays on file until your EA starts.
+        <strong>Add your card.</strong> No charge while we search and match. Billing starts when
+        your EA kicks off — or 3 business days after you accept your match.
       </p>
       <a className="btn btn-primary" href="#add-payment" onClick={open}>
         Add payment method
