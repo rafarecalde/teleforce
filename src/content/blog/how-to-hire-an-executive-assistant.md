@@ -94,7 +94,7 @@ Both paths can work. The honest comparison is about who carries the load.
 
 **DIY hiring** gives you full control over the person and the fit, and the EA can be in your office. But you own everything: sourcing, screening, offer negotiation, payroll, benefits, management, and—when they eventually leave—doing it all again. Expect weeks of your time, plus the fully loaded [cost of an executive assistant](/blog/cost-of-an-executive-assistant), which runs well above the salary.
 
-**A managed service** like Teleforce compresses the timeline and absorbs the risk. Teleforce recruits, vets, and trains the EA, employs and manages them, and handles replacement if the fit ever slips. Pricing is a flat $3,000 per month on a 3-month commitment or $2,700 per month on a 12-month commitment—all-in, dedicated, no separate payroll. You get a full-time bilingual professional working your U.S. hours without building any hiring machinery.
+**A managed service** like Teleforce compresses the timeline and absorbs the risk. Teleforce recruits, vets, and trains the EA, employs and manages them, and handles replacement if the fit ever slips. Pricing is a flat $3,000 per month on a 3-month commitment or $2,700 per month on a 12-month commitment—one monthly card charge, dedicated, no separate payroll. Taxes are extra. You get a full-time bilingual professional working your U.S. hours without building any hiring machinery.
 
 Choose DIY when in-office presence is essential or you want to own the process end to end. Choose a service when you value speed, want the vetting and replacement risk off your plate, and are comfortable with a dedicated remote EA.
 

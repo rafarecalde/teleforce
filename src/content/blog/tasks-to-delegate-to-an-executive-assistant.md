@@ -1,7 +1,7 @@
 ---
 title: "Tasks to Delegate to an Executive Assistant: The Complete List"
 metaTitle: "Tasks to Delegate to an Executive Assistant | Teleforce"
-description: "A categorized list of tasks to delegate to an executive assistant—inbox, calendar, travel, research, CRM, vendors, hiring, finance, and personal admin."
+description: "A categorized list of tasks to delegate to an executive assistant—inbox, calendar, travel, research, CRM, vendors, hiring, and expense admin."
 excerpt: "Not sure what to hand off? Here's a scannable, category-by-category list of the work a great EA can take off your plate starting week one."
 primaryKeyword: tasks to delegate to an executive assistant
 category: Virtual Assistance
@@ -10,9 +10,9 @@ publishDate: 2026-09-12
 updatedDate: 2026-09-12
 faq:
   - q: "What tasks should I delegate to an executive assistant first?"
-    a: "Start with high-frequency, low-judgment work: inbox triage, calendar management, travel booking, and expense logging. These drain your time daily but are easy to explain and low-risk if the first pass isn't perfect. Once trust is established, expand into research, CRM upkeep, vendor coordination, and personal admin."
-  - q: "Can an executive assistant handle personal and business tasks?"
-    a: "Yes. A dedicated EA typically blends both—managing your work calendar and inbox while also handling appointments, reservations, gift buying, and household coordination. The line between 'work' and 'life' admin is blurry for most busy leaders, and a good assistant reduces friction across both."
+    a: "Start with high-frequency, low-judgment work: inbox triage, calendar management, travel booking, and expense logging. These drain your time daily but are easy to explain and low-risk if the first pass isn't perfect. Once trust is established, expand into research, CRM upkeep, and vendor coordination."
+  - q: "Should I delegate personal or household tasks?"
+    a: "Keep the seat on business support: inbox, calendar, travel, vendors, research, and the admin around expenses. Lifestyle and household work is a different product."
   - q: "How many tasks can one executive assistant realistically manage?"
     a: "A full-time dedicated EA can own dozens of recurring responsibilities across email, calendar, travel, research, and admin once SOPs are in place. The constraint is rarely volume—it's how well you've transferred context. The more you document and delegate, the more one assistant absorbs."
 related:
@@ -111,19 +111,19 @@ Not accounting—the admin around it, which still eats hours:
 
 - Log and categorize expenses
 - Prepare expense reports and reimbursements
-- Track invoices and send payment reminders
+- Track bills and send payment reminders
 - Organize receipts and documentation for your bookkeeper
 - Flag unusual charges and expiring subscriptions
 
-## Personal & Life Admin
+## Renewals and Account Admin
 
-The blurry line between work and life is where a dedicated EA shines:
+The quiet business admin that fragments a week:
 
-- Book personal appointments and reservations
-- Order gifts, flowers, and cards on schedule
-- Coordinate household services and repairs
-- Manage renewals—licenses, memberships, registrations
-- Handle the errands that quietly fragment your focus
+- Track software, vendor, and membership renewals
+- Keep licenses and registrations from lapsing
+- Maintain the account directory your team actually uses
+- Schedule the business appointments that keep slipping
+- Close the small loops that otherwise land back on you
 
 ## Delegate by Frequency and Judgment
 

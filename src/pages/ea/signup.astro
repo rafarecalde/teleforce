@@ -1,7 +1,7 @@
 ---
 import termsMarkdown from '../../legal/terms.md?raw';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { EA, ONBOARDING_CALENDLY_URL, PHONE, PHONE_HREF } from '../../consts';
+import { EA, EA_PAY_LINE, ONBOARDING_CALENDLY_URL, PHONE, PHONE_HREF } from '../../consts';
 
 const termsVersionMatch = termsMarkdown.match(/^\*Effective\s+([^*]+?)\s*\*/m);
 const termsVersion = termsVersionMatch?.[1]?.trim() ?? '';
@@ -15,7 +15,7 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
 ---
 <BaseLayout
   title="Terms, Payment Information and Account | Teleforce"
-  description="After discovery, accept terms and choose a 3- or 12-month EA plan. Payment information is required. Nothing is charged at this step."
+  description="Accept the Terms, choose a 3- or 12-month plan, and save a card. Nothing is charged at signup."
   noindex
 >
   <header class="hero signup-hero">
@@ -76,7 +76,7 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
                   <span class="radio" aria-hidden="true"></span>
                 </span>
                 <span class="plan-price"><span class="cur">$</span>{price3}<span class="per">/mo</span></span>
-                <span class="plan-sub">3-month commitment · stay flexible</span>
+                <span class="plan-sub">90-day term</span>
               </label>
               <label class="plan">
                 <input type="radio" name="plan" value="12" data-label="12-month" data-price={`$${price12}/mo`} />
@@ -92,7 +92,7 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
 
           <div class="pay-block">
             <h3 class="pay-heading">Provide your payment information</h3>
-            <p class="pay-copy">You won’t be charged at this step. Your subscription starts when your EA goes live, or 3 business days after you’ve been matched with your EA — whichever comes first.</p>
+            <p class="pay-copy">A card is required. {EA_PAY_LINE} <a href="/terms">See Terms</a>.</p>
           </div>
 
           <div id="card-fields">
@@ -166,7 +166,7 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
         <p class="step-kicker">Signup complete</p>
         <h2 class="disp">You’re set for onboarding.</h2>
         <p class="done-lead">
-          Next: schedule your onboarding call. About 60 minutes, with a prep sheet beforehand.
+          Next: schedule your onboarding call. About 30 minutes, with a prep sheet beforehand.
           Sign in to the client portal with the email and password you just chose.
         </p>
         <p class="done-next">
@@ -182,7 +182,7 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
           <li>Kickoff</li>
         </ol>
         <p class="support">
-          After the onboarding call, your partnership manager owns matching. Once your EA is live, you run the day-to-day together, with full back-end support behind the seat.
+          After the onboarding call, your Partnership Manager sends a Meet-your-EA package by branded email and in the portal — intro video, background, and your Partnership Manager. Accept EA with one click, or swap once within 3 business days. We’ll remind you about 24 hours before. Then book kickoff from that email or the portal.
         </p>
         <div class="done-actions">
           <a class="btn btn-amber" id="portal-link" href="https://portal.tryteleforce.com">Sign in to your account</a>

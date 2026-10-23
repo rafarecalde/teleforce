@@ -15,7 +15,7 @@ faq:
   - q: "How much of my time does onboarding a virtual EA take?"
     a: "Plan a few focused hours in week one for access, preferences, and a live walkthrough — not a 40-page manual. Daily 15-minute pulses the first week, then a twice-weekly standup. If you cannot spare that, the seat will stall in any model."
   - q: "What if the first 30 days go badly?"
-    a: "Audit access and decision rules before you audit the person. Most early failures are a locked inbox, a principal who re-does the work, or no named owner for follow-ups. A managed seat should rematch if the fit is wrong after those are fixed."
+    a: "Audit access and decision rules before you audit the person. Most early failures are a locked inbox, a principal who re-does the work, or no named owner for follow-ups. After kickoff, a managed seat includes two rematches a year if the fit is still wrong."
 related:
   - virtual-executive-assistant
   - how-virtual-ea-frees-up-time
@@ -87,7 +87,7 @@ A 30-day review is a working session, not a vibe check. Bring the scoreboard. Na
 | Loops | Someone else nudges the quiet person | You are still the chase |
 | Access | They can act without pinging you for logins | View-only calendar, shared passwords in chat |
 
-> **Month one is the seat, live.** If you want a dedicated bilingual EA on U.S. hours — employed, rematched, live within about a week — bring the live queue, not a wish list. [Book a call →](/#contact)
+> **Month one is the seat, live.** If you want a dedicated bilingual EA on U.S. hours — employed by us, two rematches a year, live within about two weeks — bring the live queue, not a wish list. [Book a call →](/#contact)
 
 ## The five ways principals stall their own EA
 
@@ -119,9 +119,9 @@ You will not have 12-month “full performance.” You should have a working ope
 
 ## How Teleforce runs the first month
 
-Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade support behind the recruiting. The EA product is one named, full-time assistant — English and Spanish, on your U.S. hours — employed and managed by us. Your partnership manager matches you with an executive assistant from the top tier. They stay on the engagement for oversight, tools, and best practices.
+Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade support behind the recruiting. The EA product is one named, full-time assistant — English and Spanish, on your U.S. hours — employed and managed by us. Your Partnership Manager matches you with an executive assistant from the top tier. They stay on the engagement for oversight, tools, and best practices.
 
-You’re matched in about 3 days. You’re live within about a week. The path is about 2–3 hours of your time. If the fit is wrong after you have actually granted access, we rematch.
+Onboarding is about 30 minutes. You’re matched in about a week. You’re live within about two weeks. If the fit is wrong after kickoff, two rematches a year are included. If your EA leaves, that doesn’t count, and we present someone new within 10 business days. [See Terms](/terms).
 
 We will not talk you into a 40-page playbook. We will ask for the decision rule and the live queue. [See the EA offer](/), [see pricing](/#pricing), or [get matched](/#contact).
 

@@ -258,7 +258,7 @@ function taskDiagnosis(answers: QuizAnswers): string {
     return 'You’re shopping cheap task help. That’s a different market than a dedicated ~$3k bilingual nearshore EA.';
   }
   if (answers.ownership === 'no') {
-    return 'A dedicated seat only pays back if you show up for it. Going live is about 2–3 hours of your time — then you and your EA run the day-to-day.';
+    return 'A dedicated seat only pays back if you show up for it. Onboarding is about a 30-minute call — then you and your EA run the day-to-day.';
   }
   return 'A dedicated EA seat would be overkill for how you want help right now.';
 }
@@ -287,7 +287,7 @@ export function bandCopy(answers: QuizAnswers, band: Band): BandCopy {
         'You’ve already paid for help. Quality, timezone, or ownership failed — or it worked until turnover flattened it. You don’t need another freelancer audition.',
       barrier:
         'The next hire can’t be a task queue in the wrong hours. You need bilingual EN/ES, U.S. overlap, and someone who owns the work.',
-      next: 'Priority match. Onboarding → Get matched → Kickoff. We match you with an executive assistant from the top tier. You and your EA run the day-to-day — your partnership manager stays on with full back-end support.',
+      next: 'Priority match. Onboarding → Get matched → Kickoff. We match you with an executive assistant from the top tier. You and your EA run the day-to-day — your Partnership Manager stays on with full back-end support.',
       cta: 'Book a priority match',
       silent: false,
     };
@@ -460,7 +460,7 @@ export function scorecard(answers: QuizAnswers): ScoreRow[] {
   return [
     { keep: 'Strategy, fundraising, and people decisions', handoff: 'Inbox triage and draft replies', later: 'Travel and expenses' },
     { keep: 'Customer-critical judgment calls', handoff: 'Calendar ownership and prep', later: 'Vendor shopping once SOPs exist' },
-    { keep: 'External company voice (final)', handoff: 'Follow-ups you keep dropping', later: 'Personal admin in the background' },
+    { keep: 'External company voice (final)', handoff: 'Follow-ups you keep dropping', later: 'Expense follow-up once the rules are clear' },
     { keep: 'Hiring for leadership seats', handoff: 'Meeting notes → owners → dates', later: 'Research briefs' },
   ];
 }
@@ -490,7 +490,7 @@ export function teardown(answers: QuizAnswers, band: Band): TeardownRow[] {
       ? {
           label: 'Onboarding',
           va: 'You want zero input. That’s how work stays shallow.',
-          ea: 'About 2–3 hours of your time to go live: Onboarding → Get matched → Kickoff. We match you with an executive assistant from the top tier. Then you and your EA run the day-to-day, with back-end support behind the seat.',
+          ea: 'About a 30-minute onboarding call, then matched in about a week and live in about two weeks. You and your EA run the day-to-day, with back-end support behind the seat.',
         }
       : {
           label: 'Ownership',
@@ -503,13 +503,13 @@ export function teardown(answers: QuizAnswers, band: Band): TeardownRow[] {
       ? {
           label: 'Why the last setup failed',
           va: 'Quality, timezone, or turnover. You paid for hours, not a seat.',
-          ea: 'Employed, rematched if needed, bilingual EN/ES, screened for ownership.',
+          ea: 'Employed by us, two rematches a year, bilingual EN/ES, screened for ownership.',
         }
       : answers.prior === 'plateaued'
         ? {
             label: 'The plateau',
             va: 'Fine until they churned or couldn’t take the next layer.',
-            ea: 'Career EA + a success lead if the fit slips — not a new Upwork search.',
+            ea: 'Career EA + a Partnership Manager. Two rematches a year if the fit slips — not a new Upwork search.',
           }
         : {
             label: 'What you’re buying',

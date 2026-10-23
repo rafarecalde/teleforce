@@ -83,7 +83,7 @@ If your problem is a one-off overflow, part-time may fit. If your problem is tha
 
 Teleforce places **executive assistants for founders**—dedicated, full-time, bilingual (English/Spanish) career professionals from the top tier of Latin American talent, rigorously vetted, employed and managed by us, and working in your U.S. time zone so you delegate in real time.
 
-Pricing is straightforward: **$3,000/mo on a 3-month commitment, or $2,700/mo on a 12-month commitment.** You can switch 3→12 anytime, and the $300/mo difference is credited to your final month. When you're ready to hire, [how to hire an executive assistant](/blog/how-to-hire-an-executive-assistant) walks through the process—or skip ahead and [book a discovery call](/#contact).
+Pricing is straightforward: **$3,000/mo on a 3-month commitment, or $2,700/mo on a 12-month commitment.** Move to the 12-month rate whenever you’re ready and save $300/mo. [See Terms](/terms). When you're ready to hire, [how to hire an executive assistant](/blog/how-to-hire-an-executive-assistant) walks through the process—or skip ahead and [book a discovery call](/#contact).
 
 The founders who scale aren't the ones who do the most. They're the ones who protect their leverage and delegate the rest. An EA is how you start.
 

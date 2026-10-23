@@ -1,11 +1,13 @@
 import Script from 'next/script';
 import { getSession } from '@/lib/auth';
-import { onboardingCalendlyUrl } from '@/lib/constants';
+import { BILLING_LINE, onboardingCalendlyUrl } from '@/lib/constants';
 import { addMonthsISO, formatDate } from '@/lib/money';
 import { DEMO, type DemoPlan } from '@/lib/demo';
 import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/plans';
 import { retrieveCard } from '@/lib/stripe';
 import { displayMatchedEa, getUserById, hasCardOnFile, onboardingIsComplete, type User } from '@/lib/users';
+import { clientCanRequestRematch, getMatchByUserId, isAdminEmail, kickoffPromptOpen, type MatchPackage } from '@/lib/match';
+import MeetYourEa, { KickoffPrompt } from './components/MatchCards';
 import PlanCard from './components/PlanCard';
 import SwitchTo12 from './components/SwitchTo12';
 import SeatRequest from './components/SeatRequest';
@@ -21,11 +23,13 @@ function Shell({
   signedIn,
   company,
   preview,
+  adminHref,
 }: {
   children: React.ReactNode;
   signedIn: boolean;
   company?: string;
   preview?: boolean;
+  adminHref?: string;
 }) {
   // Signed-in dashboard (and its sales preview) keeps the existing bar.
   // Signed-out screens get a separate green header with the marketing wordmark.
@@ -42,6 +46,11 @@ function Shell({
             </span>
             {signedIn && (
               <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                {adminHref && (
+                  <a href={adminHref} className="mono" style={{ fontSize: 12.5, color: 'var(--on-dark-mut)', textDecoration: 'none' }}>
+                    Admin
+                  </a>
+                )}
                 {company && <span className="mono" style={{ fontSize: 12, color: 'var(--on-dark-mut)' }}>{company}</span>}
                 <form action="/api/auth/logout" method="post">
                   <button
@@ -104,8 +113,8 @@ function accountPlan(user: User): DemoPlan {
     rate12: formatDollars(PLAN_PRICE_12),
     monthlySavings: formatDollars(monthlySavings),
     annualSavings: formatDollars(monthlySavings * 12),
-    serviceStart: 'At kickoff',
-    commitmentEnd: 'Set at kickoff',
+    serviceStart: 'Kickoff, 3 business days after you accept, or automatic acceptance',
+    commitmentEnd: 'Begins when billing starts',
   };
 }
 
@@ -128,7 +137,7 @@ async function cardOnFile(user: User): Promise<{ brand: string; last4: string }>
 export default async function Page({
   searchParams,
 }: {
-  searchParams: { name?: string; company?: string; email?: string; error?: string };
+  searchParams: { name?: string; company?: string; email?: string; error?: string; match?: string };
 }) {
   let session = null;
   try {
@@ -207,6 +216,8 @@ export default async function Page({
     }
     const hasCard = hasCardOnFile(user);
     const card = hasCard ? await cardOnFile(user) : { brand: '', last4: '' };
+    const match = await getMatchByUserId(user.id);
+    const rematchAvailable = await clientCanRequestRematch(user.id, match);
     return (
       <AccountView
         email={user.email}
@@ -215,6 +226,10 @@ export default async function Page({
         plans={[accountPlan(user)]}
         matchedEaName={user.matchedEaName}
         onboardingComplete={onboardingIsComplete(user.onboardingCompletedAt)}
+        match={match}
+        rematchAvailable={rematchAvailable}
+        isAdmin={isAdminEmail(session.email)}
+        matchNotice={searchParams?.match}
         hasCard={hasCard}
         billing={{
           contactName: user.billingContact,
@@ -246,6 +261,10 @@ function AccountView({
   plans,
   matchedEaName = '',
   onboardingComplete = false,
+  match = null,
+  rematchAvailable = false,
+  isAdmin = false,
+  matchNotice = '',
   billing,
   hasCard = true,
   persistBilling = false,
@@ -259,6 +278,11 @@ function AccountView({
   matchedEaName?: string;
   /** Hides the scheduler once ops marks the onboarding call complete. */
   onboardingComplete?: boolean;
+  /** Draft rows stay hidden until matchReadyAt is set. */
+  match?: MatchPackage | null;
+  rematchAvailable?: boolean;
+  isAdmin?: boolean;
+  matchNotice?: string;
   billing: {
     contactName: string;
     company: string;
@@ -274,19 +298,41 @@ function AccountView({
   const commitmentEndPreview = formatDate(addMonthsISO(12));
   const eaName = displayMatchedEa(matchedEaName);
   const calendlyUrl = onboardingCalendlyUrl();
+  const liveMatch = match?.matchReadyAt ? match : null;
+  const accepted = Boolean(liveMatch?.matchAcceptedAt);
+  const showKickoff = kickoffPromptOpen(liveMatch);
+  const showHeadline = Boolean(eaName) && (!liveMatch || accepted);
+  // Onboarding comes first. Matching in progress only after onboarding, and
+  // only before a live package or an assistant name.
+  const showMatching = onboardingComplete && !liveMatch && !eaName;
 
   return (
-    <Shell signedIn={!preview} company={company} preview={preview}>
+    <Shell signedIn={!preview} company={company} preview={preview} adminHref={isAdmin ? '/admin' : undefined}>
       {preview && <p className="page-sub">Sales preview with sample data. This is not a signed-in account.</p>}
       <h1 className="page-title display">Welcome back, {firstName(displayName)}.</h1>
-      {eaName && <p className="ea-match">Your assistant is {eaName}</p>}
+      {showHeadline && <p className="ea-match">Your assistant is {eaName}</p>}
       <p className="page-sub">{preview ? `Previewing ${email}` : `Signed in as ${email}`}</p>
+      {matchNotice === 'unavailable' && (
+        <p className="note err" role="alert">We couldn’t open that match just yet. Refresh and try again.</p>
+      )}
+      {matchNotice === 'different' && (
+        <p className="note ok" role="status">We&apos;re on it. A new introduction is on the way.</p>
+      )}
+      {matchNotice === 'closed' && (
+        <p className="note ok" role="status">This introduction is ready for your yes.</p>
+      )}
+      {matchNotice === 'rematch' && (
+        <p className="note ok" role="status">Request received. Your Partnership Manager will be in touch.</p>
+      )}
+      {matchNotice === 'rematch-used' && (
+        <p className="note ok" role="status">You&apos;ve used both rematches for the past year. Your Partnership Manager is still glad to talk it through.</p>
+      )}
 
       {!onboardingComplete && (
         <section className="card" id="onboarding-call">
           <h2>Schedule your onboarding call</h2>
           <p className="hint">
-            About 60 minutes, with a prep sheet beforehand. Nothing is charged on this call.
+            About 30 minutes, with a prep sheet beforehand. We’ll learn how you work, then your Partnership Manager starts the match. Nothing is charged on this call.
           </p>
           <div className="calendly-inline-widget" data-url={calendlyUrl} />
           <p className="muted" style={{ fontSize: 13.5, margin: '12px 0 0' }}>
@@ -298,7 +344,11 @@ function AccountView({
         </section>
       )}
 
-      {!eaName && <p className="ea-match pending">Your assistant: matching in progress</p>}
+      {showMatching && <p className="ea-match pending">Your assistant: matching in progress</p>}
+
+      {showKickoff && liveMatch && <KickoffPrompt match={liveMatch} />}
+
+      {liveMatch && <MeetYourEa match={liveMatch} rematchAvailable={rematchAvailable} />}
 
       {!preview && !hasCard && <PaymentBanner />}
 
@@ -306,9 +356,7 @@ function AccountView({
         <h2>Your plan</h2>
         {!preview && (
           <p className="hint">
-            {hasCard
-              ? 'Your card is on file. Nothing is charged until your EA starts.'
-              : 'No card on file yet. Nothing is charged until your EA starts.'}
+            {BILLING_LINE}
           </p>
         )}
         {plans.map((plan) => (
@@ -331,7 +379,7 @@ function AccountView({
         ) : (
           <p className="muted" style={{ fontSize: 13.5, margin: '14px 0 0' }}>
             The 12-month rate is {threeMonth[0].rate12}/month (save {threeMonth[0].monthlySavings}/month).
-            A switch is confirmed with your partnership manager — it is not applied from this page.
+            A switch is confirmed with your Partnership Manager — it is not applied from this page.
           </p>
         )}
       </section>
@@ -340,8 +388,7 @@ function AccountView({
         <h2>Add another EA</h2>
         <p className="hint">
           Request another dedicated executive assistant for your team. Each seat is full-time, on
-          your existing agreement. We use this to match someone, then follow up. Nothing is charged
-          until that EA starts.
+          the same Terms. We use this to match someone, then follow up. {BILLING_LINE}
         </p>
         <AddEaForm persist={persistBilling} />
       </section>

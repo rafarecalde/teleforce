@@ -5,7 +5,7 @@ import path from 'node:path';
 export type TermsDocument = {
   /** Exact Terms markdown. The content hash is SHA-256 of these UTF-8 bytes. */
   markdown: string;
-  /** Effective date printed on the Terms, e.g. "September 25, 2026". */
+  /** Effective date printed on the Terms, e.g. "October 23, 2026". */
   version: string;
   /** Lowercase hex SHA-256 of `markdown`. */
   contentHash: string;

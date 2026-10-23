@@ -85,48 +85,68 @@ export const EA = {
 // Discovery and signup come before the numbered path. Three named steps:
 // Chip / arrow line stays short: Onboarding → Get matched → Kickoff.
 // The numbered step card keeps the full title: Get matched with your EA.
-// Step 2 is a confident match from the top tier. Rematch stays in kickoff and FAQ, not in this step.
-// Signup is terms and a payment method on file. No charge yet.
-// First month and the 90-day commitment both begin at kickoff, or 3 business days after the client is matched, whichever comes first.
-// Never say 3 business days after onboarding — that can bill during matching.
-// Teleforce is ready on match day; post-match delay is on the client.
+// Signup puts terms and a card on file. Nothing is charged at signup.
+// Billing starts at kickoff or 3 business days after acceptance, whichever is first,
+// or the day of automatic acceptance. Then the same day each month.
+// Onboarding is about 30 minutes. Matched in about a week. Live in about two weeks.
+// One swap before acceptance. Two rematches a year after kickoff. Departures don't count.
 export const EA_JOURNEY_LINE =
   'Onboarding → Get matched → Kickoff';
 
 export const EA_ONBOARDING_STEP = {
   title: 'Onboarding',
-  body: 'Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. We cover what to delegate, priorities, hours, tools, and how you like to communicate. You leave with a personalized kickoff plan. Your partnership manager owns matching after this call.',
+  body: 'One onboarding call, about 30 minutes, with a prep sheet beforehand. We cover what to delegate, your priorities, hours, tools, and how you like to work. Then your Partnership Manager starts your match.',
 } as const;
 
 export const EA_MATCH_STEP = {
   title: 'Get matched with your EA',
-  body: 'You’re matched. Meet your executive assistant — selected from the top tier after we reject most applicants so you don’t have to. Your EA is an adaptable partner trained for strategic work across a wide range of tasks, with AI multiplying their capabilities beyond typical admin support.',
+  body: 'About a week later, your Meet-your-EA package arrives by branded email and in the portal: an intro video, background on your Assistant, and your Partnership Manager. Accept EA with one click from the email or the portal — or swap once, and we’ll bring you one more. You have 3 business days to choose. We’ll remind you about 24 hours before. If you don’t, the match is accepted.',
 } as const;
 
-// Rematch stays here and in FAQ. The billing clock (kickoff, or 3 business days after match) stays in FAQ / T&Cs only.
 export const EA_KICKOFF_STEP = {
   title: 'Kickoff',
-  body: 'Service starts. Same day or next business day after you’re matched, your EA goes live. You and your EA run the day-to-day. Your partnership manager stays for oversight, tools, and best practices — full back-end support, including rematch.',
+  body: 'Book kickoff right from that email or the portal. You’re live, usually the same day you accept or the next business day, and typically within about two weeks of onboarding. You and your EA run the day-to-day. Your Partnership Manager stays close for oversight, tools guidance, best practices, and up to two rematches a year.',
 } as const;
 
 export const EA_TIMING_LINE =
-  'Matched in days. Live within a week.';
+  'Onboarding call about 30 minutes. Matched in about a week. Live in about two weeks.';
 
-export const EA_PAY_LINE = 'You don’t pay until your EA starts.';
+export const EA_PAY_LINE =
+  'Nothing is charged at signup. Billing starts at kickoff or 3 business days after you accept — whichever comes first — or the day your match is accepted automatically. Then the same day each month.';
 
-// Short footnote under pricing bullets. The kickoff, 3 business days, and 90-day rule stays in FAQ.
+// Short footnote under pricing bullets. The full clock stays in the Terms.
 export const EA_PRICING_NOTE_LEAD =
   'Start on the 3-month plan. Switch to 12 when you’re ready and save';
 export const EA_PRICING_NOTE_TAIL =
-  'You don’t pay until your EA starts. Terms and conditions apply.';
+  'Nothing is charged at signup. Billing starts at kickoff or 3 business days after you accept — whichever comes first — or the day your match is accepted automatically. Then the same day each month. Taxes extra.';
 
-// Full billing rule for FAQ answers only — not the pricing-card footnote.
-export const EA_CLOCK_NOTE =
-  'You don’t pay until your EA starts. Signup puts terms and a payment method on file with no charge yet. The first month and the 90-day commitment both begin at kickoff — when your EA goes live — or 3 business days after you’re matched, whichever comes first.';
+// Warm billing line for FAQ answers. Legal detail stays on the Terms page.
+export const EA_CLOCK_NOTE = EA_PAY_LINE;
 
 export const EA_START_FAQ = {
   q: 'How fast do I get matched with my EA?',
-  a: 'You’re matched in about 3 days from the onboarding call, with an executive assistant from the top tier.',
+  a: 'Onboarding is about 30 minutes. You’re matched in about a week with a Meet-your-EA package — intro video, background, and your Partnership Manager — by branded email and in the portal. Accept EA with one click. You’re typically live within about two weeks. Book kickoff from that same email or the portal.',
+} as const;
+
+export const EA_CANCEL_FAQ = {
+  q: 'What if I need to cancel or change my match?',
+  a: 'Cancel free anytime before you accept your match. You can swap once before you accept — two EAs at most. You have 3 business days to accept or swap, with a reminder about 24 hours before; if you don’t choose, the match is accepted. After kickoff, two rematches a year. If your EA leaves, that never counts, and we present someone new within 10 business days.',
+  linkHref: '/terms',
+  linkLabel: 'See Terms',
+} as const;
+
+export const EA_TIME_OFF_FAQ = {
+  q: 'What about holidays and days off?',
+  a: 'Your EA observes local public holidays and takes five days off a year. Your monthly fee continues, and we’ll do our best to cover those days at no extra charge.',
+  linkHref: '/terms',
+  linkLabel: 'See Terms',
+} as const;
+
+export const EA_RENEW_FAQ = {
+  q: 'Does my plan renew?',
+  a: 'Yes. After your first term — 90 days or 12 months — it renews for the same length unless you or we give notice at least 60 days before it ends.',
+  linkHref: '/terms',
+  linkLabel: 'See Terms',
 } as const;
 
 export type FaqStep = { label: string; detail: string };
@@ -136,49 +156,59 @@ export function faqAnswerText(item: {
   a: string;
   steps?: readonly FaqStep[];
   tail?: string;
+  linkHref?: string;
+  linkLabel?: string;
 }): string {
   const steps = (item.steps ?? []).map((step) => `${step.label} — ${step.detail}`);
-  return [item.a, ...steps, item.tail ?? ''].filter((part) => part.length > 0).join(' ');
+  const link = item.linkHref ? `${item.linkLabel || 'See Terms'} (${item.linkHref})` : '';
+  return [item.a, ...steps, item.tail ?? '', link].filter((part) => part.length > 0).join(' ');
 }
 
 export const EA_JOURNEY_FAQ = [
   {
     // Short on purpose. Onboarding, match speed, kickoff timing, billing, and the 90-day clock have their own answers.
     q: 'What do next steps look like?',
-    a: 'Signup, review and accept our terms and conditions, select your plan, and set a payment method on file. Then three steps.',
+    a: 'Signup, accept the Terms, choose your plan, and put a card on file. Then three steps.',
     steps: [
       {
         label: 'Onboarding',
-        detail: 'one deep ~60-min call (prep sheet beforehand; you leave with a personalized kickoff plan; partnership manager owns matching after)',
+        detail: 'about a 30-minute call, with a prep sheet beforehand; your Partnership Manager starts matching after',
       },
       {
         label: 'Get matched',
-        detail: 'you’re matched with your EA from the top tier',
+        detail: 'your Meet-your-EA package arrives by branded email and in the portal in about a week — Accept EA with one click, or swap once within 3 business days',
       },
       {
         label: 'Kickoff',
-        detail: 'service starts; same day or next business day after you’re matched',
+        detail: 'book it from the email or the portal; you’re live, usually the same day you accept or the next business day',
       },
     ],
     tail: EA_TIMING_LINE,
   },
   {
     q: 'What does onboarding look like?',
-    a: 'Post-signup: one deep onboarding call (~60 minutes). You get a prep sheet beforehand. The call covers what to delegate, priorities, hours, tools, and how you like to communicate. You leave with a personalized kickoff plan. Your partnership manager owns matching after that.',
+    a: 'One onboarding call, about 30 minutes, with a prep sheet beforehand. We cover what to delegate, your priorities, hours, tools, and how you like to work. Your Partnership Manager starts your match after that.',
   },
   EA_START_FAQ,
   {
-    q: 'After being matched, when does kickoff start?',
-    a: 'Same day or the next business day after you’re matched — or later if you need, up to 3 business days from matching. You and your EA run the day-to-day. Your partnership manager stays on with oversight, tools, best practices, and rematch. You don’t pay until your EA starts.',
+    q: 'After I accept, when does kickoff start?',
+    a: 'Book kickoff from the email or the portal. Usually the same day you accept, or the next business day. You and your EA run the day-to-day. Your Partnership Manager stays on for oversight, tools guidance, best practices, and up to two rematches a year.',
   },
   {
     q: 'When does the 90-day commitment start?',
     a: EA_CLOCK_NOTE,
+    linkHref: '/terms',
+    linkLabel: 'See Terms',
   },
   {
     q: 'When am I charged?',
     a: EA_CLOCK_NOTE,
+    linkHref: '/terms',
+    linkLabel: 'See Terms',
   },
+  EA_CANCEL_FAQ,
+  EA_TIME_OFF_FAQ,
+  EA_RENEW_FAQ,
 ] as const;
 
 // Real contact + social proof pulled from the live Teleforce brand page.

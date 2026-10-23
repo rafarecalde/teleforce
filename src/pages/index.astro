@@ -30,30 +30,8 @@ const capabilities: { title: string; note?: string; items: string[] }[] = [
       'Hiring support: sourcing, screening, scheduling',
       'Project management and deadlines',
       'Team coordination and internal comms',
-      'Financing, receivables, and invoicing support',
+      'Expense logging and vendor follow-up',
       'Social media, podcast, and content support',
-    ],
-  },
-  {
-    title: 'Household & family',
-    note: 'Available when you want it',
-    items: [
-      'Household vendors and home services',
-      'Kids’ activities, school, and calendars',
-      'Events, gifts, and celebrations',
-      'Family travel planning',
-      'One family calendar, kept current',
-    ],
-  },
-  {
-    title: 'Personal wellness',
-    note: 'Available when you want it',
-    items: [
-      'Medical appointments and follow-up',
-      'Insurance claims and reimbursements',
-      'Meal planning and grocery coordination',
-      'Fitness scheduling and trainer coordination',
-      'Health-record organization',
     ],
   },
 ];
@@ -68,9 +46,8 @@ const faq = [
   { q: 'How good is the talent, really?', a: 'Every Teleforce EA is a career professional who cleared a multi-stage screen — interviews, skills assessments, and background checks — that most applicants never pass. These are experienced executive assistants and operators, not gig-economy task-doers, superpowered by AI and coached on an ongoing basis. You’re getting someone you can hand real responsibility from week one.' },
   { q: 'Where are the assistants based?', a: 'Across Latin America — which means native English and Spanish, cultural alignment with U.S. work, and full overlap with your business hours. You get real-time delegation, not an overnight queue.' },
   { q: 'Is the assistant full-time and dedicated to me?', a: 'Yes. Your EA works 40 hours/week — one dedicated, full-time executive assistant working with you, not a shared pool or a ticket queue. They learn your preferences and get better at anticipating your needs over time.' },
-  { q: 'What can I actually delegate?', a: 'Administrative help and business operations first: inbox and calendar, priorities and follow-ups, travel and vendors, research, docs and systems, project coordination, and team facilitation. Personal assistance and household admin can also be offloaded — your call how far that goes.' },
-  { q: 'What if my assistant isn’t the right fit?', a: 'You’re never stuck. A success lead manages the partnership, and if the match isn’t working we rematch you with a better-suited assistant.' },
-  { q: 'Can I change my commitment later?', a: 'Yes. Start on the 3-month plan. Switch to 12 when you’re ready and save $300/mo. You can switch as soon as you’re ready, including in month one.' },
+  { q: 'What can I actually delegate?', a: 'Business support: inbox and calendar, priorities and follow-ups, travel and vendors, research, docs and systems, project coordination, and team facilitation.' },
+  { q: 'Can I change my commitment later?', a: 'Yes. Start on the 3-month plan. Move to the 12-month rate whenever you’re ready, including in month one, and save $300/mo. A new 12-month term starts when you switch. After that first term, the plan renews for the same length unless you or we give notice at least 60 days before it ends.', linkHref: '/terms', linkLabel: 'See Terms' },
   ...EA_JOURNEY_FAQ,
 ];
 
@@ -103,7 +80,7 @@ const jsonLd = [
         <div class="kicker">Teleforce EA · Top-tier executive talent</div>
         <h1 class="disp">Elite executive assistants.<br /><span class="l2">Dedicated to you.</span></h1>
         <p class="lede">Full-time. Rigorously vetted. Working your hours. Experienced enough to take ownership, not just take instructions.</p>
-        <p class="ea-timing">Matched in days. Live within a week.</p>
+        <p class="ea-timing">{EA_TIMING_LINE}</p>
         <div class="hero-cta">
           <a href="#match" class="btn btn-amber">Get matched</a>
         </div>
@@ -122,7 +99,7 @@ const jsonLd = [
   <section class="block" id="what">
     <div class="wrap ea-what reveal">
       <div class="eyebrow" style="justify-content:center">What your Teleforce EA can do</div>
-      <h2 class="disp" style="text-align:center">A dedicated right hand for work and life.</h2>
+      <h2 class="disp" style="text-align:center">A dedicated right hand for the work that runs your week.</h2>
       <p class="sub" style="text-align:center;margin:0 auto">Your full-time EA works alongside you on U.S. hours, managing the details, follow-through, and moving pieces that keep your week running — all with one trusted partner.</p>
       <div class="ea-caps">
         {capabilities.map((c) => (
@@ -157,13 +134,13 @@ const jsonLd = [
     <div class="wrap reveal">
       <div class="eyebrow">The talent</div>
       <h2 class="disp">Talent that clears a very high bar.</h2>
-      <p class="sub" style="max-width:64ch">This is the difference between an assistant you have to manage and one you can hand real responsibility. Every Teleforce EA is a career professional who made it through a multi-stage screen most applicants never pass — then trained and equipped before they ever reach you.</p>
+      <p class="sub" style="max-width:64ch">This is the difference between an assistant you have to manage and one you can hand real responsibility. Every Teleforce EA is a career professional who made it through a multi-stage screen most applicants never pass — then trained before they ever reach you.</p>
       <ul class="ea-checks">
         <li>The top few percent of applicants — a multi-stage screen most never clear</li>
         <li>Career executive assistants and operators, not gig-economy help</li>
         <li>Background-checked, and fluent in English, Spanish, and AI tools</li>
-        <li>Trained and equipped before day one — productive from the start</li>
-        <li>Ongoing coaching and a performance lead — talent that keeps sharpening</li>
+        <li>Trained before day one — ready to start with you</li>
+        <li>Ongoing coaching from your Partnership Manager — talent that keeps sharpening</li>
         <li>Employed and managed by Teleforce, in your time zone — full back-end support behind the seat</li>
       </ul>
     </div>
@@ -210,7 +187,7 @@ const jsonLd = [
         <div class="t-foot">
           <div>
             <div class="t-name">English &amp; Español</div>
-            <div class="t-role">U.S. hours · matched in days</div>
+            <div class="t-role">U.S. hours · matched in about a week</div>
           </div>
           <a href="#match" class="btn btn-amber t-cta">Get matched</a>
         </div>
@@ -236,7 +213,7 @@ const jsonLd = [
           <div class="ea-tier">
             <div class="ea-tier-tag">3-month</div>
             <div class="ea-amount"><span class="cur">$</span>{price3}<span class="per">/ mo</span></div>
-            <div class="ea-tier-sub">3-month commitment · stay flexible</div>
+            <div class="ea-tier-sub">90-day term</div>
             <a href="#match" class="btn btn-amber ea-tier-btn">Get matched</a>
           </div>
           <div class="ea-tier feature">
@@ -249,12 +226,12 @@ const jsonLd = [
         </div>
         <ul class="svc-list ea-incl" style="grid-template-columns:1fr 1fr;gap:11px 30px">
           <li>One dedicated, full-time executive assistant — top-tier talent</li>
-          <li>Rigorously vetted, trained, and equipped by Teleforce</li>
+          <li>Rigorously vetted and trained by Teleforce</li>
           <li>Tailored matching and structured onboarding</li>
-          <li>A success lead managing performance</li>
-          <li>Rematch if the fit isn’t right</li>
+          <li>A Partnership Manager on the seat with you</li>
+          <li>Two rematches a year after kickoff</li>
         </ul>
-        <p class="ea-fine">{EA_PRICING_NOTE_LEAD} <b style="color:var(--ink)">$300/mo</b>. {EA_PRICING_NOTE_TAIL}</p>
+        <p class="ea-fine">{EA_PRICING_NOTE_LEAD} <b style="color:var(--ink)">$300/mo</b>. {EA_PRICING_NOTE_TAIL} <a href="/terms">See Terms</a>.</p>
       </div>
     </section>
   </div>
@@ -267,7 +244,7 @@ const jsonLd = [
         {faq.map((f) => (
           <details class="ea-q">
             <summary>{f.q}<span class="pl">+</span></summary>
-            <FaqAnswer answer={f.a} steps={'steps' in f ? f.steps : undefined} tail={'tail' in f ? f.tail : undefined} />
+            <FaqAnswer answer={f.a} steps={'steps' in f ? f.steps : undefined} tail={'tail' in f ? f.tail : undefined} linkHref={'linkHref' in f ? f.linkHref : undefined} linkLabel={'linkLabel' in f ? f.linkLabel : undefined} />
           </details>
         ))}
       </div>
@@ -307,7 +284,7 @@ const jsonLd = [
   /* ---- what your EA can do ---- */
   .ea-what{max-width:1180px}
   .ea-what .sub{max-width:68ch}
-  .ea-caps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px 22px;margin-top:40px;text-align:left}
+  .ea-caps{display:grid;grid-template-columns:repeat(2,1fr);gap:32px 48px;margin-top:40px;text-align:left}
   .ea-cap h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:17px;letter-spacing:-0.02em;
     margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line-paper)}
   .ea-cap-note{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;

@@ -64,16 +64,16 @@ const compare = [
   ['What they own', 'Ticket queue', 'Tasks and errands', 'Business + prestige', 'Business ops — inbox, CRM, PM'],
   ['Dedicated full-time', 'Often pooled', 'Rare', 'Yes', 'One named seat'],
   ['Who employs them', 'Vendor — or you', 'You, or nobody', 'You or the firm', 'Teleforce. You delegate.'],
-  ['Rematch', 'Your problem', 'Your problem', 'Varies', 'Included'],
-  ['Price shape', 'Looks cheap until the lag', 'Hour packs', 'High retainers', `$${price3} / $${price12} all-in`],
+  ['Rematch', 'Your problem', 'Your problem', 'Varies', 'Two a year after kickoff'],
+  ['Price shape', 'Looks cheap until the lag', 'Hour packs', 'High retainers', `$${price3} / $${price12} per month`],
 ];
 
 const included = [
   'One dedicated, full-time remote executive assistant — not a shared pool',
   'Bilingual EN/ES, LatAm nearshore, U.S. business hours',
-  'Matching, structured onboarding, and a success lead',
-  'Employed by Teleforce: recruiting, payroll, HR — one monthly invoice',
-  'Rematch if the fit isn’t right',
+  'Matching, structured onboarding, and a Partnership Manager',
+  'Employed by Teleforce: recruiting, payroll, HR — one monthly card charge',
+  'Two rematches a year after kickoff',
   'Business-ops scope: exec ops, sales support, marketing/PM',
 ];
 
@@ -88,19 +88,19 @@ const faq = [
   },
   {
     q: 'What’s the price, and what’s included?',
-    a: `$${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. One dedicated remote EA, matching, onboarding, coaching, a success lead, and rematch. ${EA_CLOCK_NOTE} That first charge is the first month of service — not a deposit. No foreign entity, no separate payroll, no hour packs. Start on the 3-month plan. Switch to 12 when you’re ready and save $300/mo. You can switch as soon as you’re ready, including in month one.`,
+    a: `$${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. One dedicated remote EA, matching, onboarding, coaching, a Partnership Manager, and two rematches a year after kickoff. ${EA_CLOCK_NOTE} That first charge is the first month of service — not a deposit. No foreign entity, no separate payroll, no hour packs. Taxes extra. Start on the 3-month plan. Move to the 12-month rate whenever you’re ready, including in month one, and save $300/mo.`,
   },
   {
     q: 'How is this different from Athena, overnight offshore, or a cheap VA?',
-    a: 'Athena sells an elite full-life EA in a similar price band — household and wellness as part of the product. Overnight offshore looks cheaper until your afternoon is their tomorrow. Cheap VAs sell hours. Teleforce sells a dedicated remote executive assistant: bilingual EN/ES, business-ops first, employed and rematched by us. Same ~$2.7–3k seat energy. Different category.',
+    a: 'Some premium firms sell a full-life assistant in a similar price band. Overnight offshore looks cheaper until your afternoon is their tomorrow. Cheap VAs sell hours. Teleforce sells a dedicated remote executive assistant: bilingual EN/ES, business-ops first, employed by us, with two rematches a year. Same ~$2.7–3k seat energy. Different category.',
   },
   {
     q: 'What if the match isn’t right?',
-    a: 'We rematch. A success lead manages the partnership, so you’re not running foreign HR — and you’re not stuck with a bad hire.',
+    a: 'Your Partnership Manager stays on the seat, so you’re not running foreign HR. Swap once before you accept. After kickoff, two rematches a year. If your EA leaves, that doesn’t count — we present someone new within 10 business days.',
   },
   {
-    q: 'Do you handle household or personal admin?',
-    a: 'It can sit in the background. It is not the product, and it is not why this page exists. This seat is for operators who need a remote EA to own business ops.',
+    q: 'Is this a lifestyle or household assistant?',
+    a: 'No. This seat is business support — inbox, calendar, sales support, and projects. A lifestyle concierge is a different product.',
   },
   ...EA_JOURNEY_FAQ,
 ];
@@ -114,7 +114,7 @@ const jsonLd = [
     provider: { '@type': 'Organization', name: 'Teleforce' },
     areaServed: ['US', 'CA'],
     description:
-      'A dedicated, full-time remote executive assistant — bilingual EN/ES, LatAm nearshore, U.S. business hours — employed and rematched by Teleforce.',
+      'A dedicated, full-time remote executive assistant — bilingual EN/ES, LatAm nearshore, U.S. business hours — employed by Teleforce, with two rematches a year.',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: EA.price12mo,
@@ -137,7 +137,7 @@ const jsonLd = [
 
 <BaseLayout
   title="Hire a Remote Executive Assistant | Teleforce"
-  description="Hire a full-time remote executive assistant — bilingual EN/ES, LatAm nearshore, U.S. hours. Dedicated seat. $3,000/3-mo or $2,700/12-mo all-in."
+  description="Hire a full-time remote executive assistant — bilingual EN/ES, LatAm nearshore, U.S. hours. Dedicated seat. $3,000/3-mo or $2,700/12-mo."
   jsonLd={jsonLd}
   bare
   noindex
@@ -151,13 +151,13 @@ const jsonLd = [
       <div class="lp-copy">
         <div class="trust-chip">Bilingual EN/ES · LatAm nearshore · U.S. business hours</div>
         <h1 class="disp">
-          Reclaim 15+ hours a week with a full-time <span class="l2">remote executive assistant</span>
+          Hand off the week to a full-time <span class="l2">remote executive assistant</span>
         </h1>
         <p class="lede">
           Top-tier bilingual EN/ES. Dedicated to you — not a cheap VA, not a household concierge.
         </p>
         <p class="hero-price">
-          All-in <b>${price3}/mo</b> on 3 months or <b>${price12}/mo</b> on 12.
+          <b>${price3}/mo</b> on 3 months or <b>${price12}/mo</b> on 12.
         </p>
 
         <div class="hero-cta">
@@ -185,7 +185,7 @@ const jsonLd = [
       <div class="eyebrow">What they own</div>
       <h2 class="disp">What a remote executive assistant actually owns.</h2>
       <p class="sub" style="max-width:64ch">
-        Business ops only. Inbox, calendar, sales support, projects. Not household, not wellness, not ski-boot logistics — that’s a different product.
+        Business ops. Inbox, calendar, sales support, projects — the work a remote executive assistant is hired to own.
       </p>
       <blockquote class="own-quote">
         <p>
@@ -237,7 +237,7 @@ const jsonLd = [
       <div class="eyebrow">The category, honestly</div>
       <h2 class="disp">Not overnight offshore. Not a task VA. Not U.S.-only prestige.</h2>
       <p class="sub" style="max-width:64ch">
-        Same dedicated-seat energy as premium EAs — bilingual, on U.S. hours, business-first, all-in. Different job than a ticket VA. Different job than a full-life concierge.
+        Same dedicated-seat energy as premium EAs — bilingual, on U.S. hours, business-first, one monthly rate. Different job than a ticket VA. Different job than a full-life concierge.
       </p>
       <p class="swipe">Swipe to compare →</p>
       <div class="lp-compare-wrap">
@@ -273,9 +273,9 @@ const jsonLd = [
         <div class="proof-grid">
           <div>
             <div class="eyebrow">Why the bar holds</div>
-            <h2 class="disp">Selective talent. Employed by us. All-in.</h2>
+            <h2 class="disp">Selective talent. Employed by us.</h2>
             <p class="sub">
-              Every Teleforce EA is a career professional who cleared a multi-stage screen — interviews, skills, background — that most applicants never pass. We don’t publish applicant-volume theater. The point is the screen, then the employment model: we recruit, pay, onboard, and rematch.
+              Every Teleforce EA is a career professional who cleared a multi-stage screen — interviews, skills, background — that most applicants never pass. We don’t publish applicant-volume theater. The point is the screen, then the employment model: we recruit, pay, and onboard. After kickoff, two rematches a year.
             </p>
             <ul class="checks">
               {included.map((i) => <li>{i}</li>)}
@@ -313,7 +313,7 @@ const jsonLd = [
     <section class="block" id="pricing">
       <div class="wrap reveal">
         <div class="eyebrow" style="justify-content:center">Pricing</div>
-        <h2 class="disp" style="text-align:center">Simple, all-in pricing for a remote EA.</h2>
+        <h2 class="disp" style="text-align:center">Simple pricing for a remote EA.</h2>
         <p class="sub" style="text-align:center;margin:0 auto">
           One dedicated, full-time remote executive assistant. Premium talent, one flat monthly rate.
         </p>
@@ -321,7 +321,7 @@ const jsonLd = [
           <div class="ea-tier">
             <div class="ea-tier-tag">3-month</div>
             <div class="ea-amount"><span class="cur">$</span>{price3}<span class="per">/ mo</span></div>
-            <div class="ea-tier-sub">3-month commitment · stay flexible</div>
+            <div class="ea-tier-sub">90-day term</div>
             <a href="#match" class="btn btn-amber ea-tier-btn">Find your EA</a>
           </div>
           <div class="ea-tier feature">
@@ -336,9 +336,9 @@ const jsonLd = [
           <li>Dedicated full-time remote executive assistant</li>
           <li>Multi-stage vetted, trained, employed by Teleforce</li>
           <li>Matching and structured onboarding</li>
-          <li>Success lead + rematch if the fit isn’t right</li>
+          <li>Partnership Manager + two rematches a year</li>
         </ul>
-        <p class="ea-fine">{EA_PRICING_NOTE_LEAD} <b style="color:var(--ink)">$300/mo</b>. {EA_PRICING_NOTE_TAIL}</p>
+        <p class="ea-fine">{EA_PRICING_NOTE_LEAD} <b style="color:var(--ink)">$300/mo</b>. {EA_PRICING_NOTE_TAIL} <a href="/terms">See Terms</a>.</p>
       </div>
     </section>
   </div>
@@ -365,7 +365,7 @@ const jsonLd = [
         {faq.map((f) => (
           <details class="ea-q">
             <summary>{f.q}<span class="pl">+</span></summary>
-            <FaqAnswer answer={f.a} steps={'steps' in f ? f.steps : undefined} tail={'tail' in f ? f.tail : undefined} />
+            <FaqAnswer answer={f.a} steps={'steps' in f ? f.steps : undefined} tail={'tail' in f ? f.tail : undefined} linkHref={'linkHref' in f ? f.linkHref : undefined} linkLabel={'linkLabel' in f ? f.linkLabel : undefined} />
           </details>
         ))}
       </div>
@@ -376,7 +376,7 @@ const jsonLd = [
     <div class="wrap reveal">
       <CtaBox
         heading="Find your remote executive assistant."
-        body="Tell us the role. We’ll match a bilingual EA on U.S. hours — dedicated, employed, rematched if the fit isn’t right."
+        body="Tell us the role. We’ll match a bilingual EA on U.S. hours — dedicated, employed by us, with two rematches a year."
         label="Find your EA"
         href="#match"
       />

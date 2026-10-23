@@ -273,21 +273,8 @@ export async function completeSignup(
     acceptedUa: clip(evidence.userAgent || '', 512),
   };
 
-  if (!setupIntentId && !nonce) {
-    const existing = await getUserByEmail(email);
-    if (existing) throw new HttpError(409, DUPLICATE);
-    return saveAccount({
-      email,
-      fullName,
-      password,
-      plan,
-      stripeCustomerId: null,
-      defaultPaymentMethodId: null,
-      setupIntentId: null,
-      cardBrand: '',
-      cardLast4: '',
-      ...acceptance,
-    });
+  if (!setupIntentId) {
+    throw new HttpError(400, 'Add a card to finish signup. Nothing is charged while we search and match.');
   }
 
   if (!/^seti_[A-Za-z0-9]+$/.test(setupIntentId)) {

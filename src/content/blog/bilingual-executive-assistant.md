@@ -67,7 +67,7 @@ That last row is the point. Bilingual isn't a premium tier—it's the same execu
 
 Here's the part most people expect to pay for and don't. Because Teleforce EAs come from the top tier of Latin American talent, English/Spanish fluency is native to the pool. It isn't a rare specialty you hunt for and pay a surcharge on—it's the baseline. Hiring nearshore means the language capability comes built in.
 
-That's the underrated advantage of building an EA function on a [nearshore executive assistant](/blog/nearshore-executive-assistant) model: you get U.S.-hours overlap and native bilingual range from the same person, without stacking premiums for either. Pricing stays exactly the same—**$3,000/mo on a 3-month commitment or $2,700/mo on a 12-month commitment**, with the option to switch 3→12 anytime and the $300/mo difference credited to your final month.
+That's the underrated advantage of building an EA function on a [nearshore executive assistant](/blog/nearshore-executive-assistant) model: you get U.S.-hours overlap and native bilingual range from the same person, without stacking premiums for either. Pricing stays exactly the same—**$3,000/mo on a 3-month commitment or $2,700/mo on a 12-month commitment**. Move to the 12-month rate whenever you’re ready and save $300/mo. [See Terms](/terms).
 
 ## The Bottom Line
 

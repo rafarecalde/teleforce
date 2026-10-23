@@ -1,4 +1,4 @@
-import { onboardingCalendlyUrl } from './constants';
+import { BILLING_LINE, onboardingCalendlyUrl } from './constants';
 
 /** Public client portal. The onboarding scheduler is on the signed-in home page. */
 export const PORTAL_URL = 'https://portal.tryteleforce.com';
@@ -39,25 +39,19 @@ function safeLog(err: unknown): string {
     .slice(0, 400);
 }
 
-/**
- * Client welcome note. Billing language follows Terms §3.1 and §3.3:
- * nothing is charged at signup; the first monthly fee and the Initial
- * Period begin on the earlier of Kickoff and the third business day
- * after Match Acceptance.
- */
+/** Client welcome note. Billing language matches the signed-in dashboard. */
 export function renderWelcomeEmail(input: WelcomeEmailInput): WelcomeEmailContent {
   const name = greetingName(input.fullName);
   const hello = name ? `Hi ${name},` : 'Hello,';
   const calendlyUrl = onboardingCalendlyUrl();
   const subject = 'Welcome to Teleforce';
-  const billing =
-    'Nothing is charged until your Executive Assistant starts. No amount is charged at signup. The first monthly fee is charged, and your initial period begins, on the earlier of your Kickoff date and the third business day after Match Acceptance.';
+  const billing = BILLING_LINE;
 
   const text = `${hello}
 
 Thank you for signing up for Teleforce. We're glad to have you.
 
-The next step is a short onboarding call so we can learn what you need and start matching your Executive Assistant.
+The next step is a short onboarding call. We'll learn how you work, then your Partnership Manager starts the match.
 
 Book your onboarding call:
 ${calendlyUrl}
@@ -77,7 +71,7 @@ Teleforce
     <h1 style="margin:0 0 12px;font-size:22px;line-height:1.25;">Welcome to Teleforce</h1>
     <p style="margin:0 0 16px;">${escapeHtml(hello)}</p>
     <p style="margin:0 0 16px;">Thank you for signing up for Teleforce. We're glad to have you.</p>
-    <p style="margin:0 0 20px;">The next step is a short onboarding call so we can learn what you need and start matching your Executive Assistant.</p>
+    <p style="margin:0 0 20px;">The next step is a short onboarding call. We'll learn how you work, then your Partnership Manager starts the match.</p>
     <p style="margin:0 0 8px;">
       <a href="${escapeHtml(calendlyUrl)}" style="display:inline-block;background:#f2a82b;color:#091c1e;font-weight:700;font-family:Georgia,serif;font-size:16px;line-height:1.2;text-decoration:none;padding:12px 18px;border-radius:9px;">Book your onboarding call</a>
     </p>

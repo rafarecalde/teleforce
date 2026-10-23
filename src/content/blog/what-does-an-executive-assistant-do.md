@@ -1,7 +1,7 @@
 ---
 title: "What Does an Executive Assistant Do? The Role in Depth"
 metaTitle: "What Does an Executive Assistant Do | Teleforce"
-description: "What does an executive assistant do? A deep look at day-to-day, business operations, and personal support—and why great EAs anticipate, not just react."
+description: "What does an executive assistant do? A deep look at day-to-day and business operations—and why great EAs anticipate, not just react."
 excerpt: "Far more than scheduling. A great EA runs your inbox, your operations, and your logistics with judgment—and takes on more as trust grows."
 primaryKeyword: what does an executive assistant do
 category: Virtual Assistance
@@ -12,7 +12,7 @@ faq:
   - q: "What does an executive assistant do day to day?"
     a: "Day to day, an executive assistant manages your inbox, calendar, travel, expenses, scheduling, and follow-ups. They triage what needs your attention, protect your focus time, and make sure nothing slips through the cracks. The goal is to remove the recurring administrative load so you can spend your hours on work only you can do."
   - q: "Can an executive assistant handle personal and household tasks?"
-    a: "Yes. Beyond business support, many executive assistants coordinate personal appointments, reservations, events, travel, and errands. Blending professional and personal support is common and effective because a single trusted assistant already holds the full context of your schedule and priorities."
+    a: "A Teleforce executive assistant is for business support: inbox, calendar, travel, vendors, research, and operations. Lifestyle and household work is a different product."
   - q: "How is an executive assistant different from an admin who just takes orders?"
     a: "A great executive assistant operates with autonomy and anticipation, not just instruction-following. They see what's coming, make judgment calls, and solve problems before they reach your desk. The role scales with trust—the longer you work together, the more they own without needing to be asked."
 related:
@@ -20,7 +20,7 @@ related:
   - executive-assistant-vs-virtual-assistant
 ---
 
-If you've ever asked what does an executive assistant do and pictured someone answering phones and booking flights, you're seeing a fraction of the role. A strong executive assistant is the operational backbone behind a busy leader—managing the inbox, running the calendar, coordinating projects, sourcing vendors, and handling personal logistics, all while anticipating what's needed before you ask. The work spans three broad zones, and the best EAs move fluidly across all of them.
+If you've ever asked what does an executive assistant do and pictured someone answering phones and booking flights, you're seeing a fraction of the role. A strong executive assistant is the operational backbone behind a busy leader—managing the inbox, running the calendar, coordinating projects, and sourcing vendors, all while anticipating what's needed before you ask. The work spans the day-to-day and the business operations around it, and the best EAs move fluidly across both.
 
 The through-line isn't the task list. It's judgment. A great EA doesn't just execute—they own outcomes, spot problems early, and free up the hours you should be spending on the work only you can do.
 
@@ -53,13 +53,11 @@ Once the daily rhythm is solid, a capable EA moves upstream into the operational
 
 None of this requires you to be in the loop on every step. That's the point. A well-run operations layer means fewer things land on your desk, not more.
 
-## Personal and Household Support
+## The Work Stays on the Business
 
-The line between professional and personal support is thinner than most people expect—and blending them is efficient, because one trusted assistant already holds the full picture of your time and priorities.
+The seat is business support. Inbox, calendar, travel for the company, vendors, research, and the coordination that keeps a week moving. Lifestyle and household logistics are a different product.
 
-That covers personal appointments and reminders, restaurant and travel reservations, event planning, gift and errand coordination, and the household logistics that eat into evenings and weekends. When the same person managing your work calendar also manages your dentist appointment and your anniversary dinner, nothing collides and nothing gets forgotten.
-
-For a fuller menu of what you can hand off across all three zones, see [tasks to delegate to an executive assistant](/blog/tasks-to-delegate-to-an-executive-assistant).
+For a fuller menu of what you can hand off, see [tasks to delegate to an executive assistant](/blog/tasks-to-delegate-to-an-executive-assistant).
 
 ## The Real Job: Autonomy and Anticipation
 
@@ -78,7 +76,7 @@ That last row matters most. The role scales with trust. In month one, you delega
 
 ## How Teleforce Delivers It
 
-Teleforce places dedicated, full-time, bilingual (English/Spanish) executive assistants from the top tier of Latin American talent—rigorously vetted career professionals, employed and managed by Teleforce, and working in your U.S. time zone so anticipation happens in real time. Pricing is **$3,000/mo on a 3-month commitment or $2,700/mo on a 12-month commitment**, and you can switch 3→12 anytime with the $300/mo difference credited to your final month.
+Teleforce places dedicated, full-time, bilingual (English/Spanish) executive assistants from the top tier of Latin American talent—rigorously vetted career professionals, employed and managed by Teleforce, and working in your U.S. time zone so anticipation happens in real time. Pricing is **$3,000/mo on a 3-month commitment or $2,700/mo on a 12-month commitment**. Move to the 12-month rate whenever you’re ready and save $300/mo. Nothing is charged at signup. [See Terms](/terms).
 
 The best way to see what a great EA can own for you is to talk through your actual week. Start there.
 

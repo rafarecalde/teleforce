@@ -45,6 +45,13 @@ export function corsHeaders(req: Request): Headers {
   return headers;
 }
 
+/** Same-origin redirect. `APP_URL` wins, matching the login route. */
+export function appRedirect(origin: string, path: string): NextResponse {
+  const base = (process.env.APP_URL || origin).replace(/\/$/, '');
+  const target = path.startsWith('/') ? path : `/${path}`;
+  return NextResponse.redirect(`${base}${target}`, 303);
+}
+
 export function json(req: Request, body: unknown, status = 200): NextResponse {
   const headers = corsHeaders(req);
   headers.set('Content-Type', 'application/json');
