@@ -153,9 +153,11 @@ dashboard follows the account row:
 4. After acceptance, a kickoff card links to `KICKOFF_CALENDLY_URL` (default
    `https://calendly.com/tryteleforce-sales`) and stays until ops marks kickoff
    done. The client can note that they booked; the card still stays.
-   **Request a rematch** shows only after kickoff, and only when the client has
-   not already requested one in the rolling 12 months. **Mark departure** on the
-   admin client page records an EA departure and does not use that rematch.
+   **Request a rematch** shows only after kickoff, and only while the client has
+   fewer than two client-requested rematches in the rolling 12 months. **Mark
+   departure** records an EA departure, does not use a rematch, and does not
+   create a credit. A replacement is due 10 business days after either event.
+   Admin shows that date. Publishing the next assistant records it as presented.
 5. `matched_ea_name` is set from the package on publish, so **Your assistant is
    First Last** shows after acceptance, and it still shows for an account that
    only has the SQL name and no package.

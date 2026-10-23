@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { formatDeadline, formatNewYork } from '@/lib/business-days';
 import { formatDate } from '@/lib/money';
-import { defaultPartnershipManager, describeMatch, getMatchByUserId, isUserId, listMatchEvents, matchCounts, type AdminClient } from '@/lib/match';
+import { REMATCHES_PER_YEAR, REPLACEMENT_BUSINESS_DAYS, defaultPartnershipManager, describeMatch, getMatchByUserId, isUserId, latestReplacementAt, listMatchEvents, matchCounts, replacementDueAt, type AdminClient } from '@/lib/match';
 import { planLabel } from '@/lib/plans';
 import { getUserById } from '@/lib/users';
 
@@ -16,7 +16,9 @@ function banner(notice?: string, mail?: string, error?: string): { ok: string; e
   }
   if (notice === 'kickoff') ok = 'Kickoff marked done.';
   if (notice === 'onboarding') ok = 'Onboarding marked complete.';
-  if (notice === 'departure') ok = 'Departure recorded. It does not count as a client rematch.';
+  if (notice === 'departure') {
+    ok = `Departure recorded. It does not count as a rematch and does not create a credit. Present a replacement within ${REPLACEMENT_BUSINESS_DAYS} business days.`;
+  }
   let err = '';
   if (error === 'name') err = 'Enter the assistant’s first and last name.';
   if (error === 'photo') err = 'Photo URLs must be an http(s) link, or a path that starts with /.';
@@ -43,6 +45,11 @@ export default async function AdminClientPage({
   const match = await getMatchByUserId(user.id);
   const counts = await matchCounts(user.id);
   const events = await listMatchEvents(user.id);
+  const latestReplacement = await latestReplacementAt(user.id);
+  const replacementDue = replacementDueAt(latestReplacement);
+  const replacementPresented = match?.replacementPresentedAt && latestReplacement && match.replacementPresentedAt >= latestReplacement
+    ? match.replacementPresentedAt
+    : '';
   const defaults = defaultPartnershipManager();
   const { ok, err } = banner(searchParams?.notice, searchParams?.mail, searchParams?.error);
   const summary: AdminClient = {
@@ -66,6 +73,8 @@ export default async function AdminClientPage({
     declines: counts.declines,
     rematches: counts.rematches,
     departures: counts.departures,
+    replacementDueAt: replacementDue,
+    replacementPresentedAt: replacementPresented,
   };
 
   return (
@@ -100,19 +109,30 @@ export default async function AdminClientPage({
           <span className="k">Declines</span>
           <span className="v">{counts.declines}</span>
           <span className="k">Rematches</span>
-          <span className="v">{counts.rematches} of 1 in the last 12 months</span>
+          <span className="v">{counts.rematches} of {REMATCHES_PER_YEAR} in the last 12 months</span>
           <span className="k">Departures</span>
           <span className="v">{counts.departures}</span>
+          <span className="k">Replacement by</span>
+          <span className="v">
+            {replacementDue
+              ? `${formatNewYork(replacementDue)}${replacementPresented ? ` · presented ${formatDate(replacementPresented)}` : ''}`
+              : '—'}
+          </span>
         </div>
+        <p className="hint">Departures do not count as rematches. Rematches and departures never create a credit.</p>
         {events.length > 0 && (
           <ul className="hint" style={{ paddingLeft: 18 }}>
-            {events.map((event) => (
-              <li key={event.id}>
-                {event.kind} · {formatDate(event.createdAt)}
-                {event.eaName ? ` · ${event.eaName}` : ''}
-                {event.note ? ` · ${event.note}` : ''}
-              </li>
-            ))}
+            {events.map((event) => {
+              const due = event.kind === 'rematch' || event.kind === 'departure' ? replacementDueAt(event.createdAt) : '';
+              return (
+                <li key={event.id}>
+                  {event.kind} · {formatDate(event.createdAt)}
+                  {event.eaName ? ` · ${event.eaName}` : ''}
+                  {due ? ` · present by ${formatNewYork(due)}` : ''}
+                  {event.note ? ` · ${event.note}` : ''}
+                </li>
+              );
+            })}
           </ul>
         )}
         <div className="admin-actions">
@@ -152,6 +172,7 @@ export default async function AdminClientPage({
           Save keeps a draft. Publish emails Meet your EA, with a 3-business-day reply deadline in Eastern time.
           Publishing again sends the email again and does not change that deadline.
           After the client asks for a different match, the next publish is the second introduction and starts a new deadline.
+          Publishing after a rematch or departure marks that replacement presented. There is no credit.
           Photos are URLs. This portal doesn’t store uploaded files.
         </p>
         <input type="hidden" name="userId" value={user.id} />

@@ -1,5 +1,6 @@
+import { formatNewYork } from '@/lib/business-days';
 import { formatDate } from '@/lib/money';
-import { describeMatch, listClientsForAdmin } from '@/lib/match';
+import { REMATCHES_PER_YEAR, REPLACEMENT_BUSINESS_DAYS, describeMatch, listClientsForAdmin } from '@/lib/match';
 import { planLabel } from '@/lib/plans';
 
 export const dynamic = 'force-dynamic';
@@ -7,8 +8,17 @@ export const dynamic = 'force-dynamic';
 function notice(code?: string): string {
   if (code === 'onboarding') return 'Onboarding marked complete.';
   if (code === 'kickoff') return 'Kickoff marked done.';
-  if (code === 'departure') return 'Departure recorded. It does not count as a client rematch.';
+  if (code === 'departure') {
+    return `Departure recorded. It does not count as a rematch and does not create a credit. Present a replacement within ${REPLACEMENT_BUSINESS_DAYS} business days.`;
+  }
   return '';
+}
+
+function replacementLabel(dueAt: string, presentedAt: string): string {
+  if (!dueAt) return '—';
+  const due = formatNewYork(dueAt);
+  if (!presentedAt) return due;
+  return `${due} · presented ${formatDate(presentedAt)}`;
 }
 
 function problem(code?: string): string {
@@ -63,9 +73,11 @@ export default async function AdminPage({
               <span className="k">Declines</span>
               <span className="v">{client.declines}</span>
               <span className="k">Rematches</span>
-              <span className="v">{client.rematches} of 1 this year</span>
+              <span className="v">{client.rematches} of {REMATCHES_PER_YEAR} in the last 12 months</span>
               <span className="k">Departures</span>
               <span className="v">{client.departures}</span>
+              <span className="k">Replacement by</span>
+              <span className="v">{replacementLabel(client.replacementDueAt, client.replacementPresentedAt)}</span>
             </div>
             <div className="admin-actions">
               <a className="btn btn-primary" href={`/admin/${client.id}`}>

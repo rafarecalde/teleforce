@@ -322,7 +322,7 @@ function AccountView({
         <p className="note ok" role="status">Request received. Your Partnership Manager will be in touch.</p>
       )}
       {matchNotice === 'rematch-used' && (
-        <p className="note ok" role="status">Your Partnership Manager already has a rematch request from this past year.</p>
+        <p className="note ok" role="status">You&apos;ve used both rematches for the past year. Your Partnership Manager is still glad to talk it through.</p>
       )}
 
       {!onboardingComplete && (

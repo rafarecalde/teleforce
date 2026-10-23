@@ -97,6 +97,7 @@ const MATCH_PACKAGES_SCHEMA = `
     stripe_subscription_id TEXT NOT NULL DEFAULT '',
     billing_notified_at TEXT,
     client_notified_at TEXT,
+    replacement_presented_at TEXT,
     kickoff_booked INTEGER NOT NULL DEFAULT 0,
     kickoff_completed_at TEXT,
     updated_at TEXT NOT NULL
@@ -226,6 +227,7 @@ async function migrateMatchFlow(current: Client): Promise<void> {
     ['stripe_subscription_id', `ALTER TABLE match_packages ADD COLUMN stripe_subscription_id TEXT NOT NULL DEFAULT ''`],
     ['billing_notified_at', `ALTER TABLE match_packages ADD COLUMN billing_notified_at TEXT`],
     ['client_notified_at', `ALTER TABLE match_packages ADD COLUMN client_notified_at TEXT`],
+    ['replacement_presented_at', `ALTER TABLE match_packages ADD COLUMN replacement_presented_at TEXT`],
   ];
   for (const [name, sql] of adds) {
     if (!names.has(name)) await current.execute(sql);

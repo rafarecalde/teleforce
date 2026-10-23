@@ -4,6 +4,11 @@ import type { PlanCode } from './plans';
 import { normalizeEmail, normalizeName, normalizeOptional } from './validate';
 import { getUserById } from './users';
 
+/** Client-requested rematches after kickoff. Departures never count toward this. */
+export const REMATCHES_PER_YEAR = 2;
+/** A replacement is due this many weekdays after a rematch request or a departure. */
+export const REPLACEMENT_BUSINESS_DAYS = 10;
+
 const DEFAULT_ADMIN_EMAIL = 'rafael@recaldelaw.com';
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -35,6 +40,8 @@ export type MatchPackage = {
   stripeSubscriptionId: string;
   billingNotifiedAt: string;
   clientNotifiedAt: string;
+  /** Set when ops publishes an assistant after a rematch or departure. */
+  replacementPresentedAt: string;
   kickoffBooked: boolean;
   kickoffCompletedAt: string;
   updatedAt: string;
@@ -82,6 +89,10 @@ export type AdminClient = {
   declines: number;
   rematches: number;
   departures: number;
+  /** Latest rematch or departure, plus ten business days. Empty when there is none. */
+  replacementDueAt: string;
+  /** Publish time for that latest event. Empty until ops presents the replacement. */
+  replacementPresentedAt: string;
 };
 
 type Row = Record<string, unknown>;
@@ -163,6 +174,7 @@ function mapMatch(row: Row): MatchPackage {
     stripeSubscriptionId: text(row, 'stripe_subscription_id'),
     billingNotifiedAt: text(row, 'billing_notified_at'),
     clientNotifiedAt: text(row, 'client_notified_at'),
+    replacementPresentedAt: text(row, 'replacement_presented_at'),
     kickoffBooked: Number(row.kickoff_booked) === 1,
     kickoffCompletedAt: text(row, 'kickoff_completed_at'),
     updatedAt: text(row, 'updated_at'),
@@ -176,7 +188,7 @@ const MATCH_COLUMNS = `
   match_ready_at, match_accepted_at, match_accepted_ip, match_accepted_ua,
   acceptance_method, declined_at, presentation, reminder_sent_at,
   billing_start_at, stripe_subscription_id, billing_notified_at, client_notified_at,
-  kickoff_booked, kickoff_completed_at, updated_at
+  replacement_presented_at, kickoff_booked, kickoff_completed_at, updated_at
 `;
 
 export async function getMatchByUserId(userId: string): Promise<MatchPackage | null> {
@@ -202,9 +214,11 @@ export async function listClientsForAdmin(nowIso = new Date().toISOString()): Pr
       m.ea_name, m.match_ready_at, m.match_accepted_at,
       m.kickoff_booked, m.kickoff_completed_at,
       m.acceptance_method, m.declined_at, m.presentation, m.billing_start_at,
+      m.replacement_presented_at,
       (SELECT COUNT(*) FROM match_events e WHERE e.user_id = u.id AND e.kind = 'decline') AS decline_count,
       (SELECT COUNT(*) FROM match_events e WHERE e.user_id = u.id AND e.kind = 'departure') AS departure_count,
-      (SELECT COUNT(*) FROM match_events e WHERE e.user_id = u.id AND e.kind = 'rematch' AND e.created_at >= ?) AS rematch_count
+      (SELECT COUNT(*) FROM match_events e WHERE e.user_id = u.id AND e.kind = 'rematch' AND e.created_at >= ?) AS rematch_count,
+      (SELECT MAX(created_at) FROM match_events e WHERE e.user_id = u.id AND e.kind IN ('rematch', 'departure')) AS replacement_from
     FROM users u
     LEFT JOIN match_packages m ON m.user_id = u.id
     ORDER BY u.created_at DESC
@@ -235,8 +249,21 @@ export async function listClientsForAdmin(nowIso = new Date().toISOString()): Pr
       declines: Number(record.decline_count) || 0,
       rematches: Number(record.rematch_count) || 0,
       departures: Number(record.departure_count) || 0,
+      ...replacementStatus(text(record, 'replacement_from'), text(record, 'replacement_presented_at')),
     };
   });
+}
+
+/** Ten business days after a rematch request or departure. Empty when `fromIso` is blank. */
+export function replacementDueAt(fromIso: string): string {
+  if (!fromIso.trim()) return '';
+  return addBusinessDays(fromIso, REPLACEMENT_BUSINESS_DAYS);
+}
+
+function replacementStatus(fromIso: string, presentedAt: string): { replacementDueAt: string; replacementPresentedAt: string } {
+  const due = replacementDueAt(fromIso);
+  const presented = presentedAt && fromIso && presentedAt >= fromIso ? presentedAt : '';
+  return { replacementDueAt: due, replacementPresentedAt: presented };
 }
 
 function normalizeImageUrl(raw: string): string | null {
@@ -427,6 +454,7 @@ export async function saveMatchPackage(userId: string, draft: MatchDraft, publis
       sql: `UPDATE users SET matched_ea_name = ? WHERE id = ?`,
       args: [value.eaName, userId],
     });
+    if (publish) await noteReplacementPresented(userId, now);
     return { ok: true, eaName: value.eaName, pmName: value.pmName, pmEmail: value.pmEmail };
   }
   const upsert = {
@@ -464,7 +492,25 @@ export async function saveMatchPackage(userId: string, draft: MatchDraft, publis
   } else {
     await client.execute(upsert);
   }
+  if (publish) await noteReplacementPresented(userId, now);
   return { ok: true, eaName: value.eaName, pmName: value.pmName, pmEmail: value.pmEmail };
+}
+
+/** Publishing after a rematch or departure is the replacement presentation. No credit is stored. */
+async function noteReplacementPresented(userId: string, at: string): Promise<void> {
+  const client = await db();
+  await client.execute({
+    sql: `UPDATE match_packages
+      SET replacement_presented_at = ?
+      WHERE user_id = ?
+        AND EXISTS (
+          SELECT 1 FROM match_events e
+          WHERE e.user_id = match_packages.user_id
+            AND e.kind IN ('rematch', 'departure')
+            AND e.created_at > COALESCE(match_packages.replacement_presented_at, '')
+        )`,
+    args: [at, userId],
+  });
 }
 
 export async function acceptMatch(input: {
@@ -594,7 +640,7 @@ export async function matchCounts(userId: string, nowIso = new Date().toISOStrin
 export async function clientCanRequestRematch(userId: string, match: MatchPackage | null): Promise<boolean> {
   if (!match?.matchAcceptedAt || !match.kickoffCompletedAt) return false;
   const counts = await matchCounts(userId);
-  return counts.rematches < 1;
+  return counts.rematches < REMATCHES_PER_YEAR;
 }
 
 export type MatchEvent = {
@@ -604,6 +650,19 @@ export type MatchEvent = {
   note: string;
   createdAt: string;
 };
+
+/** Newest client rematch or departure. Empty when the client has neither. */
+export async function latestReplacementAt(userId: string): Promise<string> {
+  const client = await db();
+  const result = await client.execute({
+    sql: `SELECT MAX(created_at) AS created_at
+      FROM match_events
+      WHERE user_id = ? AND kind IN ('rematch', 'departure')`,
+    args: [userId],
+  });
+  const row = result.rows[0] as unknown as Row | undefined;
+  return row ? text(row, 'created_at') : '';
+}
 
 export async function listMatchEvents(userId: string): Promise<MatchEvent[]> {
   const client = await db();
@@ -674,7 +733,7 @@ export async function requestRematch(input: {
   const match = await getMatchByUserId(input.userId);
   if (!match?.matchAcceptedAt || !match.kickoffCompletedAt) return 'unavailable';
   const counts = await matchCounts(input.userId, input.at);
-  if (counts.rematches >= 1) return 'used';
+  if (counts.rematches >= REMATCHES_PER_YEAR) return 'used';
   const note = input.note.replace(/\s+/g, ' ').trim().slice(0, 1000);
   const client = await db();
   await client.execute({
@@ -826,7 +885,7 @@ export async function listMatchWork(): Promise<MatchWork[]> {
       m.match_ready_at, m.match_accepted_at, m.match_accepted_ip, m.match_accepted_ua,
       m.acceptance_method, m.declined_at, m.presentation, m.reminder_sent_at,
       m.billing_start_at, m.stripe_subscription_id, m.billing_notified_at, m.client_notified_at,
-      m.kickoff_booked, m.kickoff_completed_at, m.updated_at,
+      m.replacement_presented_at, m.kickoff_booked, m.kickoff_completed_at, m.updated_at,
       u.email, u.full_name, u.plan, u.stripe_customer_id, u.default_payment_method_id
     FROM match_packages m
     JOIN users u ON u.id = m.user_id
