@@ -76,7 +76,7 @@ That last row matters most. The role scales with trust. In month one, you delega
 
 ## How Teleforce Delivers It
 
-Teleforce places dedicated, full-time, bilingual (English/Spanish) executive assistants from the top tier of Latin American talent—rigorously vetted career professionals, employed and managed by Teleforce, and working in your U.S. time zone so anticipation happens in real time. Pricing is **$3,000/mo on a 3-month commitment or $2,700/mo on a 12-month commitment**, and you can switch 3→12 anytime with the $300/mo difference credited to your final month.
+Teleforce places dedicated, full-time, bilingual (English/Spanish) executive assistants from the top tier of Latin American talent—rigorously vetted career professionals, employed and managed by Teleforce, and working in your U.S. time zone so anticipation happens in real time. Pricing is **$3,000/mo on a 3-month commitment or $2,700/mo on a 12-month commitment**. Move to the 12-month rate whenever you’re ready and save $300/mo. Nothing is charged at signup. [See Terms](/terms).
 
 The best way to see what a great EA can own for you is to talk through your actual week. Start there.
 

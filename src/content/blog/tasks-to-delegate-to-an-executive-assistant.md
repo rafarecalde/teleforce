@@ -111,7 +111,7 @@ Not accounting—the admin around it, which still eats hours:
 
 - Log and categorize expenses
 - Prepare expense reports and reimbursements
-- Track invoices and send payment reminders
+- Track bills and send payment reminders
 - Organize receipts and documentation for your bookkeeper
 - Flag unusual charges and expiring subscriptions
 

@@ -14,7 +14,7 @@ faq:
   - q: "How do I keep data secure with a remote executive assistant?"
     a: "Use the same controls you'd use for any employee: a password manager for shared logins, role-based access instead of sharing raw credentials, two-factor authentication, and access you can revoke instantly. A dedicated EA employed and managed by Teleforce works within your systems and permissions, not around them, so you keep full control of who sees what."
   - q: "How much does a remote executive assistant cost?"
-    a: "A dedicated Teleforce EA is $3,000/mo on a 3-month commitment or $2,700/mo on a 12-month commitment—full-time and working in your time zone. You can switch 3→12 anytime and the $300/mo difference is credited to your final month. See our full breakdown of executive assistant cost for how that compares to in-house."
+    a: "A dedicated Teleforce EA is $3,000/mo on a 3-month commitment or $2,700/mo on a 12-month commitment—full-time and working in your time zone. Move to the 12-month rate whenever you’re ready and save $300/mo. See Terms. See our full breakdown of executive assistant cost for how that compares to in-house."
 related:
   - nearshore-executive-assistant
   - cost-of-an-executive-assistant
@@ -81,7 +81,7 @@ Share access, not raw passwords—a password manager lets the EA use logins with
 
 ## What a Remote EA Actually Costs
 
-The economics are the quiet argument for going remote. A dedicated Teleforce EA is **$3,000/mo on a 3-month commitment or $2,700/mo on a 12-month commitment**—full-time, dedicated, and working your hours. You can switch 3→12 anytime, and the $300/mo difference is credited to your final month. That's a strategic partner for less than the fully loaded cost of a junior in-office hire once you count salary, benefits, payroll tax, equipment, and office space. For the full comparison, see [what does an executive assistant cost](/blog/cost-of-an-executive-assistant).
+The economics are the quiet argument for going remote. A dedicated Teleforce EA is **$3,000/mo on a 3-month commitment or $2,700/mo on a 12-month commitment**—full-time, dedicated, and working your hours. Move to the 12-month rate whenever you’re ready and save $300/mo. [See Terms](/terms). That's a strategic partner for less than the fully loaded cost of a junior in-office hire once you count salary, benefits, payroll tax, equipment, and office space. For the full comparison, see [what does an executive assistant cost](/blog/cost-of-an-executive-assistant).
 
 Remote isn't the discount version of executive support. It's the version that gives you the widest talent pool, real-time overlap, and lower total cost at once. The only thing you give up is the commute.
 

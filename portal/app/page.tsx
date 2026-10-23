@@ -1,6 +1,6 @@
 import Script from 'next/script';
 import { getSession } from '@/lib/auth';
-import { ONBOARDING_CALENDLY_URL } from '@/lib/constants';
+import { BILLING_LINE, ONBOARDING_CALENDLY_URL } from '@/lib/constants';
 import { addMonthsISO, formatDate } from '@/lib/money';
 import { DEMO, type DemoPlan } from '@/lib/demo';
 import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/plans';
@@ -113,8 +113,8 @@ function accountPlan(user: User): DemoPlan {
     rate12: formatDollars(PLAN_PRICE_12),
     monthlySavings: formatDollars(monthlySavings),
     annualSavings: formatDollars(monthlySavings * 12),
-    serviceStart: 'When your EA kicks off, or 3 business days after you accept',
-    commitmentEnd: 'Set at kickoff',
+    serviceStart: 'Kickoff, 3 business days after you accept, or automatic acceptance',
+    commitmentEnd: 'Begins when billing starts',
   };
 }
 
@@ -331,7 +331,7 @@ function AccountView({
         <section className="card" id="onboarding-call">
           <h2>Schedule your onboarding call</h2>
           <p className="hint">
-            About 30 minutes, with a prep sheet beforehand. We’ll learn how you work, then find your EA. Nothing is charged on this call.
+            About 30 minutes, with a prep sheet beforehand. We’ll learn how you work, then your Partnership Manager starts the match. Nothing is charged on this call.
           </p>
           <div className="calendly-inline-widget" data-url={ONBOARDING_CALENDLY_URL} />
           <p className="muted" style={{ fontSize: 13.5, margin: '12px 0 0' }}>
@@ -355,7 +355,7 @@ function AccountView({
         <h2>Your plan</h2>
         {!preview && (
           <p className="hint">
-            No charge while we search and match. Billing starts when your EA kicks off — or 3 business days after you accept your match.
+            {BILLING_LINE}
           </p>
         )}
         {plans.map((plan) => (
@@ -387,8 +387,7 @@ function AccountView({
         <h2>Add another EA</h2>
         <p className="hint">
           Request another dedicated executive assistant for your team. Each seat is full-time, on
-          the same Terms. We use this to match someone, then follow up. No charge while we search
-          and match. Billing starts when that EA kicks off — or 3 business days after you accept.
+          the same Terms. We use this to match someone, then follow up. {BILLING_LINE}
         </p>
         <AddEaForm persist={persistBilling} />
       </section>

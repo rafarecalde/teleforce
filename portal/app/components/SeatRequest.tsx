@@ -15,8 +15,8 @@ export default function SeatRequest({ label }: { label: string }) {
   if (status === 'done') {
     return (
       <div className="note ok" role="status">
-        Noted. We’ll follow up to scope {label.toLowerCase()}. Nothing is charged until you agree on
-        the details.
+        Noted. We’ll follow up about {label.toLowerCase()}. Your EA seat stays on the plan you already
+        chose.
       </div>
     );
   }
@@ -35,7 +35,7 @@ export default function SeatRequest({ label }: { label: string }) {
         <label>
           {label} — what should we scope?
         </label>
-        <textarea placeholder="Rough volume, languages, anything relevant…" required />
+        <textarea placeholder="What should we look at?" required />
       </div>
       <button className="btn btn-ghost" type="submit" disabled={status === 'working'}>
         {status === 'working' ? 'Sending…' : 'Send note'}

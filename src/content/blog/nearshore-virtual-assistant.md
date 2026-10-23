@@ -84,7 +84,7 @@ Do not buy this model to save a story.
 
 Nearshore is a bet on overlap and language, not a slogan.
 
-> **If your assistant lives in tomorrow, you still live in the queue.** Get a dedicated bilingual seat on U.S. hours — employed by us, rematched if the fit is wrong. [Book a call →](/#contact)
+> **If your assistant lives in tomorrow, you still live in the queue.** Get a dedicated bilingual seat on U.S. hours — employed by us, with two rematches a year if the fit is wrong. [Book a call →](/#contact)
 
 ## How Teleforce staffs the seat
 

@@ -14,7 +14,7 @@ faq:
   - q: "When does a virtual assistant make more sense than an executive assistant?"
     a: "A VA fits when you have a narrow, repeatable task with clear instructions and low stakes if it slips—bulk data entry, one-off research, or overflow work you can fully specify. If the work touches your calendar, your clients, or decisions that require context, you want an executive assistant."
   - q: "How much does an executive assistant cost compared to a virtual assistant?"
-    a: "Gig VAs advertise low hourly or monthly rates, but hidden rework, turnover, and onboarding erode the savings. A dedicated Teleforce executive assistant is $3,000/mo on a 3-month commitment or $2,700/mo on a 12-month commitment—full-time, vetted, and working in your time zone. You switch 3→12 anytime and the $300/mo difference is credited to your final month."
+    a: "Gig VAs advertise low hourly or monthly rates, but hidden rework, turnover, and onboarding erode the savings. A dedicated Teleforce executive assistant is $3,000/mo on a 3-month commitment or $2,700/mo on a 12-month commitment—full-time, vetted, and working in your time zone. Move to the 12-month rate whenever you’re ready and save $300/mo. See Terms."
 related:
   - what-does-an-executive-assistant-do
   - how-to-hire-an-executive-assistant
@@ -72,7 +72,7 @@ This is also why vetting isn't a luxury. Judgment can't be instructed into someo
 
 Teleforce places **executive assistants**, not commodity VAs. Each one is a dedicated, full-time, bilingual (English/Spanish) professional from the top tier of Latin American talent—rigorously vetted, employed and managed by Teleforce, and working in your U.S. time zone so you're collaborating in real time, not passing tasks across a queue.
 
-Pricing is straightforward: **$3,000/mo on a 3-month commitment, or $2,700/mo on a 12-month commitment.** You can switch 3→12 anytime, and the $300/mo difference is credited to your final month. That's a full-time strategic partner for less than the loaded cost of a junior in-house hire—and without the rework tax of a rotating cast of gig VAs.
+Pricing is straightforward: **$3,000/mo on a 3-month commitment, or $2,700/mo on a 12-month commitment.** Move to the 12-month rate whenever you’re ready and save $300/mo. [See Terms](/terms). That's a full-time strategic partner for less than the loaded cost of a junior in-house hire—and without the rework tax of a rotating cast of gig VAs.
 
 If you're weighing the choice, the question isn't "which is cheaper per hour." It's "which one gives me my time back." When the work needs judgment, the answer is an executive assistant. When you're ready to hire one, here's [how to hire an executive assistant](/blog/how-to-hire-an-executive-assistant).
 

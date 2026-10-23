@@ -31,7 +31,7 @@ The title is doing too much work in the market. “Virtual assistant,” “remo
 
 **A full-life prestige EA** will book the household, the wellness stack, and the personal logistics. Useful if that is the product you want. It is a different product.
 
-Teleforce’s [executive assistant seat](/) is the first model: business operations, bilingual English/Spanish, Latin America talent on U.S. hours, employed and rematched by us. Household admin can sit in the background. It is not why the seat exists.
+Teleforce’s [executive assistant seat](/) is the first model: business operations, bilingual English/Spanish, Latin America talent on U.S. hours, employed by us. Lifestyle and household work is a different product.
 
 If you need volume work with no judgment — order entry, CRM cleanup, document processing — that is closer to outsourced data entry than to an EA. Do not stuff a dedicated assistant with keystrokes they should not own.
 
@@ -170,7 +170,7 @@ If you want the operating version of this — what to hand off first, and in wha
 
 ## What Teleforce means by the role
 
-Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade support behind the recruiting. The EA offer is one dedicated, full-time assistant — English and Spanish, on your U.S. hours — employed and managed by us. Your Partnership Manager matches you with an executive assistant from the top tier. They stay on the engagement for oversight, tools, and best practices, and rematch if the fit is wrong.
+Teleforce is a bilingual LATAM operator with 30+ years of Fortune 500-grade support behind the recruiting. The EA offer is one dedicated, full-time assistant — English and Spanish, on your U.S. hours — employed and managed by us. Your Partnership Manager matches you with an executive assistant from the top tier. They stay on the engagement for oversight, tools guidance, and best practices. After kickoff, two rematches a year. If your EA leaves, we present someone new within 10 business days. [See Terms](/terms).
 
 This is not a marketplace freelancer and not a shared pool. It is a seat.
 

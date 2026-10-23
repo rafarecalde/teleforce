@@ -32,7 +32,7 @@ const included = [
   'One dedicated, full-time virtual executive assistant — not a shared pool',
   'Bilingual EN/ES when you need it — vendors, stakeholders, U.S.–LatAm ops',
   'Business-ops scope: inbox, calendar, follow-ups, coordination, sales support, PM',
-  'Matching, onboarding, coaching, and rematch included',
+  'Matching, onboarding, coaching, and two rematches a year',
   'A Partnership Manager, so you’re not running foreign HR',
   'Employed and managed by Teleforce. One monthly card charge. You delegate.',
 ];
@@ -49,7 +49,7 @@ const compare = [
   ['Bilingual EN/ES', 'Hit or miss', 'Not the wedge', 'Native, by design'],
   ['Dedicated full-time', 'Rare', 'Yes', 'Yes — one named seat'],
   ['Who employs them', 'You, or nobody', 'The vendor', 'Teleforce. You just delegate.'],
-  ['Rematch', 'Your problem', 'Varies', 'Included'],
+  ['Rematch', 'Your problem', 'Varies', 'Two a year after kickoff'],
   ['Price shape', 'Hour packs', '~$3k/mo band', `$${price3} / $${price12} per month`],
 ];
 
@@ -72,15 +72,15 @@ const faq = [
   },
   {
     q: 'What’s included in the monthly rate?',
-    a: `One dedicated full-time virtual EA, matching, onboarding, coaching, a Partnership Manager, and rematch if the fit isn’t right. $${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. ${EA_CLOCK_NOTE} That first charge is the first month of service — not a deposit. No foreign entity, no separate payroll, no hour packs. Taxes extra.`,
+    a: `One dedicated full-time virtual EA, matching, onboarding, coaching, a Partnership Manager, and two rematches a year after kickoff. $${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. ${EA_CLOCK_NOTE} That first charge is the first month of service — not a deposit. No foreign entity, no separate payroll, no hour packs. Taxes extra.`,
   },
   {
     q: 'How is this different from Athena, Wing, or a cheap VA?',
-    a: 'Athena sells an elite full-life EA in a similar price band. Wing-style managed VAs are a fit for generalist task work. Cheap VAs sell hours. Teleforce sells a dedicated virtual executive assistant: bilingual EN/ES, business-ops first, employed and rematched by us. Same ~$2.7–3k seat energy — different category.',
+    a: 'Athena sells an elite full-life EA in a similar price band. Wing-style managed VAs are a fit for generalist task work. Cheap VAs sell hours. Teleforce sells a dedicated virtual executive assistant: bilingual EN/ES, business-ops first, employed by us, with two rematches a year. Same ~$2.7–3k seat energy — different category.',
   },
   {
     q: 'What if the match isn’t right?',
-    a: 'Your Partnership Manager stays with the seat. Pass once before you accept. After kickoff, two rematches a year. If your EA leaves, we replace them fast.',
+    a: 'Your Partnership Manager stays with the seat. Swap once before you accept. After kickoff, two rematches a year. If your EA leaves, that doesn’t count — we present someone new within 10 business days.',
   },
   ...EA_JOURNEY_FAQ,
   {
@@ -98,7 +98,7 @@ const jsonLd = [
     provider: { '@type': 'Organization', name: 'Teleforce' },
     areaServed: ['US', 'CA'],
     description:
-      'A dedicated, full-time virtual executive assistant from the top tier of bilingual talent — multi-stage vetted, employed, and rematched by Teleforce.',
+      'A dedicated, full-time virtual executive assistant from the top tier of bilingual talent — multi-stage vetted and employed by Teleforce, with two rematches a year.',
     offers: {
       '@type': 'AggregateOffer',
       lowPrice: EA.price12mo,
@@ -224,7 +224,7 @@ const jsonLd = [
           <li>You’re the bottleneck. Inbox, calendar, and follow-ups eat the week.</li>
           <li>Cheap VAs turn over. You re-explain the same preferences every quarter.</li>
           <li>Overnight offshore looks cheap until your afternoon becomes their tomorrow.</li>
-          <li>Hour packs never own the outcome — they invoice the attempt.</li>
+          <li>Hour packs never own the outcome — they charge for the attempt.</li>
         </ul>
       </div>
     </section>
@@ -252,11 +252,11 @@ const jsonLd = [
     <section class="block" id="how">
       <div class="wrap reveal">
         <div class="eyebrow">The mechanism</div>
-        <h2 class="disp">Teleforce Matching — we reject, employ, and rematch.</h2>
+        <h2 class="disp">Teleforce Matching — we reject, employ, and stand behind the seat.</h2>
         <p class="path-line">{EA_JOURNEY_LINE}</p>
         <p class="sub" style="max-width:64ch">{EA_TIMING_LINE}</p>
         <p class="sub" style="max-width:64ch;margin-top:14px">
-          One onboarding call, about 30 minutes, with a prep sheet beforehand. Your Partnership Manager starts matching after it. About a week later you get a Meet-your-EA package — intro video and background — and accept with one click. At kickoff you’re live, usually the same day or the next business day, and you and your EA run the day-to-day.
+          One onboarding call, about 30 minutes, with a prep sheet beforehand. Your Partnership Manager starts matching after it. About a week later your Meet-your-EA package arrives by branded email and in the portal — intro video, background, and your Partnership Manager. Accept EA with one click, or swap once within 3 business days. Book kickoff from that email or the portal. You’re live, usually the same day or the next business day.
         </p>
         <div class="steps offer-steps">
           {steps.map(([t, b], i) => (
@@ -279,9 +279,9 @@ const jsonLd = [
       <div class="get-grid">
         <div>
           <div class="eyebrow">What you get</div>
-          <h2 class="disp">One seat. Real ownership. All-in.</h2>
+          <h2 class="disp">One seat. Real ownership.</h2>
           <p class="sub">
-            A dedicated virtual executive assistant — bilingual EN/ES, business-ops first. Personal admin can sit in the background. It is not why this page exists.
+            A dedicated virtual executive assistant — bilingual EN/ES, business-ops first. Lifestyle admin is a different product.
           </p>
           <ul class="checks">
             {included.map((i) => <li>{i}</li>)}
@@ -359,7 +359,7 @@ const jsonLd = [
           <div class="ea-tier">
             <div class="ea-tier-tag">3-month</div>
             <div class="ea-amount"><span class="cur">$</span>{price3}<span class="per">/ mo</span></div>
-            <div class="ea-tier-sub">3-month commitment · stay flexible</div>
+            <div class="ea-tier-sub">90-day term</div>
             <a href="#match" class="btn btn-amber ea-tier-btn">Apply for a match</a>
           </div>
           <div class="ea-tier feature">
@@ -374,7 +374,7 @@ const jsonLd = [
           <li>Dedicated full-time virtual executive assistant</li>
           <li>Multi-stage vetted, trained, employed by Teleforce</li>
           <li>Matching and structured onboarding</li>
-          <li>Partnership Manager + rematch if the fit isn’t right</li>
+          <li>Partnership Manager + two rematches a year</li>
         </ul>
         <p class="ea-fine">{EA_PRICING_NOTE_LEAD} <b style="color:var(--ink)">$300/mo</b>. {EA_PRICING_NOTE_TAIL} <a href="/terms">See Terms</a>.</p>
       </div>
@@ -385,9 +385,9 @@ const jsonLd = [
     <div class="wrap reveal risk">
       <div>
         <div class="eyebrow">Risk reversal</div>
-        <h2 class="disp">Wrong fit? We rematch. You’re not stuck with a bad hire.</h2>
+        <h2 class="disp">Wrong fit? Two rematches a year.</h2>
         <p class="sub" style="max-width:60ch">
-          The screen is ours. The seat stays yours. Your Partnership Manager stays on the partnership so you’re not running foreign HR — and if the match isn’t working, we put someone else in the chair.
+          The screen is ours. The seat stays yours. Your Partnership Manager stays on the partnership so you’re not running foreign HR. After kickoff you can ask for two rematches a year. If your EA leaves, that doesn’t count — we present someone new within 10 business days.
         </p>
         <div class="hero-cta">
           <a href="#match" class="btn btn-amber">Apply for a match</a>

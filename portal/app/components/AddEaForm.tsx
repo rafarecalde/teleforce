@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ADD_EA_ACK_TEXT } from '@/lib/constants';
+import { ADD_EA_ACK_TEXT, BILLING_LINE } from '@/lib/constants';
 import { EA_BILINGUAL, EA_FOCUS, EA_START } from '@/lib/ea-request-fields';
 
 type Status = 'idle' | 'working' | 'done' | 'error';
@@ -56,8 +56,7 @@ export default function AddEaForm({ persist = false }: { persist?: boolean }) {
     return (
       <div className="note ok" role="status">
         Request received. We’ll match a full-time EA to the work you described and follow up with
-        timing. No charge while we search and match. Billing starts when that EA kicks off — or 3
-        business days after you accept.
+        timing. {BILLING_LINE}
       </div>
     );
   }
