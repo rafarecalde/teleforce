@@ -74,7 +74,7 @@ The point is that nearshore makes remote feel local. Same hours, shared context,
 
 Teleforce places **nearshore executive assistants** from the top tier of Latin American talent—dedicated, full-time, bilingual (English/Spanish) career professionals, rigorously vetted, employed and managed by us, and working in your U.S. time zone. You get the real-time overlap of an in-house hire and the language range of a bilingual team, without the domestic cost.
 
-Pricing is straightforward: **$3,000/mo on a 3-month commitment, or $2,700/mo on a 12-month commitment.** You can switch 3→12 anytime, and the $300/mo difference is credited to your final month. No payroll, benefits, or equipment to manage on your side—we handle employment and management, you get a strategic partner on your clock.
+Pricing is straightforward: **$3,000/mo on a 3-month commitment, or $2,700/mo on a 12-month commitment.** Move to the 12-month rate whenever you’re ready and save $300/mo. No payroll or benefits to run on your side — Teleforce employs and manages the assistant, and you get a strategic partner on your clock. [See Terms](/terms).
 
 If overlap and language are what's been holding back your delegation, nearshore is the answer that keeps both. When you're ready, [book a discovery call](/#contact) and we'll match you with an EA built for how you work.
 

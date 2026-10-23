@@ -13,7 +13,7 @@ faq:
   - q: "When is an in-house EA the better call?"
     a: "When you need someone on-site most days, when the role includes facilities or personal household logistics as the core job, or when your compliance team requires a W-2 employee on U.S. soil. Do not force a virtual seat into those constraints."
   - q: "How is a dedicated virtual EA different from a freelance VA?"
-    a: "A freelance VA is usually a contractor you manage — recruiting, backup, and quality are on you. A dedicated virtual EA employed by a provider is a named full-time seat: they recruit, pay, coach, and rematch. You delegate. You do not become the foreign HR department."
+    a: "A freelance VA is usually a contractor you manage — recruiting, backup, and quality are on you. A dedicated virtual EA employed by a provider is a named full-time seat: they recruit, pay, and coach, with two rematches a year. You delegate. You do not become the foreign HR department."
   - q: "Can we start virtual and hire in-house later?"
     a: "Yes. Many operators buy a virtual seat to prove the workstreams, then add an on-site hire if the office or the board calendar demands it. The reverse also works: keep a senior in-house EA and add a virtual seat for volume and bilingual coverage."
 related:
@@ -42,7 +42,7 @@ Score yourself honestly. Do not score the brochure.
 | Language | Whatever you can hire in your city | Bilingual English/Spanish is a design choice, not a unicorn search |
 | Hours | Your office hours, plus whatever commute does to energy | Can be aligned to U.S. business hours from Latin America |
 | Confidentiality | Strong for physical files and side-of-desk conversations | Strong for digital work if access and NDAs are real; weak if you refuse to grant tools |
-| Backup | You recruit again when they leave | A rematch is part of a managed seat |
+| Backup | You recruit again when they leave | If they leave, a new match within 10 business days. Two rematches a year if the fit is wrong. |
 | Brand / hospitality | Hosts visitors, reads the room | Does not replace a front-of-house hire |
 
 This is the same shape as the outsourced vs. in-house support decision: speed, control, language, and volume — not a single cost cell.
@@ -64,7 +64,7 @@ A dedicated virtual EA — not a marketplace freelancer you babysit — wins whe
 
 - **You need the seat this quarter.** A [virtual executive assistant](/blog/virtual-executive-assistant) who already works this way ramps on your tools, not on “finding a two-bedroom near the office.”
 - **Your market and vendors are bilingual.** One person who can run English and Spanish threads without a handoff. That is hard to hire in most U.S. cities and expensive when you do.
-- **You do not want to become an employer of record abroad.** Nearshore talent on a managed seat means payroll, HR, and rematch stay with the provider.
+- **You do not want to become an employer of record abroad.** Nearshore talent on a managed seat means payroll and HR stay with the provider, plus two rematches a year.
 - **The work is digital.** Inbox, calendar, research, travel, vendors, CRM hygiene, follow-ups. That is most of the modern EA job.
 - **You have been absorbing the BLS shift yourself** — doing your own scheduling and chase-downs “until we hire” — and the until never comes.
 
@@ -90,7 +90,7 @@ The other hybrid: you are not ready for an EA at all. You need appointment setti
 
 **Hour packs and ticket VAs.** Cheap feelings. No one owns the week. You stay the integrator.
 
-**Employed, dedicated seat.** The provider recruits, pays, coaches, and rematches. They match you with an executive assistant from the top tier. This is the Teleforce model: LATAM talent, U.S. hours, English and Spanish, Fortune 500-grade delivery standards behind a 30-year operator. You are not hiring “a VA from the internet.” You are buying a named FTE without running the foreign entity.
+**Employed, dedicated seat.** The provider recruits, pays, and coaches. Two rematches a year after kickoff. They match you with an executive assistant from the top tier. This is the Teleforce model: LATAM talent, U.S. hours, English and Spanish, Fortune 500-grade delivery standards behind a 30-year operator. You are not hiring “a VA from the internet.” You are buying a named FTE without running the foreign entity.
 
 The longer version of build-vs-buy for customer operations asks the same questions. Different queue.
 

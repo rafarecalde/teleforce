@@ -27,12 +27,12 @@ const faq = [
     a: 'A cheap VA is easily replaceable low-skill talent sold as hour packs or marketplace gigs. You buy tasks. You still own the outcome. A Teleforce EA is a dedicated, full-time bilingual executive assistant who owns business ops — inbox, calendar, follow-ups, coordination — on your U.S. hours. If you want tickets and overflow, a cheap VA is the right call. If you want someone who can actually run the work, this is a different seat.',
   },
   {
-    q: 'Why are new matches limited? What does top 1% mean?',
-    a: 'We only accept the top 1% of applicants who clear a multi-stage screen — interviews, skills assessments, and background checks. Most never pass. That bar is why the cohort is small, and why we only take a limited number of new matches at a time. There is no infinite bench. After the onboarding call, your Partnership Manager matches you with an executive assistant from that top-tier cohort. You can pass once before you accept. Scarcity here is the screen, not a countdown timer.',
+    q: 'Why are new matches limited?',
+    a: 'Applicants clear a multi-stage screen — interviews, skills assessments, and background checks — that most never pass. That bar is why the cohort is small, and why we only take a limited number of new matches at a time. There is no infinite bench. After the onboarding call, your Partnership Manager matches you with an executive assistant from that top-tier cohort. You can swap once before you accept. Scarcity here is the screen, not a countdown timer.',
   },
   {
     q: 'How does matching work?',
-    a: 'Discovery can happen before signup. Signup is terms and a card on file. No charge while we search and match. Then three steps. One onboarding call, about 30 minutes, with a prep sheet beforehand. It covers the work and how you operate. Your Partnership Manager starts matching after that call. About a week later, your Meet-your-EA package arrives by email and in the portal: an intro video, background on your Assistant, and your Partnership Manager. Accept with one click, or pass once and we’ll bring you one more. Kickoff is usually the same day you accept or the next business day. You’re typically live within about two weeks. Billing starts when your EA kicks off — or 3 business days after you accept your match.',
+    a: 'Discovery can happen before signup. Signup is the Terms and a card on file. Nothing is charged at signup. Then three steps. One onboarding call, about 30 minutes, with a prep sheet beforehand. Your Partnership Manager starts matching after that call. About a week later, your Meet-your-EA package arrives by branded email and in the portal: an intro video, background, and your Partnership Manager. Accept EA with one click, or swap once. You have 3 business days, with a reminder about 24 hours before. If you don’t choose, the match is accepted. Book kickoff from that email or the portal. You’re typically live within about two weeks. Billing starts at kickoff or 3 business days after you accept — whichever comes first — or the day the match is accepted automatically. Then the same day each month.',
   },
   ...EA_JOURNEY_FAQ,
 ];
@@ -133,7 +133,7 @@ const jsonLd = [
           <h3>One named seat. Real ownership.</h3>
           <ul>
             <li>Dedicated full-time bilingual EA</li>
-            <li>We screen, employ, and rematch</li>
+            <li>We screen, employ, and coach</li>
             <li>Your U.S. hours, in real time</li>
             <li>They learn how you operate</li>
           </ul>
@@ -145,16 +145,16 @@ const jsonLd = [
   <div class="howwrap">
     <section class="block" id="top-1">
       <div class="wrap reveal">
-        <div class="eyebrow">Top 1%</div>
-        <h2 class="disp">We only accept the top 1%. That’s why matches are limited.</h2>
+        <div class="eyebrow">The screen</div>
+        <h2 class="disp">Most applicants never pass. That’s why matches are limited.</h2>
         <p class="sub" style="max-width:64ch">
-          Every Teleforce EA clears a multi-stage screen — interviews, skills assessments, and background checks — that most applicants never pass. We only take the top 1% who do.
+          Every Teleforce EA clears a multi-stage screen — interviews, skills assessments, and background checks — that most applicants never pass.
         </p>
         <p class="sub" style="max-width:64ch;margin-top:14px">
           That bar is the reason the cohort stays small. We are not running an infinite bench of “available VAs.” Your Partnership Manager matches you from that top-tier cohort. When this intake is full, it is full.
         </p>
         <ul class="ea-checks">
-          <li>Top 1% of applicants — a multi-stage screen most never clear</li>
+          <li>A multi-stage screen most applicants never clear</li>
           <li>Career executive assistants and operators, not gig-economy help</li>
           <li>Background-checked, fluent in English and Spanish</li>
           <li>Limited new matches so quality does not slip</li>
@@ -218,7 +218,7 @@ const jsonLd = [
           <div class="ea-tier">
             <div class="ea-tier-tag">3-month</div>
             <div class="ea-amount"><span class="cur">$</span>{price3}<span class="per">/ mo</span></div>
-            <div class="ea-tier-sub">3-month commitment · stay flexible</div>
+            <div class="ea-tier-sub">90-day term</div>
             <a href="/ea/quiz" class="btn btn-amber ea-tier-btn">See if we have your fit</a>
           </div>
           <div class="ea-tier feature">
@@ -240,7 +240,7 @@ const jsonLd = [
   <section class="block" id="faq">
     <div class="wrap reveal">
       <div class="eyebrow">Questions</div>
-      <h2 class="disp">Cheap VA, top 1%, matching, the clock.</h2>
+      <h2 class="disp">Cheap VA, the screen, matching, the clock.</h2>
       <div class="ea-faq">
         {faq.map((f) => (
           <details class="ea-q">
