@@ -10,7 +10,7 @@ function notice(code?: string): string {
   if (code === 'kickoff') return 'Kickoff marked done.';
   if (code === 'kickoff-booked') return 'Kickoff marked booked. The portal booking card is hidden, and no kickoff reminder will go out.';
   if (code === 'departure') {
-    return `Departure recorded. It does not count as a rematch and does not create a credit. Present a replacement within ${REPLACEMENT_BUSINESS_DAYS} business days.`;
+    return `Departure recorded. It does not count as a rematch. Present a replacement within ${REPLACEMENT_BUSINESS_DAYS} business days. The monthly fee continues.`;
   }
   return '';
 }

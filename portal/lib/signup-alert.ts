@@ -58,7 +58,7 @@ function cardOnFile(brand: string, last4: string): string {
   if (safeBrand && safeLast4) return `${safeBrand} ···· ${safeLast4}`;
   if (safeLast4) return `···· ${safeLast4}`;
   if (safeBrand) return safeBrand;
-  return 'No card on file';
+  return 'Card not recorded';
 }
 
 function stripeCustomerUrl(customerId: string | null): string {

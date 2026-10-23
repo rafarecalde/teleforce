@@ -18,7 +18,7 @@ function banner(notice?: string, mail?: string, error?: string): { ok: string; e
   if (notice === 'kickoff-booked') ok = 'Kickoff marked booked. The portal booking card is hidden, and no kickoff reminder will go out.';
   if (notice === 'onboarding') ok = 'Onboarding marked complete.';
   if (notice === 'departure') {
-    ok = `Departure recorded. It does not count as a rematch and does not create a credit. Present a replacement within ${REPLACEMENT_BUSINESS_DAYS} business days.`;
+    ok = `Departure recorded. It does not count as a rematch. Present a replacement within ${REPLACEMENT_BUSINESS_DAYS} business days. The monthly fee continues.`;
   }
   let err = '';
   if (error === 'name') err = 'Enter the assistant’s first and last name.';
@@ -120,7 +120,7 @@ export default async function AdminClientPage({
               : '—'}
           </span>
         </div>
-        <p className="hint">Departures do not count as rematches. Rematches and departures never create a credit.</p>
+        <p className="hint">Departures do not count as rematches. The monthly fee continues through a rematch or a departure.</p>
         {events.length > 0 && (
           <ul className="hint" style={{ paddingLeft: 18 }}>
             {events.map((event) => {
@@ -182,7 +182,7 @@ export default async function AdminClientPage({
           Save keeps a draft. Publish emails Meet your EA, with a 3-business-day reply deadline in Eastern time.
           Publishing again sends the email again and does not change that deadline.
           After the client asks for a different match, the next publish is the second introduction and starts a new deadline.
-          Publishing after a rematch or departure marks that replacement presented. There is no credit.
+          Publishing after a rematch or departure marks that replacement presented. The monthly fee continues.
           Photos are URLs. This portal doesn’t store uploaded files.
         </p>
         <input type="hidden" name="userId" value={user.id} />

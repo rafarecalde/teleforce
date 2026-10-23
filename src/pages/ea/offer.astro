@@ -32,9 +32,9 @@ const included = [
   'One dedicated, full-time virtual executive assistant — not a shared pool',
   'Bilingual EN/ES when you need it — vendors, stakeholders, U.S.–LatAm ops',
   'Business-ops scope: inbox, calendar, follow-ups, coordination, sales support, PM',
-  'Matching, onboarding, coaching, and rematch — all-in',
-  'A success lead, so you’re not running foreign HR',
-  'Employed and managed by Teleforce. One monthly invoice. You delegate.',
+  'Matching, onboarding, coaching, and rematch included',
+  'A Partnership Manager, so you’re not running foreign HR',
+  'Employed and managed by Teleforce. One monthly card charge. You delegate.',
 ];
 
 const steps = [
@@ -50,7 +50,7 @@ const compare = [
   ['Dedicated full-time', 'Rare', 'Yes', 'Yes — one named seat'],
   ['Who employs them', 'You, or nobody', 'The vendor', 'Teleforce. You just delegate.'],
   ['Rematch', 'Your problem', 'Varies', 'Included'],
-  ['Price shape', 'Hour packs', '~$3k/mo band', `$${price3} / $${price12} all-in`],
+  ['Price shape', 'Hour packs', '~$3k/mo band', `$${price3} / $${price12} per month`],
 ];
 
 const faq = [
@@ -72,7 +72,7 @@ const faq = [
   },
   {
     q: 'What’s included in the monthly rate?',
-    a: `One dedicated full-time virtual EA, matching, onboarding, coaching, a success lead, and rematch if the fit isn’t right. $${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. ${EA_CLOCK_NOTE} That first charge is the first month of service — not a deposit. No foreign entity, no separate payroll, no hour packs.`,
+    a: `One dedicated full-time virtual EA, matching, onboarding, coaching, a Partnership Manager, and rematch if the fit isn’t right. $${price3}/mo on a 3-month commitment, $${price12}/mo on 12 months. ${EA_CLOCK_NOTE} That first charge is the first month of service — not a deposit. No foreign entity, no separate payroll, no hour packs. Taxes extra.`,
   },
   {
     q: 'How is this different from Athena, Wing, or a cheap VA?',
@@ -80,12 +80,12 @@ const faq = [
   },
   {
     q: 'What if the match isn’t right?',
-    a: 'We rematch. A success lead manages the partnership, and you’re not stuck with a bad hire. That’s the risk reversal: the screen is ours, the seat stays yours.',
+    a: 'Your Partnership Manager stays with the seat. Pass once before you accept. After kickoff, two rematches a year. If your EA leaves, we replace them fast.',
   },
   ...EA_JOURNEY_FAQ,
   {
-    q: 'Do you do personal / household admin?',
-    a: 'It can sit in the background. It is not the product. This page is for operators who need a virtual EA to own business ops — not a lifestyle concierge as the ad.',
+    q: 'Is this a lifestyle or household assistant?',
+    a: 'No. This seat is business support — inbox, calendar, follow-ups, and coordination. A lifestyle concierge is a different product.',
   },
 ];
 
@@ -256,7 +256,7 @@ const jsonLd = [
         <p class="path-line">{EA_JOURNEY_LINE}</p>
         <p class="sub" style="max-width:64ch">{EA_TIMING_LINE}</p>
         <p class="sub" style="max-width:64ch;margin-top:14px">
-          Post-signup: one deep onboarding call (~60 minutes), with a prep sheet beforehand. Your partnership manager owns matching after it. You’re matched with an executive assistant from the top tier. At kickoff, service starts the same day or next business day, and you and your EA run the day-to-day, with full back-end support behind the seat.
+          One onboarding call, about 30 minutes, with a prep sheet beforehand. Your Partnership Manager starts matching after it. About a week later you get a Meet-your-EA package — intro video and background — and accept with one click. At kickoff you’re live, usually the same day or the next business day, and you and your EA run the day-to-day.
         </p>
         <div class="steps offer-steps">
           {steps.map(([t, b], i) => (
@@ -320,7 +320,7 @@ const jsonLd = [
       <div class="eyebrow">The category, honestly</div>
       <h2 class="disp">Not a cheap VA. Not a full-life clone.</h2>
       <p class="sub" style="max-width:64ch">
-        Same dedicated-seat energy as premium EAs — bilingual, business-first, all-in. Different job than a task VA. Different job than a household concierge.
+        Same dedicated-seat energy as premium EAs — bilingual, business-first, one monthly rate. Different job than a task VA. Different job than a lifestyle concierge.
       </p>
       <div class="lp-compare-wrap">
         <table class="lp-compare">
@@ -374,9 +374,9 @@ const jsonLd = [
           <li>Dedicated full-time virtual executive assistant</li>
           <li>Multi-stage vetted, trained, employed by Teleforce</li>
           <li>Matching and structured onboarding</li>
-          <li>Success lead + rematch if the fit isn’t right</li>
+          <li>Partnership Manager + rematch if the fit isn’t right</li>
         </ul>
-        <p class="ea-fine">{EA_PRICING_NOTE_LEAD} <b style="color:var(--ink)">$300/mo</b>. {EA_PRICING_NOTE_TAIL}</p>
+        <p class="ea-fine">{EA_PRICING_NOTE_LEAD} <b style="color:var(--ink)">$300/mo</b>. {EA_PRICING_NOTE_TAIL} <a href="/terms">See Terms</a>.</p>
       </div>
     </section>
   </div>
@@ -387,7 +387,7 @@ const jsonLd = [
         <div class="eyebrow">Risk reversal</div>
         <h2 class="disp">Wrong fit? We rematch. You’re not stuck with a bad hire.</h2>
         <p class="sub" style="max-width:60ch">
-          The screen is ours. The seat stays yours. A success lead manages the partnership so you’re not running foreign HR — and if the match isn’t working, we put someone else in the chair.
+          The screen is ours. The seat stays yours. Your Partnership Manager stays on the partnership so you’re not running foreign HR — and if the match isn’t working, we put someone else in the chair.
         </p>
         <div class="hero-cta">
           <a href="#match" class="btn btn-amber">Apply for a match</a>
@@ -407,7 +407,7 @@ const jsonLd = [
         {faq.map((f) => (
           <details class="ea-q">
             <summary>{f.q}<span class="pl">+</span></summary>
-            <FaqAnswer answer={f.a} steps={'steps' in f ? f.steps : undefined} tail={'tail' in f ? f.tail : undefined} />
+            <FaqAnswer answer={f.a} steps={'steps' in f ? f.steps : undefined} tail={'tail' in f ? f.tail : undefined} linkHref={'linkHref' in f ? f.linkHref : undefined} linkLabel={'linkLabel' in f ? f.linkLabel : undefined} />
           </details>
         ))}
       </div>
