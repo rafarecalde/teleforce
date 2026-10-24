@@ -16,22 +16,31 @@ export async function POST(req: NextRequest) {
 
   const form = await req.formData().catch(() => null);
   const userId = String(form?.get('userId') ?? '');
+  const eaId = String(form?.get('eaId') ?? '');
   const intent = String(form?.get('intent') ?? '');
+  const onEas = String(form?.get('returnTo') ?? '') === 'eas';
   const edit = isUserId(userId) ? `/admin/${userId}` : '/admin';
-  if (!isUserId(userId)) return back('/admin?error=missing');
+  const home = onEas ? '/admin/eas' : edit;
+  if (!onEas && !isUserId(userId)) return back('/admin?error=missing');
 
   try {
     if (intent === 'unlink') {
+      if (!isUserId(userId)) return back('/admin/eas?error=missing');
       await unlinkEaFromClient(userId);
-      return back(`${edit}?notice=ea-unlinked`);
+      return back(onEas ? '/admin/eas?notice=unlinked' : `${edit}?notice=ea-unlinked`);
     }
-    const eaId = String(form?.get('eaId') ?? '');
-    if (!UUID.test(eaId)) return back(`${edit}?error=ea`);
-    const linked = await linkEaToClient(eaId, userId);
-    if (!linked) return back(`${edit}?error=ea`);
-    return back(`${edit}?notice=ea-linked`);
+    if (!UUID.test(eaId) || !isUserId(userId)) return back(`${home}?error=ea`);
+    const linked = await linkEaToClient(eaId, userId, { confirm: form?.get('confirm') === '1' });
+    if (linked === 'confirm') {
+      const query = onEas
+        ? `/admin/eas?confirm=1&ea=${eaId}&user=${userId}`
+        : `${edit}?confirm=1&ea=${eaId}`;
+      return back(query);
+    }
+    if (linked !== 'linked') return back(`${home}?error=ea`);
+    return back(onEas ? `/admin/eas?notice=linked&ea=${eaId}` : `${edit}?notice=ea-linked`);
   } catch (err) {
     console.error('ea link failed', err instanceof Error ? err.message : 'error');
-    return back(`${edit}?error=ea`);
+    return back(`${home}?error=ea`);
   }
 }

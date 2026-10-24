@@ -19,7 +19,6 @@ export async function POST(req: NextRequest) {
   const userId = String(form?.get('userId') ?? '');
   const taskId = String(form?.get('taskId') ?? '');
   const intent = String(form?.get('intent') ?? '');
-  const list = isUserId(userId) ? `/ea/${userId}` : '/ea';
   if (!isUserId(userId) || !UUID.test(taskId)) return back('/ea?error=missing');
   if (!(await eaCanAccessClient(session.userId, userId))) return back('/ea?error=missing');
 
@@ -27,17 +26,17 @@ export async function POST(req: NextRequest) {
     if (intent === 'status' || intent === 'done') {
       const status = intent === 'done' ? 'done' : String(form?.get('status') ?? '');
       const saved = await updateTask(userId, taskId, { status });
-      if (!saved) return back(`${list}?error=task`);
+      if (!saved) return back('/ea?error=task');
     } else if (intent === 'comment') {
       const saved = await addTaskComment(userId, taskId, 'admin', session.name || 'Your EA', String(form?.get('body') ?? ''));
-      if (!saved) return back(`${list}?error=task`);
+      if (!saved) return back('/ea?error=task');
     } else {
-      return back(`${list}?error=task`);
+      return back('/ea?error=task');
     }
   } catch (err) {
-    if (err instanceof HttpError) return back(`${list}?error=task`);
+    if (err instanceof HttpError) return back('/ea?error=task');
     console.error('ea task update failed', err instanceof Error ? err.message : 'error');
-    return back(`${list}?error=task`);
+    return back('/ea?error=task');
   }
-  return back(`${list}?notice=saved`);
+  return back('/ea?notice=saved');
 }

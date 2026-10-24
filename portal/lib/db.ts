@@ -189,11 +189,11 @@ const EA_INVITES_SCHEMA = `
 
 const EA_INVITES_INDEX = `CREATE INDEX IF NOT EXISTS ea_invites_ea ON ea_invites (ea_id, created_at)`;
 
-/** One assistant login per client. An assistant may have several clients. */
+/** One assistant per client, and one client per assistant. */
 const EA_ASSIGNMENTS_SCHEMA = `
   CREATE TABLE IF NOT EXISTS ea_assignments (
     user_id TEXT PRIMARY KEY,
-    ea_id TEXT NOT NULL,
+    ea_id TEXT NOT NULL UNIQUE,
     created_at TEXT NOT NULL
   )
 `;
@@ -300,6 +300,58 @@ async function migratePaymentOptional(current: Client): Promise<void> {
   }
 }
 
+function safeIndexName(value: string): string | null {
+  return /^[A-Za-z_][A-Za-z0-9_]*$/.test(value) ? value : null;
+}
+
+/**
+ * Assistants are dedicated to one client. Existing tables only forced one
+ * assistant per client. Rebuild once so ea_id is unique, keeping the newest
+ * link when an assistant had more than one.
+ */
+async function migrateOneClientPerEa(current: Client): Promise<void> {
+  const tables = await current.execute(`SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'ea_assignments'`);
+  if (!tables.rows[0]) return;
+  const indexes = await current.execute(`PRAGMA index_list('ea_assignments')`);
+  for (const row of indexes.rows) {
+    if (Number(row.unique) !== 1) continue;
+    const indexName = safeIndexName(String(row.name));
+    if (!indexName) continue;
+    const info = await current.execute(`PRAGMA index_info('${indexName}')`);
+    const columns = info.rows.map((item) => String(item.name));
+    if (columns.length === 1 && columns[0] === 'ea_id') return;
+  }
+  try {
+    await current.executeMultiple(`
+BEGIN IMMEDIATE;
+CREATE TABLE ea_assignments_one (
+  user_id TEXT PRIMARY KEY,
+  ea_id TEXT NOT NULL UNIQUE,
+  created_at TEXT NOT NULL
+);
+INSERT INTO ea_assignments_one (user_id, ea_id, created_at)
+SELECT a.user_id, a.ea_id, a.created_at
+FROM ea_assignments a
+WHERE a.user_id = (
+  SELECT b.user_id FROM ea_assignments b
+  WHERE b.ea_id = a.ea_id
+  ORDER BY b.created_at DESC, b.user_id DESC
+  LIMIT 1
+);
+DROP TABLE ea_assignments;
+ALTER TABLE ea_assignments_one RENAME TO ea_assignments;
+COMMIT;
+`);
+  } catch (err) {
+    try {
+      await current.execute('ROLLBACK');
+    } catch {
+      // The failed script may not have left a transaction open.
+    }
+    throw err;
+  }
+}
+
 /** Columns added after the first match_packages table. ALTER only when missing. */
 async function migrateMatchFlow(current: Client): Promise<void> {
   const result = await current.execute('PRAGMA table_info(match_packages)');
@@ -347,6 +399,7 @@ export async function db(): Promise<Client> {
       .then(() => current.execute(EA_INVITES_INDEX))
       .then(() => current.execute(EA_ASSIGNMENTS_SCHEMA))
       .then(() => current.execute(EA_ASSIGNMENTS_INDEX))
+      .then(() => migrateOneClientPerEa(current))
       .then(
         () => undefined,
         (err) => {

@@ -3,7 +3,7 @@ import { formatDeadline, formatNewYork } from '@/lib/business-days';
 import { formatDate } from '@/lib/money';
 import { REMATCHES_PER_YEAR, REPLACEMENT_BUSINESS_DAYS, defaultPartnershipManager, describeMatch, getMatchByUserId, isUserId, latestReplacementAt, listMatchEvents, matchCounts, replacementDueAt, type AdminClient } from '@/lib/match';
 import { planLabel } from '@/lib/plans';
-import { assignmentForClient, listEaAccounts } from '@/lib/ea';
+import { linkReplaces, listEaAdminRows, previewEaLink } from '@/lib/ea';
 import { loadTaskBoard } from '@/lib/tasks';
 import type { TaskBoardData } from '@/lib/task-types';
 import { displayMatchedEa, getUserById } from '@/lib/users';
@@ -48,7 +48,7 @@ export default async function AdminClientPage({
   searchParams,
 }: {
   params: { userId: string };
-  searchParams: { notice?: string; mail?: string; error?: string };
+  searchParams: { notice?: string; mail?: string; error?: string; confirm?: string; ea?: string };
 }) {
   if (!isUserId(params.userId)) notFound();
   const user = await getUserById(params.userId);
@@ -63,8 +63,14 @@ export default async function AdminClientPage({
     : '';
   const defaults = defaultPartnershipManager();
   const { ok, err } = banner(searchParams?.notice, searchParams?.mail, searchParams?.error);
-  const eaAccounts = await listEaAccounts();
-  const linkedEa = await assignmentForClient(user.id);
+  const eaAccounts = await listEaAdminRows();
+  const linkedEa = eaAccounts.find((account) => account.client?.id === user.id) || null;
+  const confirmEa = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(searchParams?.ea || '')
+    ? searchParams.ea || ''
+    : '';
+  const confirmPreview = searchParams?.confirm === '1' && confirmEa
+    ? await previewEaLink(confirmEa, user.id)
+    : null;
   let taskBoard: TaskBoardData | null = null;
   try {
     taskBoard = await loadTaskBoard(user.id);
@@ -199,6 +205,7 @@ export default async function AdminClientPage({
         matchedName={displayMatchedEa(user.matchedEaName) || match?.eaName || ''}
         accounts={eaAccounts}
         linked={linkedEa}
+        confirm={confirmPreview && linkReplaces(confirmPreview) ? confirmPreview : null}
       />
 
       <AdminTasks userId={user.id} board={taskBoard} />

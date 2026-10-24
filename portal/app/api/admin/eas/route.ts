@@ -34,7 +34,9 @@ export async function POST(req: NextRequest) {
     const mailed = ea
       ? await sendEaInviteEmail({ to: ea.email, fullName: ea.fullName, inviteUrl: created.inviteUrl })
       : false;
-    return back(`/admin/eas?notice=created&ea=${created.id}&mail=${mailed ? 'sent' : 'failed'}&linked=${created.linked}`);
+    const pending = created.pendingUserId ? `&pending=${created.pendingUserId}` : '';
+    const asked = form?.get('linkByName') === '1' ? '&link=1' : '';
+    return back(`/admin/eas?notice=created&ea=${created.id}&mail=${mailed ? 'sent' : 'failed'}&linked=${created.linked}&matches=${created.matches}${pending}${asked}`);
   } catch (err) {
     if (err instanceof HttpError && err.status === 409) return back('/admin/eas?error=exists');
     if (err instanceof HttpError && err.status === 400) {
