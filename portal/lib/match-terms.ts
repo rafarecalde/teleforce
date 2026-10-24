@@ -1,16 +1,15 @@
+import { kickoffCalendlyUrl } from './constants';
+
 /** Public Terms page. Billing detail lives there, not in the portal copy. */
 export const TERMS_URL = 'https://tryteleforce.com/terms/';
 
 /** Short client-facing billing line. The Terms link carries the detail. */
 export const BILLING_NOTE = 'Your plan billing is covered in the Terms.';
 
-const DEFAULT_KICKOFF_CALENDLY_URL = 'https://calendly.com/tryteleforce-sales';
 const DEFAULT_PORTAL_URL = 'https://portal.tryteleforce.com';
 
-/** Kickoff scheduler. `KICKOFF_CALENDLY_URL` when it is an http(s) URL. */
-export function kickoffCalendlyUrl(): string {
-  return httpUrlOrDefault(process.env.KICKOFF_CALENDLY_URL, DEFAULT_KICKOFF_CALENDLY_URL, 'KICKOFF_CALENDLY_URL');
-}
+/** Kickoff scheduler. Valid `KICKOFF_CALENDLY_URL`, otherwise the onboarding scheduler. */
+export { kickoffCalendlyUrl };
 
 /** Link in match emails. `APP_URL` when set, otherwise the production portal. */
 export function portalHomeUrl(): string {
