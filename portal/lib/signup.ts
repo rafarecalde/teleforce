@@ -10,6 +10,7 @@ import { sendSignupAlertEmail } from './signup-alert';
 import { sendTermsAcceptanceEmail } from './terms-email';
 import { sendWelcomeEmail } from './welcome-email';
 import { getTermsDocument } from './terms';
+import { getEaByEmail } from './ea';
 import { getUserByEmail } from './users';
 import { asRecord, normalizeEmail, normalizeName, normalizePlan } from './validate';
 
@@ -45,7 +46,7 @@ export async function createSetup(body: unknown): Promise<{ clientSecret: string
   if (!plan) throw new HttpError(400, 'Choose a 3-month or 12-month plan.');
 
   const existing = await getUserByEmail(email);
-  if (existing) throw new HttpError(409, DUPLICATE);
+  if (existing || await getEaByEmail(email)) throw new HttpError(409, DUPLICATE);
 
   const nonce = newNonce();
   try {
@@ -287,6 +288,7 @@ export async function completeSignup(
     if (existing.setupIntentId === setupIntentId) return { ok: true, email };
     throw new HttpError(409, DUPLICATE);
   }
+  if (await getEaByEmail(email)) throw new HttpError(409, DUPLICATE);
 
   const stripe = getStripe();
 

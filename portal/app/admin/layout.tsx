@@ -22,6 +22,9 @@ function Topbar({ email }: { email?: string }) {
               Admin
             </span>
           )}
+          <a href="/admin/eas" className="mono" style={{ fontSize: 12.5, color: 'var(--on-dark-mut)', textDecoration: 'none' }}>
+            Assistants
+          </a>
           <a href="/" className="mono" style={{ fontSize: 12.5, color: 'var(--on-dark-mut)', textDecoration: 'none' }}>
             Portal
           </a>

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { signSession, sessionCookieOptions } from '@/lib/auth';
 import { SESSION_COOKIE } from '@/lib/constants';
+import { getEaByEmail } from '@/lib/ea';
 import { verifyPassword } from '@/lib/password';
 import { getUserByEmail } from '@/lib/users';
 import { normalizeEmail } from '@/lib/validate';
@@ -8,7 +9,8 @@ import { normalizeEmail } from '@/lib/validate';
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
-function redirectTo(base: string, error?: string, next?: string) {
+function redirectTo(base: string, error?: string, next?: string, role: 'client' | 'ea' = 'client') {
+  if (!error && role === 'ea') return NextResponse.redirect(`${base}/ea`, { status: 303 });
   const tasks = next === 'tasks';
   if (error) {
     const hash = tasks ? '#tasks' : '';
@@ -47,14 +49,29 @@ export async function POST(req: NextRequest) {
   try {
     const user = await getUserByEmail(normalized);
     const ok = await verifyPassword(password, user?.passwordHash);
-    if (!user || !ok) return redirectTo(base, 'credentials', next);
+    if (user && ok) {
+      const token = await signSession({
+        userId: user.id,
+        email: user.email,
+        name: user.fullName,
+        role: 'client',
+      });
+      const res = redirectTo(base, undefined, next, 'client');
+      res.cookies.set(SESSION_COOKIE, token, sessionCookieOptions());
+      return res;
+    }
+
+    const assistant = await getEaByEmail(normalized);
+    const assistantOk = await verifyPassword(password, assistant?.passwordHash);
+    if (!assistant || !assistant.passwordHash || !assistantOk) return redirectTo(base, 'credentials', next);
 
     const token = await signSession({
-      userId: user.id,
-      email: user.email,
-      name: user.fullName,
+      userId: assistant.id,
+      email: assistant.email,
+      name: assistant.fullName,
+      role: 'ea',
     });
-    const res = redirectTo(base, undefined, next);
+    const res = redirectTo(base, undefined, next, 'ea');
     res.cookies.set(SESSION_COOKIE, token, sessionCookieOptions());
     return res;
   } catch (err) {

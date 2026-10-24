@@ -1,4 +1,5 @@
 import Script from 'next/script';
+import { redirect } from 'next/navigation';
 import { getSession } from '@/lib/auth';
 import { BILLING_LINE, onboardingCalendlyUrl } from '@/lib/constants';
 import { addMonthsISO, formatDate } from '@/lib/money';
@@ -159,6 +160,8 @@ export default async function Page({
     );
   }
 
+  if (session?.role === 'ea') redirect('/ea');
+
   const previewEnabled = process.env.PREVIEW_MODE === '1';
   const previewQuery = Boolean(searchParams?.email || searchParams?.name || searchParams?.company);
   if (!session && previewEnabled && previewQuery) {
@@ -195,7 +198,7 @@ export default async function Page({
         <div className="login">
           <section className="card auth-card">
             <h1 className="display auth-title">Sign in</h1>
-            <p className="auth-sub">Sign in with the email and password from EA signup.</p>
+            <p className="auth-sub">Sign in with the email and password from EA signup. Assistants use the password from their invite.</p>
             <LoginForm signupHref={signupHref} error={err} />
           </section>
         </div>

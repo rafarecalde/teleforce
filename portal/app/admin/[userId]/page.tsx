@@ -3,10 +3,12 @@ import { formatDeadline, formatNewYork } from '@/lib/business-days';
 import { formatDate } from '@/lib/money';
 import { REMATCHES_PER_YEAR, REPLACEMENT_BUSINESS_DAYS, defaultPartnershipManager, describeMatch, getMatchByUserId, isUserId, latestReplacementAt, listMatchEvents, matchCounts, replacementDueAt, type AdminClient } from '@/lib/match';
 import { planLabel } from '@/lib/plans';
+import { assignmentForClient, listEaAccounts } from '@/lib/ea';
 import { loadTaskBoard } from '@/lib/tasks';
 import type { TaskBoardData } from '@/lib/task-types';
-import { getUserById } from '@/lib/users';
+import { displayMatchedEa, getUserById } from '@/lib/users';
 import AdminTasks from '../../components/AdminTasks';
+import EaAssign from '../../components/EaAssign';
 
 export const dynamic = 'force-dynamic';
 
@@ -34,7 +36,10 @@ function banner(notice?: string, mail?: string, error?: string): { ok: string; e
   if (error === 'save') err = 'That update didn’t save. Try again.';
   if (error === 'limit') err = 'This client already used the one pre-acceptance decline. Edit the current introduction, or wait until they accept.';
   if (notice === 'task') ok = 'Task updated.';
+  if (notice === 'ea-linked') ok = 'Assistant login linked. They’ll see this client’s tasks.';
+  if (notice === 'ea-unlinked') ok = 'Assistant login removed from this client.';
   if (error === 'task') err = 'That task update didn’t save. Check the status or comment and try again.';
+  if (error === 'ea') err = 'That assistant link didn’t save. Try again.';
   return { ok, err };
 }
 
@@ -58,6 +63,8 @@ export default async function AdminClientPage({
     : '';
   const defaults = defaultPartnershipManager();
   const { ok, err } = banner(searchParams?.notice, searchParams?.mail, searchParams?.error);
+  const eaAccounts = await listEaAccounts();
+  const linkedEa = await assignmentForClient(user.id);
   let taskBoard: TaskBoardData | null = null;
   try {
     taskBoard = await loadTaskBoard(user.id);
@@ -186,6 +193,13 @@ export default async function AdminClientPage({
           )}
         </div>
       </section>
+
+      <EaAssign
+        userId={user.id}
+        matchedName={displayMatchedEa(user.matchedEaName) || match?.eaName || ''}
+        accounts={eaAccounts}
+        linked={linkedEa}
+      />
 
       <AdminTasks userId={user.id} board={taskBoard} />
 

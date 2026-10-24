@@ -298,6 +298,8 @@ The default order is overdue first, then priority, then due date. Dragging a tas
 
 On the kickoff card and on `/kickoff`, assigning a first task is optional and sits under Book your kickoff. The “You’re all set” email links to `/#tasks`. There is no email digest.
 
+Assistants have their own login, separate from client accounts. Admin creates one at `/admin/eas` with the assistant’s name and email. That sends a set-password link (the same Resend key as other portal mail; the link is also shown in admin if mail does not send). Linking uses the name already stored on the match: clients whose assistant name matches are connected, and the client page can link or replace that login. An assistant who signs in at `/` lands on `/ea`, sees only those clients, and can update task status, mark a task done, and comment. They do not see billing, other clients, or account settings. Each client’s private EA calendar feed is on that client’s task page.
+
 Calendar sync is a private ICS feed per account, one token for the client and one for the EA. Add to Google Calendar opens `https://calendar.google.com/calendar/r?cid=` with a `webcal://` feed of tasks that have a due date. Google’s servers fetch that URL, so `APP_URL` must be the public portal origin. No new credentials. Google OAuth push is not built. A later version would need a Google Cloud OAuth client with the Calendar API enabled, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, and a redirect URI on this portal, and the controls would stay hidden until those are set.
 
 ## Environment

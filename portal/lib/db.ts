@@ -165,6 +165,41 @@ const TASK_FEEDS_SCHEMA = `
   )
 `;
 
+/** Assistant logins. Separate from client accounts so they never see billing. */
+const EA_ACCOUNTS_SCHEMA = `
+  CREATE TABLE IF NOT EXISTS ea_accounts (
+    id TEXT PRIMARY KEY,
+    email TEXT NOT NULL UNIQUE,
+    full_name TEXT NOT NULL,
+    password_hash TEXT,
+    created_at TEXT NOT NULL
+  )
+`;
+
+const EA_INVITES_SCHEMA = `
+  CREATE TABLE IF NOT EXISTS ea_invites (
+    id TEXT PRIMARY KEY,
+    ea_id TEXT NOT NULL,
+    token TEXT NOT NULL UNIQUE,
+    expires_at TEXT NOT NULL,
+    used_at TEXT,
+    created_at TEXT NOT NULL
+  )
+`;
+
+const EA_INVITES_INDEX = `CREATE INDEX IF NOT EXISTS ea_invites_ea ON ea_invites (ea_id, created_at)`;
+
+/** One assistant login per client. An assistant may have several clients. */
+const EA_ASSIGNMENTS_SCHEMA = `
+  CREATE TABLE IF NOT EXISTS ea_assignments (
+    user_id TEXT PRIMARY KEY,
+    ea_id TEXT NOT NULL,
+    created_at TEXT NOT NULL
+  )
+`;
+
+const EA_ASSIGNMENTS_INDEX = `CREATE INDEX IF NOT EXISTS ea_assignments_ea ON ea_assignments (ea_id)`;
+
 const REBUILD_PAYMENT_OPTIONAL = `
 BEGIN IMMEDIATE;
 DROP TABLE IF EXISTS users_payment_optional;
@@ -307,6 +342,11 @@ export async function db(): Promise<Client> {
       .then(() => current.execute(TASK_COMMENTS_SCHEMA))
       .then(() => current.execute(TASK_COMMENTS_INDEX))
       .then(() => current.execute(TASK_FEEDS_SCHEMA))
+      .then(() => current.execute(EA_ACCOUNTS_SCHEMA))
+      .then(() => current.execute(EA_INVITES_SCHEMA))
+      .then(() => current.execute(EA_INVITES_INDEX))
+      .then(() => current.execute(EA_ASSIGNMENTS_SCHEMA))
+      .then(() => current.execute(EA_ASSIGNMENTS_INDEX))
       .then(
         () => undefined,
         (err) => {
