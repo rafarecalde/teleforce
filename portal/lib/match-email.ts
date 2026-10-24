@@ -338,6 +338,7 @@ function allSetMessage(input: MatchAcceptedClientInput): Outbound {
   const ea = oneLine(input.eaName) || 'your EA';
   const kickoff = kickoffCalendlyUrl();
   const portal = portalHomeUrl();
+  const tasksUrl = `${portal.replace(/\/$/, '')}/#tasks`;
   const text = `${hello}
 
 You're all set. ${ea} is ready to start.
@@ -346,6 +347,11 @@ Book your kickoff and you'll be handing off your week in no time. We can't wait 
 
 Book your kickoff:
 ${kickoff}
+
+Want your EA to arrive with work waiting? Assign a first task in your portal. It's optional.
+
+Assign your first task:
+${tasksUrl}
 
 Your portal:
 ${portal}
@@ -361,6 +367,8 @@ Teleforce
       paragraph(`You're all set. ${ea} is ready to start.`),
       paragraph("Book your kickoff and you'll be handing off your week in no time. We can't wait for you two to meet."),
       buttonParagraph('Book your kickoff', kickoff),
+      paragraph("Want your EA to arrive with work waiting? Assign a first task in your portal. It's optional."),
+      buttonParagraph('Assign your first task', tasksUrl, 'secondary'),
       linkParagraph('Open your portal', portal),
       termsNoteHtml(),
     ].join(''),

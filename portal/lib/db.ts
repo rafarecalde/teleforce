@@ -119,6 +119,52 @@ const MATCH_EVENTS_SCHEMA = `
 
 const MATCH_EVENTS_INDEX = `CREATE INDEX IF NOT EXISTS match_events_user_kind ON match_events (user_id, kind, created_at)`;
 
+/** Client tasks shared with the EA. Status and priority are checked in the app. */
+const TASKS_SCHEMA = `
+  CREATE TABLE IF NOT EXISTS tasks (
+    id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL,
+    title TEXT NOT NULL,
+    notes TEXT NOT NULL DEFAULT '',
+    due_date TEXT NOT NULL DEFAULT '',
+    priority TEXT NOT NULL DEFAULT 'normal',
+    link TEXT NOT NULL DEFAULT '',
+    status TEXT NOT NULL DEFAULT 'todo',
+    position INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+  )
+`;
+
+const TASKS_INDEX = `CREATE INDEX IF NOT EXISTS tasks_user ON tasks (user_id, position)`;
+
+const TASK_COMMENTS_SCHEMA = `
+  CREATE TABLE IF NOT EXISTS task_comments (
+    id TEXT PRIMARY KEY,
+    task_id TEXT NOT NULL,
+    user_id TEXT NOT NULL,
+    author_role TEXT NOT NULL,
+    author_name TEXT NOT NULL DEFAULT '',
+    body TEXT NOT NULL,
+    created_at TEXT NOT NULL
+  )
+`;
+
+const TASK_COMMENTS_INDEX = `CREATE INDEX IF NOT EXISTS task_comments_task ON task_comments (task_id, created_at)`;
+
+/**
+ * Private ICS subscriptions. The token in the URL is the secret.
+ * No Google API credentials.
+ */
+const TASK_FEEDS_SCHEMA = `
+  CREATE TABLE IF NOT EXISTS task_calendar_feeds (
+    user_id TEXT PRIMARY KEY,
+    client_token TEXT NOT NULL UNIQUE,
+    ea_token TEXT NOT NULL UNIQUE,
+    created_at TEXT NOT NULL
+  )
+`;
+
 const REBUILD_PAYMENT_OPTIONAL = `
 BEGIN IMMEDIATE;
 DROP TABLE IF EXISTS users_payment_optional;
@@ -192,6 +238,9 @@ async function migrateAccountLifecycle(current: Client): Promise<void> {
   if (!names.has('matched_ea_name')) {
     await current.execute('ALTER TABLE users ADD COLUMN matched_ea_name TEXT');
   }
+  if (!names.has('task_order_mode')) {
+    await current.execute(`ALTER TABLE users ADD COLUMN task_order_mode TEXT NOT NULL DEFAULT 'auto'`);
+  }
 }
 
 /**
@@ -253,6 +302,11 @@ export async function db(): Promise<Client> {
       .then(() => migrateMatchFlow(current))
       .then(() => current.execute(MATCH_EVENTS_SCHEMA))
       .then(() => current.execute(MATCH_EVENTS_INDEX))
+      .then(() => current.execute(TASKS_SCHEMA))
+      .then(() => current.execute(TASKS_INDEX))
+      .then(() => current.execute(TASK_COMMENTS_SCHEMA))
+      .then(() => current.execute(TASK_COMMENTS_INDEX))
+      .then(() => current.execute(TASK_FEEDS_SCHEMA))
       .then(
         () => undefined,
         (err) => {

@@ -290,6 +290,16 @@ card does not call Stripe.
 `http://localhost:3000`. A production build defaults to
 `https://portal.tryteleforce.com`.
 
+## Tasks
+
+Once a client is matched (and, if a live introduction exists, only after they accept), the portal shows a Tasks card. The client adds tasks with a title, notes, due date, priority, and an optional link. Statuses are To do, In progress, Waiting on you, and Done. Each task has a comment thread. There is no separate EA login: an admin allowlisted in `ADMIN_EMAILS` updates status and comments on the client’s admin page.
+
+The default order is overdue first, then priority, then due date. Dragging a task, or Move up / Move down, saves that order. Suggested order puts the list back on the default.
+
+On the kickoff card and on `/kickoff`, assigning a first task is optional and sits under Book your kickoff. The “You’re all set” email links to `/#tasks`. There is no email digest.
+
+Calendar sync is a private ICS feed per account, one token for the client and one for the EA. Add to Google Calendar opens `https://calendar.google.com/calendar/r?cid=` with a `webcal://` feed of tasks that have a due date. Google’s servers fetch that URL, so `APP_URL` must be the public portal origin. No new credentials. Google OAuth push is not built. A later version would need a Google Cloud OAuth client with the Calendar API enabled, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, and a redirect URI on this portal, and the controls would stay hidden until those are set.
+
 ## Environment
 
 | Variable | What |

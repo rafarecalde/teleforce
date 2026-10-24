@@ -10,6 +10,8 @@ import {
   safeImageUrl,
   videoEmbed,
 } from '@/lib/match-terms';
+import type { CalendarLinks } from '@/lib/task-types';
+import FirstTaskPrompt from './FirstTaskPrompt';
 
 function TermsNote({ id }: { id?: string }) {
   return (
@@ -187,7 +189,7 @@ export default function MeetYourEa({ match, rematchAvailable = false }: { match:
   );
 }
 
-export function KickoffPrompt({ match }: { match: MatchPackage }) {
+export function KickoffPrompt({ match, feeds }: { match: MatchPackage; feeds: CalendarLinks | null }) {
   const url = kickoffCalendlyUrl();
   const when = formatDate(match.matchAcceptedAt);
   return (
@@ -206,6 +208,7 @@ export function KickoffPrompt({ match }: { match: MatchPackage }) {
         </a>
       </p>
       <TermsNote id="kickoff-billing" />
+      <FirstTaskPrompt signedIn tasksHref="/#tasks" feeds={feeds} />
       <div className="calendly-inline-widget" data-url={url} />
       <p className="muted" style={{ fontSize: 13.5, margin: '12px 0 0' }}>
         <a href={url} target="_blank" rel="noopener noreferrer">

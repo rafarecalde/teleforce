@@ -7,7 +7,10 @@ import { formatDollars, PLAN_PRICE_12, PLAN_PRICE_3, planMonthly } from '@/lib/p
 import { retrieveCard } from '@/lib/stripe';
 import { displayMatchedEa, getUserById, hasCardOnFile, onboardingIsComplete, type User } from '@/lib/users';
 import { clientCanRequestRematch, getMatchByUserId, isAdminEmail, kickoffPromptOpen, type MatchPackage } from '@/lib/match';
+import { loadTaskBoard } from '@/lib/tasks';
+import type { TaskBoardData } from '@/lib/task-types';
 import MeetYourEa, { KickoffPrompt } from './components/MatchCards';
+import TaskBoard from './components/TaskBoard';
 import PlanCard from './components/PlanCard';
 import SwitchTo12 from './components/SwitchTo12';
 import SeatRequest from './components/SeatRequest';
@@ -218,6 +221,9 @@ export default async function Page({
     const card = hasCard ? await cardOnFile(user) : { brand: '', last4: '' };
     const match = await getMatchByUserId(user.id);
     const rematchAvailable = await clientCanRequestRematch(user.id, match);
+    const live = match?.matchReadyAt ? match : null;
+    const showTaskBoard = Boolean(displayMatchedEa(user.matchedEaName)) && (!live || Boolean(live.matchAcceptedAt));
+    const taskBoard = showTaskBoard || kickoffPromptOpen(live) ? await loadTaskBoard(user.id) : null;
     return (
       <AccountView
         email={user.email}
@@ -228,6 +234,7 @@ export default async function Page({
         onboardingComplete={onboardingIsComplete(user.onboardingCompletedAt)}
         match={match}
         rematchAvailable={rematchAvailable}
+        taskBoard={taskBoard}
         isAdmin={isAdminEmail(session.email)}
         matchNotice={searchParams?.match}
         hasCard={hasCard}
@@ -265,6 +272,7 @@ function AccountView({
   rematchAvailable = false,
   isAdmin = false,
   matchNotice = '',
+  taskBoard = null,
   billing,
   hasCard = true,
   persistBilling = false,
@@ -283,6 +291,7 @@ function AccountView({
   rematchAvailable?: boolean;
   isAdmin?: boolean;
   matchNotice?: string;
+  taskBoard?: TaskBoardData | null;
   billing: {
     contactName: string;
     company: string;
@@ -346,9 +355,11 @@ function AccountView({
 
       {showMatching && <p className="ea-match pending">Your assistant: matching in progress</p>}
 
-      {showKickoff && liveMatch && <KickoffPrompt match={liveMatch} />}
+      {showKickoff && liveMatch && <KickoffPrompt match={liveMatch} feeds={taskBoard?.feeds ?? null} />}
 
       {liveMatch && <MeetYourEa match={liveMatch} rematchAvailable={rematchAvailable} />}
+
+      {showHeadline && taskBoard && <TaskBoard initial={taskBoard} />}
 
       {!preview && !hasCard && <PaymentBanner />}
 
