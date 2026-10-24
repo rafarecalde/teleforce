@@ -95,6 +95,38 @@ CARDS = [
         "bars": [0.46, 0.72, 0.90, 0.40, 0.64, 0.82, 0.50, 0.68],
         "amber_bars": {2, 5, 7},
     },
+    {
+        "slug": "executive-assistant-vs-chief-of-staff",
+        "lines": ["EA first.", "Chief of staff", "later."],
+        "colors": [AMBER, CREAM, SAGE],
+        "kicker": "EXECUTIVE ASSISTANT VS CHIEF OF STAFF  ·  SIGNAL",
+        "bars": [0.36, 0.70, 0.48, 0.88, 0.54, 0.76, 0.42, 0.64],
+        "amber_bars": {0, 3, 5},
+    },
+    {
+        "slug": "executive-assistant-interview-questions",
+        "lines": ["Judgment.", "Not the polished", "answer."],
+        "colors": [CREAM, AMBER, SAGE],
+        "kicker": "EXECUTIVE ASSISTANT INTERVIEW QUESTIONS  ·  SIGNAL",
+        "bars": [0.62, 0.40, 0.84, 0.50, 0.72, 0.38, 0.90, 0.56],
+        "amber_bars": {2, 4, 6},
+    },
+    {
+        "slug": "how-to-work-with-an-executive-assistant",
+        "lines": ["Weekly sync.", "One page.", "Written rights."],
+        "colors": [CREAM, SAGE, AMBER],
+        "kicker": "HOW TO WORK WITH AN EA  ·  SIGNAL",
+        "bars": [0.48, 0.78, 0.36, 0.66, 0.92, 0.44, 0.70, 0.54],
+        "amber_bars": {1, 4, 7},
+    },
+    {
+        "slug": "signs-you-need-an-executive-assistant",
+        "lines": ["Your hour.", "Score the", "week."],
+        "colors": [AMBER, CREAM, SAGE],
+        "kicker": "DO I NEED AN EXECUTIVE ASSISTANT  ·  SIGNAL",
+        "bars": [0.74, 0.42, 0.60, 0.88, 0.46, 0.70, 0.34, 0.80],
+        "amber_bars": {0, 3, 7},
+    },
 ]
 
 
