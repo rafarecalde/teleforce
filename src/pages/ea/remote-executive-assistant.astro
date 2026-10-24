@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
+import LeadForm from '../../components/LeadForm.astro';
 import CtaBox from '../../components/CtaBox.astro';
 import FaqAnswer from '../../components/FaqAnswer.astro';
 import { EA, STATS, TESTIMONIALS, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_KICKOFF_STEP, EA_TIMING_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, EA_CLOCK_NOTE, faqAnswerText } from '../../consts';
@@ -143,8 +144,8 @@ const jsonLd = [
   noindex
   barePhone={false}
   bareLogoHref="#top"
-  bareCtaHref="#match"
-  bareCtaLabel="Find your EA"
+  bareCtaHref="#get-started"
+  bareCtaLabel="Get started"
 >
   <header class="hero" id="top">
     <div class="lp-hero">
@@ -161,7 +162,8 @@ const jsonLd = [
         </p>
 
         <div class="hero-cta">
-          <a href="#match" class="btn btn-amber">Find your EA</a>
+          <a href="#get-started" class="btn btn-amber">Get started</a>
+          <a href="#match" class="btn btn-ghost">Find your EA</a>
         </div>
         <p class="hero-alt">
           <a href="#pricing">See pricing details ↓</a>
@@ -231,6 +233,8 @@ const jsonLd = [
       </div>
     </section>
   </div>
+
+  <LeadForm idPrefix="remote" />
 
   <section class="block" id="compare">
     <div class="wrap reveal">

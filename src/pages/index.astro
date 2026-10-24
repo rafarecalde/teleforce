@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE, EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_KICKOFF_STEP, EA_TIMING_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, TESTIMONIALS, faqAnswerText } from '../consts';
 import BookingSection from '../components/BookingSection.astro';
+import LeadForm from '../components/LeadForm.astro';
 import FaqAnswer from '../components/FaqAnswer.astro';
 import WhyTheBarHolds from '../components/WhyTheBarHolds.astro';
 
@@ -82,7 +83,8 @@ const jsonLd = [
         <p class="lede">Full-time. Rigorously vetted. Working your hours. Experienced enough to take ownership, not just take instructions.</p>
         <p class="ea-timing">{EA_TIMING_LINE}</p>
         <div class="hero-cta">
-          <a href="#match" class="btn btn-amber">Get matched</a>
+          <a href="#get-started" class="btn btn-amber">Get started</a>
+          <a href="#match" class="btn btn-ghost">Get matched</a>
         </div>
         <div class="ea-chips">
           <span class="chip">Top-tier, vetted talent</span>
@@ -129,6 +131,8 @@ const jsonLd = [
       </div>
     </section>
   </div>
+
+  <LeadForm idPrefix="home" />
 
   <section class="block" id="why">
     <div class="wrap reveal">

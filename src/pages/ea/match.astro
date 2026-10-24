@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
+import LeadForm from '../../components/LeadForm.astro';
 import CtaBox from '../../components/CtaBox.astro';
 import FaqAnswer from '../../components/FaqAnswer.astro';
 import { EA, EA_JOURNEY_FAQ, EA_JOURNEY_LINE, EA_ONBOARDING_STEP, EA_MATCH_STEP, EA_KICKOFF_STEP, EA_TIMING_LINE, EA_PRICING_NOTE_LEAD, EA_PRICING_NOTE_TAIL, faqAnswerText } from '../../consts';
@@ -75,8 +76,8 @@ const jsonLd = [
   noindex
   barePhone={false}
   bareLogoHref="#top"
-  bareCtaHref="#match"
-  bareCtaLabel="Get Matched"
+  bareCtaHref="#get-started"
+  bareCtaLabel="Get started"
   image="/brand/ea-hero.jpg"
 >
   <header class="hero" id="top">
@@ -90,7 +91,8 @@ const jsonLd = [
           <p class="line-4">See if we have your fit.</p>
         </div>
         <div class="hero-cta">
-          <a href="/ea/quiz" class="btn btn-amber">See if we have your fit</a>
+          <a href="#get-started" class="btn btn-amber">Get started</a>
+          <a href="/ea/quiz" class="btn btn-ghost">See if we have your fit</a>
           <a href="#match" class="btn btn-ghost">Book a match call</a>
         </div>
         <p class="hero-price">${price3}/mo on 3 months · ${price12}/mo on 12.</p>
@@ -189,7 +191,9 @@ const jsonLd = [
         />
       </div>
     </div>
-  </section>
+    </section>
+
+  <LeadForm idPrefix="match" />
 
   <div class="howwrap">
     <section class="block" id="own">
