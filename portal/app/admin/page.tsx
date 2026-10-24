@@ -40,6 +40,9 @@ export default async function AdminPage({
 
   return (
     <>
+      <p className="page-sub" style={{ marginBottom: 8 }}>
+        <a href="/admin/eas">Assistant logins</a>
+      </p>
       <h1 className="page-title display">Clients</h1>
       <p className="page-sub">
         Publish a match to email the client and show Meet your EA. Mark onboarding and kickoff here.

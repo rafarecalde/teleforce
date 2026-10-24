@@ -18,13 +18,16 @@ function secret(): Uint8Array {
   return new TextEncoder().encode(DEV_SECRET);
 }
 
-export type Principal = { userId: string; email: string; name: string };
+export type SessionRole = 'client' | 'ea';
+
+export type Principal = { userId: string; email: string; name: string; role: SessionRole };
 
 export async function signSession(principal: Principal): Promise<string> {
   return new SignJWT({
     email: principal.email,
     name: principal.name,
     userId: principal.userId,
+    role: principal.role,
   })
     .setProtectedHeader({ alg: 'HS256' })
     .setSubject(principal.userId)
@@ -46,6 +49,7 @@ export async function getSession(): Promise<Principal | null> {
       userId,
       email,
       name: payload.name ? String(payload.name) : '',
+      role: payload.role === 'ea' ? 'ea' : 'client',
     };
   } catch {
     return null;
