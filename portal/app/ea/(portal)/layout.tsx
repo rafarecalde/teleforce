@@ -1,9 +1,9 @@
 import { getSession } from '@/lib/auth';
-import { getEaById } from '@/lib/ea';
+import { clientForEa, getEaById } from '@/lib/ea';
 
 export const dynamic = 'force-dynamic';
 
-function Bar({ signedIn }: { signedIn: boolean }) {
+function Bar({ clientName }: { clientName?: string }) {
   return (
     <header className="topbar">
       <div className="row">
@@ -12,22 +12,22 @@ function Bar({ signedIn }: { signedIn: boolean }) {
           TELEFORCE
         </a>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-          {signedIn && (
-            <span className="mono" style={{ fontSize: 12, color: 'var(--on-dark-mut)' }}>
-              Assistant
+          {clientName ? (
+            <span id="ea-client-name" className="mono" style={{ fontSize: 12, color: 'var(--on-dark-mut)' }}>
+              {clientName}
             </span>
+          ) : (
+            <span className="mono" style={{ fontSize: 12, color: 'var(--on-dark-mut)' }}>Assistant</span>
           )}
-          {signedIn && (
-            <form action="/api/auth/logout" method="post">
-              <button
-                type="submit"
-                className="mono"
-                style={{ background: 'none', border: 'none', color: 'var(--on-dark-mut)', cursor: 'pointer', fontSize: 12.5 }}
-              >
-                Sign out
-              </button>
-            </form>
-          )}
+          <form action="/api/auth/logout" method="post">
+            <button
+              type="submit"
+              className="mono"
+              style={{ background: 'none', border: 'none', color: 'var(--on-dark-mut)', cursor: 'pointer', fontSize: 12.5 }}
+            >
+              Sign out
+            </button>
+          </form>
         </div>
       </div>
     </header>
@@ -45,11 +45,15 @@ export default async function EaLayout({ children }: { children: React.ReactNode
   if (!ea) {
     return (
       <>
-        <Bar signedIn={false} />
+        <header className="topbar">
+          <div className="row">
+            <span className="brand"><span className="dot" />TELEFORCE</span>
+          </div>
+        </header>
         <main>
           <div className="wrap">
             <h1 className="page-title display">Assistant sign-in</h1>
-            <p className="page-sub">Sign in with the password from your invite. This page is only your task list.</p>
+            <p className="page-sub">Sign in with the password from your invite. This page is only your client’s tasks.</p>
             <a className="btn btn-primary" href="/">Sign in</a>
           </div>
         </main>
@@ -57,9 +61,12 @@ export default async function EaLayout({ children }: { children: React.ReactNode
     );
   }
 
+  const client = await clientForEa(ea.id);
+  const clientName = client ? (client.fullName || client.email) : '';
+
   return (
     <>
-      <Bar signedIn />
+      <Bar clientName={clientName} />
       <main>
         <div className="wrap">{children}</div>
       </main>
