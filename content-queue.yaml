@@ -603,3 +603,35 @@ posts:
     publishDate: 2026-10-14
     status: done
 
+  - title: "Executive Assistant vs Chief of Staff: What a Founder Should Hire First"
+    slug: executive-assistant-vs-chief-of-staff
+    primaryKeyword: "executive assistant vs chief of staff"
+    intent: MoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-10-26
+    status: done
+
+  - title: "Executive Assistant Interview Questions That Test Judgment"
+    slug: executive-assistant-interview-questions
+    primaryKeyword: "executive assistant interview questions"
+    intent: BoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-10-28
+    status: done
+
+  - title: "How to Work With an Executive Assistant After the Handoff"
+    slug: how-to-work-with-an-executive-assistant
+    primaryKeyword: "how to work with an executive assistant"
+    intent: MoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-10-30
+    status: done
+
+  - title: "Do I Need an Executive Assistant? A Founder Self-Test"
+    slug: signs-you-need-an-executive-assistant
+    primaryKeyword: "do I need an executive assistant"
+    intent: BoFu
+    pillar: "Virtual Assistance"
+    publishDate: 2026-11-02
+    status: done
+
