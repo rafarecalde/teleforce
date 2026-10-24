@@ -6,15 +6,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Your call with the Teleforce team is booked. We'll come ready to talk about a dedicated executive assistant."
   noindexFollow
 >
-  <!-- Google Ads conversion — fires on this page load. Set Calendly to redirect
-       here after a booking, so a completed booking is measured as a conversion. -->
+  <!-- Booking conversion. Fires on this page load. Calendly can redirect here
+       from the event's confirmation settings. The Google Calendar embed cannot. -->
   <script slot="head" is:inline>
-    gtag('event', 'conversion', {'send_to': 'AW-18332056932/JvJ9COL479McEOT6s6VE'});
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        send_to: 'AW-18403081564/qkaOCLXb4OUcENz6osdE',
+        value: 1.0,
+        currency: 'USD'
+      });
+    }
   </script>
   <header class="ahead">
     <div class="wrap">
-      <div class="cat">You're booked</div>
-      <h1>Thank you — your call is set.</h1>
+      <div class="cat">Thank you</div>
+      <h1>You're booked.</h1>
       <div class="ameta"><span>Check your email for the calendar invite</span></div>
     </div>
   </header>
