@@ -1,0 +1,271 @@
+---
+// Inline get-started lead. Posts through the same FormSubmit alias the quiz
+// uses, which delivers to sales@tryteleforce.com. Stays on the page.
+import { FORM_ALIAS, GOOGLE_EMBED_URL } from '../consts';
+
+interface Props {
+  /** Unique prefix so field ids do not collide across pages. */
+  idPrefix?: string;
+  /** Quiz landing: show with the hero screen, hide once the quiz starts. */
+  quizHero?: boolean;
+}
+
+const { idPrefix = 'lead', quizHero = false } = Astro.props;
+---
+
+<section
+  class="lead-start"
+  id="get-started"
+  data-lead-form
+  data-alias={FORM_ALIAS}
+  data-embed={GOOGLE_EMBED_URL}
+  data-screen={quizHero ? 'hero' : undefined}
+>
+  <div class="wrap">
+    <div data-lead-panel="form">
+      <div class="lead-grid">
+        <div>
+          <div class="eyebrow">Get started</div>
+          <h2 class="disp">Tell us what you’d hand off first.</h2>
+          <p class="sub">
+            A name, a work email, and the work you want off your plate. We’ll come back about a dedicated EA — then you can grab a time.
+          </p>
+        </div>
+        <form class="lead-form" novalidate>
+          <input class="lead-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="field">
+            <label for={`${idPrefix}-name`}>Name</label>
+            <input id={`${idPrefix}-name`} name="name" type="text" autocomplete="name" placeholder="Your name" required maxlength="80" />
+          </div>
+          <div class="field">
+            <label for={`${idPrefix}-email`}>Work email</label>
+            <input id={`${idPrefix}-email`} name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@company.com" required maxlength="120" />
+          </div>
+          <div class="field">
+            <label for={`${idPrefix}-company`}>Company</label>
+            <input id={`${idPrefix}-company`} name="company" type="text" autocomplete="organization" placeholder="Company name" required maxlength="120" />
+          </div>
+          <div class="field">
+            <label for={`${idPrefix}-handoff`}>What would you hand off first?</label>
+            <textarea id={`${idPrefix}-handoff`} name="handoff" rows="3" maxlength="400" placeholder="Inbox, calendar, follow-ups…" required></textarea>
+          </div>
+          <p class="lead-error" role="alert" hidden></p>
+          <button class="btn btn-amber" type="submit">Get started</button>
+          <p class="lead-privacy"><a href="/privacy">Privacy Policy</a></p>
+        </form>
+      </div>
+    </div>
+
+    <div data-lead-panel="thanks" hidden>
+      <div class="eyebrow">You’re in</div>
+      <h2 class="disp">We have your note.</h2>
+      <p class="sub lead-thanks-copy">
+        Thank you. The next step is a short call — grab a time and we’ll talk about a dedicated EA on your hours.
+      </p>
+      <div class="lead-cal">
+        <iframe title="Book a discovery call with Teleforce" width="100%" height="680" loading="lazy"></iframe>
+      </div>
+      <p class="lead-cal-link">
+        <a href={GOOGLE_EMBED_URL} target="_blank" rel="noopener noreferrer">Open the scheduler</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const LEAD_CONVERSION = 'AW-18403081564/p49dCJjvj6gdENz6osdE';
+
+  function validEmail(value: string): boolean {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  function fireLeadConversion() {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', 'conversion', {
+      send_to: LEAD_CONVERSION,
+      value: 1.0,
+      currency: 'USD',
+    });
+  }
+
+  function showThanks(section: HTMLElement) {
+    const formPanel = section.querySelector<HTMLElement>('[data-lead-panel="form"]');
+    const thanks = section.querySelector<HTMLElement>('[data-lead-panel="thanks"]');
+    const frame = thanks?.querySelector('iframe');
+    const embed = section.dataset.embed || '';
+    if (frame && embed && !frame.src) frame.src = embed;
+    if (formPanel) formPanel.hidden = true;
+    if (thanks) thanks.hidden = false;
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function fieldValue(form: HTMLFormElement, name: string): string {
+    const el = form.elements.namedItem(name);
+    if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) return el.value.trim();
+    return '';
+  }
+
+  async function postLead(alias: string, payload: Record<string, string>): Promise<boolean> {
+    const ctrl = new AbortController();
+    const timer = window.setTimeout(() => ctrl.abort(), 12000);
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${alias}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `Get started — ${payload.company}`,
+          _template: 'table',
+          _captcha: 'false',
+          source: 'get-started',
+          ...payload,
+        }),
+        signal: ctrl.signal,
+      });
+      const data = (await res.json().catch(() => null)) as { success?: boolean | string } | null;
+      const ok = data?.success === true || data?.success === 'true';
+      return res.ok && ok;
+    } catch {
+      return false;
+    } finally {
+      window.clearTimeout(timer);
+    }
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-lead-form]').forEach((section) => {
+    const form = section.querySelector<HTMLFormElement>('form.lead-form');
+    const error = section.querySelector<HTMLElement>('.lead-error');
+    if (!form || form.dataset.bound === '1') return;
+    form.dataset.bound = '1';
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const name = fieldValue(form, 'name');
+      const email = fieldValue(form, 'email');
+      const company = fieldValue(form, 'company');
+      const handoff = fieldValue(form, 'handoff');
+      const honey = fieldValue(form, '_honey');
+      const showError = (message: string) => {
+        if (!error) return;
+        error.hidden = false;
+        error.textContent = message;
+      };
+
+      if (name.length < 2) return showError('Add your name.');
+      if (!validEmail(email)) return showError('Enter a work email.');
+      if (company.length < 2) return showError('Add your company.');
+      if (handoff.length < 2) return showError('Tell us what you’d hand off first.');
+      if (error) error.hidden = true;
+
+      if (honey) {
+        showThanks(section);
+        return;
+      }
+
+      const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      if (button) {
+        button.disabled = true;
+        button.textContent = 'Sending…';
+      }
+
+      const alias = section.dataset.alias || '';
+      const sent = alias
+        ? await postLead(alias, {
+            name,
+            email,
+            company,
+            handoff,
+            page: window.location.href,
+          })
+        : false;
+
+      if (!sent) {
+        if (button) {
+          button.disabled = false;
+          button.textContent = 'Get started';
+        }
+        showError('We couldn’t send that just now. Email sales@tryteleforce.com and we’ll take it from there.');
+        return;
+      }
+
+      fireLeadConversion();
+      showThanks(section);
+    });
+  });
+
+  declare global {
+    interface Window {
+      gtag?: (...args: unknown[]) => void;
+    }
+  }
+</script>
+
+<style>
+  .lead-start {
+    background: var(--paper-2);
+    color: var(--on-paper);
+    padding: 72px 0;
+    scroll-margin-top: 72px;
+  }
+  .lead-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .lead-start .eyebrow { color: var(--sage-deep); }
+  .lead-start h2.disp {
+    font-size: clamp(32px, 5vw, 52px);
+    text-transform: none;
+    max-width: 14ch;
+    color: var(--ink);
+  }
+  .lead-start .sub { color: var(--on-paper-mut); max-width: 42ch; }
+  .lead-start .field label { color: var(--sage-deep); }
+  .lead-honey {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .lead-error {
+    color: #8c3a2f;
+    font-size: 13.5px;
+    margin: 0 0 12px;
+  }
+  .lead-privacy {
+    margin: 14px 0 0;
+    font-size: 13px;
+  }
+  .lead-privacy a {
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--sage);
+    text-underline-offset: 3px;
+  }
+  .lead-privacy a:hover { text-decoration-color: var(--amber); }
+  .lead-thanks-copy { margin-top: 14px; max-width: 52ch; }
+  .lead-cal {
+    margin-top: 22px;
+    max-width: 760px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--line-paper);
+  }
+  .lead-cal iframe { display: block; width: 100%; height: 680px; border: 0; }
+  .lead-cal-link { margin: 14px 0 0; font-size: 14px; }
+  .lead-cal-link a {
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .lead-start button[disabled] { opacity: 0.7; cursor: progress; }
+  @media (max-width: 800px) {
+    .lead-start { padding: 48px 0; }
+    .lead-grid { grid-template-columns: 1fr; gap: 22px; }
+    .lead-start .btn { width: 100%; text-align: center; }
+  }
+</style>

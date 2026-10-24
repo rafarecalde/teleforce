@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
+import LeadForm from '../../components/LeadForm.astro';
 import CtaBox from '../../components/CtaBox.astro';
 import FaqAnswer from '../../components/FaqAnswer.astro';
 import WhyTheBarHolds from '../../components/WhyTheBarHolds.astro';
@@ -127,8 +128,8 @@ const jsonLd = [
   noindex
   barePhone={false}
   bareLogoHref="#top"
-  bareCtaHref="#match"
-  bareCtaLabel="Apply for a match"
+  bareCtaHref="#get-started"
+  bareCtaLabel="Get started"
 >
   <header class="hero" id="top">
     <div class="offer-hero">
@@ -143,7 +144,8 @@ const jsonLd = [
         </p>
         <p class="lede-not">Not a task VA. Not gig help. Not a marketplace freelancer.</p>
         <div class="hero-cta">
-          <a href="#match" class="btn btn-amber">Apply for a match</a>
+          <a href="#get-started" class="btn btn-amber">Get started</a>
+          <a href="#match" class="btn btn-ghost">Apply for a match</a>
         </div>
         <p class="hero-alt">
           Not sure you’re a fit? <a href="/ea/quiz">Take the EA Fit Quiz →</a>
@@ -273,6 +275,8 @@ const jsonLd = [
       </div>
     </section>
   </div>
+
+  <LeadForm idPrefix="offer" />
 
   <section class="block" id="get">
     <div class="wrap reveal">

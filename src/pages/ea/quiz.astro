@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookingSection from '../../components/BookingSection.astro';
+import LeadForm from '../../components/LeadForm.astro';
 import { HDYHAU_OPTIONS } from '../../lib/ea-quiz';
 
 const title = 'EA Fit Quiz | Teleforce';
@@ -35,6 +36,7 @@ const description =
         </p>
         <div class="hero-cta">
           <a href="#quiz" class="btn btn-amber" id="start-quiz" data-start>Start the quiz</a>
+          <a href="#get-started" class="btn btn-ghost">Get started</a>
         </div>
         <div class="ea-chips">
           <span class="chip">Dedicated bilingual EN/ES</span>
@@ -45,6 +47,8 @@ const description =
       </div>
     </div>
   </header>
+
+  <LeadForm idPrefix="quiz" quizHero />
 
   <!-- ========== QUIZ ========== -->
   <section class="quiz-stage" id="quiz" data-screen="quiz" hidden>
