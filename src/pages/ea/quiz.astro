@@ -98,6 +98,7 @@ const description =
             placeholder="you@company.com"
             required
           />
+          <p class="privacy-note"><a href="/privacy">Privacy Policy</a></p>
         </div>
         <label class="consent">
           <input type="checkbox" id="email-consent" name="consent" required />
@@ -540,6 +541,8 @@ const description =
     max-width: 48ch;
   }
   .field-error { color: #f0b4a0; font-size: 13px; margin: 0 0 10px; }
+  .privacy-note { margin: 8px 0 0; font-size: 12.5px; line-height: 1.45; color: var(--on-dark-mut); }
+  .privacy-note a { color: var(--amber); font-weight: 600; }
   .proof-card {
     margin-top: 36px;
     max-width: 480px;
@@ -975,18 +978,37 @@ const description =
       consent: 'yes',
       _subject: `EA Fit Quiz lead — ${bandCopy(state.answers, band).name}`,
     });
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'conversion', { send_to: 'AW-18332056932/JvJ9COL479McEOT6s6VE' });
-    }
-    if (band === 'task') {
-      show('nurture');
-    } else if (requiresEnrichment(band)) {
-      show('enrich');
-    } else {
-      show('diy');
-    }
-    if (btn) { btn.disabled = false; btn.textContent = 'Send my 7-day handoff plan + scorecard'; }
+    afterQuizConversion(() => {
+      if (band === 'task') {
+        show('nurture');
+      } else if (requiresEnrichment(band)) {
+        show('enrich');
+      } else {
+        show('diy');
+      }
+      if (btn) { btn.disabled = false; btn.textContent = 'Send my 7-day handoff plan + scorecard'; }
+    });
   });
+
+  function afterQuizConversion(next: () => void) {
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      next();
+    };
+    window.setTimeout(finish, 1000);
+    if (typeof window.gtag !== 'function') {
+      finish();
+      return;
+    }
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-18403081564/L6bVCPiLgKgdENz6osdE',
+      value: 1.0,
+      currency: 'USD',
+      event_callback: finish,
+    });
+  }
 
   document.getElementById('enrich-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();

@@ -22,13 +22,13 @@ export const FORM_ALIAS = 'b51bbe084a1d3308de0df272e7e8dd49';
 export const FORM_ACTION = `https://formsubmit.co/${FORM_ALIAS}`;
 
 // Google Calendar appointment scheduling — inline booking widget (?gv=true embed).
-// Booking happens on Google (name/email/phone collected there), so there is no
-// completed-booking event; BookingSection counts the "Book a call" click as the
-// Google Ads conversion signal.
+// Name, email, and phone are collected in Google's form. The schedule cannot
+// redirect to /thankyou/ after a booking, and the embed emits no completed-booking
+// event, so this widget does not fire an Ads conversion.
 export const GOOGLE_EMBED_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2fo1Aew3luWIG34QpfXxW8rUjtxlSX88hS5s6oTdnGK7q5pBt2eVDW45meyPzZq-hbfkLFqfc6?gv=true';
 
-// Onboarding scheduler. This is the Calendly URL the marketing site embedded
-// before discovery booking moved to Google Calendar. The portal uses the same URL.
+// Onboarding scheduler. Calendly can send the visitor to /thankyou/ from the
+// event's confirmation settings. The portal uses the same URL.
 export const ONBOARDING_CALENDLY_URL = 'https://calendly.com/tryteleforce-sales';
 
 // Proof stats — exact. Never add an agent headcount. (Hubs intentionally omitted.)

@@ -134,7 +134,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       // Paid-only ad LPs stay out of the organic sitemap.
-      // /terms is a public legal page and stays in the sitemap.
+      // /terms and /privacy are public legal pages and stay in the sitemap.
       // Redirected BPO URLs are not pages, and are excluded here too.
       filter: (page) => {
         const path = new URL(page).pathname;

@@ -1,8 +1,8 @@
 ---
-// Booking section. Embeds the Google Calendar appointment scheduler inline
-// (name/email/phone are collected in Google's booking form). Google's embed emits
-// no completed-booking event, so we count the first CTA click that opens this
-// section as the Google Ads conversion signal.
+// Booking section. Embeds the Google Calendar appointment scheduler inline.
+// Name, email, and phone are collected in Google's booking form. Google's
+// embed does not redirect to /thankyou/ and does not emit a completed-booking
+// event, so this section does not fire an Ads conversion.
 import ProposalForm from './ProposalForm.astro';
 import { GOOGLE_EMBED_URL, PHONE, PHONE_HREF } from '../consts';
 
@@ -25,12 +25,6 @@ const {
   subject = 'New Teleforce proposal request',
   idPrefix = 'p',
 } = Astro.props;
-
-const trackHashes = [id, ...(alias ? [alias] : [])];
-const ctaSelector = trackHashes.map((hash) => `a[href$="#${hash}"]`).join(', ');
-
-// Fire the Ads conversion once on the first click of a CTA that opens this section.
-const convScript = `(function(){var f=false;document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest(${JSON.stringify(ctaSelector)});if(t&&!f){f=true;if(typeof window.gtag==='function'){window.gtag('event','conversion',{send_to:'AW-18332056932/JvJ9COL479McEOT6s6VE'});}}},true);})();`;
 ---
 {GOOGLE_EMBED_URL ? (
   <section class="contact" id={id}>
@@ -43,7 +37,6 @@ const convScript = `(function(){var f=false;document.addEventListener('click',fu
         <iframe src={GOOGLE_EMBED_URL} width="100%" height="680" frameborder="0" style="border:0" title="Book a discovery call with Teleforce" loading="lazy"></iframe>
       </div>
     </div>
-    <script is:inline set:html={convScript} />
   </section>
 ) : (
   <ProposalForm id={id} heading={heading} sub={sub} subject={subject} idPrefix={idPrefix} />

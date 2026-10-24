@@ -132,6 +132,7 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
           <div class="field">
             <label for="email">Work email</label>
             <input id="email" type="email" autocomplete="email" inputmode="email" placeholder="you@company.com" />
+            <p class="privacy-note"><a href="/privacy">Privacy Policy</a></p>
             <p class="err" id="email-err"></p>
           </div>
           <div class="field">
@@ -773,6 +774,9 @@ const save = (EA.price3mo - EA.price12mo).toLocaleString('en-US');
   }
   #card-status { margin-top: 8px; }
   .field { margin-top: 14px; }
+  .privacy-note { margin: 8px 0 0; font-size: 12.5px; line-height: 1.45; color: var(--on-paper-mut); }
+  .privacy-note a { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: var(--sage); text-underline-offset: 2px; }
+  .privacy-note a:hover { text-decoration-color: var(--amber); }
   .field label {
     display: block;
     font-family: 'IBM Plex Mono', monospace;
