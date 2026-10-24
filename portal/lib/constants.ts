@@ -36,3 +36,24 @@ export function onboardingCalendlyUrl(): string {
     return ONBOARDING_CALENDLY_URL;
   }
 }
+
+/**
+ * Scheduler for the kickoff after a match is accepted. `KICKOFF_CALENDLY_URL`
+ * wins when it is an http(s) URL. Otherwise kickoff uses the onboarding
+ * scheduler, which itself defaults to `ONBOARDING_CALENDLY_URL`.
+ */
+export function kickoffCalendlyUrl(): string {
+  const configured = process.env.KICKOFF_CALENDLY_URL?.trim() ?? '';
+  if (!configured) return onboardingCalendlyUrl();
+  try {
+    const url = new URL(configured);
+    if ((url.protocol !== 'https:' && url.protocol !== 'http:') || url.username || url.password) {
+      console.error('KICKOFF_CALENDLY_URL is not an http(s) URL; using the onboarding scheduler');
+      return onboardingCalendlyUrl();
+    }
+    return url.href;
+  } catch {
+    console.error('KICKOFF_CALENDLY_URL is not an http(s) URL; using the onboarding scheduler');
+    return onboardingCalendlyUrl();
+  }
+}

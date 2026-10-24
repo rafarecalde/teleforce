@@ -174,7 +174,8 @@ dashboard follows the account row:
    Billing on that card is one short line plus a link to `https://tryteleforce.com/terms/`.
 4. After a click, email, or automatic acceptance, the client gets a branded
    **You're all set** email with a **Book your kickoff** button
-   (`KICKOFF_CALENDLY_URL`, default `https://calendly.com/tryteleforce-sales`).
+   (`KICKOFF_CALENDLY_URL`, or the onboarding scheduler when that is unset —
+   default `https://calendly.com/tryteleforce-sales`).
    The portal shows the same **Book your kickoff** card until kickoff is marked
    booked or done. The client can mark it booked, and admin can mark it booked
    or done. If it is still unbooked one business day (Monday–Friday,
@@ -302,7 +303,7 @@ card does not call Stripe.
 | `PREVIEW_MODE` | `1` enables the sample-data sales link |
 | `SIGNUP_CORS_ORIGINS` | Extra allowed origins, comma-separated |
 | `MARKETING_URL` | Used for the signup link on the sign-in screen |
-| `KICKOFF_CALENDLY_URL` | Kickoff scheduler after the client accepts. Defaults to `https://calendly.com/tryteleforce-sales` |
+| `KICKOFF_CALENDLY_URL` | Kickoff scheduler after the client accepts. When unset or not an http(s) URL, uses the onboarding scheduler (`ONBOARDING_CALENDLY_URL`, default `https://calendly.com/tryteleforce-sales`) |
 | `CRON_SECRET` | Bearer token for `GET` or `POST /api/cron/match`. Set this on the Vercel project. Set the same value as the GitHub repo secret `PORTAL_CRON_SECRET`. The route returns 401 when this is empty |
 | `STRIPE_AUTO_BILLING` | `true` creates a subscription at billing start. Anything else leaves charging to the sales alert |
 | `STRIPE_PRICE_3` / `STRIPE_PRICE_12` | Stripe Price ids used only when auto billing is on |
