@@ -600,7 +600,7 @@ const description =
 </style>
 
 <script>
-  import { FORM_ALIAS } from '../../consts';
+  import { LEAD_API_URL } from '../../consts';
   import {
     QUESTIONS,
     ROLE_LABELS,
@@ -920,19 +920,13 @@ const description =
   }
 
   async function postLead(payload: Record<string, unknown>): Promise<boolean> {
-    const body = {
-      _subject: payload._subject,
-      _template: 'table',
-      _captcha: 'false',
-      ...payload,
-    };
     const ctrl = new AbortController();
-    const timer = window.setTimeout(() => ctrl.abort(), 4000);
+    const timer = window.setTimeout(() => ctrl.abort(), 12000);
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${FORM_ALIAS}`, {
+      const res = await fetch(LEAD_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(body),
+        body: JSON.stringify(payload),
         signal: ctrl.signal,
       });
       const data = (await res.json().catch(() => null)) as { success?: boolean | string } | null;
@@ -981,10 +975,10 @@ const description =
     if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
     const band = state.band ?? 'diy';
     const sent = await postLead({
+      kind: 'quiz',
       ...leadBase(),
       email,
       consent: 'yes',
-      _subject: `EA Fit Quiz lead — ${bandCopy(state.answers, band).name}`,
     });
     if (!sent) {
       if (btn) { btn.disabled = false; btn.textContent = label; }
@@ -1068,7 +1062,8 @@ const description =
     state.contact = { first_name, last_name, company, hdyhau, phone };
     save();
     const band = state.band ?? 'diy';
-    await postLead({
+    const sent = await postLead({
+      kind: 'quiz-match',
       ...leadBase(),
       email: state.email,
       first_name,
@@ -1078,8 +1073,14 @@ const description =
       hdyhau,
       phone,
       sms_consent: 'yes',
-      _subject: `EA Fit Quiz match request — ${bandCopy(state.answers, band).name}`,
     });
+    if (!sent) {
+      if (err) {
+        err.hidden = false;
+        err.textContent = 'We couldn’t send that just now. Email sales@tryteleforce.com and we’ll take it from there.';
+      }
+      return;
+    }
     show('book');
     document.getElementById('match')?.scrollIntoView({ behavior: 'smooth' });
   });
