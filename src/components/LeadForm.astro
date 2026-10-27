@@ -1,7 +1,6 @@
 ---
-// Inline get-started lead. Posts through the same FormSubmit alias the quiz
-// uses, which delivers to sales@tryteleforce.com. Stays on the page.
-import { FORM_ALIAS, GOOGLE_EMBED_URL } from '../consts';
+// Inline get-started lead. Posts to the portal, which emails sales@. Stays on the page.
+import { GOOGLE_EMBED_URL } from '../consts';
 
 interface Props {
   /** Unique prefix so field ids do not collide across pages. */
@@ -17,7 +16,6 @@ const { idPrefix = 'lead', quizHero = false } = Astro.props;
   class="lead-start"
   id="get-started"
   data-lead-form
-  data-alias={FORM_ALIAS}
   data-embed={GOOGLE_EMBED_URL}
   data-screen={quizHero ? 'hero' : undefined}
 >
@@ -73,6 +71,8 @@ const { idPrefix = 'lead', quizHero = false } = Astro.props;
 </section>
 
 <script>
+  import { LEAD_API_URL } from '../consts';
+
   const LEAD_CONVERSION = 'AW-18403081564/p49dCJjvj6gdENz6osdE';
 
   function validEmail(value: string): boolean {
@@ -105,18 +105,15 @@ const { idPrefix = 'lead', quizHero = false } = Astro.props;
     return '';
   }
 
-  async function postLead(alias: string, payload: Record<string, string>): Promise<boolean> {
+  async function postLead(payload: Record<string, string>): Promise<boolean> {
     const ctrl = new AbortController();
     const timer = window.setTimeout(() => ctrl.abort(), 12000);
     try {
-      const res = await fetch(`https://formsubmit.co/ajax/${alias}`, {
+      const res = await fetch(LEAD_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          _subject: `Get started — ${payload.company}`,
-          _template: 'table',
-          _captcha: 'false',
-          source: 'get-started',
+          kind: 'get-started',
           ...payload,
         }),
         signal: ctrl.signal,
@@ -167,16 +164,13 @@ const { idPrefix = 'lead', quizHero = false } = Astro.props;
         button.textContent = 'Sending…';
       }
 
-      const alias = section.dataset.alias || '';
-      const sent = alias
-        ? await postLead(alias, {
-            name,
-            email,
-            company,
-            handoff,
-            page: window.location.href,
-          })
-        : false;
+      const sent = await postLead({
+        name,
+        email,
+        company,
+        handoff,
+        page: window.location.href,
+      });
 
       if (!sent) {
         if (button) {

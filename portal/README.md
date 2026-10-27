@@ -106,6 +106,13 @@ time in America/Guayaquil, and
 customer exists. A send failure is logged and does not change the signup
 response. The message has no password, API key, or full card number.
 
+`POST /api/leads` is the get-started form and the EA quiz. It uses the same
+`RESEND_API_KEY` and `EMAIL_FROM`, and it always addresses `sales@tryteleforce.com`.
+The browser must send `Origin: https://tryteleforce.com` or
+`https://www.tryteleforce.com` (localhost Astro is allowed too). A filled honeypot
+returns success and does not send mail. Any other failure returns an error, and
+the page does not fire its Google Ads conversion.
+
 It also sends the client a separate welcome email from `EMAIL_FROM`, so the
 onboarding note is not buried under the Terms copy. The message thanks them,
 asks them to book a short onboarding call, and links
@@ -322,7 +329,7 @@ Calendar sync is a private ICS feed per account, one token for the client and on
 | `ADMIN_EMAILS` | Comma-separated allowlist for `/admin`. The person must also be able to sign in. Defaults to `rafael@recaldelaw.com` |
 | `DEFAULT_PARTNERSHIP_MANAGER_NAME` | Prefilled Partnership Manager name on a match package |
 | `DEFAULT_PARTNERSHIP_MANAGER_EMAIL` | Prefilled Partnership Manager email. Publish requires one, from the form or here |
-| `RESEND_API_KEY` | Sends the accepted-Terms email. If unset, the account is still created and `email_sent_at` stays null |
+| `RESEND_API_KEY` | Sends the accepted-Terms email, and marketing leads from `POST /api/leads` to `sales@tryteleforce.com`. If unset, the account is still created and `email_sent_at` stays null; a lead request returns 503 and the page does not count an Ads conversion |
 | `EMAIL_FROM` | From address on a domain verified in Resend, e.g. `Teleforce <legal@tryteleforce.com>` |
 | `TERMS_ACCEPTANCE_BCC` | Ops BCC. If unset, `OPS_EMAIL` is used, then `legal@tryteleforce.com` |
 | `OPS_EMAIL` | Fallback ops address when `TERMS_ACCEPTANCE_BCC` is unset |

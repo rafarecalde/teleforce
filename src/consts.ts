@@ -12,11 +12,16 @@ export const SITE = {
   backbone: '30 years of Fortune 500 operating history',
 } as const;
 
-// Where lead/subscribe forms deliver. FormSubmit.co requires a ONE-TIME activation:
-// the first submission triggers a confirmation email to this address — click the
-// link once and every submission after that is delivered.
-// FormSubmit alias for sales@tryteleforce.com — keeps the raw email out of the
-// page HTML. Requires the one-time "Activate Form" click from FormSubmit's email.
+// Get-started and the EA quiz post to the portal, which emails sales@.
+// PUBLIC_PORTAL_URL overrides the host. Production defaults to the live portal.
+const portalBase = (() => {
+  const configured = String(import.meta.env.PUBLIC_PORTAL_URL || '').trim().replace(/\/$/, '');
+  if (configured) return configured;
+  return import.meta.env.DEV ? 'http://localhost:3000' : 'https://portal.tryteleforce.com';
+})();
+export const LEAD_API_URL = `${portalBase}/api/leads`;
+
+// Older proposal form still posts to FormSubmit. Get-started and the quiz do not.
 export const FORM_EMAIL = 'sales@tryteleforce.com';
 export const FORM_ALIAS = 'b51bbe084a1d3308de0df272e7e8dd49';
 export const FORM_ACTION = `https://formsubmit.co/${FORM_ALIAS}`;

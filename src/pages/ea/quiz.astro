@@ -600,7 +600,7 @@ const description =
 </style>
 
 <script>
-  import { FORM_ALIAS } from '../../consts';
+  import { LEAD_API_URL } from '../../consts';
   import {
     QUESTIONS,
     ROLE_LABELS,
@@ -919,24 +919,21 @@ const description =
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
 
-  async function postLead(payload: Record<string, unknown>) {
-    const body = {
-      _subject: payload._subject,
-      _template: 'table',
-      _captcha: 'false',
-      ...payload,
-    };
+  async function postLead(payload: Record<string, unknown>): Promise<boolean> {
     const ctrl = new AbortController();
-    const timer = window.setTimeout(() => ctrl.abort(), 4000);
+    const timer = window.setTimeout(() => ctrl.abort(), 12000);
     try {
-      await fetch(`https://formsubmit.co/ajax/${FORM_ALIAS}`, {
+      const res = await fetch(LEAD_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(body),
+        body: JSON.stringify(payload),
         signal: ctrl.signal,
       });
+      const data = (await res.json().catch(() => null)) as { success?: boolean | string } | null;
+      const ok = data?.success === true || data?.success === 'true';
+      return res.ok && ok;
     } catch {
-      /* Lead stays in sessionStorage; sales email is best-effort. */
+      return false;
     } finally {
       window.clearTimeout(timer);
     }
@@ -974,14 +971,23 @@ const description =
     state.email = email;
     save();
     const btn = document.getElementById('email-submit') as HTMLButtonElement | null;
+    const label = btn?.textContent?.trim() || 'Send my 7-day handoff plan + scorecard';
     if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
     const band = state.band ?? 'diy';
-    await postLead({
+    const sent = await postLead({
+      kind: 'quiz',
       ...leadBase(),
       email,
       consent: 'yes',
-      _subject: `EA Fit Quiz lead — ${bandCopy(state.answers, band).name}`,
     });
+    if (!sent) {
+      if (btn) { btn.disabled = false; btn.textContent = label; }
+      if (err) {
+        err.hidden = false;
+        err.textContent = 'We couldn’t send that just now. Email sales@tryteleforce.com and we’ll take it from there.';
+      }
+      return;
+    }
     afterQuizConversion(() => {
       if (band === 'task') {
         show('nurture');
@@ -994,6 +1000,26 @@ const description =
     });
   });
 
+  const QUIZ_CONVERSION = 'AW-18403081564/L6bVCPiLgKgdENz6osdE';
+
+  function waitForGtag(timeoutMs = 1500): Promise<boolean> {
+    if (typeof window.gtag === 'function') return Promise.resolve(true);
+    return new Promise((resolve) => {
+      const started = Date.now();
+      const timer = window.setInterval(() => {
+        if (typeof window.gtag === 'function') {
+          window.clearInterval(timer);
+          resolve(true);
+          return;
+        }
+        if (Date.now() - started >= timeoutMs) {
+          window.clearInterval(timer);
+          resolve(false);
+        }
+      }, 50);
+    });
+  }
+
   function afterQuizConversion(next: () => void) {
     let done = false;
     const finish = () => {
@@ -1001,16 +1027,18 @@ const description =
       done = true;
       next();
     };
-    window.setTimeout(finish, 1000);
-    if (typeof window.gtag !== 'function') {
-      finish();
-      return;
-    }
-    window.gtag('event', 'conversion', {
-      send_to: 'AW-18403081564/L6bVCPiLgKgdENz6osdE',
-      value: 1.0,
-      currency: 'USD',
-      event_callback: finish,
+    void waitForGtag().then((ready) => {
+      if (!ready || typeof window.gtag !== 'function') {
+        finish();
+        return;
+      }
+      window.setTimeout(finish, 1000);
+      window.gtag('event', 'conversion', {
+        send_to: QUIZ_CONVERSION,
+        value: 1.0,
+        currency: 'USD',
+        event_callback: finish,
+      });
     });
   }
 
@@ -1034,7 +1062,8 @@ const description =
     state.contact = { first_name, last_name, company, hdyhau, phone };
     save();
     const band = state.band ?? 'diy';
-    await postLead({
+    const sent = await postLead({
+      kind: 'quiz-match',
       ...leadBase(),
       email: state.email,
       first_name,
@@ -1044,8 +1073,14 @@ const description =
       hdyhau,
       phone,
       sms_consent: 'yes',
-      _subject: `EA Fit Quiz match request — ${bandCopy(state.answers, band).name}`,
     });
+    if (!sent) {
+      if (err) {
+        err.hidden = false;
+        err.textContent = 'We couldn’t send that just now. Email sales@tryteleforce.com and we’ll take it from there.';
+      }
+      return;
+    }
     show('book');
     document.getElementById('match')?.scrollIntoView({ behavior: 'smooth' });
   });
